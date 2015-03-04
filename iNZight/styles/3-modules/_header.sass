@@ -1,0 +1,20 @@
+.header
+  margin: 0 auto
+  padding: 1em 1em 0
+
+  border: solid 1px $header-border-color
+    bottom-width: 4px
+
+  .topnav
+    background: $header-background-color
+    color: $header-text-color
+
+    height: $header-size + 2em
+    padding: 0 1em
+
+    @include display(flex)
+    @include align-items(center)
+
+    .logo
+      img
+        height: 3em
