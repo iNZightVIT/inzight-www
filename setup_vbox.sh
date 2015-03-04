@@ -111,9 +111,6 @@ ln -fs /vagrant/vendor/bin/phpunit /usr/local/bin/phpunit
 echo -e "\n--- Add environment variables locally for artisan ---\n"
 cat >> /home/vagrant/.bashrc <<EOF
 
-ln -fs /vagrant/iNZight /var/www
-sudo gem install sass > /dev/null 2>&1
-
 # Set envvars
 export APP_ENV=$APPENV
 export DB_HOST=$DBHOST
@@ -121,3 +118,14 @@ export DB_NAME=$DBNAME
 export DB_USER=$DBUSER
 export DB_PASS=$DBPASSWD
 EOF
+
+echo -e "\n--- Setting up Sass ---\n"
+gem install sass > /dev/null 2>&1
+
+cat > /usr/bin/runsass <<EOF
+#!/bin/bash
+sass --watch /vagrant/iNZight/styles:/vagrant/iNZight/css
+EOF
+chmod +x /usr/bin/runsass
+
+echo "user host = (vagrant) NOPASSWD: /usr/bin/runsass" >> /etc/sudoers

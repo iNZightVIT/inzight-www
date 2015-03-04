@@ -9,7 +9,7 @@ $ vagrant up
 
 To get Sass running:
 ```
-$ vagrant ssh -c "sass --watch /vagrant/iNZight/styles:/vagrant/iNZight/css"
+$ vagrant ssh -c runsass
 ```
 
 That'll keep watching for any changes and update the CSS on the fly.
