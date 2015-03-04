@@ -23,10 +23,10 @@ Having played around and edited things, you'll want to put the VM to sleep (othe
 ```
 $ vagrant suspend
 ```
-... or, if you are homocidal, you can
+... or, if you are homicidal, you can
 ```
 $ vagrant destroy
 ```
 which will completely remove the VM and free up diskspace (if you need it).
 
-__Now stop wasting time reading README files and write some codes!!!__
+__Now stop wasting time reading README files and write some code!!!__
