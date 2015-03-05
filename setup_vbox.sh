@@ -16,8 +16,8 @@ echo -e "\n--- Install base packages ---\n"
 apt-get -y install vim curl build-essential python-software-properties git > /dev/null 2>&1
 
 echo -e "\n--- Add some repos to update our distro ---\n"
-add-apt-repository ppa:ondrej/php5 > /dev/null 2>&1
-add-apt-repository ppa:chris-lea/node.js > /dev/null 2>&1
+add-apt-repository -y ppa:ondrej/php5 > /dev/null 2>&1
+add-apt-repository -y ppa:chris-lea/node.js > /dev/null 2>&1
 
 echo -e "\n--- Updating packages list ---\n"
 apt-get -qq update
@@ -100,10 +100,10 @@ npm install -g gulp bower > /dev/null 2>&1
 echo -e "\n--- Updating project components and pulling latest versions ---\n"
 cd /vagrant
 sudo -u vagrant -H sh -c "composer install" > /dev/null 2>&1
-cd /vagrant/client
-sudo -u vagrant -H sh -c "npm install" > /dev/null 2>&1
-sudo -u vagrant -H sh -c "bower install -s" > /dev/null 2>&1
-sudo -u vagrant -H sh -c "gulp" > /dev/null 2>&1
+#cd /vagrant/client
+#sudo -u vagrant -H sh -c "npm install" > /dev/null 2>&1
+#sudo -u vagrant -H sh -c "bower install -s" > /dev/null 2>&1
+#sudo -u vagrant -H sh -c "gulp" > /dev/null 2>&1
 
 echo -e "\n--- Creating a symlink for future phpunit use ---\n"
 ln -fs /vagrant/vendor/bin/phpunit /usr/local/bin/phpunit
