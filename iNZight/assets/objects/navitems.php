@@ -46,12 +46,12 @@
       if ($text != 'default') {
         echo '<li>';
         if (is_array($link)) {
-          if (array_key_exists('default', $link)) {
-            $linkdef = $link['default'];
-            echo "<a href='$linkdef'>$text</a>";
-          } else {
-            echo $text;
-          }
+          // if (array_key_exists('default', $link)) {
+          //   $linkdef = $link['default'];
+            echo "<a href='#'>$text</a>";
+          // } else {
+          //   echo $text;
+          // }
           writeList($link);
         } else {
           echo "<a href='$link'>$text</a>";
