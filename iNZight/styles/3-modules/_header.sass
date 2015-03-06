@@ -14,7 +14,54 @@
 
     @include display(flex)
     @include align-items(center)
+    @include justify-content(space-between)
 
     .logo
       img
         height: 3em
+
+
+
+.topnav
+  ul
+    list-style-type: none
+    @include display(flex)
+    @include align-items(center)
+    @include justify-content(space-between)
+
+    li
+      display: inline-block
+      margin: 0 1em
+      position: relative
+      width: 80px
+
+      >a
+        text-decoration: none
+        color: $link-color
+
+      &:hover, &:focus
+        >a
+          color: $hover-color
+
+        ul
+          @include display(flex)
+
+      >ul
+        display: none
+        //@include display(flex)
+        @include flex-direction(column)
+        @include align-items(flex-start)
+        position: absolute
+        left: 0
+        top: 0
+        margin: 0
+        padding: 2em 0 0
+        width: auto
+        background: $header-background-color
+        font-size: 0.8em
+
+        @include transition(display 1.0s)
+
+        li
+          margin: 0
+          padding: 0.2em 0

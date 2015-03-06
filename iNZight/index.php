@@ -1,5 +1,5 @@
 <?php
-  $inzight_text = "<span class='col1'>i</span><span class='col2'>nz</span><span class='col1'>ight</span>";
+  require('assets/objects/navitems.php');
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +21,9 @@
             <img src="img/inzight_transp.png">
           </div>
 
-
+          <?php
+            writeList($navitems);
+          ?>
         </div>
       </div>
       <div class="vspace"></div>
