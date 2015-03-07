@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="js/jquery-2.1.3.min.js"></script>
 
     <title>iNZight for Data Analysis</title>
   </head>
@@ -16,15 +17,17 @@
   <body>
     <div class="wrapper">
       <div class="header">
-        <div class="topnav show">
-          <div class="logo">
-            <img src="img/inzight_transp.png">
-          </div>
+        <div class="topnav hideme">
+          <div class="nav-stack-wrap">
+            <div class="logo">
+              <img src="img/inzight_transp.png">
+            </div>
 
-          <div class="navstack">
-            <span class="navstack-bar"></span>
-            <span class="navstack-bar"></span>
-            <span class="navstack-bar"></span>
+            <div class="navstack">
+              <span class="navstack-bar"></span>
+              <span class="navstack-bar"></span>
+              <span class="navstack-bar"></span>
+            </div>
           </div>
 
           <?php
@@ -69,5 +72,8 @@
         Footer goes here ...
       </div>
     </div>
+
+
+    <script src="js/navigation.js"></script>
   </body>
 </html>

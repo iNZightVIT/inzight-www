@@ -4,32 +4,32 @@
   $wild_http = "https://www.stat.auckland.ac.nz/~wild/";
 
   $navitems = array(
-    'Home' => 'index.html',
+    'Home' => 'index.php',
     'Download' => array(
-      'default' => 'download.html',
-      'Windows' => 'win.html',
-      'Macintosh' => 'mac.html',
-      'Linux/R Users' => 'ruser.html',
-      'Data' => 'data.html'
+      'default' => 'download.php',
+      'Windows' => 'win.php',
+      'Macintosh' => 'mac.php',
+      'Linux/R Users' => 'ruser.php',
+      'Data' => 'data.php'
     ),
     'Get Started' => array(
-      'default' => 'basics.html',
-      'Basics' => 'basics.html',
-      'Manipulate Variables' => 'manip_vars.html',
-      'Plot Options' => 'plot_buttons.html',
-      'Row Operations' => 'row_operations.html'
+      'default' => 'basics.php',
+      'Basics' => 'basics.php',
+      'Manipulate Variables' => 'manip_vars.php',
+      'Plot Options' => 'plot_buttons.php',
+      'Row Operations' => 'row_operations.php'
     ),
-    'Advanced' => 'advanced.html',
+    'Advanced' => 'advanced.php',
     'Support' => array(
-      'default' => 'support.html',
-      'Known Issues' => 'issues.html',
-      'FAQ' => 'faq.html',
-      'Email Lists' => 'email_lists.html',
-      'Change History' => 'changelog.html',
-      'Contact Support' => 'contact.html'
+      'default' => 'support.php',
+      'Known Issues' => 'issues.php',
+      'FAQ' => 'faq.php',
+      'Email Lists' => 'email_lists.php',
+      'Change History' => 'changelog.php',
+      'Contact Support' => 'contact.php'
     ),
     'Related' => array(
-      'default' => 'related.html',
+      'default' => 'related.php',
       'VIT' => $wild_http . 'VIT/index.html',
       'BootAnim' => $wild_http . 'BootAnim/index.html',
       'StatThink' => $wild_http . 'StatThink/index.html',

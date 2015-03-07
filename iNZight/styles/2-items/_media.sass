@@ -5,3 +5,7 @@
 @mixin phone
   @media (max-width: #{$phone-width})
     @content
+
+@mixin notphone
+  @media (min-width: #{$phone-width + 1})
+    @content

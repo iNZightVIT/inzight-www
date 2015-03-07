@@ -22,13 +22,16 @@
       @include flex-direction(column)
       height: auto
 
-    @include phone
-      @include flex-direction(row)
-      @include align-items(center)
-
     .logo
       img
         height: 3em
+
+    .nav-stack-wrap
+      @include display(flex)
+      @include justify-content(space-between)
+      @include align-items(center)
+      @include phone
+        width: 100%
 
     .navstack
       display: none
@@ -41,6 +44,7 @@
         @include align-items(stretch)
         @include justify-content(space-around)
 
+
       border: solid 1px $header-border-color
       @include border-top-radius(4px)
       @include border-bottom-radius(4px)
@@ -48,6 +52,12 @@
       &:hover
         cursor: pointer
         background: $header-border-color
+
+      &.active
+        background: $link-color
+
+        .navstack-bar
+          background: $header-border-color
 
       .navstack-bar
         display: block
@@ -64,8 +74,8 @@
     margin: 0
     padding: 0
 
-    @include phone
-      display: none
+    //@include phone
+    //  display: none
 
     li
       display: inline-block
@@ -78,14 +88,15 @@
         text-decoration: none
         color: $link-color
 
-      &:hover
-        cursor: pointer
+      @include notphone
+        &:hover
+          cursor: pointer
 
-        >a
-          color: $hover-color
+          >a
+            color: $hover-color
 
-        ul
-          @include display(flex)
+          ul
+            @include display(flex)
 
       >ul
         display: none
@@ -96,7 +107,6 @@
         top: 100%
         margin: 0
         padding: 0
-        width: auto
         background: $header-background-color
         font-size: 0.8em
         width: 100px
@@ -111,7 +121,46 @@
           &:hover
             background: $link-color
 
+@include phone
+  .topnav
+    @include align-items(stretch)
 
-  &.show
-    ul
-      display: block
+    >ul
+      width: 100%
+      @include flex-direction(column)
+      @include align-items(stretch)
+
+      padding-top: 2em
+      font-size: 1.2em
+
+      >li
+        padding: 1em
+
+        &:hover
+          color: $hover-color
+
+      >li>ul
+        position: static
+        @include display(flex)
+        @include flex-direction(column)
+        @include align-items(stretch)
+        border: none
+        border-top: solid 3px $header-border-color
+        border-bottom: solid 3px $header-border-color
+        width: 100%
+
+        margin-top: 1em
+
+        >li
+          display: block
+          font-size: 1.2em
+          padding: 1em 1em 1em 2em
+
+          &:hover
+            color: $hover-color
+
+        display: none
+
+    &.hideme
+      >ul
+        display: none
