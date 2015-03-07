@@ -18,16 +18,24 @@
     @include flex-direction(column)
     @include justify-content(flex-start)
 
+    .dl-options
+      margin-bottom: 1em
+
+      .alt-options
+        font-size: 0.8em
+        display: block
+        text-align: center
+
     .download_button
       @include display(flex)
       @include flex-direction(column)
       @include align-items(center)
 
-      margin: 2em auto
+      margin: 2em auto 0
       width: 150px
       padding: 0.2em 0
-      background: $main-color-1
-      border: solid 3px $main-color-2
+      background: lighten($main-color-1, 40%)
+      border: solid 2px $main-color-2
       @include border-top-radius(7px)
       @include border-bottom-radius(7px)
 
@@ -65,8 +73,30 @@
           font-weight: bold
           color: $main-color-2
 
-      &,.gap
-        margin-top: 1em
+        &.gap
+          margin-top: 2em
+
+        .grouptext
+          font-weight: bold
+          display: block
+
+      a.online-link
+        font-weight: bold
+        font-size: 1.5em
+        display: block
+        text-align: center
+        margin: 0 auto
+
+        width: 150px
+        padding: 0.2em 0
+        border-bottom: solid 2px $main-color-2
+
+        &:hover
+          border-bottom: solid 2px $main-color-1
+          color: $link-color
+          background: lighten($main-color-1, 40%)
+
+
 
 @media (max-width: 950px)
   .feature

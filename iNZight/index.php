@@ -13,10 +13,16 @@ require_once('assets/includes/2-header.php');
   <div class="placeholder">Will be example images of iNZight in action here ... but for now you can just deal with this silly placeholder text.</div>
 
   <div class="download">
-    <a href="download.php" class="download_button">
-      <span class="download_now">Download Now</span>
-      <span class="os_name">for Windows</span>
-    </a>
+    <div class="dl-options">
+      <a href="download.php" class="download_button">
+        <span class="download_now">Download Now</span>
+        <span class="os_name">for Windows</span>
+      </a>
+
+      <span class="alt-options">
+        (<a href="mac.php">Mac</a> or <a href="ruser.php">Linux</a> download)
+      </span>
+    </div>
 
     <div class="download-info">
       <div class="group">
@@ -30,17 +36,13 @@ require_once('assets/includes/2-header.php');
       </div>
 
       <div class="group gap">
-          <span class="group-label">Other versions:</span>
-          <span class="group-value"><a href="mac.php">Macintosh</a></span>
+        <div class="grouptext">
+          Or try our online application:
+        </div>
       </div>
-      <div class="group">
-          <span class="group-label"></span>
-          <span class="group-value"><a href="ruser.php">Linux</a></span>
-      </div>
-      <div class="group">
-          <span class="group-label"></span>
-          <span class="group-value"><a href="online.php">Tablets/Chromebooks</a></span>
-      </div>
+      <a href="http://docker.stat.auckland.ac.nz" class="online-link">
+        <?php echo $inzight_text; ?> Lite
+      </a>
     </div>
 
   </div>
