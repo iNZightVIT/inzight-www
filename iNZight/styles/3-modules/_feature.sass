@@ -7,6 +7,78 @@
 
   .placeholder
     height: 300px
-    width: 600px
+    max-width: 600px
 
     background: $header-border-color
+    text-align: center
+
+
+  .download
+    @include display(flex)
+    @include flex-direction(column)
+    @include justify-content(flex-start)
+
+    .download_button
+      @include display(flex)
+      @include flex-direction(column)
+      @include align-items(center)
+
+      margin: 2em auto
+      width: 150px
+      padding: 0.2em 0
+      background: $main-color-1
+      border: solid 3px $main-color-2
+      @include border-top-radius(7px)
+      @include border-bottom-radius(7px)
+
+      text-decoration: none
+
+      .download_now
+        font:
+          weight: bold
+          size: 1.1em
+        color: $main-color-2
+
+      .os_name
+        font:
+          size: 0.8em
+        color: $text-color
+
+      &:hover
+        background: lighten($main-color-1, 20%)
+
+    .download-info
+      .group
+        font-size: 0.9em
+        @include display(flex)
+
+
+        .group-label
+          font-weight: bold
+          display: inline-block
+          width: 120px
+          text-align: right
+          padding-right: 0.5em
+
+        .group-value
+          display: inline-block
+          font-weight: bold
+          color: $main-color-2
+
+      &,.gap
+        margin-top: 1em
+
+@media (max-width: 950px)
+  .feature
+    @include flex-direction(column)
+    @include align-items(center)
+
+@media (max-width: 950px) and (min-width: 500px)
+  .feature
+    .download
+      @include flex-direction(row)
+      @include justify-content(space-between)
+      @include align-items(flex-start)
+
+      .download-info
+        margin-top: 2em
