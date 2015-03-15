@@ -4,7 +4,8 @@
   $wild_http = "https://www.stat.auckland.ac.nz/~wild/";
 
   $navitems = array(
-    'Home' => 'index.php',
+    //'Home' => 'index.php',
+    'Explore' => 'explore.php',
     'Download' => array(
       'default' => 'download.php',
       'Windows' => 'win.php',

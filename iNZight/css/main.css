@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,800italic,400,300,700,800);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Caption:700,400);
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -371,7 +372,8 @@ ul {
   padding-start: 0; }
 
 .col1, .col2 {
-  font-weight: bold; }
+  font-weight: 700;
+  font-family: "PT Sans Caption", sans-serif; }
 
 .col1 {
   color: #18afe3; }
@@ -875,7 +877,7 @@ html, body {
   height: 100%;
   background: #fff;
   font-size: 14px;
-  font-family: "Open sans", sans-serif;
+  font-family: "PT Sans Caption", sans-serif;
   color: #333; }
 
 .wrapper {
@@ -893,7 +895,8 @@ html, body {
 
 a {
   color: #18afe3;
-  text-decoration: none; }
+  text-decoration: none;
+  font-weight: 700; }
   a:hover {
     color: #094b85; }
 

@@ -2,7 +2,7 @@
   <div class="topnav hideme">
     <div class="nav-stack-wrap">
       <div class="logo">
-        <img src="img/inzight_transp.png">
+        <a href="index.php"><img src="img/inzight_transp.png"></a>
       </div>
 
       <div class="navstack">

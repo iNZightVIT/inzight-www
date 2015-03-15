@@ -49,14 +49,16 @@ require_once('assets/includes/2-header.php');
 </div>
 
 
-<p class="content">
-  Initially designed for New Zealand high schools, iNZight now extends to multivariable graphics, time series and generalised linear models (including complex survey designs).
-</p>
 
-
+<!-- This might become redundant once I make the footer, which will have the names of supporters ... -->
 <p class="content">
-  This project is led by Chris Wild. Major contributers include:<br>
-  Tom Elliott - Junjie Zheng - Marco Kupper - Simon Potter - David Banks - Dineika Chandrananda
+  The <?php echo $inzight_text; ?> project is led by
+  <a href="https://www.stat.auckland.ac.nz/~wild" target="_blank">Professor Chris Wild</a>
+  and has been primarily supported by the Department of Statistics
+  at the <a href="https://www.auckland.ac.nz" target="_blank">University of Auckland</a>, with additional support from
+  <a href="http://www.stats.govt.nz" target="_blank">Statistics New Zealand</a> and
+  the <a href="http://www.minedu.govt.nz" target="_blank">NZ Ministry of Education</a> via
+  <a href="http://new.censusatschool.org.nz" target="_blank">Census at School</a>.
 </p>
 
 
