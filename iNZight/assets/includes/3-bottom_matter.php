@@ -3,7 +3,24 @@
 
     <div class="footer">
       <div class="footer-content">
-        Footer goes here ...
+        <div class="copyright">
+          &copy; Copyright 2015 iNZight | All Rights Reserve
+        </div>
+
+        <div class="thanks">
+          <a href="http://new.censusatschool.org.nz/" id="-logo">
+            <img src="img/census_logo.png">
+          </a>
+          <a href="http://www.stats.govt.nz/" id="CaS-logo">
+            <img src="img/stats_nz.png">
+          </a>
+          <a href="http://www.minedu.govt.nz/" id="MEd-logo">
+            <img src="/img/minedu_logo.png">
+          </a>
+          <a href="https://www.auckland.ac.nz/" id="UoA-logo">
+            <img src="img/uoa_logo.png">
+          </a>
+        </div>
       </div>
     </div>
 

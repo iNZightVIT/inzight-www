@@ -4,13 +4,13 @@ require_once('assets/includes/2-header.php');
 ?>
 
 
-<p class="content">
-  <?php echo $inzight_text; ?> is a simple data analysis system which was initially designed for high school students to help explore data fast and easy without having to learn complex statistical software. By popular demand, it has been extended to handle multi-variable graphics, time series analysis and generalised linear models.
+<p class="content blurb">
+  <?php echo $inzight_text; ?>: a simple data analysis system which encourages exploring what data is saying without the distractions of driving complex software.
 </p>
 
 
 <div class="feature">
-  <div class="placeholder">Will be example images of iNZight in action here ... but for now you can just deal with this silly placeholder text.</div>
+  <img src="img/feature.png" class="placeholder"></img>
 
   <div class="download">
     <div class="dl-options">
@@ -22,9 +22,7 @@ require_once('assets/includes/2-header.php');
       <span class="alt-options">
         (<a href="mac.php">Mac</a> or <a href="ruser.php">Linux</a> download)
       </span>
-    </div>
 
-    <div class="download-info">
       <div class="group">
         <span class="group-label">Latest Version:</span>
         <span class="group-value">2.0.4</span>
@@ -34,7 +32,9 @@ require_once('assets/includes/2-header.php');
         <span class="group-label">Release Date:</span>
         <span class="group-value">02.02.2015</span>
       </div>
+    </div>
 
+    <div class="download-info">
       <div class="group gap">
         <div class="grouptext">
           Or try our online application:
@@ -51,7 +51,7 @@ require_once('assets/includes/2-header.php');
 
 
 <!-- This might become redundant once I make the footer, which will have the names of supporters ... -->
-<p class="content">
+<!-- <p class="content">
   The <?php echo $inzight_text; ?> project is led by
   <a href="https://www.stat.auckland.ac.nz/~wild" target="_blank">Professor Chris Wild</a>
   and has been primarily supported by the Department of Statistics
@@ -59,7 +59,7 @@ require_once('assets/includes/2-header.php');
   <a href="http://www.stats.govt.nz" target="_blank">Statistics New Zealand</a> and
   the <a href="http://www.minedu.govt.nz" target="_blank">NZ Ministry of Education</a> via
   <a href="http://new.censusatschool.org.nz" target="_blank">Census at School</a>.
-</p>
+</p> -->
 
 
 <?php

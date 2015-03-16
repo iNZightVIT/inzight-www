@@ -12,6 +12,10 @@
     background: $header-border-color
     text-align: center
 
+    @media (max-width: 650px)
+      width: 100%
+      height: auto
+
 
   .download
     @include display(flex)
@@ -25,6 +29,7 @@
         font-size: 0.8em
         display: block
         text-align: center
+        margin-bottom: 1em
 
     .download_button
       @include display(flex)
@@ -55,7 +60,7 @@
       &:hover
         background: lighten($main-color-1, 20%)
 
-    .download-info
+    .download-info,.dl-options
       .group
         font-size: 0.9em
         @include display(flex)
@@ -107,8 +112,12 @@
   .feature
     .download
       @include flex-direction(row)
-      @include justify-content(space-between)
+      @include justify-content(space-around)
       @include align-items(flex-start)
+
+      .dl-options
+        margin-right: 1em
 
       .download-info
         margin-top: 2em
+        margin-left: 1em
