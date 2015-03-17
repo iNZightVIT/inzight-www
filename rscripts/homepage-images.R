@@ -1,7 +1,8 @@
+
 require(devtools)
 install_github("iNZightVIT/iNZightPlots", ref = "new3")
-library(cairoDevice)
-Cairo()
+#library(cairoDevice)
+#Cairo()
 library(iNZightPlots)
 
 cas500 <- read.csv("~/iNZight/data/Census at School-500.csv", header = TRUE, comment.char = "#")
@@ -11,16 +12,23 @@ gmdata <- read.csv("~/iNZight/data/Gap Minder Data.csv", header = TRUE, comment.
 ## Main Image
 names(gmdata)
 
-jpeg(width = 600, height = 400)
+jpeg(width = 800, height = 470)
 for (year in levels(gmdata$Year)) {
     iNZightPlot(y = Life.Expectancy, x = log10(GDP.per.Capita),
                 g1 = Year, g1.level = year,
-                sizeby = Population, col = Region, alpha = 0.6, data = gmdata)
+                sizeby = Population, col = Region, alpha = 0.6, data = gmdata,
+                varnames = list(x = "log10(Income)", y = "Life Expectancy"),
+                xlab = expression(log[10](Income)))
 }
 dev.off()
 f <- "~/iNZight/inzight-www/iNZight/img/feature.gif"
 unlink(f)
-system(paste("convert -delay 30 Rplot*.jpeg", f))
+fs <- list.files(".", pattern = ".jpeg")
+system(paste("convert",
+             paste(c(paste("-delay 30", fs[-length(fs)]), 
+                     paste("-delay 100", tail(fs, 1))), collapse = " "),
+             f))
+#system(paste("convert -delay 30 Rplot*.jpeg", f))
 unlink("Rplot*.jpeg")
 
 
