@@ -5,29 +5,53 @@
 
   $navitems = array(
     //'Home' => 'index.php',
-    'Explore' => 'explore.php',
-    'Download' => array(
+    //'Explore' => 'explore.php',
+    'Get iNZight' => array(
       'default' => 'download.php',
       'Windows' => 'win.php',
       'Macintosh' => 'mac.php',
       'Linux/R Users' => 'ruser.php',
+      'Tablets' => 'lite.php',
       'Data' => 'data.php'
     ),
-    'Get Started' => array(
-      'default' => 'basics.php',
-      'Basics' => 'basics.php',
+    // 'Get Started' => array(
+    //   'default' => 'basics.php',
+    //   'Basics' => 'basics.php',
+    //   'Manipulate Variables' => 'manip_vars.php',
+    //   'Plot Options' => 'plot_buttons.php',
+    //   'Row Operations' => 'row_operations.php'
+    // ),
+    // 'Add-on Modules' => array(
+    //   'default' => 'advanced.php',
+    //   '3D Plot' => '3d_plot.php',
+    //   'Time Series' => 'time_series.php',
+    //   'Model Fitting' => 'model_fitting.php',
+    //   'Maps' => 'maps.php'
+    // ),
+
+    // Alternative option:
+    'User Guides' => array(
+      'default' => 'guides.php',
+      'The Basics' => 'basics.php',
+      'Plot Options' => 'plot_options.php',
       'Manipulate Variables' => 'manip_vars.php',
-      'Plot Options' => 'plot_buttons.php',
-      'Row Operations' => 'row_operations.php'
+      'Data Options' => 'data_options.php',       // row ops, reshape, ...
+      'Add-on Modules' => 'addons.php'
     ),
-    'Advanced' => 'advanced.php',
     'Support' => array(
       'default' => 'support.php',
-      'Known Issues' => 'issues.php',
+      //'Known Issues' => 'issues.php',
       'FAQ' => 'faq.php',
       'Email Lists' => 'email_lists.php',
-      'Change History' => 'changelog.php',
-      'Contact Support' => 'contact.php'
+      'Version History' => 'changelog.php',
+      'Contact Us' => 'contact.php',
+      //'Development' => 'development.php'
+    ),
+    'About' => array(
+      'default' => 'aboutus.php',
+      'Team' => 'team.php',
+      'Development' => 'development.php',
+
     ),
     'Related' => array(
       'default' => 'related.php',

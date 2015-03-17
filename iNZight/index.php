@@ -5,12 +5,12 @@ require_once('assets/includes/2-header.php');
 
 
 <p class="content blurb">
-  <?php echo $inzight_text; ?>: a simple data analysis system which encourages exploring what data is saying without the distractions of driving complex software.
+  Easily explore data and discover trends without using complex software
 </p>
 
 
 <div class="feature">
-  <img src="img/feature.png" class="placeholder"></img>
+  <img src="img/feature.gif" class="placeholder"></img>
 
   <div class="download">
     <div class="dl-options">
@@ -50,16 +50,6 @@ require_once('assets/includes/2-header.php');
 
 
 
-<!-- This might become redundant once I make the footer, which will have the names of supporters ... -->
-<!-- <p class="content">
-  The <?php echo $inzight_text; ?> project is led by
-  <a href="https://www.stat.auckland.ac.nz/~wild" target="_blank">Professor Chris Wild</a>
-  and has been primarily supported by the Department of Statistics
-  at the <a href="https://www.auckland.ac.nz" target="_blank">University of Auckland</a>, with additional support from
-  <a href="http://www.stats.govt.nz" target="_blank">Statistics New Zealand</a> and
-  the <a href="http://www.minedu.govt.nz" target="_blank">NZ Ministry of Education</a> via
-  <a href="http://new.censusatschool.org.nz" target="_blank">Census at School</a>.
-</p> -->
 
 
 <?php

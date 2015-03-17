@@ -13,12 +13,29 @@
     @include align-items(center)
 
     @include phone
-      @include flex-direction(column)
+      @include flex-direction(column-reverse)
 
+    .copyright
+      @include display(flex)
+      @include flex-direction(column)
+      @include align-items(flex-start)
+      @include phone
+        @include align-items(center)
+
+      padding-bottom: 1em
 
     .thanks
       @include display(flex)
       @include align-items(center)
+      @include flex-wrap(wrap)
+      @include justify-content(space-around)
+
+      padding-bottom: 1em
+
+      div
+        @include display(flex)
+        @include align-items(center)
+
 
       img
         height: $footer-height / 2

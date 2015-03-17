@@ -1,11 +1,28 @@
-##require(devtools)
-##install_github("iNZightVIT/iNZightPlots", ref = "new3")
+require(devtools)
+install_github("iNZightVIT/iNZightPlots", ref = "new3")
 library(cairoDevice)
 Cairo()
 library(iNZightPlots)
 
-cas500 <- read.csv("~/iNZight/iNZightVIT-MAC/data/Census at School-500.csv", header = TRUE, comment.char = "#")
-gmdata <- read.csv("~/iNZight/iNZightVIT-MAC/data/Gap Minder Data.csv", header = TRUE, comment.char = "#")
+cas500 <- read.csv("~/iNZight/data/Census at School-500.csv", header = TRUE, comment.char = "#")
+gmdata <- read.csv("~/iNZight/data/Gap Minder Data.csv", header = TRUE, comment.char = "#")
+
+
+## Main Image
+names(gmdata)
+
+jpeg(width = 600, height = 400)
+for (year in levels(gmdata$Year)) {
+    iNZightPlot(y = Life.Expectancy, x = log10(GDP.per.Capita),
+                g1 = Year, g1.level = year,
+                sizeby = Population, col = Region, alpha = 0.6, data = gmdata)
+}
+dev.off()
+f <- "~/iNZight/inzight-www/iNZight/img/feature.gif"
+unlink(f)
+system(paste("convert -delay 30 Rplot*.jpeg", f))
+unlink("Rplot*.jpeg")
+
 
 
 ### Basic plotting
