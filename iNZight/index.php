@@ -5,7 +5,7 @@ require_once('assets/includes/2-header.php');
 
 
 <p class="content blurb">
-  Easily explore data and discover trends without using complex software
+  Easily explore data and discover trends without learning complex software
 </p>
 
 
@@ -47,6 +47,45 @@ require_once('assets/includes/2-header.php');
 
   </div>
 </div>
+
+
+
+<div class="explore">
+  <div class="exploretext">
+    <h3>
+      <?php echo $inzight_text; ?>
+      intelligently draws the appropriate graph depending on the variables you choose
+    </h3>
+
+    <p>
+      The quick drag-and-drop interface makes it easy to create graphs of your data.
+      <?php echo $inzight_text; ?> automatically detects the variable type as either numeric or categorical,
+      and draws a dot plot, scatter plot, or bar chart.
+    </p>
+  </div>
+
+  <div class="image">
+      <img src="img/feature.png">
+  </div>
+</div>
+
+<div class="explore">
+  <div class="exploretext">
+    <h3>
+      Discover trends by subsetting or adding colour to your plots
+    </h3>
+
+    <p>
+      Two subsetting slots allow you to quickly detect trends or relationships between categories of a factor variable.
+      Colour, sizing, and many other features, can be added through the <b>Add to Plot</b> interface.
+    </p>
+
+  </div>
+  <div class="image">
+      <img src="img/feature.png">
+  </div>
+</div>
+
 
 
 

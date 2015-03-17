@@ -1,0 +1,24 @@
+.explore
+  padding: 2em
+  min-height: 400px
+
+  @include display(flex)
+  @include align-content(stretch)
+  @include justify-content(space-between)
+  @include flex-direction(column)
+
+  &:nth-child(2n + 1)
+    background: $alternate-background-color
+
+  .exploretext
+    text-align: left
+    padding-bottom: 2em
+    h3
+      text-align: center
+
+  .image
+    text-align: center
+
+    img
+      width: 90%
+      height: auto

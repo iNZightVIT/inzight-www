@@ -9,3 +9,11 @@
 @mixin notphone
   @media (min-width: #{$phone-width + 1})
     @content
+
+@mixin large
+  @media (min-width: #{$large-width + 1})
+    @content
+
+@mixin notlarge
+  @media (max-width: #{$large-width})
+    @content

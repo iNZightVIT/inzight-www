@@ -2,7 +2,7 @@
   max-width: $content-width
   @include display(flex)
   @include justify-content(space-around)
-  padding: 0 2em 2em
+  padding: 0 2em 4em
   margin: 0 auto
 
   .placeholder
@@ -103,7 +103,7 @@
 
 
 
-@media (max-width: 950px)
+@include notlarge
   .feature
     @include flex-direction(column)
     @include align-items(center)
