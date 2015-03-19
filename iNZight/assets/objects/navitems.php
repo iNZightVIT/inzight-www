@@ -51,7 +51,7 @@
       'default' => 'aboutus.php',
       'Team' => 'team.php',
       'Development' => 'development.php',
-
+      'Privacy' => 'privacy.php'
     ),
     'Related' => array(
       'default' => 'related.php',
