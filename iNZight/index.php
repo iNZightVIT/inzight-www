@@ -65,7 +65,7 @@ require_once('assets/includes/2-header.php');
   </div>
 
   <div class="image">
-      <img src="img/feature.png">
+      <img src="img/smartGraphs.gif">
   </div>
 </div>
 
@@ -82,7 +82,7 @@ require_once('assets/includes/2-header.php');
 
   </div>
   <div class="image">
-      <img src="img/feature.png">
+      <img src="img/subsetColourSize.gif">
   </div>
 </div>
 
