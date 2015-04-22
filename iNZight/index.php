@@ -14,7 +14,7 @@ require_once('assets/includes/2-header.php');
 
   <div class="download">
     <div class="dl-options">
-      <a href="download.php" class="download_button">
+      <a href="getinzight.php?os=Windows" class="download_button">
         <span class="download_now">Download Now</span>
         <span class="os_name">for Windows</span>
       </a>

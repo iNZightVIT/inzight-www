@@ -4,6 +4,13 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <?php
+      // Allow us to define extra meta tags:
+      if (isset($metatags)) {
+        echo $metatags;
+      }
+    ?>
+
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <script src="js/jquery-2.1.3.min.js"></script>
 

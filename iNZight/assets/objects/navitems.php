@@ -7,10 +7,11 @@
     //'Home' => 'index.php',
     //'Explore' => 'explore.php',
     'Get iNZight' => array(
-      'default' => 'download.php',
-      'Windows' => 'win.php',
-      'Macintosh' => 'mac.php',
-      'Linux/R Users' => 'ruser.php',
+      'default' => 'getinzight.php',
+      'Desktop' => 'getinzight.php',
+      //'Windows' => 'win.php',
+      //'Macintosh' => 'mac.php',
+      'Linux/R Users' => 'source.php',
       'Tablets' => 'lite.php',
       'Data' => 'data.php'
     ),
