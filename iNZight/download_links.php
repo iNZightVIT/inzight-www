@@ -15,7 +15,9 @@
       $file = $download_links["Windows"];
       break;
     case "Mac":
-      $file = $download_links[((int)$_POST["v"] > 8) ? "osx" : "osx-sl"];
+      $os_version = (int)$_POST["v"];
+      $mac_version = ($os_version > 8) ? "osx" : (($os_version > 6) ? "osx-ml" : "osx-sl");
+      $file = $download_links[$mac_version];
       break;
   }
 

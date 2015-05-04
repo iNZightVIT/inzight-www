@@ -1139,6 +1139,21 @@ a {
 h3 {
   padding: 0 2em 1em; }
 
+p {
+  margin: 0.5em 2em 1em; }
+
+.small {
+  font-size: 0.8em; }
+
+.large-break {
+  margin-bottom: 3em; }
+
+.note {
+  font-size: 0.9em;
+  font-style: italic;
+  margin-left: 0;
+  color: #46873f; }
+
 #mac_ver_select, #linux_dist_select {
   display: none; }
   #mac_ver_select.show, .show#linux_dist_select {

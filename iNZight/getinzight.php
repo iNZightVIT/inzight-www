@@ -15,7 +15,7 @@
       // auto download for Windows
       if ($os == "Windows") {
         $file = $download_links[$os];
-        $metatags = "<meta http-equiv='Refresh' content='3; url=download.php?file=" . $file . "'>";
+        //$metatags = "<meta http-equiv='Refresh' content='3; url=download.php?file=" . $file . "'>";
         $auto = true;
       } else if ($os == "Mac") {
         // necessary to grab the OS version:
@@ -24,9 +24,9 @@
           if ($os_version < 6 | $os_version > 12) {
             $os_version = 0;
           } else {
-            $mac_version = ($os_version > 8) ? "osx" : "osx-sl";
+            $mac_version = ($os_version > 8) ? "osx" : (($os_version > 6) ? "osx-ml" : "osx-sl");
             $file = $download_links[$mac_version];
-            $metatags = "<meta http-equiv='Refresh' content='3; url=download.php?file=" . $file . "'>";
+            //$metatags = "<meta http-equiv='Refresh' content='3; url=download.php?file=" . $file . "'>";
             $auto = true;
           }
         }
@@ -60,13 +60,24 @@
 
     <h3>Thank you for downloading <?php echo $inzight_text; ?></h3>
 
-    <p>
+    <p class="large-break">
       The file should begin downloading automatically after 3 seconds.
       If it does not,
       <a href="<?php echo "./" . $download_dir . $file; ?>">click here to start the download</a>.
     </p>
 
-  <?php } else { ?>
+  <?php
+    // Display installation instructions - these will grab data from $_GET
+    switch ($os) {
+      case "Windows":
+      case "Mac":
+        include('instructions/install_mac.php');
+        break;
+      case "Linux":
+    }
+
+
+  } else { ?>
     <!--
       ///// REQUIRE USER TO SELECT DOWNLOAD VERSION
       ///// Select operating system, version, and then download the file.
@@ -93,26 +104,17 @@
 
       <div class="options">
         <?php
-          for ($v = 10; $v >= 8; $v--) {
+          foreach (array(10 => "Yosemite",
+                         9  => "Mavericks",
+                         8  => "Lion/Mountain Lion",
+                         6  => "Snow Leopard") as $v => $vname) {
             echo "<a href='#' class='option";
             echo ($os_version == $v) ? " selected" : "";
             echo "' id='mac_v$v'>";
             echo "<span class='main-text'>";
             echo "10.$v";
-            if ($v == 8) {
-              echo " or lower";
-            }
             echo "</span><span class='sub-text'>";
-            switch ($v) {
-              case 10:
-                echo "\"Yosemite\"";
-                break;
-              case 9:
-                echo "\"Mavericks\"";
-                break;
-              default:
-                echo "Mountain Lion or earlier";
-            }
+            echo $vname;
             "</span></a>";
           }
         ?>
