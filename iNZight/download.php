@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2012 Armand Niculescu - media-division.com
  * Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -27,7 +28,7 @@ $file_path  = $_REQUEST['file'];
 $path_parts = pathinfo($file_path);
 $file_name  = $path_parts['basename'];
 $file_ext   = $path_parts['extension'];
-$file_path  = './downloads/' . $file_name;
+$file_path  = "./downloads/" . $file_name;
 
 // allow a file to be streamed instead of sent as an attachment
 $is_attachment = isset($_REQUEST['stream']) ? false : true;

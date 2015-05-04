@@ -381,7 +381,7 @@ ul {
 .col2 {
   color: #094b85; }
 
-.round-button, .feature .download .download_button, .horizontal .options .option {
+.round-button, .large-button, .feature .download .download_button, .horizontal .options .option, #dl_links .options .option {
   display: -webkit-box;
   display: -moz-box;
   display: box;
@@ -407,6 +407,7 @@ ul {
   -ms-flex-align: center;
   margin: 1em auto 0;
   width: 150px;
+  height: 3em;
   padding: 0.2em 0;
   background: #cdeefa;
   border: solid 2px #094b85;
@@ -415,22 +416,25 @@ ul {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   text-decoration: none; }
-  .round-button .main-text, .feature .download .download_button .main-text, .horizontal .options .option .main-text {
+  .round-button .main-text, .large-button .main-text, .feature .download .download_button .main-text, .horizontal .options .option .main-text, #dl_links .options .option .main-text {
     font-weight: bold;
     font-size: 1.1em;
     color: #094b85; }
-  .round-button .sub-text, .feature .download .download_button .sub-text, .horizontal .options .option .sub-text {
+  .round-button .sub-text, .large-button .sub-text, .feature .download .download_button .sub-text, .horizontal .options .option .sub-text, #dl_links .options .option .sub-text {
     font-size: 0.8em;
     color: #333; }
-  .round-button:hover, .feature .download .download_button:hover, .horizontal .options .option:hover {
+  .round-button:hover, .large-button:hover, .feature .download .download_button:hover, .horizontal .options .option:hover, #dl_links .options .option:hover {
     background: #71cff0; }
-  .round-button.selected, .feature .download .selected.download_button, .horizontal .options .selected.option {
+  .round-button.selected, .selected.large-button, .feature .download .selected.download_button, .horizontal .options .selected.option, #dl_links .options .selected.option {
     background: none;
     border-color: black; }
-    .round-button.selected .main-text, .feature .download .selected.download_button .main-text, .horizontal .options .selected.option .main-text {
+    .round-button.selected .main-text, .selected.large-button .main-text, .feature .download .selected.download_button .main-text, .horizontal .options .selected.option .main-text, #dl_links .options .selected.option .main-text {
       color: black; }
-    .round-button.selected:hover, .feature .download .selected.download_button:hover, .horizontal .options .selected.option:hover {
+    .round-button.selected:hover, .selected.large-button:hover, .feature .download .selected.download_button:hover, .horizontal .options .selected.option:hover, #dl_links .options .selected.option:hover {
       cursor: default; }
+
+.large-button {
+  width: 250px; }
 
 .header {
   margin: 0 auto;
@@ -1067,11 +1071,11 @@ ul {
       width: 90%;
       height: auto; }
 
-.horizontal {
+.horizontal, #dl_links {
   margin: 0 1em 2em; }
-  .horizontal .label {
+  .horizontal .label, #dl_links .label {
     font-weight: bold; }
-  .horizontal .options {
+  .horizontal .options, #dl_links .options {
     display: -webkit-box;
     display: -moz-box;
     display: box;
@@ -1096,7 +1100,7 @@ ul {
     justify-content: space-around;
     -ms-flex-pack: center; }
     @media (max-width: 700px) {
-      .horizontal .options {
+      .horizontal .options, #dl_links .options {
         -webkit-box-orient: vertical;
         -moz-box-orient: vertical;
         box-orient: vertical;
@@ -1139,5 +1143,8 @@ h3 {
   display: none; }
   #mac_ver_select.show, .show#linux_dist_select {
     display: block; }
+
+#dl_links {
+  margin-top: 2em; }
 
 /*# sourceMappingURL=main.css.map */

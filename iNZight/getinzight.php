@@ -63,7 +63,7 @@
     <p>
       The file should begin downloading automatically after 3 seconds.
       If it does not,
-      <a href="<?php echo $file; ?>">click here to start the download</a>.
+      <a href="<?php echo "./" . $download_dir . $file; ?>">click here to start the download</a>.
     </p>
 
   <?php } else { ?>
@@ -73,7 +73,7 @@
       ///// Redirects here, but uses above script instead.
     -->
 
-    <h3>Download <?php echo $inzight_text; ?></h3>
+    <h3>Download iNZightVIT</h3>
 
     <div class="horizontal" id="os_select">
       <div class="label">Operating System:</div>
@@ -151,7 +151,7 @@
             "</span></a>";
           }
         ?>
-        <a href="#" class="option" id="mac_v0">
+        <a href="#" class="option" id="linux_Other">
           <span class="main-text">Other</span>
           <span class="sub-text">Not formally supported</span>
         </a>
