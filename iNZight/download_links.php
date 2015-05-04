@@ -1,5 +1,5 @@
 <?php
-
+  define('__ROOT__', dirname(dirname(__FILE__)));
   require_once('assets/objects/setup.php');
   require_once('assets/functions/filesize.php');
 
@@ -39,4 +39,9 @@
       <span class="main-text">iNZightVIT for <?php echo $os; ?></span>
       <span class="sub-text"><?php echo $file_info; ?></span>
     </a>
+  </div>
+
+  <div class="space-above">
+    Already downloaded iNZight and just need the installation instructions?
+    <a href="<?php echo $href . '&inst'; ?>">Find them here!</a>
   </div>

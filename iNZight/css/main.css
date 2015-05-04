@@ -1142,16 +1142,24 @@ h3 {
 p {
   margin: 0.5em 2em 1em; }
 
+li {
+  margin: 0 0 1em; }
+
+li > p {
+  margin-left: 0; }
+
 .small {
   font-size: 0.8em; }
 
 .large-break {
   margin-bottom: 3em; }
 
+.space-above {
+  margin-top: 2em; }
+
 .note {
   font-size: 0.9em;
   font-style: italic;
-  margin-left: 0;
   color: #46873f; }
 
 #mac_ver_select, #linux_dist_select {

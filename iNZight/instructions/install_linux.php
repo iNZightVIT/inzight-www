@@ -1,5 +1,6 @@
 <?php
-  require_once('../assets/objects/setup.php');
+  define('__ROOT__', dirname(dirname(__FILE__)));
+  require_once(__ROOT__.'/assets/objects/setup.php');
 
   $dist = $_POST["dist"];
   if ($dist == "Other") { ?>

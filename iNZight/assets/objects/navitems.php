@@ -74,7 +74,7 @@
         if (is_array($link)) {
           if (array_key_exists('default', $link)) {
             $linkdef = $link['default'];
-            echo "<a href='$linkdef'>$text</a>";
+            echo "<a href='$linkdef' class='defaultLink'>$text</a>";
           } else {
             echo $text;
           }

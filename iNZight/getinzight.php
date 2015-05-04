@@ -1,4 +1,5 @@
 <?php
+  define('__ROOT__', dirname(dirname(__FILE__)));
   require_once('assets/objects/setup.php');
 
   // Try to detect platform
@@ -8,6 +9,8 @@
   $linux_dists = array("Ubuntu", "Debian", "Redhat_Suse");
   $distribution = "";
 
+  $install_only = isset($_GET["inst"]);
+
   if (isset($_GET["os"])) {
     if (in_array($_GET["os"], array("Windows", "Mac", "Linux"))) {
       $os = $_GET["os"];
@@ -15,7 +18,9 @@
       // auto download for Windows
       if ($os == "Windows") {
         $file = $download_links[$os];
-        //$metatags = "<meta http-equiv='Refresh' content='3; url=download.php?file=" . $file . "'>";
+        if (!$install_only) {
+          $metatags = "<meta http-equiv='Refresh' content='3; url=download.php?file=" . $file . "'>";
+        }
         $auto = true;
       } else if ($os == "Mac") {
         // necessary to grab the OS version:
@@ -26,7 +31,9 @@
           } else {
             $mac_version = ($os_version > 8) ? "osx" : (($os_version > 6) ? "osx-ml" : "osx-sl");
             $file = $download_links[$mac_version];
-            //$metatags = "<meta http-equiv='Refresh' content='3; url=download.php?file=" . $file . "'>";
+            if (!$install_only) {
+              $metatags = "<meta http-equiv='Refresh' content='3; url=download.php?file=" . $file . "'>";
+            }
             $auto = true;
           }
         }
@@ -51,7 +58,9 @@
   require_once('assets/includes/1-top_matter.php');
   require_once('assets/includes/2-header.php');
 
-  if ($auto) { ?>
+  if ($auto) {
+
+    if (!$install_only) { ?>
     <!--
       ///// AUTOMATICALLY START DOWNLOADING THE FILE
       ///// This is the case if redirection for windows, or have already
@@ -61,15 +70,20 @@
     <h3>Thank you for downloading <?php echo $inzight_text; ?></h3>
 
     <p class="large-break">
-      The file should begin downloading automatically after 3 seconds.
-      If it does not,
-      <a href="<?php echo "./" . $download_dir . $file; ?>">click here to start the download</a>.
+      The file should begin downloading automatically after 3 seconds.<br>
+      If it does not, use this direct link:
+      <a href="<?php echo "./" . $download_dir . $file; ?>">
+        <?php echo $baseURL . $download_dir . $file; ?>
+      </a>
     </p>
 
-  <?php
+  <?php }
+
     // Display installation instructions - these will grab data from $_GET
     switch ($os) {
       case "Windows":
+        include('instructions/install_windows.php');
+        break;
       case "Mac":
         include('instructions/install_mac.php');
         break;
