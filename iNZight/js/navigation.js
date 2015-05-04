@@ -3,8 +3,9 @@ $(".navstack").click(function() {
   $(".topnav").toggleClass('hideme');
 });
 
-$(".topnav>ul>li").click(function(){
+$(".topnav>ul>li").click(function(e){
   if ($(".navstack").is(":visible")) {
+    e.preventDefault();
     $(this).children('ul').addClass('current');
     $(".topnav ul>li>ul").not('.current').hide();
     $(this).children('ul').toggle();
