@@ -32,33 +32,8 @@
         margin-bottom: 1em
 
     .download_button
-      @include display(flex)
-      @include flex-direction(column)
-      @include align-items(center)
-
-      margin: 2em auto 0
-      width: 150px
-      padding: 0.2em 0
-      background: lighten($main-color-1, 40%)
-      border: solid 2px $main-color-2
-      @include border-top-radius(7px)
-      @include border-bottom-radius(7px)
-
-      text-decoration: none
-
-      .download_now
-        font:
-          weight: bold
-          size: 1.1em
-        color: $main-color-2
-
-      .os_name
-        font:
-          size: 0.8em
-        color: $text-color
-
-      &:hover
-        background: lighten($main-color-1, 20%)
+      @extend .round-button
+      margin-top: 2em
 
     .download-info,.dl-options
       .group

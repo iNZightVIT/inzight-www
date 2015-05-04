@@ -1,0 +1,16 @@
+.horizontal
+  margin: 0 1em 2em
+
+  .label
+    font-weight: bold
+
+  .options
+    @include display(flex)
+    @include flex-direction(row)
+    @include justify-content(space-around)
+
+    @include phone
+      @include flex-direction(column)
+
+    .option
+      @extend .round-button

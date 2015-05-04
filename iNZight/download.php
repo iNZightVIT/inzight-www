@@ -28,8 +28,7 @@ $path_parts = pathinfo($file_path);
 $file_name  = $path_parts['basename'];
 $file_ext   = $path_parts['extension'];
 $file_path  = './downloads/' . $file_name;
-echo $file_path;
-die();
+
 // allow a file to be streamed instead of sent as an attachment
 $is_attachment = isset($_REQUEST['stream']) ? false : true;
 

@@ -1,0 +1,38 @@
+.round-button
+  @include display(flex)
+  @include flex-direction(column)
+  @include align-items(center)
+
+  margin: 1em auto 0
+  width: 150px
+  padding: 0.2em 0
+  background: lighten($main-color-1, 40%)
+  border: solid 2px $main-color-2
+  @include border-top-radius(7px)
+  @include border-bottom-radius(7px)
+
+  text-decoration: none
+
+  .main-text
+    font:
+      weight: bold
+      size: 1.1em
+    color: $main-color-2
+
+  .sub-text
+    font:
+      size: 0.8em
+    color: $text-color
+
+  &:hover
+    background: lighten($main-color-1, 20%)
+
+  &.selected
+    background: none //lighten($main-color-1, 20%)
+    border-color: black
+
+    .main-text
+      color: black
+
+    &:hover
+      cursor: default

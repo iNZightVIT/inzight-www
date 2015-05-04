@@ -3,19 +3,44 @@
 
   // Try to detect platform
   $auto = false;
+  $os_version = 0;  // default to 0
+
+  $linux_dists = array("Ubuntu", "Debian", "Redhat_Suse");
+  $distribution = "";
 
   if (isset($_GET["os"])) {
-    if (in_array($_GET["os"], array("Windows", "Mac"))) {
+    if (in_array($_GET["os"], array("Windows", "Mac", "Linux"))) {
       $os = $_GET["os"];
 
       // auto download for Windows
       if ($os == "Windows") {
         $file = $download_links[$os];
-        $metatags = "<meta http-equiv='Refresh' content='1; url=download.php?file=" . $file . "'>";
+        $metatags = "<meta http-equiv='Refresh' content='3; url=download.php?file=" . $file . "'>";
         $auto = true;
+      } else if ($os == "Mac") {
+        // necessary to grab the OS version:
+        if (isset($_GET["v"])) {
+          $os_version = (int)$_GET["v"];
+          if ($os_version < 6 | $os_version > 12) {
+            $os_version = 0;
+          } else {
+            $mac_version = ($os_version > 8) ? "osx" : "osx-sl";
+            $file = $download_links[$mac_version];
+            $metatags = "<meta http-equiv='Refresh' content='3; url=download.php?file=" . $file . "'>";
+            $auto = true;
+          }
+        }
+      } else if ($os == "Linux") {
+        if (isset($_GET["dist"])) {
+          // we only want to allow these strings for now:
+          if (in_array($_GET["dist"], $linux_dists)) {
+            $distribution = $_GET["dist"];
+          }
+        }
       }
     }
   }
+
 
   if (!isset($os)) {
     require_once('assets/functions/os_detect.php');
@@ -26,15 +51,121 @@
   require_once('assets/includes/1-top_matter.php');
   require_once('assets/includes/2-header.php');
 
-
   if ($auto) { ?>
+    <!--
+      ///// AUTOMATICALLY START DOWNLOADING THE FILE
+      ///// This is the case if redirection for windows, or have already
+      ///// visited this page to select the necessary download.
+    -->
 
-    <h2>Downloading iNZight</h2>
+    <h3>Thank you for downloading <?php echo $inzight_text; ?></h3>
+
+    <p>
+      The file should begin downloading automatically after 3 seconds.
+      If it does not,
+      <a href="<?php echo $file; ?>">click here to start the download</a>.
+    </p>
+
+  <?php } else { ?>
+    <!--
+      ///// REQUIRE USER TO SELECT DOWNLOAD VERSION
+      ///// Select operating system, version, and then download the file.
+      ///// Redirects here, but uses above script instead.
+    -->
+
+    <h3>Download <?php echo $inzight_text; ?></h3>
+
+    <div class="horizontal" id="os_select">
+      <div class="label">Operating System:</div>
+
+      <div class="options">
+        <a href="getinzight.php?os=Windows" class="option<?php if ($os == "Windows") { echo " selected"; } ?>" id="os_windows">
+          <span class="main-text">Windows</span></a>
+        <a href="getinzight.php?os=Mac" class="option<?php if ($os == "Mac") { echo " selected"; } ?>" id="os_mac">
+          <span class="main-text">Macintosh</span></a>
+        <a href="getinzight.php?os=Linux" class="option<?php if ($os == "Linux") { echo " selected"; } ?>" id="os_linux">
+          <span class="main-text">Linux</span></a>
+      </div>
+    </div>
+
+    <div class="horizontal<?php if ($os == "Mac") { echo " show"; } ?>" id="mac_ver_select">
+      <div class="label">Mac OS X Version:</div>
+
+      <div class="options">
+        <?php
+          for ($v = 10; $v >= 8; $v--) {
+            echo "<a href='#' class='option";
+            echo ($os_version == $v) ? " selected" : "";
+            echo "' id='mac_v$v'>";
+            echo "<span class='main-text'>";
+            echo "10.$v";
+            if ($v == 8) {
+              echo " or lower";
+            }
+            echo "</span><span class='sub-text'>";
+            switch ($v) {
+              case 10:
+                echo "\"Yosemite\"";
+                break;
+              case 9:
+                echo "\"Mavericks\"";
+                break;
+              default:
+                echo "Mountain Lion or earlier";
+            }
+            "</span></a>";
+          }
+        ?>
+        <a href="#" class="option" id="mac_v0">
+          <span class="main-text">Unsure?</span>
+          <span class="sub-text">Find out here</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="horizontal<?php if ($os == "Linux") { echo " show"; } ?>" id="linux_dist_select">
+      <div class="label">Linux Distribution:</div>
+
+      <div class="options">
+        <?php
+          foreach ($linux_dists as $d) {
+            echo "<a href='#' class='option";
+            echo ($distribution == $d) ? " selected" : "";
+            echo "' id='linux_$d'>";
+            echo "<span class='main-text'>";
+            switch ($d) {
+              case "Redhat_Suse":
+                echo "Redhat/Suse";
+                break;
+              default:
+                echo $d;
+            }
+            echo "</span><span class='sub-text'>";
+            switch ($d) {
+              case "Ubuntu":
+                echo "(incl. Mint)";
+                break;
+              default:
+                echo "";
+            }
+            "</span></a>";
+          }
+        ?>
+        <a href="#" class="option" id="mac_v0">
+          <span class="main-text">Other</span>
+          <span class="sub-text">Not formally supported</span>
+        </a>
+      </div>
+    </div>
+
+
+    <div id="dl_links"></div>
 
   <?php }
 ?>
 
 
+<script src="js/downloadButtons.js"></script>
 
 <?php
 require_once('assets/includes/3-bottom_matter.php');
