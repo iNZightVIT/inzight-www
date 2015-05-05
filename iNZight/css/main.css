@@ -1127,7 +1127,20 @@ ul {
   .markdown h3 {
     font-size: 1em; }
   .markdown p {
-    margin: 0 0 1em; }
+    margin: 0.5em 0 1em; }
+
+img {
+  display: block;
+  margin: 0 auto; }
+  img.half-width {
+    width: 50%; }
+
+.navpanel {
+  display: block;
+  margin: 2em;
+  clear: both; }
+  .navpanel .next {
+    float: right; }
 
 html, body {
   height: 100%;
@@ -1189,5 +1202,16 @@ li > p {
 
 #dl_links {
   margin-top: 2em; }
+
+select {
+  width: 150px; }
+
+#mac_select {
+  display: none; }
+  #mac_select.show {
+    display: inline; }
+
+#startup_instructions {
+  margin: 2em 0; }
 
 /*# sourceMappingURL=main.css.map */

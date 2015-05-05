@@ -83,15 +83,26 @@
     switch ($os) {
       case "Windows":
         include('instructions/install_windows.php');
+        $post = "os=win";
         break;
       case "Mac":
         include('instructions/install_mac.php');
+        $post = "os=mac&v=$os_version";
         break;
       case "Linux":
+        $post = "os=linux";
+        break;
     }
 
+  ?>
 
-  } else { ?>
+  <div class="navpanel">
+    <a href="/user_guides/basics/getting_started.php?<?php echo $post; ?>" class="next">
+      Next step: Start iNZight
+    </a>
+  </div>
+
+  <?php } else { ?>
     <!--
       ///// REQUIRE USER TO SELECT DOWNLOAD VERSION
       ///// Select operating system, version, and then download the file.

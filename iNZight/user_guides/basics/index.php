@@ -17,8 +17,8 @@ require_once($rel . 'assets/includes/2-header.php');
 
 if (isset($topic)) {
   // display the contents
-  include_once($rel . 'assets/libraries/Parsedown.php');
-  $Pd = new Parsedown();
+  include_once($rel . 'assets/libraries/md.php');
+  $Pd = new ParsedownExtra();
   $text = file_get_contents($topic . ".Md");
 
   echo "<div class='markdown'>";
@@ -42,7 +42,13 @@ if (isset($topic)) {
     <?php
       foreach ($contents as $url => $info) {
         echo "<li>";
-        echo "<a href='?topic=$url'>$info->title</a>";
+        // If it's a PHP page, display that, otherwise topic=X
+        $inf = pathinfo($url);
+        if (array_key_exists("extension", $inf)) {
+          echo "<a href='$url'>$info->title</a>";
+        } else {
+          echo "<a href='?topic=$url'>$info->title</a>";
+        }
         if (array_key_exists("desc", $info)) {
           echo "<p class='desc'>$info->desc</p>";
         }
