@@ -97,6 +97,8 @@
   ?>
 
   <div class="navpanel">
+    <span class="prev"></span>
+    <span class="section_toc"></span>
     <a href="/user_guides/basics/getting_started.php?<?php echo $post; ?>" class="next">
       Next step: Start iNZight
     </a>

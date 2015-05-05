@@ -381,7 +381,7 @@ ul {
 .col2 {
   color: #094b85; }
 
-.round-button, .large-button, .feature .download .download_button, .horizontal .options .option, #dl_links .options .option {
+.round-button, .large-button, .feature .download .download_button, .horizontal .options .option, #dl_links .options .option, select {
   display: -webkit-box;
   display: -moz-box;
   display: box;
@@ -416,21 +416,21 @@ ul {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   text-decoration: none; }
-  .round-button .main-text, .large-button .main-text, .feature .download .download_button .main-text, .horizontal .options .option .main-text, #dl_links .options .option .main-text {
+  .round-button .main-text, .large-button .main-text, .feature .download .download_button .main-text, .horizontal .options .option .main-text, #dl_links .options .option .main-text, select .main-text {
     font-weight: bold;
     font-size: 1.1em;
     color: #094b85; }
-  .round-button .sub-text, .large-button .sub-text, .feature .download .download_button .sub-text, .horizontal .options .option .sub-text, #dl_links .options .option .sub-text {
+  .round-button .sub-text, .large-button .sub-text, .feature .download .download_button .sub-text, .horizontal .options .option .sub-text, #dl_links .options .option .sub-text, select .sub-text {
     font-size: 0.8em;
     color: #333; }
-  .round-button:hover, .large-button:hover, .feature .download .download_button:hover, .horizontal .options .option:hover, #dl_links .options .option:hover {
+  .round-button:hover, .large-button:hover, .feature .download .download_button:hover, .horizontal .options .option:hover, #dl_links .options .option:hover, select:hover {
     background: #71cff0; }
-  .round-button.selected, .selected.large-button, .feature .download .selected.download_button, .horizontal .options .selected.option, #dl_links .options .selected.option {
+  .round-button.selected, .selected.large-button, .feature .download .selected.download_button, .horizontal .options .selected.option, #dl_links .options .selected.option, select.selected {
     background: none;
     border-color: black; }
-    .round-button.selected .main-text, .selected.large-button .main-text, .feature .download .selected.download_button .main-text, .horizontal .options .selected.option .main-text, #dl_links .options .selected.option .main-text {
+    .round-button.selected .main-text, .selected.large-button .main-text, .feature .download .selected.download_button .main-text, .horizontal .options .selected.option .main-text, #dl_links .options .selected.option .main-text, select.selected .main-text {
       color: black; }
-    .round-button.selected:hover, .selected.large-button:hover, .feature .download .selected.download_button:hover, .horizontal .options .selected.option:hover, #dl_links .options .selected.option:hover {
+    .round-button.selected:hover, .selected.large-button:hover, .feature .download .selected.download_button:hover, .horizontal .options .selected.option:hover, #dl_links .options .selected.option:hover, select.selected:hover {
       cursor: default; }
 
 .large-button {
@@ -1136,11 +1136,30 @@ img {
     width: 50%; }
 
 .navpanel {
-  display: block;
-  margin: 2em;
-  clear: both; }
-  .navpanel .next {
-    float: right; }
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: justify;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 2em; }
 
 html, body {
   height: 100%;
@@ -1204,7 +1223,10 @@ li > p {
   margin-top: 2em; }
 
 select {
-  width: 150px; }
+  width: 150px;
+  height: auto;
+  margin: 0;
+  display: inline-block; }
 
 #mac_select {
   display: none; }

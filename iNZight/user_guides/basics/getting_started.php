@@ -16,37 +16,47 @@ if (isset($_GET['os'])) {
   }
 }
 
+$contents = json_decode(file_get_contents("contents.js"));
+echo "<a href='./'>&lt; " . $contents->index->title . "</a>";
 ?>
+
+
 
 <div class="markdown">
 
-<?php
-include_once($rel . 'assets/libraries/md.php');
-$Pd = new ParsedownExtra();
-$text = file_get_contents("getting_started.Md");
+  <?php
+  include_once($rel . 'assets/libraries/md.php');
+  $Pd = new ParsedownExtra();
+  $text = file_get_contents("getting_started.Md");
 
-echo $Pd->text($text);
-?>
+  echo $Pd->text($text);
+  ?>
 
-<select id="os_select" name="os-select">
-  <option value=""></option>
-  <option value="windows" <?php if ($os == "win") echo 'selected'; ?>>Windows</option>
-  <option value="mac" <?php if ($os == "mac") echo 'selected'; ?>>Mac</option>
-  <option value="linux" <?php if ($os == "linux") echo 'selected'; ?>>Linux</option>
-</select>
+  <select id="os_select" name="os-select">
+    <option value=""></option>
+    <option value="windows" <?php if ($os == "win") echo 'selected'; ?>>Windows</option>
+    <option value="mac" <?php if ($os == "mac") echo 'selected'; ?>>Mac</option>
+    <option value="linux" <?php if ($os == "linux") echo 'selected'; ?>>Linux</option>
+  </select>
 
-<select id="mac_select" name="mac-select"<?php if ($os == "mac") echo 'class="show"'; ?>>
-  <option value=""></option>
-  <option value="10" <?php if ($v == 10) echo 'selected'; ?>>Yosemite</option>
-  <option value="9" <?php if ($v == 9) echo 'selected'; ?>>Mavericks</option>
-  <option value="8" <?php if ($v == 8) echo 'selected'; ?>>Mountain Lion</option>
-  <option value="7" <?php if ($v == 7) echo 'selected'; ?>>Lion</option>
-  <option value="6" <?php if ($v == 6) echo 'selected'; ?>>Snow Leopard</option>
-</select>
+  <select id="mac_select" name="mac-select"<?php if ($os == "mac") echo 'class="show"'; ?>>
+    <option value=""></option>
+    <option value="10" <?php if ($v == 10) echo 'selected'; ?>>Yosemite</option>
+    <option value="9" <?php if ($v == 9) echo 'selected'; ?>>Mavericks</option>
+    <option value="8" <?php if ($v == 8) echo 'selected'; ?>>Mountain Lion</option>
+    <option value="7" <?php if ($v == 7) echo 'selected'; ?>>Lion</option>
+    <option value="6" <?php if ($v == 6) echo 'selected'; ?>>Snow Leopard</option>
+  </select>
 
 
-<div id="startup_instructions"></div>
+  <div id="startup_instructions"></div>
 
+
+
+  <?php
+  $topic = "getting_started.php";
+  include($rel . 'assets/includes/bottom_navbar.php');
+  ?>
 
 </div>
 

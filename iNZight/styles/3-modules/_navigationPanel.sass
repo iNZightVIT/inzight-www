@@ -1,8 +1,6 @@
 .navpanel
-  display: block
+  @include display(flex)
+  @include justify-content(space-between)
+  @include flex-wrap(wrap)
+
   margin: 2em
-
-  clear: both
-
-  .next
-    float: right

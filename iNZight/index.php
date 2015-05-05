@@ -21,7 +21,7 @@ require_once('assets/includes/2-header.php');
       </a>
 
       <span class="alt-options">
-        (<a href="mac.php">Mac</a> or <a href="ruser.php">Linux</a> download)
+        (<a href="getinzight.php?os=Mac">Mac</a> or <a href="getinzight.php?os=Linux">Linux</a> download)
       </span>
 
       <div class="group">

@@ -16,23 +16,32 @@ require_once($rel . 'assets/includes/2-header.php');
 
 
 if (isset($topic)) {
-  // display the contents
-  include_once($rel . 'assets/libraries/md.php');
-  $Pd = new ParsedownExtra();
-  $text = file_get_contents($topic . ".Md");
-
+  echo "<a href='./'>&lt; " . $contents->index->title . "</a>";
   echo "<div class='markdown'>";
-  echo $Pd->text($text);
-  echo "</div>";
 
+  // check Md exists:
+  if (file_exists($topic.".Md")) {
+
+    // display the contents
+    include_once($rel . 'assets/libraries/md.php');
+    $Pd = new ParsedownExtra();
+    $text = file_get_contents($topic . ".Md");
+
+    echo $Pd->text($text);
+  } else {
+    echo "<h1>Sorry, this page isn't ready yet.</h1>";
+  }
+
+  include($rel . 'assets/includes/bottom_navbar.php');
+
+  echo "</div>";
 } else { ?>
 
 
-<h3>iNZight User Guides: The Basics</h3>
+<h3>iNZight User Guides: <?php echo $contents->index->title; ?></h3>
 
 <p>
-  This section will outline the very basics of iNZight. Thanks to the simplicity of
-  the design, you will be exploring your data within minutes!
+  <?php echo $contents->index->desc; ?>
 </p>
 
 <div class="contents_list">
@@ -41,6 +50,9 @@ if (isset($topic)) {
   <ol>
     <?php
       foreach ($contents as $url => $info) {
+        if ($url == "index") {
+          continue;
+        }
         echo "<li>";
         // If it's a PHP page, display that, otherwise topic=X
         $inf = pathinfo($url);
