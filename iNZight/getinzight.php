@@ -1,6 +1,6 @@
 <?php
-  define('__ROOT__', dirname(dirname(__FILE__)));
-  require_once('assets/objects/setup.php');
+  $rel = "./";
+  require_once($rel . 'assets/objects/setup.php');
 
   // Try to detect platform
   $auto = false;

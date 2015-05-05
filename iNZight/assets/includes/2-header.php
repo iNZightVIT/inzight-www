@@ -2,7 +2,7 @@
   <div class="topnav hideme">
     <div class="nav-stack-wrap">
       <div class="logo">
-        <a href="index.php"><img src="img/inzight_transp.png"></a>
+        <a href="/index.php"><img src="/img/inzight_transp.png"></a>
       </div>
 
       <div class="navstack">
@@ -13,7 +13,7 @@
     </div>
 
     <?php
-    require('assets/objects/navitems.php');
+    require($rel . 'assets/objects/navitems.php');
     writeList($navitems);
     ?>
   </div>

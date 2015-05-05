@@ -32,15 +32,15 @@
 
     // Alternative option:
     'User Guides' => array(
-      'default' => 'guides.php',
-      'The Basics' => 'basics.php',
-      'Plot Options' => 'plot_options.php',
-      'Manipulate Variables' => 'manip_vars.php',
-      'Data Options' => 'data_options.php',       // row ops, reshape, ...
-      'Add-on Modules' => 'addons.php'
+      'default' => 'user_guides/',
+      'The Basics' => 'basics/',
+      'Plot Options' => 'plot_options/',
+      'Manipulate Variables' => 'manipulate_variables/',
+      'Data Options' => 'data_options/',       // row ops, reshape, ...
+      'Add-on Modules' => 'add_ons/'
     ),
     'Support' => array(
-      'default' => 'support.php',
+      'default' => 'support/',
       //'Known Issues' => 'issues.php',
       'FAQ' => 'faq.php',
       'Email Lists' => 'email_lists.php',
@@ -49,7 +49,7 @@
       //'Development' => 'development.php'
     ),
     'About' => array(
-      'default' => 'aboutus.php',
+      'default' => 'about/',
       'Team' => 'team.php',
       'Development' => 'development.php',
       'Privacy' => 'privacy.php'
@@ -65,22 +65,28 @@
     )
   );
 
-  function writeList($items) {
+  function writeList($items, $prefix = "") {
     echo "<ul>";
 
     foreach($items as $text=>$link) {
       if ($text != 'default') {
         echo '<li>';
         if (is_array($link)) {
+          $prefix = "";
           if (array_key_exists('default', $link)) {
             $linkdef = $link['default'];
-            echo "<a href='$linkdef' class='defaultLink'>$text</a>";
+            echo "<a href='/$linkdef' class='defaultLink'>$text</a>";
+
+            $parts = pathinfo($linkdef);
+            if (!array_key_exists("extension", $parts)) {
+              $prefix = $linkdef;
+            }
           } else {
             echo $text;
           }
-          writeList($link);
+          writeList($link, $prefix);
         } else {
-          echo "<a href='$link'>$text</a>";
+          echo "<a href='/$prefix$link'>$text</a>";
         }
         echo '</li>';
       }

@@ -1,0 +1,2 @@
+Discover more about your data by colouring by levels of a factor, or adjust
+how your plot looks by specifying colours and customising labels.

@@ -1,7 +1,7 @@
 <?php
-  define('__ROOT__', dirname(dirname(__FILE__)));
-  require_once('assets/objects/setup.php');
-  require_once('assets/functions/filesize.php');
+  $rel = "./";
+  require_once($rel . 'assets/objects/setup.php');
+  require_once($rel . 'assets/functions/filesize.php');
 
   $href  = "getinzight.php?";
   $href .= "os=" . $_POST["os"];

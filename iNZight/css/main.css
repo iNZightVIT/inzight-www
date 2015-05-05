@@ -1109,6 +1109,26 @@ ul {
         flex-direction: column;
         -ms-flex-direction: column; } }
 
+.contents_list {
+  margin: 2em 3em; }
+  .contents_list .label {
+    font-size: 1.1em;
+    font-weight: bold; }
+  .contents_list .desc {
+    font-size: 0.9em;
+    font-style: italic; }
+
+.markdown {
+  margin: 1em 2em; }
+  .markdown h1 {
+    font-size: 1.2em; }
+  .markdown h2 {
+    font-size: 1.1em; }
+  .markdown h3 {
+    font-size: 1em; }
+  .markdown p {
+    margin: 0 0 1em; }
+
 html, body {
   height: 100%;
   background: #fff;
