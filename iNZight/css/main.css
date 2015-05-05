@@ -1135,6 +1135,16 @@ img {
   img.half-width {
     width: 50%; }
 
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; }
+  .video-wrapper iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0; }
+
 .navpanel {
   display: -webkit-box;
   display: -moz-box;

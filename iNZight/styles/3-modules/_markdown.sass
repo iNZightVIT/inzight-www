@@ -19,3 +19,16 @@ img
 
   &.half-width
     width: 50%
+
+.video-wrapper
+  position: relative
+
+  &.asp16x9  // 16:9 aspect ratio: 9/16 = 0.5625
+  padding-bottom: 56.25%
+
+  iframe
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
