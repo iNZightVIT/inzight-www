@@ -2,7 +2,14 @@
 "faq": {
   "Download and Installation": {
     "Windows": {
-      "Question": "Answer"
+      "Question": 
+      "The answer is written in __Markdown__. So we have
+      
+      - all the usual formatting,
+      - easy to edit,
+      - no additional style sheet necessary.
+      
+      It's just a matter of how newlines are dealt with ..."
     },
     "Mac": {
       "Question": "Answer"
