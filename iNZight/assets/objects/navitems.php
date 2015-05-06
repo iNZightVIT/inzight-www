@@ -42,10 +42,10 @@
     'Support' => array(
       'default' => 'support/',
       //'Known Issues' => 'issues.php',
-      'FAQ' => 'faq.php',
-      'Email Lists' => 'email_lists.php',
-      'Version History' => 'changelog.php',
-      'Contact Us' => 'contact.php',
+      'FAQ' => 'faq/',
+      'Email Lists' => 'email_lists/',
+      'Version History' => 'changelog/',
+      'Contact Us' => 'contact/',
       //'Development' => 'development.php'
     ),
     'About' => array(

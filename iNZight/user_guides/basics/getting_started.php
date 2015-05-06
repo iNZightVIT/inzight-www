@@ -17,7 +17,7 @@ if (isset($_GET['os'])) {
 }
 
 $contents = json_decode(file_get_contents("contents.js"));
-echo "<a href='./'>&lt; " . $contents->index->title . "</a>";
+echo "<a href='./' class='small'>&lt; " . $contents->index->title . "</a>";
 ?>
 
 

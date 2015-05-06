@@ -2,6 +2,9 @@
 $rel = "./";
 require_once('assets/includes/1-top_matter.php');
 require_once('assets/includes/2-header.php');
+require_once('assets/functions/os_detect.php');
+
+$os = getOS();
 ?>
 
 
@@ -15,13 +18,21 @@ require_once('assets/includes/2-header.php');
 
   <div class="download">
     <div class="dl-options">
-      <a href="getinzight.php?os=Windows" class="download_button">
+      <a href="getinzight.php?os=<?php echo $os; ?>" class="download_button">
         <span class="main-text">Download Now</span>
-        <span class="sub-text">for Windows</span>
+        <span class="sub-text">for <?php echo $os; ?></span>
       </a>
 
       <span class="alt-options">
-        (<a href="getinzight.php?os=Mac">Mac</a> or <a href="getinzight.php?os=Linux">Linux</a> download)
+        <?php
+          $oss = array("Windows", "Mac", "Linux");
+          $links = array();
+          foreach ($oss as $OS) {
+            if ($OS == $os) { continue; }
+            $links[$OS] = "<a href='getinzight.php?os=$OS'>$OS</a>";
+          }
+          echo "(" . implode(" or ", $links) . " downloads)";
+        ?>
       </span>
 
       <div class="group">
