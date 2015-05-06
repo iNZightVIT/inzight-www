@@ -1,0 +1,14 @@
+{
+"faq": {
+  "Download and Installation": {
+    "Windows": {
+      "Question": "Answer"
+    },
+    "Mac": {
+      "Question": "Answer"
+    },
+    "Linux": {
+      "Question": "Answer"
+    }
+  }
+}}
