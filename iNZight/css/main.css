@@ -1193,6 +1193,10 @@ img {
   .navpanel .next {
     text-align: right; }
 
+.faq h1 {
+  font-size: 1em;
+  padding-top: 1em; }
+
 html, body {
   height: 100%;
   background: #fff;
