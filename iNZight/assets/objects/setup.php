@@ -1,5 +1,5 @@
 <?php
-  $baseURL = "/var/www/iNZight/";   // This should be the main host ...
+  $baseURL = "https://www.stat.auckland.ac.nz/~wild/iNZight/";   // This should be the main host ...
   $download_dir = "downloads/";
 
   $download_links = array(

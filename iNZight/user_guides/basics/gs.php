@@ -55,7 +55,7 @@ if ($mac) {
         if ($v > 7) { ?>
           <p class="note">
             Note: if you get an "Unknown developper" warning, you'll need to
-            <a href="/getinzight.php?os=Mac&v=<?php echo $v; ?>&inst">
+            <a href="../../getinzight.php?os=Mac&v=<?php echo $v; ?>&inst">
               check back on the installation instructions
             </a>
             to see how to manually allow iNZight to run the first time.

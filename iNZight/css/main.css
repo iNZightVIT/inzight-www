@@ -1174,11 +1174,11 @@ img {
   -o-align-items: center;
   align-items: center;
   -ms-flex-align: center;
-  margin: 2em 0; }
+  margin: 2em; }
   @media (max-width: 700px) {
     .navpanel {
       font-size: 0.8em; } }
-  .navpanel a, .navpanel div {
+  .navpanel a, .navpanel span {
     -webkit-box-flex: 1;
     -moz-box-flex: 1;
     box-flex: 1;

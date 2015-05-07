@@ -12,15 +12,12 @@ if (isset($_GET["topic"])) {
 require_once($rel . 'assets/includes/1-top_matter.php');
 require_once($rel . 'assets/includes/2-header.php');
 
-
-
 if (isset($topic)) {
   echo "<a href='./' class='small'>&lt; " . $contents->index->title . "</a>";
   echo "<div class='markdown'>";
 
   // check Md exists:
   if (file_exists($topic.".Md")) {
-
     // display the contents
     include_once($rel . 'assets/libraries/md.php');
     $Pd = new ParsedownExtra();
@@ -31,9 +28,9 @@ if (isset($topic)) {
     echo "<h1>Sorry, this page isn't ready yet.</h1>";
   }
 
-  include($rel . 'assets/includes/bottom_navbar.php');
-
   echo "</div>";
+
+  include($rel . 'assets/includes/bottom_navbar.php');
 } else { ?>
 
 

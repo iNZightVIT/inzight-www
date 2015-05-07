@@ -99,7 +99,7 @@
   <div class="navpanel">
     <span class="prev"></span>
     <span class="section_toc"></span>
-    <a href="/user_guides/basics/getting_started.php?<?php echo $post; ?>" class="next">
+    <a href="<?php echo $rel; ?>user_guides/basics/getting_started.php?<?php echo $post; ?>" class="next">
       Next step: Start iNZight
     </a>
   </div>
@@ -194,8 +194,8 @@
 ?>
 
 
-<script src="js/downloadButtons.js"></script>
+<script src="<?php echo $rel; ?>js/downloadButtons.js"></script>
 
 <?php
-require_once('assets/includes/3-bottom_matter.php');
+require_once($rel . 'assets/includes/3-bottom_matter.php');
 ?>

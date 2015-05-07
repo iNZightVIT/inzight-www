@@ -52,16 +52,15 @@ echo "<a href='./' class='small'>&lt; " . $contents->index->title . "</a>";
   <div id="startup_instructions"></div>
 
 
-
-  <?php
-  $topic = "getting_started.php";
-  include($rel . 'assets/includes/bottom_navbar.php');
-  ?>
-
 </div>
 
+<?php
+$topic = "getting_started.php";
+include($rel . 'assets/includes/bottom_navbar.php');
+?>
 
-<script src="/js/selectOSmenu.js"></script>
+
+<script src="<?php echo $rel; ?>js/selectOSmenu.js"></script>
 
 <?php
 require_once($rel . 'assets/includes/3-bottom_matter.php');
