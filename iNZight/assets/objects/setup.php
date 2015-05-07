@@ -1,5 +1,5 @@
 <?php
-  $baseURL = "localhost:8080/";
+  $baseURL = "/var/www/iNZight/";   // This should be the main host ...
   $download_dir = "downloads/";
 
   $download_links = array(

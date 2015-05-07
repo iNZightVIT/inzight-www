@@ -11,8 +11,8 @@
       }
     ?>
 
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
-    <script src="/js/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo $rel; ?>css/main.css">
+    <script src="<?php echo $rel;?>js/jquery-2.1.3.min.js"></script>
 
     <title>iNZight for Data Analysis</title>
   </head>

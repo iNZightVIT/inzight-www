@@ -65,7 +65,7 @@
     )
   );
 
-  function writeList($items, $prefix = "") {
+  function writeList($items, $rel, $prefix = "") {
     echo "<ul>";
 
     foreach($items as $text=>$link) {
@@ -75,7 +75,7 @@
           $prefix = "";
           if (array_key_exists('default', $link)) {
             $linkdef = $link['default'];
-            echo "<a href='/$linkdef' class='defaultLink'>$text</a>";
+            echo "<a href='$rel$prefix$linkdef' class='defaultLink'>$text</a>";
 
             $parts = pathinfo($linkdef);
             if (!array_key_exists("extension", $parts)) {
@@ -84,9 +84,12 @@
           } else {
             echo $text;
           }
-          writeList($link, $prefix);
+          writeList($link, $rel, $prefix);
         } else {
-          echo "<a href='/$prefix$link'>$text</a>";
+          if (preg_match("/^http/", $link)) {
+            $rel = "";
+          }
+          echo "<a href='$rel$prefix$link'>$text</a>";
         }
         echo '</li>';
       }

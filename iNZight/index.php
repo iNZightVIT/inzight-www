@@ -118,5 +118,5 @@ if (!in_array($os, $oss)) {
 
 
 <?php
-require_once($rel . 'assets/includes/3-bottom_matter.php');
+require_once('assets/includes/3-bottom_matter.php');
 ?>
