@@ -5,6 +5,11 @@ require_once('assets/includes/2-header.php');
 require_once('assets/functions/os_detect.php');
 
 $os = getOS();
+$oss = array("Windows", "Mac", "Linux");
+
+if (!in_array($os, $oss)) {
+  $os = "Tablet";
+}
 ?>
 
 
@@ -18,31 +23,40 @@ $os = getOS();
 
   <div class="download">
     <div class="dl-options">
-      <a href="getinzight.php?os=<?php echo $os; ?>" class="download_button">
+      <a href="getinzight.php<?php if ($os != "Tablet") echo "?os=$os"; ?>" class="download_button">
         <span class="main-text">Download Now</span>
-        <span class="sub-text">for <?php echo $os; ?></span>
+        <span class="sub-text">
+        <?php
+          if ($os != "Tablet") {
+            echo "for $os";
+          } else {
+            echo "for Desktop";
+          }
+        ?>
+        </span>
       </a>
 
       <span class="alt-options">
-        <?php
-          $oss = array("Windows", "Mac", "Linux");
-          $links = array();
-          foreach ($oss as $OS) {
-            if ($OS == $os) { continue; }
-            $links[$OS] = "<a href='getinzight.php?os=$OS'>$OS</a>";
-          }
-          echo "(" . implode(" or ", $links) . " downloads)";
-        ?>
+        <?php if ($os != "Tablet") { ?>
+          <?php
+            $links = array();
+            foreach ($oss as $OS) {
+              if ($OS == $os) { continue; }
+              $links[$OS] = "<a href='getinzight.php?os=$OS'>$OS</a>";
+            }
+            echo "(" . implode(" or ", $links) . " downloads)";
+          ?>
+        <?php } ?>
       </span>
 
       <div class="group">
         <span class="group-label">Latest Version:</span>
-        <span class="group-value">2.0.4</span>
+        <span class="group-value">2.1</span>
       </div>
 
       <div class="group">
         <span class="group-label">Release Date:</span>
-        <span class="group-value">02.02.2015</span>
+        <span class="group-value">01.05.2015</span>
       </div>
     </div>
 

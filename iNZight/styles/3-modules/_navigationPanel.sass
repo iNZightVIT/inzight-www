@@ -1,6 +1,21 @@
 .navpanel
   @include display(flex)
   @include justify-content(space-between)
-  @include flex-wrap(wrap)
+  @include align-items(center)
 
-  margin: 2em
+  margin: 2em 0
+
+  @include phone
+    font-size: 0.8em
+
+  a, div
+    @include flex(1)
+
+  .prev
+    text-align: left
+
+  .section_toc
+    text-align: center
+
+  .next
+    text-align: right

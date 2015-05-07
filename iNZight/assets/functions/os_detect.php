@@ -24,7 +24,7 @@
                               '/macintosh|mac os x/i' =>  array('Mac', 'OS X'),
                               '/mac_powerpc/i'        =>  array('Mac', 'OS 9'),
                               '/linux/i'              =>  array('Linux'),
-                              '/ubuntu/i'             =>  array('Ubuntu'),
+                              '/ubuntu/i'             =>  array('Linux', 'Ubuntu'),
                               '/iphone/i'             =>  array('iPhone'),
                               '/ipod/i'               =>  array('iPod'),
                               '/ipad/i'               =>  array('iPad'),
