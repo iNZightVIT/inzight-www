@@ -1,5 +1,5 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,800italic,400,300,700,800);
-@import url(http://fonts.googleapis.com/css?family=PT+Sans+Caption:700,400);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,800italic,400,300,700,800);
+@import url(//fonts.googleapis.com/css?family=PT+Sans+Caption:700,400);
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1126,7 +1126,8 @@ ul {
   .markdown h1 {
     font-size: 1.2em; }
   .markdown h2 {
-    font-size: 1.1em; }
+    font-size: 1.1em;
+    margin-top: 2em; }
   .markdown h3 {
     font-size: 1em; }
   .markdown p {

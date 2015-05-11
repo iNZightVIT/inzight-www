@@ -23,7 +23,23 @@ if (isset($topic)) {
     $Pd = new ParsedownExtra();
     $text = file_get_contents($topic . ".Md");
 
-    echo $Pd->text($text);
+    // search for Videos:
+    $textArray = explode("///", $text);
+
+    foreach($textArray as $text) {
+      if (preg_match("/^VIDEO: /", $text)) {
+        // remove the video text and ponk the URL down:
+        echo "<div class='video-wrapper asp16x9'>";
+        echo "  <iframe width='560' height='315'";
+        echo "   src='".str_replace("VIDEO: ", "", $text)."'";
+        echo "   frameborder='0' allowfullscreen></iframe>";
+        echo "</div>";
+      } else {
+        echo $Pd->text($text);
+      }
+    }
+
+//    echo $Pd->text($text);
   } else {
     echo "<h1>Sorry, this page isn't ready yet.</h1>";
   }

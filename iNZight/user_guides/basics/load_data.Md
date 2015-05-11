@@ -10,8 +10,4 @@ The following video demonstrates this process to load the data set
 _Census at School-500.csv_ which you can find in the __Data__ folder
 that came with iNZight.
 
-<div class="video-wrapper asp16x9">
-  <iframe width="560" height="315"
-   src="https://www.youtube.com/embed/hM5D1FuapdE"
-   frameborder="0" allowfullscreen></iframe>
-</div>
+///VIDEO: https://www.youtube.com/embed/pyFUGGU3IiU ///
