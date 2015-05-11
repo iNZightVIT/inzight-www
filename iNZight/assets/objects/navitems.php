@@ -37,7 +37,7 @@
       'Plot Options' => 'plot_options/',
       'Manipulate Variables' => 'manipulate_variables/',
       'Data Options' => 'data_options/',       // row ops, reshape, ...
-      'Add-on Modules' => 'add_ons/'
+      'Additional Modules' => 'add_ons/'
     ),
     'Support' => array(
       'default' => 'support/',
