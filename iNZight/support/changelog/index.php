@@ -12,6 +12,8 @@ if (isset($_REQUEST['pkg'])) {
 
 if ($pkg == "none") { ?>
 
+<a href="../" class="small">&lt; Support</a>
+
 <div class="markdown">
   <h1>iNZight Version History</h1>
 

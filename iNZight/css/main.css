@@ -1210,6 +1210,7 @@ img {
   padding-top: 1em; }
 
 .rhistory h2 {
+  margin-top: 0;
   font-size: 1.2em; }
 .rhistory h3 {
   font-size: 1.1em;
