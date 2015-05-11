@@ -1121,18 +1121,18 @@ ul {
     font-size: 0.9em;
     font-style: italic; }
 
-.markdown {
+.markdown, .rhistory {
   margin: 1em 2em; }
-  .markdown h1 {
+  .markdown h1, .rhistory h1 {
     font-size: 1.2em; }
-  .markdown h2 {
+  .markdown h2, .rhistory h2 {
     font-size: 1.1em;
     margin-top: 2em; }
-  .markdown h3 {
+  .markdown h3, .rhistory h3 {
     font-size: 1em;
     padding: 0;
     margin: 2em 0 0; }
-  .markdown p {
+  .markdown p, .rhistory p {
     margin: 0.5em 0 1em; }
 
 img {
@@ -1208,6 +1208,18 @@ img {
 .faq h1 {
   font-size: 1em;
   padding-top: 1em; }
+
+.rhistory h2 {
+  font-size: 1.2em; }
+.rhistory h3 {
+  font-size: 1.1em;
+  margin-top: 2em; }
+.rhistory h4 {
+  font-size: 1em;
+  padding: 0;
+  margin: 2em 0 0; }
+.rhistory p {
+  margin: 0.5em 0 1em; }
 
 html, body {
   height: 100%;

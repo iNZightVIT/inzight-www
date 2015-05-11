@@ -5,14 +5,32 @@ require_once($rel . 'assets/includes/2-header.php');
 
 ?>
 
-<h3>iNZight Mailing Lists</h3>
+<a href="../" class="small">&lt; Support</a>
 
-<p>
-  Blah blah blah ...
-</p>
+<div class="markdown">
+  <?php
+    // display the contents
+    include_once($rel . 'assets/libraries/md.php');
+    $Pd = new ParsedownExtra();
+    $text = file_get_contents("lists.Md");
 
+    // search for Videos:
+    $textArray = explode("///", $text);
 
-
+    foreach($textArray as $text) {
+      if (preg_match("/^VIDEO: /", $text)) {
+        // remove the video text and ponk the URL down:
+        echo "<div class='video-wrapper asp16x9'>";
+        echo "  <iframe width='560' height='315'";
+        echo "   src='".str_replace("VIDEO: ", "", $text)."'";
+        echo "   frameborder='0' allowfullscreen></iframe>";
+        echo "</div>";
+      } else {
+        echo $Pd->text($text);
+      }
+    }
+  ?>
+</div>
 
 
 
