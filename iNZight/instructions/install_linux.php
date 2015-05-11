@@ -35,7 +35,7 @@
   <div class="label">Install iNZightVIT on Linux <?php echo $dist; ?>:</div>
 
   <p>
-    I may just redirect the user to the R users installation page.
+    <a href="https://www.stat.auckland.ac.nz/~wild/iNZight/ruser.php">Please get instructions here</a>.
   </p>
 
   <?php } ?>

@@ -11,8 +11,8 @@
       'Desktop' => 'getinzight.php',
       //'Windows' => 'win.php',
       //'Macintosh' => 'mac.php',
-      'Linux/R Users' => 'source.php',
-      'Tablets' => 'lite.php',
+      'Linux/R Users' => 'https://www.stat.auckland.ac.nz/~wild/iNZight/ruser.php',
+      'Tablets' => 'http://docker.stat.auckland.ac.nz/',
       'Data' => 'data.php'
     ),
     // 'Get Started' => array(
