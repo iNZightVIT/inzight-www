@@ -1129,15 +1129,22 @@ ul {
     font-size: 1.1em;
     margin-top: 2em; }
   .markdown h3 {
-    font-size: 1em; }
+    font-size: 1em;
+    padding: 0;
+    margin: 2em 0 0; }
   .markdown p {
     margin: 0.5em 0 1em; }
 
 img {
   display: block;
-  margin: 0 auto; }
+  margin: 0 auto;
+  max-width: 100%; }
   img.half-width {
     width: 50%; }
+  img.width600 {
+    width: 600px; }
+  img.width700 {
+    width: 700px; }
 
 .video-wrapper {
   position: relative;
