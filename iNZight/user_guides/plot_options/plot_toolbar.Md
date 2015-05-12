@@ -35,15 +35,11 @@ Use if the plot window seems to have stopped working or is not displaying your p
 Enables you to save the contents of the displayed plot as a file (in `.emf`, `.jpeg`, `.png`, or `.bmp` formats).
 
 
-## Add to Plot
-
-Allows inclusion of additional information on the plot or changes in plot appearance. [This is described in more detail here](./?topic=add_to_plot).
-
+## [Add to Plot](./?topic=add_to_plot)
 
 ## Remove Additions
 
 For removal of some or all additions made to a plot.
 
-## Inference Information
+## [Inference Information](./?topic=plot_inference)
 
-Asks for inferential mark-up of the plot. [This is described in more detail here](./?topic=plot_inference).

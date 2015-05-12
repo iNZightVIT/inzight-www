@@ -34,6 +34,7 @@
     'User Guides' => array(
       'default' => 'user_guides/',
       'The Basics' => 'basics/',
+      'Interface' => 'interface/',
       'Plot Options' => 'plot_options/',
       'Manipulate Variables' => 'manipulate_variables/',
       'Data Options' => 'data_options/',       // row ops, reshape, ...

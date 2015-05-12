@@ -5,14 +5,14 @@
 },
 "plot_toolbar" : {
   "title" : "Plot Toolbar Buttons",
-  "desc"  : "The main toolbar at the bottom of the plotting toolbar provides several options to users."
+  "desc"  : "<img src='../../img/user_guides/plot_toolbar.jpg' style='margin: 0;'>"
 },
 "add_to_plot" : {
   "title" : "Add to Plot",
-  "desc"  : "The Add To Plot menu allows users to customise the appearance of plots and add additional information."
+  "desc"  : "Customise the appearance of plots and add additional information"
 },
 "plot_inference" : {
   "title" : "Inference Information",
-  "desc"  : "Useful Inference information, such as confidence intervals, can be added to plots using this menu."
+  "desc"  : "Add inferential mark-up to plots"
 }
 }
