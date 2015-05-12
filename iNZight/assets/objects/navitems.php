@@ -50,9 +50,9 @@
     ),
     'About' => array(
       'default' => 'about/',
-      'Team' => 'team.php',
-      'Development' => 'development.php',
-      'Privacy' => 'privacy.php'
+      'Team' => 'team/',
+      'Development' => 'development/',
+      'Privacy' => 'privacy/'
     ),
     'Related' => array(
       'default' => 'related.php',
