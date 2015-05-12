@@ -1,0 +1,24 @@
+.top_message
+  font-size: 12px
+  background: $main-color-2
+  color: $comp-color-1
+
+  padding: 0.2em 1em
+
+  display: none
+
+  &.showme
+    @include display(flex)
+    @include justify-content(space-between)
+
+    @include phone
+      @include flex-direction(column)
+
+  .close
+    text-align: right
+    color: $link-color
+    font-weight: bold
+
+    &:hover
+      color: white
+      cursor: pointer

@@ -35,5 +35,11 @@
 
 
     <script src="<?php echo $rel; ?>js/navigation.js"></script>
+    <script type='text/javascript' language="javascript">
+    $("#hideMessage").click(function(){
+      $.post("<?php echo $rel; ?>hideMessage.php");
+      $(".top_message").slideUp();
+    });
+    </script>
   </body>
 </html>

@@ -12,7 +12,7 @@ unset($subdirs["default"]);
 
 <p>
   There are several options available to help you if you get stuck. If you haven't yet checked out the user guides,
-  <a href="/user_guides/">you might find answers there</a>.
+  <a href="../user_guides/">you might find answers there</a>.
 </p>
 
 

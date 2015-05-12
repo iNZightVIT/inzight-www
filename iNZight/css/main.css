@@ -1222,6 +1222,46 @@ img {
 .rhistory p {
   margin: 0.5em 0 1em; }
 
+.top_message {
+  font-size: 12px;
+  background: #094b85;
+  color: #eee;
+  padding: 0.2em 1em;
+  display: none; }
+  .top_message.showme {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    box-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+    -o-justify-content: space-between;
+    justify-content: space-between;
+    -ms-flex-pack: justify; }
+    @media (max-width: 700px) {
+      .top_message.showme {
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        box-orient: vertical;
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-direction: column; } }
+  .top_message .close {
+    text-align: right;
+    color: #18afe3;
+    font-weight: bold; }
+    .top_message .close:hover {
+      color: white;
+      cursor: pointer; }
+
 html, body {
   height: 100%;
   background: #fff;

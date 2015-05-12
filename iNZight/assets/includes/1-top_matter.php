@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 
 <html>
@@ -18,4 +19,19 @@
   </head>
 
   <body>
+    <?php
+      if (!isset($_SESSION["hide"])) {
+        $_SESSION["hide"] = false;
+      }
+      $hideMessage = $_SESSION["hide"];
+      ?>
+
+    <div class="top_message<?php if (!$hideMessage) { echo " showme"; } ?>">
+      <div>
+        This website is currently being developed. If you notice any problems or dead links, please report them to <a href="mailto:tell029@aucklanduni.ac.nz?subject=New Website">Tom Elliott</a>.
+      </div>
+
+      <div id="hideMessage" class="close">Close</div>
+    </div>
+
     <div class="wrapper">
