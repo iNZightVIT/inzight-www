@@ -63,12 +63,12 @@ switch ($os_version) {
         then right-click the new location and select "Paste Item".
       <?php } ?>
     </p> -->
-    <?php if (!$is_sl) { ?>
+  </li>
+  <?php if (!$is_sl) { ?>
     <a href="img/install/mac/open_folder.jpg" target="_blank" class="thumb">
       <img src="img/install/mac/open_folder.jpg">
     </a>
-    <?php } ?>
-  </li>
+  <?php } ?>
 
   <?php if ($os_version > 8) { ?>
 
