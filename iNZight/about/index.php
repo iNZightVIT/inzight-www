@@ -26,7 +26,7 @@ unset($subdirs["default"]);
   There are absolutely no restrictions. You can download for yourself or redistribute it.
   You can even modify it if you are so inclined!
   However, it is important to note that iNZight comes with absolutely no warranty.
-  See <a href="http://www.gnu.org/licenses/gpl-2.0-standalone.html" target="_blank">GNU General Public Licence 2.0</a>
+  See <a href="http://www.gnu.org/licenses/gpl-2.0.html" target="_blank">GNU General Public Licence 2.0</a>
   for more information.
 </p>
 

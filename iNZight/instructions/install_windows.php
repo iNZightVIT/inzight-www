@@ -19,7 +19,9 @@
     </p>
 
     <p>
-      Below are some possible setups for running iNZight.
+      <!--Below are some possible setups for running iNZight.-->
+      <a href="support/faq/?section=download&sub=windows">Check out the FAQ for help
+        setting iNZight up on your machine.</a>
     </p>
   </li>
 

@@ -28,7 +28,9 @@
 
     <div class="top_message<?php if (!$hideMessage) { echo " showme"; } ?>">
       <div>
-        This website is currently being developed. If you notice any problems or dead links, please report them to <a href="mailto:tell029@aucklanduni.ac.nz?subject=New Website">Tom Elliott</a>.
+        This website is currently being developed.
+        If you notice any problems or dead links,
+        <a href="mailto:tell029@aucklanduni.ac.nz?subject=New Website">please report them</a>.
       </div>
 
       <div id="hideMessage" class="close">Close</div>
