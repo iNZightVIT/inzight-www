@@ -7,5 +7,5 @@
     </li>
   </ol>
 
-  <img src="../img/install/mac/get_version.jpg">
+  <img src="img/install/mac/get_version.jpg">
 </div>

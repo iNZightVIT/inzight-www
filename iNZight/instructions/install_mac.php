@@ -64,8 +64,8 @@ switch ($os_version) {
       <?php } ?>
     </p> -->
     <?php if (!$is_sl) { ?>
-    <a href="../img/install/mac/open_folder.jpg" target="_blank" class="thumb">
-      <img src="../img/install/mac/open_folder.jpg">
+    <a href="img/install/mac/open_folder.jpg" target="_blank" class="thumb">
+      <img src="img/install/mac/open_folder.jpg">
     </a>
     <?php } ?>
   </li>
@@ -82,8 +82,8 @@ switch ($os_version) {
         and then close the window.
       </p>
 
-      <a href="../img/install/mac/disable_appnap.gif" target="_blank" class="thumb">
-        <img src="../img/install/mac/disable_appnap.gif">
+      <a href="img/install/mac/disable_appnap.gif" target="_blank" class="thumb">
+        <img src="img/install/mac/disable_appnap.gif">
       </a>
 
       <p class="note">
@@ -114,11 +114,11 @@ switch ($os_version) {
         icon the first time you update iNZight.
       </p>
 
-      <a href="../img/install/mac/allow_inzight.gif" target="_blank" class="thumb">
-        <img src="../img/install/mac/allow_inzight.gif">
+      <a href="img/install/mac/allow_inzight.gif" target="_blank" class="thumb">
+        <img src="img/install/mac/allow_inzight.gif">
       </a>
-      <a href="../img/install/mac/allow_update.gif" target="_blank" class="thumb">
-        <img src="../img/install/mac/allow_update.gif">
+      <a href="img/install/mac/allow_update.gif" target="_blank" class="thumb">
+        <img src="img/install/mac/allow_update.gif">
       </a>
     </li>
 
