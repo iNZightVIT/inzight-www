@@ -1315,6 +1315,19 @@ li > p {
   font-style: italic;
   color: #46873f; }
 
+a.thumb {
+  display: inline-block; }
+  a.thumb img {
+    max-width: 350px;
+    margin: 1em;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px; }
+    a.thumb img:hover {
+      cursor: -webkit-zoom-in;
+      cursor: -moz-zoom-in; }
+
 #mac_ver_select, #linux_dist_select {
   display: none; }
   #mac_ver_select.show, .show#linux_dist_select {

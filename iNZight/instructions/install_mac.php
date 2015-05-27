@@ -53,29 +53,38 @@ switch ($os_version) {
     <?php if ($is_sl) {
       echo "By default, this will be in your <b>Downloads</b> folder.";
     } else {
-      echo "By default, this will have been installed into your <b>Applications</b> folder.";
+      echo "By default, this will have been installed into your <b>Applications</b> folder:";
     } ?>
-    <p class="note">
+    <!-- <p class="note">
       Note: you may wish to move this to your desktop, or somewhere else you can easily find it later.
       Simply copy and paste the entire <b>iNZightVIT</b> folder to the desired location.
       <?php if (!$is_sl) { ?>
         However, drag-and-drop won't work; instead, <b>right-click</b> the folder and select "Copy",
         then right-click the new location and select "Paste Item".
       <?php } ?>
-    </p>
+    </p> -->
+    <?php if (!$is_sl) { ?>
+    <a href="../img/install/mac/open_folder.jpg" target="_blank" class="thumb">
+      <img src="../img/install/mac/open_folder.jpg">
+    </a>
+    <?php } ?>
   </li>
 
   <?php if ($os_version > 8) { ?>
 
     <li>
-      To ensure iNZight runs smoothly, you will need to disable <b>AppNap</b>,
-      a power-saving feature of OS X which affects the performance of iNZight.
+      Disable <b>AppNap</b>,
+      a power-saving feature of OS X which negatively affects the performance of iNZight.
 
       <p>
         To do this, simply <b>right-click</b> the <b>R</b> icon and click <b>Get Info</b>.
         In the window that appears, check the box next to "Disable AppNap",
         and then close the window.
       </p>
+
+      <a href="../img/install/mac/disable_appnap.gif" target="_blank" class="thumb">
+        <img src="../img/install/mac/disable_appnap.gif">
+      </a>
 
       <p class="note">
         Note: if you don't see the option to "Disable AppNap", don't worry! It just means
@@ -88,7 +97,8 @@ switch ($os_version) {
   if ($os_version > 7) { ?>
 
     <li>
-      Depending on your settings, you may need to manually allow iNZight to run the first time.
+      <b>Allow iNZight to run</b>. Unless you have changed your security settings, you will need
+        to manually allow iNZight to run the first time you use it.
 
       <p>
         To do this, <b>right-click</b> the <b>R</b> icon and click <b>Open</b>,
@@ -103,6 +113,13 @@ switch ($os_version) {
         If you wish to update iNZight, you will need to repeat the process for the "UPDATE_iNZightVIT.command"
         icon the first time you update iNZight.
       </p>
+
+      <a href="../img/install/mac/allow_inzight.gif" target="_blank" class="thumb">
+        <img src="../img/install/mac/allow_inzight.gif">
+      </a>
+      <a href="../img/install/mac/allow_update.gif" target="_blank" class="thumb">
+        <img src="../img/install/mac/allow_update.gif">
+      </a>
     </li>
 
   <?php } ?>
