@@ -1,1 +1,0 @@
-# Interface image with clickable regions

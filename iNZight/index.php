@@ -112,6 +112,25 @@ if (!in_array($os, $oss)) {
   </div>
 </div>
 
+<div class="explore">
+  <div class="exploretext">
+    <h3>
+      Numerical summaries available at the click of a button
+    </h3>
+
+    <p>
+      As with the smart plots, the <b>Get Summary</b> and <b>Get Inference</b> buttons quickly provide numerical
+      summaries relating to the displayed plot.
+      Tables of counts for categorical data; means, medians and variance for numerical;
+      and regression summaries for fitted trend lines.
+    </p>
+
+  </div>
+  <div class="image">
+      <img src="img/summaryInfo.gif">
+  </div>
+</div>
+
 
 
 
