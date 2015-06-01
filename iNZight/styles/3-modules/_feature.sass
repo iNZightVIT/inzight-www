@@ -80,6 +80,12 @@
           background: lighten($main-color-1, 40%)
 
 
+@include widescreen
+  .feature
+    max-width: 100%
+
+    .placeholder
+      padding: 0
 
 @include notlarge
   .feature

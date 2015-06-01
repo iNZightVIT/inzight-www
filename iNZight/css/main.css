@@ -983,6 +983,11 @@ ul {
         color: #18afe3;
         background: #cdeefa; }
 
+@media (min-width: 1100px) {
+  .feature {
+    max-width: 100%; }
+    .feature .placeholder {
+      padding: 0; } }
 @media (max-width: 950px) {
   .feature {
     -webkit-box-orient: vertical;
