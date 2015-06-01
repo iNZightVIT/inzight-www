@@ -447,8 +447,10 @@ ul {
   .header .topnav {
     background: #fff;
     color: #333;
+    max-width: 1024px;
     height: 4em;
     padding: 0 1em;
+    margin: 0 auto;
     display: -webkit-box;
     display: -moz-box;
     display: box;
@@ -1061,21 +1063,62 @@ ul {
   -moz-flex-direction: column;
   flex-direction: column;
   -ms-flex-direction: column; }
+  @media (min-width: 1100px) {
+    .explore {
+      -webkit-box-orient: horizontal;
+      -moz-box-orient: horizontal;
+      box-orient: horizontal;
+      -webkit-flex-direction: row;
+      -moz-flex-direction: row;
+      flex-direction: row;
+      -ms-flex-direction: row;
+      -webkit-align-content: center;
+      -moz-align-content: center;
+      align-content: center;
+      -ms-flex-line-pack: center;
+      -webkit-box-align: center;
+      -moz-box-align: center;
+      box-align: center;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      -ms-align-items: center;
+      -o-align-items: center;
+      align-items: center;
+      -ms-flex-align: center; } }
   .explore:nth-child(2n + 1) {
     background: #eee; }
+    @media (min-width: 1100px) {
+      .explore:nth-child(2n + 1) {
+        -webkit-box-orient: horizontal;
+        -moz-box-orient: horizontal;
+        box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        -moz-box-direction: reverse;
+        box-direction: reverse;
+        -webkit-flex-direction: row-reverse;
+        -moz-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse; } }
   .explore .exploretext {
     text-align: left;
     padding-bottom: 2em; }
     .explore .exploretext h3 {
       text-align: center; }
+    @media (min-width: 1100px) {
+      .explore .exploretext {
+        font-size: 1.2em;
+        width: 50%; } }
   .explore .image {
     text-align: center; }
     .explore .image img {
       width: 90%;
+      max-width: 960px;
       height: auto; }
 
 .horizontal, #dl_links {
-  margin: 0 1em 2em; }
+  margin: 0 auto 2em;
+  padding: 0 1em;
+  max-width: 960px; }
   .horizontal .label, #dl_links .label {
     font-weight: bold; }
   .horizontal .options, #dl_links .options {
@@ -1122,7 +1165,8 @@ ul {
     font-style: italic; }
 
 .markdown, .rhistory {
-  margin: 1em 2em; }
+  margin: 1em auto;
+  padding: 0 2em; }
   .markdown h1, .rhistory h1 {
     font-size: 1.2em; }
   .markdown h2, .rhistory h2 {
@@ -1147,8 +1191,15 @@ img {
     width: 700px; }
 
 .video-wrapper {
-  position: relative;
-  padding-bottom: 56.25%; }
+  position: relative; }
+  @media (max-width: 1099px) {
+    .video-wrapper.asp16x9 {
+      padding-bottom: 56.25%; } }
+  @media (min-width: 1100px) {
+    .video-wrapper {
+      width: 1000px;
+      height: 562.5px;
+      padding: 0; } }
   .video-wrapper iframe {
     position: absolute;
     width: 100%;
@@ -1273,8 +1324,7 @@ html, body {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -5em;
-  max-width: 1024px; }
+  margin: 0 auto -5em; }
 
 .footer, .push {
   height: 5em; }

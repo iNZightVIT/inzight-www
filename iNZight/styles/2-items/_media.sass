@@ -17,3 +17,11 @@
 @mixin notlarge
   @media (max-width: #{$large-width})
     @content
+
+@mixin widescreen
+  @media (min-width: #{$wide-width})
+    @content
+
+@mixin notwide
+  @media (max-width: #{$wide-width - 1})
+    @content

@@ -1,5 +1,6 @@
 .markdown
-  margin: 1em 2em
+  margin: 1em auto
+  padding: 0 2em
 
   h1
     font-size: 1.2em
@@ -26,15 +27,21 @@ img
 
   &.width600
     width: 600px
-    
+
   &.width700
     width: 700px
 
 .video-wrapper
   position: relative
 
-  &.asp16x9  // 16:9 aspect ratio: 9/16 = 0.5625
-  padding-bottom: 56.25%
+  @include notwide
+    &.asp16x9  // 16:9 aspect ratio: 9/16 = 0.5625
+      padding-bottom: 56.25%
+
+  @include widescreen
+    width: 1000px // $content-width
+    height: 562.5px // 0.5625 * $content-width
+    padding: 0
 
   iframe
     position: absolute
