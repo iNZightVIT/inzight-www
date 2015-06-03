@@ -65,6 +65,11 @@ if (!in_array($os, $oss)) {
         <span class="group-label">Release Date:</span>
         <span class="group-value"><?php echo $release_date; ?></span>
       </div>
+
+      <div class="group">
+        <span class="group-label">Price:</span>
+        <span class="group-value">100% FREE!</span>
+      </div>
     </div>
 
     <div class="download-info">
