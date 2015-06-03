@@ -1214,6 +1214,11 @@ ul {
     margin: 2em 0 0; }
   .markdown p, .rhistory p {
     margin: 0.5em 0 1em; }
+  .markdown ol > li, .rhistory ol > li {
+    clear: both; }
+
+.clear {
+  clear: both; }
 
 img {
   display: block;
@@ -1225,6 +1230,14 @@ img {
     width: 600px; }
   img.width700 {
     width: 700px; }
+  img.fright {
+    float: right;
+    margin: 0.5em 1em;
+    border: solid 2px #094b85; }
+    @media (max-width: 700px) {
+      img.fright {
+        float: none;
+        margin: 0.5em auto; } }
 
 .video-wrapper {
   position: relative; }

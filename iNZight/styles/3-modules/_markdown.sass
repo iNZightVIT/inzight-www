@@ -17,6 +17,14 @@
   p
     margin: 0.5em 0 1em
 
+
+  ol
+    >li
+      clear: both
+
+.clear
+  clear: both
+
 img
   display: block
   margin: 0 auto
@@ -30,6 +38,15 @@ img
 
   &.width700
     width: 700px
+
+  &.fright
+    float: right
+    margin: 0.5em 1em
+    border: solid 2px $main-color-2
+
+    @include phone
+      float: none
+      margin: 0.5em auto
 
 .video-wrapper
   position: relative
