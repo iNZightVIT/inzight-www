@@ -75,6 +75,10 @@ if (!in_array($os, $oss)) {
 </div>
 
 
+<div class="seeit">
+  See <?php echo $inzight_text; ?> in action ...
+</div>
+
 
 <div class="explore">
   <div class="exploretext">
