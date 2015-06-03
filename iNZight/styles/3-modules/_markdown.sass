@@ -18,12 +18,14 @@
     margin: 0.5em 0 1em
 
 
-  ol
+  >ol
+    @include clearfix
+    
     >li
       clear: both
 
 .clear
-  clear: both
+  @include clearfix
 
 img
   display: block

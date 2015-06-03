@@ -1214,10 +1214,16 @@ ul {
     margin: 2em 0 0; }
   .markdown p, .rhistory p {
     margin: 0.5em 0 1em; }
-  .markdown ol > li, .rhistory ol > li {
+  .markdown > ol:after, .rhistory > ol:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .markdown > ol > li, .rhistory > ol > li {
     clear: both; }
 
-.clear {
+.clear:after {
+  content: "";
+  display: table;
   clear: both; }
 
 img {

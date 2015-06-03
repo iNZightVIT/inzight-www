@@ -71,7 +71,7 @@ The __Add to Plot__ options vary depending on the type of plot drawn:
   - __Text labels__ allows you to select a variable from the data set with which to label selected points
   - __Colour points__ allows selected points to be filled in with a selected color
   - __With the same level of__ allows you to easily locate points related to the selected points.
-   
+
      The main use of this would be to locate points with the same level of a chosen factor (e.g., if you are exploring survey data, you may wish to identify observations in the same cluster), or you may want to retain points selected over multiple graphs (e.g., in the Gap Minder data set, included in the `Data` folder, has several observations of countries over multiple years. In this case you can label certain coutries and track them over time).
 
      _Note_: when you do this, the point you clicked will be highlighted for easier reference.
@@ -79,11 +79,11 @@ The __Add to Plot__ options vary depending on the type of plot drawn:
 
   ___How do you want to select points?___
 
-  - __Clicking with the mouse__: After clicking "Click to Locate ...", you can then click a point on the plot. 
+  - __Clicking with the mouse__: After clicking "Click to Locate ...", you can then click a point on the plot.
     iNZight will then label it using the options you defined above. You can select multiple points by clicking the button again and locating new points without losing the current selection.
 
      _Note_: due to the way the software works, you may see a "Busy" cursor after you click the "Click to Locate ..." button. This will not go away until you click a point, so go ahead and click points ignoring the cursor.
-  
+
   - __Select by value of ...__: this will allow you to select a variable to use to select points.
 
      If the variable is a factor (or a numeric with less than 20 unique values) a slider will appear allowing you so quickly select the levels you wish to label. If the variable is numeric, or you want to select multiple levels, you can click the "Select levels ..." button to do so.
@@ -102,7 +102,7 @@ The __Add to Plot__ options vary depending on the type of plot drawn:
 
   iNZight attempts to make sensible titles and axis labels automatically. However, you can use your own if you prefer by typing in your own and pressing the `Enter` key on your keyboard.
 
-<div class="clear"></div>
+
 __NOTE__:
 If any typed in colours are not available the user would be notified via a pop up dialogue box. If colour coding by a variable is active while a user tries to change data point colours, the coding colours would take precedence over the user's choice until it is switched off (using Remove Additions).
 
@@ -132,7 +132,6 @@ If any typed in colours are not available the user would be notified via a pop u
 
   iNZight attempts to make sensible titles and axis labels automatically. However, you can use your own if you prefer by typing in your own and pressing the `Enter` key on your keyboard.
 
-<div class="clear"></div>
 
 
 ## Options for Bar Plots        {#barplots}
@@ -151,5 +150,3 @@ If any typed in colours are not available the user would be notified via a pop u
   ![Customise labels](../../img/user_guides/add2plot/bar3.jpg){.fright}
 
   iNZight attempts to make sensible titles and axis labels automatically. However, you can use your own if you prefer by typing in your own and pressing the `Enter` key on your keyboard.
-
-<div class="clear"></div>
