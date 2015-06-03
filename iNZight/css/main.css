@@ -1203,6 +1203,10 @@ ul {
 .markdown, .rhistory {
   margin: 1em auto;
   padding: 0 2em; }
+  .markdown:after, .rhistory:after {
+    content: "";
+    display: table;
+    clear: both; }
   .markdown h1, .rhistory h1 {
     font-size: 1.2em; }
   .markdown h2, .rhistory h2 {
