@@ -1,27 +1,9 @@
 
-<h2>Change Log for iNZightMR</h2>
+<h2>NEWS file for the iNZightMR package</h2>
 
-<h3>Changes in version 1.1.2</h3>
+<h3>Changes in version 2.0</h3>
 
-<p>Release date: 3 October 2014
-</p>
-
-
-<h4>BUG FIXES</h4>
-
-
-<ul>
-<li><p> Fixes a bug that stopped missing values from working in
-iNZight
-</p>
-</li></ul>
-
-
-
-
-<h3>Changes in version 1.1.1</h3>
-
-<p>Release date: 19 September 2014
+<p>Release date: 26 May 2015
 </p>
 
 
@@ -29,26 +11,19 @@ iNZight
 
 
 <ul>
-<li><p> Using iNZightPlots for graphics - this is an intermediate version, so
-any bugs will likely not be updated until the release of iNZightPlots
-2.0 - which will hopefully be early 2015.
+<li><p> the new version of iNZightMR uses the latest iNZightPlots
+(&gt;2.0) instead of its own
 </p>
 </li></ul>
 
 
 
 
-<h3>Changes in version 1.1</h3>
+<h3>New release Version 1.1</h3>
 
-<p>Release date: 18 January 2014
-</p>
-
-<ul>
-<li><p> No user-level changes, however released to coincide with major update
+<p>No user-level changes, however released to coincide with major update
 of iNZightVIT.
 </p>
-</li></ul>
-
 
 
 <h3>Changes in version 1.0.2-20130700</h3>

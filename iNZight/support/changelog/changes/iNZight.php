@@ -1,6 +1,103 @@
 
 <h2>Change Log for iNZight</h2>
 
+<h3>Changes in version 2.1</h3>
+
+<p>Release date: 22 April 2015
+</p>
+
+
+<h4>NEW FEATURES</h4>
+
+
+<ul>
+<li><p> New hexagonal binning plot available to large samples
+</p>
+</li>
+<li><p> Live updating sliders for the &quot;Add to Plot&quot; panel, which is
+now embedded into the main window rather than creating an
+additional pop-up window
+</p>
+</li></ul>
+
+
+
+
+<h4>MAJOR CHANGES</h4>
+
+
+<ul>
+<li><p> The &quot;Add to Plot&quot;, &quot;Remove Additions&quot; and
+&quot;Inference Information&quot; windows have been integrated into the main
+window with the aim of making the interface cleaner and easier to
+navigate.
+</p>
+</li>
+<li><p> When colouring points by a numeric variable, a continuous colour
+range is used rather than a discrete one.
+</p>
+</li>
+<li><p> The plotting package has been rewritten to accomodate survey
+designs (this will be integrated with iNZight itself at a later
+date). However, the plots have been modified to be cleaner and far
+more efficient. Additionally, the algorithms used for the
+inference information have been updated. For more information on
+this, see the iNZightPlots change log.
+</p>
+</li>
+<li><p> The &quot;Get Summary&quot; and &quot;Get Inference&quot; outputs have been
+redesigned to hopefully give a more intuitive, cleaner
+presentation of the information. 
+</p>
+</li>
+<li><p> From dot plots and histograms, the comparison (and confidence) 
+interval values can be read from the graph by clicking 'Get Values'
+in the 'Inference Information' panel. This includes the Year 12 intervals
+applied to medians.
+</p>
+</li></ul>
+
+
+
+
+<h4>MINOR CHANGES</h4>
+
+
+<ul>
+<li><p> the number of missing values is now displayed on the plot,
+broken down by variable
+</p>
+</li>
+<li><p> the list of options in the 'Add to Plot' window are now in a drop
+down menu, rather than radio buttons, to save space
+</p>
+</li>
+<li><p> many other small UI improvements
+</p>
+</li></ul>
+
+
+
+
+<h4>BUG FIXES</h4>
+
+
+<ul>
+<li><p> if 'colour by' is set, but the graph is changed to a histogram,
+the legend is removed from the plot
+</p>
+</li>
+<li><p> fixes a bug in the plotting that was causing large values to fall off the axes
+of the plots
+</p>
+</li>
+<li><p> includes other patches from the previous version of iNZight
+</p>
+</li></ul>
+
+
+
+
 <h3>Changes in version 2.0.4</h3>
 
 <p>Release date: 18 November 2014
@@ -60,6 +157,45 @@ vastly different
 </li>
 <li><p> The menu has been moved above the plot tabs, so it no longer
 gets cut off
+</p>
+</li></ul>
+
+
+
+
+<h4>Patch 2.0.4-1</h4>
+
+<p>Date: 12-12-2014
+</p>
+
+<ul>
+<li><p> fixed up the plot device in Time Series on Linux machines
+</p>
+</li></ul>
+
+
+
+
+<h4>Patch 2.0.4-3</h4>
+
+<p>Date: 10-02-2015
+</p>
+
+<ul>
+<li><p> fix a bug causing write-protected directories to crash
+</p>
+</li></ul>
+
+
+
+
+<h4>Patch 2.0.4-4</h4>
+
+<p>Date: 10-03-2015
+</p>
+
+<ul>
+<li><p> ping for an internet connection before trying to check for updates
 </p>
 </li></ul>
 
@@ -141,7 +277,7 @@ Variable 1
 <li><p> can now specify to identify min/max points in a dot plot
 </p>
 </li>
-<li><p> in the Add to Plot window for barcharts, reworded &quot;segment by&quot; to &quot;colour by&quot;
+<li><p> in the Add to Plot window for barcharts, reworded &quot;segment by&quot; to &quot;colour by&quot; 
 for consistency.
 </p>
 </li>
@@ -235,3 +371,7 @@ frequency.
 with a multitude of changes along the way.
 </p>
 </li></ul>
+
+
+
+

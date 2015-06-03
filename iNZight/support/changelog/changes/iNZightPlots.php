@@ -1,9 +1,9 @@
 
-<h2>Change Log for iNZightPlots</h2>
+<h2>NEWS file for the iNZightPlots package</h2>
 
-<h3>Changes in Version 1.0.4</h3>
+<h3>Changes in Version 2.0</h3>
 
-<p>Release date: 17 September 2014
+<p>Release Date: 26 May 2015
 </p>
 
 
@@ -11,10 +11,26 @@
 
 
 <ul>
-<li><p> The confidence and comparison intervals on barcharts are now
-being calculated using the iNZightMR package. While confidence
-intervals are the same, the comparison intervals are hopefully now
-more correct - the comparison of n bi/multi-nomials.
+<li><p> The entire package has been rewritten to accomodate complex
+survey designs. At present, survey objects are not fully
+supported, however the functionality will be added over time.
+</p>
+</li>
+<li><p> A huge reduction in computation requirements for plots to
+increase efficiency.
+</p>
+</li>
+<li><p> Algorithms used to compute inference intervals have been
+modified to use iNZightMR for comparisons.
+</p>
+</li>
+<li><p> lots of other changes to layout and presentation
+</p>
+</li>
+<li><p> added additional arguments <code>locate</code>, <code>locate.id</code>,
+<code>locate.col</code> (and others) for locating points by IDs.
+This is used in the improved locator functinoality in the main
+<code>iNZight</code> program.
 </p>
 </li></ul>
 
@@ -25,56 +41,11 @@ more correct - the comparison of n bi/multi-nomials.
 
 
 <ul>
-<li><p> allow comparison intervals to be shown without CIs on barcharts
-</p>
-</li></ul>
-
-
-
-
-<h4>BUG FIXES</h4>
-
-
-<ul>
-<li><p> fixed a bug introduced in R 3.1.0 that yields invalid ylim
-for dotplots
+<li><p> the <code>col.by</code> and <code>size.by</code> arguments have been
+replaced by <code>colby</code> and <code>sizeby</code>
 </p>
 </li>
-<li><p> fixed a bug where any bar plots with 0 counts would result
-in no plot at all
-</p>
-</li>
-<li><p> fixed the drawing of confidence + comparison intervals in
-barcharts
-</p>
-</li>
-<li><p> fixed a bug in triangularMatrix() that was not accounting
-for missing values when producing summary/inference output
-</p>
-</li>
-<li><p> various bugs rixed that were introduced by intergration of
-iNZightMR
-</p>
-</li>
-<li><p> when using all categorical variables, a bug that resulted in
-no plot if y and g1 were the same has been fixed
-</p>
-</li>
-<li><p> update to dev.flush() so any previously unsuccessful plots
-are cleared so plotting can continue
-</p>
-</li></ul>
-
-
-
-
-<h4>PATCH 1.0.4-1</h4>
-
-<p>Date: 29 October 2014
-</p>
-
-<ul>
-<li><p> Fixed a bug that stopped matrix of plots for some variables.
+<li><p> documentation has been added for several of the functions (finally!)
 </p>
 </li></ul>
 
@@ -83,8 +54,6 @@ are cleared so plotting can continue
 
 <h3>Changes in Version 1.0.3</h3>
 
-<p>Release date: 17 June 2014
-</p>
 
 
 <h4>BUG FIXES</h4>
@@ -104,8 +73,6 @@ summary and inference information.
 
 <h3>Changes in Version 1.0.2</h3>
 
-<p>Release date: 4 April 2014
-</p>
 
 
 <h4>BUG FIXES</h4>
@@ -123,8 +90,6 @@ fixed.
 
 <h3>Changes in Version 1.0.1</h3>
 
-<p>Release date: 27 March 2014
-</p>
 
 
 <h4>MINOR CHANGES</h4>
@@ -176,12 +141,10 @@ has been fixed.
 
 <h3>MAJOR RELEASE VERSION 1.0.0</h3>
 
-<p>Release date: 18 January 2014
-</p>
 
 <ul>
-<li><p> New major release of iNZightPlots released, completely
-rewritten using 'grid'.
+<li><p> New major release of iNZightPlots released, completely rewritten
+using 'grid'.
 </p>
 </li></ul>
 
