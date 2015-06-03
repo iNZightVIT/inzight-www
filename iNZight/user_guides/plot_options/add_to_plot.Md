@@ -64,7 +64,38 @@ The __Add to Plot__ options vary depending on the type of plot drawn:
 8. __Identify points__
   ![Identify points](../../img/user_guides/add2plot/scatter8.jpg){.fright}
 
-  This allows users to label points by clicking on them.
+  This allows users to label points in one of three ways (text labels, colour labels, and related points), using one of three methods (clicking, selecting values, or labelling extreme points).
+
+  ___How do you want to label points?___
+
+  - __Text labels__ allows you to select a variable from the data set with which to label selected points
+  - __Colour points__ allows selected points to be filled in with a selected color
+  - __With the same level of__ allows you to easily locate points related to the selected points.
+   
+     The main use of this would be to locate points with the same level of a chosen factor (e.g., if you are exploring survey data, you may wish to identify observations in the same cluster), or you may want to retain points selected over multiple graphs (e.g., in the Gap Minder data set, included in the `Data` folder, has several observations of countries over multiple years. In this case you can label certain coutries and track them over time).
+
+     _Note_: when you do this, the point you clicked will be highlighted for easier reference.
+
+
+  ___How do you want to select points?___
+
+  - __Clicking with the mouse__: After clicking "Click to Locate ...", you can then click a point on the plot. 
+    iNZight will then label it using the options you defined above. You can select multiple points by clicking the button again and locating new points without losing the current selection.
+
+     _Note_: due to the way the software works, you may see a "Busy" cursor after you click the "Click to Locate ..." button. This will not go away until you click a point, so go ahead and click points ignoring the cursor.
+  
+  - __Select by value of ...__: this will allow you to select a variable to use to select points.
+
+     If the variable is a factor (or a numeric with less than 20 unique values) a slider will appear allowing you so quickly select the levels you wish to label. If the variable is numeric, or you want to select multiple levels, you can click the "Select levels ..." button to do so.
+
+  - __Extreme values__: This will use a very simple algorithm that will select the points "farthest away" from the bulk of the data.
+
+     This will display a slider, allowing you to select more or less points as desired. Once you have selected the points, you can optionally save the selection (e.g., if you want to track the same observations over multiple plots) you can click the "Save these points ..." button. From there you can use the "With the same level of" option to select related points, etc.
+
+     The statistic used is [Mahalanobis' distance](http://en.wikipedia.org/wiki/Mahalanobis_distance).
+
+
+
 
 9. __Customise Labels__
   ![Customise labels](../../img/user_guides/add2plot/scatter9.jpg){.fright}
@@ -90,9 +121,11 @@ If any typed in colours are not available the user would be notified via a pop u
   This is identical to the customization choices of the scatter plot (see above).
 
 3. __Identify points__
-  ![Identify points](../../img/user_guides/add2plot/dot3.jpg){.fright}
+  ![Identify points](../../img/user_guides/add2plot/scatter8.jpg){.fright}
 
-  This allows users to label points by clicking on them.
+  This allows users to label points by clicking on them, and works much the same as it does for scatter plots (see above).
+
+  The main difference is in the location of extreme points, where users are now presented with two sliders: one for the number of lower points, and one for the number of upper points, to label..
 
 4. __Customise Labels__
   ![Customise labels](../../img/user_guides/add2plot/dot4.jpg){.fright}
