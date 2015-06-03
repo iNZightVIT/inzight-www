@@ -1,6 +1,13 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
 
+<!--
+  This website is currently being maintained by Tom Elliott
+  Originally designed by Tom Elliott <tell029@aucklanduni.ac.nz>
+
+  Copyright (c) University of Auckland, 2015
+-->
+
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
