@@ -14,7 +14,7 @@ if (!in_array($os, $oss)) {
 
 
 <p class="content blurb">
-  Easily explore data and discover trends without learning complex software
+  Easily <b>explore data</b> and <b>discover trends</b><br><i>without</i> learning complex software
 </p>
 
 
@@ -76,7 +76,7 @@ if (!in_array($os, $oss)) {
 
 
 <div class="seeit">
-  See <?php echo $inzight_text; ?> in action ...
+  See <?php echo $inzight_text; ?> in action below ...
 </div>
 
 
