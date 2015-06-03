@@ -1,5 +1,6 @@
 <?php
 $rel = "./";
+require_once('assets/objects/setup.php');
 require_once('assets/includes/1-top_matter.php');
 require_once('assets/includes/2-header.php');
 require_once('assets/functions/os_detect.php');
@@ -51,12 +52,12 @@ if (!in_array($os, $oss)) {
 
       <div class="group">
         <span class="group-label">Latest Version:</span>
-        <span class="group-value">2.1</span>
+        <span class="group-value"><?php echo $inzight_version; ?></span>
       </div>
 
       <div class="group">
         <span class="group-label">Release Date:</span>
-        <span class="group-value">01.05.2015</span>
+        <span class="group-value"><?php echo $release_date; ?></span>
       </div>
     </div>
 
@@ -66,7 +67,7 @@ if (!in_array($os, $oss)) {
           Or try our online application:
         </div>
       </div>
-      <a href="http://docker.stat.auckland.ac.nz" class="online-link">
+      <a href="<?php echo $inzight_online_link; ?>" class="online-link">
         <?php echo $inzight_text; ?> Lite
       </a>
     </div>

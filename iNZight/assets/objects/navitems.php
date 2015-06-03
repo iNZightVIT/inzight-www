@@ -12,7 +12,7 @@
       //'Windows' => 'win.php',
       //'Macintosh' => 'mac.php',
       'Linux/R Users' => 'https://www.stat.auckland.ac.nz/~wild/iNZight/ruser.php',
-      'Tablets' => 'http://docker.stat.auckland.ac.nz/',
+      'Tablets' => 'http://docker.stat.auckland.ac.nz/spawn/?application=development',
       'Data' => 'data.php'
     ),
     // 'Get Started' => array(

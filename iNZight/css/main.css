@@ -913,6 +913,7 @@ ul {
   .feature .placeholder {
     width: 100%;
     max-width: 700px;
+    max-height: 552.2px;
     text-align: center;
     margin: 0; }
   .feature .download {
@@ -993,7 +994,15 @@ ul {
   .feature {
     max-width: 100%; }
     .feature .placeholder {
-      padding: 0; } }
+      padding: 0; }
+    .feature .download {
+      font-size: 1.5em; }
+      .feature .download .dl-options .download_button, .feature .download .download-info .download_button {
+        width: 250px; }
+      .feature .download .dl-options .group .group-label, .feature .download .download-info .group .group-label {
+        width: 180px; }
+      .feature .download .dl-options a.online-link, .feature .download .download-info a.online-link {
+        width: 200px; } }
 @media (max-width: 950px) {
   .feature {
     -webkit-box-orient: vertical;

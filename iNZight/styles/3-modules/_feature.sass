@@ -7,6 +7,7 @@
   .placeholder
     width: 100%
     max-width: 700px
+    max-height: 552.2px
     text-align: center
     margin: 0
 
@@ -72,13 +73,26 @@
           color: $link-color
           background: lighten($main-color-1, 40%)
 
-
 @include widescreen
   .feature
     max-width: 100%
 
     .placeholder
       padding: 0
+
+    .download
+      font-size: 1.5em
+
+      .dl-options,.download-info
+        .download_button
+          width: 250px
+
+        .group
+          .group-label
+            width: 180px
+
+        a.online-link
+          width: 200px
 
 @include notlarge
   .feature
