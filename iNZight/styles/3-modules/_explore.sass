@@ -1,11 +1,13 @@
 .seeit
   margin: 1em 1em 0em
   padding: 0.5em 0 0.5em 3em
-  //text-align: center
   font-size: 2em
   font-style: italic
   border-bottom: solid 3px $main-color-1
   border-top: solid 1px $main-color-1
+
+  @include phone
+    font-size: 1.5em
 
 .explore
   padding: 2em
@@ -44,3 +46,9 @@
       width: 90%
       max-width: $content-width
       height: auto
+
+.getit
+  @extend .seeit
+  text-align: right
+  margin: 2em 1em 3em
+  padding: 0.5em 3em 0.5em 0

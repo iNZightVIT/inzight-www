@@ -136,6 +136,9 @@ if (!in_array($os, $oss)) {
 </div>
 
 
+<div class="getit">
+  Like what you see? <a href="getinzight.php">Get <?php echo $inzight_text; ?> Here!</a>
+</div>
 
 
 
