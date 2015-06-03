@@ -1,21 +1,14 @@
 .feature
-  max-width: $content-width
   @include display(flex)
   @include justify-content(space-around)
+  @include align-items(center)
   padding: 0 2em 4em
-  margin: 0 auto
 
   .placeholder
-    height: 300px
-    max-width: 600px
-
-    background: $header-border-color
+    width: 100%
+    max-width: 700px
     text-align: center
-
-    @media (max-width: 650px)
-      width: 100%
-      height: auto
-
+    margin: 0
 
   .download
     @include display(flex)

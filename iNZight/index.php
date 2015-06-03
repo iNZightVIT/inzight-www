@@ -19,7 +19,7 @@ if (!in_array($os, $oss)) {
 
 
 <div class="feature">
-  <img src="img/feature.gif" class="placeholder"></img>
+  <img src="img/feature.gif" class="placeholder" srcset="img/feature-large.gif 900w, img/feature.gif 700w"></img>
 
   <div class="download">
     <div class="dl-options">
