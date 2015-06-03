@@ -10,6 +10,7 @@ The __Add to Plot__ options vary depending on the type of plot drawn:
 - [Bar charts](#barplots)
 
 
+
 ## Options for Scatter Plots        {#scatterplots}
 
 1. __Code more variables__
