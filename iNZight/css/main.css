@@ -1266,6 +1266,23 @@ img {
     top: 0;
     left: 0; }
 
+.extraInfo {
+  border: solid 1px black;
+  background: #eee;
+  margin: 1em;
+  padding: 0 1em;
+  clear: both; }
+  .extraInfo label {
+    cursor: pointer;
+    color: #094b85;
+    font-weight: bold;
+    font-size: 0.8em; }
+    .extraInfo label:hover {
+      color: #18afe3; }
+  .extraInfo div {
+    padding: 1em;
+    display: none; }
+
 .navpanel {
   display: -webkit-box;
   display: -moz-box;

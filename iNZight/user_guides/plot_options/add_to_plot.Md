@@ -30,6 +30,40 @@ The __Add to Plot__ options vary depending on the type of plot drawn:
 
   For trends and smoothers, if the points have been coloured by a categorical variable, users can have the curves fitted to the individual levels of these factors. Additionally, these curves can either be parallel (equal slope, different intercepts) or have unique intercepts and slopes.
 
+  <div class="extraInfo">
+    <label>Extra info (Show/hide)</label>
+    
+    <div markdown="1">
+      __Trend Lines__
+
+      The trend lines are all fitted using either the `lm()` or `svyglm` functions in __R__.
+
+      If users decide to draw a trend line for each level of a factor (defined in the 'Code More Variables' window),
+      then the model fitted is simple `lm(y ~ x + z)`, where `z` is the factor variable.
+
+      Alternatively, if the user opts to fit trend lines with individual slopes, this is done by fitting a curve to
+      each subset of the data.
+
+      __Smoothers__
+
+      iNZight uses the [lowess smoother](http://en.wikipedia.org/wiki/Local_regression) for computing smoothers.
+
+      More precisely, the __R__ function `lowess()` to compute the necessary curve, using the user-specified
+      smoother, _f_, which gives the proportion of points used to smooth each value.
+
+      For more information, [check out the function documentation](http://stat.ethz.ch/R-manual/R-patched/library/stats/html/lowess.html).
+
+
+      __Quantile Smoothers__
+
+      The quantile smoothers are computed using the `svysmooth()` function from the `survey` package.
+      Depending on the sample size, iNZight will draw 50%, 25/75% and 10/90% quantile smoothers.
+
+      [Checkout out the function documentation](http://r-survey.r-forge.r-project.org/survey/html/svysmooth.html) for more information.
+    </div>
+  </div>
+
+
 3. __Add x=y line__
 
   Draws a dotted y = x line on the plot to add perspective.
@@ -150,3 +184,16 @@ If any typed in colours are not available the user would be notified via a pop u
   ![Customise labels](../../img/user_guides/add2plot/bar3.jpg){.fright}
 
   iNZight attempts to make sensible titles and axis labels automatically. However, you can use your own if you prefer by typing in your own and pressing the `Enter` key on your keyboard.
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="../../js/markdown.js"></script>

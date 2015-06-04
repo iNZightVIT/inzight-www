@@ -85,9 +85,6 @@ if (isset($topic)) {
 </div>
 
 
-
-
-
 <?php
 }
 
