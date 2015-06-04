@@ -34,6 +34,8 @@ if (isset($topic)) {
         echo "   src='".str_replace("VIDEO: ", "", $text)."'";
         echo "   frameborder='0' allowfullscreen></iframe>";
         echo "</div>";
+      } else if (preg_match("/^SCRIPT: /", $text)) {
+        echo "<script src='". str_replace("SCRIPT: ", "", $text) ."'></script>";
       } else {
         echo $Pd->text($text);
       }

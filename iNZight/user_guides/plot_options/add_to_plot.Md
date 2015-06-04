@@ -32,7 +32,7 @@ The __Add to Plot__ options vary depending on the type of plot drawn:
 
   <div class="extraInfo">
     <label>Extra info (Show/hide)</label>
-    
+
     <div markdown="1">
       __Trend Lines__
 
@@ -196,4 +196,4 @@ If any typed in colours are not available the user would be notified via a pop u
 
 
 
-<script src="../../js/markdown.js"></script>
+///SCRIPT: ../../js/markdown.js
