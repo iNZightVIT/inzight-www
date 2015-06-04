@@ -30,8 +30,8 @@ The __Add to Plot__ options vary depending on the type of plot drawn:
 
   For trends and smoothers, if the points have been coloured by a categorical variable, users can have the curves fitted to the individual levels of these factors. Additionally, these curves can either be parallel (equal slope, different intercepts) or have unique intercepts and slopes.
 
-  <div class="extraInfo">
-    <label>Extra info (Show/hide)</label>
+  <div class="extraInfo" markdown="1">
+    <label markdown="1">Extra info (Show/hide)</label>
 
     <div markdown="1">
       __Trend Lines__
