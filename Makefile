@@ -9,3 +9,7 @@ Npush:
 
 Npull:
 	sudo rsync -anv --delete tell029@login02.fos.auckland.ac.nz:/mnt/tell029/web/homepages.stat/inzight-www/iNZight/newSite/iNZight/ iNZight
+
+
+fixPermissions:
+	sudo chmod -R 775 .

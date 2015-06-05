@@ -26,6 +26,16 @@
     >li
       clear: both
 
+  table
+    //margin: 0 auto
+    border: solid 1px black
+
+    td, th
+      padding: 0.2em 0.5em
+
+    thead
+      border-bottom: solid 1px black
+
 .clear
   @include clearfix
 
@@ -51,6 +61,15 @@ img
     @include phone
       float: none
       margin: 0.5em auto
+
+  &.borderbox
+    border: solid 2px $main-color-2
+
+  &.nobox
+    border: none
+
+  &.halfwidth
+    max-width: 200px
 
 .video-wrapper
   position: relative

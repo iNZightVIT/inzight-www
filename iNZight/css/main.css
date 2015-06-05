@@ -1224,6 +1224,12 @@ ul {
     clear: both; }
   .markdown > ol > li, .rhistory > ol > li {
     clear: both; }
+  .markdown table, .rhistory table {
+    border: solid 1px black; }
+    .markdown table td, .rhistory table td, .markdown table th, .rhistory table th {
+      padding: 0.2em 0.5em; }
+    .markdown table thead, .rhistory table thead {
+      border-bottom: solid 1px black; }
 
 .clear:after {
   content: "";
@@ -1248,6 +1254,12 @@ img {
       img.fright {
         float: none;
         margin: 0.5em auto; } }
+  img.borderbox {
+    border: solid 2px #094b85; }
+  img.nobox {
+    border: none; }
+  img.halfwidth {
+    max-width: 200px; }
 
 .video-wrapper {
   position: relative; }
