@@ -10,15 +10,33 @@
   &.showme
     @include display(flex)
     @include justify-content(space-between)
+    @include align-items(center)
 
-    @include phone
+    //@include phone
       @include flex-direction(column)
 
   .close
-    text-align: right
     color: $link-color
-    font-weight: bold
+
+    @include size(20px)
+
+    path
+      fill: rgba(200, 200, 200, 0.4)
 
     &:hover
-      color: white
       cursor: pointer
+
+      path
+        fill: rgba(200, 200, 200, 0.6)
+
+
+.support_message
+  @extend .top_message
+  background: darken($note-color, 10%)
+  color: #ccc
+
+  .close
+    color: $comp-color-1
+
+    &:hover
+      color: black

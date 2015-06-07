@@ -40,6 +40,11 @@
       $.post("<?php echo $rel; ?>hideMessage.php");
       $(".top_message").slideUp();
     });
+
+    $("#hideSupportmessage").click(function(){
+      $.post("<?php echo $rel; ?>hideSupport.php");
+      $(".support_message").slideUp();
+    });
     </script>
   </body>
 </html>
