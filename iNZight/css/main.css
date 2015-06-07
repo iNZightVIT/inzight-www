@@ -912,10 +912,14 @@ ul {
   padding: 0 2em 4em; }
   .feature .placeholder {
     width: 100%;
+    height: auto;
     max-width: 700px;
     max-height: 552.2px;
     text-align: center;
     margin: 0; }
+@media(max-width: 700px) {
+  .feature .placeholder {
+    max-height: none; } }
   .feature .download {
     display: -webkit-box;
     display: -moz-box;
@@ -924,13 +928,6 @@ ul {
     display: -moz-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -moz-box-orient: vertical;
-    box-orient: vertical;
-    -webkit-flex-direction: column;
-    -moz-flex-direction: column;
-    flex-direction: column;
-    -ms-flex-direction: column;
     -webkit-box-pack: start;
     -moz-box-pack: start;
     box-pack: start;
