@@ -1,0 +1,117 @@
+.form
+  margin: 0 2em
+
+  p
+    margin-left: 0
+
+  .question
+    padding: 0.5em 0
+
+    &.biggap
+      margin-top: 1em
+
+    label
+      display: inline-block
+      width: 500px
+      text-align: right
+
+      @include touch
+        display: block
+        width: 100%
+        text-align: left
+
+    select
+      width: 200px
+      margin: 0 1em
+
+      @include touch
+        margin: 0.5em 0
+
+    input
+      margin: 0.5em
+
+    .req
+      color: $error-color
+      font:
+        size: 1.2em
+        weight: bold
+
+    &.hide
+      display: none
+
+    .details
+      display: block
+      font-size: 0.8em
+      margin-left: 500px
+      padding:
+        left: 1.25em
+        top: 0.5em
+
+      @include touch
+        margin: 0
+
+    .numbers
+      font-weight: bold
+      font-size: 1.2em
+      color: $note-color
+      padding-left: 1em
+
+      @include phone
+        display: block
+
+    .error
+      font:
+        size: 0.8em
+        weight: bold
+      color: $error-color
+      text-align: right
+      width: 500px
+
+  input[type="text"],input[type="submit"]
+    margin: 0 1em
+    width: 200px
+    height: 2.25em
+    padding: 0.2em 0.5em
+    background: lighten($main-color-1, 40%)
+    border: solid 2px $main-color-2
+    @include border-top-radius(7px)
+    @include border-bottom-radius(7px)
+
+    text-decoration: none
+
+    @include touch
+      margin: 0.5em 0
+
+  .submit
+    @extend .question
+
+    input[type="submit"]
+      margin-left: 1em
+
+      @include touch
+        margin-left: 0
+
+      &:hover
+        background: lighten($main-color-1, 20%)
+
+
+  .textfield
+    @extend .question
+    margin-top: 1em
+
+    @include touch
+      width: 100%
+
+    label
+      display: block
+      text-align: left
+
+    textarea
+      display: block
+      width: 700px
+      height: 200px
+      margin: 0.5em 0
+
+      @include touch
+        width: 100%
+        height: 100px

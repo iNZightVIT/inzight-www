@@ -1503,4 +1503,98 @@ select {
 #startup_instructions {
   margin: 2em 0; }
 
+.form {
+  margin: 0 2em; }
+  .form p {
+    margin-left: 0; }
+  .form .question, .form .submit, .form .textfield {
+    padding: 0.5em 0; }
+    .form .question.biggap, .form .biggap.submit, .form .biggap.textfield {
+      margin-top: 1em; }
+    .form .question label, .form .submit label, .form .textfield label {
+      display: inline-block;
+      width: 500px;
+      text-align: right; }
+      @media (max-width: 860px) {
+        .form .question label, .form .submit label, .form .textfield label {
+          display: block;
+          width: 100%;
+          text-align: left; } }
+    .form .question select, .form .submit select, .form .textfield select {
+      width: 200px;
+      margin: 0 1em; }
+      @media (max-width: 860px) {
+        .form .question select, .form .submit select, .form .textfield select {
+          margin: 0.5em 0; } }
+    .form .question input, .form .submit input, .form .textfield input {
+      margin: 0.5em; }
+    .form .question .req, .form .submit .req, .form .textfield .req {
+      color: #F00;
+      font-size: 1.2em;
+      font-weight: bold; }
+    .form .question.hide, .form .hide.submit, .form .hide.textfield {
+      display: none; }
+    .form .question .details, .form .submit .details, .form .textfield .details {
+      display: block;
+      font-size: 0.8em;
+      margin-left: 500px;
+      padding-left: 1.25em;
+      padding-top: 0.5em; }
+      @media (max-width: 860px) {
+        .form .question .details, .form .submit .details, .form .textfield .details {
+          margin: 0; } }
+    .form .question .numbers, .form .submit .numbers, .form .textfield .numbers {
+      font-weight: bold;
+      font-size: 1.2em;
+      color: #46873f;
+      padding-left: 1em; }
+      @media (max-width: 700px) {
+        .form .question .numbers, .form .submit .numbers, .form .textfield .numbers {
+          display: block; } }
+    .form .question .error, .form .submit .error, .form .textfield .error {
+      font-size: 0.8em;
+      font-weight: bold;
+      color: #F00;
+      text-align: right;
+      width: 500px; }
+  .form input[type="text"], .form input[type="submit"] {
+    margin: 0 1em;
+    width: 200px;
+    height: 2.25em;
+    padding: 0.2em 0.5em;
+    background: #cdeefa;
+    border: solid 2px #094b85;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    text-decoration: none; }
+    @media (max-width: 860px) {
+      .form input[type="text"], .form input[type="submit"] {
+        margin: 0.5em 0; } }
+  .form .submit input[type="submit"] {
+    margin-left: 1em; }
+    @media (max-width: 860px) {
+      .form .submit input[type="submit"] {
+        margin-left: 0; } }
+    .form .submit input[type="submit"]:hover {
+      background: #71cff0; }
+  .form .textfield {
+    margin-top: 1em; }
+    @media (max-width: 860px) {
+      .form .textfield {
+        width: 100%; } }
+    .form .textfield label {
+      display: block;
+      text-align: left; }
+    .form .textfield textarea {
+      display: block;
+      width: 700px;
+      height: 200px;
+      margin: 0.5em 0; }
+      @media (max-width: 860px) {
+        .form .textfield textarea {
+          width: 100%;
+          height: 100px; } }
+
 /*# sourceMappingURL=main.css.map */
