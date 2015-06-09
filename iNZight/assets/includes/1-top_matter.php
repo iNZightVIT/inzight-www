@@ -24,6 +24,18 @@ $isIE = strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') || strpos($_SERVER['HTTP_USE
     ?>
 
     <link rel="stylesheet" type="text/css" href="<?php echo $rel; ?>css/main.css">
+
+    <!--[if !IE]><!-->
+      <script src="<?php echo $rel;?>js/jquery-2.1.3.min.js"></script>
+    <!--<![endif]-->
+
+    <!--[if lte IE 8]>
+      <script src="<?php echo $rel;?>js/jquery-1.9.1.min.js"></script>
+    <![endif]-->
+
+    <!--[if gt IE 8]>
+      <script src="<?php echo $rel;?>js/jquery-2.1.3.min.js"></script>
+    <![endif]-->
     <script src="<?php echo $rel;?>js/jquery-2.1.3.min.js"></script>
 
     <title>iNZight for Data Analysis</title>
