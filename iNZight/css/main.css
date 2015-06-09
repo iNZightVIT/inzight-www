@@ -1504,9 +1504,12 @@ select {
   margin: 2em 0; }
 
 .form {
-  margin: 0 2em; }
+  margin: 0 2em 3em; }
   .form p {
     margin-left: 0; }
+    .form p#alternate {
+      margin-top: 3em;
+      width: 800px; }
   .form .question, .form .submit, .form .textfield {
     padding: 0.5em 0; }
     .form .question.biggap, .form .biggap.submit, .form .biggap.textfield {
@@ -1586,7 +1589,8 @@ select {
         width: 100%; } }
     .form .textfield label {
       display: block;
-      text-align: left; }
+      text-align: left;
+      width: 100%; }
     .form .textfield textarea {
       display: block;
       width: 700px;
@@ -1596,5 +1600,7 @@ select {
         .form .textfield textarea {
           width: 100%;
           height: 100px; } }
+    .form .textfield .error {
+      text-align: left; }
 
 /*# sourceMappingURL=main.css.map */
