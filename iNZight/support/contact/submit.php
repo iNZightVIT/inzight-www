@@ -1,7 +1,11 @@
 <?php
 
 // THE EMAIL ADDRESS TO SEND BUG REPORTS TO:
-$sendto = "inzight_support@stat.auckland.ac.nz";
+if ($p["inzight_version"] == "online") {
+  $sendto = "inzight_support@stat.auckland.ac.nz"
+} else {
+  $sendto = "inzight_support@stat.auckland.ac.nz";
+}
 
 // some filters
 function clean_num($a)

@@ -149,8 +149,7 @@ $("#sendButton").click(function(e) {
   }
 
   if (!proceed) {
-    // submit the form
-    //e.preventDefault();
+    e.preventDefault();
   }
 });
 
