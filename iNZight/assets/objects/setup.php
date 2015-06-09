@@ -18,5 +18,5 @@
   $inzight_version = "2.1";
   $release_date    = "25 May 2015";
 
-  $inzight_online_link = "http://docker.stat.auckland.ac.nz/spawn/?application=development";
+  $inzight_online_link = "http://docker.stat.auckland.ac.nz/spawn/?application=lite";
 ?>

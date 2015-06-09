@@ -46,11 +46,12 @@ if (isset($_POST["submit"])) {
 
   if (!$errors) {
     // we will submit the form if the captcha is ok
-    $usrVal = hashValue($_POST["captcha"]);
+	$cap = $_POST["captcha"];
+    $usrVal = hashValue($cap);
     $trueVal = $_POST["trueCaptcha"];
     if ($usrVal == $trueVal) {
       // submit form
-      include_once("submit.php");
+      require("submit.php");
       die("Message sent.");
     } else {
       $captchaError = "Oops, that wasn't the correct number! Make sure you sum (add) them correctly.";

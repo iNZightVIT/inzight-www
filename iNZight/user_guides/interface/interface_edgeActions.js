@@ -19,7 +19,7 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
       
          // Navigate to a new URL in the current window
          // (replace "_self" with appropriate target attribute)
-         window.open("https://www.stat.auckland.ac.nz/~wild/iNZight/newSite/iNZight/user_guides/plot_options/?topic=plot_toolbar", "_self");
+         window.open("https://www.stat.auckland.ac.nz/~wild/iNZight/user_guides/plot_options/?topic=plot_toolbar", "_self");
       
       });
       //Edge binding end
@@ -49,7 +49,7 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
          // insert code for mouse click here
          // Navigate to a new URL in the current window
          // (replace "_self" with appropriate target attribute)
-         window.open("https://www.stat.auckland.ac.nz/~wild/iNZight/newSite/iNZight/user_guides/manipulate_variables/", "_self");
+         window.open("https://www.stat.auckland.ac.nz/~wild/iNZight/user_guides/manipulate_variables/", "_self");
       
       
       });
@@ -59,7 +59,7 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
          // insert code for mouse click here
          // Navigate to a new URL in the current window
          // (replace "_self" with appropriate target attribute)
-         window.open("https://www.stat.auckland.ac.nz/~wild/iNZight/newSite/iNZight/user_guides/data_options/", "_self");
+         window.open("https://www.stat.auckland.ac.nz/~wild/iNZight/user_guides/data_options/", "_self");
       
       
       });
@@ -69,7 +69,7 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
          // insert code for mouse click here
          // Navigate to a new URL in the current window
          // (replace "_self" with appropriate target attribute)
-         window.open("https://www.stat.auckland.ac.nz/~wild/iNZight/newSite/iNZight/user_guides/add_ons/", "_self");
+         window.open("https://www.stat.auckland.ac.nz/~wild/iNZight/user_guides/add_ons/", "_self");
       
       
       });
@@ -201,7 +201,7 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
          // insert code for mouse click here
          // Navigate to a new URL in the current window
          // (replace "_self" with appropriate target attribute)
-         window.open("https://www.stat.auckland.ac.nz/~wild/iNZight/newSite/iNZight/user_guides/basics/", "_self");
+         window.open("https://www.stat.auckland.ac.nz/~wild/iNZight/user_guides/basics/", "_self");
          
 
       });

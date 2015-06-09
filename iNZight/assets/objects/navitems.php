@@ -12,7 +12,7 @@
       //'Windows' => 'win.php',
       //'Macintosh' => 'mac.php',
       'Linux/R Users' => 'https://www.stat.auckland.ac.nz/~wild/iNZight/ruser.php',
-      'Tablets' => 'http://docker.stat.auckland.ac.nz/spawn/?application=development',
+      'Tablets' => 'http://docker.stat.auckland.ac.nz/spawn/?application=lite',
       'Data' => 'data.php'
     ),
     // 'Get Started' => array(
@@ -56,10 +56,11 @@
       'Privacy' => 'privacy/'
     ),
     'Related' => array(
-      'default' => 'related.php',
+      'default' => 'related/',
       'VIT' => $wild_http . 'VIT/index.html',
-      'BootAnim' => $wild_http . 'BootAnim/index.html',
+      'Wild About Statistics Channel' => $wild_http . 'wildaboutstatistics/index.html',
       'StatThink' => $wild_http . 'StatThink/index.html',
+      'BootAnim' => $wild_http . 'BootAnim/index.html',
       'WPRH' => $wild_http . 'WPRH/index.html',
       'Chris Wild' => $wild_http . 'index.html',
       'Talks' => $wild_http . 'talks/index.html'
