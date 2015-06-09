@@ -48,11 +48,17 @@ $isIE = strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') || strpos($_SERVER['HTTP_USE
       $hideMessage = $_SESSION["hide"];
       ?>
 
+    <!--[if lte IE 9]>
+      <div style="background: 'black'; color: 'white'; font-size: 14px;">
+        Unfortunately, this website isn't compatible with your browser. We suggest something like Google Chrome, Safari, or Firefox.
+      </div>
+    <![endif]-->
+
     <div class="top_message<?php if (!$hideMessage) { echo " showme"; } ?>">
       <div>
         This website is currently being developed.
         If you notice any problems (such as broken links, etc.),
-        <a href="mailto:tell029@aucklanduni.ac.nz?subject=New Website">please report them</a>.
+        <a href="mailto:tell029@aucklanduni.ac.nz?subject=[iNZight Website Issue]">please report them</a>.
       </div>
 
       <div id="hideMessage" class="close">
