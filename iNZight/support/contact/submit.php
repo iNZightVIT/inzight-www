@@ -1,8 +1,7 @@
 <?php
 
 // THE EMAIL ADDRESS TO SEND BUG REPORTS TO:
-//$sendto = "inzight_support@stat.auckland.ac.nz";
-$sendto = "tell029@aucklanduni.ac.nz";
+$sendto = "inzight_support@stat.auckland.ac.nz";
 
 // some filters
 function clean_num($a)
@@ -65,7 +64,9 @@ if ($inz != "online") {
 $name = clean_str($p["user_name"]);
 $email = clean_str($p["user_email"]);
 
-$headers = 'From: ' . $sendto . "\r\n";
+$headers  = "MIME-Version: 1.0" . "\r\n";
+$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+$headers .= 'From: ' . $sendto . "\r\n";
 if (strlen($email) > 0) {
   if (strlen($name) > 0) {
     $headers .= "Reply-To: " . $name . " <" . $email . ">" . "\r\n";
