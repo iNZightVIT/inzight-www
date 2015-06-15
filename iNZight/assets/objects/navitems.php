@@ -89,9 +89,12 @@
           writeList($link, $rel, $prefix);
         } else {
           if (preg_match("/^http/", $link)) {
-            $rel = "";
-          }
-          echo "<a href='$rel$prefix$link'>$text</a>";
+		    $pre = "";
+          } else {
+		    $pre = $rel.$prefix;
+		  }
+			
+          echo "<a href='$pre$link'>$text</a>";
         }
         echo '</li>';
       }

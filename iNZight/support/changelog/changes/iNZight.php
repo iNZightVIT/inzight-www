@@ -1,6 +1,23 @@
 
 <h2>Change Log for iNZight</h2>
 
+<h3>Changes in version 2.1.1</h3>
+
+<p>Release date: 09 June 2015
+</p>
+
+
+<h4>BUG FIXES</h4>
+
+
+<ul>
+<li><p> fix a dependency issue required for aggregating data sets
+</p>
+</li></ul>
+
+
+
+
 <h3>Changes in version 2.1</h3>
 
 <p>Release date: 25 May 2015

@@ -1,6 +1,23 @@
 
 <h2>Change Log for vit</h2>
 
+<h3>Changes in version 1.2.2</h3>
+
+<p>Release date: 10 June 2015 
+</p>
+
+
+<h4>MINOR CHANGES</h4>
+
+
+<ul>
+<li><p> New banner with the new iNZight logo in the main start up screen      
+</p>
+</li></ul>
+
+
+
+
 <h3>Changes in version 1.2.1</h3>
 
 <p>Release date: 18 September 2014
