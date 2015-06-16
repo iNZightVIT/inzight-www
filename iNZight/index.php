@@ -58,7 +58,10 @@ if (!in_array($os, $oss)) {
 
       <div class="group">
         <span class="group-label">Latest Version:</span>
-        <span class="group-value"><?php echo $inzight_version; ?></span>
+        <span class="group-value">
+          <?php echo $inzight_version; ?>
+          <a href="support/changelog/?pkg=iNZight" class="small">(what's new?)</a>
+        </span>
       </div>
 
       <div class="group">

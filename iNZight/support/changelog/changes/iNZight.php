@@ -1,6 +1,52 @@
 
 <h2>Change Log for iNZight</h2>
 
+<h3>Changes in version 2.2</h3>
+
+<p>Release date: 16 June 2015
+</p>
+
+
+<h4>NEW FEATURES</h4>
+
+
+<ul>
+<li><p> users can specify a window size in File &gt; Preferences
+</p>
+</li>
+<li><p> Links to the User Guides found on our website have been
+added, including help buttons in the Add To Plot and Inference
+Information windows.
+</p>
+</li></ul>
+
+
+
+
+<h4>MAJOR CHANGES</h4>
+
+
+<ul>
+<li><p> LOCATE functionality now included for dot plots. Also fixes
+several bugs in the previous update for locating points in a
+scatter plot. 
+</p>
+</li></ul>
+
+
+
+
+<h4>MINOR CHANGES</h4>
+
+
+<ul>
+<li><p> the &quot;Row Operations&quot; menu has been renamed &quot;Data&quot;
+</p>
+</li></ul>
+
+
+
+
 <h3>Changes in version 2.1.1</h3>
 
 <p>Release date: 09 June 2015

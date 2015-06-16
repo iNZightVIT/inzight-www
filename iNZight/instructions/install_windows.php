@@ -3,7 +3,7 @@
 <ol>
 
   <li>
-    Unzip the downloaded zipfile.
+    <b>Unzip the downloaded zipfile</b>
     <p>
       Newer versions of Windows should be able to extract iNZight without additional software.
       However, if you are running an older version of windows, you may need to use
@@ -25,7 +25,18 @@
     </p>
   </li>
 
+  <li>
+    <p>
+      <b>Update iNZightVIT</b>: we are often making small updates to the software, so the packaged ZIP files
+      can fall behind between major releases.
+    </p>
 
+    <p>
+      To update, simply double-click on <b>UPDATE_iNZightVIT</b> and the software will take care of the rest.
+      You should be presented with a message "Updating complete."; simply press <b>enter</b> on your keyboard
+      to close the updater.
+    </p>
+  </li>
 
 
 </ol>

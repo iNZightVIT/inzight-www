@@ -1,6 +1,46 @@
 
 <h2>NEWS file for the iNZightPlots package</h2>
 
+<h3>Changes in Version 2.0.1</h3>
+
+<p>RELEASE DATE: 16 June 2015
+</p>
+
+
+<h4>MINOR CHANGES</h4>
+
+
+<ul>
+<li><p> Dotplot locating implemented using new methodology, with the
+additional argument 'label.extreme = numeric(2)', allowing users
+to specify how many lower and upper points to identify,
+respectively.
+</p>
+</li>
+<li><p> equivalently, extreme points (by using Mahalanobis'
+distance) can be labelled on scatter plots using 'label.extreme =
+numeric(1)'.
+</p>
+</li></ul>
+
+
+
+
+<h4>BUG FIXES</h4>
+
+
+<ul>
+<li><p> fixed a small bug that stopped inference from working in
+dotplots when 'x' is a factor and 'y' is the numeric variable.
+</p>
+</li>
+<li><p> fix a bug that caused 'nbins = 0' in some cases.
+</p>
+</li></ul>
+
+
+
+
 <h3>Changes in Version 2.0</h3>
 
 <p>Release Date: 26 May 2015
