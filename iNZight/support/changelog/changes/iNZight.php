@@ -1,6 +1,81 @@
 
 <h2>Change Log for iNZight</h2>
 
+<h3>Changes in version 2.3</h3>
+
+<p>RELEASE DATE: 04 August 2015
+</p>
+
+
+<h4>NEW FEATURES</h4>
+
+
+<ul>
+<li><p> SURVEY DESIGNS: iNZight can now handle survey designs
+(currently Strata, 2-stage (nesting) clustering, and a weighting
+variable. Plots take account of this structure and inference that
+displays (currently only trend lines on bivariate plots) use
+functions from the 'survey' packages and thus incorporate weights.
+</p>
+</li>
+<li><p> Adjust the axis limits from the Add to Plot menu.
+</p>
+</li>
+<li><p> Adjust the number of bars displayed on a bar plot from the
+Add to Plot menu.
+</p>
+</li></ul>
+
+
+
+
+<h4>MINOR CHANGES</h4>
+
+
+<ul>
+<li><p> the plot tool bar has been added to the Menubar at the top
+of the page. This allows users to work in a dual-window mode
+(with a narrow iNZight interface and a separate plotting window)
+and still be able to access plot functions.
+</p>
+</li></ul>
+
+
+
+
+<h4>BUG FIXES</h4>
+
+
+<ul>
+<li><p> fixes to a few issues occuring in dotplots
+</p>
+</li>
+<li><p> display an error if Add to Plot is called without any
+variables having been selected
+</p>
+</li></ul>
+
+
+
+
+<h3>Changes in version 2.2.0-1</h3>
+
+<p>Release date: 01 July 2015
+</p>
+
+
+<h4>PATCHES</h4>
+
+
+<ul>
+<li><p> iNZightPlots package: fix colour of segmented bar plots to
+match the legend
+</p>
+</li></ul>
+
+
+
+
 <h3>Changes in version 2.2</h3>
 
 <p>Release date: 16 June 2015
@@ -41,6 +116,30 @@ scatter plot.
 
 <ul>
 <li><p> the &quot;Row Operations&quot; menu has been renamed &quot;Data&quot;
+</p>
+</li></ul>
+
+
+
+
+<h4>PATCH 2.2.0-1 (01 July 2015)</h4>
+
+
+<ul>
+<li><p> iNZightPlots package: fix colour of segmented bar plots to
+match the legend
+</p>
+</li></ul>
+
+
+
+
+<h4>PATCH 2.2.0-2 (27 July 2015)</h4>
+
+
+<ul>
+<li><p> Fix mapping of confidence intervals (instead of comparison
+intervals) to Year 12 intervals in dot plots.
 </p>
 </li></ul>
 

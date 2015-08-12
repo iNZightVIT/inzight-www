@@ -1,6 +1,25 @@
 
 <h2>Change Log for vit</h2>
 
+<h3>Changes in version 1.2.4</h3>
+
+<p>Release date: 27 July 2015
+</p>
+
+
+<h4>NEW FEATURE/BUG FIXES</h4>
+
+
+<ul>
+<li><p> Allow users to modify the <code>ps</code> and <code>dpi</code> values
+for Acinonyx plots. This is mostly useful for Macbook Pro (retina)
+users.
+</p>
+</li></ul>
+
+
+
+
 <h3>Changes in version 1.2.3</h3>
 
 <p>Release date: 16 June 2015

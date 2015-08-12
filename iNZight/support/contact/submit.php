@@ -4,7 +4,7 @@ echo "here";
 
 // THE EMAIL ADDRESS TO SEND BUG REPORTS TO:
 if ($p["inzight_version"] == "online") {
-  $sendto = "inzight_support@stat.auckland.ac.nz";
+  $sendto = "inzightlite_support@stat.auckland.ac.nz";
 } else {
   $sendto = "inzight_support@stat.auckland.ac.nz";
 }

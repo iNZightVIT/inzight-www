@@ -21,7 +21,7 @@
                               '/win98/i'              =>  array('Windows', '98'),
                               '/win95/i'              =>  array('Windows', '95'),
                               '/win16/i'              =>  array('Windows', '3.11'),
-                              '/macintosh|mac os x/i' =>  array('Mac', 'OS X'),
+							  '/macintosh|mac os x/i' =>  array('Mac', 'OS X'),
                               '/mac_powerpc/i'        =>  array('Mac', 'OS 9'),
                               '/linux/i'              =>  array('Linux'),
                               '/ubuntu/i'             =>  array('Linux', 'Ubuntu'),

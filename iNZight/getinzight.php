@@ -12,7 +12,7 @@
   $install_only = isset($_GET["inst"]);
 
   if (isset($_GET["os"])) {
-    if (in_array($_GET["os"], array("Windows", "Mac", "Linux"))) {
+      if (in_array($_GET["os"], array("Windows", "Mac", "Linux"))) {
       $os = $_GET["os"];
 
       // auto download for Windows
@@ -52,6 +52,7 @@
   if (!isset($os)) {
     require_once('assets/functions/os_detect.php');
     $os = getOS();
+//echo $os;
   }
 
   // The main page starts here:
@@ -112,6 +113,8 @@
     -->
 
     <h3>Download iNZightVIT</h3>
+	<!--<?php echo $_SERVER['HTTP_USER_AGENT']; ?>-->
+	
 
     <div class="horizontal" id="os_select">
       <div class="label">Operating System:</div>
@@ -188,13 +191,23 @@
     </div>
 
 
-    <div id="dl_links"></div>
+    <div id="dl_links">
+    </div>
 
   <?php }
 ?>
 
-
 <script src="<?php echo $rel; ?>js/downloadButtons.js"></script>
+<?php if ($os == "Windows") { ?>
+<script>
+// make download link appear automatically on windows:
+
+$.post("download_links.php", { os: "Windows" })
+  .done(function(result) {
+    $("#dl_links").html(result);
+});
+</script>
+<?php } ?>
 
 <?php
 require_once($rel . 'assets/includes/3-bottom_matter.php');

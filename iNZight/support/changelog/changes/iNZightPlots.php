@@ -1,6 +1,118 @@
 
 <h2>NEWS file for the iNZightPlots package</h2>
 
+<h3>Changes in Version 2.1</h3>
+
+<p>RELEASE DATE: 04 August 2015
+</p>
+
+
+<h4>NEW FEATURES</h4>
+
+
+<ul>
+<li><p> allow zooming of plots with the new <code>zoom</code>
+argument. Works for both univariate and bivariate plots, and a
+related funcionality for 'zooming in' on bars in a barplot. 
+</p>
+</li></ul>
+
+
+
+
+<h3>Changes in Version 2.0.6</h3>
+
+<p>RELEASE DATE: 03 August 2015
+</p>
+
+
+<h4>BUG FIXES</h4>
+
+
+<ul>
+<li><p> fix an issue where requesting summary of 'dotplots' resulted
+in creating a new device, which resulted in errors on the Shiny
+server.
+</p>
+</li></ul>
+
+
+
+
+<h3>Changes in Version 2.0.5</h3>
+
+<p>RELEASE DATE: 27 July 2015
+</p>
+
+
+<h4>NEW FEATURES</h4>
+
+
+<ul>
+<li><p> additional arguments 'xlim' and 'ylim' allow users to
+specify the range of values shown on the plot
+</p>
+</li></ul>
+
+
+
+
+<h4>BUG FIXES</h4>
+
+
+<ul>
+<li><p> several issues for dotplots have been fixed
+</p>
+</li>
+<li><p> weighting variable used when drawing a scatter plot of
+survey data
+</p>
+</li>
+<li> <p><code>conf</code> now corresponds to Year 12 intervals in dot plot
+inferences (previously, <code>comp</code> corresponded to this interval)
+</p>
+</li></ul>
+
+
+
+
+<h3>Changes in Version 2.0.3</h3>
+
+<p>RELEASE DATE: 01 July 2015
+</p>
+
+
+<h4>BUG FIXES</h4>
+
+
+<ul>
+<li><p> fix up the order of bars in segmented bar plots to
+correspond to the legend
+</p>
+</li></ul>
+
+
+
+
+<h3>Changes in Version 2.0.2</h3>
+
+<p>RELEASE DATE: 24 June 2015
+</p>
+
+
+<h4>MINOR CHANGES</h4>
+
+
+<ul>
+<li><p> remove facility where the colour-by variable is ignored if
+there are 'too many' levels&mdash;this is now left up to users to
+decide if colour by a particular variable makes sense of not.
+</p>
+</li></ul>
+
+
+
+
 <h3>Changes in Version 2.0.1</h3>
 
 <p>RELEASE DATE: 16 June 2015

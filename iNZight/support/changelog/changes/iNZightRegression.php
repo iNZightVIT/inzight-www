@@ -1,6 +1,38 @@
 
 <h2>Change Log for iNZightRegression</h2>
 
+<h3>Changes in version 1.1.4</h3>
+
+<p>Release date: 20 July 2015
+</p>
+
+
+<h4>MINOR HANGES</h4>
+
+
+<ul>
+<li><p> added an extra argument <code>use.inzightplots</code> to the
+plotting functions that allows users to enabled/disable the use of
+them as desired. Currently, the default is <code>FALSE</code> as the
+latest version of <code>iNZightPlots</code> is incompatible with
+<code>iNZightRegression</code>.
+</p>
+</li></ul>
+
+
+
+
+<h4>BUG FIXES</h4>
+
+
+<ul>
+<li><p> added missed function and method exports
+</p>
+</li></ul>
+
+
+
+
 <h3>Changes in version 1.1.3</h3>
 
 <p>Release date: 17 September 2014
