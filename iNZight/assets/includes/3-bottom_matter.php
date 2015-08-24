@@ -8,7 +8,7 @@
             &copy; Copyright 2015 iNZight | All Rights Reserved <br>
           </span>
           <span>
-            Website developed by <a href="mailto:tom.elliott@auckland.ac.nz?subject=[iNZight Website]">Tom Elliott</a>
+            Website developed by <a href="https://www.stat.auckland.ac.nz/~tell029/">Tom Elliott</a>
           </span>
         </div>
 

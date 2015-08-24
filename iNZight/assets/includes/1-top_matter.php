@@ -7,7 +7,7 @@ $isIE = strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') || strpos($_SERVER['HTTP_USE
 
 <!--
   This website is currently being maintained by Tom Elliott
-  Originally designed by Tom Elliott <tell029@aucklanduni.ac.nz>
+  Originally designed by Tom Elliott @ University of Auckland
 
   Copyright (c) University of Auckland, 2015
 -->
@@ -58,7 +58,7 @@ $isIE = strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') || strpos($_SERVER['HTTP_USE
       <div>
         This website is currently being developed.
         If you notice any problems (such as broken links, etc.),
-        <a href="mailto:tom.elliott@auckland.ac.nz?subject=[iNZight Website Issue]">please report them</a>.
+        <a href="mailto:inzight_support@stat.auckland.ac.nz?subject=[iNZight Website]">please report them</a>.
       </div>
 
       <div id="hideMessage" class="close">
