@@ -12,6 +12,10 @@
       },
       "mac" : {
         "title" : "Mac Installation Issues"
+      },
+      "linux" : {
+        "title" : "Linux Installation Issues",
+        "desc" : "Note: installation of iNZight on Linux is very version-dependent. Google searching error messages might be your best hope &hellip;"
       }
     }
   },
