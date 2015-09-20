@@ -1,7 +1,7 @@
 
 <h2>Change Log for iNZightModules</h2>
 
-<h3>Changes in version 1.2</h3>
+<div class='versionSection'><h3>Changes in version 1.2</h3>
 
 <p>Release date: 25 August 2015
 </p>
@@ -18,7 +18,7 @@
 
 
 
-<h3>Changes in version 1.1</h3>
+</div>  <div class='versionSection'><h3>Changes in version 1.1</h3>
 
 <p>Release date: 22 April 2015
 </p>
@@ -26,7 +26,7 @@
 </p>
 
 
-<h3>Changes in version 1.0.8</h3>
+</div>  <div class='versionSection'><h3>Changes in version 1.0.8</h3>
 
 <p>Release date: 18 March 2015
 </p>
@@ -43,7 +43,7 @@
 
 
 
-<h3>Changes in version 1.0.7</h3>
+</div>  <div class='versionSection'><h3>Changes in version 1.0.7</h3>
 
 <p>Release date: 23 February 2015
 </p>
@@ -60,7 +60,7 @@
 
 
 
-<h3>Changes in version 1.0.6</h3>
+</div>  <div class='versionSection'><h3>Changes in version 1.0.6</h3>
 
 <p>Release date: 04 February 2015
 </p>
@@ -77,7 +77,7 @@
 
 
 
-<h3>Changes in version 1.0.5</h3>
+</div>  <div class='versionSection'><h3>Changes in version 1.0.5</h3>
 
 <p>Release date: 27 November 2014
 </p>
@@ -95,7 +95,7 @@ the screen
 
 
 
-<h3>Changes in version 1.0.4</h3>
+</div>  <div class='versionSection'><h3>Changes in version 1.0.4</h3>
 
 
 
@@ -110,7 +110,7 @@ the screen
 
 
 
-<h3>Changes in version 1.0.3</h3>
+</div>  <div class='versionSection'><h3>Changes in version 1.0.3</h3>
 
 
 
@@ -144,7 +144,7 @@ multiplicative time series models.
 
 
 
-<h3>Changes in version 1.0.2</h3>
+</div>  <div class='versionSection'><h3>Changes in version 1.0.2</h3>
 
 
 
@@ -160,7 +160,7 @@ barcode plot.
 
 
 
-<h3>Changes in version 1.0.1</h3>
+</div>  <div class='versionSection'><h3>Changes in version 1.0.1</h3>
 
 
 <ul>
@@ -170,7 +170,7 @@ barcode plot.
 
 
 
-<h3>Changes in version 1.0.0</h3>
+</div>  <div class='versionSection'><h3>Changes in version 1.0.0</h3>
 
 <p>This is the first release of this package, although it was previously
 bundled inside the iNZight package. 
@@ -218,3 +218,4 @@ rewritten in 'gWidgets2'.
 
 
 
+</div>

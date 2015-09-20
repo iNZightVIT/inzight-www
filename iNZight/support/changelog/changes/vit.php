@@ -1,7 +1,7 @@
 
 <h2>Change Log for vit</h2>
 
-<h3>Changes in version 1.2.4</h3>
+<div class='versionSection'><h3>Changes in version 1.2.4</h3>
 
 <p>Release date: 27 July 2015
 </p>
@@ -20,7 +20,7 @@ users.
 
 
 
-<h3>Changes in version 1.2.3</h3>
+</div>  <div class='versionSection'><h3>Changes in version 1.2.3</h3>
 
 <p>Release date: 16 June 2015
 </p>
@@ -43,7 +43,7 @@ control the resolution of the graphics in the VIT module.
 
 
 
-<h3>Changes in version 1.2.2</h3>
+</div>  <div class='versionSection'><h3>Changes in version 1.2.2</h3>
 
 <p>Release date: 10 June 2015 
 </p>
@@ -60,7 +60,7 @@ control the resolution of the graphics in the VIT module.
 
 
 
-<h3>Changes in version 1.2.1</h3>
+</div>  <div class='versionSection'><h3>Changes in version 1.2.1</h3>
 
 <p>Release date: 18 September 2014
 </p>
@@ -78,7 +78,7 @@ denoted by #'s
 
 
 
-<h3>Changes in version 1.2.0</h3>
+</div>  <div class='versionSection'><h3>Changes in version 1.2.0</h3>
 
 <p>Release date: 18 January 2014
 </p>
@@ -129,7 +129,7 @@ if they closed the graphics device).
 
 
 
-<h3>Changes in version 1.1.0-20130227</h3>
+</div>  <div class='versionSection'><h3>Changes in version 1.1.0-20130227</h3>
 
 
 
@@ -147,7 +147,7 @@ of interest.
 
 
 
-<h3>Changes in version 1.1.0-20130122</h3>
+</div>  <div class='versionSection'><h3>Changes in version 1.1.0-20130122</h3>
 
 
 
@@ -167,7 +167,7 @@ point's width.
 
 
 
-<h3>Changes in version 1.1.0-20121008</h3>
+</div>  <div class='versionSection'><h3>Changes in version 1.1.0-20121008</h3>
 
 
 
@@ -222,7 +222,7 @@ device.
 
 
 
-<h3>Changes in version 1.1.0-20120822</h3>
+</div>  <div class='versionSection'><h3>Changes in version 1.1.0-20120822</h3>
 
 
 
@@ -262,7 +262,7 @@ disabled in favour of variable-view only from 200,000 cells.
 
 
 
-<h3>Changes in version 1.1.0-20120725</h3>
+</div>  <div class='versionSection'><h3>Changes in version 1.1.0-20120725</h3>
 
 
 
@@ -277,7 +277,7 @@ disabled in favour of variable-view only from 200,000 cells.
 
 
 
-<h3>Changes in version 1.1.0-20120417</h3>
+</div>  <div class='versionSection'><h3>Changes in version 1.1.0-20120417</h3>
 
 
 
@@ -303,3 +303,4 @@ disabled in favour of variable-view only from 200,000 cells.
 
 
 
+</div>

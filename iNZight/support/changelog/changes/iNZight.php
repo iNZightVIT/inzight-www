@@ -1,7 +1,7 @@
 
 <h2>Change Log for iNZight</h2>
 
-<h3>Changes in version 2.3</h3>
+<div class='versionSection'><h3>Changes in version 2.3</h3>
 
 <p>RELEASE DATE: 04 August 2015
 </p>
@@ -58,7 +58,7 @@ variables having been selected
 
 
 
-<h3>Changes in version 2.2.0-1</h3>
+</div>  <div class='versionSection'><h3>Changes in version 2.2.0-1</h3>
 
 <p>Release date: 01 July 2015
 </p>
@@ -76,7 +76,7 @@ match the legend
 
 
 
-<h3>Changes in version 2.2</h3>
+</div>  <div class='versionSection'><h3>Changes in version 2.2</h3>
 
 <p>Release date: 16 June 2015
 </p>
@@ -146,7 +146,7 @@ intervals) to Year 12 intervals in dot plots.
 
 
 
-<h3>Changes in version 2.1.1</h3>
+</div>  <div class='versionSection'><h3>Changes in version 2.1.1</h3>
 
 <p>Release date: 09 June 2015
 </p>
@@ -163,7 +163,7 @@ intervals) to Year 12 intervals in dot plots.
 
 
 
-<h3>Changes in version 2.1</h3>
+</div>  <div class='versionSection'><h3>Changes in version 2.1</h3>
 
 <p>Release date: 25 May 2015
 </p>
@@ -266,7 +266,7 @@ of the plots
 
 
 
-<h3>Changes in version 2.0.4</h3>
+</div>  <div class='versionSection'><h3>Changes in version 2.0.4</h3>
 
 <p>Release date: 18 November 2014
 </p>
@@ -370,7 +370,7 @@ gets cut off
 
 
 
-<h3>Changes in version 2.0.3</h3>
+</div>  <div class='versionSection'><h3>Changes in version 2.0.3</h3>
 
 <p>Release date: 17 September 2014
 </p>
@@ -413,7 +413,7 @@ NEWS file for these
 
 
 
-<h3>Changes in version 2.0.2</h3>
+</div>  <div class='versionSection'><h3>Changes in version 2.0.2</h3>
 
 <p>Release date: 17 June 2014
 </p>
@@ -467,7 +467,7 @@ for consistency.
 
 
 
-<h3>Changes in version 2.0.1</h3>
+</div>  <div class='versionSection'><h3>Changes in version 2.0.1</h3>
 
 <p>Release date: 27 March 2014
 </p>
@@ -525,7 +525,7 @@ frequency.
 
 
 
-<h3>Changes in version 2.0.0</h3>
+</div>  <div class='versionSection'><h3>Changes in version 2.0.0</h3>
 
 <p>Release date: 18 January 2014
 </p>
@@ -543,3 +543,4 @@ with a multitude of changes along the way.
 
 
 
+</div>

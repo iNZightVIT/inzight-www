@@ -1,13 +1,21 @@
 .rhistory
   @extend .markdown
 
+  .versionSection
+    border-bottom: solid 2px black
+    padding: 10px 5px 20px
+
+    &:nth-of-type(1)
+      border-top: solid 2px black
+      background: lighten($main-color-1, 40)
+
   h2
     margin-top: 0
     font-size: 1.2em
 
   h3
     font-size: 1.1em
-    margin-top: 2em
+    margin-top: 0em
 
   h4
     font-size: 1em

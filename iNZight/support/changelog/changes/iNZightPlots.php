@@ -1,7 +1,7 @@
 
 <h2>NEWS file for the iNZightPlots package</h2>
 
-<h3>Changes in Version 2.2</h3>
+<div class='versionSection'><h3>Changes in Version 2.2</h3>
 
 <p>RELEASE DATE: 14 September 2015
 </p>
@@ -44,7 +44,7 @@
 
 
 
-<h3>Changes in Version 2.1</h3>
+</div>  <div class='versionSection'><h3>Changes in Version 2.1</h3>
 
 <p>RELEASE DATE: 04 August 2015
 </p>
@@ -74,7 +74,7 @@ related funcionality for 'zooming in' on bars in a barplot.
 
 
 
-<h3>Changes in Version 2.0.6</h3>
+</div>  <div class='versionSection'><h3>Changes in Version 2.0.6</h3>
 
 <p>RELEASE DATE: 03 August 2015
 </p>
@@ -93,7 +93,7 @@ server.
 
 
 
-<h3>Changes in Version 2.0.5</h3>
+</div>  <div class='versionSection'><h3>Changes in Version 2.0.5</h3>
 
 <p>RELEASE DATE: 27 July 2015
 </p>
@@ -130,7 +130,7 @@ inferences (previously, <code>comp</code> corresponded to this interval)
 
 
 
-<h3>Changes in Version 2.0.3</h3>
+</div>  <div class='versionSection'><h3>Changes in Version 2.0.3</h3>
 
 <p>RELEASE DATE: 01 July 2015
 </p>
@@ -148,7 +148,7 @@ correspond to the legend
 
 
 
-<h3>Changes in Version 2.0.2</h3>
+</div>  <div class='versionSection'><h3>Changes in Version 2.0.2</h3>
 
 <p>RELEASE DATE: 24 June 2015
 </p>
@@ -167,7 +167,7 @@ decide if colour by a particular variable makes sense of not.
 
 
 
-<h3>Changes in Version 2.0.1</h3>
+</div>  <div class='versionSection'><h3>Changes in Version 2.0.1</h3>
 
 <p>RELEASE DATE: 16 June 2015
 </p>
@@ -207,7 +207,7 @@ dotplots when 'x' is a factor and 'y' is the numeric variable.
 
 
 
-<h3>Changes in Version 2.0</h3>
+</div>  <div class='versionSection'><h3>Changes in Version 2.0</h3>
 
 <p>Release Date: 26 May 2015
 </p>
@@ -258,7 +258,7 @@ replaced by <code>colby</code> and <code>sizeby</code>
 
 
 
-<h3>Changes in Version 1.0.3</h3>
+</div>  <div class='versionSection'><h3>Changes in Version 1.0.3</h3>
 
 
 
@@ -277,7 +277,7 @@ summary and inference information.
 
 
 
-<h3>Changes in Version 1.0.2</h3>
+</div>  <div class='versionSection'><h3>Changes in Version 1.0.2</h3>
 
 
 
@@ -294,7 +294,7 @@ fixed.
 
 
 
-<h3>Changes in Version 1.0.1</h3>
+</div>  <div class='versionSection'><h3>Changes in Version 1.0.1</h3>
 
 
 
@@ -345,7 +345,7 @@ has been fixed.
 
 
 
-<h3>MAJOR RELEASE VERSION 1.0.0</h3>
+</div>  <div class='versionSection'><h3>MAJOR RELEASE VERSION 1.0.0</h3>
 
 
 <ul>
@@ -356,3 +356,4 @@ using 'grid'.
 
 
 
+</div>

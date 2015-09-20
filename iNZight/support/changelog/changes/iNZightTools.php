@@ -1,7 +1,7 @@
 
 <h2>Change Log for iNZightTools</h2>
 
-<h3>Changes in version 1.1</h3>
+<div class='versionSection'><h3>Changes in version 1.1</h3>
 
 <p>Release Date: 25 August 2015
 </p>
@@ -17,7 +17,7 @@ until package gets a more significant revamp.
 
 
 
-<h3>Changes in version 1.0.0</h3>
+</div>  <div class='versionSection'><h3>Changes in version 1.0.0</h3>
 
 
 <p>This package is not yet being used in iNZight.
@@ -25,3 +25,4 @@ until package gets a more significant revamp.
 </p>
 
 
+</div>

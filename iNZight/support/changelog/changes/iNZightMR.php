@@ -1,7 +1,7 @@
 
 <h2>NEWS file for the iNZightMR package</h2>
 
-<h3>Changes in version 2.0</h3>
+<div class='versionSection'><h3>Changes in version 2.0</h3>
 
 <p>Release date: 26 May 2015
 </p>
@@ -19,14 +19,14 @@
 
 
 
-<h3>New release Version 1.1</h3>
+</div>  <div class='versionSection'><h3>New release Version 1.1</h3>
 
 <p>No user-level changes, however released to coincide with major update
 of iNZightVIT.
 </p>
 
 
-<h3>Changes in version 1.0.2-20130700</h3>
+</div>  <div class='versionSection'><h3>Changes in version 1.0.2-20130700</h3>
 
 
 
@@ -42,3 +42,4 @@ used for the 'iNZight' package.
 
 
 
+</div>

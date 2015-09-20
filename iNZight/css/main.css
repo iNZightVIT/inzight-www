@@ -1352,12 +1352,18 @@ img {
   font-size: 1em;
   padding-top: 1em; }
 
+.rhistory .versionSection {
+  border-bottom: solid 2px black;
+  padding: 10px 5px 20px; }
+  .rhistory .versionSection:nth-of-type(1) {
+    border-top: solid 2px black;
+    background: #cdeefa; }
 .rhistory h2 {
   margin-top: 0;
   font-size: 1.2em; }
 .rhistory h3 {
   font-size: 1.1em;
-  margin-top: 2em; }
+  margin-top: 0em; }
 .rhistory h4 {
   font-size: 1em;
   padding: 0;

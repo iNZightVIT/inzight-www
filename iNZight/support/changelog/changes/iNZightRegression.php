@@ -1,7 +1,7 @@
 
 <h2>Change Log for iNZightRegression</h2>
 
-<h3>Changes in version 1.1.4</h3>
+<div class='versionSection'><h3>Changes in version 1.1.4</h3>
 
 <p>Release date: 20 July 2015
 </p>
@@ -33,7 +33,7 @@ latest version of <code>iNZightPlots</code> is incompatible with
 
 
 
-<h3>Changes in version 1.1.3</h3>
+</div>  <div class='versionSection'><h3>Changes in version 1.1.3</h3>
 
 <p>Release date: 17 September 2014
 </p>
@@ -51,7 +51,7 @@ transparent - now enforces these to be transparent
 
 
 
-<h3>Changes in version 1.1.2</h3>
+</div>  <div class='versionSection'><h3>Changes in version 1.1.2</h3>
 
 <p>Release date: 4 April 2014
 </p>
@@ -70,7 +70,7 @@ if it is installed.
 
 
 
-<h3>Changes in version 1.1.1</h3>
+</div>  <div class='versionSection'><h3>Changes in version 1.1.1</h3>
 
 <p>Release date: 27 March 2014
 </p>
@@ -124,7 +124,7 @@ error).
 
 
 
-<h3>Changes in version 1.1</h3>
+</div>  <div class='versionSection'><h3>Changes in version 1.1</h3>
 
 <p>Release date: 18 January 2014
 </p>
@@ -200,7 +200,7 @@ for GLMs.
 
 
 
-<h3>Changes in version 1.0.2-20130913</h3>
+</div>  <div class='versionSection'><h3>Changes in version 1.0.2-20130913</h3>
 
 
 
@@ -216,7 +216,7 @@ including the &lsquo;survey' package&rsquo;s 'svyglm'.
 
 
 
-<h3>Changes in version 1.0.2-20130122</h3>
+</div>  <div class='versionSection'><h3>Changes in version 1.0.2-20130122</h3>
 
 
 
@@ -318,3 +318,4 @@ more robust).
 
 
 
+</div>
