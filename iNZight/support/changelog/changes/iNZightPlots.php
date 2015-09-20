@@ -1,6 +1,49 @@
 
 <h2>NEWS file for the iNZightPlots package</h2>
 
+<h3>Changes in Version 2.2</h3>
+
+<p>RELEASE DATE: 14 September 2015
+</p>
+
+
+<h4>NEW FEATURES - SURVEY DESIGN</h4>
+
+
+<ul>
+<li><p> confidence intervals for histograms and bar plots
+</p>
+</li>
+<li><p> comparison intervals for histograms broken down by a factor
+</p>
+</li>
+<li><p> summary information for all basic plots (histograms, bar plots, and scatter plots)
+</p>
+</li></ul>
+
+
+
+
+<h4>BUG FIXES</h4>
+
+
+<ul>
+<li><p> fixes a bug where missing information on barplots and scatter plots would cause the plotting function to die
+</p>
+</li>
+<li><p> fixes a bug in the printing of summary objects
+</p>
+</li>
+<li><p> fixes a bug where the minimum value of a single numeric variable summary was ommited
+</p>
+</li>
+<li><p> and various other small bug fixes
+</p>
+</li></ul>
+
+
+
+
 <h3>Changes in Version 2.1</h3>
 
 <p>RELEASE DATE: 04 August 2015
@@ -14,6 +57,17 @@
 <li><p> allow zooming of plots with the new <code>zoom</code>
 argument. Works for both univariate and bivariate plots, and a
 related funcionality for 'zooming in' on bars in a barplot. 
+</p>
+</li></ul>
+
+
+
+
+<h4>PATCH 2.1-1: 28 August 2015</h4>
+
+
+<ul>
+<li><p> fix a bug that occurs when all survey weights are equal
 </p>
 </li></ul>
 

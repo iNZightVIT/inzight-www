@@ -1,6 +1,23 @@
 
 <h2>Change Log for iNZightModules</h2>
 
+<h3>Changes in version 1.2</h3>
+
+<p>Release date: 25 August 2015
+</p>
+
+
+<h4>BUG FIXES</h4>
+
+
+<ul>
+<li><p> Import entire <code>iNZightTools</code> package
+</p>
+</li></ul>
+
+
+
+
 <h3>Changes in version 1.1</h3>
 
 <p>Release date: 22 April 2015
