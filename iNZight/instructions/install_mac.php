@@ -5,6 +5,9 @@ $is_ml = $os_version < 9 & !$is_sl;
 
 // OS X version: $os_version
 switch ($os_version) {
+  case 11:
+    $vname = "El Capitan";
+    break;
   case 10:
     $vname = "Yosemite";
     break;
@@ -37,7 +40,11 @@ switch ($os_version) {
     </li>
   <?php } else { ?>
 
-    <li>Double-click the downloaded file (by default, this will be in your <b>Downloads</b> folder).
+    <?php if ($os_version > 8) { ?>
+    <li>Click the downloaded file (by default, this will be in your <b>Downloads</b> folder). This will extract the installer and open it in a window.</li>
+    <?php } ?>
+
+    <li>Double-click the iNZightVIT.<?php if ($os_version > 8) echo 'm'; ?>pkg file to launch the installer.
 
       <p class="note">
         Note: depending on your settings, you may get an "Unsupported Developer" warning.
@@ -46,14 +53,24 @@ switch ($os_version) {
       </p>
     </li>
 
+    <li>
+      Follow the onscreen instructions to install iNZight.
+
+      <?php if ($os_version > 8) { ?>
+      <p class="note">
+        If you already have R installed, you may have issues with the installation process. In this case,
+        <a href="https://www.stat.auckland.ac.nz/~wild/iNZight/downloads/iNZightVIT-latest-osx.pkg">use the old installer</a>.
+      </p>
+      <?php } ?>
+    </li>
+
 
   <?php } ?>
 
-  <li>Open the <b>iNZightVIT</b> folder.
-    <?php if ($is_sl) {
-      echo "By default, this will be in your <b>Downloads</b> folder.";
+  <li>Open <b>iNZightVIT</b><?php if ($is_sl) {
+      echo ". By default, this will be in your <b>Downloads</b> folder.";
     } else {
-      echo "By default, this will have been installed into your <b>Applications</b> folder:";
+      echo " in your main Applications folder.";
     } ?>
     <!-- <p class="note">
       Note: you may wish to move this to your desktop, or somewhere else you can easily find it later.
@@ -77,13 +94,14 @@ switch ($os_version) {
       a power-saving feature of OS X which negatively affects the performance of iNZight.
 
       <p>
-        To do this, simply <b>right-click</b> the <b>R</b> icon and click <b>Get Info</b>.
-        In the window that appears, check the box next to "Disable AppNap",
+        To do this, simply <b>right-click</b> the <b>iNZightVIT</b> icon and click <b>Get Info</b>.
+        In the window that appears, check the box next to "Prevent App Nap",
         and then close the window.
       </p>
 
-      <a href="img/install/mac/disable_appnap.gif" target="_blank" class="thumb">
-        <img src="img/install/mac/disable_appnap.gif">
+      <?php $ext = ($os_version > 8) ? 'jpg' : 'gif'; ?>
+      <a href="img/install/mac/disable_appnap.<?php echo $ext; ?>" target="_blank" class="thumb">
+        <img src="img/install/mac/disable_appnap.<?php echo $ext; ?>">
       </a>
 
       <p class="note">
@@ -101,27 +119,31 @@ switch ($os_version) {
         to manually allow iNZight to run the first time you use it.
 
       <p>
-        To do this, <b>right-click</b> the <b>R</b> icon and click <b>Open</b>,
+        To do this, <b>right-click</b> the <b><?php echo ($os_version > 8) ? "iNZightVIT" : "R"; ?></b> icon and click <b>Open</b>,
         and then click "Allow" in the window that pops up.
         Ignore the error message that follows.
       </p>
+      <?php if ($os_version <= 8) { ?>
       <p>
         Next, do the same for "START_iNZightVIT.command". This time, iNZight
         should start. Note that in future, you can simply double-click to start iNZight.
       </p>
+      <?php } ?>
       <p>
-        If you wish to update iNZight, you will need to repeat the process for the "UPDATE_iNZightVIT.command"
+        If you wish to update iNZight, you will need to repeat the process for the <?php echo ($os_version <= 8) ? "UPDATE_iNZightVIT.command" : "Update"; ?>
         icon the first time you update iNZight.
       </p>
 
-      <a href="img/install/mac/allow_inzight.gif" target="_blank" class="thumb">
-        <img src="img/install/mac/allow_inzight.gif">
-      </a>
-      <a href="img/install/mac/allow_update.gif" target="_blank" class="thumb">
-        <img src="img/install/mac/allow_update.gif">
+      <?php $ext = ($os_version > 8) ? 'jpg' : 'gif'; ?>
+      <a href="img/install/mac/allow_inzight.<?php echo $ext; ?>" target="_blank" class="thumb">
+        <img src="img/install/mac/allow_inzight.<?php echo $ext; ?>">
       </a>
     </li>
 
+  <?php } else { ?>
+      <li>
+        Start iNZightVIT by double-clicking on "START_iNZightVIT.command".
+      </li>
   <?php } ?>
 
 

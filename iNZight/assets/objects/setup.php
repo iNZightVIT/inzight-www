@@ -4,7 +4,7 @@
 
   $download_links = array(
     "Windows" => "iNZightVIT-latest-zipfile.zip",
-    "osx"     => "iNZightVIT-latest-osx.pkg",
+    "osx"     => "iNZightVIT-latest-osx.dmg",
     "osx-ml"  => "iNZightVIT-latest-osx-ml.pkg",
     "osx-sl"  => "iNZightVIT-latest-osx-sl.zip",
     "osx-man" => "iNZightVIT-latest-osx.zip",
@@ -15,8 +15,8 @@
     "gtk-2.24" => "http://r.research.att.com/libs/GTK_2.24.17-X11.pkg"
   );
 
-  $inzight_version = "2.3";
-  $release_date    = "12 August 2015";
+  $inzight_version = "2.4";
+  $release_date    = "12 October 2015";
 
   $inzight_online_link = "http://docker.stat.auckland.ac.nz/spawn/?application=lite";
 ?>

@@ -41,6 +41,7 @@ echo "<a href='./' class='small'>&lt; " . $contents->index->title . "</a>";
 
   <select id="mac_select" name="mac-select"<?php if ($os == "mac") echo 'class="show"'; ?>>
     <option value=""></option>
+    <option value="11" <?php if ($v == 11) echo 'selected'; ?>>El Capitan</option>
     <option value="10" <?php if ($v == 10) echo 'selected'; ?>>Yosemite</option>
     <option value="9" <?php if ($v == 9) echo 'selected'; ?>>Mavericks</option>
     <option value="8" <?php if ($v == 8) echo 'selected'; ?>>Mountain Lion</option>

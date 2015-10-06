@@ -114,7 +114,7 @@
 
     <h3>Download iNZightVIT</h3>
 	<!--<?php echo $_SERVER['HTTP_USER_AGENT']; ?>-->
-	
+
 
     <div class="horizontal" id="os_select">
       <div class="label">Operating System:</div>
@@ -134,7 +134,8 @@
 
       <div class="options">
         <?php
-          foreach (array(10 => "Yosemite",
+          foreach (array(11 => "El Capitan",
+                         10 => "Yosemite",
                          9  => "Mavericks",
                          8  => "Lion/Mountain Lion",
                          6  => "Snow Leopard") as $v => $vname) {
