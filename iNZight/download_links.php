@@ -99,4 +99,20 @@
         ignoring the first step.
       </li>
     </ol>
+
+    <?php if ($os_version == 11) { ?>
+      <div class="label space-above">
+        WARNING TO R USERS
+      </div>
+      <p>
+        Due to security changes, the scripts used to run iNZight in a standalone R installation no longer work. Therefore, the new installer installs R version 3.0.2 onto your system, however <b>it will not overwrite any current installation</b>. If you use a version of R &geq; 3.1, the iNZightVIT app will not run because the necessary version of R cannot be found.
+      </p>
+
+      <p>
+        Unfortunately, we are currently unable to offer a solution unless you can manually install iNZight onto your system;; however, the GTK+ software doesn't seem to be compatible with recent versions of R. Check out <a href="https://www.stat.auckland.ac.nz/~wild/iNZight_Old/ruser.php">these instructions</a> for an overview of installing iNZight in R.
+      </p>
+      <p class="note">
+        Note: these instructions are hosted on an older site, and haven't been updated recently, but the <code>install.packages()</code> command hasn't changed. We will update this page when a viable installation method presents itself. If you have one, <a href="mailto:inzight_support@stat.auckland.ac.nz">please let us know</a>!!!
+      </p>
+    <?php } ?>
   <?php } ?>
