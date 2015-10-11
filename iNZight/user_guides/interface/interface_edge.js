@@ -36,7 +36,7 @@
                         {
                             id: 'HelpMenu',
                             type: 'rect',
-                            rect: ['330px', '32px', '39px', '20px', 'auto', 'auto'],
+                            rect: ['260px', '32px', '39px', '20px', 'auto', 'auto'],
                             opacity: '1',
                             fill: ["rgba(255,255,255,0.00)"],
                             stroke: [0,"rgba(0,0,0,1)","none"]
@@ -44,7 +44,7 @@
                         {
                             id: 'AdvancedMenu',
                             type: 'rect',
-                            rect: ['265px', '32px', '65px', '20px', 'auto', 'auto'],
+                            rect: ['195px', '32px', '65px', '20px', 'auto', 'auto'],
                             cursor: 'pointer',
                             opacity: '1',
                             fill: ["rgba(255,255,255,0.00)"],
@@ -53,7 +53,7 @@
                         {
                             id: 'ManipVars',
                             type: 'rect',
-                            rect: ['142px', '32px', '123px', '20px', 'auto', 'auto'],
+                            rect: ['95px', '32px', '62px', '20px', 'auto', 'auto'],
                             cursor: 'pointer',
                             opacity: '1',
                             fill: ["rgba(255,255,255,0.00)"],
@@ -62,7 +62,7 @@
                         {
                             id: 'RowOperations',
                             type: 'rect',
-                            rect: ['45px', '32px', '97px', '20px', 'auto', 'auto'],
+                            rect: ['45px', '32px', '50px', '20px', 'auto', 'auto'],
                             cursor: 'pointer',
                             opacity: '1',
                             fill: ["rgba(0,0,0,0.00)"],
@@ -148,7 +148,7 @@
                             id: 'RowOpText',
                             type: 'text',
                             rect: ['369px', '113px', 'auto', 'auto', 'auto', 'auto'],
-                            text: "Row Operations Menu",
+                            text: "Dataset Menu",
                             align: "center",
                             font: ['Arial, Helvetica, sans-serif', [22, "px"], "rgba(0,0,0,0.00)", "700", "none solid rgba(255, 255, 255, 0)", "normal", "break-word", "nowrap"]
                         },
@@ -165,7 +165,7 @@
                             id: 'ManipVarsText',
                             type: 'text',
                             rect: ['369px', '113px', 'auto', 'auto', 'auto', 'auto'],
-                            text: "Manipulate Variables Menu",
+                            text: "Variables Menu",
                             align: "center",
                             font: ['Arial, Helvetica, sans-serif', [22, "px"], "rgba(0,0,0,0.00)", "700", "none solid rgba(255, 255, 255, 0)", "normal", "break-word", "nowrap"]
                         },
