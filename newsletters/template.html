@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <title>iNZightVIT Newsletter</title>
+
+  <style>
+    .wrapper {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 5px;
+
+      font-size: 14px;
+      font-family: "Helvetica", sans-serif;
+    }
+
+    .header {
+      background-image: url(https://www.stat.auckland.ac.nz/~wild/iNZight/img/inzight_transp.png);
+      background-size: contain;
+      background-position: center right;
+      background-repeat: no-repeat;
+
+      margin-bottom: 50px
+    }
+    .header h1 {
+      font-size: 22px;
+      color: #333;
+    }
+    .header h2 {
+      font-size: 12px;
+      color: #111;
+      font-style: italic;
+    }
+
+    .lead {
+      font-weight: bold;
+    }
+
+    .section {
+      margin: 20px 0 10px;
+      border-top: solid 1px #094b85;
+    }
+    .section h3 {
+      color: #094b85;
+    }
+
+    .section p {
+      line-height: 1.4
+    }
+
+    ul {
+      line-height: 1.5
+    }
+    ul>li {
+      padding: 5px 0
+    }
+
+    .footnote {
+      font-size: 10px;
+      border-top: solid 1px #ccc;
+      margin-top: 20px;
+    }
+
+    .footer {
+      background: #094b85;
+      line-height: 40px;
+      text-align: center;
+      color: white
+    }
+    .footer p {
+      line-height: 1;
+      margin: 0;
+      padding: 10px 0 0;
+    }
+    .footer a {
+      color: white;
+      font-size: 10px;
+      text-decoration: none
+    }
+    .footer p a {
+      font-size: 12px;
+    }
+  </style>
+
+</head>
+
+<body>
+<div class="wrapper">
+  <div class="preview-text"></div>
+
+  <div class="header">
+    <h1>Newsletter</h1>
+    <h2>12 October, 2015</h2>
+  </div>
+
+  <div class="content">
+    <p class="lead">A new version of iNZight has been released, along with an improved Mac Installer that supports the latest release, OS X 10.11 El Capitan.</p>
+
+    <div class="section">
+      <h3>iNZight v2.4 Released</h3>
+
+      <p>
+        This new release makes a few changes to the interface&mdash;but nothing too drastic&mdash;that we hope will make exploration even easier. We have also made progress with the Survey Analysis aspects, although this is still a Beta feature, so use with caution.
+      </p>
+
+      <p>
+        The last release (2.3) was fairly low-key, so we've included those changes below in grey.
+
+        <ul>
+          <li><b>Interface changes</b>
+            <ul>
+              <li>
+                Drop-down selection boxes replace the old "Drop variable here", which makes variable selection easier (especially if there are lots of them), allows you to use the "up" and "down" arrow keys to cycle through variables, and incase you are used to the old way, you can still drag-and-drop to the drop-down boxes exactly as before!
+              </li>
+
+              <li class="grey">
+                The items in the Plot Toolbar (below the plot) have been added to the new "Plot" menu in the top menu bar. This makes these buttons easier to access, especially if you use a pop-out window for display plots.
+              </li>
+            </ul>
+          </li>
+
+          <li><b>Survey Feature (Beta)</b>
+            <ul>
+              <li class="grey">
+                iNZight can now handle survey data (currently one- and two-stage (nested) clustering, stratification, and weighting). Plots take account of this design information and should display something appropriate.
+              </li>
+              <li>
+                Added finite population correction (FPC) to the available survey design elements used by iNZight.
+              </li>
+              <li>
+                Added "Get Summary" information for survey data, as well as some basic inference information (accessible from "Inference Information", <i>not</i> "Get Inference").
+              </li>
+            </ul>
+          </li>
+
+          <li class="grey">
+            Allow adjustment of axis limits from the "Add to Plot" menu
+          </li>
+          <li class="grey">
+            Adjust the number of bars displayed in a bar plot from the "Add to Plot" menu
+          </li>
+          <li>Several bug fixes (if you're interested, you can see a list <a href="https://www.stat.auckland.ac.nz/~wild/iNZight/support/changelog/?pkg=iNZight">here</a>)
+        </ul>
+      </p>
+    </div>
+
+    <div class="section">
+      <h3>New and Improved Mac OS X Installer</h3>
+
+      <p>
+        Those of you who are Mac users may well be aware that installation on Mac can be somewhat laborious. With every OS X update from Apple comes new restrictions and changes we have to overcome. The latest of these, OS X 10.11 El Capitan, broke our iNZightVIT launch process altogether. We were therefore forced to come up with something better.
+      </p>
+
+      <p>
+        The result? A new OS X Installer that, for the casual user*, will install iNZightVIT (and its dependencies) onto your machine and provide you with a (somewhat) pretty button to click and launch iNZight.
+      </p>
+
+      <p>
+        You can <a href="https://www.stat.auckland.ac.nz/~wild/iNZight/getinzight.php">download the new installer here</a>, and if you run into any problems, <a href="mailto:inzight_support@stat.auckland.ac.nz">please let us know</a>!!
+      </p>
+
+      <p class="footnote">
+        * any users who already have R installed on their machine will almost certainly run into problems running iNZight. The installer now installs R onto users' machines, but if R is already installed, it will not overwrite your installation; however, iNZight requires R v3.0 to run (anything higher runs into problems with various dependencies we have no control over). Manual install instructions will be made available when we figure them out.
+      </p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>
+      <a href="https://list.science.auckland.ac.nz/sympa/subscribe/stat-inzight-general">inzightgeneral@stat.auckland.ac.nz</a>
+    </p>
+
+    <a href="https://list.science.auckland.ac.nz/sympa/arc/stat-inzight-general">Previous newsletters</a>
+    |
+    <a href="https://list.science.auckland.ac.nz/sympa/signoff/stat-inzight-general">Unsubscribe</a>
+
+  </div>
+
+</div>
+</body>
+
+</html>
