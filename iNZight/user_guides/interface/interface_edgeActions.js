@@ -49,7 +49,7 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
          // insert code for mouse click here
          // Navigate to a new URL in the current window
          // (replace "_self" with appropriate target attribute)
-         window.open("https://www.stat.auckland.ac.nz/~wild/iNZight/user_guides/manipulate_variables/", "_self");
+         window.open("https://www.stat.auckland.ac.nz/~wild/iNZight/user_guides/variables/", "_self");
       
       
       });
