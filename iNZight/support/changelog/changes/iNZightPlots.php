@@ -55,6 +55,17 @@ behaviour ignores small groups and only compares large ones.
 
 
 
+<h4>PATCH 2.3.4 - 13/10/2015</h4>
+
+
+<ul>
+<li><p> continuing from 2.3.3, but now use independent covariances 
+</p>
+</li></ul>
+
+
+
+
 </div>  <div class='versionSection'><h3>Changes in Version 2.2</h3>
 
 <p>RELEASE DATE: 14 September 2015
