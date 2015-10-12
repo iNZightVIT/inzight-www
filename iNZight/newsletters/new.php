@@ -13,7 +13,7 @@ $info = json_decode(file_get_contents($url . "newMailerInfo.json"));
   <label>Inbox Preview:</label>
   <input type="text" id="previewTextbox" value="<?php echo $info->preview_text; ?>">
 
-  <small>This will appear in the iNZight preview, but not in the message itself.</small>
+  <small>This will appear in the Email preview, but not in the message itself.</small>
 </div>
 
 <div class="emailinfo">
