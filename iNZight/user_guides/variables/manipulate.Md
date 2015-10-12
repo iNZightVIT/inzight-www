@@ -1,4 +1,4 @@
-# Manipulating Variables
+# Variables
 
 __iNZight assumes that data sets are in rows = cases by columns = variables format.__
 

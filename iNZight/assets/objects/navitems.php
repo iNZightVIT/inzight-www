@@ -18,7 +18,7 @@
     // 'Get Started' => array(
     //   'default' => 'basics.php',
     //   'Basics' => 'basics.php',
-    //   'Manipulate Variables' => 'manip_vars.php',
+    //   'Variables' => 'manip_vars.php',
     //   'Plot Options' => 'plot_buttons.php',
     //   'Row Operations' => 'row_operations.php'
     // ),
@@ -36,7 +36,7 @@
       'The Basics' => 'basics/',
       'Interface' => 'interface/',
       'Plot Options' => 'plot_options/',
-      'Manipulate Variables' => 'manipulate_variables/',
+      'Variables' => 'variables/',
       'Data Options' => 'data_options/',       // row ops, reshape, ...
       'Additional Modules' => 'add_ons/'
     ),
