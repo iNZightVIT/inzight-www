@@ -45,6 +45,7 @@
       //'Known Issues' => 'issues.php',
       'FAQ' => 'faq/',
       'Email Lists' => 'email_lists/',
+      'Newsletters' => $wild_http . 'iNZight/newsletters/index.php',
       'Version History' => 'changelog/',
       'Contact Us' => 'contact/',
       //'Development' => 'development.php'
@@ -93,7 +94,7 @@
           } else {
 		    $pre = $rel.$prefix;
 		  }
-			
+
           echo "<a href='$pre$link'>$text</a>";
         }
         echo '</li>';
