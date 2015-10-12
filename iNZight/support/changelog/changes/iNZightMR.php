@@ -1,7 +1,24 @@
 
 <h2>NEWS file for the iNZightMR package</h2>
 
-<div class='versionSection'><h3>Changes in version 2.0</h3>
+<div class='versionSection'><h3>Changes in version 2.1</h3>
+
+<p>Release date: 10 October 2015
+</p>
+
+
+<h4>BUG FIXES</h4>
+
+
+<ul>
+<li><p> fix a bug that gave an &quot;Inverse&quot; error message
+</p>
+</li></ul>
+
+
+
+
+</div>  <div class='versionSection'><h3>Changes in version 2.0</h3>
 
 <p>Release date: 26 May 2015
 </p>

@@ -1,7 +1,48 @@
 
 <h2>NEWS file for the iNZightPlots package</h2>
 
-<div class='versionSection'><h3>Changes in Version 2.2</h3>
+<div class='versionSection'><h3>Changes in Version 2.3</h3>
+
+<p>RELEASE DATE: 1 October 2015
+</p>
+
+
+<h4>MINOR CHANGES</h4>
+
+
+<ul>
+<li><p> new argument added for dotplots to allow group labels to be
+placed inside the plot, rather than in the axis margin: <code>internal.labels=TRUE</code>
+</p>
+</li></ul>
+
+
+
+
+<h4>PATCH 2.3.1 - 06/10/2015</h4>
+
+
+<ul>
+<li><p> fix how viewports are named
+</p>
+</li></ul>
+
+
+
+
+<h4>PATCH 2.3.2 - 08/10/2015</h4>
+
+
+<ul>
+<li><p> fix a bug that prevented comparison lines to be drawn on
+categorical dotplots
+</p>
+</li></ul>
+
+
+
+
+</div>  <div class='versionSection'><h3>Changes in Version 2.2</h3>
 
 <p>RELEASE DATE: 14 September 2015
 </p>

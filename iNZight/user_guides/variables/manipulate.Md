@@ -1,5 +1,5 @@
 # Variables
-_(Previously called 'Manipulate Variables)_
+_(Previously called __'Manipulate Variables'__)_
 
 __iNZight assumes that data sets are in rows = cases by columns = variables format.__
 

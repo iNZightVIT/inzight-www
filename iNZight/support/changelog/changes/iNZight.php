@@ -1,9 +1,63 @@
 
 <h2>Change Log for iNZight</h2>
 
-<div class='versionSection'><h3>Changes in version 2.3</h3>
+<div class='versionSection'><h3>Changes in version 2.4</h3>
 
-<p>RELEASE DATE: 04 August 2015
+<p>Release date: 12 October, 2015
+</p>
+
+
+<h4>NEW FEATURES</h4>
+
+
+<ul>
+<li><p> Include FPC (finite population corrections) in survey designs
+</p>
+</li></ul>
+
+
+
+
+<h4>MAJOR CHANGES</h4>
+
+
+<ul>
+<li><p> Replace the drag-drop boxes for variabes with drop-down
+boxes for an alternative method of variable
+selection. Drag-and-drop functionality has been retained.
+</p>
+</li></ul>
+
+
+
+
+<h4>BUG FIXES</h4>
+
+
+<ul>
+<li><p> Fix the enabling/disabling of buttons when survey designs
+are specified.
+</p>
+</li>
+<li><p> When closing the survey design window, they specified design
+is now checked for validity before saving the design.
+</p>
+</li>
+<li><p> Fix bug in the Multiple Response module that gave an
+&quot;inverse&quot; error message.
+</p>
+</li>
+<li><p> Various other small fixes throughout iNZight and other
+dependency pacakges. See their change logs for details.
+</p>
+</li></ul>
+
+
+
+
+</div>  <div class='versionSection'><h3>Changes in version 2.3</h3>
+
+<p>Release date: 4 August, 2015
 </p>
 
 
@@ -104,7 +158,7 @@ Information windows.
 <ul>
 <li><p> LOCATE functionality now included for dot plots. Also fixes
 several bugs in the previous update for locating points in a
-scatter plot. 
+scatter plot.
 </p>
 </li></ul>
 
@@ -209,10 +263,10 @@ this, see the iNZightPlots change log.
 </li>
 <li><p> The &quot;Get Summary&quot; and &quot;Get Inference&quot; outputs have been
 redesigned to hopefully give a more intuitive, cleaner
-presentation of the information. 
+presentation of the information.
 </p>
 </li>
-<li><p> From dot plots and histograms, the comparison (and confidence) 
+<li><p> From dot plots and histograms, the comparison (and confidence)
 interval values can be read from the graph by clicking 'Get Values'
 in the 'Inference Information' panel. This includes the Year 12 intervals
 applied to medians.
@@ -445,7 +499,7 @@ Variable 1
 <li><p> can now specify to identify min/max points in a dot plot
 </p>
 </li>
-<li><p> in the Add to Plot window for barcharts, reworded &quot;segment by&quot; to &quot;colour by&quot; 
+<li><p> in the Add to Plot window for barcharts, reworded &quot;segment by&quot; to &quot;colour by&quot;
 for consistency.
 </p>
 </li>
