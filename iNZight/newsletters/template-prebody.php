@@ -1,6 +1,7 @@
 <?php
+$url = "http://docker.stat.auckland.ac.nz/R/templates/newsletters/";
 date_default_timezone_set('Pacific/Auckland');
-$info = json_decode(file_get_contents("newMailerInfo.json"));
+$info = json_decode(file_get_contents($url . "newMailerInfo.json"));
 ?>
 
 <div class="preview-text">

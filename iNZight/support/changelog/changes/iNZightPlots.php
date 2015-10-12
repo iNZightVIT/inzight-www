@@ -42,6 +42,19 @@ categorical dotplots
 
 
 
+<h4>PATCH 2.3.3 - 13/10/2015</h4>
+
+
+<ul>
+<li><p> fix a bug where adding comparison intervals would break the
+plot if any of the subgroups in a dotplot were too small. New
+behaviour ignores small groups and only compares large ones.
+</p>
+</li></ul>
+
+
+
+
 </div>  <div class='versionSection'><h3>Changes in Version 2.2</h3>
 
 <p>RELEASE DATE: 14 September 2015

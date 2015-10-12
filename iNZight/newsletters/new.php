@@ -1,11 +1,12 @@
 <?php
 
 $rel = "../";
+$url = "http://docker.stat.auckland.ac.nz/R/templates/newsletters/";
 
 require_once($rel . 'assets/includes/1-top_matter.php');
 require_once($rel . 'assets/includes/2-header.php');
 
-$info = json_decode(file_get_contents("newMailerInfo.json"));
+$info = json_decode(file_get_contents($url . "newMailerInfo.json"));
 ?>
 
 <div class="emailinfo">
@@ -25,7 +26,7 @@ $info = json_decode(file_get_contents("newMailerInfo.json"));
 <div class="mailer-cont cont-left">
 
   <textarea class="newmailer-text"><?php
-  echo file_get_contents("newmailer.Md");
+  echo file_get_contents($url . "newmailer.Md");
   ?></textarea>
 
 </div>
@@ -79,7 +80,6 @@ function updatePreview () {
     },
     success: function(ret) {
       $frame.attr('src', $frame.attr('src'));
-      console.log(ret);
     }
   });
 }

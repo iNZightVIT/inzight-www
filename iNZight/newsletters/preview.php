@@ -1,8 +1,9 @@
 <?php
+$url = "http://docker.stat.auckland.ac.nz/R/templates/newsletters/";
 $rel = "../";
 include_once($rel . 'assets/libraries/md.php');
 $Pd = new ParsedownExtra();
-$text = file_get_contents("newmailer.Md");
+$text = file_get_contents($url . "newmailer.Md");
 
 // search for Videos:
 $textArray = explode("///", $text);
