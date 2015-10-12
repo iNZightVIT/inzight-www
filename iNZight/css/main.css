@@ -1609,4 +1609,44 @@ select {
     .form .textfield .error {
       text-align: left; }
 
+.mailer-cont {
+  width: 50%;
+  height: 100%;
+  float: left;
+  margin: 0; }
+
+.cont-left {
+  border-right: solid 1px black;
+  padding: 0 10px; }
+
+.cont-right {
+  border-top: solid 1px black; }
+
+.newmailer-text {
+  width: 100%;
+  min-height: 400px;
+  font-family: monospace; }
+
+iframe {
+  border: none;
+  width: 100%;
+  min-height: 400px; }
+
+label {
+  display: inline-block;
+  width: 175px;
+  text-align: right;
+  margin-right: 20px; }
+
+input[type='text'] {
+  width: 600px;
+  margin: 0 0 20px;
+  padding: 5px;
+  border: none;
+  border-bottom: solid 2px #094b85;
+  background: #eee; }
+
+.emailinfo small {
+  display: inline-block; }
+
 /*# sourceMappingURL=main.css.map */
