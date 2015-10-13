@@ -1,6 +1,6 @@
 <?php
 
-$url = "http://docker.stat.auckland.ac.nz/R/templates/newsletters/";
+$url = "./";
 $data = $_REQUEST;
 
 // write info to file

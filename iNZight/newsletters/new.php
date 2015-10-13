@@ -1,7 +1,7 @@
 <?php
 
 $rel = "../";
-$url = "http://docker.stat.auckland.ac.nz/R/templates/newsletters/";
+$url = "./";
 
 require_once($rel . 'assets/includes/1-top_matter.php');
 require_once($rel . 'assets/includes/2-header.php');

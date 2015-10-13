@@ -1,5 +1,5 @@
 <?php
-$url = "http://docker.stat.auckland.ac.nz/R/templates/newsletters/";
+$url = "./";
 $rel = "../";
 include_once($rel . 'assets/libraries/md.php');
 $Pd = new ParsedownExtra();
