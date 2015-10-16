@@ -10,19 +10,23 @@
 },
 "load_data" : {
   "title" : "Load data into iNZight",
-  "short" : "Load Data"
+  "short" : "Load Data",
+  "desc"  : "From starting up iNZight and reading in a data file, to your first graphs."
 },
 "plot1var"  : {
   "title" : "Plotting one variable",
-  "short" : "One Variable"
+  "short" : "One Variable",
+  "desc"  : "Working with one variable at a time - the 'Variable 1' box."
 },
 "plot2var"  : {
   "title" : "Plotting two variables",
-  "short" : "Two Variables"
+  "short" : "Two Variables",
+  "desc"  : "Working with pairs of variables - the 'Variable 2' box."
 },
 "subset_data"  : {
   "title" : "Subsetting your data",
-  "short" : "Subsetting"
+  "short" : "Subsetting",
+  "desc"  : "Multiple plots for subsets of the data - the 'Subset Variable 1' and 'Subset variable 2' boxes."
 },
 "update_inzight" : {
   "title" : "Updating iNZight",

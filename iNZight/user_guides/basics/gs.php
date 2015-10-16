@@ -34,7 +34,7 @@ if ($mac) {
         switch($os) {
           case "win":
           case "windows":
-            echo "This will be wherever you extracted the zipfile to.";
+            echo "This will be wherever you extracted the zipfile to";
             break;
           case "mac":
             if ($v > 8) {
