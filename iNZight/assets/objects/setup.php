@@ -1,6 +1,9 @@
 <?php
   $baseURL = "https://www.stat.auckland.ac.nz/~wild/iNZight/";   // This should be the main host ...
   $download_dir = "downloads/";
+  $cloud_URL = "https://d3df31qg0t49uu.cloudfront.net/";
+  $include_secondary_links = true;
+  $cloud_as_main = true;  // if TRUE, the *main* links will point to the cloud files
 
   $download_links = array(
     "Windows" => "iNZightVIT-latest-zipfile.zip",
@@ -9,6 +12,14 @@
     "osx-sl"  => "iNZightVIT-latest-osx-sl.zip",
     "osx-man" => "iNZightVIT-latest-osx.zip",
     "osx-ml-man" => "iNZightVIT-latest-osx-sl.zip",
+
+    // cloud links --- if not available, don't use!
+    "Windows_cloud" => false,
+    "osx_cloud" => false,
+    "osx-ml_cloud" => false,
+    "osx_sl_cloud" => false,
+    "osx-man_cloud" => false, // not implemented ...
+    "osx_ml-man_cloud" => false, // not implemented ...
 
     "xquartz" => "http://xquartz.macosforge.org/downloads/SL/XQuartz-2.7.7.dmg",
     "gtk-2.18" => "http://r.research.att.com/libs/GTK_2.18.5-X11.pkg",

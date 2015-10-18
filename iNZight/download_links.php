@@ -3,11 +3,29 @@
   require_once($rel . 'assets/objects/setup.php');
   require_once($rel . 'assets/functions/filesize.php');
 
+  // whether or not we use the cloud files:
+  $file_base = "./" . $download_dir;
+  $file_ext = "";
+  if ($include_secondary_links) {
+    if ($cloud_as_main) {
+      $file_ext = "_cloud";
+    }
+  }
+
+
   $href  = "getinzight.php?";
   $href .= "os=" . $_POST["os"];
+  $HREF = $href;
+  $href2 = $href;
+  if ($include_secondary_links & $cloud_as_main) {
+    $href .= $file_ext;
+  } else {
+    $href2 .= $file_ext;
+  }
   if (isset($_POST["v"])) {
     $href .= "&v=" . (int)$_POST["v"];
   }
+
 
   $os = $_POST["os"];
   switch ($os) {
@@ -18,11 +36,15 @@
       $os_version = (int)$_POST["v"];
       $mac_version = ($os_version > 8) ? "osx" : (($os_version > 6) ? "osx-ml" : "osx-sl");
       $file = $download_links[$mac_version];
+      if ($download_links[$mac_version . "_cloud"] === false) {
+        $include_secondary_links = false;
+        $href = $HREF;
+      }
       break;
   }
 
   if (isset($file)) {
-    $size = getFileSize("./" . $download_dir . $file);
+    $size = getFileSize($file_base . $file);
 
     $fileSize = ($size == 0) ? "" : " (" . $size . ")";
 
@@ -49,6 +71,16 @@
       <span class="sub-text"><?php echo $file_info; ?></span>
     </a>
   </div>
+
+  <?php if ($include_secondary_links) { ?>
+    <div class="space-above">
+      <b>Alternative link for New Zealand users:</b>
+      <a href="<?php echo $href2; ?>">iNZightVIT for <?php echo $os; ?></a>
+    </div>
+    <p>
+      This is a direct link from the University of Auckland servers, and might be faster if you're based in NZ (especially if downloading from the UoA Campus).
+    </p>
+  <?php } ?>
 
   <div class="space-above">
     Installation instructions only (i.e., no download):

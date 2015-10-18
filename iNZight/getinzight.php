@@ -5,6 +5,7 @@
   // Try to detect platform
   $auto = false;
   $os_version = 0;  // default to 0
+  $cloud_dl = false;
 
   $linux_dists = array("Ubuntu", "Debian", "Redhat_Suse");
   $distribution = "";
@@ -12,14 +13,28 @@
   $install_only = isset($_GET["inst"]);
 
   if (isset($_GET["os"])) {
-      if (in_array($_GET["os"], array("Windows", "Mac", "Linux"))) {
-      $os = $_GET["os"];
+    $OS = $_GET["os"];
+    $fromCloud = "";
+    $link_base = "./" . $download_dir;
+    $linkBase = $baseURL . $download_dir;
 
+    if (preg_match("/cloud/", $OS)) {
+      $cloud_dl = true;
+      if ($download_links[$OS] === true) {
+        $fromCloud = "&cloud";
+        $link_base = $cloud_URL;
+        $linkBase = $link_base;
+      }
+      $OS = str_replace("_cloud", "", $OS);
+    }
+
+    if (in_array($OS, array("Windows", "Mac", "Linux"))) {
+      $os = $OS;
       // auto download for Windows
       if ($os == "Windows") {
         $file = $download_links[$os];
         if (!$install_only) {
-          $metatags = "<meta http-equiv='Refresh' content='3; url=download.php?file=" . $file . "'>";
+          $metatags = "<meta http-equiv='Refresh' content='3; url=download.php?file=" . $file . $fromCloud . "'>";
         }
         $auto = true;
       } else if ($os == "Mac") {
@@ -32,7 +47,7 @@
             $mac_version = ($os_version > 8) ? "osx" : (($os_version > 6) ? "osx-ml" : "osx-sl");
             $file = $download_links[$mac_version];
             if (!$install_only) {
-              $metatags = "<meta http-equiv='Refresh' content='3; url=download.php?file=" . $file . "'>";
+              $metatags = "<meta http-equiv='Refresh' content='3; url=download.php?file=" . $file . $fromCloud . "'>";
             }
             $auto = true;
           }
@@ -45,6 +60,8 @@
           }
         }
       }
+    } else {
+      unset($os);
     }
   }
 
@@ -52,7 +69,6 @@
   if (!isset($os)) {
     require_once('assets/functions/os_detect.php');
     $os = getOS();
-//echo $os;
   }
 
   // The main page starts here:
@@ -73,8 +89,8 @@
     <p class="large-break">
       The file should begin downloading automatically after 3 seconds.<br>
       If it does not, use this direct link:
-      <a href="<?php echo "./" . $download_dir . $file; ?>">
-        <?php echo $baseURL . $download_dir . $file; ?>
+      <a href="<?php echo $link_base . $file; ?>">
+        <?php echo $linkBase . $file; ?>
       </a>
     </p>
 
