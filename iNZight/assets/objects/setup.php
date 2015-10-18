@@ -14,10 +14,10 @@
     "osx-ml-man" => "iNZightVIT-latest-osx-sl.zip",
 
     // cloud links --- if not available, don't use!
-    "Windows_cloud" => false,
-    "osx_cloud" => false,
-    "osx-ml_cloud" => false,
-    "osx_sl_cloud" => false,
+    "Windows_cloud" => true,
+    "osx_cloud" => true,
+    "osx-ml_cloud" => true,
+    "osx_sl_cloud" => true,
     "osx-man_cloud" => false, // not implemented ...
     "osx_ml-man_cloud" => false, // not implemented ...
 
