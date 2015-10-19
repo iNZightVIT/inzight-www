@@ -1,7 +1,7 @@
 
 # I don't understand zip files and don't know what to do with know what to do with iNZightVIT-latest-zipfile
 
-This video shows how to drag the iNZightVIT folder (the one we want to use) out of iNZightVIT-latest-zipfile<br> 
+This video shows how to drag the iNZightVIT folder (the one we want to use) out of iNZightVIT-latest-zipfile<br>
 https://www.youtube.com/embed/7Lh1Uo8CzSs
 
 

@@ -43,7 +43,7 @@ Especially in the Snow Leopard/Lion/Mountain Lion versions of iNZightVIT, there 
 If iNZight is not working, and you're getting error messages, copy them and [send us a bug report](/support/contact/) and we will get back to you as soon as possible.
 
 
-# iNZight is running, but its very slow/laggy on Mavericks/Yosemite
+# iNZight is running, but its very slow/laggy on Mavericks/Yosemite {#disable-appnap}
 
 This is a problem caused by "App Nap". To disable this feature,
 1. __Single-click__ the __R__ icon inside the iNZightVIT folder, and press __Command-I__ (that's i not L) on your keyboard
