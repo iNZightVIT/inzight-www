@@ -98,57 +98,82 @@
       Manual Installation
     </div>
 
-    <p>
-      If you already have iNZight installed and just need the appropriate iNZightVIT files,
-      OR if you have trouble with the package installer:
-    </p>
-
-    <ol>
-      <li>
-        <a href="<?php echo $download_links["xquartz"] ?>">Download and install XQuartz</a>
-        (if you haven't already)
-      </li>
-
-      <li>
-        <a href="<?php echo $download_links[($mac_version == "osx") ? "gtk-2.24" : "gtk-2.18"] ?>">Download and install GTK</a>
-        (if you haven't already)
-      </li>
-
-      <li>
-        After installing the above software, <b>restart your computer</b>.
-      </li>
-
-      <?php
-        $file = $download_links[$mac_version . "-man"];
-        $size = getFileSize("./" . $download_dir . $file);
-
-        $fileSize = ($size == 0) ? "" : " (" . $size . ")";
-
-        $file_info = $fileSize;
-      ?>
-      <li>
-        <a href="<?php echo "download.php?file=".$file; ?>">Download the iNZightVIT files</a>
-        <?php echo $file_info; ?>
-      </li>
-
-      <li>
-        Unzip the downloaded files, then
-        <a href="<?php echo $href . '&inst'; ?>">follow the installation instructions</a>,
-        ignoring the first step.
-      </li>
-    </ol>
-
     <?php if ($os_version == 11) { ?>
+
+      <p>
+        Due to security settings on El Capitan, the previous manual installation method wont work as the iNZightVIT Files cannot run.
+        Please <a href="http://localhost:8080/support/contact/">get in touch</a> if you have any problems and we'll try sort you out.
+      </p>
+
+    <?php } else { ?>
+
+      <p>
+        If you already have iNZight installed and just need the appropriate iNZightVIT files,
+        OR if you have trouble with the package installer:
+      </p>
+
+      <ol>
+        <li>
+          <a href="<?php echo $download_links["xquartz"] ?>">Download and install XQuartz</a>
+          (if you haven't already)
+        </li>
+
+        <li>
+          <a href="<?php echo $download_links[($mac_version == "osx") ? "gtk-2.24" : "gtk-2.18"] ?>">Download and install GTK</a>
+          (if you haven't already)
+        </li>
+
+        <li>
+          After installing the above software, <b>restart your computer</b>.
+        </li>
+
+        <?php
+          $file = $download_links[$mac_version . "-man"];
+          $size = getFileSize("./" . $download_dir . $file);
+
+          $fileSize = ($size == 0) ? "" : " (" . $size . ")";
+
+          $file_info = $fileSize;
+        ?>
+        <li>
+          <a href="<?php echo "download.php?file=".$file; ?>">Download the iNZightVIT files</a>
+          <?php echo $file_info; ?>
+        </li>
+
+        <li>
+          Unzip the downloaded files, then
+          <a href="<?php echo $href . '&inst'; ?>">follow the installation instructions</a>,
+          ignoring the first step.
+        </li>
+      </ol>
+    <?php } ?>
+
+    <?php if ($os_version >= 9) { ?>
       <div class="label space-above">
         INSTALLATION FOR R USERS
       </div>
-      <p>
-        Due to security changes, the scripts used to run iNZight in a standalone R installation no longer work. Therefore, the new installer installs R version 3.0.2 onto your system, however <b>it will not overwrite any current installation</b>. If you already have R installed, and it is not version 3.0.2 (which is old, so you probably don't) then the iNZightVIT app will (probably) not run.
-      </p>
 
-      <p>
-        Fortunately, it seems most of the dependencies (such as <code>RGtk2</code>) are now supported, so installation is fairly straightforward. The below instructions were tested on R 3.2.2 (the latest version of R as of 19 October, 2015):
-      </p>
+      <?php if ($os_version == 11) { ?>
+        <p>
+          Due to security changes, the scripts used to run iNZight in a standalone R installation no longer work. Therefore, the new installer installs R version 3.0.2 onto your system, however <b>it will not overwrite any current installation</b>. If you already have R installed, and it is not version 3.0.2 (which is old, so you probably don't) then the iNZightVIT app will (probably) not run.
+        </p>
+
+        <p>
+          Fortunately, it seems most of the dependencies (such as <code>RGtk2</code>) are now supported, so installation is fairly straightforward. The below instructions were tested on R 3.2.2 (the latest version of R as of 19 October, 2015):
+        </p>
+      <?php }  else { ?>
+        <p>
+          The new installer&mdash;to by-pass security settings and other issues&mdash;installs R on the user's computer. If you already use R, it won't override anything, but the iNZightVIT application probably wont work. On Mavericks and Yosemite, you have two options:
+          <ul>
+            <li>Follow the manual instructions above (the iNZightVIT files contain START_iNZightVIT.command to run iNZight),</li>
+            <li>Install iNZight manually on your R installation (below).</li>
+          </ul>
+        </p>
+
+        <p>
+          To manually install iNZight on R, you can use the following instructions. These have only been tested so far on El Capitan running R 3.2.2 (the latest version of R as of 19 October, 2015):
+        </p>
+      <?php } ?>
 
       <ol>
         <li>
@@ -185,10 +210,19 @@ install.packages(c("vit", "iNZightMR", "iNZightTS", "iNZightModules", "iNZightRe
           <b>To Run iNZightVIT:</b>
 
           <pre>
-  library(vit)
-  iNZightVIT()
+library(vit)
+iNZightVIT()
           </pre>
         </li>
+
+        <li>
+          When you run iNZight, if any updates are available it will let you know (unless you disable checking in the preferences). In this case, run:
+          <pre>
+update.packages(repos = "http://docker.stat.auckland.ac.nz/R")
+          </pre>
+        </li>
+
+        <li>The last thing that's missing is the data, which can be <a href="http://www.stat.auckland.ac.nz/~wild/downloads/data.zip">downloaded from here</a>.
       </ol>
 
       <p><b>Please</b> <a href="mailto:inzight_support@stat.auckland.ac.nz">let us know</a> if you have any issues and we will try to help as best we can.

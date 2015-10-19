@@ -59,7 +59,7 @@ switch ($os_version) {
       <?php if ($os_version > 8) { ?>
       <p class="note">
         If you already have R installed, you may have issues with the installation process. In this case,
-        <a href="https://www.stat.auckland.ac.nz/~wild/iNZight/downloads/iNZightVIT-latest-osx.pkg">use the old installer</a>.
+        <a href="getinzight.php?os=Mac">check out the R User Installation instructions</a> on the download page.
       </p>
       <?php } ?>
     </li>
