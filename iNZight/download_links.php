@@ -60,7 +60,7 @@
 
   <?php if ($os == "Mac") if ($os_version > 6) { ?>
     <p>
-      This will automatically install the necessary software (XQuartz and GTK+),
+      This will automatically install <b>XQuartz, GTK+, and R</b>*,
       and place iNZightVIT in your <b>Applications</b> folder.
     </p>
   <?php } ?>
@@ -71,6 +71,12 @@
       <span class="sub-text"><?php echo $file_info; ?></span>
     </a>
   </div>
+
+  <?php if ($os == "Mac") if ($os_version > 6) { ?>
+    <p class="small">
+      <b>*R users</b> need to follow the instructions at the bottom of the page.
+    </p>
+  <?php } ?>
 
   <?php if ($include_secondary_links) { ?>
     <div class="space-above">
@@ -127,24 +133,61 @@
 
       <li>
         Unzip the downloaded files, then
-        <a href="<?php echo $href . '&inst'; ?>">follow the installation instructinos</a>,
+        <a href="<?php echo $href . '&inst'; ?>">follow the installation instructions</a>,
         ignoring the first step.
       </li>
     </ol>
 
     <?php if ($os_version == 11) { ?>
       <div class="label space-above">
-        WARNING TO R USERS
+        INSTALLATION FOR R USERS
       </div>
       <p>
-        Due to security changes, the scripts used to run iNZight in a standalone R installation no longer work. Therefore, the new installer installs R version 3.0.2 onto your system, however <b>it will not overwrite any current installation</b>. If you use a version of R &geq; 3.1, the iNZightVIT app will not run because the necessary version of R cannot be found.
+        Due to security changes, the scripts used to run iNZight in a standalone R installation no longer work. Therefore, the new installer installs R version 3.0.2 onto your system, however <b>it will not overwrite any current installation</b>. If you already have R installed, and it is not version 3.0.2 (which is old, so you probably don't) then the iNZightVIT app will (probably) not run.
       </p>
 
       <p>
-        Unfortunately, we are currently unable to offer a solution unless you can manually install iNZight onto your system;; however, the GTK+ software doesn't seem to be compatible with recent versions of R. Check out <a href="https://www.stat.auckland.ac.nz/~wild/iNZight_Old/ruser.php">these instructions</a> for an overview of installing iNZight in R.
+        Fortunately, it seems most of the dependencies (such as <code>RGtk2</code>) are now supported, so installation is fairly straightforward. The below instructions were tested on R 3.2.2 (the latest version of R as of 19 October, 2015):
       </p>
-      <p class="note">
-        Note: these instructions are hosted on an older site, and haven't been updated recently, but the <code>install.packages()</code> command hasn't changed. We will update this page when a viable installation method presents itself. If you have one, <a href="mailto:inzight_support@stat.auckland.ac.nz">please let us know</a>!!!
-      </p>
+
+      <ol>
+        <li>
+          <a href="<?php echo $download_links["xquartz"] ?>">Download and install XQuartz</a>
+          (if you haven't already)
+        </li>
+
+        <li>
+          <a href="<?php echo $download_links[($mac_version == "osx") ? "gtk-2.24" : "gtk-2.18"] ?>">Download and install GTK</a>
+          (if you haven't already)
+        </li>
+
+        <li>
+          If you had to install either of XQuartz or GTK, you'll need to <b>restart your computer</b>
+        </li>
+
+        <li>
+          Now launch R and run the following code:
+
+          <pre>
+install.packages(c("vit", "iNZightMR", "iNZightTS", "iNZightModules", "iNZightRegression", "iNZightPlots", "iNZight", "iNZightTools"),
+                 repos = c("http://docker.stat.auckland.ac.nz/R",
+                           "http://cran.stat.auckland.ac.nz"))    # or your preferred CRAN Mirror
+          </pre>
+
+          <p class="note">
+            Note: you can change <code>dependencies = "depends"</code> if you prefer, but using <code>TRUE</code> will also download the suggested packages, which includes Time Series, Multiple Response, and various other addons that enhance iNZight.
+          </p>
+        </li>
+
+
+      <li>
+        <b>To Run iNZightVIT:</b>
+
+        <pre>
+library(vit)
+iNZightVIT()
+        </pre>
+      </li>
+    </ol>
     <?php } ?>
   <?php } ?>
