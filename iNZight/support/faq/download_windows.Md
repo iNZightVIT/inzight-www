@@ -19,7 +19,8 @@ Failing this, you may need to follow one of the options below.
 If you are using an institutionally-owned computer, it may have overly high security settings which are preventing iNZight from running. To allow iNZight to run, you will need to ask an administrator to:
 
 - Place the __iNZightVIT__ folder inside __Program Files__
-- Create a shortcut to __START_iNZightVIT.bat__ on the desktop
+- Create a shortcut to __START_iNZightVIT.bat__ on the desktop <br>
+(right click on START_iNZightVIT, select Create Shortcut. It will automatically be put on the desktop. Do the same with UPDATE_iNZightVIT.)
 
 You can use this shortcut to start iNZight.
 
