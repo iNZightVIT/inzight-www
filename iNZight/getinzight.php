@@ -20,11 +20,6 @@
 
     if (preg_match("/cloud/", $OS)) {
       $cloud_dl = true;
-      if ($download_links[$OS] === true) {
-        $fromCloud = "&cloud";
-        $link_base = $cloud_URL;
-        $linkBase = $link_base;
-      }
       $OS = str_replace("_cloud", "", $OS);
     }
 
@@ -32,6 +27,11 @@
       $os = $OS;
       // auto download for Windows
       if ($os == "Windows") {
+        if ($download_links["Windows_cloud"] === true) {
+          $fromCloud = "&cloud";
+          $link_base = $cloud_URL;
+          $linkBase = $link_base;
+        }
         $file = $download_links[$os];
         if (!$install_only) {
           $metatags = "<meta http-equiv='Refresh' content='3; url=download.php?file=" . $file . $fromCloud . "'>";
@@ -46,6 +46,11 @@
           } else {
             $mac_version = ($os_version > 8) ? "osx" : (($os_version > 6) ? "osx-ml" : "osx-sl");
             $file = $download_links[$mac_version];
+            if ($download_links[$mac_version . "_cloud"] === true) {
+              $fromCloud = "&cloud";
+              $link_base = $cloud_URL;
+              $linkBase = $link_base;
+            }
             if (!$install_only) {
               $metatags = "<meta http-equiv='Refresh' content='3; url=download.php?file=" . $file . $fromCloud . "'>";
             }

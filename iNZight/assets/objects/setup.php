@@ -17,7 +17,7 @@
     "Windows_cloud" => true,
     "osx_cloud" => true,
     "osx-ml_cloud" => true,
-    "osx_sl_cloud" => true,
+    "osx-sl_cloud" => true,
     "osx-man_cloud" => false, // not implemented ...
     "osx_ml-man_cloud" => false, // not implemented ...
 
