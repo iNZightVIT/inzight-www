@@ -174,20 +174,25 @@ install.packages(c("vit", "iNZightMR", "iNZightTS", "iNZightModules", "iNZightRe
                            "http://cran.stat.auckland.ac.nz"))    # or your preferred CRAN Mirror
           </pre>
 
+          You might get prompted whether to install binary or source; if in doubt, type "n" (for binary) and press return.
+
           <p class="note">
             Note: you can change <code>dependencies = "depends"</code> if you prefer, but using <code>TRUE</code> will also download the suggested packages, which includes Time Series, Multiple Response, and various other addons that enhance iNZight.
           </p>
         </li>
 
+        <li>
+          <b>To Run iNZightVIT:</b>
 
-      <li>
-        <b>To Run iNZightVIT:</b>
+          <pre>
+  library(vit)
+  iNZightVIT()
+          </pre>
+        </li>
+      </ol>
 
-        <pre>
-library(vit)
-iNZightVIT()
-        </pre>
-      </li>
-    </ol>
+      <p>
+        NOTE: the package <code>Acinonyx</code> hasn't been compiled for any OS later than Mavericks (10.9), and therefore the VIT module's animations will be far too slow, so avoid using them. If you are able to build a working Acinonyx binary (<a href="https://rforge.net/Acinonyx/">Acinonyx homepage</a>), we would very much appreciate if you shared this with us so we can add it to our repository! Contact us at <a href="mailto:inzight_support@stat.auckland.ac.nz">inzight_support@stat.auckland.ac.nz</a>.
+      </p>
     <?php } ?>
   <?php } ?>
