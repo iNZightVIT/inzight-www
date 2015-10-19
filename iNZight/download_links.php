@@ -191,6 +191,8 @@ install.packages(c("vit", "iNZightMR", "iNZightTS", "iNZightModules", "iNZightRe
         </li>
       </ol>
 
+      <p><b>Please</b> <a href="mailto:inzight_support@stat.auckland.ac.nz">let us know</a> if you have any issues and we will try to help as best we can.
+
       <p>
         NOTE: the package <code>Acinonyx</code> hasn't been compiled for any OS later than Mavericks (10.9), and therefore the VIT module's animations will be far too slow, so avoid using them. If you are able to build a working Acinonyx binary (<a href="https://rforge.net/Acinonyx/">Acinonyx homepage</a>), we would very much appreciate if you shared this with us so we can add it to our repository! Contact us at <a href="mailto:inzight_support@stat.auckland.ac.nz">inzight_support@stat.auckland.ac.nz</a>.
       </p>
