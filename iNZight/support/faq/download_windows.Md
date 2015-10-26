@@ -2,7 +2,7 @@
 # I don't understand zip files and don't know what to do with know what to do with iNZightVIT-latest-zipfile
 
 This video shows how to drag the iNZightVIT folder (the one we want to use) out of iNZightVIT-latest-zipfile<br>
-https://www.youtube.com/embed/7Lh1Uo8CzSs
+///VIDEO: https://www.youtube.com/embed/7Lh1Uo8CzSs ///
 
 
 # I'm getting the error: 'Windows cannot find 'prog_files/bin/i386/Rgui.exe'. Make sure you typed the name correctly, and then try again.'

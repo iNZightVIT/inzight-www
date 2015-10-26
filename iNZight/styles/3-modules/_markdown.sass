@@ -7,6 +7,12 @@
   h1
     font-size: 1.2em
 
+    &:target
+      border-left: solid 3px $main-color-1
+      padding: 7px 0 7px 5px
+      margin-top: 25px
+      background: lighten($main-color-1, 40)
+
   h2
     font-size: 1.1em
     margin-top: 2em
@@ -73,15 +79,23 @@ img
 
 .video-wrapper
   position: relative
+  overflow: hidden
+  margin: 0 auto
 
   @include notwide
     &.asp16x9  // 16:9 aspect ratio: 9/16 = 0.5625
+      width: 100%
       padding-bottom: 56.25%
+      height: 0
 
   @include widescreen
     width: 1000px // $content-width
-    height: 562.5px // 0.5625 * $content-width
     padding: 0
+    height: 562.5px // 0.5625 * $content-width
+
+    &.halfsize
+      width: 500px
+      height: 281.25px
 
   iframe
     position: absolute
@@ -89,8 +103,6 @@ img
     height: 100%
     top: 0
     left: 0
-
-
 
 .extraInfo
   border: solid 1px black

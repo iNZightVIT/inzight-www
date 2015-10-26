@@ -108,7 +108,28 @@ if (isset($_GET["section"])) {
     <?php
       $file = $file . ".Md";
       if (file_exists($file)) {
-        echo $Pd->text(file_get_contents($file));
+        // display the contents
+        include_once($rel . 'assets/libraries/md.php');
+        $Pd = new ParsedownExtra();
+        $text = file_get_contents($file);
+
+        // search for Videos:
+        $textArray = explode("///", $text);
+
+        foreach($textArray as $text) {
+          if (preg_match("/^VIDEO: /", $text)) {
+            // remove the video text and ponk the URL down:
+            echo "<div class='video-wrapper asp16x9 halfsize'>";
+            echo "  <iframe width='560' height='315'";
+            echo "   src='".str_replace("VIDEO: ", "", $text)."'";
+            echo "   frameborder='0' allowfullscreen></iframe>";
+            echo "</div>";
+          } else if (preg_match("/^SCRIPT: /", $text)) {
+            echo "<script src='". str_replace("SCRIPT: ", "", $text) ."'></script>";
+          } else {
+            echo $Pd->text($text);
+          }
+        }
       } else {
         echo "Something went wrong ... " . $file;
       }
@@ -116,8 +137,6 @@ if (isset($_GET["section"])) {
 
     </div>
   <?php } ?>
-
-
 
 
 <?php

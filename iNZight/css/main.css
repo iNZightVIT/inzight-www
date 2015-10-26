@@ -1213,6 +1213,11 @@ ul {
     clear: both; }
   .markdown h1, .rhistory h1 {
     font-size: 1.2em; }
+    .markdown h1:target, .rhistory h1:target {
+      border-left: solid 3px #18afe3;
+      padding: 7px 0 7px 5px;
+      margin-top: 25px;
+      background: #cdeefa; }
   .markdown h2, .rhistory h2 {
     font-size: 1.1em;
     margin-top: 2em; }
@@ -1266,15 +1271,22 @@ img {
     max-width: 200px; }
 
 .video-wrapper {
-  position: relative; }
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto; }
   @media (max-width: 1099px) {
     .video-wrapper.asp16x9 {
-      padding-bottom: 56.25%; } }
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0; } }
   @media (min-width: 1100px) {
     .video-wrapper {
       width: 1000px;
-      height: 562.5px;
-      padding: 0; } }
+      padding: 0;
+      height: 562.5px; }
+      .video-wrapper.halfsize {
+        width: 500px;
+        height: 281.25px; } }
   .video-wrapper iframe {
     position: absolute;
     width: 100%;

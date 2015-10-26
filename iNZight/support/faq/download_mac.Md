@@ -28,7 +28,7 @@ There is a `R session is headless; GTK+ not initialized` message in the R consol
 
 
 
-#I've tried updating iNZight, but it doesn't work
+# I've tried updating iNZight, but it doesn't work
 
 If you have an old version of iNZightVIT (2.0.2 or earlier) you may be unable to run the updater. For now, the only solution is to [download iNZightVIT](/getinzight.php?os=Mac) again.
 
