@@ -116,15 +116,17 @@ if (isset($_GET["section"])) {
           $topicPattern = preg_quote($topicSearch, '/');
           $pattern = "/^$topicPattern.*\$/m";
           if(preg_match_all($pattern, $text, $matches)){
-            foreach($matches[0] as $topic) {
+            $matches = $matches[0];
+            foreach($matches as $topic) {
               $IDpattern = "/\{#.*\}/";
               if (preg_match($IDpattern, $topic, $this_id)) {
-                $href = substr($this_id[0], 1, strlen($this_id[0])-2);
+                $this_id = $this_id[0];
+                $href = substr($this_id, 1, strlen($this_id)-2);
               } else {
                 $href = "#";
               }
-
-              $li_text = substr(explode("{", $topic)[0], 1);
+              $topic_only = explode("{", $topic);
+              $li_text = substr($topic_only[0], 1);
               echo "<li><a href='$href'>$li_text</a></li>";
             }
           }
