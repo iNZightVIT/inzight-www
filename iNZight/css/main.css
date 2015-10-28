@@ -1212,12 +1212,9 @@ ul {
     display: table;
     clear: both; }
   .markdown h1, .rhistory h1 {
-    font-size: 1.2em; }
-    .markdown h1:target, .rhistory h1:target {
-      border-left: solid 3px #18afe3;
-      padding: 7px 0 7px 5px;
-      margin-top: 25px;
-      background: #cdeefa; }
+    font-size: 1.2em;
+    padding: 0;
+    margin-top: 25px; }
   .markdown h2, .rhistory h2 {
     font-size: 1.1em;
     margin-top: 2em; }
@@ -1251,6 +1248,8 @@ img {
   max-width: 100%; }
   img.half-width {
     width: 50%; }
+  img.width300 {
+    width: 300px; }
   img.width600 {
     width: 600px; }
   img.width700 {
@@ -1269,6 +1268,9 @@ img {
     border: none; }
   img.halfwidth {
     max-width: 200px; }
+
+a img {
+  display: inline-block; }
 
 .video-wrapper {
   position: relative;
@@ -1362,7 +1364,13 @@ img {
 
 .faq h1 {
   font-size: 1em;
-  padding-top: 1em; }
+  border-left: solid 3px #222;
+  background: #eee;
+  line-height: 2.5;
+  padding-left: 5px; }
+  .faq h1:target {
+    border-left: solid 3px #18afe3;
+    background: #cdeefa; }
 
 .rhistory .versionSection {
   border-bottom: solid 2px black;

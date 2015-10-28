@@ -2,4 +2,11 @@
 
   h1
     font-size: 1em
-    padding-top: 1em
+    border-left: solid 3px #222
+    background: #eee
+    line-height: 2.5
+    padding-left: 5px
+
+    &:target
+      border-left: solid 3px $main-color-1
+      background: lighten($main-color-1, 40)
