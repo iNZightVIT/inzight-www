@@ -1,4 +1,4 @@
-# My browser is complaining about ann "Unusual File", or giving me virus warnings when I try to download iNZight
+# My browser is complaining about an "Unusual File", or giving me virus warnings when I try to download iNZight {#virus-warning}
 
 Depending on your browser, you should be able to override this security setting and "allow the download to proceed".
 

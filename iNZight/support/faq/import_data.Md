@@ -1,13 +1,13 @@
 __Note__: iNZight expects spreadsheet-like data in which the first row of cells contains the _names_ of variables and everything in the column beneath a variable name is data recorded on that variable.
 
 
-# iNZight won't read my data (at all)
+# iNZight won't read my data (at all) {#data-wont-read}
 
 Open your data file in Excel (or similar) and save it in `csv` (comma separated values) format.
 Make sure the saved file has a `.csv` extension at the end of its name.
 
 
-# iNZight isn't reading my data properly
+# iNZight isn't reading my data properly {#data-read-incorrectly}
 
 - If, when you look at the spreadsheet inside iNZight it has too many rows or columns:
 
@@ -22,14 +22,14 @@ Make sure the saved file has a `.csv` extension at the end of its name.
   You will need to open the file in Excel (or similar) and change the type of the column to "Number".
 
 
-#When I load a `.csv`, it just get strings of text `'gender;age;region'` rather than columns
+# When I load a `.csv`, it just get strings of text `'gender;age;region'` rather than columns {#incorretly-formatted-data}
 
 This is caused by incompatible default settings in European countries. Unfortunately, iNZight can only read files with comma (,) separators. In European countries, however, this is commonly used as the decimal separator (142,9), so the symbol used to separate values in the exported file is different (a period (.) or semicolon (;)).
 
 To fix this, you will need to change the number format from a comma (142,9) to a period (142.9), and when you export as a `.csv`, make sure you tell it to use a comma (,) as the delimeter.
 
 
-# MAC: I can load data, but it shows up as unreadable text in the window
+# MAC: I can load data, but it shows up as unreadable text in the window {#file-encryption-issues}
 
 There are two possible causes of this.
 

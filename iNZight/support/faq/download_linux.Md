@@ -1,4 +1,4 @@
-# Linux Mint 17: Unable to install iNZight (dependencies have non-zero exit status)
+# Linux Mint 17: Unable to install iNZight (dependencies have non-zero exit status) {#mint-dependencies}
 
 A recently noted issue is the lack of a suitable `C` compiler, which results in failed installation of dependencies.
 

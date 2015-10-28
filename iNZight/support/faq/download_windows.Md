@@ -1,11 +1,11 @@
 
-# I don't understand zip files and don't know what to do with know what to do with iNZightVIT-latest-zipfile
+# I don't understand zip files and don't know what to do with know what to do with iNZightVIT-latest-zipfile {#unzipping-inzight}
 
 This video shows how to drag the iNZightVIT folder (the one we want to use) out of iNZightVIT-latest-zipfile<br>
 ///VIDEO: https://www.youtube.com/embed/7Lh1Uo8CzSs ///
 
 
-# I'm getting the error: 'Windows cannot find 'prog_files/bin/i386/Rgui.exe'. Make sure you typed the name correctly, and then try again.'
+# I'm getting the error: 'Windows cannot find 'prog_files/bin/i386/Rgui.exe'. Make sure you typed the name correctly, and then try again.' {#cannot-find-inzight}
 
 This is typically due to permissions on the computer. Often, iNZight will not be allowed to run from the Desktop. Instead, you can copy the __iNZightVIT__ folder to somewhere on the __C:/__ drive and run it from there.
 
@@ -14,7 +14,7 @@ If you still see the error message, you can try running iNZight from a USB stick
 Failing this, you may need to follow one of the options below.
 
 
-# I can't get iNZight to run, even from a memory stick!
+# I can't get iNZight to run, even from a memory stick! {#inzight-wont-run}
 
 If you are using an institutionally-owned computer, it may have overly high security settings which are preventing iNZight from running. To allow iNZight to run, you will need to ask an administrator to:
 
@@ -25,7 +25,7 @@ If you are using an institutionally-owned computer, it may have overly high secu
 You can use this shortcut to start iNZight.
 
 
-# My school disables `.bat` files; how can I make iNZightVIT available to students?
+# My school disables `.bat` files; how can I make iNZightVIT available to students? {#disabled-bat-files}
 
 - Create a shortcut to `prog_files\bin\i386\Rgui.exe` for them to use to fire up `R`
 - They will then have to paste the following into the R console window:

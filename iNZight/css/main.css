@@ -1370,7 +1370,8 @@ a img {
   padding-left: 5px; }
   .faq h1:target {
     border-left: solid 3px #18afe3;
-    background: #cdeefa; }
+    background: #cdeefa;
+    transition: all 0.5s ease-in-out; }
 
 .rhistory .versionSection {
   border-bottom: solid 2px black;
