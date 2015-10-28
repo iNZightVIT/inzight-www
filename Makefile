@@ -13,5 +13,7 @@ Npull:
 
 fixPermissions:
 	sudo chmod -R 775 .
+
+nothing:
 	sudo chmod 777 iNZight/newsletters/newmailer.Md
 	sudo chmod 777 iNZight/newsletters/newMailerInfo.json
