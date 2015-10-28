@@ -1,7 +1,26 @@
 
 <h2>Change Log for vit</h2>
 
-<div class='versionSection'><h3>Changes in version 1.2.4</h3>
+<div class='versionSection'><h3>Changes in version 1.2.5</h3>
+
+<p>Release date: 19 October 2015
+</p>
+
+
+<h4>CHANGES</h4>
+
+
+<ul>
+<li><p> Removed the &quot;ODBC&quot; dependency, which should only affect
+import of Excel files on Windows. However, this dependency was
+causing issues on Macs.
+</p>
+</li></ul>
+
+
+
+
+</div>  <div class='versionSection'><h3>Changes in version 1.2.4</h3>
 
 <p>Release date: 27 July 2015
 </p>

@@ -18,6 +18,18 @@
 
 
 
+<h4>PATCH 2.1.1 - 19/10/2015</h4>
+
+
+<ul>
+<li><p> remove <code>iNZightPlots</code> from imports, as this was causing
+installation issues.
+</p>
+</li></ul>
+
+
+
+
 </div>  <div class='versionSection'><h3>Changes in version 2.0</h3>
 
 <p>Release date: 26 May 2015

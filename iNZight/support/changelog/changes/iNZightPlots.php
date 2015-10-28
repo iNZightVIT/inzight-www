@@ -66,6 +66,28 @@ behaviour ignores small groups and only compares large ones.
 
 
 
+<h4>PATCH 2.3.4 - 13/10/2015</h4>
+
+
+<ul>
+<li><p> FIX for Lite: dotplots by factor labels now also on histograms
+</p>
+</li></ul>
+
+
+
+
+<h4>PATCH 2.3.5 - 28/10/2015</h4>
+
+
+<ul>
+<li><p> fix the &quot;number of missing observations&quot; shown in summary output
+</p>
+</li></ul>
+
+
+
+
 </div>  <div class='versionSection'><h3>Changes in Version 2.2</h3>
 
 <p>RELEASE DATE: 14 September 2015

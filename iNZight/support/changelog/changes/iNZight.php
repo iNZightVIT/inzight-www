@@ -55,6 +55,32 @@ dependency pacakges. See their change logs for details.
 
 
 
+<h4>PATCH 2.4.1 - 21/10/2015</h4>
+
+
+<ul>
+<li><p> Remove dependency on <code>RODBC</code> package; this causes
+issues on Mac attempting to manually install.
+</p>
+</li></ul>
+
+
+
+
+<h4>PATCH 2.4.2 - 28/10/2015</h4>
+
+
+<ul>
+<li><p> Add option to display labels internally on numeric x factor
+</p>
+</li>
+<li><p> Fix from iNZightPlots for Get Summary (n.missing now correct)
+</p>
+</li></ul>
+
+
+
+
 </div>  <div class='versionSection'><h3>Changes in version 2.3</h3>
 
 <p>Release date: 4 August, 2015
