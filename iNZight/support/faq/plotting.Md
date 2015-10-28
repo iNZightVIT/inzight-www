@@ -14,6 +14,7 @@ To do this,
 
 [![img](img/plotting_factorlabels2.png){.width300}](img/plotting_factorlabels2.png)
 [![img](img/plotting_factorlabels3.png){.width300}](img/plotting_factorlabels3.png)
+(click image to enlarge)
 
 
 
