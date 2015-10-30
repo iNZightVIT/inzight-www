@@ -20,10 +20,30 @@ To do this,
 
 *This issue is known to occur on the following devices:
 - RStudio's built-in device
-- Linux Cairo Device (as used by iNZight)
+- Cairo Device (used by iNZight) on
+  - Linux,
+  - Mac, potentially only if installed manually using R's `install.packages` command.
 
 Please let us know if you experience it on anything else.
 
+
+# I can't get bar charts to colour by a variable, they just appear one colour (pink) {#barchart-colours}
+
+__The problem:__ 
+This is most likely due to a bug in the CRAN version of [`cairoDevice`](https://github.com/lawremi/cairoDevice).
+It will most likely occur if you have installed iNZight using R's `install.packages` command.
+The [bug has been fixed](https://github.com/lawremi/cairoDevice/issues/2), but is only available from GitHub via
+```
+devtools::install_github("lawremi/cairoDevice")
+```
+This, however, requires several build tools which can be a nuisance to install, so building from GitHub probably
+isn't a viable solution.
+
+__The workaround:__
+The issue only occurs (as far as we are aware) in the built-in graphics device; opening a new device by clicking
+the "new plot window" button 
+(either from the [plot toolbar](https://www.stat.auckland.ac.nz/~wild/iNZight/user_guides/plot_options/?topic=plot_toolbar) 
+or the Plot menu) should display the bars in all their glorious colours.
 
 
 # I'm not getting complete plots {#incomplete}
