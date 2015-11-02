@@ -62,7 +62,10 @@ This works like a "Reset", but is much faster than crashing out and restarting f
 # The text and/or points in the VIT modules are too large/unreadable  {#unreadable}
 
 This problem has mostly been encountered on Retina MacBook Pros, and is caused by the high resolution of the screen.
-We do not yet have a perfect solution, but for now we have implemented a tool to help get things looking as good as possible.
+This appears to have been a bug in a previous version of XQuartz, and updating this seems to fix the problem.
+[Download the latest version here](http://xquartz.macosforge.org/downloads/SL/XQuartz-2.7.8.dmg).
+
+If the above doesn't work, you can use the Preferences to adjust the scaling:
 
 1. Click __FILE__ &gt; __Preferences ...__
 
