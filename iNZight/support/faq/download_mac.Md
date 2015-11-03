@@ -6,6 +6,7 @@ This is a problem caused by "App Nap". To disable this feature ...
 <sub> If your initial install was older there will not be a __iNZightVIT__ icon inside the iNZightVIT folder. Instead there will be a __R__ icon. Apply the instructions to that instead. <br>
 3. In the Info window that opens, tick the box to __Prevent App Nap__. (If you don't see this option, it simply means your machine doesn't support Power Nap)
 
+It should work the next time you start up iNZightVIT.
 
 # I can't start iNZight after upgrading to OS X 10.10 Yosemite {#yosemite-update}
 
