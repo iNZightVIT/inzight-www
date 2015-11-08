@@ -88,6 +88,19 @@ behaviour ignores small groups and only compares large ones.
 
 
 
+<h4>PATCH 2.3.7 - 02/11/2015</h4>
+
+
+<ul>
+<li><p> no longer redraws dotplots; instead, passes a logical
+attribute for whether or not the scaling has changed (and
+therefore that the plot should be redrawn).
+</p>
+</li></ul>
+
+
+
+
 </div>  <div class='versionSection'><h3>Changes in Version 2.2</h3>
 
 <p>RELEASE DATE: 14 September 2015

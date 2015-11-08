@@ -1,7 +1,25 @@
 
 <h2>Change Log for iNZight</h2>
 
-<div class='versionSection'><h3>Changes in version 2.4</h3>
+<div class='versionSection'><h3>Changes in version 2.5</h3>
+
+<p>Release date: 08 November, 2015
+</p>
+
+
+<h4>NEW FEATURES</h4>
+
+
+<ul>
+<li><p> specify colours for dotplots and scatterplots from the Add
+to Plot &gt; Code more variables screen.
+</p>
+</li></ul>
+
+
+
+
+</div>  <div class='versionSection'><h3>Changes in version 2.4</h3>
 
 <p>Release date: 12 October, 2015
 </p>
@@ -75,6 +93,18 @@ issues on Mac attempting to manually install.
 </p>
 </li>
 <li><p> Fix from iNZightPlots for Get Summary (n.missing now correct)
+</p>
+</li></ul>
+
+
+
+
+<h4>PATCH 2.4.3 - 02/11/2015</h4>
+
+
+<ul>
+<li><p> Improve smoothness of dotplot transitions by only redrawing
+when the scaling has changed.
 </p>
 </li></ul>
 
