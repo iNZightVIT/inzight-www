@@ -26,8 +26,8 @@
     "gtk-2.24" => "http://r.research.att.com/libs/GTK_2.24.17-X11.pkg"
   );
 
-  $inzight_version = "2.4";
-  $release_date    = "12 October 2015";
+  $inzight_version = "2.5";
+  $release_date    = "08 October 2015";
 
   $inzight_online_link = "http://docker.stat.auckland.ac.nz/spawn/?application=lite";
 ?>
