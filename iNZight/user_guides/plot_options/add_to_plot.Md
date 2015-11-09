@@ -9,21 +9,22 @@ The __Add to Plot__ options vary depending on the type of plot drawn:
 - [Dot plots](#dotplots)
 - [Bar charts](#barplots)
 
-
+See also:
+- [Ways of choosing colours](#ColourChoices)
 
 ## Options for Scatter Plots        {#scatterplots}
 
 1. __Code more variables__
   ![Code more variables](../../img/user_guides/add2plot/scatter1.jpg){.fright}
 
-  __Colour by levels of__: this gives the option to colour code the data points by any variable. If a numeric variable is chosen, a gradient of colours going from blue to purple to red is used to signify progressively larger values. If a categorical variable is used, different levels are represented by different colours.
+  __Colour by levels of__: this gives the option to colour code the data points by any variable. If a numeric variable is chosen, a rainbow spectrum of colours is used to signify progressively larger values. If a categorical variable is used, different levels are represented by different colours. (See [ways of choosing colours](#ColourChoices) for alternatives to selecting from the drop-down menu.)
 
   __Resize points proportional to__: this option can be used to resize the points proportional to any numeric variable in the data set.
 
 2. __Add trend curves__
   ![Add trend curves](../../img/user_guides/add2plot/scatter2.jpg){.fright}
 
-  Provides the user with the option to fit linear, quadratic and cubic trend curves to the data shown on the scatter plot. The user is also allowed to control the colour of the trend lines.
+  Provides the user with the option to fit linear, quadratic and cubic trend curves to the data shown on the scatter plot. The user is also allowed to control the colour of the trend lines. (See [ways of choosing colours](#ColourChoices) for alternatives to selecting from the drop-down menu.)
 
   Users can also add a smoother to the plot, the smoothness of which is controlled by the slider.
   Alternatively, quantile smoothers can be fit by checking the appropriate box.
@@ -56,11 +57,14 @@ The __Add to Plot__ options vary depending on the type of plot drawn:
 
   This brings up a menu that allows the user to customize the following aspects of the scatter plot.
 
-  - Users can change the colour of the data point symbols by either choosing from a drop down menu OR typing in a desired colour. Users can opt to colour the interior of the symbols as well.
-
+  - Users can change the colour of the data point symbols and opt to colour the interior of the symbols as well.
+  
   - Similarly the background of the plot can be changed by typing in a colour or by using the drop down menu.
 
   - The size of the symbols can be increased or decreased by using sliders.
+  
+   (See [ways of choosing colours](#ColourChoices) for alternatives to selecting from the drop-down menu.)
+
 
 8. __Identify points__
   ![Identify points](../../img/user_guides/add2plot/scatter8.jpg){.fright}
@@ -70,7 +74,7 @@ The __Add to Plot__ options vary depending on the type of plot drawn:
   ___How do you want to label points?___
 
   - __Text labels__ allows you to select a variable from the data set with which to label selected points
-  - __Colour points__ allows selected points to be filled in with a selected color
+  - __Colour points__ allows selected points to be filled in with a selected color. (See [ways of choosing colours](#ColourChoices).)
   - __With the same level of__ allows you to easily locate points related to the selected points.
 
      The main use of this would be to locate points with the same level of a chosen factor (e.g., if you are exploring survey data, you may wish to identify observations in the same cluster), or you may want to retain points selected over multiple graphs (e.g., in the Gap Minder data set, included in the `Data` folder, has several observations of countries over multiple years. In this case you can label certain coutries and track them over time).
@@ -104,9 +108,15 @@ The __Add to Plot__ options vary depending on the type of plot drawn:
   iNZight attempts to make sensible titles and axis labels automatically. However, you can use your own if you prefer by typing in your own and pressing the `Enter` key on your keyboard.
 
 
-__NOTE__:
-If any typed in colours are not available the user would be notified via a pop up dialogue box. If colour coding by a variable is active while a user tries to change data point colours, the coding colours would take precedence over the user's choice until it is switched off (using Remove Additions).
+## Ways of choosing colours {#ColourChoices}
+ 
+If ___colour coding by a variable___ is active while a user tries to change data point colours, the coding colours ___takes precedence___ over the user's choice until it is switched off (using Remove Additions).
 
+__Colours__ can be chosen from a ___drop-down___ menu OR by typing in the ___name___ of a desired colour OR its ___Hex code___ (e.g. #C80000). 
+ See [colour chart pdf](http://research.stowers-institute.org/efg/R/Color/Chart/ColorChart.pdf) (8 pages) for the names and codes of the huge range of colours available.  Increasingly, if any typed in colours are not available the user is notified via a pop up dialogue box. 
+ 
+ Adding a 7th and 8th digit to a 6-character Hex code allows you to include percent opacity (= 100 - percent transparency; compare #204090 with #20409030 and #20409070). (One way of specifying the main hex code is to use 6 numbers corresponding to 2 digits each for %Red, %Green and % Blue; FF can be used to specify 100%.)
+ 
 
 
 ## Options for Dot Plots        {#dotplots}
