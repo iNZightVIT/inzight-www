@@ -8,6 +8,8 @@ This is a problem caused by "App Nap". To disable this feature ...
 
 It should work the next time you start up iNZightVIT.
 
+App Nap behaviour can be strange. We have had several reports from people who have found that speed is much better when the R-console window is sitting directly behind the iNZight window.
+
 # I can't start iNZight after upgrading to OS X 10.10 Yosemite {#yosemite-update}
 
 The latest update to the Mac operating system, 10.10 Yosemite, has moved some things around. For now, it looks like you will need to reinstall XQuartz, which can be downloaded [from here](http://xquartz.macosforge.org/downloads/SL/XQuartz-2.7.7.dmg).
