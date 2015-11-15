@@ -19,6 +19,21 @@ to Plot &gt; Code more variables screen.
 
 
 
+<h4>PATCH 2.5.1 - 16/11/2015</h4>
+
+
+<ul>
+<li><p> correct the names and URLs in the 'Help &gt; User Guides' menu
+</p>
+</li>
+<li><p> fix bug that occurs when 'Colour by' variable has only one
+unique value
+</p>
+</li></ul>
+
+
+
+
 </div>  <div class='versionSection'><h3>Changes in version 2.4</h3>
 
 <p>Release date: 12 October, 2015

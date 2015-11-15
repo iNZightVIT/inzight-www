@@ -101,6 +101,17 @@ therefore that the plot should be redrawn).
 
 
 
+<h4>PATCH 2.3.8 - 16/11/2015</h4>
+
+
+<ul>
+<li><p> fix bug in <code>colby</code> if the variable has only one unique value
+</p>
+</li></ul>
+
+
+
+
 </div>  <div class='versionSection'><h3>Changes in Version 2.2</h3>
 
 <p>RELEASE DATE: 14 September 2015
