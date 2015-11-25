@@ -30,6 +30,18 @@ installation issues.
 
 
 
+<h4>PATCH 2.1.1 - 26/11/2015</h4>
+
+
+<ul>
+<li><p> BUX FIX: bar plot labels were printed alphabetially instead
+of in the order the bars themselves were drawn.
+</p>
+</li></ul>
+
+
+
+
 </div>  <div class='versionSection'><h3>Changes in version 2.0</h3>
 
 <p>Release date: 26 May 2015
