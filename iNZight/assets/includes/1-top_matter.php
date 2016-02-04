@@ -1,5 +1,4 @@
 <?php session_start();
-
 //echo $_SERVER['HTTP_USER_AGENT'];
 $isIE = strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') || strpos($_SERVER['HTTP_USER_AGENT'], 'Trident');
 ?>
@@ -45,7 +44,7 @@ $isIE = strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') || strpos($_SERVER['HTTP_USE
       if (!isset($_SESSION["hide"])) {
         $_SESSION["hide"] = false;
       }
-      $hideMessage = $_SESSION["hide"];
+      $hideMessage = true; $_SESSION["hide"];
       ?>
 
     <!--[if lte IE 9]>
