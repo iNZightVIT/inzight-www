@@ -22,5 +22,9 @@
 "multiple_response" : {
   "title" : "Multiple Response",
   "desc"  : "A module for analysing multiple-response type data."
+},
+"maps" : {
+  "title" : "Maps",
+  "desc"  : "Explore geographical data using iNZight's Maps Module."
 }
 }

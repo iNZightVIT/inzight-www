@@ -3,40 +3,37 @@
 <ol>
 
   <li>
-    <b>Unzip the downloaded zipfile</b>
-    <p>
-      Newer versions of Windows should be able to extract iNZight without additional software.
-      However, if you are running an older version of windows, you may need to use
-      something like <a href="http://www.7-zip.org/" target="_blank">7-zip</a> (it's free!) if you haven't
-      already got the necessary software (such as WinZIP).
-    </p>
-
-    <p>
-      When you unzip the file, in most cases it is easiest to place the folder on the Desktop.
-      HOWEVER: if you are using a public computer, you may have problems running iNZight
-      from the desktop due to security settings. You can either copy iNZight onto the <b>C:/</b>
-      drive, or, if you cannot do this, iNZight will run from an external USB drive.
-    </p>
-
-    <p>
-      <!--Below are some possible setups for running iNZight.-->
-      <a href="support/faq/?section=download&sub=windows">Check out the FAQ for help
-        setting iNZight up on your machine.</a>
-    </p>
+    Open the <b>iNZightVIT-installer.exe</b> file. By default this will have gone to <b>Downloads</b>.
   </li>
 
   <li>
-    <p>
-      <b>Update iNZightVIT</b>: we are often making small updates to the software, so the packaged ZIP files
-      can fall behind between major releases.
-    </p>
+    <b>Follow the instructions</b> to select the install location (recommended that you leave the default) and wait while iNZightVIT is installed.
+  </li>
+
+  <li>
+    <b>That's it!</b>
+    iNZight has been installed on your computer. You'll find shortcuts on your Desktop,
+    as well as a Start Menu folder.
+  </li>
+
+  <li>
+    <b>OPTIONAL: Update iNZightVIT</b>
 
     <p>
-      To update, simply double-click on <b>UPDATE_iNZightVIT</b> and the software will take care of the rest.
-      You should be presented with a message "Updating complete."; simply press <b>enter</b> on your keyboard
-      to close the updater.
+      To update, simply click <b>Start</b>, locate the <b>iNZightVIT</b> folder, and click <b>Update</b>.
     </p>
   </li>
 
-
 </ol>
+
+
+
+<h4 class="space-above" style="padding-top: 3em;">Installation Note for Admins</h4>
+
+<p>
+  If you are an administrator installing iNZight for multiple users, simply Right-click the installer and run as admin, then install to wherever you'd like, e.g., <code>C:\Program Files (x86)</code>. Each user will get their own <b>iNZightVIT</b> folder in their Documents folder.
+</p>
+
+<p>
+  To update, right-click "Update" in the iNZightVIT directory, wherever it was installed, to allow iNZight to update the packages.
+</p>

@@ -381,6 +381,9 @@ ul {
 .col2 {
   color: #094b85; }
 
+ol.alpha {
+  list-style-type: lower-alpha; }
+
 .round-button, .large-button, .feature .download .download_button, .horizontal .options .option, #dl_links .options .option, select {
   display: -webkit-box;
   display: -moz-box;
@@ -1469,7 +1472,7 @@ a {
   a:hover {
     color: #094b85; }
 
-h3 {
+h3, h4 {
   padding: 0 2em 1em; }
 
 p {
