@@ -5,7 +5,7 @@
       <div class="footer-content">
         <div class="copyright">
           <span>
-            &copy; Copyright 2001&ndash;<?php echo date("Y");?> iNZight | All Rights Reserved <br>
+            &copy; Copyright 2007&ndash;<?php echo date("Y");?> iNZight | All Rights Reserved <br>
           </span>
           <span>
             Website developed by <a href="https://www.stat.auckland.ac.nz/~tell029/">Tom Elliott</a>
