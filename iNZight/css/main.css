@@ -384,6 +384,11 @@ ul {
 ol.alpha {
   list-style-type: lower-alpha; }
 
+.image-row img {
+  height: 200px;
+  display: inline-block;
+  margin: 20px; }
+
 .round-button, .large-button, .feature .download .download_button, .horizontal .options .option, #dl_links .options .option, select {
   display: -webkit-box;
   display: -moz-box;
@@ -1278,7 +1283,7 @@ a img {
 .video-wrapper {
   position: relative;
   overflow: hidden;
-  margin: 0 auto; }
+  margin: 20px auto; }
   @media (max-width: 1099px) {
     .video-wrapper.asp16x9 {
       width: 100%;

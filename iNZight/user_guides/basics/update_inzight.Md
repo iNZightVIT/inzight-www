@@ -5,9 +5,15 @@ We are continually working on iNZight by creating new features and fixing issues
 
 ## On Windows
 
-The Updater can be found in the Start Menu > iNZightVIT, or in My Documents > iNZightVIT.
+To update iNZight, either:
 
-If you can't find it, you might need to ask you system administrator to run the updater.
+1. Go to __Start__ > __All files__ > __iNZightVIT__, and click __Update__, or
+
+2. Assuming you installed iNZight to the default directory, go to __My Documents__ > __iNZightVIT__ and double-click __Update__. This is shown below:
+
+  ![Update iNZight](../../img/user_guides/basics/4_update_inzight.png) {.width600}
+
+3. If you can't find the __iNZightVIT__ folder in either of those locations, go to the directory where you installed iNZight. If you didn't install iNZight, you might need to ask your system administrator to do it for you.
 
 
 ## On Mac

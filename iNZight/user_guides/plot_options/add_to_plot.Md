@@ -15,14 +15,14 @@ See also:
 ## Options for Scatter Plots        {#scatterplots}
 
 1. __Code more variables__
-  ![Code more variables](../../img/user_guides/add2plot/scatter1.jpg){.fright}
+  ![Code more variables](../../img/user_guides/plotoptions/02_addtoplot_scatter_codevars.png){.fright}
 
   __Colour by levels of__: this gives the option to colour code the data points by any variable. If a numeric variable is chosen, a rainbow spectrum of colours is used to signify progressively larger values. If a categorical variable is used, different levels are represented by different colours. (See [ways of choosing colours](#ColourChoices) for alternatives to selecting from the drop-down menu.)
 
   __Resize points proportional to__: this option can be used to resize the points proportional to any numeric variable in the data set.
 
 2. __Add trend curves__
-  ![Add trend curves](../../img/user_guides/add2plot/scatter2.jpg){.fright}
+  ![Add trend curves](../../img/user_guides/plotoptions/03_addtoplot_scatter_trend.png){.fright}
 
   Provides the user with the option to fit linear, quadratic and cubic trend curves to the data shown on the scatter plot. The user is also allowed to control the colour of the trend lines. (See [ways of choosing colours](#ColourChoices) for alternatives to selecting from the drop-down menu.)
 
@@ -47,27 +47,27 @@ See also:
   User can add ticks on both axes in order to make it easy to read off the x and y values for data points.
 
 6. __Join points by lines__
-  ![Join points by lines](../../img/user_guides/add2plot/scatter6.jpg){.fright}
+  ![Join points by lines](../../img/user_guides/plotoptions/04_addtoplot_scatter_join.png){.fright}
 
   Joins up data points in a continuous line. However, if the points are already colour coded by a variable, then separate lines are drawn connecting points belonging to each level of the coding variable.
 
 7. __Change plot appearance__
-  ![Change plot appearance](../../img/user_guides/add2plot/scatter7.jpg){.fright}
+  ![Change plot appearance](../../img/user_guides/plotoptions/05_addtoplot_scatter_appearance.png){.fright}
 
 
   This brings up a menu that allows the user to customize the following aspects of the scatter plot.
 
   - Users can change the colour of the data point symbols and opt to colour the interior of the symbols as well.
-  
+
   - Similarly the background of the plot can be changed by typing in a colour or by using the drop down menu.
 
   - The size of the symbols can be increased or decreased by using sliders.
-  
+
    (See [ways of choosing colours](#ColourChoices) for alternatives to selecting from the drop-down menu.)
 
 
 8. __Identify points__
-  ![Identify points](../../img/user_guides/add2plot/scatter8.jpg){.fright}
+  ![Identify points](../../img/user_guides/plotoptions/06_addtoplot_scatter_locate.png){.fright}
 
   This allows users to label points in one of three ways (text labels, colour labels, and related points), using one of three methods (clicking, selecting values, or labelling extreme points).
 
@@ -103,20 +103,25 @@ See also:
 
 
 9. __Customise Labels__
-  ![Customise labels](../../img/user_guides/add2plot/scatter9.jpg){.fright}
+  ![Customise labels](../../img/user_guides/plotoptions/07_addtoplot_scatter_labels.png){.fright}
 
   iNZight attempts to make sensible titles and axis labels automatically. However, you can use your own if you prefer by typing in your own and pressing the `Enter` key on your keyboard.
 
+10. __Modify Axis Limits__
+  ![Modify axis limits](../../img/user_guides/plotoptions/08_addtoplot_scatter_limits.png){.fright}
+
+  If you want to zoom in on a particular region of the plot, you can use this window to adjust the range of values displayed.
+
 
 ## Ways of choosing colours {#ColourChoices}
- 
+
 If ___colour coding by a variable___ is active while a user tries to change data point colours, the coding colours ___takes precedence___ over the user's choice until it is switched off (using Remove Additions).
 
-__Colours__ can be chosen from a ___drop-down___ menu OR by typing in the ___name___ of a desired colour OR its ___Hex code___ (e.g. #C80000). 
- See [colour chart pdf](http://research.stowers-institute.org/efg/R/Color/Chart/ColorChart.pdf) (8 pages) for the names and codes of the huge range of colours available.  Increasingly, if any typed in colours are not available the user is notified via a pop up dialogue box. 
- 
+__Colours__ can be chosen from a ___drop-down___ menu OR by typing in the ___name___ of a desired colour OR its ___Hex code___ (e.g. #C80000).
+ See [colour chart pdf](http://research.stowers-institute.org/efg/R/Color/Chart/ColorChart.pdf) (8 pages) for the names and codes of the huge range of colours available.  Increasingly, if any typed in colours are not available the user is notified via a pop up dialogue box.
+
  Adding a 7th and 8th digit to a 6-character Hex code allows you to include percent opacity (= 100 - percent transparency; compare #204090 with #20409030 and #20409070). (One way of specifying the main hex code is to use 6 numbers corresponding to 2 digits each for %Red, %Green and % Blue; FF can be used to specify 100%.)
- 
+
 
 
 ## Options for Dot Plots        {#dotplots}
