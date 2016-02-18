@@ -9,7 +9,7 @@ By default, if __all the values__ of a variable are __numbers__, then that varia
 
 If __any of the values__ contains even one __alphabetic character__, then the whole variable will be treated as a __categorical variable__ (i.e., one that gives group membership). The one exception is  the value `NA`, which is treated as a missing-value code in both numeric and categorical variables.
 
-![Manipulate Variables Menu](../../img/user_guides/manipulate/manipulate.png){.borderbox}
+![Manipulate Variables Menu](../../img/user_guides/interface/4_inzight_menu_variables.png){.borderbox}
 
 Type-specific submenus: [Categorical Variables](#catvars), [Numeric Variables](#numvars)
 
@@ -61,7 +61,7 @@ Delete variables from the dataset.
 
 
 ## Categorical Variables     {#catvars}
-![Manipulate Categorical Variables Menu](../../img/user_guides/manipulate/manipulate-cat.png){.borderbox}
+![Manipulate Categorical Variables Menu](../../img/user_guides/variables/1_menu_categorical.png){.borderbox}
 
 
 ### Reorder Levels
@@ -87,7 +87,7 @@ Take two categorical variables and create a new categorical variable whose level
 
 
 ## Numeric Variables       {#numvars}
-![Manipulate Numeric Variables Menu](../../img/user_guides/manipulate/manipulate-num.png){.borderbox}
+![Manipulate Numeric Variables Menu](../../img/user_guides/variables/2_menu_numerical.png){.borderbox}
 
 
 ### Transform Variables

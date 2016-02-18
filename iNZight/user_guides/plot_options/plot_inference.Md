@@ -13,7 +13,7 @@ Having added a trend line or lines, the inference information will generate 30 b
 
 
 ## Dot Plot Inference
-![Dot plot inference window](../../img/user_guides/inf/dot.jpg){.fright}
+![Dot plot inference window](../../img/user_guides/plotoptions/18_inference_dot.png){.fright}
 
 Dot plots, by default, provide a box plot which provides an estimate of the Median, as well as the 25% and 75% quantiles. Users are then presented with three options:
 
@@ -39,6 +39,6 @@ Dot plots, by default, provide a box plot which provides an estimate of the Medi
 
 
 ## Bar Plot Inference
-![Bar plot inference window](../../img/user_guides/inf/bar.jpg){.fright}
+![Bar plot inference window](../../img/user_guides/plotoptions/19_inference_bar.png){.fright}
 
 The inference information for bar plots is computed for the estimated proportions, using normal theory or bootstrap techniques.

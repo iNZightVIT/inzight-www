@@ -1,23 +1,23 @@
 # Dataset ("Row") Operations
 
-![Data Operations Menu](../../img/user_guides/rowops/menu.png){.borderbox}
+![Data Operations Menu](../../img/user_guides/interface/3_inzight_menu_dataset.png){.borderbox}
 
 ## Filter Dataset
 
 This tool provides several methods for filtering the dataset.
 The window that opens has four options for you to choose from:
 
-![Data Operations Menu](../../img/user_guides/rowops/filter.PNG)
+![Data Operations Menu](../../img/user_guides/dataset/1_filter.png)
 
 1. __Levels of a categorical variables__
-  ![Filter by categorical levels](../../img/user_guides/rowops/filter-levels.PNG){.fright .nobox .halfwidth}
+  ![Filter by categorical levels](../../img/user_guides/dataset/2_filter_levels.png){.fright .nobox .halfwidth}
 
   After selecting a categorical variable from the drop down box, you can select which levels you want to retain in the data set.
 
 
 
 2. __Numeric condition__
-  ![Filter by numeric condition](../../img/user_guides/rowops/filter-numeric.PNG){.fright .nobox .halfwidth}
+  ![Filter by numeric condition](../../img/user_guides/dataset/3_filter_numeric.png){.fright .nobox .halfwidth}
 
   This allows you to define a condition with which to filter your data.
 
@@ -28,7 +28,7 @@ The window that opens has four options for you to choose from:
 
 
 3. __Row number__
-   ![Filter by row number](../../img/user_guides/rowops/filter-rownumber.PNG){.fright .nobox .halfwidth}
+   ![Filter by row number](../../img/user_guides/dataset/4_filter_rows.png){.fright .nobox .halfwidth}
 
   Exclude a range of row numbers as follows:
   - Entering 101:1000 (and then __Submit__) will exclude all rows from 101 to 1000
@@ -36,7 +36,7 @@ The window that opens has four options for you to choose from:
 
 
 4. __Randomly__
-  ![Filter randomly](../../img/user_guides/rowops/filter-random.PNG){.fright .nobox .halfwidth}
+  ![Filter randomly](../../img/user_guides/dataset/5_filter_random.png){.fright .nobox .halfwidth}
 
   Essentially, this allows you to perform bootstrap randomisation manually.
 
@@ -49,7 +49,7 @@ The window that opens has four options for you to choose from:
 
 #### {.clear}
 ## Sort data by variables
-![Sort data](../../img/user_guides/rowops/sort.PNG){.fright .nobox}
+![Sort data](../../img/user_guides/dataset/6_sortdata.png){.fright .nobox}
 
 Sort the rows of the data by one or more variables. The ordering will be nested, so that the data is first ordered by "Variable 1",
 and then "Variable 2", etc. For categorical variables, the ordering will be based on the order of the variable (by default, this will be alphabetical unless manually changed in "Manipulate Variables" > "Categorical Variables" > "Reorder Levels").
@@ -57,7 +57,7 @@ and then "Variable 2", etc. For categorical variables, the ordering will be base
 
 #### {.clear}
 ## Aggregate data
-![Aggregate data](../../img/user_guides/rowops/aggregate.PNG){.fright .nobox}
+![Aggregate data](../../img/user_guides/dataset/7_aggregate.png){.fright .nobox}
 
 This function essentially allows you to obtain "summaries" of all of the numeric variables in the data set for combinations of categorical variables.
 
@@ -80,7 +80,7 @@ Clicking on "Get Summary" would provide the same information. The advantage of u
 
 #### {.clear}
 ## Stack variables
-![Stack variables](../../img/user_guides/rowops/stack.PNG){.fright .nobox}
+![Stack variables](../../img/user_guides/dataset/8_stackvariables.png){.fright .nobox}
 
 Convert from _table form_ (rows corresponding to subjects) to _long form_ (rows corresponding to observations).
 

@@ -127,42 +127,56 @@ __Colours__ can be chosen from a ___drop-down___ menu OR by typing in the ___nam
 ## Options for Dot Plots        {#dotplots}
 
 1. __Code more variables__
-  ![Code more variables](../../img/user_guides/add2plot/dot1.jpg){.fright}
+  ![Code more variables](../../img/user_guides/plotoptions/09_addtoplot_dot_codevars.png){.fright}
 
   Colour code the data points by any variable. This is identical to that of the scatter plot (see above).
 
 2. __Change plot appearance__
-  ![Change plot appearance](../../img/user_guides/add2plot/dot2.jpg){.fright}
+  ![Change plot appearance](../../img/user_guides/plotoptions/10_addtoplot_dot_appearance.png){.fright}
 
   This is identical to the customization choices of the scatter plot (see above).
 
 3. __Identify points__
-  ![Identify points](../../img/user_guides/add2plot/scatter8.jpg){.fright}
+  ![Identify points](../../img/user_guides/plotoptions/11_addtoplot_dot_locate.png){.fright}
 
   This allows users to label points by clicking on them, and works much the same as it does for scatter plots (see above).
 
   The main difference is in the location of extreme points, where users are now presented with two sliders: one for the number of lower points, and one for the number of upper points, to label..
 
 4. __Customise Labels__
-  ![Customise labels](../../img/user_guides/add2plot/dot4.jpg){.fright}
+  ![Customise labels](../../img/user_guides/plotoptions/12_addtoplot_dot_labels.png){.fright}
 
   iNZight attempts to make sensible titles and axis labels automatically. However, you can use your own if you prefer by typing in your own and pressing the `Enter` key on your keyboard.
+
+5. __Adjust Axis Limits__
+  ![Customise labels](../../img/user_guides/plotoptions/13_addtoplot_dot_limits.png){.fright}
+
+  To zoom in on a specific range of points, you can adjust the axis limits.
 
 
 
 ## Options for Bar Plots        {#barplots}
 
 1. __Code more variables__
-  ![Code more variables](../../img/user_guides/add2plot/bar1.jpg){.fright}
+    ![Customise labels](../../img/user_guides/plotoptions/14_addtoplot_bar_codevars.png){.fright}
+
+    iNZight attempts to make sensible titles and axis labels automatically. However, you can use your own if you prefer by typing in your own and pressing the `Enter` key on your keyboard.){.fright}
 
   This feature is accessible for one-way bar plot (i.e., Variable 1 is categorical and Variable 2 is empty.) This option will segement the bars to show the distribution of the chosen variable.
 
 2. __Change plot appearance__
-  ![Change plot appearance](../../img/user_guides/add2plot/bar2.jpg){.fright}
+  ![Change plot appearance](../../img/user_guides/plotoptions/15_addtoplot_bar_appearance.png){.fright}
 
   This allows users to change colours used in the plot.
 
 3.  __Customise Labels__
-  ![Customise labels](../../img/user_guides/add2plot/bar3.jpg){.fright}
+  ![Customise labels](../../img/user_guides/plotoptions/16_addtoplot_bar_labels.png){.fright}
 
   iNZight attempts to make sensible titles and axis labels automatically. However, you can use your own if you prefer by typing in your own and pressing the `Enter` key on your keyboard.
+
+5. __Adjust Number of Bars__
+  ![Customise labels](../../img/user_guides/plotoptions/17_addtoplot_bar_limits.png){.fright}
+
+  In some cases, you might have a lot of categories for a given variable. To get a good insight into individual levels, you can use the first slider to adjust the number of bars shown in the plot. The second slider lets you control the starting point, allowing you to scroll through the levels.
+
+  If you want to compare levels that are not near each other, you'll have to go to __Variables__ > __Categorical__ > __Reoder Levels__ and put the two (or more) you want to compare next to each other.

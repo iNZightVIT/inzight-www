@@ -54,15 +54,50 @@ The second, however, needs a column for each possible answer:
 
 Analysing these are going to require two difference approaches, and that's where the Multiple Response module comes in!
 
+__Quick note on coding__: in the table above, we've used 1's and 0's to code whether or not someone checked the box. This is the easiest way, however you can also provide "yes" (=1) or "no" (=0) if you prefer.
+
+
 
 ## Getting Started
 
-First, you'll need to load an appropriate dataset. We've provided an example in the included data folder, called <code>CaS2011_5000.csv</code>. Once you've loaded this, you can go to __Advanced__ and click __Multiple Response__.
+First, you'll need to load an appropriate dataset (i.e., one that has data coded like the table above).
+For this example, we will be using the __Census at School 5000__ dataset, which you can load by going to __File__ > __Example data__, select __Multiple response__ as the module, and __census.at.school.5000__ for the data.
+Once you've loaded this, you can go to __Advanced__ menu and click __Multiple Response__, which will load the module.
 
-__Quick note on coding__: in the table above, we've used 1's and 0's to code whether or not someone checked the box. This is the easiest way, however you can also provide "yes" (=1) or "no" (=0) if you prefer.
+![Multiple response module](../../img/user_guides/advanced/multipleresponse/1_multipleresponse_home.png) {.width600}
+
+
+The __Census at School 5000__ dataset contains several variables, each with multiple responses.
+Here, we will investigate __tech__: each student was asked to select all technologies they have used.
+
 
 ## Generating Graphs
 
-Once you've loading the Multiple Response window, you'll be able to select variables to compare. The key here is to select __related__ variables. For example, you would select the variables `fruit_apple`, `fruit_banana`, `fruit_pear`, and `fruit_orange` to see how fruit preference is distributed. You can select a subset if you prefer.
+Once you've loading the Multiple Response window, you'll be able to select variables to compare.
+In our example, we will use the variable __tech__, and select the respones __tv__, __internet__, __facebook__, __twitter__, and __skype__.
 
-The Summary and Combinations buttons will give you summary tables of the data, and a "visual" graph of the combinations occuring in the dataset. The subset dropdowns work just the same as they do in the main iNZight module.
+<div class="note">HINT: To select multiple variables, hold the <code>CTRL</code> key (or Command on Mac).</div>
+
+![Multiple response plot](../../img/user_guides/advanced/multipleresponse/2_multipleresponse_plot.png) {.width600}
+
+The Summary and Combinations buttons will give you summary tables of the data, and a "visual" graph of the combinations occurring in the dataset.
+
+
+## Sub-setting the Graph
+
+As with the main iNZight module, you can split the graph into several __subsets__ to better explore trends.
+In the example below, we have selected __age__ as the sub-setting variable. Because age is a numeric, iNZight has divided it into four groups.
+
+![Multiple response subsetting](../../img/user_guides/advanced/multipleresponse/3_multipleresponse_subset.png) {.width600}
+
+
+
+To delve further into trends, you can use two sub-setting variables.
+First, we'll pick a new set of responses: __tv__, __mp3__, __facebook__, __twitter__, and __console__.
+The first sub-setting variable is __gender__, and the second is __age__.
+
+![Multiple response subsetting two variables](../../img/user_guides/advanced/multipleresponse/4_multipleresponse_subset2.png) {.width600}
+
+If we want to more easily compare the first sub-setting variable, we can check the box __Display subset variable 1 side-by-side__:
+
+![Multiple response subsetting two variables side by side](../../img/user_guides/advanced/multipleresponse/5_multipleresponse_subset_sidebyside.png) {.width600}

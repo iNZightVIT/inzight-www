@@ -2,6 +2,8 @@
 
 This menu provides several exploratory analysis tools for quick familiarisation to a new data set.
 
+![Code more variables](../../img/user_guides/interface/6_inzight_menu_advanced.png)
+
 
 ## Missing Values
 

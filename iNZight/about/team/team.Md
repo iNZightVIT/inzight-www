@@ -5,25 +5,51 @@ from the [Department of Statistics](https://www.stat.auckland.ac.nz) at the Univ
 He comes up with the big (and small) ideas that make iNZight intuitive and easy to learn.
 
 
-The development of iNZight itself has been shared amongst many statistics students from the university,
+The development of iNZight itself has been shared amongst many __statistics students__ from the university,
 who have worked part-time on making various parts of iNZight.
 
-## Some major contributors
 
-- __Dineika Chandrananda__ - the main, original, iNZight program
+- [__Tom Elliott__](http://tomelliott.co.nz), (2013&ndash;current)
+    - main developer and maintainer; has worked on all of the iNZight packages to varying degrees
+    - maintains the __iNZight R repository__
+    - Windows and Mac installers
+    - website
 
-- __Simon Potter__ - the iNZight and VIT programs, regression package, time series package, and lots of other parts of iNZight
+- __Dineika Chandrananda__
+    - one of the original developers of iNZight
 
-- __David Banks__ - various parts of iNZight (graphics, regression, time series, ...)
+- [__Simon Potter__](http://sjp.co.nz)
+    - the VIT module for visualising inference
+    - iNZightRegression package, time series package, and many other parts of iNZight
 
-- __Junjie Zheng__ - `iNZightMR` (multiple response), Time Series, Model Fitting, iNZight Online
+- __David Banks__
+    - various parts of iNZight (graphics, regression, time series, ...)
 
-- __Marco Kuper__ - The main iNZight program
+- __Junjie Zheng__
+    - `iNZightMR` (multiple response, which was part of his MSc project)
+    - time Series and Model Fitting modules
+    - wrote the first iteration of iNZight Online
 
-- __Tom Elliott__ - The graphics package `iNZightPlots`, various aspects of iNZight, repository and R package maintenance, website, many other small parts throughout iNZight
+- __Marco Kuper__, (2013&ndash;2014)
+    - rewrote iNZight, making it far more user- and developer-friendly
+    - parts of the Time Series module
 
-- __Christoph Knapp__ - The iNZight Lite application
+- __Christoph Knapp__, (2014&ndash;2015)
+    - the iNZight Lite application
 
-- __Eric Lim__ - The Maps module, the newest time series GUI
+- __Eric Lim__, (2014/2015 summer student)
+    - started work on the foundations for the maps module
+    - some work on the time series and multiple response modules
 
-- __Chris Park__ - The iNZight Lite application
+- __Chris Park__, (2014&ndash;current)
+    - some work on iNZight Lite
+    - currently involved mostly with the [Census at School](http://q87wdqh9.docker.stat.auckland.ac.nz/) application
+
+- __Jason Wen__, (2014/2015 summer student)
+    - the iNZightMaps package, used in the mapping module
+
+- __Wilson Hu__, (2014&ndash;current)
+    - iNZight Lite
+
+
+If you've been left off this list, or want anything on it to change, just [send me a message](mailto:inzight_support@stat.auckland.ac.nz).
