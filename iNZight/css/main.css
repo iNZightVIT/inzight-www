@@ -391,11 +391,32 @@ ol.alpha {
 
 .images-centered {
   max-width: 1400px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  text-align: center; }
   .images-centered img {
     padding: 0 20px;
     display: inline-block;
     width: 50%; }
+    @media (max-width: 745px) {
+      .images-centered img {
+        width: 80%; } }
+  @media (min-width: 745px) {
+    .images-centered.equal-height img {
+      text-align: center;
+      width: auto;
+      height: 400px; } }
+  @media (min-width: 745px) and (max-width: 1340px) {
+    .images-centered.equal-height img {
+      height: 350px; } }
+  @media (min-width: 745px) and (max-width: 1200px) {
+    .images-centered.equal-height img {
+      height: 300px; } }
+  @media (min-width: 745px) and (max-width: 1050px) {
+    .images-centered.equal-height img {
+      height: 250px; } }
+  @media (min-width: 745px) and (max-width: 895px) {
+    .images-centered.equal-height img {
+      height: 200px; } }
 
 .round-button, .large-button, .feature .download .download_button, .horizontal .options .option, #dl_links .options .option, select {
   display: -webkit-box;
@@ -898,6 +919,15 @@ ol.alpha {
   @media (min-width: 1100px) {
     .blurb {
       font-size: 2em; } }
+
+.code {
+  display: block;
+  margin: 5px 0;
+  padding: 10px;
+  background: #fffaf4;
+  font-family: "Courier New", "Courer", mono;
+  color: #333;
+  border: solid 1px #ccc; }
 
 .feature {
   display: -webkit-box;

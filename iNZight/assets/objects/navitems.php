@@ -7,7 +7,7 @@
     'Get iNZight' => array(
       'default' => 'getinzight.php',
       'Desktop' => 'getinzight.php',
-      'Linux/R Users' => 'https://www.stat.auckland.ac.nz/~wild/iNZight/ruser.php',
+      'Linux/R Users' => 'getinzight.php?os=Linux',
       'Tablets' => 'http://docker.stat.auckland.ac.nz/spawn/?application=lite',
       'Data' => 'data.php'
     ),

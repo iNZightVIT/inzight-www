@@ -14,12 +14,12 @@ Some of them have been documented on this page.
 iNZight (> 3.0) has two display modes: the traditional all-in-one window, as well as a separate graphics window and a narrow control panel (like VIT).
 The two are shown here:
 
-<div class="images-centered">
+<div class="images-centered equal-height">
   <img src="../../img/user_guides/interface/1_inzight_home.png" alt="iNZight Home - single window">
   <img src="../../img/user_guides/interface/8_inzight_dual_window.png" alt="iNZight Home - dual window">
 </div>
 
-To switch between the two, go to __File__ > __Preferences__, and check the box "Use dual-window display mode".
+To switch between the two, go to __File__ > __Preferences__, and check the box __"Use dual-window display mode"__.
 
 
 
