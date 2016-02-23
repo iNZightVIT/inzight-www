@@ -5,7 +5,9 @@ require_once($rel . 'assets/includes/2-header.php');
 
 ?>
 
-<h3>iNZight Newsletter</h3>
+
+
+<h3>iNZight Newsletters</h3>
 
 <p>
   The iNZight Newsletter is sent out to subscribers of our mailing list. A list of newsletters can be found below:
