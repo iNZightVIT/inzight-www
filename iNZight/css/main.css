@@ -389,6 +389,14 @@ ol.alpha {
   display: inline-block;
   margin: 20px; }
 
+.images-centered {
+  max-width: 1400px;
+  margin: 0 auto; }
+  .images-centered img {
+    padding: 0 20px;
+    display: inline-block;
+    width: 50%; }
+
 .round-button, .large-button, .feature .download .download_button, .horizontal .options .option, #dl_links .options .option, select {
   display: -webkit-box;
   display: -moz-box;

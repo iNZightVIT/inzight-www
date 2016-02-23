@@ -4,51 +4,30 @@
   $wild_http = "https://www.stat.auckland.ac.nz/~wild/";
 
   $navitems = array(
-    //'Home' => 'index.php',
-    //'Explore' => 'explore.php',
     'Get iNZight' => array(
       'default' => 'getinzight.php',
       'Desktop' => 'getinzight.php',
-      //'Windows' => 'win.php',
-      //'Macintosh' => 'mac.php',
       'Linux/R Users' => 'https://www.stat.auckland.ac.nz/~wild/iNZight/ruser.php',
       'Tablets' => 'http://docker.stat.auckland.ac.nz/spawn/?application=lite',
       'Data' => 'data.php'
     ),
-    // 'Get Started' => array(
-    //   'default' => 'basics.php',
-    //   'Basics' => 'basics.php',
-    //   'Variables' => 'manip_vars.php',
-    //   'Plot Options' => 'plot_buttons.php',
-    //   'Row Operations' => 'row_operations.php'
-    // ),
-    // 'Add-on Modules' => array(
-    //   'default' => 'advanced.php',
-    //   '3D Plot' => '3d_plot.php',
-    //   'Time Series' => 'time_series.php',
-    //   'Model Fitting' => 'model_fitting.php',
-    //   'Maps' => 'maps.php'
-    // ),
-
-    // Alternative option:
     'User Guides' => array(
       'default' => 'user_guides/',
       'The Basics' => 'basics/',
       'Interface' => 'interface/',
       'Plot Options' => 'plot_options/',
       'Variables' => 'variables/',
-      'Data Options' => 'data_options/',       // row ops, reshape, ...
-      'Additional Modules' => 'add_ons/'
+      'Data Options' => 'data_options/',
+      'Additional Modules' => 'add_ons/',
+      'Advanced Features' => 'advanced/'
     ),
     'Support' => array(
       'default' => 'support/',
-      //'Known Issues' => 'issues.php',
       'FAQ' => 'faq/',
       'Email Lists' => 'email_lists/',
       'Newsletters' => $wild_http . 'iNZight/newsletters/index.php',
       'Version History' => 'changelog/',
-      'Contact Us' => 'contact/',
-      //'Development' => 'development.php'
+      'Contact Us' => 'contact/'
     ),
     'About' => array(
       'default' => 'about/',
