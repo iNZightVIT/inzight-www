@@ -16,7 +16,7 @@ The two are shown here:
 
 <div class="images-centered">
   <img src="../../img/user_guides/interface/1_inzight_home.png" alt="iNZight Home - single window">
-  <img src="../../img/user_guides/interface/1_inzight_home.png" alt="iNZight Home - dual window">
+  <img src="../../img/user_guides/interface/8_inzight_dual_window.png" alt="iNZight Home - dual window">
 </div>
 
 To switch between the two, go to __File__ > __Preferences__, and check the box "Use dual-window display mode".
