@@ -25,7 +25,7 @@
       'default' => 'support/',
       'FAQ' => 'faq/',
       'Email Lists' => 'email_lists/',
-      'Newsletters' => $wild_http . 'iNZight/newsletters/index.php',
+      'Newsletters' => '../newsletters/index.php',
       'Version History' => 'changelog/',
       'Contact Us' => 'contact/'
     ),
