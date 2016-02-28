@@ -24,9 +24,18 @@ Make sure the saved file has a `.csv` extension at the end of its name.
 
 # When I load a `.csv`, it just get strings of text `'gender;age;region'` rather than columns {#incorretly-formatted-data}
 
-This is caused by incompatible default settings in European countries. Unfortunately, iNZight can only read files with comma (,) separators. In European countries, however, this is commonly used as the decimal separator (142,9), so the symbol used to separate values in the exported file is different (a period (.) or semicolon (;)).
+Assuming you saved the file yourself using Excel, there are two situations where this is an issue:
 
-To fix this, you will need to change the number format from a comma (142,9) to a period (142.9), and when you export as a `.csv`, make sure you tell it to use a comma (,) as the delimeter.
+- __If you live in Europe, or a country that uses the comma (`,`) as a decimal symbol__ you will need to go to __Formats__ > __Additional settings__ (in Excel) and
+
+  1. change the __Decimal symbol__ to a period (`.`), and
+  2. change the __List separator__ to a comma (`,`).
+
+- __If you live in a country that uses the period (`.`) as a decimal symbol__, Excel may be set up to symbol that isn't a comma.
+
+  In this case, in Excel go to __Formats__ > __Additional settings__, and change the __List separator__ to a comma (`,`).
+
+<div class="note">NOTE: You may need to click in the box and type the symbol using the keyboard if the option isn't in the dropdown list.</div>
 
 
 # MAC: I can load data, but it shows up as unreadable text in the window {#file-encryption-issues}

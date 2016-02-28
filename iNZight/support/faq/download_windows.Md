@@ -1,3 +1,15 @@
+# Windows wont let me run the installer due to security issues
+
+If you are not an admin user, Windows might not let you run the installer if you open it directly from your web browser.
+
+- Navigate to your Downloads folder
+- Double-click the iNZightVIT Windows Installer
+
+The reason for this is because we haven't paid Microsoft to give us a license, so iNZight isn't listed as 'safe'. So long as you download from this website, there shouldn't be any problems.
+
+****
+
+## Using ZIP file instead of the new Windows Installer:
 
 # I don't understand zip files and don't know what to do with know what to do with iNZightVIT-latest-zipfile {#unzipping-inzight}
 

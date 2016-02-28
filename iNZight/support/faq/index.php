@@ -112,7 +112,7 @@ if (isset($_GET["section"])) {
     <div class="contents_list">
       <ul>
         <?php
-          $topicSearch = '#';
+          $topicSearch = '# ';
           $topicPattern = preg_quote($topicSearch, '/');
           $pattern = "/^$topicPattern.*\$/m";
           if(preg_match_all($pattern, $text, $matches)){

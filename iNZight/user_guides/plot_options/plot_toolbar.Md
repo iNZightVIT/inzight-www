@@ -44,10 +44,10 @@ This will close the current __plot tab__, _not the iNZight window_.
 
 
 
-## [Add to Plot](./?topic=add_to_plot)
+## [Add to Plot](./?topic=add_to_plot) {.header-image .button-add-to-plot}
 
-## Remove Additions
+## Remove Additions {.header-image .button-remove-additions}
 
 For removal of some or all additions made to a plot.
 
-## [Inference Information](./?topic=plot_inference)
+## [Inference Information](./?topic=plot_inference) {.header-image .button-inference-information}

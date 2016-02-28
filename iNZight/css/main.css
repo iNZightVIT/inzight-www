@@ -1489,6 +1489,20 @@ a img {
     .support_message .close:hover {
       color: black; }
 
+h1.header-image, h2.header-image, h3.header-image {
+  padding-left: 40px;
+  line-height: 30px;
+  height: 30px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 30px; }
+  h1.header-image.button-add-to-plot, h2.header-image.button-add-to-plot, h3.header-image.button-add-to-plot {
+    background-image: url(../img/user_guides/plotoptions/toolbar/add-to-plot.gif); }
+  h1.header-image.button-remove-additions, h2.header-image.button-remove-additions, h3.header-image.button-remove-additions {
+    background-image: url(../img/user_guides/plotoptions/toolbar/remove-additions.gif); }
+  h1.header-image.button-inference-information, h2.header-image.button-inference-information, h3.header-image.button-inference-information {
+    background-image: url(../img/user_guides/plotoptions/toolbar/inference-information.gif); }
+
 html, body {
   height: 100%;
   background: #fff;

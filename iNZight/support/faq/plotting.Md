@@ -29,7 +29,7 @@ Please let us know if you experience it on anything else.
 
 # I can't get bar charts to colour by a variable, they just appear one colour (pink) {#barchart-colours}
 
-__The problem:__ 
+__The problem:__
 This is most likely due to a bug in the CRAN version of [`cairoDevice`](https://github.com/lawremi/cairoDevice).
 It will most likely occur if you have installed iNZight using R's `install.packages` command.
 The [bug has been fixed](https://github.com/lawremi/cairoDevice/issues/2), but is only available from GitHub via
@@ -41,25 +41,16 @@ isn't a viable solution.
 
 __The workaround:__
 The issue only occurs (as far as we are aware) in the built-in graphics device; opening a new device by clicking
-the "new plot window" button 
-(either from the [plot toolbar](https://www.stat.auckland.ac.nz/~wild/iNZight/user_guides/plot_options/?topic=plot_toolbar) 
+the "new plot window" button
+(either from the [plot toolbar](https://www.stat.auckland.ac.nz/~wild/iNZight/user_guides/plot_options/?topic=plot_toolbar)
 or the Plot menu) should display the bars in all their glorious colours.
 
 
-# I'm not getting complete plots {#incomplete}
-
-This issue was fixed with __iNZightVIT v2.0.3__. Running the __UPDATE_iNZightVIT__ file should fix the issue.
-
-If not:
-
-1. Go to __File__ &gt; __Home__. This will take you back to the __iNZightVIT__ start-up window
-
-2. Click __Start iNZight__ and iNZight will load up instantly
-
-This works like a "Reset", but is much faster than crashing out and restarting from scratch
 
 
 # The text and/or points in the VIT modules are too large/unreadable  {#unreadable}
+
+<div class="note">UPDATE: this seems to have been fixed in a new release of XQuartz.</div>
 
 This problem has mostly been encountered on Retina MacBook Pros, and is caused by the high resolution of the screen.
 This appears to have been a bug in a previous version of XQuartz, and updating this seems to fix the problem.
@@ -81,5 +72,6 @@ for assistance.
 
 # I can't copy or save dot plots  {#cant-copy-dots}
 
-We currently have an export problem with dot plots (but not any other type of graph). It is being caused by double plotting to figure out the sizes and positions of the dots for stacking. We still haven't figured out a solution. Until we do you'll just have to use screenshots. Sorry ...
+We are aware of this, and are working on a solution.
 
+In the meantime, if you want to save a dotplot, you'll need to take a screenshot.
