@@ -30,4 +30,5 @@
   $release_date    = "08 October 2015";
 
   $inzight_online_link = "https://www.stat.auckland.ac.nz/~wild/iNZightLite/";
+  $inzight_repository = "http://r.docker.stat.auckland.ac.nz/R";
 ?>

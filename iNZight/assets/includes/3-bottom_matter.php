@@ -28,10 +28,14 @@
             <a href="https://www.auckland.ac.nz/" id="UoA-logo">
               <img src="<?php echo $rel; ?>img/uoa_logo.png">
             </a>
+				<a href="http://www.careersorted.com/" id="CS-logo">
+				&nbsp;
+			</a>
           </div>
         </div>
       </div>
     </div>
+	
 
 
     <script src="<?php echo $rel; ?>js/navigation.js"></script>
@@ -46,5 +50,6 @@
       $(".support_message").slideUp();
     });
     </script>
+
   </body>
 </html>

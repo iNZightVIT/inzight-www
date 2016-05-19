@@ -195,7 +195,7 @@
 
           <pre>
 install.packages(c("vit", "iNZightMR", "iNZightTS", "iNZightModules", "iNZightRegression", "iNZightPlots", "iNZight", "iNZightTools"),
-                 repos = c("http://docker.stat.auckland.ac.nz/R",
+                 repos = c("<?php echo $inzight_repository; ?>",
                            "http://cran.stat.auckland.ac.nz"))    # or your preferred CRAN Mirror
           </pre>
 
@@ -218,7 +218,7 @@ iNZightVIT()
         <li>
           When you run iNZight, if any updates are available it will let you know (unless you disable checking in the preferences). In this case, run:
           <pre>
-update.packages(repos = "http://docker.stat.auckland.ac.nz/R")
+update.packages(repos = "<?php echo $inzight_repository; ?>")
           </pre>
         </li>
 
