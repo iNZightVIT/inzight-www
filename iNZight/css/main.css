@@ -381,6 +381,29 @@ ul {
 .col2 {
   color: #094b85; }
 
+p.lead {
+  font-size: 1.2em;
+  font-style: italic;
+  line-height: 1.6em; }
+
+.center {
+  text-align: center; }
+
+a.button {
+  display: inline-block;
+  width: 200px;
+  margin: 0 20px;
+  border: solid 4px #094b85;
+  background: #eee;
+  padding: 10px;
+  border-radius: 20px;
+  text-align: center;
+  color: #094b85;
+  box-shadow: 0 5px 10px -2px rgba(50, 50, 50, 0.4); }
+  a.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 10px 0px rgba(50, 50, 50, 0.2); }
+
 .round-button, .large-button, .feature .download .download_button, .horizontal .options .option, #dl_links .options .option, select {
   display: -webkit-box;
   display: -moz-box;
@@ -1442,6 +1465,16 @@ a img {
     color: #eee; }
     .support_message .close:hover {
       color: black; }
+
+.container--beta {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1em; }
+
+.beta-panel {
+  width: 50%;
+  float: left;
+  padding: 0.5em; }
 
 html, body {
   height: 100%;
