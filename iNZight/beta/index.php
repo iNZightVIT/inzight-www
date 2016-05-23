@@ -5,7 +5,7 @@ require_once($rel . 'assets/includes/2-header.php');
 ?>
 
 <div class="container--beta">
-  <h2>iNZight Beta</h2>
+  <h2>iNZight 3.0 Beta</h2>
 
   <p class="lead">
     Get an advanced preview of the latest version of <b>iNZight 3.0</b>,
@@ -23,6 +23,13 @@ require_once($rel . 'assets/includes/2-header.php');
     more intuitive and easier to use.
   </p>
 
+  <p>
+    The most obvious change we've made is the break up of iNZight and VIT.
+    Now, instead of a single "START iNZightVIT" icon,
+    you get two launch icons&mdash;one for iNZight, and the other for VIT.
+    The advantage: <b>iNZight loads so much faster!</b>
+  </p>
+
   <div class="beta-panel">
     <h3>Changes</h3>
 
@@ -30,33 +37,34 @@ require_once($rel . 'assets/includes/2-header.php');
       <li>
         <b>Add to Plot:</b>
         Completely redesigned to make customising plots
-        easier, and more features including
-        better <em>color palettes</em>,
-        <em>plotting symbol</em> control,
-        <em>color coding of hexbins</em>, and loads more!
+        easier, along more features including
+        choice of <b>color palettes</b>,
+        <b>plotting symbol</b> control,
+        <b>color coding of hexbins</b>, and loads more!
       </li>
 
       <li>
         <b>Plot Toolbar:</b>
-        We've modified this to make it reactive to modules,
-        for example Maps, and converted the Add to Plot,
+        A slight reordering of buttons to group similar ones,
+        and conversion of the Add to Plot,
         Remove Additions, and Inference Information buttons
-        from text to icons, so the entire toolbar can be
-        displayed vertically in <b>Dual-window mode</b>.
+        into icons.
+        It's also now <b>responsive to the active module</b> (such as Maps).
       </li>
 
       <li>
         <b>Subset Play Timer:</b>
-        Not only can you now stop playing through subsets,
-        you can also adjust the delay by clicking the clock
-        icon after selecting a subsetting variable.
+        Not only can you stop playing through subsets,
+        you can also <b>adjust the play speed</b> by clicking the clock
+        icon.
       </li>
 
      <li>
        <b>Improved Plot Saving:</b>
-       The 'Save Plot' interface (accessed through either the Plot Toolbar or the Plot menu)
-       has been rewritten, and should now give you better looking saved plots,
-       as well as make the process easier.
+       Saving plots has been made easier, and should give you better looking
+       JPEG, GIF, or PDF output.
+       The default save location is now the <code>Saved Plots</code>
+       folder in Documents/iNZightVIT.
      </li>
 
       <li>
@@ -76,23 +84,21 @@ require_once($rel . 'assets/includes/2-header.php');
     <ul>
       <li>
         <b>Dual-window Mode:</b>
-        Especially useful on Windows, where the graphics device used
-        within iNZight is slower than the alternative,
-        you can switch iNZight to dual-window mode and have the control
-        panel separate from the graphics device
-        (the same as in VIT, if you're familiar with that).
+        Especially useful on Windows, where iNZight's built-in
+        graphics device can "flicker" between plots,
+        you can now switch iNZight to dual-window mode and have the
+        <b>control panel separate from the graphics device</b>.
       </li>
       <li>
         <b>Maps Module:</b>
-        Got geographical data? Now you can visualise it!
-        If you have coordinate data, we can plot the points on a map,
-        and code colour, size, and opacity using other variables
-        in the dataset.
-        Alternatively, if you have country data (such as Gap Minder),
-        you can colour countries by their values of other variables.
-        <b>Note:</b> this is still in beta, so we only provide a world map;
-        however, we hope to add new maps in future, such as New Zealand
-        regions and US states.
+        Got geographical data? Now you can plot it!
+        If your data has <b>co-ordinates</b>, they can be drawn onto a map,
+        and <b>colour, size, and opacity</b> coded
+        using other variables in the dataset.
+        If you've got country names associated with observations
+        (such as the Gap Minder data), a world map can be <b>coloured
+        according to values</b> in the data.
+        We'll be bringing more flexibility to this in the future.
       </li>
 
       <li>
@@ -123,17 +129,14 @@ require_once($rel . 'assets/includes/2-header.php');
   </p>
 
   <p>
-    <b>Proper installation (and Windows uninstaller):</b>
+    <b>Full installation:</b>
     The Windows and Mac installers will install iNZight
     onto your machine, so everything should run smoothly without
     permissions and access errors.
     On Windows, desktop shortcuts will be created automatically.
     In both cases, an iNZightVIT folder will be placed in your Documents
     so iNZight has a place to save data sets and plots,
-    as well as add on modules (such as Maps).
-    The Windows version comes with an uninstaller, so you can
-    remove it easily. A Mac uninstaller will be coming if we can figure out
-    how to do so safely.
+    as well as a place to install add-on modules (such as Maps).
   </p>
 
   <h3>Download Now!</h3>
@@ -148,29 +151,34 @@ require_once($rel . 'assets/includes/2-header.php');
   </p>
 
   <p>
-    In both cases, iNZightVIT will be installed to <code>C:\Program Files\iNZightVIT</code> (on Windows,
-    by default, although it can be changed) and <code>Applications/iNZightVIT</code> on Mac.
+    iNZightVIT will be installed to <code>C:\Program Files\iNZightVIT</code> on Windows
+    by default (although it can be changed) and <code>Applications/iNZightVIT</code> on Mac.
   </p>
 
   <p>
-    If you prefer the old way of doing things, 
+    If you prefer the old way of doing things,
     <a href="<?php echo $rel.'downloads/iNZightVIT-win.zip'; ?>">you can get the Windows ZIP file here</a>.
+  </p>
+
+  <p>
+    <b>Linux Users:</b> To install the beta version of iNZight on Linux,
+    you'll need to <a href="../about/development/">download from GitHub</a>.
   </p>
 
   <h4>Uninstalling</h4>
 
   <p>
-   If you decide you no longer want iNZight, on Windows just find the iNZightVIT folder in your Start menu, 
-   and click "Uninstall". This will completely remove iNZight from the install location, although
-   the iNZightVIT folder in your Documents might need to be manually deleted, in case you have saved data
-   or plots there.
+    If you decide you no longer want iNZight, on Windows just go to <b>Start</b> &gt;
+    <b>iNZightVIT</b> &gt; <b>Uninstall</b>. This will completely remove iNZight from the install
+    location, although the iNZightVIT folder in your Documents might need to be manually deleted, in
+    case you have saved data or plots there.
   </p>
 
   <p>
     On Mac, it's a little more complicated. You can simply delete the iNZightVIT folder from Applications,
     but this will still leave R, GTK and XQuartz on your machine. However, in the event you need these for
     something else, I'm reluctant to write a script that deletes everything.
-    <a href="mailto:inzight_supports@stat.auckland.ac.nz">Email me</a> if you would like to completely 
+    <a href="mailto:inzight_supports@stat.auckland.ac.nz">Email me</a> if you would like to completely
     remove everything if you're sure you don't need GTK, XQuartz or R for anything else.
   </p>
 
@@ -179,7 +187,7 @@ require_once($rel . 'assets/includes/2-header.php');
 
   <p class="lead">
     If there's anything you like, or don't, or maybe
-    something we've missing that you think would be useful,
+    something we've missed that you think would be useful,
     let us know by emailing
     <a href="mailto:inzight_support@stat.auckland.ac.nz?subject=iNZight Beta">
       inzight_support@stat.auckland.ac.nz
@@ -190,6 +198,8 @@ require_once($rel . 'assets/includes/2-header.php');
     <b>Bugs:</b>
     This is a beta release. Expect to find bugs. Let us know about them too.
   </p>
+
+  <div style="margin-bottom: 50px"></div>
 </div>
 
 

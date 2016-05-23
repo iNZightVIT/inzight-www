@@ -1466,6 +1466,9 @@ a img {
     .support_message .close:hover {
       color: black; }
 
+h4 {
+  padding: 1em 2em 0em; }
+
 .container--beta {
   max-width: 960px;
   margin: 0 auto;
@@ -1475,6 +1478,9 @@ a img {
   width: 50%;
   float: left;
   padding: 0.5em; }
+  @media (max-width: 950px) {
+    .beta-panel {
+      width: 100%; } }
 
 html, body {
   height: 100%;
