@@ -9,8 +9,9 @@ require_once($rel . 'assets/includes/2-header.php');
 
   <p class="lead">
     Get an advanced preview of the latest version of <b>iNZight 3.0</b>,
-    which includes the new <b>maps module</b> and a
-    vastly improved <b>Add to Plot</b> interface!
+    which includes the new <b>maps module</b>,  a
+    vastly improved <b>Add to Plot</b> interface,
+    and many other great new features!
   </p>
 
   <p>
@@ -21,7 +22,6 @@ require_once($rel . 'assets/includes/2-header.php');
     in others, we've completely redesigned them to make them
     more intuitive and easier to use.
   </p>
-
 
   <div class="beta-panel">
     <h3>Changes</h3>
@@ -52,6 +52,13 @@ require_once($rel . 'assets/includes/2-header.php');
         icon after selecting a subsetting variable.
       </li>
 
+     <li>
+       <b>Improved Plot Saving:</b>
+       The 'Save Plot' interface (accessed through either the Plot Toolbar or the Plot menu)
+       has been rewritten, and should now give you better looking saved plots,
+       as well as make the process easier.
+     </li>
+
       <li>
         <b>Multiple Response Module:</b>
         It's almost a new feature, because the previous version
@@ -61,6 +68,7 @@ require_once($rel . 'assets/includes/2-header.php');
       </li>
     </ul>
   </div>
+
 
   <div class="beta-panel">
     <h3>New Features</h3>
@@ -97,6 +105,7 @@ require_once($rel . 'assets/includes/2-header.php');
     </ul>
   </div>
 
+  <div style="clear:both;"></div>
   <h2>Windows and Mac Installers</h2>
 
   <p class="lead">
@@ -128,7 +137,7 @@ require_once($rel . 'assets/includes/2-header.php');
   </p>
 
   <h3>Download Now!</h3>
-  <p class="center">
+  <p class="center" style="margin-bottom: 50px">
     <a class='button' href="<?php echo $rel.'downloads/iNZightVIT-installer_latest.exe'; ?>">
       Windows Installer
     </a>
@@ -136,6 +145,33 @@ require_once($rel . 'assets/includes/2-header.php');
     <a class='button' href="<?php echo $rel.'downloads/iNZightVIT-installer_latest.dmg'; ?>">
       Mac Installer
     </a>
+  </p>
+
+  <p>
+    In both cases, iNZightVIT will be installed to <code>C:\Program Files\iNZightVIT</code> (on Windows,
+    by default, although it can be changed) and <code>Applications/iNZightVIT</code> on Mac.
+  </p>
+
+  <p>
+    If you prefer the old way of doing things, 
+    <a href="<?php echo $rel.'downloads/iNZightVIT-win.zip'; ?>">you can get the Windows ZIP file here</a>.
+  </p>
+
+  <h4>Uninstalling</h4>
+
+  <p>
+   If you decide you no longer want iNZight, on Windows just find the iNZightVIT folder in your Start menu, 
+   and click "Uninstall". This will completely remove iNZight from the install location, although
+   the iNZightVIT folder in your Documents might need to be manually deleted, in case you have saved data
+   or plots there.
+  </p>
+
+  <p>
+    On Mac, it's a little more complicated. You can simply delete the iNZightVIT folder from Applications,
+    but this will still leave R, GTK and XQuartz on your machine. However, in the event you need these for
+    something else, I'm reluctant to write a script that deletes everything.
+    <a href="mailto:inzight_supports@stat.auckland.ac.nz">Email me</a> if you would like to completely 
+    remove everything if you're sure you don't need GTK, XQuartz or R for anything else.
   </p>
 
   <div style="height:30px"></div>
