@@ -151,6 +151,12 @@ require_once($rel . 'assets/includes/2-header.php');
   </p>
 
   <p>
+    <b>NOTE:</b> you may get a security warning from your web browser that the publisher
+    cannot be verified and could harm your computer. It's safe to ignore this, so long
+    as you are downloading directly from the link above.
+  </p>
+
+  <p>
     iNZightVIT will be installed to <code>C:\Program Files\iNZightVIT</code> on Windows
     by default (although it can be changed) and <code>Applications/iNZightVIT</code> on Mac.
   </p>
