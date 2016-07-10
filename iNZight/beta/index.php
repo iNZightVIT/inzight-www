@@ -197,12 +197,18 @@ require_once($rel . 'assets/includes/2-header.php');
     let us know by emailing
     <a href="mailto:inzight_support@stat.auckland.ac.nz?subject=iNZight Beta">
       inzight_support@stat.auckland.ac.nz
-    </a>.
+    </a>, or if you prefer, you can
+    <a href="http://freesuggestionbox.com/pub/tartrjp">
+      add an anonymous suggestion to our box
+    </a>!
   </p>
 
   <p>
     <b>Bugs:</b>
-    This is a beta release. Expect to find bugs. Let us know about them too.
+    This is a beta release. Expect to find bugs. Let us know about them too by emailing
+    <a href="mailto:inzight_support@stat.auckland.ac.nz?subject=iNZight Beta">
+      inzight_support@stat.auckland.ac.nz
+    </a>.
   </p>
 
   <div style="margin-bottom: 50px"></div>
