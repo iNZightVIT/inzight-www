@@ -108,6 +108,11 @@ require_once($rel . 'assets/includes/2-header.php');
         within iNZight! There's not many yet, but we will be adding
         more when the release version is ready.
       </li>
+
+      <li>
+        <b>Switch Variables:</b>
+        Click the down arrow to the right of a variable to switch it with the variable below.
+      </li>
     </ul>
   </div>
 
