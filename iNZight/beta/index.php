@@ -165,9 +165,10 @@ require_once($rel . 'assets/includes/2-header.php');
 
   <p>
     <b>Mac Users</b>: We're working on an R installer, but its not quite ready.
-    We'll let you know when this is available for use. If you are on Mac and would like
-    to try iNZight 3.0 beta, use the R user installation instructions below.
-    If you have any trouble, let us know.
+    If you have a mac and would like to test it for us, please email
+    <a href="mailto:inzight_support@stat.auckland.ac.nz?subject=iNZight Beta">
+      inzight_support@stat.auckland.ac.nz
+    </a>.
   </p>
 
   <p>
