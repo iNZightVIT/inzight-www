@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<!-- TO DO
+
+## Change the DATE in:
+    - filename
+    - view online link
+    - header
+
+-->
+
+<head>
+
+  <title>iNZightVIT Newsletter</title>
+
+  <style>
+    .wrapper {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 5px;
+
+      font-size: 14px;
+      font-family: "Helvetica", sans-serif;
+    }
+
+    .preview-text {
+      color: white;
+      display: none;
+      font-size: 1px;
+      line-height: 1px;
+      max-height: 0px;
+      max-width: 0px;
+      opacity: 0;
+      overflow: hidden;
+    }
+
+    .readonline {
+      color: #333;
+      font-size: 10px;
+      text-align: right;
+      margin-bottom: 10px;
+    }
+
+    .header {
+      margin-bottom: 50px
+      float: left;
+    }
+    .header h1 {
+      font-size: 22px;
+      color: #333;
+      margin:0;
+      padding-top: 20px;
+    }
+    .header h2 {
+      font-size: 12px;
+      color: #111;
+      font-style: italic;
+      margin: 0;
+      padding-top: 10px;
+    }
+    .header-image {
+      float: right;
+      border: none;
+    }
+
+    .lead {
+      font-weight: bold;
+    }
+
+    .content {
+      clear: both;
+      margin-top: 50px
+    }
+
+    .section {
+      margin: 20px 0 10px;
+      border-top: solid 1px #094b85;
+    }
+    .section h3 {
+      color: #094b85;
+    }
+
+    .section p {
+      line-height: 1.4
+    }
+
+    ul {
+      line-height: 1.5
+    }
+    ul>li {
+      padding: 5px 0
+    }
+    li.grey {
+      color: #999
+    }
+    ul ul {
+      list-style-type: square;
+    }
+
+    .footnote {
+      font-size: 10px;
+      border-top: solid 1px #ccc;
+      margin-top: 20px;
+    }
+
+    .footer {
+      background: #094b85;
+      line-height: 40px;
+      text-align: center;
+      color: white
+    }
+    .footer p {
+      line-height: 1;
+      margin: 0;
+      padding: 10px 0 0;
+    }
+    .footer a {
+      color: white;
+      font-size: 10px;
+      text-decoration: none
+    }
+    .footer p a {
+      font-size: 12px;
+    }
+  </style>
+
+</head>
+
+<body>
+<div class="wrapper">
+  <div class="preview-text">
+    iNZight 3.0 Released! Maps module, Windows installer, and more!
+  </div>
+
+  <div class="readonline">
+    Having trouble viewing this email? <a href="https://www.stat.auckland.ac.nz/~wild/iNZight/newsletters/2016-07-11-Beta_Release.html">View it online</a>.
+  </div>
+
+  <a href="https://www.stat.auckland.ac.nz/~wild/iNZight/">
+    <img class="header-image" height="80px" src="https://www.stat.auckland.ac.nz/~wild/iNZight/img/inzight_transp.png">
+  </a>
+  <div class="header">
+    <h1>Newsletter</h1>
+    <h2>11 July, 2016</h2>
+  </div>
+
+  <div class="content">
+    <p class="lead">
+      The latest version of iNZight is now available as a beta release,
+      with a new Windows installer, Mapping module, and a whole lot of improvements.
+    </p>
+
+    <div class="section">
+      <h3>iNZight v3.0 Beta Available</h3>
+
+      <p>
+        We've been doing a lot of work over the last 6 months, and we're happy to announce that our latest updates to iNZight are ready for you to .
+        While the iNZight you know hasn't gone anywhere, we've made several fundamental changes that we hope will make it easier for you to use.
+      </p>
+
+      <p>
+        Many of you have resources that reference certain parts of iNZight, and we have done our best to preserve things as much as possible. In fact, in many places we've made iNZight more consistent, so exploring new parts of iNZight will be just as easy as those you know already.
+      </p>
+
+      <p>
+        So, what's new?
+
+        <ul>
+          <li><b>An improved plot toolbar</b>
+            <p>
+              We've reordered some of the buttons, and changed the "Add to Plot", "Remove Additions" and "Inference Information" buttons into icons themselves.
+              It's also now responsive, so when you open modules (see later) the toolbar changes to suit the module.
+            </p>
+          </li>
+
+          <li><b>Example datasets</b>
+            <p>
+              If you just want to try iNZight, you no longer have to go browsing for the data folder. From the File menu, you'll notice a new "Example Datasets" option, which lets you quickly load data sets to play with.
+            </p>
+          </li>
+
+          <li><b>Add to Plot</b>
+            <p>
+              We've completely redesigned the add to plot windows, so now you can customise your plot faster without switching between different windows. We've also added more funcionality to it, so you can do more with your plots!
+            </p>
+            <ul>
+              <li><b>Resize points</b>: this now resizes point <i>proportional</i> to the variable, with the option of switching to the old method of scaling all points between a minimum and a maximum size, which is suitable for exaggerating trends.</li>
+
+              <li><b>More choice of colours</b>: Finally, you can choose your own colour palette! We've made a few basic ones available, and have also linked the the GUI provided by the colorspace package, which will give you complete control over colouring your plots.</li>
+
+              <li><b>Plot symbols</b>: now you can change the plot symbol, and even use it to code variables!</li>
+            </ul>
+          </li>
+
+          <li><b>Add-on Modules</b>
+            <ul>
+              <li><b>Maps</b>:
+                One of the major new features available in iNZight 3.0 is the Maps module. However, due to the large size of the packages involved, its not included with the download. Instead, it will automatically download and install when you run the Maps module for the first time. This methodology will be used for all future modules added to iNZight.
+              </li>
+              <li><b>Multiple Response</b>:
+                We've redesigned the multiple response module so now it's
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>Windows Installer</h3>
+
+    <p>
+      Previously, iNZightVIT was supplied as a ZIP archive that needed extracting before it would run.
+      We've moved away from this in preference of a more formal installation which will set things up and place shortcuts on the desktop and in the start menu.
+      We've also included an uninstaller so, if you no longer need iNZight, you can remove it easily.
+    </p>
+  </div>
+
+  <div class="section">
+    <h3>iNZight VIT breakup</h3>
+
+    <p>
+      Development of iNZight is moving much faster than VIT, so we've decided to break them up. When you download iNZight, you'll still get VIT, but you'll have two separate Icons for each of them. The main advantage of this is that you can start iNZight directly without first going to the iNZightVIT start menu.
+    </p>
+
+    <p>
+      Speaking of VIT, we have a clever student currently working on an online implementation, so anyone with access to a web browser will be able to use it. We'll let you know more when it's ready for use.
+    </p>
+  </div>
+
+
+
+  <div class="footer">
+    <p>
+      <a href="https://list.science.auckland.ac.nz/sympa/subscribe/stat-inzight-general">inzightgeneral@stat.auckland.ac.nz</a>
+    </p>
+
+    <a href="https://www.stat.auckland.ac.nz/~wild/iNZight/newsletters/">Previous newsletters</a>
+    |
+    <a href="https://list.science.auckland.ac.nz/sympa/signoff/stat-inzight-general">Unsubscribe</a>
+
+  </div>
+
+</div>
+</body>
+
+</html>

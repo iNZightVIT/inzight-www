@@ -112,11 +112,11 @@ require_once($rel . 'assets/includes/2-header.php');
   </div>
 
   <div style="clear:both;"></div>
-  <h2>Windows and Mac Installers</h2>
+  <h2>Installer</h2>
 
   <p class="lead">
     Not only is iNZight getting some big updates, but we've
-    created installers for Windows and Mac to make download and
+    created an installer for Windows to make download and
     installation easy.
   </p>
 
@@ -130,10 +130,10 @@ require_once($rel . 'assets/includes/2-header.php');
 
   <p>
     <b>Full installation:</b>
-    The Windows and Mac installers will install iNZight
+    The Windows installer will install iNZight
     onto your machine, so everything should run smoothly without
     permissions and access errors.
-    On Windows, desktop shortcuts will be created automatically.
+    Desktop shortcuts will be created automatically.
     In both cases, an iNZightVIT folder will be placed in your Documents
     so iNZight has a place to save data sets and plots,
     as well as a place to install add-on modules (such as Maps).
@@ -144,10 +144,7 @@ require_once($rel . 'assets/includes/2-header.php');
     <a class='button' href="<?php echo $rel.'downloads/iNZightVIT-installer_latest.exe'; ?>">
       Windows Installer
     </a>
-    or
-    <a class='button' href="<?php echo $rel.'downloads/iNZightVIT-installer_latest.dmg'; ?>">
-      Mac Installer
-    </a>
+
   </p>
 
   <p>
@@ -158,7 +155,7 @@ require_once($rel . 'assets/includes/2-header.php');
 
   <p>
     iNZightVIT will be installed to <code>C:\Program Files\iNZightVIT</code> on Windows
-    by default (although it can be changed) and <code>Applications/iNZightVIT</code> on Mac.
+    by default (although it can be changed).
   </p>
 
   <p>
@@ -167,7 +164,14 @@ require_once($rel . 'assets/includes/2-header.php');
   </p>
 
   <p>
-    <b>Linux Users:</b> To install the beta version of iNZight on Linux,
+    <b>Mac Users</b>: We're working on an R installer, but its not quite ready.
+    We'll let you know when this is available for use. If you are on Mac and would like
+    to try iNZight 3.0 beta, use the R user installation instructions below.
+    If you have any trouble, let us know.
+  </p>
+
+  <p>
+    <b>R and Linux Users:</b> To install the beta version of iNZight on Linux,
     you'll need to <a href="../about/development/">download from GitHub</a>.
   </p>
 
@@ -179,7 +183,7 @@ require_once($rel . 'assets/includes/2-header.php');
     location, although the iNZightVIT folder in your Documents might need to be manually deleted, in
     case you have saved data or plots there.
   </p>
-
+<!--
   <p>
     On Mac, it's a little more complicated. You can simply delete the iNZightVIT folder from Applications,
     but this will still leave R, GTK and XQuartz on your machine. However, in the event you need these for
@@ -187,7 +191,7 @@ require_once($rel . 'assets/includes/2-header.php');
     <a href="mailto:inzight_supports@stat.auckland.ac.nz">Email me</a> if you would like to completely
     remove everything if you're sure you don't need GTK, XQuartz or R for anything else.
   </p>
-
+-->
   <div style="height:30px"></div>
   <h3>Let us know what you think</h3>
 
