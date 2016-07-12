@@ -87,7 +87,8 @@ require_once($rel . 'assets/includes/2-header.php');
         Especially useful on Windows, where iNZight's built-in
         graphics device can "flicker" between plots,
         you can now switch iNZight to dual-window mode and have the
-        <b>control panel separate from the graphics device</b>.
+        <b>control panel separate from the graphics device</b>
+        by going to <b>File > Preferences</b>.
       </li>
       <li>
         <b>Maps Module:</b>
@@ -147,9 +148,11 @@ require_once($rel . 'assets/includes/2-header.php');
   <h3>Download Now!</h3>
   <p class="center" style="margin-bottom: 50px">
     <a class='button' href="<?php echo $rel.'downloads/iNZightVIT-installer_latest.exe'; ?>">
-      Windows Installer
+      Windows Installer (Beta)
     </a>
-
+    <a class='button' href="<?php echo $rel.'downloads/iNZightVIT-installer_latest.dmg'; ?>">
+      Mac Installer (Beta)
+    </a>
   </p>
 
   <p>
@@ -159,7 +162,7 @@ require_once($rel . 'assets/includes/2-header.php');
   </p>
 
   <p>
-    iNZightVIT will be installed to <code>C:\Program Files\iNZightVIT</code> on Windows
+    iNZightVIT will be installed to <code>Documents\iNZightVIT</code> on Windows
     by default (although it can be changed).
   </p>
 
@@ -169,8 +172,8 @@ require_once($rel . 'assets/includes/2-header.php');
   </p>
 
   <p>
-    <b>Mac Users</b>: We're working on an R installer, but its not quite ready.
-    If you have a mac and would like to test it for us, please email
+    <b>Mac Users</b>: we're trying a new installation method for iNZight that we hope will be stable
+    and easier for users to follow. If you have any issues with it, please contact us at
     <a href="mailto:inzight_support@stat.auckland.ac.nz?subject=iNZight Beta">
       inzight_support@stat.auckland.ac.nz
     </a>.
@@ -189,15 +192,11 @@ require_once($rel . 'assets/includes/2-header.php');
     location, although the iNZightVIT folder in your Documents might need to be manually deleted, in
     case you have saved data or plots there.
   </p>
-<!--
+
   <p>
-    On Mac, it's a little more complicated. You can simply delete the iNZightVIT folder from Applications,
-    but this will still leave R, GTK and XQuartz on your machine. However, in the event you need these for
-    something else, I'm reluctant to write a script that deletes everything.
-    <a href="mailto:inzight_supports@stat.auckland.ac.nz">Email me</a> if you would like to completely
-    remove everything if you're sure you don't need GTK, XQuartz or R for anything else.
+    On Mac, you can simply delete the <code>iNZightVIT</code> from Applications. However, there will still be the dependencies. We're yet to come up with a reliable uninstaller, so please email us if you wish to remove everything.
   </p>
--->
+
   <div style="height:30px"></div>
   <h3>Let us know what you think</h3>
 
