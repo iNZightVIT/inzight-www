@@ -43,9 +43,9 @@ The 6-digit HEX code is divided into three 2-digit codes that specify red, green
 You can also specify opacity when using HEX codes. This is done simply by adding two additional digits (forming an 8-digit code), where 00 = 0% opacity = completely invisible.
 
 
-### Colour palettes
+<!-- ### Colour palettes
 
 Thanks to the [`colorspace`](https://cran.r-project.org/web/packages/colorspace/index.html) package,
 if you colour by a variable (Add to Plot > Code more variables), you can specify your own colour palette from __Add to Plot__ > __Change plot appearance__ > __Colour palette__ > __Advanced__.
 
-A new window will open in which you can create your own palette, including colour-blind options. 
+A new window will open in which you can create your own palette, including colour-blind options.  -->

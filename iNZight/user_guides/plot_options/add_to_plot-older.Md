@@ -9,27 +9,59 @@ The __Add to Plot__ options vary depending on the type of plot drawn:
 - [Dot plots](#dotplots)
 - [Bar charts](#barplots)
 
-See also:
-- [Ways of choosing colours](#ColourChoices)
+
 
 ## Options for Scatter Plots        {#scatterplots}
 
 1. __Code more variables__
-  ![Code more variables](../../img/user_guides/plotoptions/02_addtoplot_scatter_codevars.png){.fright}
+  ![Code more variables](../../img/user_guides/add2plot/scatter1.jpg){.fright}
 
-  __Colour by levels of__: this gives the option to colour code the data points by any variable. If a numeric variable is chosen, a rainbow spectrum of colours is used to signify progressively larger values. If a categorical variable is used, different levels are represented by different colours. (See [ways of choosing colours](#ColourChoices) for alternatives to selecting from the drop-down menu.)
+  __Colour by levels of__: this gives the option to colour code the data points by any variable. If a numeric variable is chosen, a gradient of colours going from blue to purple to red is used to signify progressively larger values. If a categorical variable is used, different levels are represented by different colours.
 
   __Resize points proportional to__: this option can be used to resize the points proportional to any numeric variable in the data set.
 
 2. __Add trend curves__
-  ![Add trend curves](../../img/user_guides/plotoptions/03_addtoplot_scatter_trend.png){.fright}
+  ![Add trend curves](../../img/user_guides/add2plot/scatter2.jpg){.fright}
 
-  Provides the user with the option to fit linear, quadratic and cubic trend curves to the data shown on the scatter plot. The user is also allowed to control the colour of the trend lines. (See [ways of choosing colours](#ColourChoices) for alternatives to selecting from the drop-down menu.)
+  Provides the user with the option to fit linear, quadratic and cubic trend curves to the data shown on the scatter plot. The user is also allowed to control the colour of the trend lines.
 
   Users can also add a smoother to the plot, the smoothness of which is controlled by the slider.
   Alternatively, quantile smoothers can be fit by checking the appropriate box.
 
   For trends and smoothers, if the points have been coloured by a categorical variable, users can have the curves fitted to the individual levels of these factors. Additionally, these curves can either be parallel (equal slope, different intercepts) or have unique intercepts and slopes.
+
+  <div class="extraInfo" markdown="1">
+    <label markdown="1">Extra info (Show/hide)</label>
+
+    <div markdown="1">
+      __Trend Lines__
+
+      The trend lines are all fitted using either the `lm()` or `svyglm` functions in __R__.
+
+      If users decide to draw a trend line for each level of a factor (defined in the 'Code More Variables' window),
+      then the model fitted is simple `lm(y ~ x + z)`, where `z` is the factor variable.
+
+      Alternatively, if the user opts to fit trend lines with individual slopes, this is done by fitting a curve to
+      each subset of the data.
+
+      __Smoothers__
+
+      iNZight uses the [lowess smoother](http://en.wikipedia.org/wiki/Local_regression) for computing smoothers.
+
+      More precisely, the __R__ function `lowess()` to compute the necessary curve, using the user-specified
+      smoother, _f_, which gives the proportion of points used to smooth each value.
+
+      For more information, [check out the function documentation](http://stat.ethz.ch/R-manual/R-patched/library/stats/html/lowess.html).
+
+
+      __Quantile Smoothers__
+
+      The quantile smoothers are computed using the `svysmooth()` function from the `survey` package.
+      Depending on the sample size, iNZight will draw 50%, 25/75% and 10/90% quantile smoothers.
+
+      [Checkout out the function documentation](http://r-survey.r-forge.r-project.org/survey/html/svysmooth.html) for more information.
+    </div>
+  </div>
 
 
 3. __Add x=y line__
@@ -47,34 +79,31 @@ See also:
   User can add ticks on both axes in order to make it easy to read off the x and y values for data points.
 
 6. __Join points by lines__
-  ![Join points by lines](../../img/user_guides/plotoptions/04_addtoplot_scatter_join.png){.fright}
+  ![Join points by lines](../../img/user_guides/add2plot/scatter6.jpg){.fright}
 
   Joins up data points in a continuous line. However, if the points are already colour coded by a variable, then separate lines are drawn connecting points belonging to each level of the coding variable.
 
 7. __Change plot appearance__
-  ![Change plot appearance](../../img/user_guides/plotoptions/05_addtoplot_scatter_appearance.png){.fright}
+  ![Change plot appearance](../../img/user_guides/add2plot/scatter7.jpg){.fright}
 
 
   This brings up a menu that allows the user to customize the following aspects of the scatter plot.
 
-  - Users can change the colour of the data point symbols and opt to colour the interior of the symbols as well.
+  - Users can change the colour of the data point symbols by either choosing from a drop down menu OR typing in a desired colour. Users can opt to colour the interior of the symbols as well.
 
   - Similarly the background of the plot can be changed by typing in a colour or by using the drop down menu.
 
   - The size of the symbols can be increased or decreased by using sliders.
 
-   (See [ways of choosing colours](#ColourChoices) for alternatives to selecting from the drop-down menu.)
-
-
 8. __Identify points__
-  ![Identify points](../../img/user_guides/plotoptions/06_addtoplot_scatter_locate.png){.fright}
+  ![Identify points](../../img/user_guides/add2plot/scatter8.jpg){.fright}
 
   This allows users to label points in one of three ways (text labels, colour labels, and related points), using one of three methods (clicking, selecting values, or labelling extreme points).
 
   ___How do you want to label points?___
 
   - __Text labels__ allows you to select a variable from the data set with which to label selected points
-  - __Colour points__ allows selected points to be filled in with a selected color. (See [ways of choosing colours](#ColourChoices).)
+  - __Colour points__ allows selected points to be filled in with a selected color
   - __With the same level of__ allows you to easily locate points related to the selected points.
 
      The main use of this would be to locate points with the same level of a chosen factor (e.g., if you are exploring survey data, you may wish to identify observations in the same cluster), or you may want to retain points selected over multiple graphs (e.g., in the Gap Minder data set, included in the `Data` folder, has several observations of countries over multiple years. In this case you can label certain coutries and track them over time).
@@ -103,80 +132,68 @@ See also:
 
 
 9. __Customise Labels__
-  ![Customise labels](../../img/user_guides/plotoptions/07_addtoplot_scatter_labels.png){.fright}
+  ![Customise labels](../../img/user_guides/add2plot/scatter9.jpg){.fright}
 
   iNZight attempts to make sensible titles and axis labels automatically. However, you can use your own if you prefer by typing in your own and pressing the `Enter` key on your keyboard.
 
-10. __Modify Axis Limits__
-  ![Modify axis limits](../../img/user_guides/plotoptions/08_addtoplot_scatter_limits.png){.fright}
 
-  If you want to zoom in on a particular region of the plot, you can use this window to adjust the range of values displayed.
-
-
-## Ways of choosing colours {#ColourChoices}
-
-If ___colour coding by a variable___ is active while a user tries to change data point colours, the coding colours ___takes precedence___ over the user's choice until it is switched off (using Remove Additions).
-
-__Colours__ can be chosen from a ___drop-down___ menu OR by typing in the ___name___ of a desired colour OR its ___Hex code___ (e.g. #C80000).
- See [colour chart pdf](http://research.stowers-institute.org/efg/R/Color/Chart/ColorChart.pdf) (8 pages) for the names and codes of the huge range of colours available.  Increasingly, if any typed in colours are not available the user is notified via a pop up dialogue box.
-
- Adding a 7th and 8th digit to a 6-character Hex code allows you to include percent opacity (= 100 - percent transparency; compare #204090 with #20409030 and #20409070). (One way of specifying the main hex code is to use 6 numbers corresponding to 2 digits each for %Red, %Green and % Blue; FF can be used to specify 100%.)
+__NOTE__:
+If any typed in colours are not available the user would be notified via a pop up dialogue box. If colour coding by a variable is active while a user tries to change data point colours, the coding colours would take precedence over the user's choice until it is switched off (using Remove Additions).
 
 
 
 ## Options for Dot Plots        {#dotplots}
 
 1. __Code more variables__
-  ![Code more variables](../../img/user_guides/plotoptions/09_addtoplot_dot_codevars.png){.fright}
+  ![Code more variables](../../img/user_guides/add2plot/dot1.jpg){.fright}
 
   Colour code the data points by any variable. This is identical to that of the scatter plot (see above).
 
 2. __Change plot appearance__
-  ![Change plot appearance](../../img/user_guides/plotoptions/10_addtoplot_dot_appearance.png){.fright}
+  ![Change plot appearance](../../img/user_guides/add2plot/dot2.jpg){.fright}
 
   This is identical to the customization choices of the scatter plot (see above).
 
 3. __Identify points__
-  ![Identify points](../../img/user_guides/plotoptions/11_addtoplot_dot_locate.png){.fright}
+  ![Identify points](../../img/user_guides/add2plot/scatter8.jpg){.fright}
 
   This allows users to label points by clicking on them, and works much the same as it does for scatter plots (see above).
 
   The main difference is in the location of extreme points, where users are now presented with two sliders: one for the number of lower points, and one for the number of upper points, to label..
 
 4. __Customise Labels__
-  ![Customise labels](../../img/user_guides/plotoptions/12_addtoplot_dot_labels.png){.fright}
+  ![Customise labels](../../img/user_guides/add2plot/dot4.jpg){.fright}
 
   iNZight attempts to make sensible titles and axis labels automatically. However, you can use your own if you prefer by typing in your own and pressing the `Enter` key on your keyboard.
-
-5. __Adjust Axis Limits__
-  ![Customise labels](../../img/user_guides/plotoptions/13_addtoplot_dot_limits.png){.fright}
-
-  To zoom in on a specific range of points, you can adjust the axis limits.
 
 
 
 ## Options for Bar Plots        {#barplots}
 
 1. __Code more variables__
-    ![Customise labels](../../img/user_guides/plotoptions/14_addtoplot_bar_codevars.png){.fright}
-
-    iNZight attempts to make sensible titles and axis labels automatically. However, you can use your own if you prefer by typing in your own and pressing the `Enter` key on your keyboard.){.fright}
+  ![Code more variables](../../img/user_guides/add2plot/bar1.jpg){.fright}
 
   This feature is accessible for one-way bar plot (i.e., Variable 1 is categorical and Variable 2 is empty.) This option will segement the bars to show the distribution of the chosen variable.
 
 2. __Change plot appearance__
-  ![Change plot appearance](../../img/user_guides/plotoptions/15_addtoplot_bar_appearance.png){.fright}
+  ![Change plot appearance](../../img/user_guides/add2plot/bar2.jpg){.fright}
 
   This allows users to change colours used in the plot.
 
 3.  __Customise Labels__
-  ![Customise labels](../../img/user_guides/plotoptions/16_addtoplot_bar_labels.png){.fright}
+  ![Customise labels](../../img/user_guides/add2plot/bar3.jpg){.fright}
 
   iNZight attempts to make sensible titles and axis labels automatically. However, you can use your own if you prefer by typing in your own and pressing the `Enter` key on your keyboard.
 
-5. __Adjust Number of Bars__
-  ![Customise labels](../../img/user_guides/plotoptions/17_addtoplot_bar_limits.png){.fright}
 
-  In some cases, you might have a lot of categories for a given variable. To get a good insight into individual levels, you can use the first slider to adjust the number of bars shown in the plot. The second slider lets you control the starting point, allowing you to scroll through the levels.
 
-  If you want to compare levels that are not near each other, you'll have to go to __Variables__ > __Categorical__ > __Reoder Levels__ and put the two (or more) you want to compare next to each other.
+
+
+
+
+
+
+
+
+
+///SCRIPT: ../../js/markdown.js

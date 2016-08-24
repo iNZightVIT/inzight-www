@@ -1348,12 +1348,13 @@ a img {
   margin: 1em;
   padding: 0 1em;
   clear: both; }
-  .extraInfo label {
+  .extraInfo .label {
+    display: block;
     cursor: pointer;
     color: #094b85;
     font-weight: bold;
     font-size: 0.8em; }
-    .extraInfo label:hover {
+    .extraInfo .label:hover {
       color: #18afe3; }
   .extraInfo div {
     padding: 1em;
@@ -1554,6 +1555,11 @@ li > p {
   font-size: 0.9em;
   font-style: italic;
   color: #46873f; }
+
+.warning {
+  font-size: 0.9em;
+  font-weight: bold;
+  color: orangered; }
 
 a.thumb {
   display: inline-block; }

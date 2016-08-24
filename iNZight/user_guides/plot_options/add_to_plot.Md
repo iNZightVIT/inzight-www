@@ -1,182 +1,114 @@
 # Add to Plot
 
-The Add to Plot menu allows you to code extra variables, add lines, and change the general appearance of the graph. The choice of additions presented to the user changes according to the type of plot drawn.
+The Add to Plot window lets your customise your graph, explore patterns in the data,
+and highlight important features.
+The options available to you depend on the type of variables you have selected and the plot drawn:
 
-Once the additions are in place, they can be removed at any time using the __Remove Additions__ button on the plot toolbar, found beneath the graphics window.
-
-The __Add to Plot__ options vary depending on the type of plot drawn:
+- [Dot plots](#dotplots) | [Histograms](#histograms)
 - [Scatter plots](#scatterplots)
-- [Dot plots](#dotplots)
 - [Bar charts](#barplots)
 
-See also:
-- [Ways of choosing colours](#ColourChoices)
+***
 
-## Options for Scatter Plots        {#scatterplots}
+## General Appearance {#general}
 
-1. __Code more variables__
-  ![Code more variables](../../img/user_guides/plotoptions/02_addtoplot_scatter_codevars.png){.fright}
+- __Plot type__:
+  this allows you to override the default plot chosen by iNZight, which depends on the _size_ of your data set.
 
-  __Colour by levels of__: this gives the option to colour code the data points by any variable. If a numeric variable is chosen, a rainbow spectrum of colours is used to signify progressively larger values. If a categorical variable is used, different levels are represented by different colours. (See [ways of choosing colours](#ColourChoices) for alternatives to selecting from the drop-down menu.)
+  For example, you can switch between __dot plots and histograms__, or __scatter plots and hexbin plots__.
 
-  __Resize points proportional to__: this option can be used to resize the points proportional to any numeric variable in the data set.
+  <div class="note">
+    NOTE: you cannot switch between different types of plots, for example dot plots and scatter plots.
+  </div>
 
-2. __Add trend curves__
-  ![Add trend curves](../../img/user_guides/plotoptions/03_addtoplot_scatter_trend.png){.fright}
+- __Background colour__:
+  you can customise the background colour of your graphs to suit your preference,
+  or make certain features easier to distinguish.
 
-  Provides the user with the option to fit linear, quadratic and cubic trend curves to the data shown on the scatter plot. The user is also allowed to control the colour of the trend lines. (See [ways of choosing colours](#ColourChoices) for alternatives to selecting from the drop-down menu.)
+  You can [specify colours](#colour) using names or HEX codes.
 
-  Users can also add a smoother to the plot, the smoothness of which is controlled by the slider.
-  Alternatively, quantile smoothers can be fit by checking the appropriate box.
+- __Overall size scale__:
+  this lets you adjust the overall size of everything drawn on the screen.
 
-  For trends and smoothers, if the points have been coloured by a categorical variable, users can have the curves fitted to the individual levels of these factors. Additionally, these curves can either be parallel (equal slope, different intercepts) or have unique intercepts and slopes.
+  This works as a baseline, so all other size settings will be multiplied by this value.
 
+***
 
-3. __Add x=y line__
+# Dot plots   {#dotplots}
 
-  Draws a dotted y = x line on the plot to add perspective.
+## Point Size
 
-4. __Add a jitter__
+You can adjust the size of the dots.
+This is especially useful if your _Y_ axis isn't big enough to fit all of the dots,
+in which case they get "squashed" together,
+or when some of the gaps between stacks of dots aren't quite wide enough,
+resulting in some strange "floating" stacks.
+Adjust the point size until it looks right to you.
 
-  In a scatter plot where there is a large number of overlapping data points, the user may want to add a slight amount of irregular movement (or noise) to the data. Using jitter allows for a better impression of the density of points in a region.
 
-  The variation or jitter can be added to the x-axis as well as the y-axis, thereby revealing all the available data points.
+## Point Colour
 
-5. __Add rugs__
+You can change the colour of the dots to suit your preference,
+and additionally you can adjust the transparency of points.
+Doing so will cause the dots to become "filled".
 
-  User can add ticks on both axes in order to make it easy to read off the x and y values for data points.
+You can also __colour code a variable__, allowing you to explore trends in the data.
+When you do so, you'll be able to select a colour palette
+(this will replace the colour menu).
+The choice of palettes depends on the variable you choose:
+- __Categorical variable__:
+  Each level of the variable is assigned a colour, and points are coloured accordingly.
+  The colour palettes are chosen to make it easy to distinguise points in different groups.
+  Note that this only works well if you have a categorical variable with a few levels.
+- __Numeric variable__:
+  By default, points are coloured based on their value,
+  which is computed linearly from the minimum to the maximum value.
 
-6. __Join points by lines__
-  ![Join points by lines](../../img/user_guides/plotoptions/04_addtoplot_scatter_join.png){.fright}
+  If you check the __Use Ranks__ box,
+  the points will be coloured depending on the __order__.
+  This is expecially useful if you have a variable that has a few extreme values,
+  causing most of the points' colours to be difficult to distinguish.
 
-  Joins up data points in a continuous line. However, if the points are already colour coded by a variable, then separate lines are drawn connecting points belonging to each level of the coding variable.
+  <div class="note" markdown="1">
+    iNZight uses the `viridis` colour palettes ("viridis", "magma", "plasma", and "inferno"),
+    which are colourblind friendly and can even be printed in grayscale!
+    [Viridis R package](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html).
+  </div>
 
-7. __Change plot appearance__
-  ![Change plot appearance](../../img/user_guides/plotoptions/05_addtoplot_scatter_appearance.png){.fright}
+You can also check the __reverse palette__ box, which will inverse the order colours are assigned to values.
 
+__Cycle levels/quantiles__:
+To help pick out trends, you can also cycle through the various levels of a categorical variable
+(or quantiles of a numeric one) by clicking the arrows.
+This can help if you have lots of factor levels that are difficult to distinguish.
+iNZight will place these points _on top of the others_ to help them stand out.
+<div class="note" markdown="1">
+  NOTE: this currently works best if you have a __light__ coloured background.
+</div>
 
-  This brings up a menu that allows the user to customize the following aspects of the scatter plot.
 
-  - Users can change the colour of the data point symbols and opt to colour the interior of the symbols as well.
+## Point Symbol
 
-  - Similarly the background of the plot can be changed by typing in a colour or by using the drop down menu.
+Now iNZight gives you control of the symbols used.
 
-  - The size of the symbols can be increased or decreased by using sliders.
+- __Symbol__:
+  Choose your prefered symbol: circle, square, diamond, or triangle!
+- __Symbol by__:
+  You can use different symbols to represent various levels of a factor variable,
+  either in conjunction with colour (by clicking the __match with colour variable__ box)
+  or separately.
+  We've only made 5 symbols available now, so not all factor variables will show up on the list.
 
-   (See [ways of choosing colours](#ColourChoices) for alternatives to selecting from the drop-down menu.)
+- __Symbol line width__ lets you control how thick the outlines of the symbols are.
 
+- __Fill symbols__: checking this box will colour the interior of the symbols.
 
-8. __Identify points__
-  ![Identify points](../../img/user_guides/plotoptions/06_addtoplot_scatter_locate.png){.fright}
+  <div class="note">
+    Pluses (+) and crosses (x) are reserved for coding missingness.
+  </div>
 
-  This allows users to label points in one of three ways (text labels, colour labels, and related points), using one of three methods (clicking, selecting values, or labelling extreme points).
-
-  ___How do you want to label points?___
-
-  - __Text labels__ allows you to select a variable from the data set with which to label selected points
-  - __Colour points__ allows selected points to be filled in with a selected color. (See [ways of choosing colours](#ColourChoices).)
-  - __With the same level of__ allows you to easily locate points related to the selected points.
-
-     The main use of this would be to locate points with the same level of a chosen factor (e.g., if you are exploring survey data, you may wish to identify observations in the same cluster), or you may want to retain points selected over multiple graphs (e.g., in the Gap Minder data set, included in the `Data` folder, has several observations of countries over multiple years. In this case you can label certain coutries and track them over time).
-
-     _Note_: when you do this, the point you clicked will be highlighted for easier reference.
-
-
-  ___How do you want to select points?___
-
-  - __Clicking with the mouse__: After clicking "Click to Locate ...", you can then click a point on the plot.
-    iNZight will then label it using the options you defined above. You can select multiple points by clicking the button again and locating new points without losing the current selection.
-
-     _Note_: due to the way the software works, you may see a "Busy" cursor after you click the "Click to Locate ..." button. This will not go away until you click a point, so go ahead and click points ignoring the cursor.
-
-  - __Select by value of ...__: this will allow you to select a variable to use to select points.
-
-     If the variable is a factor (or a numeric with less than 20 unique values) a slider will appear allowing you so quickly select the levels you wish to label. If the variable is numeric, or you want to select multiple levels, you can click the "Select levels ..." button to do so.
-
-  - __Extreme values__: This will use a very simple algorithm that will select the points "farthest away" from the bulk of the data.
-
-     This will display a slider, allowing you to select more or less points as desired. Once you have selected the points, you can optionally save the selection (e.g., if you want to track the same observations over multiple plots) you can click the "Save these points ..." button. From there you can use the "With the same level of" option to select related points, etc.
-
-     The statistic used is [Mahalanobis' distance](http://en.wikipedia.org/wiki/Mahalanobis_distance).
-
-
-
-
-9. __Customise Labels__
-  ![Customise labels](../../img/user_guides/plotoptions/07_addtoplot_scatter_labels.png){.fright}
-
-  iNZight attempts to make sensible titles and axis labels automatically. However, you can use your own if you prefer by typing in your own and pressing the `Enter` key on your keyboard.
-
-10. __Modify Axis Limits__
-  ![Modify axis limits](../../img/user_guides/plotoptions/08_addtoplot_scatter_limits.png){.fright}
-
-  If you want to zoom in on a particular region of the plot, you can use this window to adjust the range of values displayed.
-
-
-## Ways of choosing colours {#ColourChoices}
-
-If ___colour coding by a variable___ is active while a user tries to change data point colours, the coding colours ___takes precedence___ over the user's choice until it is switched off (using Remove Additions).
-
-__Colours__ can be chosen from a ___drop-down___ menu OR by typing in the ___name___ of a desired colour OR its ___Hex code___ (e.g. #C80000).
- See [colour chart pdf](http://research.stowers-institute.org/efg/R/Color/Chart/ColorChart.pdf) (8 pages) for the names and codes of the huge range of colours available.  Increasingly, if any typed in colours are not available the user is notified via a pop up dialogue box.
-
- Adding a 7th and 8th digit to a 6-character Hex code allows you to include percent opacity (= 100 - percent transparency; compare #204090 with #20409030 and #20409070). (One way of specifying the main hex code is to use 6 numbers corresponding to 2 digits each for %Red, %Green and % Blue; FF can be used to specify 100%.)
-
-
-
-## Options for Dot Plots        {#dotplots}
-
-1. __Code more variables__
-  ![Code more variables](../../img/user_guides/plotoptions/09_addtoplot_dot_codevars.png){.fright}
-
-  Colour code the data points by any variable. This is identical to that of the scatter plot (see above).
-
-2. __Change plot appearance__
-  ![Change plot appearance](../../img/user_guides/plotoptions/10_addtoplot_dot_appearance.png){.fright}
-
-  This is identical to the customization choices of the scatter plot (see above).
-
-3. __Identify points__
-  ![Identify points](../../img/user_guides/plotoptions/11_addtoplot_dot_locate.png){.fright}
-
-  This allows users to label points by clicking on them, and works much the same as it does for scatter plots (see above).
-
-  The main difference is in the location of extreme points, where users are now presented with two sliders: one for the number of lower points, and one for the number of upper points, to label..
-
-4. __Customise Labels__
-  ![Customise labels](../../img/user_guides/plotoptions/12_addtoplot_dot_labels.png){.fright}
-
-  iNZight attempts to make sensible titles and axis labels automatically. However, you can use your own if you prefer by typing in your own and pressing the `Enter` key on your keyboard.
-
-5. __Adjust Axis Limits__
-  ![Customise labels](../../img/user_guides/plotoptions/13_addtoplot_dot_limits.png){.fright}
-
-  To zoom in on a specific range of points, you can adjust the axis limits.
-
-
-
-## Options for Bar Plots        {#barplots}
-
-1. __Code more variables__
-    ![Customise labels](../../img/user_guides/plotoptions/14_addtoplot_bar_codevars.png){.fright}
-
-    iNZight attempts to make sensible titles and axis labels automatically. However, you can use your own if you prefer by typing in your own and pressing the `Enter` key on your keyboard.){.fright}
-
-  This feature is accessible for one-way bar plot (i.e., Variable 1 is categorical and Variable 2 is empty.) This option will segement the bars to show the distribution of the chosen variable.
-
-2. __Change plot appearance__
-  ![Change plot appearance](../../img/user_guides/plotoptions/15_addtoplot_bar_appearance.png){.fright}
-
-  This allows users to change colours used in the plot.
-
-3.  __Customise Labels__
-  ![Customise labels](../../img/user_guides/plotoptions/16_addtoplot_bar_labels.png){.fright}
-
-  iNZight attempts to make sensible titles and axis labels automatically. However, you can use your own if you prefer by typing in your own and pressing the `Enter` key on your keyboard.
-
-5. __Adjust Number of Bars__
-  ![Customise labels](../../img/user_guides/plotoptions/17_addtoplot_bar_limits.png){.fright}
-
-  In some cases, you might have a lot of categories for a given variable. To get a good insight into individual levels, you can use the first slider to adjust the number of bars shown in the plot. The second slider lets you control the starting point, allowing you to scroll through the levels.
-
-  If you want to compare levels that are not near each other, you'll have to go to __Variables__ > __Categorical__ > __Reoder Levels__ and put the two (or more) you want to compare next to each other.
+  <div class="warning" markdown="1">
+    WARNING:
+    On some devices (including Windows) using transparency and symbols other than circles or squares can
+    be very slow when using a large data set.
+  </div>
