@@ -1294,6 +1294,8 @@ img {
   max-width: 100%; }
   img.half-width {
     width: 50%; }
+  img.width200 {
+    width: 200px; }
   img.width300 {
     width: 300px; }
   img.width600 {
