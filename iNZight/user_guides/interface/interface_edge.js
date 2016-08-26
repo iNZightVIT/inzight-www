@@ -34,97 +34,97 @@
                             fill: ["rgba(0,0,0,0)",im+"iNZight2.PNG",'0px','0px']
                         },
                         {
+                          id: 'FileMenu',
+                          type: 'rect',
+                          rect: ['0px', '25px', '30px', '20px', 'auto', 'auto'],
+                          opacity: '1',
+                          fill: ["rgba(0,0,0,0.00)"],
+                          stroke: [0,"rgba(0,0,0,1)","none"]
+                        },
+                        {
+                          id: 'RowOperations',
+                          type: 'rect',
+                          rect: ['30px', '25px', '46px', '20px', 'auto', 'auto'],
+                          cursor: 'pointer',
+                          opacity: '1',
+                          fill: ["rgba(0,0,0,0.00)"],
+                          stroke: [0,"rgba(0,0,0,1)","none"]
+                        },
+                        {
+                          id: 'ManipVars',
+                          type: 'rect',
+                          rect: ['76px', '25px', '52px', '20px', 'auto', 'auto'],
+                          cursor: 'pointer',
+                          opacity: '1',
+                          fill: ["rgba(255,255,255,0.00)"],
+                          stroke: [0,"rgba(0,0,0,1)","none"]
+                        },
+                        {
+                          id: 'AdvancedMenu',
+                          type: 'rect',
+                          rect: ['158px', '25px', '60px', '20px', 'auto', 'auto'],
+                          cursor: 'pointer',
+                          opacity: '1',
+                          fill: ["rgba(255,255,255,0.00)"],
+                          stroke: [0,"rgba(0,0,0,1)","none"]
+                        },
+                        {
                             id: 'HelpMenu',
                             type: 'rect',
-                            rect: ['258px', '33px', '39px', '20px', 'auto', 'auto'],
+                            rect: ['218px', '25px', '33px', '20px', 'auto', 'auto'],
                             opacity: '1',
                             fill: ["rgba(255,255,255,0.00)"],
                             stroke: [0,"rgba(0,0,0,1)","none"]
                         },
                         {
-                            id: 'AdvancedMenu',
-                            type: 'rect',
-                            rect: ['191px', '33px', '65px', '20px', 'auto', 'auto'],
-                            cursor: 'pointer',
-                            opacity: '1',
-                            fill: ["rgba(255,255,255,0.00)"],
-                            stroke: [0,"rgba(0,0,0,1)","none"]
+                          id: 'ViewChanger',
+                          type: 'rect',
+                          rect: ['140px', '45px', '180px', '28px', 'auto', 'auto'],
+                          opacity: '1',
+                          fill: ["rgba(0,0,0,0.00)"],
+                          stroke: [0,"rgba(0,0,0,1)","none"]
                         },
                         {
-                            id: 'ManipVars',
-                            type: 'rect',
-                            rect: ['93px', '33px', '62px', '20px', 'auto', 'auto'],
-                            cursor: 'pointer',
-                            opacity: '1',
-                            fill: ["rgba(255,255,255,0.00)"],
-                            stroke: [0,"rgba(0,0,0,1)","none"]
+                          id: 'DataName',
+                          type: 'rect',
+                          rect: ['0px', '73px', '320px', '17px', 'auto', 'auto'],
+                          opacity: '1',
+                          fill: ["rgba(0,0,0,0.00)"],
+                          stroke: [0,"rgba(0,0,0,1)","none"]
                         },
                         {
-                            id: 'RowOperations',
-                            type: 'rect',
-                            rect: ['40px', '33px', '50px', '20px', 'auto', 'auto'],
-                            cursor: 'pointer',
-                            opacity: '1',
-                            fill: ["rgba(0,0,0,0.00)"],
-                            stroke: [0,"rgba(0,0,0,1)","none"]
+                          id: 'DataViewer',
+                          type: 'rect',
+                          rect: ['0px', '90px', '320px', '420px', 'auto', 'auto'],
+                          opacity: '1',
+                          fill: ["rgba(0,0,0,0.00)"],
+                          stroke: [0,"rgba(0,0,0,1)","none"]
                         },
                         {
-                            id: 'FileMenu',
-                            type: 'rect',
-                            rect: ['4px', '33px', '35px', '20px', 'auto', 'auto'],
-                            opacity: '1',
-                            fill: ["rgba(0,0,0,0.00)"],
-                            stroke: [0,"rgba(0,0,0,1)","none"]
+                          id: 'DropTargets',
+                          type: 'rect',
+                          rect: ['0px', '510px', '320px', '104px', 'auto', 'auto'],
+                          cursor: 'pointer',
+                          opacity: '1',
+                          fill: ["rgba(0,0,0,0.00)"],
+                          stroke: [0,"rgba(0,0,0,1)","none"]
+                        },
+                        {
+                          id: 'SummaryButtons',
+                          type: 'rect',
+                          rect: ['0px', '614px', '320px', '29px', 'auto', 'auto'],
+                          opacity: '1',
+                          fill: ["rgba(0,0,0,0.00)"],
+                          stroke: [0,"rgba(0,0,0,1)","none"]
                         },
                         {
                             id: 'PlotToolbar',
                             type: 'rect',
-                            rect: ['305px', '584px', '580px', '52px', 'auto', 'auto'],
+                            rect: ['323px', '592px', '565px', '52px', 'auto', 'auto'],
                             cursor: 'pointer',
                             borderRadius: ["0px", "0px", "0px", "0px 0px"],
                             opacity: '1',
                             fill: ["rgba(192,192,192,0.00)"],
-                            stroke: [0,"rgba(0,0,0,1)","none"]
-                        },
-                        {
-                            id: 'ViewChanger',
-                            type: 'rect',
-                            rect: ['90px', '53px', '211px', '34px', 'auto', 'auto'],
-                            opacity: '1',
-                            fill: ["rgba(0,0,0,0.00)"],
-                            stroke: [0,"rgba(0,0,0,1)","none"]
-                        },
-                        {
-                            id: 'DataName',
-                            type: 'rect',
-                            rect: ['4px', '88px', '300px', '17px', 'auto', 'auto'],
-                            opacity: '1',
-                            fill: ["rgba(0,0,0,0.00)"],
-                            stroke: [0,"rgba(0,0,0,1)","none"]
-                        },
-                        {
-                            id: 'DataViewer',
-                            type: 'rect',
-                            rect: ['4px', '110px', '300px', '287px', 'auto', 'auto'],
-                            opacity: '1',
-                            fill: ["rgba(0,0,0,0.00)"],
-                            stroke: [0,"rgba(0,0,0,1)","none"]
-                        },
-                        {
-                            id: 'DropTargets',
-                            type: 'rect',
-                            rect: ['4px', '415px', '300px', '195px', 'auto', 'auto'],
-                            cursor: 'pointer',
-                            opacity: '1',
-                            fill: ["rgba(0,0,0,0.00)"],
-                            stroke: [0,"rgba(0,0,0,1)","none"]
-                        },
-                        {
-                            id: 'SummaryButtons',
-                            type: 'rect',
-                            rect: ['4px', '607px', '300px', '29px', 'auto', 'auto'],
-                            opacity: '1',
-                            fill: ["rgba(0,0,0,0.00)"],
                             stroke: [0,"rgba(0,0,0,1)","none"]
                         },
                         {
@@ -293,7 +293,7 @@
                             type: 'text',
                             rect: ['369', '187', 'auto', 'auto', 'auto', 'auto'],
                             opacity: '0',
-                            text: "This is where the magic happens!<br><br>Drag variables names from above and drop them in the slots.<br>iNZight automatically detects the type of variable and draws<br>the appropriate plot!<br><br>Variable 1 is considered the \"primary variable of interest\".<br>That is, it is the 'response' or 'outcome' variable in a scatter plot.<br><br>Variable 2 is considered the \"secondary variable\", and is used<br>to investigate variable 1.<br>It is the 'explanatory' or 'predictor' variable in a scatter plot.<br><br>The two subset by slots allow you to easy explore the distribution <br>of the data for various levels of the variable(s).<br><br>Click the area to go to the user guides section \"The Basics\", <br>which covers this area in more detail.",
+                            text: "This is where the magic happens!<br><br>Drag variables names from above and drop them in the slots.<br>iNZight automatically detects the type of variable and draws<br>the appropriate plot!<br><br>Variable 1 is considered the \"primary variable of interest\".<br>That is, it is the 'response' or 'outcome' variable in a scatter plot.<br><br>Variable 2 is considered the \"secondary variable\", and is used<br>to investigate variable 1.<br>It is the 'explanatory' or 'predictor' variable in a scatter plot.<br><br>Variables 3 and 4 create subsets, allowing you to easily explore the distribution <br>of the data for various levels of the variable(s).<br><br>Click the area to go to the user guides section \"The Basics\", <br>which covers this area in more detail.",
                             align: "left",
                             font: ['Arial, Helvetica, sans-serif', [16, "px"], "rgba(0,0,0,1.00)", "400", "none solid rgba(0, 0, 0, 0)", "normal", "break-word", "nowrap"]
                         },

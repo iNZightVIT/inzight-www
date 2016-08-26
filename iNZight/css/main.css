@@ -1347,20 +1347,19 @@ a img {
 .extraInfo {
   border: solid 1px black;
   background: #eee;
-  margin: 1em;
+  margin: 1em 0;
   padding: 0 1em;
-  clear: both; }
-  .extraInfo .label {
-    display: block;
-    cursor: pointer;
-    color: #094b85;
-    font-weight: bold;
-    font-size: 0.8em; }
-    .extraInfo .label:hover {
-      color: #18afe3; }
-  .extraInfo div {
-    padding: 1em;
-    display: none; }
+  padding: 1em;
+  display: none;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2); }
+  .extraInfo.visible {
+    display: table; }
+
+#plottypes {
+  background: white; }
+  #plottypes table {
+    border: none;
+    width: 100%; }
 
 .navpanel {
   display: -webkit-box;

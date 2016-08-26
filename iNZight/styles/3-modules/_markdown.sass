@@ -112,22 +112,20 @@ a img
 .extraInfo
   border: solid 1px black
   background: $comp-color-1
-  margin: 1em
+  margin: 1em 0
   padding: 0 1em
 
-  clear: both
+  padding: 1em
+  display: none
 
-  .label
-    display: block
-    cursor: pointer
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.2)
 
-    color: $main-color-2
-    font-weight: bold
-    font-size: 0.8em
+  &.visible
+    display: table
 
-    &:hover
-      color: $main-color-1
 
-  div
-    padding: 1em
-    display: none
+#plottypes
+  background: white
+  table
+    border: none
+    width: 100%
