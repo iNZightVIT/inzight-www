@@ -10,68 +10,58 @@ $cloud_dl = false;
 
 $operating_systems = ["windows" => "Windows", "mac" => "Mac", "linux" => "Linux"];
 
-$linux_dists = array("Ubuntu", "Debian", "Redhat_Suse");
-$distribution = "";
-
 $install_only = isset($_GET["inst"]);
 $link_base = "./" . $download_dir;
 $linkBase = $baseURL . $download_dir;
 
 if (isset($_GET["os"])) {
   $OS = $_GET["os"];
-  $fromCloud = "";
 
-  if (preg_match("/cloud/", $OS)) {
-    $cloud_dl = true;
-    $OS = str_replace("_cloud", "", $OS);
-  }
-
-
-  if (in_array($OS, array("Windows", "Mac", "Linux"))) {
-    $os = $OS;
-    // auto download for Windows
-    if ($os == "Windows") {
-      if ($download_links["Windows_cloud"] === true) {
-        $fromCloud = "&cloud";
-        $link_base = $cloud_URL;
-        $linkBase = $link_base;
-      }
-      $file = $download_links[$os];
-      if (!$install_only) {
-        $metatags = "<meta http-equiv='Refresh' content='3; url=download.php?file=" . $file . $fromCloud . "'>";
-      }
-      $auto = true;
-    } else if ($os == "Mac") {
-      // necessary to grab the OS version:
-      if (isset($_GET["v"])) {
-        $os_version = (int)$_GET["v"];
-        if ($os_version < 6 | $os_version > 12) {
-          $os_version = 0;
-        } else {
-          $mac_version = ($os_version > 8) ? "osx" : (($os_version > 6) ? "osx-ml" : "osx-sl");
-          $file = $download_links[$mac_version];
-          if ($download_links[$mac_version . "_cloud"] === true) {
-            $fromCloud = "&cloud";
-            $link_base = $cloud_URL;
-            $linkBase = $link_base;
-          }
-          if (!$install_only) {
-            $metatags = "<meta http-equiv='Refresh' content='3; url=download.php?file=" . $file . $fromCloud . "'>";
-          }
-          $auto = true;
-        }
-      }
-    } else if ($os == "Linux") {
-      if (isset($_GET["dist"])) {
-        // we only want to allow these strings for now:
-        if (in_array($_GET["dist"], $linux_dists)) {
-          $distribution = $_GET["dist"];
-        }
-      }
-    }
-  } else {
-    unset($os);
-  }
+  // if (in_array($OS, array("Windows", "Mac", "Linux"))) {
+  //   $os = $OS;
+  //   // auto download for Windows
+  //   if ($os == "Windows") {
+  //     if ($download_links["Windows_cloud"] === true) {
+  //       $fromCloud = "&cloud";
+  //       $link_base = $cloud_URL;
+  //       $linkBase = $link_base;
+  //     }
+  //     $file = $download_links[$os];
+  //     if (!$install_only) {
+  //       $metatags = "<meta http-equiv='Refresh' content='3; url=download.php?file=" . $file . $fromCloud . "'>";
+  //     }
+  //     $auto = true;
+  //   } else if ($os == "Mac") {
+  //     // necessary to grab the OS version:
+  //     if (isset($_GET["v"])) {
+  //       $os_version = (int)$_GET["v"];
+  //       if ($os_version < 6 | $os_version > 12) {
+  //         $os_version = 0;
+  //       } else {
+  //         $mac_version = ($os_version > 8) ? "osx" : (($os_version > 6) ? "osx-ml" : "osx-sl");
+  //         $file = $download_links[$mac_version];
+  //         if ($download_links[$mac_version . "_cloud"] === true) {
+  //           $fromCloud = "&cloud";
+  //           $link_base = $cloud_URL;
+  //           $linkBase = $link_base;
+  //         }
+  //         if (!$install_only) {
+  //           $metatags = "<meta http-equiv='Refresh' content='3; url=download.php?file=" . $file . $fromCloud . "'>";
+  //         }
+  //         $auto = true;
+  //       }
+  //     }
+  //   } else if ($os == "Linux") {
+  //     if (isset($_GET["dist"])) {
+  //       // we only want to allow these strings for now:
+  //       if (in_array($_GET["dist"], $linux_dists)) {
+  //         $distribution = $_GET["dist"];
+  //       }
+  //     }
+  //   }
+  // } else {
+  //   unset($os);
+  // }
 }
 
 
@@ -92,13 +82,14 @@ if ($auto) {
 
 
   <div class="col-md-12 col-lg-10 col-lg-push-1" id="osSelect">
-    <h3>Download iNZight</h3>
+    <!-- <h3>Download iNZight</h3> -->
     <div class="row">
       <?php
         foreach ($operating_systems as $os => $osname) {
           ?>
             <div class="col-md-4 text-center">
-                <a href="#" class="thumbnail os-icon os-icon-<?php echo $os; ?>" data-os="<?php echo $os; ?>">
+                <a href="#" class="thumbnail os-icon os-icon-<?php echo $os; ?>" data-os="<?php echo $os; ?>"
+                   data-filename="<?php echo $download_links["Windows"]; ?>">
                   <img src="img/<?php echo $os; ?>-icon.png" alt="Windows">
                   <div class="caption">
                     <h4><?php echo $osname; ?></h4>
@@ -108,7 +99,7 @@ if ($auto) {
                         switch ($os) {
                           case "windows":
                             echo "<span class='glyphicon glyphicon-circle-arrow-down'></span> Download Installer (" .
-                              getFileSize("downloads/iNZightVIT-installer_latest.exe") . ")";
+                              getFileSize($link_base . $download_links["Windows"]) . ")";
                             break;
                           case "mac":
                             echo "Select Installation Type";
@@ -129,28 +120,30 @@ if ($auto) {
 
 
   <div id="osDesc">
+    <!-- ###################################################################### WINDOWS -->
     <div class="col-md-12 col-lg-10 col-lg-push-1 os-desc" id="osDesc_windows">
-      <h4>Thanks for downloading iNZightVIT for Windows</h4>
+      <h4>Great! Your download should start automatically.</h4>
 
-      <p>
-        If the download doesn't start automatically, use the following link:<br>
+      <small>
+        If not, use this link:
         <a href="<?php echo $link_base . $download_links["Windows"]; ?>"><?php echo $linkBase . $download_links["Windows"]; ?></a>
-      </p>
+      </small>
 
       <hr>
       <?php include('instructions/install_windows.php'); ?>
     </div>
 
+    <!-- ###################################################################### MAC -->
     <div class="col-md-12 col-lg-10 col-lg-push-1 os-desc" id="osDesc_mac">
-      <h4>Download iNZightVIT on Mac</h4>
+      <!-- <h4>Download iNZightVIT on Mac</h4> -->
 
       <div class="row space-above">
-        <a href="#" data-file="full"
-           class="col-md-6 col-md-offset-3 thumbnail text-center os-icon os-icon-macfull">
+        <a href="#" data-file="full" data-filename="<?php echo $download_links["osx"]; ?>"
+           class="col-md-8 col-md-offset-2 thumbnail text-center os-icon os-icon-macfull alert alert-info">
           <div class="caption">
             <h4>iNZightVIT Full Installer</h4>
             <p>
-              This contains all of the iNZight dependencies (GTK, XQuartz, R).
+              iNZight + dependencies
             </p>
             <p>
               If you're new to iNZight, this is what you'll want.
@@ -163,14 +156,13 @@ if ($auto) {
           </div>
         </a>
 
-        <a href="#" data-file="self"
-           class="col-md-6 col-md-offset-3 thumbnail text-center os-icon os-icon-macself">
+        <a href="#" data-file="self" data-filename="<?php echo $download_links["osx-self"]; ?>"
+           class="col-md-8 col-md-offset-2 thumbnail text-center os-icon os-icon-macself alert alert-warning">
           <div class="caption">
             <h4>iNZightVIT Self-installer</h4>
             <p>
-              No dependencies.
-              Just a lightweight application framework to make installing and running iNZight
-              easy.
+              No dependencies &mdash; you'll need to install them yourself.<br>
+              Will install necessary packages when you launch iNZight.
             </p>
             <p>
               If you use R, this is what you want.
@@ -185,10 +177,10 @@ if ($auto) {
       </div>
 
       <div id="macInstall_full">
-        <h4>Thanks for downloading iNZightVIT for Mac</h4>
+        <h4>Awesome! iNZight is on its way to your Downloads folder.</h4>
 
         <p>
-          If the download doesn't start automatically, use the following link:<br>
+          If it doesn't happen automatically, use this link:<br>
           <a href="<?php echo $link_base . $download_links["osx"]; ?>"><?php echo $linkBase . $download_links["osx"]; ?></a>
         </p>
 
@@ -196,19 +188,19 @@ if ($auto) {
         <?php include('instructions/install_mac.php'); ?>
       </div>
       <div id="macInstall_self">
-        <h4>Thanks for downloading iNZightVIT for Mac</h4>
+        <h4>Awesome! The download should be done by now.</h4>
 
-        <p>
-          If the download doesn't start automatically, use the following link:<br>
+        <small>
+          If it didn't start automatically, use this link:
           <a href="<?php echo $link_base . $download_links["osx-self"]; ?>"><?php echo $linkBase . $download_links["osx-self"]; ?></a>
-        </p>
+        </small>
 
         <hr>
 
         <p>
           Once the download completes,
           <ol>
-            <li>If it hasn't done so automatically, extract the file by double-clicking <code>iNZightVIT-selfinstall.tar.bz</code></li>
+            <li>If it hasn't done so automatically, extract the file by double-clicking <code><?php echo $download_links["osx-self"]; ?></code></li>
             <li>Drag the iNZightVIT folder to Applications.</li>
             <li>Ensure you have the necessary dependencies, listed below.</li>
             <li>In <strong>Applications</strong> &gt; <strong>iNZightVIT</strong>,
@@ -230,11 +222,12 @@ if ($auto) {
         <ul>
           <li><a href="<?php echo $download_links["gtk-2.24"]; ?>">GTK2+</a> (direct download link)</li>
           <li><a href="<?php echo $download_links["xquartz"]; ?>">XQuartz</a></li>
-          <li><a href="https://www.r-project.org/">R (>= 3.1)</a></li>
+          <li><a href="https://www.r-project.org/">R (>= 3.0)</a></li>
         </ul>
       </div>
     </div>
 
+    <!-- ###################################################################### LINUX -->
     <div class="col-md-12 col-lg-10 col-lg-push-1 os-desc" id="osDesc_linux">
       <h4>Installing iNZight on Linux</h4>
 
@@ -244,9 +237,24 @@ if ($auto) {
       </p>
 
       <ul>
-        <li>GTK2+</li>
-        <li>XOrg Windowing System</li>
-        <li><a href="https://www.r-project.org/">R (>= 3.1)</a></li>
+        <li>
+          <strong>GTK2+</strong>
+          &mdash; use your package manager (Google should be able to help)
+          <p>
+            Ubuntu 14.04 or later, Linux Mint: <code>apt-get install libgtk2.0-dev</code>
+          </p>
+        </li>
+        <li>
+          <strong>XOrg Windowing System</strong>
+          &mdash; package manager (and/or Google) again (Note: this may be installed already)
+          <p>
+            Ubuntu 14.04 or later, Linux Mint: <code>apt-get install xorg-dev</code>
+          </p>
+        </li>
+        <li>
+          <a href="https://www.r-project.org/">R (>= 3.0)</a>
+          &mdash; the bash installer assumes R is installed and can be run using <code>R</code>
+        </li>
       </ul>
 
       <p>

@@ -8,11 +8,11 @@
   $download_links = array(
     "Windows" => "iNZightVIT-installer.exe",
     "osx"     => "iNZightVIT-mac-installer.dmg",
-    "osx-self"=> "iNZightVIT-selfinstall.tar.bz",
-    "osx-ml"  => "iNZightVIT-latest-osx-ml.pkg",
-    "osx-sl"  => "iNZightVIT-latest-osx-sl.zip",
-    "osx-man" => "iNZightVIT-latest-osx.zip",
-    "osx-ml-man" => "iNZightVIT-latest-osx-sl.zip",
+    "osx-self"=> "iNZightVIT-selfinstall.tar.bz2",
+    // "osx-ml"  => "iNZightVIT-latest-osx-ml.pkg",
+    // "osx-sl"  => "iNZightVIT-latest-osx-sl.zip",
+    // "osx-man" => "iNZightVIT-latest-osx.zip",
+    // "osx-ml-man" => "iNZightVIT-latest-osx-sl.zip",
 
     // cloud links --- if not available, don't use!
     "Windows_cloud" => false,
@@ -28,7 +28,7 @@
   );
 
   $inzight_version = "3.0";
-  $release_date    = "10 February 2015";
+  $release_date    = "TBA";
 
   $inzight_online_link = "http://docker.stat.auckland.ac.nz/";
   $inzight_repository_link = "http://r.docker.stat.auckland.ac.nz/R";

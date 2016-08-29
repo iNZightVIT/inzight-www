@@ -8,8 +8,7 @@
     </li>
 
     <li>
-      Install each of the dependencies shown in the window,
-      and then drag the iNZightVIT icon to Applications.
+      Follow the instructions in the window that opens.
     </li>
   </ol>
 </p>
@@ -34,3 +33,39 @@
     <img src="img/install/mac/open_folder.jpg">
   </a>
 </p>
+
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h5 class="panel-title">Open with Spotlight</h5>
+  </div>
+  <div class="panel-body">
+    <p>
+      You can quickly open iNZight by using Mac's Spotlight search.
+    </p>
+
+    <p>
+      Just click the Search icon in the top-right of your screen,
+      or press <kbd><kbd>&#8984;</kbd> + <kbd>SPACE</kbd></kbd> on your keyboard,
+      and then start typing <strong>iNZight</strong>.<br>
+      Press <kbd>return</kbd> once Spotlight finds iNZight to launch it.
+    </p>
+  </div>
+</div>
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h5 class="panel-title">Create a Dock Shortcut</h5>
+  </div>
+  <div class="panel-body">
+    <p>
+      Use iNZight a lot? Create a lauch icon in the dock!
+    </p>
+
+    <p>
+      Go to <strong>Applications</strong> &gt; <strong>iNZightVIT</strong>,
+      and <strong>click and drag</strong> the iNZight icon to the dock.<br>
+      It should slot into place so you can quickly launch iNZight.
+    </p>
+  </div>
+</div>

@@ -1,7 +1,8 @@
 $(document).ready(function() {
   $("#osSelect .os-icon").on("click", function(e) {
     e.preventDefault();
-    var os = $(this).data("os");
+    var os = $(this).data("os"),
+        url = $(this).data("filename");
 
     // make the links disappear!
     $("#osSelect .os-icon").addClass("animate-up");
@@ -18,7 +19,7 @@ $(document).ready(function() {
     // start the download?
     if (os == "windows") {
       setTimeout(function() {
-        window.location.href = 'download.php?file=iNZightVIT-installer_latest.exe';
+        window.location.href = 'download.php?file=' + url;
       }, 600);
     }
 
@@ -26,7 +27,8 @@ $(document).ready(function() {
 
   $("#osDesc_mac .os-icon").on("click", function(e) {
     e.preventDefault();
-    var file = $(this).data("file");
+    var file = $(this).data("file"),
+        url = $(this).data("filename");
 
     $("#osDesc_mac .os-icon").addClass("animate-away");
     $("#osDesc_mac>h4").fadeOut();
@@ -39,15 +41,9 @@ $(document).ready(function() {
       }, 50);
     }, 400);
 
-    if (file == "full") {
-      setTimeout(function() {
-        window.location.href = 'download.php?file=iNZightVIT-mac-installer.dmg';
-      }, 600);
-    }
-    if (file == "self") {
-      setTimeout(function() {
-        window.location.href = 'download.php?file=iNZightVIT-selfinstall.tar.bz';
-      }, 600);
-    }
+    setTimeout(function() {
+      window.location.href = 'download.php?file=' + url;
+    }, 600);
+
   });
 });

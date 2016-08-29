@@ -8758,6 +8758,9 @@ a.thumb {
       cursor: -webkit-zoom-in;
       cursor: -moz-zoom-in; }
 
+#osSelect {
+  margin-top: 50px; }
+
 a.os-icon {
   padding-top: 30px;
   font-weight: normal; }
@@ -8798,7 +8801,8 @@ p {
     opacity: 1; }
 
 #osDesc_mac .os-icon {
-  transition: all 0.4s ease-in-out; }
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2); }
   #osDesc_mac .os-icon.animate-away {
     opacity: 0;
     transform: translateX(100%); }
@@ -8806,6 +8810,9 @@ p {
       transform: translateX(-100%); }
   #osDesc_mac .os-icon.hidden {
     display: none; }
+  #osDesc_mac .os-icon:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 5px 3px rgba(0, 0, 0, 0.2); }
 #osDesc_mac #macInstall_full, #osDesc_mac #macInstall_self {
   display: none;
   transition: all 0.4s ease-in-out;

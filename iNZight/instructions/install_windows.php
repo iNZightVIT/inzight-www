@@ -1,51 +1,65 @@
-<h4><?php if (!$install_only) { echo "Next step: "; } ?>Install iNZightVIT on Windows</h4>
+<h4>To Install</h4>
 
-<ol>
+<p>
+  We hope that the iNZightVIT installer is fairly self-explanatory,
+  but just in case, here's a step-by-step guide to help.
 
-  <li>
-    Open the <b>iNZightVIT-installer.exe</b> file. By default this will have gone to <b>Downloads</b>.
+  <ol>
 
-    <div class="image-row">
-      <img src="img/install/win/install_01.png">
-      <img src="img/install/win/install_02.png">
-    </div>
+    <li>
+      Run the <b><?php echo $download_links["Windows"]; ?></b> file by double-clicking.
+      By default this will be in <b>Downloads</b>.
 
-    <div class="note">
-      <b>NOTE:</b>
-      We don't have a Microsoft developers account for them to make iNZight a "trusted application", so you'll likely get a security warning (shown above).
-      So long as the download comes from "https://stat.auckland.ac.nz/", you are fine.
-    </div>
-  </li>
+      <div class="image-row">
+        <img src="img/install/win/install_01.png">
+        <img src="img/install/win/install_02.png">
+      </div>
 
-  <li>
-    <b>Follow the instructions</b> to select the install location (recommended that you leave the default) and wait while iNZightVIT is installed.
+      <div class="note">
+        <b>NOTE:</b>
+        We don't have a Microsoft developers account for them to make iNZight a "trusted application", so you'll likely get a security warning (shown above).
+        So long as the download comes from "https://stat.auckland.ac.nz/", you are fine.
+      </div>
+    </li>
 
-    <div class="image-row">
-      <img src="img/install/win/install_03.png">
-      <img src="img/install/win/install_04.png">
-    </div>
+    <li>
+      <b>Follow the instructions</b> in the installer.
+      We recommend you leave the install location as the default (<code>Documents\iNZightVIT</code>),
+      but you can change if you prefer. Admins, see bottom of page.
+
+      <div class="image-row">
+        <img src="img/install/win/install_03.png">
+        <img src="img/install/win/install_04.png">
+      </div>
 
 
-  </li>
+    </li>
 
-  <li>
-    <b>That's it!</b>
-    iNZight has been installed on your computer. You'll find shortcuts on your Desktop,
-    as well as a Start Menu folder.
-    <div class="image-row">
-      <img src="img/install/win/install_05.png">
-    </div>
-  </li>
+    <li>
+      <b>That's it!</b>
+      iNZight has been installed on your computer. You'll find shortcuts on your Desktop,
+      as well as a Start Menu folder.
+      <div class="image-row">
+        <img src="img/install/win/install_05.png">
+      </div>
+    </li>
+  </ol>
+</p>
 
-  <li>
-    <b>OPTIONAL: Update iNZightVIT</b>
+<hr>
+<h4>Update</h4>
 
-    <p>
-      To update, simply click <b>Start</b>, locate the <b>iNZightVIT</b> folder, and click <b>Update</b>.
-    </p>
-  </li>
+<p>
+  <p>
+    We recommend you keep iNZight up-to-date,
+    as we are frequently fixing bugs and making things better.<br>
+    To see whats changed, <a href="support/changelog/?pkg=iNZight">check out the version history</a>.
+  </p>
 
-</ol>
+  <p>
+    To update, just go to <b>Start</b> &gt; <b>iNZightVIT</b> &gt; <b>Update</b>.
+  </p>
+</p>
 
 <hr>
 

@@ -1,3 +1,5 @@
+#osSelect
+  margin-top: 50px
 
 a.os-icon
   padding-top: 30px
@@ -55,6 +57,7 @@ p
 #osDesc_mac
   .os-icon
     transition: all 0.4s ease-in-out
+    box-shadow: 0px 2px 1px rgba(0,0,0,0.2)
 
     &.animate-away
       opacity: 0
@@ -65,6 +68,10 @@ p
 
     &.hidden
       display: none
+
+    &:hover
+      transform: scale(1.02)
+      box-shadow: 0px 5px 3px rgba(0,0,0,0.2)
 
   #macInstall_full, #macInstall_self
     display: none
