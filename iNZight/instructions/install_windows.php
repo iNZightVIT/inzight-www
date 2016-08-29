@@ -1,4 +1,4 @@
-<h3><?php if (!$install_only) { echo "Next step: "; } ?>Install iNZightVIT on Windows</h3>
+<h4><?php if (!$install_only) { echo "Next step: "; } ?>Install iNZightVIT on Windows</h4>
 
 <ol>
 
@@ -47,14 +47,20 @@
 
 </ol>
 
+<hr>
 
+<div class="panel panel-info space-above">
+  <div class="panel-heading">
+    <h4 class="panel-title">Installation Note for Admins</h4>
+  </div>
 
-<h4 class="space-above" style="padding-top: 3em;">Installation Note for Admins</h4>
+  <div class="panel-body">
+    <p>
+      If you are an administrator installing iNZight for multiple users, simply Right-click the installer and run as admin, then install to wherever you'd like, e.g., <code>C:\Program Files (x86)</code>. Each user will get their own <b>iNZightVIT</b> folder in their Documents folder.
+    </p>
 
-<p>
-  If you are an administrator installing iNZight for multiple users, simply Right-click the installer and run as admin, then install to wherever you'd like, e.g., <code>C:\Program Files (x86)</code>. Each user will get their own <b>iNZightVIT</b> folder in their Documents folder.
-</p>
-
-<p>
-  To update, right-click "Update" in the iNZightVIT directory, wherever it was installed, to allow iNZight to update the packages.
-</p>
+    <p>
+      To update, right-click "Update" in the iNZightVIT directory, wherever it was installed, to allow iNZight to update the packages.
+    </p>
+  </div>
+</div>

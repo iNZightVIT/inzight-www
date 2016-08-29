@@ -1,0 +1,163 @@
+<?php
+  $rel = "./";
+  require_once($rel . 'assets/objects/setup.php');
+
+
+  // The main page starts here:
+  require_once('assets/includes/1-top_matter.php');
+  require_once('assets/includes/2-header.php');
+
+  if ($auto) {
+
+    if (!$install_only) { ?>
+    <!--
+      ///// AUTOMATICALLY START DOWNLOADING THE FILE
+      ///// This is the case if redirection for windows, or have already
+      ///// visited this page to select the necessary download.
+    -->
+
+    <h3>Thank you for downloading <?php echo $inzight_text; ?></h3>
+
+    <p class="large-break">
+      The file should begin downloading automatically after 3 seconds.<br>
+      If it does not, use this direct link:
+      <a href="<?php echo $link_base . $file; ?>">
+        <?php echo $linkBase . $file; ?>
+      </a>
+    </p>
+
+  <?php }
+
+    // Display installation instructions - these will grab data from $_GET
+    switch ($os) {
+      case "Windows":
+        include('instructions/install_windows.php');
+        $post = "os=win";
+        break;
+      case "Mac":
+        include('instructions/install_mac.php');
+        $post = "os=mac&v=$os_version";
+        break;
+      case "Linux":
+        $post = "os=linux";
+        break;
+    }
+
+  ?>
+
+  <div class="navpanel">
+    <span class="prev"></span>
+    <span class="section_toc"></span>
+    <a href="<?php echo $rel; ?>user_guides/basics/getting_started.php?<?php echo $post; ?>" class="next">
+      Next step: Start iNZight
+    </a>
+  </div>
+
+  <?php } else { ?>
+    <!--
+      ///// REQUIRE USER TO SELECT DOWNLOAD VERSION
+      ///// Select operating system, version, and then download the file.
+      ///// Redirects here, but uses above script instead.
+    -->
+
+    <h3>Download iNZightVIT</h3>
+	<!--<?php echo $_SERVER['HTTP_USER_AGENT']; ?>-->
+
+
+    <div class="horizontal" id="os_select">
+      <div class="label">Operating System:</div>
+
+      <div class="options">
+        <a href="getinzight.php?os=Windows" class="option<?php if ($os == "Windows") { echo " selected"; } ?>" id="os_windows">
+          <span class="main-text">Windows</span></a>
+        <a href="getinzight.php?os=Mac" class="option<?php if ($os == "Mac") { echo " selected"; } ?>" id="os_mac">
+          <span class="main-text">Macintosh</span></a>
+        <a href="getinzight.php?os=Linux" class="option<?php if ($os == "Linux") { echo " selected"; } ?>" id="os_linux">
+          <span class="main-text">Linux</span></a>
+      </div>
+    </div>
+
+    <div class="horizontal<?php if ($os == "Mac") { echo " show"; } ?>" id="mac_ver_select">
+      <div class="label">Mac OS X Version:</div>
+
+      <div class="options">
+        <?php
+          foreach (array(11 => "El Capitan",
+                         10 => "Yosemite",
+                         9  => "Mavericks",
+                         8  => "Lion/Mountain Lion",
+                         6  => "Snow Leopard") as $v => $vname) {
+            echo "<a href='#' class='option";
+            echo ($os_version == $v) ? " selected" : "";
+            echo "' id='mac_v$v'>";
+            echo "<span class='main-text'>";
+            echo "10.$v";
+            echo "</span><span class='sub-text'>";
+            echo $vname;
+            "</span></a>";
+          }
+        ?>
+        <a href="#" class="option" id="mac_v0">
+          <span class="main-text">Unsure?</span>
+          <span class="sub-text">Find out here</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="horizontal<?php if ($os == "Linux") { echo " show"; } ?>" id="linux_dist_select">
+      <div class="label">Linux Distribution:</div>
+
+      <div class="options">
+        <?php
+          foreach ($linux_dists as $d) {
+            echo "<a href='#' class='option";
+            echo ($distribution == $d) ? " selected" : "";
+            echo "' id='linux_$d'>";
+            echo "<span class='main-text'>";
+            switch ($d) {
+              case "Redhat_Suse":
+                echo "Redhat/Suse";
+                break;
+              default:
+                echo $d;
+            }
+            echo "</span><span class='sub-text'>";
+            switch ($d) {
+              case "Ubuntu":
+                echo "(incl. Mint)";
+                break;
+              default:
+                echo "";
+            }
+            "</span></a>";
+          }
+        ?>
+        <a href="#" class="option" id="linux_Other">
+          <span class="main-text">Other</span>
+          <span class="sub-text">Not formally supported</span>
+        </a>
+      </div>
+    </div>
+
+
+    <div id="dl_links">
+    </div>
+
+  <?php }
+?>
+
+<script src="<?php echo $rel; ?>js/downloadButtons.js"></script>
+<?php if ($os == "Windows") { ?>
+<script>
+// make download link appear automatically on windows:
+
+$.post("download_links.php", { os: "Windows" })
+  .done(function(result) {
+    $("#dl_links").html(result);
+});
+</script>
+<?php } ?>
+
+<?php
+require_once($rel . 'assets/includes/3-bottom_matter.php');
+?>

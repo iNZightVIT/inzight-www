@@ -1,16 +1,78 @@
-#mac_ver_select
-  display: none
 
-  &.show
-    display: block
+a.os-icon
+  padding-top: 30px
+  font-weight: normal
 
+  //h4
+    margin-bottom: 0
+    padding-bottom: 0.3em
 
-#linux_dist_select
-  @extend #mac_ver_select
+  img
+    transform: scale(0.96)
+    opacity: 0.8
+    transition: all 0.4s ease-in-out
 
+  .os-details
+    transform: scaleY(0.95)
+    opacity: 0
+    transition: all 0.4s ease-in-out
 
-#dl_links
-  @extend .horizontal
+  &:hover
+    text-decoration: none
 
-  margin:
-    top: 2em
+    img, .os-details
+      transform: scaleY(1)
+      opacity: 1
+
+  &.animate-up
+    opacity: 0
+    transform: translateY(-80px) scale(0.9)
+    transition: all 0.4s ease-in-out
+
+    &.os-icon-mac
+      transition-delay: 100ms
+    &.os-icon-linux
+      transition-delay: 200ms
+
+  &.hidden
+    display: none
+
+p
+  margin: 0 0 10px
+
+#osDesc
+  .os-desc
+    display: none
+    transition: all 0.4s ease-in-out
+    opacity: 0
+
+    &.visible
+      display: block
+
+    &.animate-up
+      opacity: 1
+
+#osDesc_mac
+  .os-icon
+    transition: all 0.4s ease-in-out
+
+    &.animate-away
+      opacity: 0
+      transform: translateX(100%)
+
+      &.os-icon-macself
+        transform: translateX(-100%)
+
+    &.hidden
+      display: none
+
+  #macInstall_full, #macInstall_self
+    display: none
+    transition: all 0.4s ease-in-out
+    opacity: 0
+
+    &.visible
+      display: block
+
+    &.animate-up
+      opacity: 1

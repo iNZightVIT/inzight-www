@@ -53,34 +53,5 @@ $isIE = strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') || strpos($_SERVER['HTTP_USE
       </div>
     <![endif]-->
 
-    <div class="top_message<?php if (!$hideMessage) { echo " showme"; } ?>">
-      <div>
-        This website is currently being developed.
-        If you notice any problems (such as broken links, etc.),
-        <a href="mailto:inzight_support@stat.auckland.ac.nz?subject=[iNZight Website]">please report them</a>.
-      </div>
-
-      <div id="hideMessage" class="close">
-        <?php include $rel.'assets/icons/close.php'; ?>
-      </div>
-    </div>
-
-    <?php
-      if ($isIE) {
-        if (!isset($_SESSION["hideSupport"])) {
-          $_SESSION["hideSupport"] = false;
-        }
-        $hideSupport = $_SESSION["hideSupport"];
-    ?>
-      <div class="support_message<?php if (!$hideSupport) { echo " showme"; } ?>">
-          <div>
-            It looks like you are using Internet Explorer. Apologies, but this website may not look so great for you.<br>
-            If you have Chrome, Safari, or Firefox, we suggest using that to view the site instead.
-          </div>
-          <div id="hideSupportmessage" class="close">
-            <?php include $rel.'assets/icons/close.php'; ?>
-          </div>
-      </div>
-    <?php } ?>
 
     <div class="wrapper">

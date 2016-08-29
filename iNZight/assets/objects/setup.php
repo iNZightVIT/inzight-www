@@ -7,7 +7,8 @@
 
   $download_links = array(
     "Windows" => "iNZightVIT-installer.exe",
-    "osx"     => "iNZightVIT-latest-osx.dmg",
+    "osx"     => "iNZightVIT-mac-installer.dmg",
+    "osx-self"=> "iNZightVIT-selfinstall.tar.bz",
     "osx-ml"  => "iNZightVIT-latest-osx-ml.pkg",
     "osx-sl"  => "iNZightVIT-latest-osx-sl.zip",
     "osx-man" => "iNZightVIT-latest-osx.zip",
@@ -21,7 +22,7 @@
     "osx-man_cloud" => false, // not implemented ...
     "osx_ml-man_cloud" => false, // not implemented ...
 
-    "xquartz" => "http://xquartz.macosforge.org/downloads/SL/XQuartz-2.7.7.dmg",
+    "xquartz" => "http://xquartz.macosforge.org/",
     "gtk-2.18" => "http://r.research.att.com/libs/GTK_2.18.5-X11.pkg",
     "gtk-2.24" => "http://r.research.att.com/libs/GTK_2.24.17-X11.pkg"
   );
