@@ -90,132 +90,138 @@ $captchaEnc = hashValue($captchaAns);
 <div class="container">
 
 
-<h3>Contact iNZight Support</h3>
+  <h3>Contact iNZight Support</h3>
 
-<p>
-  Thank you for using iNZight! We value your feedback, whether it be reporting a problem, suggesting features,
-  or just saying thanks.
-</p>
-
-<div class="form">
-  <form id="contactform" method="post" action="./">
-
-    <!-- THE REASON FOR CONTACTING -->
-    <div class="question hide" id="reason">
-      <label>What is the purpose of your message today?</label>
-
-      <select name="message_reason" id="messageReason">
-        <option value="">Choose ...</option>
-        <option value="General" <?php if ($p["message_reason"] == "General") { echo "selected"; }?>>General query</option>
-        <option value="Technical" <?php if ($p["message_reason"] == "Technical") { echo "selected"; }?>>Technical difficulties</option>
-        <option value="Feedback" <?php if ($p["message_reason"] == "Feedback") { echo "selected"; }?>>Feedback</option>
-      </select>
-    </div>
-
-    <!-- HAVE YOU CHECKED THE USER GUIDES? -->
-    <div class="question <?php if (!$submit | $p["message_reason"] != "General") {echo "hide";} ?>" id="checkGuides">
-      <label>Have you checked the relevant sections of <a href="../../user_guides/">the User Guides</a>?</label>
-
-      <input type="checkbox" name="userguides" id="checkGuidesBox"
-             <?php if ($p["userguides"] == "on") { echo "checked"; }?>> Yes, I have
-    </div>
-
-    <!-- HAVE YOU READ THE FAQ? -->
-    <div class="question <?php if (!$submit | ($p["message_reason"] != "General" & $p["message_reason"] != "Technical")) {echo "hide";} ?>" id="checkFAQ">
-      <label>Have you had a look to see if your question is answered in <a href="../faq/">the FAQ</a>?</label>
-
-      <input type="checkbox" name="faqs" id="checkFAQBox"
-             <?php if ($p["faqs"] == "on") { echo "checked"; }?>> Yes, I have
-    </div>
-
-    <!-- VERSION TYPE OF INZIGHT -->
-    <div class="question biggap <?php if (!$submit) {echo "hide";} ?>" id="inzightVersion">
-      <label>How are you using iNZight?</label>
-
-      <select name="inzight_version" id="inzightVersionVal">
-        <option value="">Choose ...</option>
-        <option value="windows" <?php if ($p["inzight_version"] == "windows") { echo "selected"; }?>>Windows (desktop)</option>
-        <option value="mac" <?php if ($p["inzight_version"] == "mac") { echo "selected"; }?>>Mac (desktop)</option>
-        <option value="online" <?php if ($p["inzight_version"] == "online") { echo "selected"; }?>>iNZight Lite (online)</option>
-        <option value="ruser" <?php if ($p["inzight_version"] == "ruser") { echo "selected"; }?>>Manual R Install (incl. Linux)</option>
-      </select>
-    </div>
-
-    <div class="question <?php if (!$submit) {echo "hide";} ?>" id="inzightVersionDetail">
-      <?php
-        if ($submit) {
-          include_once("version_detail.php");
-        }
-      ?>
-    </div>
-
-
-    <!-- VERSION NUMBER OF INZIGHT -->
-    <div class="question biggap <?php if (!$submit) {echo "hide";} ?>" id="inzightVersionNumber">
-      <label>What version of iNZight are you running?</label>
-
-      <input type="text" name="inzight_version_number" id="inzightVersionNumberVal"
-             value="<?php echo $p["inzight_version_number"]; ?>">
-      <span class="req">*</span>
-      <span class="details">e.g., '2.1' (displayed at the top of the iNZight window)</span>
-
-      <p class="error"><?php echo $inzightVersionNumberError; ?></p>
-    </div>
-
-
-    <!-- MESSAGE -->
-    <div class="textfield <?php if (!$submit) {echo "hide";} ?>" id="message">
-      <label>Enter your message below:</label>
-      <textarea name="message_content" id="messageContent"><?php echo $p["message_content"]; ?></textarea>
-      <p class="error"><?php echo $messageContentError; ?></p>
-    </div>
-
-    <!-- USER INFO -->
-    <div class="question biggap <?php if (!$submit) {echo "hide";} ?>" id="userName">
-      <p>If you would like a reply to your message, please provide the following information.</p>
-      <label>Name:</label>
-      <input type="text" name="user_name" id="userNameVal" maxlength="30"
-             value="<?php echo $p["user_name"]; ?>">
-    </div>
-
-    <div class="question <?php if (!$submit) {echo "hide";} ?>" id="userEmail">
-      <label>Email Address:</label>
-      <input type="text" name="user_email" id="userEmailVal" maxlength="50"
-             value="<?php echo $p["user_email"]; ?>">
-      <p class="error"><?php echo $userEmailError; ?></p>
-    </div>
-
-
-    <!-- HUMAN CHECK -->
-    <div class="question biggap <?php if (!$submit) {echo "hide";} ?>" id="areYouHuman">
-      <p>To stop robots spamming us, we have to ask that you prove you are a human.</p>
-      <label>
-      Type the <b>sum</b> of these numbers in the box: <span class="numbers"><?php echo $captcha; ?></span>
-      </label>
-      <input type="text" maxlength="2" name="captcha" id="captchaValue">
-      <span class="req">*</span>
-      <input type="hidden" name="trueCaptcha" id="trueCaptchaValue" value="<?php echo $captchaEnc; ?>">
-      <p class="error"><?php echo $captchaError; ?></p>
-    </div>
-
-
-    <!-- SEND -->
-    <div class="submit biggap <?php if (!$submit) {echo "hide";} ?>" id="sendButton">
-      <label></label>
-      <input type="submit" name="submit" value="Send Message" id="submitMessage">
-    </div>
-
-  </form>
-
-  <p id="alternate">This form uses javascript. If your browser blocks javascript,
-    <a href="mailto:inzight_support@stat.auckland.ac.nz">contact us here</a>.
-    Please include as much information as possible (including operating system, version numbers, error messages, etc)
-    to help us help you faster.
+  <p>
+    Thank you for using iNZight! We value your feedback, whether it be reporting a problem, suggesting features,
+    or just saying thanks.
   </p>
-</div>
+
+  <div class="form row">
+    <form id="contactform" method="post" action="./">
+      <div class="col-md-6">
+        <!-- THE REASON FOR CONTACTING -->
+        <div class="hideme form-group" id="reason">
+          <label>What is the purpose of your message today?</label>
+
+          <select name="message_reason" class="form-control" id="messageReason">
+            <option value="">Choose ...</option>
+            <option value="General" <?php if ($p["message_reason"] == "General") { echo "selected"; }?>>General query</option>
+            <option value="Technical" <?php if ($p["message_reason"] == "Technical") { echo "selected"; }?>>Technical difficulties</option>
+            <option value="Feedback" <?php if ($p["message_reason"] == "Feedback") { echo "selected"; }?>>Feedback</option>
+          </select>
+        </div>
+
+        <!-- HAVE YOU CHECKED THE USER GUIDES? -->
+        <div class="question checkbox <?php if (!$submit | $p["message_reason"] != "General") {echo "hideme";} ?>" id="checkGuides">
+          <label>
+            <input type="checkbox" name="userguides" id="checkGuidesBox"
+                   <?php if ($p["userguides"] == "on") { echo "checked"; }?>>
+            I've checked the relevant sections of <a href="../../user_guides/">the User Guides</a>
+          </label>
+        </div>
+
+        <!-- HAVE YOU READ THE FAQ? -->
+        <div class="question checkbox <?php if (!$submit | ($p["message_reason"] != "General" & $p["message_reason"] != "Technical")) {echo "hideme";} ?>" id="checkFAQ">
+          <label>
+            <input type="checkbox" name="faqs" id="checkFAQBox"
+            <?php if ($p["faqs"] == "on") { echo "checked"; }?>>
+            I've looked to see if my question is answered in the <a href="../faq/">the FAQ</a>
+          </label>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+        <!-- VERSION TYPE OF INZIGHT -->
+        <div class="question form-group <?php if (!$submit) {echo "hideme";} ?>" id="inzightVersion">
+          <label>Which platform are you using?</label>
+
+          <select name="inzight_version" class="form-control" id="inzightVersionVal">
+            <option value="">Choose ...</option>
+            <option value="windows" <?php if ($p["inzight_version"] == "windows") { echo "selected"; }?>>Windows (desktop)</option>
+            <option value="mac" <?php if ($p["inzight_version"] == "mac") { echo "selected"; }?>>Mac (desktop)</option>
+            <option value="online" <?php if ($p["inzight_version"] == "online") { echo "selected"; }?>>iNZight Lite (online)</option>
+            <option value="ruser" <?php if ($p["inzight_version"] == "ruser") { echo "selected"; }?>>Manual R Install (incl. Linux)</option>
+          </select>
+        </div>
 
 
-<script src="<?php echo $rel; ?>js/contactform.js"></script>
+        <div class="question form-group <?php if (!$submit) {echo "hideme";} ?>" id="inzightVersionDetail">
+          <?php
+            if ($submit) {
+              include_once("version_detail.php");
+            }
+          ?>
+        </div>
+
+        <!-- VERSION NUMBER OF INZIGHT -->
+        <div class="question form-group has-feedback <?php if (!$submit) {echo "hideme";} ?>" id="inzightVersionNumber">
+          <label>What version of iNZight are you running?</label>
+
+          <input type="text" class="form-control" name="inzight_version_number" id="inzightVersionNumberVal"
+                 value="<?php echo $p["inzight_version_number"]; ?>">
+          <span class="text-danger glyphicon glyphicon-asterisk form-control-feedback"></span>
+          <span class="help-block">e.g., '3.0' (displayed at the top of the iNZight window)</span>
+
+          <p class="error"><?php echo $inzightVersionNumberError; ?></p>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- MESSAGE -->
+        <div class="textfield form-group <?php if (!$submit) {echo "hideme";} ?>" id="message">
+          <label>Enter your message below</label>
+          <textarea rows="10" name="message_content" class="form-control" id="messageContent"><?php echo $p["message_content"]; ?></textarea>
+          <p class="error"><?php echo $messageContentError; ?></p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-md-offset-6">
+        <!-- USER INFO -->
+        <div class="question form-group <?php if (!$submit) {echo "hideme";} ?>" id="userName">
+          <p>If you would like a reply to your message, please provide the following information.</p>
+          <label>Name</label>
+          <input type="text" class="form-control" name="user_name" id="userNameVal" maxlength="30"
+                 value="<?php echo $p["user_name"]; ?>">
+        </div>
+
+        <div class="question form-group <?php if (!$submit) {echo "hideme";} ?>" id="userEmail">
+          <label>Email Address</label>
+          <input type="text" class="form-control" name="user_email" id="userEmailVal" maxlength="50"
+                 value="<?php echo $p["user_email"]; ?>">
+          <p class="error"><?php echo $userEmailError; ?></p>
+        </div>
+
+        <!-- HUMAN CHECK -->
+        <div class="question form-group has-feedback <?php if (!$submit) {echo "hideme";} ?>" id="areYouHuman">
+          <!-- <p>To stop robots spamming us, we have to ask that you prove you are a human.</p> -->
+          <label>
+          Type the <b>sum</b> of these numbers in the box: <span class="numbers"><?php echo $captcha; ?></span>
+          </label>
+          <input type="text" class="form-control"  maxlength="2" name="captcha" id="captchaValue">
+          <span class="text-danger glyphicon glyphicon-asterisk form-control-feedback"></span>
+          <p class="error"><?php echo $captchaError; ?></p>
+        </div>
+        <input type="hidden"name="trueCaptcha" id="trueCaptchaValue" value="<?php echo $captchaEnc; ?>">
+
+
+        <!-- SEND -->
+        <div class="submit form-group <?php if (!$submit) {echo "hideme";} ?>" id="sendButton">
+          <label></label>
+          <input class="btn btn-block btn-primary" type="submit" name="submit" value="Send Message" id="submitMessage">
+        </div>
+      </div>
+    </form>
+
+    <p id="alternate">This form uses javascript. If your browser blocks javascript,
+      <a href="mailto:inzight_support@stat.auckland.ac.nz">contact us here</a>.
+      Please include as much information as possible (including operating system, version numbers, error messages, etc)
+      to help us help you faster.
+    </p>
+  </div>
+
+
+  <script src="<?php echo $rel; ?>js/contactform.js"></script>
 </div>
 
 <?php

@@ -1,58 +1,58 @@
-$("#alternate").addClass("hide");
+$("#alternate").hide();
 console.log("Hello");
-$("#reason").removeClass("hide");
+$("#reason").show();
 
 $("#messageReason").change(function() {
   switch ($(this).val()) {
     case "General":
       $("#message label").html("Enter your query below.");
-      $("#checkGuides").removeClass("hide");
+      $("#checkGuides").fadeIn();
 
       if ($("#checkGuidesBox").is(":checked")) {
-        $("#checkFAQ").removeClass("hide");
+        $("#checkFAQ").fadeIn();
         if ($("#checkFAQBox").is(":checked")) {
-          $("#inzightVersion").removeClass("hide");
+          $("#inzightVersion").fadeIn();
         } else {
-          $("#inzightVersion").addClass("hide");
+          $("#inzightVersion").fadeOut();
         }
       } else {
-        $("#inzightVersion").addClass("hide");
+        $("#inzightVersion").fadeOut();
       }
 
       break;
     case "Technical":
       $("#message label").html("Enter your issue below.<br>Copy and paste any error messages from the R Console at the end.");
       if (!$("#checkFAQBox").is(":checked")) {
-        $("#inzightVersion").addClass("hide");
+        $("#inzightVersion").fadeOut();
       }
-      $("#checkGuides").addClass("hide");
-      $("#checkFAQ").removeClass("hide");
+      $("#checkGuides").fadeOut();
+      $("#checkFAQ").fadeIn();
       break;
     case "Feedback":
       $("#message label").html("Enter your feedback below.");
-      $("#checkGuides").addClass("hide");
-      $("#checkFAQ").addClass("hide");
-      $("#inzightVersion").removeClass("hide");
+      $("#checkGuides").fadeOut();
+      $("#checkFAQ").fadeOut();
+      $("#inzightVersion").fadeIn();
       break;
   }
 });
 
 $("#checkGuidesBox").change(function() {
   if ($(this).is(':checked')) {
-    $("#checkFAQ").removeClass("hide");
+    $("#checkFAQ").fadeIn();
     if ($("#checkFAQBox").is(":checked")) {
-      $("#inzightVersion").removeClass("hide");
+      $("#inzightVersion").fadeIn();
     }
   } else {
-    $("#inzightVersion").addClass("hide");
+    $("#inzightVersion").fadeOut();
   }
 });
 
 $("#checkFAQBox").change(function() {
   if ($(this).is(':checked') && ($("#messageReason").val() == "Technical" || $("#checkGuidesBox").is(":checked"))) {
-    $("#inzightVersion").removeClass("hide");
+    $("#inzightVersion").fadeIn();
   } else {
-    $("#inzightVersion").addClass("hide");
+    $("#inzightVersion").fadeOut();
   }
 });
 
@@ -61,22 +61,22 @@ $("#inzightVersionVal").change(function() {
     $.post("version_detail.php", {v: $(this).val()}, function(result) {
       $("#inzightVersionDetail").html(result);
     });
-    $("#inzightVersionDetail").removeClass("hide");
-    $("#inzightVersionNumber").removeClass("hide");
+    $("#inzightVersionDetail").fadeIn();
+    $("#inzightVersionNumber").fadeIn();
     if ($(this).val() == "online") {
       //$("#inzightVersionNumberVal").val("online");
-      $("#inzightVersionNumber .details").html("Copy and paste the URL of your iNZightLite session");
+      $("#inzightVersionNumber .help-block").html("Copy and paste the URL of your iNZightLite session");
     } else {
-      $("#inzightVersionNumber .details").html("e.g., '2.1' (displayed at the top of the iNZight window)");
+      $("#inzightVersionNumber .help-block").html("e.g., '3.0' (displayed at the top of the iNZight window)");
     }
     if ($("#messageReason").val() == "Technical" && $(this).val() == "ruser") {
       $("#message label").append("<br>If you are experiencing issues with a particular R package, specify which one and the version you are running.")
     }
-    $("#message").removeClass("hide");
-    $("#userName").removeClass("hide");
-    $("#userEmail").removeClass("hide");
-    $("#areYouHuman").removeClass("hide");
-    $("#sendButton").removeClass("hide");
+    $("#message").fadeIn();
+    $("#userName").fadeIn();
+    $("#userEmail").fadeIn();
+    $("#areYouHuman").fadeIn();
+    $("#sendButton").fadeIn();
   }
 });
 
@@ -85,9 +85,9 @@ $("#inzightVersionVal").change(function() {
 //   $trueVal = $("#trueCaptchaValue").val();
 //
 //   if ($userVal == $trueVal) {
-//     $("#sendButton").removeClass("hide");
+//     $("#sendButton").fadeIn();
 //   } else {
-//     $("#sendButton").addClass("hide");
+//     $("#sendButton").fadeOut();
 //   }
 // });
 

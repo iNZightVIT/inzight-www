@@ -7,7 +7,7 @@ $which = array_search($topic, $keys);
 
 ?>
 
-<div class="navpanel">
+<ul class="pager navpanel">
   <?php if ($which > 0) {
     $url = $keys[$which - 1];
     $inf = pathinfo($url);
@@ -17,22 +17,23 @@ $which = array_search($topic, $keys);
       $href="./?topic=$url";
     }
     ?>
-    <a href="<?php echo $href; ?>" class="prev">
-      Previous:
-      <?php
-        if (array_key_exists("short", $navc[$keys[$which - 1]])) {
-          echo $navc[$keys[$which - 1]]->short;
-        } else {
-          echo $navc[$keys[$which - 1]]->title;
-        }
-      ?>
-    </a>
-  <?php } else { ?>
-    <span class="prev"></span>
+    <li class="previous">
+      <a href="<?php echo $href; ?>">
+        <span class="glyphicon glyphicon-chevron-left"></span> Previous:
+        <?php
+          if (array_key_exists("short", $navc[$keys[$which - 1]])) {
+            echo $navc[$keys[$which - 1]]->short;
+          } else {
+            echo $navc[$keys[$which - 1]]->title;
+          }
+        ?>
+      </a>
+    </li>
   <?php } ?>
-  <a href="./" class="section_toc">
+  <li><a href="./">
+    <span class="glyphicon glyphicon-home"></span>
     <?php echo $contents->index->title; ?>
-  </a>
+  </a></li>
   <?php if ($which < (count($keys) - 1)) {
     $url = $keys[$which + 1];
     $inf = pathinfo($url);
@@ -42,17 +43,18 @@ $which = array_search($topic, $keys);
       $href="./?topic=$url";
     }
     ?>
-    <a href="<?php echo $href; ?>" class="next">
-      Next:
-      <?php
-        if (array_key_exists("short", $navc[$keys[$which + 1]])) {
-          echo $navc[$keys[$which + 1]]->short;
-        } else {
-          echo $navc[$keys[$which + 1]]->title;
-        }
-      ?>
-    </a>
-    <?php } else { ?>
-      <span class="next"></span>
+    <li class="next">
+      <a href="<?php echo $href; ?>">
+        Next:
+        <?php
+          if (array_key_exists("short", $navc[$keys[$which + 1]])) {
+            echo $navc[$keys[$which + 1]]->short;
+          } else {
+            echo $navc[$keys[$which + 1]]->title;
+          }
+        ?>
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+    </li>
     <?php } ?>
-</div>
+</ul>

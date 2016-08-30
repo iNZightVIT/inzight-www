@@ -56,13 +56,14 @@ $oss = array("Windows", "Mac", "Linux");
 
 
 
-<div class="container">
-  <div class="page-header">
+<div class="container" style="margin-top:120px">
+  <!-- <div class="page-header"> -->
     <h2>See <?php echo $inzight_text; ?> in action below ...</h2>
-  </div>
+  <!-- </div> -->
 </div>
 
 <div class="container-fluid">
+  <hr>
   <div class="explore row">
     <div class="exploretext col-md-6">
       <h3>

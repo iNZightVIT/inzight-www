@@ -1,25 +1,14 @@
-.navpanel
-  @include display(flex)
-  @include justify-content(space-between)
-  @include align-items(center)
+.pager.navpanel
+  margin-top: 30px
 
-  margin: 3em 0em 1.5em
-  padding: 0.5em 1em
-  background: $comp-color-1
-  border-top: solid 1px $main-color-2
-  border-bottom: solid 2px $main-color-2
+  li > a
+    border-radius: 5px
+    font-weight: normal
+    border-width: 0
 
-  @include phone
-    font-size: 0.8em
+    &:hover
+      background: none
 
-  a, span
-    @include flex(1)
-
-  .prev
-    text-align: left
-
-  .section_toc
-    text-align: center
-
-  .next
-    text-align: right
+    @media (max-width: 768px)
+      display: block
+      float: none
