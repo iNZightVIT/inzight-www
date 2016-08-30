@@ -9,6 +9,10 @@ if (isset($_REQUEST['pkg'])) {
   $pkg = "none";
 }
 
+?>
+<div class="container">
+
+<?php
 
 if ($pkg == "none") { ?>
 
@@ -67,6 +71,7 @@ if ($pkg == "none") { ?>
   </div>
 
 
+</div>
 
 <?php }
 require_once($rel . 'assets/includes/3-bottom_matter.php');

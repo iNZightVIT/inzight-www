@@ -87,6 +87,9 @@ $captchaEnc = hashValue($captchaAns);
 
 ?>
 
+<div class="container">
+
+
 <h3>Contact iNZight Support</h3>
 
 <p>
@@ -212,7 +215,8 @@ $captchaEnc = hashValue($captchaAns);
 </div>
 
 
-<script src="../../js/contactform.js"></script>
+<script src="<?php echo $rel; ?>js/contactform.js"></script>
+</div>
 
 <?php
 require_once($rel . 'assets/includes/3-bottom_matter.php');

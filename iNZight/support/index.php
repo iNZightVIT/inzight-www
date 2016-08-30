@@ -8,33 +8,34 @@ unset($subdirs["default"]);
 
 ?>
 
-<h3>iNZight Support</h3>
+<div class="container">
+  <h3>iNZight Support</h3>
 
-<p>
-  There are several options available to help you if you get stuck. If you haven't yet checked out the user guides,
-  <a href="../user_guides/">you might find answers there</a>.
-</p>
+  <p>
+    There are several options available to help you if you get stuck. If you haven't yet checked out the user guides,
+    <a href="../user_guides/">you might find answers there</a>.
+  </p>
 
 
-<div class="contents_list">
-  <div class="label">Table of Contents</div>
+  <div class="contents_list">
+    <div class="label">Table of Contents</div>
 
-  <ol>
-    <?php
-      foreach ($subdirs as $title => $url) {
-        echo "<li>";
-        echo "<a href='$url'>$title</a>";
-        if (file_exists($url . "description.txt")) {
-          echo "<p class='desc'>";
-          include($url . "description.txt");
-          echo "</p>";
+    <ol>
+      <?php
+        foreach ($subdirs as $title => $url) {
+          echo "<li>";
+          echo "<a href='$url'>$title</a>";
+          if (file_exists($url . "description.txt")) {
+            echo "<p class='desc'>";
+            include($url . "description.txt");
+            echo "</p>";
+          }
+          echo "</li>";
         }
-        echo "</li>";
-      }
-    ?>
-  </ol>
+      ?>
+    </ol>
+  </div>
 </div>
-
 
 
 

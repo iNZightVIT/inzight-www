@@ -5,6 +5,7 @@ require_once($rel . 'assets/includes/2-header.php');
 
 ?>
 
+<div class="container">
 
 
 <h3>iNZight Newsletters</h3>
@@ -32,6 +33,8 @@ require_once($rel . 'assets/includes/2-header.php');
     }
   }
   ?>
+</div>
+
 </div>
 
 <?php

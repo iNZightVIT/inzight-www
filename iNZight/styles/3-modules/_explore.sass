@@ -1,54 +1,5 @@
-.seeit
-  margin: 1em 1em 0em
-  padding: 0.5em 0 0.5em 3em
-  font-size: 2em
-  font-style: italic
-  border-bottom: solid 3px $main-color-1
-  border-top: solid 1px $main-color-1
-
-  @include phone
-    font-size: 1.5em
-
 .explore
-  padding: 2em
-  min-height: 400px
-
-  @include display(flex)
-  @include align-content(stretch)
-  @include justify-content(space-between)
-  @include flex-direction(column)
-
-  @include widescreen
-    @include flex-direction(row)
-    @include align-content(center)
-    @include align-items(center)
-
-  &:nth-child(2n + 1)
-    background: $alternate-background-color
-
-    @include widescreen
-      @include flex-direction(row-reverse)
-
+  margin-bottom: 30px
   .exploretext
-    text-align: left
-    padding-bottom: 2em
-    h3
-      text-align: center
-
-    @include widescreen
-      font-size: 1.2em
-      width: 50%
-
-  .image
     text-align: center
-
-    img
-      width: 90%
-      max-width: $content-width
-      height: auto
-
-.getit
-  @extend .seeit
-  text-align: right
-  margin: 2em 1em 3em
-  padding: 0.5em 3em 0.5em 0
+    padding-top: 60px

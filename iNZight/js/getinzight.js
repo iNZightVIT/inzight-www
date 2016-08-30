@@ -7,6 +7,7 @@ $(document).ready(function() {
     // make the links disappear!
     $("#osSelect .os-icon").addClass("animate-up");
     $("#osSelect h3").fadeOut();
+    $(".legacy").fadeOut();
     setTimeout(function() {
       $("#osSelect .os-icon").addClass("hidden");
       // make the new content appear!

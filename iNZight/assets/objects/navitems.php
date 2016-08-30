@@ -7,7 +7,7 @@
     'Get iNZight' => array(
       'default' => 'getinzight.php',
       'Desktop' => 'getinzight.php',
-      'Linux/R Users' => 'getinzight.php?os=Linux',
+      // 'Linux/R Users' => 'getinzight.php?os=Linux',
       'Tablets' => 'http://docker.stat.auckland.ac.nz/spawn/?application=lite',
       'Data' => 'data.php'
     ),
@@ -18,8 +18,8 @@
       'Plot Options' => 'plot_options/',
       'Variables' => 'variables/',
       'Data Options' => 'data_options/',
-      'Additional Modules' => 'add_ons/',
-      'Advanced Features' => 'advanced/'
+      'Advanced Modules' => 'add_ons/',
+      'Extra Features' => 'advanced/'
     ),
     'Support' => array(
       'default' => 'support/',
@@ -47,12 +47,12 @@
     )
   );
 
-  function writeList($items, $rel, $prefix = "") {
-    echo "<ul>";
+  function writeList($items, $rel, $prefix = "", $class="nav navbar-nav") {
+    echo "<ul class='" . $class . "'>";
 
     foreach($items as $text=>$link) {
       if ($text != 'default') {
-        echo '<li>';
+        echo '<li class="default dropdown">';
         if (is_array($link)) {
           $prefix = "";
           if (array_key_exists('default', $link)) {
@@ -66,7 +66,7 @@
           } else {
             echo $text;
           }
-          writeList($link, $rel, $prefix);
+          writeList($link, $rel, $prefix, $class = "dropdown-menu");
         } else {
           if (preg_match("/^http/", $link)) {
 		    $pre = "";

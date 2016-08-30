@@ -34,6 +34,9 @@ if (isset($_GET["section"])) {
 }
 ?>
 
+<div class="container">
+
+
 <!-- A BACK BUTTON -->
 <?php
   if ($sec) {
@@ -164,6 +167,8 @@ if (isset($_GET["section"])) {
 
   </div>
   <?php } ?>
+
+</div>
 
 <?php
 require_once($rel . 'assets/includes/3-bottom_matter.php');

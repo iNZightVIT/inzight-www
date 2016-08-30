@@ -9,35 +9,36 @@ $cont = json_decode(file_get_contents("contents.js"));
 
 ?>
 
-<a href='../' class='small'>&lt; User Guides</a>
+<div class="container">
+  <a href='../' class='small'>&lt; User Guides</a>
 
-<div class="markdown">
-  <?php
-    // display the contents
-    include_once($rel . 'assets/libraries/md.php');
-    $Pd = new ParsedownExtra();
-    $text = file_get_contents("advanced_features.Md");
+  <div class="markdown">
+    <?php
+      // display the contents
+      include_once($rel . 'assets/libraries/md.php');
+      $Pd = new ParsedownExtra();
+      $text = file_get_contents("advanced_features.Md");
 
-    // search for Videos:
-    $textArray = explode("///", $text);
+      // search for Videos:
+      $textArray = explode("///", $text);
 
-    foreach($textArray as $text) {
-      if (preg_match("/^VIDEO: /", $text)) {
-        // remove the video text and ponk the URL down:
-        echo "<div class='video-wrapper asp16x9'>";
-        echo "  <iframe width='560' height='315'";
-        echo "   src='".str_replace("VIDEO: ", "", $text)."'";
-        echo "   frameborder='0' allowfullscreen></iframe>";
-        echo "</div>";
-      } else {
-        echo $Pd->text($text);
+      foreach($textArray as $text) {
+        if (preg_match("/^VIDEO: /", $text)) {
+          // remove the video text and ponk the URL down:
+          echo "<div class='video-wrapper asp16x9'>";
+          echo "  <iframe width='560' height='315'";
+          echo "   src='".str_replace("VIDEO: ", "", $text)."'";
+          echo "   frameborder='0' allowfullscreen></iframe>";
+          echo "</div>";
+        } else {
+          echo $Pd->text($text);
+        }
       }
-    }
-  ?>
+    ?>
+  </div>
+
+
 </div>
-
-
-
 
 
 

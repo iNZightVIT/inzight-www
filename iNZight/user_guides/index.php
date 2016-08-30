@@ -8,33 +8,34 @@ unset($subdirs["default"]);
 
 ?>
 
-<h3>iNZight User Guides</h3>
+<div class="container">
+  <h3>iNZight User Guides</h3>
 
-<p>
-  Here you can find documentation and tutorials for using iNZight.
-</p>
+  <p>
+    Here you can find documentation and tutorials for using iNZight.
+  </p>
 
 
-<div class="contents_list">
-  <div class="label">Table of Contents</div>
+  <div class="contents_list">
+    <div class="label">Table of Contents</div>
 
-  <ol>
-    <?php
-      foreach ($subdirs as $title => $url) {
-        echo "<li>";
-        echo "<a href='$url'>$title</a>";
-        if (file_exists($url . "description.txt")) {
-          echo "<p class='desc'>";
-          include($url . "description.txt");
-          echo "</p>";
+    <ol>
+      <?php
+        foreach ($subdirs as $title => $url) {
+          echo "<li>";
+          echo "<a href='$url'>$title</a>";
+          if (file_exists($url . "description.txt")) {
+            echo "<p class='desc'>";
+            include($url . "description.txt");
+            echo "</p>";
+          }
+          echo "</li>";
         }
-        echo "</li>";
-      }
-    ?>
-  </ol>
+      ?>
+    </ol>
+  </div>
+
 </div>
-
-
 
 
 

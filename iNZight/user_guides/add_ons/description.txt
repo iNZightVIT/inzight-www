@@ -1,1 +1,1 @@
-See how iNZight can be extended to include additional modules.
+See how iNZight can be extended to include some more advanced modules.

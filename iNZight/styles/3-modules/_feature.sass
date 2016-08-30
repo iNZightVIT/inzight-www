@@ -1,118 +1,14 @@
 .feature
-  @include display(flex)
-  @include justify-content(space-around)
-  @include align-items(center)
-  padding: 0 2em 4em
+  a.alert-info
+    margin-top: 40px
+    background: lighten($main-color-1, 40)
 
-  .placeholder
-    width: 100%
-    height: auto
-    max-width: 700px
-    max-height: 552.2px
-    text-align: center
-    margin: 0
+    @media (min-width: 992px)
+      margin-top: 100px
 
-    @media (max-width: 700px)
-      max-height: none
+    &:hover
+      text-decoration: none
 
-  .download
-    @include display(flex)
-    @include justify-content(flex-start)
-    @include flex-direction(column)
-
-    .dl-options
-      margin-bottom: 1em
-
-      .alt-options
-        font-size: 0.8em
-        display: block
-        text-align: center
-        margin-bottom: 1em
-
-    .download_button
-      @extend .round-button
-      margin-top: 2em
-
-    .download-info,.dl-options
-      .group
-        font-size: 0.9em
-        @include display(flex)
-
-
-        .group-label
-          font-weight: bold
-          display: inline-block
-          width: 120px
-          text-align: right
-          padding-right: 0.5em
-
-        .group-value
-          display: inline-block
-          font-weight: bold
-          color: $main-color-2
-
-        &.gap
-          margin-top: 2em
-
-          @media (max-width: 950px) and (min-width: 500px)
-            margin-top: 0em
-
-        .grouptext
-          font-weight: bold
-          display: block
-
-      a.online-link
-        font-weight: bold
-        font-size: 1.5em
-        display: block
-        text-align: center
-        margin: 0 auto
-
-        width: 150px
-        padding: 0.2em 0
-        border-bottom: solid 2px $main-color-2
-
-        &:hover
-          border-bottom: solid 2px $main-color-1
-          color: $link-color
-          background: lighten($main-color-1, 40%)
-
-@include widescreen
-  .feature
-    max-width: 100%
-
-    .placeholder
-      padding: 0
-
-    .download
-      font-size: 1.5em
-
-      .dl-options,.download-info
-        .download_button
-          width: 250px
-
-        .group
-          .group-label
-            width: 180px
-
-        a.online-link
-          width: 200px
-
-@include notlarge
-  .feature
-    @include flex-direction(column)
-    @include align-items(center)
-
-@media (max-width: 950px) and (min-width: 500px)
-  .feature
-    .download
-      @include flex-direction(row)
-      @include justify-content(space-around)
-      @include align-items(flex-start)
-
-      .dl-options
-        margin-right: 1em
-
-      .download-info
-        margin-top: 2em
-        margin-left: 1em
+  a.alert-info.lite
+    margin-top: 0
+    background: lighten($main-color-1, 40)

@@ -1,6 +1,6 @@
 {
 "index" : {
-  "title" : "Additional Modules",
+  "title" : "Advanced Modules",
   "desc"  : "The base iNZight program is aimed at general-purpose data visualisaion. We also provide several advanced modules which have been created to deal with specific circumstances. These are described here.<div class='image-row'><img src='../../img/user_guides/interface/6_inzight_menu_advanced.png'></div>"
 },
 "quick_explore" : {

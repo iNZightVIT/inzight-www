@@ -12,6 +12,8 @@ if (isset($_GET["topic"])) {
 require_once($rel . 'assets/includes/1-top_matter.php');
 require_once($rel . 'assets/includes/2-header.php');
 
+echo "<div class='container'>";
+
 if (isset($topic)) {
   echo "<a href='./' class='small'>&lt; " . $contents->index->title . "</a>";
   echo "<div class='markdown'>";
@@ -86,7 +88,7 @@ if (isset($topic)) {
   </ol>
 </div>
 
-
+</div>
 <?php
 }
 

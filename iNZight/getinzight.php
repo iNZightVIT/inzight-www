@@ -116,6 +116,18 @@ if ($auto) {
         }
       ?>
     </div>
+
+    <div class="legacy">
+      <hr>
+      <h5>Prefer to go Legacy?</h5>
+
+      <p><strong>Last stable release: 2.5.1 (released 16 November, 2015)</strong></p>
+      <ul>
+        <li><a href="downloads/iNZightVIT-latest-zipfile.zip">iNZightVIT Windows Zipfile</a></li>
+        <li><a href="downloads/iNZightVIT-latest-osx.dmg">iNZightVIT Mac Installer (OS X 10.9 or later)</a></li>
+        <li><a href="downloads/iNZightVIT-latest-osx-ml.pkg">iNZightVIT Mac Installer (OS X 10.6&ndash;10.8)</a></li>
+      </ul>
+    </div>
   </div>
 
 
@@ -124,10 +136,10 @@ if ($auto) {
     <div class="col-md-12 col-lg-10 col-lg-push-1 os-desc" id="osDesc_windows">
       <h4>Great! Your download should start automatically.</h4>
 
-      <small>
+      <p class="small">
         If not, use this link:
         <a href="<?php echo $link_base . $download_links["Windows"]; ?>"><?php echo $linkBase . $download_links["Windows"]; ?></a>
-      </small>
+      </p>
 
       <hr>
       <?php include('instructions/install_windows.php'); ?>
@@ -259,9 +271,8 @@ if ($auto) {
 
       <p>
         Once you've got those installed, copy and paste the following line into a terminal:
-        <pre>curl https://raw.github.com/iNZightVIT/blah/install_inzight | sh</pre>
+        <pre>bash <(curl -fsSL <?php echo $download_links["linux"]; ?>)</pre>
       </p>
-
 
       <p>
         This should install the necessary packages into a directory you choose
@@ -269,6 +280,22 @@ if ($auto) {
         All of the R packages necessary for iNZight will be kept there to keep your own
         R library clean.
       </p>
+
+      <div class="panel panel-danger">
+        <div class="panel-heading">
+          <h5 class="panel-title">Disclaimer: Testing Stage</h5>
+        </div>
+        <div class="panel-body">
+          <p>
+            The install script has been tested on <strong>Ubuntu 16.04</strong>.
+            I don't think there's anything harmful in it, but feel free to check the source first.
+          </p>
+          <p>
+            If you have any issues, do let me know at <a href="mailto:inzight_support@stat.auckland.ac.nz">inzight_support@stat.auckland.ac.nz</a>.
+            If you are clever and can make the script better, feel free to send the code or submit a pull request.
+          </p>
+        </div>
+      </div>
 
       <hr>
       <h4 class="space-above">Run iNZight</h4>

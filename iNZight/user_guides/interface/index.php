@@ -26,21 +26,23 @@
 </script>
 <!--Adobe Edge Runtime End-->
 
-<a href='../' class='small'>&lt; User Guides</a>
+<div class="container">
+	<a href='../' class='small'>&lt; User Guides</a>
 
-<div class="markdown">
-  <h1>The iNZight Window Interface</h1>
+	<div class="markdown">
+	  <h1>The iNZight Window Interface</h1>
 
-	<div id="Stage" class="EDGE-7984144">
-	</div>
-
-
-	  <p>
-	    Click on locations in the map above to open help pages about that part of iNZight.
-	  </p>
+		<div id="Stage" class="EDGE-7984144">
+		</div>
 
 
-	</div>
+		  <p>
+		    Click on locations in the map above to open help pages about that part of iNZight.
+		  </p>
+
+
+		</div>
+</div>
 
 	<?php
 	require_once($rel . 'assets/includes/3-bottom_matter.php');

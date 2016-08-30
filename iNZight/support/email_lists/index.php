@@ -5,6 +5,8 @@ require_once($rel . 'assets/includes/2-header.php');
 
 ?>
 
+<div class="container">
+
 <a href="../" class="small">&lt; Support</a>
 
 <div class="markdown">
@@ -32,6 +34,7 @@ require_once($rel . 'assets/includes/2-header.php');
   ?>
 </div>
 
+</div>
 
 
 

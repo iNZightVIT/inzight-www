@@ -1,57 +1,58 @@
-$("#alternate").hide();
-$("#reason").show();
+$("#alternate").addClass("hide");
+console.log("Hello");
+$("#reason").removeClass("hide");
 
 $("#messageReason").change(function() {
   switch ($(this).val()) {
     case "General":
       $("#message label").html("Enter your query below.");
-      $("#checkGuides").slideDown();
+      $("#checkGuides").removeClass("hide");
 
       if ($("#checkGuidesBox").is(":checked")) {
-        $("#checkFAQ").slideDown();
+        $("#checkFAQ").removeClass("hide");
         if ($("#checkFAQBox").is(":checked")) {
-          $("#inzightVersion").slideDown();
+          $("#inzightVersion").removeClass("hide");
         } else {
-          $("#inzightVersion").hide();
+          $("#inzightVersion").addClass("hide");
         }
       } else {
-        $("#inzightVersion").hide();
+        $("#inzightVersion").addClass("hide");
       }
 
       break;
     case "Technical":
       $("#message label").html("Enter your issue below.<br>Copy and paste any error messages from the R Console at the end.");
       if (!$("#checkFAQBox").is(":checked")) {
-        $("#inzightVersion").hide();
+        $("#inzightVersion").addClass("hide");
       }
-      $("#checkGuides").hide();
-      $("#checkFAQ").slideDown();
+      $("#checkGuides").addClass("hide");
+      $("#checkFAQ").removeClass("hide");
       break;
     case "Feedback":
       $("#message label").html("Enter your feedback below.");
-      $("#checkGuides").hide();
-      $("#checkFAQ").hide();
-      $("#inzightVersion").slideDown();
+      $("#checkGuides").addClass("hide");
+      $("#checkFAQ").addClass("hide");
+      $("#inzightVersion").removeClass("hide");
       break;
   }
 });
 
 $("#checkGuidesBox").change(function() {
   if ($(this).is(':checked')) {
-    $("#checkFAQ").slideDown();
+    $("#checkFAQ").removeClass("hide");
     if ($("#checkFAQBox").is(":checked")) {
-      $("#inzightVersion").slideDown();
+      $("#inzightVersion").removeClass("hide");
     }
   } else {
-    $("#inzightVersion").hide();
+    $("#inzightVersion").addClass("hide");
   }
 });
 
 $("#checkFAQBox").change(function() {
   if ($(this).is(':checked') && ($("#messageReason").val() == "Technical" || $("#checkGuidesBox").is(":checked"))) {
-    $("#inzightVersion").slideDown();
+    $("#inzightVersion").removeClass("hide");
   } else {
-    $("#inzightVersion").hide();
+    $("#inzightVersion").addClass("hide");
   }
 });
 
@@ -60,8 +61,8 @@ $("#inzightVersionVal").change(function() {
     $.post("version_detail.php", {v: $(this).val()}, function(result) {
       $("#inzightVersionDetail").html(result);
     });
-    $("#inzightVersionDetail").show();
-    $("#inzightVersionNumber").show();
+    $("#inzightVersionDetail").removeClass("hide");
+    $("#inzightVersionNumber").removeClass("hide");
     if ($(this).val() == "online") {
       //$("#inzightVersionNumberVal").val("online");
       $("#inzightVersionNumber .details").html("Copy and paste the URL of your iNZightLite session");
@@ -71,11 +72,11 @@ $("#inzightVersionVal").change(function() {
     if ($("#messageReason").val() == "Technical" && $(this).val() == "ruser") {
       $("#message label").append("<br>If you are experiencing issues with a particular R package, specify which one and the version you are running.")
     }
-    $("#message").show();
-    $("#userName").show();
-    $("#userEmail").show();
-    $("#areYouHuman").show();
-    $("#sendButton").show();
+    $("#message").removeClass("hide");
+    $("#userName").removeClass("hide");
+    $("#userEmail").removeClass("hide");
+    $("#areYouHuman").removeClass("hide");
+    $("#sendButton").removeClass("hide");
   }
 });
 
@@ -84,9 +85,9 @@ $("#inzightVersionVal").change(function() {
 //   $trueVal = $("#trueCaptchaValue").val();
 //
 //   if ($userVal == $trueVal) {
-//     $("#sendButton").slideDown();
+//     $("#sendButton").removeClass("hide");
 //   } else {
-//     $("#sendButton").hide();
+//     $("#sendButton").addClass("hide");
 //   }
 // });
 

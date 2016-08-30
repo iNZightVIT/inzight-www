@@ -1,7 +1,7 @@
       <div class="push"></div>
     </div>
 
-    <div class="footer">
+    <div class="footer container">
       <div class="footer-content">
         <div class="copyright">
           <span>

@@ -36,6 +36,8 @@ $isIE = strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') || strpos($_SERVER['HTTP_USE
       <script src="<?php echo $rel;?>js/jquery-2.1.3.min.js"></script>
     <![endif]-->
 
+    <script src="<?php echo $rel;?>js/bootstrap.min.js"></script>
+
     <title>iNZight for Data Analysis</title>
   </head>
 

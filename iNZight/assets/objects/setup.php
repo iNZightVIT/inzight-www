@@ -24,12 +24,13 @@
 
     "xquartz" => "http://xquartz.macosforge.org/",
     "gtk-2.18" => "http://r.research.att.com/libs/GTK_2.18.5-X11.pkg",
-    "gtk-2.24" => "http://r.research.att.com/libs/GTK_2.24.17-X11.pkg"
+    "gtk-2.24" => "http://r.research.att.com/libs/GTK_2.24.17-X11.pkg",
+    "linux" => "https://raw.githubusercontent.com/iNZightVIT/dev/master/scripts/install_inzight.sh"
   );
 
   $inzight_version = "3.0";
   $release_date    = "TBA";
 
-  $inzight_online_link = "http://docker.stat.auckland.ac.nz/";
+  $inzight_online_link = "http://lite.docker.stat.auckland.ac.nz/";
   $inzight_repository_link = "http://r.docker.stat.auckland.ac.nz/R";
 ?>
