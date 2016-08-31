@@ -31,10 +31,10 @@ if (isset($topic)) {
     foreach($textArray as $text) {
       if (preg_match("/^VIDEO: /", $text)) {
         // remove the video text and ponk the URL down:
-        echo "<div class='video-wrapper asp16x9'>";
-        echo "  <iframe width='560' height='315'";
+        echo "<div class='embed-responsive embed-responsive-16by9'>";
+        echo "  <iframe  class='embed-responsive-item'";
         echo "   src='".str_replace("VIDEO: ", "", $text)."'";
-        echo "   frameborder='0' allowfullscreen></iframe>";
+        echo "   allowfullscreen></iframe>";
         echo "</div>";
       } else if (preg_match("/^SCRIPT: /", $text)) {
         echo "<script src='". str_replace("SCRIPT: ", "", $text) ."'></script>";
