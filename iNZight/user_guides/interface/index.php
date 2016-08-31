@@ -4,8 +4,7 @@
 	$metatags .= "<meta http-equiv='X-UA-Compatible' content='IE=Edge'>";
 
 	$rel = "../../";
-	$crumbs = ["User Guides" => "../", "The Interface" => "active"];
-	//require_once($rel . 'assets/includes/magic_index.php');
+	$crumbs = array("User Guides" => "../", "The Interface" => "active");
 	require_once($rel . 'assets/includes/1-top_matter.php');
 	require_once($rel . 'assets/includes/2-header.php');
 ?>

@@ -1,6 +1,6 @@
 <?php
 $rel = "../../";
-$crumbs = ["Support" => "../"];
+$crumbs = array("Support" => "../");
 
 if (isset($_REQUEST['pkg'])) {
   $pkg = $_REQUEST['pkg'];

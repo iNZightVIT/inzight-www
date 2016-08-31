@@ -1,6 +1,6 @@
 <?php
 $rel = "../../";
-$crumbs = ["Support" => "../", "FAQ" => (isset($_GET["section"])) ? "./" : "active"];
+$crumbs = array("Support" => "../", "FAQ" => (isset($_GET["section"])) ? "./" : "active");
 require_once($rel . 'assets/includes/1-top_matter.php');
 require_once($rel . 'assets/includes/2-header.php');
 require_once($rel . 'assets/libraries/md.php');

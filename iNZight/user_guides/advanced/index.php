@@ -1,7 +1,7 @@
 <?php
 
 $rel = "../../";
-$crumbs = ["User Guides" => "../", "Advanced Modules" => "active"];
+$crumbs = array("User Guides" => "../", "Advanced Modules" => "active");
 require_once($rel . 'assets/includes/1-top_matter.php');
 require_once($rel . 'assets/includes/2-header.php');
 

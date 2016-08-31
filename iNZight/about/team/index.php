@@ -1,6 +1,6 @@
 <?php
 $rel = "../../";
-$crumbs = ["About" => "../", "Team" => "active"];
+$crumbs = array("About" => "../", "Team" => "active");
 require_once($rel . 'assets/includes/1-top_matter.php');
 require_once($rel . 'assets/includes/2-header.php');
 

@@ -2,7 +2,7 @@
 
 // this depends on the operating system
 $rel = "../../";
-$crumbs = ["User Guides" => "../", "The Basics" => "./", "Getting Started" => "active"];
+$crumbs = array("User Guides" => "../", "The Basics" => "./", "Getting Started" => "active");
 require_once($rel . 'assets/includes/1-top_matter.php');
 require_once($rel . 'assets/includes/2-header.php');
 

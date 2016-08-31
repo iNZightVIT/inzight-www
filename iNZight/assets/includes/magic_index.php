@@ -12,9 +12,9 @@ if (isset($_GET["topic"])) {
 if (isset($topic)) {
   $contArr = (array) $contents;
   $curName = isset($contArr[$topic]->short) ? $contArr[$topic]->short : $contArr[$topic]->title;
-  $crumbs = [$baseCrumb => "../", $contents->index->title => "./", $curName => "active"];
+  $crumbs = array($baseCrumb => "../", $contents->index->title => "./", $curName => "active");
 } else {
-  $crumbs = [$baseCrumb => "../", $contents->index->title => "active"];
+  $crumbs = array($baseCrumb => "../", $contents->index->title => "active");
 }
 require_once($rel . 'assets/includes/1-top_matter.php');
 require_once($rel . 'assets/includes/2-header.php');
