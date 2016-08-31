@@ -1,7 +1,7 @@
 <?php
 
 $rel = "../../";
-//require_once($rel . 'assets/includes/magic_index.php');
+$crumbs = ["User Guides" => "../", "Variables" => "active"];
 require_once($rel . 'assets/includes/1-top_matter.php');
 require_once($rel . 'assets/includes/2-header.php');
 
@@ -9,8 +9,6 @@ $cont = json_decode(file_get_contents("contents.js"));
 
 ?>
 <div class="container">
-  <a href='../' class='small'>&lt; User Guides</a>
-
   <div class="markdown">
     <?php
       // display the contents

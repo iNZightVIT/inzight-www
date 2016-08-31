@@ -8009,6 +8009,12 @@ li:not(.default) {
 li:not(.default) > p {
   margin-left: 0; }
 
+ol.breadcrumb > li {
+  margin: 0;
+  font-size: 0.9em; }
+  ol.breadcrumb > li a {
+    font-weight: normal; }
+
 .small {
   font-size: 0.8em; }
 

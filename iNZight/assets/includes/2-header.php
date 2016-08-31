@@ -21,6 +21,7 @@
   </div>
 </nav>
 
+<?php require_once($rel . 'assets/includes/breadcrumbs.php'); ?>
 
 <!-- <div class="header">
   <div class="topnav hideme">

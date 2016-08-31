@@ -9,13 +9,19 @@ if (isset($_GET["topic"])) {
   }
 }
 
+if (isset($topic)) {
+  $contArr = (array) $contents;
+  $curName = isset($contArr[$topic]->short) ? $contArr[$topic]->short : $contArr[$topic]->title;
+  $crumbs = [$baseCrumb => "../", $contents->index->title => "./", $curName => "active"];
+} else {
+  $crumbs = [$baseCrumb => "../", $contents->index->title => "active"];
+}
 require_once($rel . 'assets/includes/1-top_matter.php');
 require_once($rel . 'assets/includes/2-header.php');
 
 echo "<div class='container'>";
 
 if (isset($topic)) {
-  echo "<a href='./' class='small'>&lt; " . $contents->index->title . "</a>";
   echo "<div class='markdown'>";
 
   // check Md exists:
@@ -54,7 +60,7 @@ if (isset($topic)) {
 } else { ?>
 
 
-<a href="../" class="small">&lt; User Guides</a>
+<!-- <a href="../" class="small">&lt; User Guides</a> -->
 
 <h3>iNZight User Guides: <?php echo $contents->index->title; ?></h3>
 
