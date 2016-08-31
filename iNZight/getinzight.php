@@ -8,7 +8,9 @@ $auto = false;
 $os_version = 0;  // default to 0
 $cloud_dl = false;
 
-$operating_systems = ["windows" => "Windows", "mac" => "Mac", "linux" => "Linux"];
+$operating_systems = array(
+  "windows" => "Windows", "mac" => "Mac", "linux" => "Linux"
+);
 
 $install_only = isset($_GET["inst"]);
 $link_base = "./" . $download_dir;
@@ -343,5 +345,5 @@ if ($auto) {
 
 
 <?php
-require_once($rel . 'assets/includes/3-bottom_matter.php');
+require_once($rel . 'assets/includes/3-bottom_matter.php'); 
 ?>

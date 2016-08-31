@@ -1,32 +1,8 @@
 <?php
 
-?>
-<!-- <!DOCTYPE html>
-<html>
-<head>
-  <title>Maintenance in Progress</title>
-</head>
+error_reporting(E_ALL);
 
-<body>
-  <h1>Maintenance in Progress</h1>
-
-  <p>
-    We're currently updating the website. Please come back later.
-  </p>
-
-  <p>
-    Sorry for the inconvenience.
-  </p>
-</body>
-
-</html> -->
-
-<?
-
-// die();
-
- session_start();
-//echo $_SERVER['HTTP_USER_AGENT'];
+session_start();
 $isIE = strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') || strpos($_SERVER['HTTP_USER_AGENT'], 'Trident');
 ?>
 
