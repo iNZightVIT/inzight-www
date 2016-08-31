@@ -20,7 +20,6 @@ if (isset($_GET['os'])) {
 echo "<div class='container'>";
 
 $contents = json_decode(file_get_contents("contents.js"));
-// echo "<a href='./' class='small'>&lt; " . $contents->index->title . "</a>";
 ?>
 
 
