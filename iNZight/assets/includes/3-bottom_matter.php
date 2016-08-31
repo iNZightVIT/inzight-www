@@ -1,9 +1,10 @@
       <div class="push"></div>
     </div>
 
-    <div class="footer container">
-      <div class="footer-content">
-        <div class="copyright">
+    <hr>
+    <div class="container footer">
+      <div class="row">
+        <div class="col-md-4 footer-content">
           <span>
             &copy; Copyright 2014&ndash;<?php echo date("Y");?> iNZight | All Rights Reserved <br>
           </span>
@@ -12,23 +13,16 @@
           </span>
         </div>
 
-        <div class="thanks">
-          <div>
-            <a href="http://new.censusatschool.org.nz/" id="-logo">
-              <img src="<?php echo $rel; ?>img/census_logo.png">
-            </a>
-            <a href="http://www.stats.govt.nz/" id="CaS-logo">
-              <img src="<?php echo $rel; ?>img/stats_nz.png">
-            </a>
-          </div>
-          <div>
-            <a href="http://www.minedu.govt.nz/" id="MEd-logo">
-              <img src="<?php echo $rel; ?>img/minedu_logo.png">
-            </a>
-            <a href="https://www.auckland.ac.nz/" id="UoA-logo">
-              <img src="<?php echo $rel; ?>img/uoa_logo.png">
-            </a>
-          </div>
+        <div class="col-md-8 thanks">
+          <a href="https://www.auckland.ac.nz/" id="UoA-logo">
+            <img src="<?php echo $rel; ?>img/uoa_logo.png">
+          </a>
+          <a href="http://www.stats.govt.nz/" id="CaS-logo">
+            <img src="<?php echo $rel; ?>img/stats_nz.png">
+          </a>
+          <a href="http://www.minedu.govt.nz/" id="MEd-logo">
+            <img src="<?php echo $rel; ?>img/minedu_logo.png">
+          </a>
         </div>
       </div>
     </div>

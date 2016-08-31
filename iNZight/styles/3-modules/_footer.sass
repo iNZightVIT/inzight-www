@@ -1,42 +1,19 @@
 .footer
-  // do not change height!
-  // max-width: $max-page-width
-  margin: 0 auto
-  // padding: 1em
   font-size: 0.8em
 
-  border-top: solid 2px $header-border-color
-
   .footer-content
-    @include display(flex)
-    @include justify-content(space-between)
-    @include align-items(center)
+    text-align: center
+    padding-bottom: 2em
 
-    @include phone
-      @include flex-direction(column-reverse)
+  .thanks
+    text-align: center
+    img
+      height: $footer-height * 0.8
+      padding: 0 1em 1em
 
-    .copyright
-      @include display(flex)
-      @include flex-direction(column)
-      @include align-items(flex-start)
-      @include phone
-        @include align-items(center)
-
-      padding-bottom: 1em
+  @media (min-width: 992px)
+    .footer-content
+      text-align: left
 
     .thanks
-      @include display(flex)
-      @include align-items(center)
-      @include flex-wrap(wrap)
-      @include justify-content(space-around)
-
-      padding-bottom: 1em
-
-      div
-        @include display(flex)
-        @include align-items(center)
-
-
-      img
-        height: $footer-height / 2
-        padding: 0 1em
+      text-align: right
