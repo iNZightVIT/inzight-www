@@ -1,7 +1,6 @@
 <?php
 $rel = "../../";
-require_once($rel . 'assets/includes/1-top_matter.php');
-require_once($rel . 'assets/includes/2-header.php');
+$crumbs = ["Support" => "../"];
 
 if (isset($_REQUEST['pkg'])) {
   $pkg = $_REQUEST['pkg'];
@@ -9,14 +8,21 @@ if (isset($_REQUEST['pkg'])) {
   $pkg = "none";
 }
 
+if ($pkg == "none") {
+  $crumbs["Change Log"] = "active";
+} else {
+  $crumbs["Change Log"] = "./";
+  $crumbs[$pkg] = "active";
+}
+require_once($rel . 'assets/includes/1-top_matter.php');
+require_once($rel . 'assets/includes/2-header.php');
+
 ?>
 <div class="container">
 
 <?php
 
 if ($pkg == "none") { ?>
-
-<a href="../" class="small">&lt; Support</a>
 
 <div class="markdown">
   <h1>iNZight Version History</h1>
@@ -61,8 +67,6 @@ if ($pkg == "none") { ?>
 
 
 <?php } else { ?>
-
-  <a href="./" class="small">&lt; List of Packages</a>
 
   <div class="rhistory">
     <?php

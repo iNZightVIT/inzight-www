@@ -1,5 +1,6 @@
 <?php
 $rel = "../../";
+$crumbs = ["Support" => "../", "Mailing Lists" => "active"];
 require_once($rel . 'assets/includes/1-top_matter.php');
 require_once($rel . 'assets/includes/2-header.php');
 
@@ -7,7 +8,6 @@ require_once($rel . 'assets/includes/2-header.php');
 
 <div class="container">
 
-<a href="../" class="small">&lt; Support</a>
 
 <div class="markdown">
   <?php

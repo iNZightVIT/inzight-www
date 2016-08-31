@@ -1,12 +1,11 @@
 <?php
 $rel = "../../";
+$crumbs = ["About" => "../", "Team" => "active"];
 require_once($rel . 'assets/includes/1-top_matter.php');
 require_once($rel . 'assets/includes/2-header.php');
 
 ?>
 <div class="container">
-  <a href="../" class="small">&lt; About</a>
-
   <div class="markdown">
     <?php
       // display the contents

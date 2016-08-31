@@ -1,5 +1,6 @@
 <?php
 $rel = "../../";
+$crumbs = ["Support" => "../", "FAQ" => (isset($_GET["section"])) ? "./" : "active"];
 require_once($rel . 'assets/includes/1-top_matter.php');
 require_once($rel . 'assets/includes/2-header.php');
 require_once($rel . 'assets/libraries/md.php');
@@ -51,7 +52,6 @@ if (isset($_GET["section"])) {
     $btext = "Support";
   }
 ?>
-<a href='<?php echo $bref; ?>' class='small'>&lt; <?php echo $btext; ?></a>
 
 <h3>
   iNZight FAQ<?php

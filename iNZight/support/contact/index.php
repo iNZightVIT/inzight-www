@@ -3,6 +3,7 @@
 $submit = false;
 
 $rel = "../../";
+$crumbs = ["Support" => "../", "Contact" => "active"];
 require_once($rel . 'assets/functions/hash.php');
 
 $inzightVersionNumberError = "";
