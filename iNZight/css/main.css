@@ -7907,12 +7907,14 @@ nav.navbar .navbar-nav > li:hover > .dropdown-menu {
     margin-top: 25px; }
   .markdown h2, .rhistory h2 {
     font-size: 1.2em;
-    margin-top: 2em; }
+    margin-top: 2em;
+    font-weight: bold; }
   .markdown h3, .rhistory h3 {
     font-size: 1.1em;
     padding: 0;
     margin: 2em 0 0;
-    font-weight: bold; }
+    font-weight: bold;
+    color: #094b85; }
   .markdown p, .rhistory p {
     margin: 0.5em 0 1em; }
   .markdown > ol:after, .rhistory > ol:after {
@@ -7921,17 +7923,18 @@ nav.navbar .navbar-nav > li:hover > .dropdown-menu {
     clear: both; }
   .markdown > ol > li, .rhistory > ol > li {
     clear: both; }
-  .markdown table, .rhistory table {
-    border: solid 1px black; }
-    .markdown table td, .rhistory table td, .markdown table th, .rhistory table th {
-      padding: 0.2em 0.5em; }
-    .markdown table thead, .rhistory table thead {
-      border-bottom: solid 1px black; }
-
-.clear:after {
-  content: "";
-  display: table;
-  clear: both; }
+  .markdown .pull-sm-right, .rhistory .pull-sm-right {
+    margin-top: 1em; }
+    @media (min-width: 768px) {
+      .markdown .pull-sm-right, .rhistory .pull-sm-right {
+        float: right !important; } }
+    .markdown .pull-sm-right .thumbnail, .rhistory .pull-sm-right .thumbnail {
+      margin-left: auto;
+      margin-right: auto; }
+  .markdown .thumbnail, .rhistory .thumbnail {
+    max-width: 362px; }
+  .markdown .row .thumbnail, .rhistory .row .thumbnail {
+    display: inline-block; }
 
 img {
   display: block;
@@ -8108,11 +8111,11 @@ h1.header-image, h2.header-image, h3.header-image {
   background-repeat: no-repeat;
   background-size: 30px; }
   h1.header-image.button-add-to-plot, h2.header-image.button-add-to-plot, h3.header-image.button-add-to-plot {
-    background-image: url(../img/user_guides/plotoptions/toolbar/add-to-plot.gif); }
+    background-image: url(../img/user_guides/plotoptions/toolbar/add-to-plot.png); }
   h1.header-image.button-remove-additions, h2.header-image.button-remove-additions, h3.header-image.button-remove-additions {
-    background-image: url(../img/user_guides/plotoptions/toolbar/remove-additions.gif); }
+    background-image: url(../img/user_guides/plotoptions/toolbar/remove-additions.png); }
   h1.header-image.button-inference-information, h2.header-image.button-inference-information, h3.header-image.button-inference-information {
-    background-image: url(../img/user_guides/plotoptions/toolbar/inference-information.gif); }
+    background-image: url(../img/user_guides/plotoptions/toolbar/inference-information.png); }
 
 html, body {
   height: 100%;

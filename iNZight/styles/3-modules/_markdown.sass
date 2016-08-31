@@ -12,12 +12,14 @@
   h2
     font-size: 1.2em
     margin-top: 2em
+    font-weight: bold
 
   h3
     font-size: 1.1em
     padding: 0
     margin: 2em 0 0
     font-weight: bold
+    color: $main-color-2
 
   p
     margin: 0.5em 0 1em
@@ -29,18 +31,33 @@
     >li
       clear: both
 
-  table
-    //margin: 0 auto
-    border: solid 1px black
+  // table
+  //   //margin: 0 auto
+  //   border: solid 1px black
+  //
+  //   td, th
+  //     padding: 0.2em 0.5em
+  //
+  //   thead
+  //     border-bottom: solid 1px black
 
-    td, th
-      padding: 0.2em 0.5em
 
-    thead
-      border-bottom: solid 1px black
+  .pull-sm-right
+    margin-top: 1em
+    @media (min-width: 768px)
+      float: right !important
 
-.clear
-  @include clearfix
+    .thumbnail
+      margin:
+        left: auto
+        right: auto
+
+  .thumbnail
+    max-width: 362px
+
+  .row .thumbnail
+    display: inline-block
+
 
 img
   display: block

@@ -35,7 +35,7 @@ Used to rename the tab of the current plotting window.
 
 ## Save
 
-Enables you to save the contents of the displayed plot as a file (in `.emf`, `.jpeg`, `.png`, or `.bmp` formats).
+Enables you to save the contents of the displayed plot as a file (in `.jpeg`, `.png`, `.bmp`, `.tiff`, or `.pdf` formats).
 
 
 ## Close

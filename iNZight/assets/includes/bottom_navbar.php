@@ -7,7 +7,7 @@ $which = array_search($topic, $keys);
 
 ?>
 
-<ul class="pager navpanel">
+<div class="navpanel row">
   <?php if ($which > 0) {
     $url = $keys[$which - 1];
     $inf = pathinfo($url);
@@ -17,7 +17,7 @@ $which = array_search($topic, $keys);
       $href="./?topic=$url";
     }
     ?>
-    <li class="previous">
+    <div class="col-sm-4 previous text-left">
       <a href="<?php echo $href; ?>">
         <span class="glyphicon glyphicon-chevron-left"></span> Previous:
         <?php
@@ -28,12 +28,12 @@ $which = array_search($topic, $keys);
           }
         ?>
       </a>
-    </li>
+    </div>
   <?php } ?>
-  <li><a href="./">
+  <div class="col-sm-4 text-center"><a href="./">
     <span class="glyphicon glyphicon-home"></span>
     <?php echo $contents->index->title; ?>
-  </a></li>
+  </a></div>
   <?php if ($which < (count($keys) - 1)) {
     $url = $keys[$which + 1];
     $inf = pathinfo($url);
@@ -43,7 +43,7 @@ $which = array_search($topic, $keys);
       $href="./?topic=$url";
     }
     ?>
-    <li class="next">
+    <div class="next col-sm-4 text-right">
       <a href="<?php echo $href; ?>">
         Next:
         <?php
@@ -55,6 +55,6 @@ $which = array_search($topic, $keys);
         ?>
         <span class="glyphicon glyphicon-chevron-right"></span>
       </a>
-    </li>
+    </div>
     <?php } ?>
-</ul>
+</div>

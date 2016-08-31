@@ -9,7 +9,7 @@ $("#togglePlottypes").on('click', function(e) {
   $("#plottypes").slideToggle(); //toggleClass('visible');
 });
 
-$("#togglePalettes").on('click', function(e) {
-  e.preventDefault();
-  $("#palettes").slideToggle(); //toggleClass('visible');
-});
+// $("#togglePalettes").on('click', function(e) {
+//   e.preventDefault();
+//   $("#palettes").slideToggle(); //toggleClass('visible');
+// });
