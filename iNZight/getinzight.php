@@ -123,9 +123,18 @@ if ($auto) {
 
       <p><strong>Last stable release: 2.5.1 (released 16 November, 2015)</strong></p>
       <ul>
-        <li><a href="downloads/iNZightVIT-latest-zipfile.zip">iNZightVIT Windows Zipfile</a></li>
-        <li><a href="downloads/iNZightVIT-latest-osx.dmg">iNZightVIT Mac Installer (OS X 10.9 or later)</a></li>
-        <li><a href="downloads/iNZightVIT-latest-osx-ml.pkg">iNZightVIT Mac Installer (OS X 10.6&ndash;10.8)</a></li>
+        <li>
+          <a href="downloads/iNZightVIT-2.5.1-zipfile.zip">iNZightVIT Windows Zipfile</a>
+          (<?php echo getFileSize($link_base . "iNZightVIT-2.5.1-zipfile.zip"); ?>)
+        </li>
+        <li>
+          <a href="downloads/iNZightVIT-2.5.1-osx.dmg">iNZightVIT Mac Installer (OS X 10.9 or later)</a>
+          (<?php echo getFileSize($link_base . "iNZightVIT-2.5.1-osx.dmg"); ?>)
+        </li>
+        <li>
+          <a href="downloads/iNZightVIT-2.5.1-osx-ml.pkg">iNZightVIT Mac Installer (OS X 10.6&ndash;10.8)</a>
+          (<?php echo getFileSize($link_base . "iNZightVIT-2.5.1-osx-ml.pkg"); ?>)
+        </li>
       </ul>
     </div>
   </div>

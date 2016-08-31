@@ -9,18 +9,14 @@
     "Windows" => "iNZightVIT-installer.exe",
     "osx"     => "iNZightVIT-mac-installer.dmg",
     "osx-self"=> "iNZightVIT-selfinstall.tar.bz2",
-    // "osx-ml"  => "iNZightVIT-latest-osx-ml.pkg",
-    // "osx-sl"  => "iNZightVIT-latest-osx-sl.zip",
-    // "osx-man" => "iNZightVIT-latest-osx.zip",
-    // "osx-ml-man" => "iNZightVIT-latest-osx-sl.zip",
 
-    // cloud links --- if not available, don't use!
-    "Windows_cloud" => false,
-    "osx_cloud" => false,
-    "osx-ml_cloud" => false,
-    "osx-sl_cloud" => false,
-    "osx-man_cloud" => false, // not implemented ...
-    "osx_ml-man_cloud" => false, // not implemented ...
+    // // cloud links --- if not available, don't use!
+    // "Windows_cloud" => false,
+    // "osx_cloud" => false,
+    // "osx-ml_cloud" => false,
+    // "osx-sl_cloud" => false,
+    // "osx-man_cloud" => false, // not implemented ...
+    // "osx_ml-man_cloud" => false, // not implemented ...
 
     "xquartz" => "http://xquartz.macosforge.org/",
     "gtk-2.18" => "http://r.research.att.com/libs/GTK_2.18.5-X11.pkg",
@@ -29,7 +25,7 @@
   );
 
   $inzight_version = "3.0";
-  $release_date    = "TBA";
+  $release_date    = "Get it today!";
 
   $inzight_online_link = "http://lite.docker.stat.auckland.ac.nz/";
   $inzight_repository_link = "http://r.docker.stat.auckland.ac.nz/R";
