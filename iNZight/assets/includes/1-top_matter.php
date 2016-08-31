@@ -1,7 +1,5 @@
 <?php
 
-error_reporting(E_ALL);
-
 session_start();
 $isIE = strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') || strpos($_SERVER['HTTP_USER_AGENT'], 'Trident');
 ?>
