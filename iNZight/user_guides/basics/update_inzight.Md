@@ -18,11 +18,17 @@ To update iNZight, either:
 
 ## On Mac
 
-Open the iNZightVIT folder and double-click on __Update iNZightVIT__.
+Open __Applications__ &gt; __iNZightVIT__ and double-click on __Update__.
 
-If you are running a later version of Mac OS X (Mountain Lion or higher) you may get an "Unknown Developer" warning the first time you run the updater.
-In this case, simply __right click__ on the __Update iNZightVIT__ icon and click __Open__, and then in the window that pops up, click __Allow__. In future, you should be able to simply double-click the file to run the updater.
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <strong>Unknown Developer Warning</strong>
+  </div>
+  <div class="panel-body" markdown="1">
+  If you're unable to start iNZight due to an "Unknown Developer" warning,
+  simply __Right-click__ the Update icon, and click __Open__.
+  In the window that pops up, click __Open__ to allow iNZight to update.
 
-<a href="../../img/install/mac/allow_update.gif" target="_blank" class="thumb">
-![Allow Updater to Run](../../img/install/mac/allow_update.gif)
-</a>
+  You should only have to do this the first time you run the updater.
+  </div>
+</div>
