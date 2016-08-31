@@ -40,6 +40,18 @@ $cont = json_decode(file_get_contents("contents.js"));
 
 </div>
 
+<script>
+  function eqHt() {
+    if ($(window).width() >= 726) {
+      minHt = $(".equal-height img").eq(1).height();
+      $(".equal-height img").eq(0).height(minHt).width('auto');
+    } else {
+      $(".equal-height img").eq(0).removeAttr("style");
+    }
+  }
+  $(window).on("load", eqHt);
+  $(window).resize(eqHt);
+</script>
 
 
 <?php

@@ -470,7 +470,3 @@ ___How do you want to select points?___
 
 
 <div class="clearfix"></div>
-
-
-
-///SCRIPT: ../../js/markdown.js///

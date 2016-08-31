@@ -23,6 +23,7 @@ To switch between the two, go to __File__ > __Preferences__, and check the box _
 
 
 
+
 ## Colour Specification  {#colours}
 
 In many of the Colour specification windows, you can either select from the menu, or type in a value of your own. Colours can specified by the name of [any colour known by R](http://research.stowers-institute.org/efg/R/Color/Chart/ColorChart.pdf),

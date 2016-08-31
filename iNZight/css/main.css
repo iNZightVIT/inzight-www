@@ -7588,23 +7588,6 @@ ol.alpha {
     @media (max-width: 745px) {
       .images-centered img {
         width: 80%; } }
-  @media (min-width: 745px) {
-    .images-centered.equal-height img {
-      text-align: center;
-      width: auto;
-      height: 400px; } }
-  @media (min-width: 745px) and (max-width: 1340px) {
-    .images-centered.equal-height img {
-      height: 350px; } }
-  @media (min-width: 745px) and (max-width: 1200px) {
-    .images-centered.equal-height img {
-      height: 300px; } }
-  @media (min-width: 745px) and (max-width: 1050px) {
-    .images-centered.equal-height img {
-      height: 250px; } }
-  @media (min-width: 745px) and (max-width: 895px) {
-    .images-centered.equal-height img {
-      height: 200px; } }
 
 .round-button, .large-button, .horizontal .options .option {
   display: -webkit-box;
