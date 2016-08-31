@@ -33,7 +33,7 @@ echo "<a href='./' class='small'>&lt; " . $contents->index->title . "</a>";
 
   echo $Pd->text($text);
   ?>
-
+<!--
   <select id="os_select" name="os-select">
     <option value=""></option>
     <option value="windows" <?php if ($os == "win") echo 'selected'; ?>>Windows</option>
@@ -53,7 +53,7 @@ echo "<a href='./' class='small'>&lt; " . $contents->index->title . "</a>";
 
 
   <div id="startup_instructions"></div>
-
+ -->
 
 </div>
 

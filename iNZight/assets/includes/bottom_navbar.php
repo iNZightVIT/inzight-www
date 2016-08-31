@@ -7,17 +7,18 @@ $which = array_search($topic, $keys);
 
 ?>
 
+<hr>
 <div class="navpanel row">
-  <?php if ($which > 0) {
-    $url = $keys[$which - 1];
-    $inf = pathinfo($url);
-    if (array_key_exists("extension", $inf)) {
-      $href = $url;
-    } else {
-      $href="./?topic=$url";
-    }
-    ?>
-    <div class="col-sm-4 previous text-left">
+  <div class="col-sm-4 previous text-left">
+    <?php if ($which > 0) {
+      $url = $keys[$which - 1];
+      $inf = pathinfo($url);
+      if (array_key_exists("extension", $inf)) {
+        $href = $url;
+      } else {
+        $href="./?topic=$url";
+      }
+      ?>
       <a href="<?php echo $href; ?>">
         <span class="glyphicon glyphicon-chevron-left"></span> Previous:
         <?php
@@ -28,22 +29,24 @@ $which = array_search($topic, $keys);
           }
         ?>
       </a>
-    </div>
-  <?php } ?>
-  <div class="col-sm-4 text-center"><a href="./">
-    <span class="glyphicon glyphicon-home"></span>
-    <?php echo $contents->index->title; ?>
-  </a></div>
-  <?php if ($which < (count($keys) - 1)) {
-    $url = $keys[$which + 1];
-    $inf = pathinfo($url);
-    if (array_key_exists("extension", $inf)) {
-      $href = $url;
-    } else {
-      $href="./?topic=$url";
-    }
-    ?>
-    <div class="next col-sm-4 text-right">
+    <?php } ?>
+  </div>
+  <div class="col-sm-4 text-center">
+    <a href="./">
+      <span class="glyphicon glyphicon-home"></span>
+      <?php echo $contents->index->title; ?>
+    </a>
+  </div>
+  <div class="next col-sm-4 text-right">
+    <?php if ($which < (count($keys) - 1)) {
+      $url = $keys[$which + 1];
+      $inf = pathinfo($url);
+      if (array_key_exists("extension", $inf)) {
+        $href = $url;
+      } else {
+        $href="./?topic=$url";
+      }
+      ?>
       <a href="<?php echo $href; ?>">
         Next:
         <?php
@@ -55,6 +58,6 @@ $which = array_search($topic, $keys);
         ?>
         <span class="glyphicon glyphicon-chevron-right"></span>
       </a>
-    </div>
     <?php } ?>
+  </div>
 </div>
