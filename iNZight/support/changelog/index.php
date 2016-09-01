@@ -79,7 +79,8 @@ if ($pkg == "none") { ?>
       include_once($rel . 'assets/libraries/md.php');
       $Pd = new ParsedownExtra();
       $text = file_get_contents("changes/" . $pkg . ".Md");
-      echo $Pd->text($text);
+      $text = $Pd->text($text);
+      echo $text;
     ?>
   </div>
 
