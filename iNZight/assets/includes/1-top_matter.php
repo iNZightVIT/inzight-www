@@ -1,5 +1,10 @@
 <?php
 
+
+
+
+
+
 session_start();
 $isIE = strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') || strpos($_SERVER['HTTP_USER_AGENT'], 'Trident');
 ?>
@@ -21,6 +26,15 @@ $isIE = strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') || strpos($_SERVER['HTTP_USE
       // Allow us to define extra meta tags:
       if (isset($metatags)) {
         echo $metatags;
+      }
+
+      /**
+        * Google Analytics
+      **/
+      if (preg_match('/stat.auckland.ac.nz/', $_SERVER['HTTP_HOST']) === 1) {
+        include_once($rel . 'assets/includes/analyticstracking.php');
+      } else {
+        echo "<!-- development environment -->";
       }
     ?>
 
