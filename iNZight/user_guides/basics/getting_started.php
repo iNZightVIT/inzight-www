@@ -31,7 +31,25 @@ $contents = json_decode(file_get_contents("contents.js"));
   $Pd = new ParsedownExtra();
   $text = file_get_contents("getting_started.Md");
 
-  echo $Pd->text($text);
+  // search for Videos:
+  $textArray = explode("///", $text);
+
+  foreach($textArray as $text) {
+    if (preg_match("/^VIDEO: /", $text)) {
+      // remove the video text and ponk the URL down:
+      echo "<div class='embed-responsive embed-responsive-16by9'>";
+      echo "  <iframe  class='embed-responsive-item'";
+      echo "   src='".str_replace("VIDEO: ", "", $text)."'";
+      echo "   allowfullscreen></iframe>";
+      echo "</div>";
+    } else if (preg_match("/^SCRIPT: /", $text)) {
+      echo "<script src='". str_replace("SCRIPT: ", "", $text) ."'></script>";
+    } else if (preg_match("/^HTML:/", $text)) {
+      echo str_replace("HTML:", "", $text);
+    } else {
+      echo $Pd->text($text);
+    }
+  }
   ?>
 </div>
 

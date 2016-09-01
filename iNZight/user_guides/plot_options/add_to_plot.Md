@@ -20,6 +20,7 @@ including size and colour.
 
 ### General Appearance {#general}
 
+///HTML:
 <div class="pull-sm-right text-center">
   <div class="thumbnail">
     <img src="../../img/user_guides/plotoptions/01-cust_1-general-scatter.png" alt="General Appearance">
@@ -27,25 +28,24 @@ including size and colour.
       <small>All plots (bar plots exclude "Plot type" option)</small>
     </div>
   </div>
-  <!-- <div class="thumbnail">
-    <img src="../../img/user_guides/plotoptions/01-cust_1-general-bar.png" alt="General Appearance">
-    <div class="caption">
-      <small>Bar plots (no plot type option)</small>
-    </div>
-  </div> -->
 </div>
+///
 
 This section is common across all graphs, with the exception of the
 options listed in the "Plot type" dropdown.
 
-- __Plot type__:
-  allows overriding the default plot chosen by iNZight,
-  which is based on dataset size.
+///HTML:
+<ul>
+  <li>
+    <p><strong>Plot type</strong>:
+    allows overriding the default plot chosen by iNZight,
+    which is based on dataset size.</p>
 
-  <!-- <a href="#" id="togglePlottypes">Show/hide available plot types</a> -->
-  <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#plottypes">
-    Available Plot Types
-  </button>
+    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#plottypes">
+      Available Plot Types
+    </button>
+  </li>
+</ul>
 
   <div id="plottypes" class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg" role="document">
@@ -130,6 +130,7 @@ options listed in the "Plot type" dropdown.
       </div>
     </div>
   </div>
+  ///
 
 - __Background colour__:
   you can customise the background colour of your graphs to suit your preference,
@@ -142,7 +143,7 @@ options listed in the "Plot type" dropdown.
 
   This works as a baseline, so all other size settings will be multiplied by this value.
 
-<div class="clearfix"></div>
+///HTML:<div class="clearfix"></div>///
 ### Size / Point Size
 
 Control point sizes on scatter plots and dot plots,
@@ -150,14 +151,15 @@ hexagons on hexbin plots, and bar-widths on histograms.
 
 __Size by variable__:
 On scatter plots, you can choose a numeric variable to be used to resize the points.
+///HTML:
 <div class="text-center">
   <div class="thumbnail">
     <img src="../../img/user_guides/plotoptions/01-cust_2-size-scatter.png" alt="Adjust point size">
   </div>
 </div>
+///
 
-
-<div class="clearfix"></div>
+///HTML:<div class="clearfix"></div>///
 ### Colour / Point Colour
 
 Change the colour of points, hexagons, and bars.
@@ -171,40 +173,52 @@ __Colour by variable__:
 Select a variable to code colours.
 Several choices for colour palettes will be offered.
 
+///HTML:
 <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#palettes">
   Read about iNZight's palettes
 </button>
 
 <div class="modal fade" id="palettes" markdown="1" tabindex="-1" role="dialog">
-<div class="modal-dialog modal-lg" role="document"><div class="modal-content">
-<div class="modal-header" markdown="1">
-  #### iNZight Colour Palettes
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4>iNZight Colour Palettes</h4>
+      </div>
+
+      <div class="modal-body">
+        <p>iNZight now uses some 3rd party colour palettes,
+        which are available depending on the type of variable (categorical or numeric).</p>
+
+        <p>
+          The <strong>numeric colour palette</strong> we use by default come from the
+          <a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html"><code>viridis</code> package</a>
+          Besides being pretty, these palettes have some great features:
+          <ul>
+            <li>they are perceptually uniform, so changes at one of the spectrum reprent the same change in value as those at the other end</li>
+            <li>they retain this property when printed in grayscale</li>
+            <li>and they can be percieved by people with the more common types of colourblindness.</li>
+          </ul>
+        </p>
+
+        <p>The <strong>categorical colour palettes</strong> come from the
+          <a href="http://colorbrewer2.org/#type=qualitative&scheme=Accent&n=3"><code>RColourBrewer</code> package based on ColorBrewer2</a>.
+        </p>
+
+        <p>
+          Lastly, we've included several other options for you to try out on the off change it suits your data, including the old iNZight "rainbow" we used as default in previous versions.
+        </p>
+
+        <p>Try using different background colours too; the `viridis` colours go particularly well with a dark gray background.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
+///
 
-<div class="modal-body" markdown="1">
-  iNZight now uses some 3rd party colour palettes,
-  which are available depending on the type of variable (categorical or numeric).
-
-  The __numeric colour palettes__ we use by default come from the
-  [`viridis` package](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html).
-  Besides being pretty, these palettes have some great features:
-  - they are perceptually uniform, so changes at one of the spectrum reprent the same change in value as those at the other end
-  - they retain this property when printed in grayscale
-  - and they can be percieved by people with the more common types of colourblindness.
-
-The __categorical colour palettes__ come from the [`RColourBrewer` package based on ColorBrewer2](http://colorbrewer2.org/#type=qualitative&scheme=Accent&n=3).
-
-Lastly, we've included several other options for you to try out on the off change it suits your data, including the old iNZight "rainbow" we used as default in previous versions.
-
-Try using different background colours too; the `viridis` colours go particularly well with a dark gray background.
-</div>
-<div class="modal-footer">
-  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-</div>
-</div></div>
-</div>
-
-<div class="space-above"></div>
+///HTML:<div class="space-above"></div>///
 
 - __Categorical variable__: Each category will be assigned a colour (depending on your chosen palette)
 
@@ -214,30 +228,36 @@ Try using different background colours too; the `viridis` colours go particularl
 
   _One-way bar plots_: the bars are segmented depending on the proportions of each category and coloured accordingly.
 
-- __Numeric variable__: a linear scale is set up from the lowest to the highest value, and each point is coloured based on its value.
+///HTML:
+<ul>
+  <li>
+    <p><strong>Numeric variable</strong>: a linear scale is set up from the lowest to the highest value, and each point is coloured based on its value.</p>
 
-  If you click the __Use rank__ checkbox, the colours will be based on quantiles,
-  rather than absolute values. This can be helpful if you have a few very large values of the chosen variable.
+    <p>If you click the <strong>Use rank</strong> checkbox, the colours will be based on quantiles,
+    rather than absolute values. This can be helpful if you have a few very large values of the chosen variable.</p>
 
-  <div class="note" markdown="1">
-    NOTE: if you choose a numeric variable on a __hexbin plot__,
-    iNZight will convert it to a 4-level categorical variable.
-  </div>
-
-<div class="row text-center">
-  <div class="thumbnail">
-    <img src="../../img/user_guides/plotoptions/01-cust_3-color-cat.png" alt="Categorical colour palette">
-    <div class="caption">
-      <small>Colour by a categorical variable<br>Dot / Scatter / Hex / One-way Bar</small>
+    <div class="note">
+      <p>NOTE: if you choose a numeric variable on a <strong>hexbin plot</strong>,
+      iNZight will convert it to a 4-level categorical variable.</p>
     </div>
-  </div>
-  <div class="thumbnail">
-    <img src="../../img/user_guides/plotoptions/01-cust_3-color-num.png" alt="Categorical colour palette">
-    <div class="caption">
-      <small>Colour by a numeric variable<br>Dot / Scatter</small>
+
+    <div class="row text-center">
+      <div class="thumbnail">
+        <img src="../../img/user_guides/plotoptions/01-cust_3-color-cat.png" alt="Categorical colour palette">
+        <div class="caption">
+          <small>Colour by a categorical variable<br>Dot / Scatter / Hex / One-way Bar</small>
+        </div>
+      </div>
+      <div class="thumbnail">
+        <img src="../../img/user_guides/plotoptions/01-cust_3-color-num.png" alt="Categorical colour palette">
+        <div class="caption">
+          <small>Colour by a numeric variable<br>Dot / Scatter</small>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+  </li>
+</ul>
+///
 
 __Cycle levels__:
 You can cycle through the various levels (or quantiles for numeric variables),
@@ -248,7 +268,7 @@ You can adjust the number of quantiles to use by adjusting the number in the box
 
 
 
-<div class="clearfix"></div>
+///HTML:<div class="clearfix"></div>///
 ### Point Symbols
 
 Select different symbols to use on scatter plots and dot plots.
@@ -259,18 +279,20 @@ and iNZight will give each its own symbol.
 This is particularly useful when creating colour-blind friendly plots,
 or for black-and-white printed graphs.
 
+///HTML:
 <div class="panel panel-warning">
   <div class="panel-heading">
     <strong>WARNING: transparency can make drawing very slow if you have a large dataset</strong>
   </div>
-  <div class="panel-body" markdown="1">
-  Diamonds and triangles can take a long time to draw if you have a big data set (at least on Windows).
-  Circles (the default) and squares seem to be OK.
+  <div class="panel-body">
+    <p>Diamonds and triangles can take a long time to draw if you have a big data set (at least on Windows).
+    Circles (the default) and squares seem to be OK.</p>
 
-  iNZight will turn off transparency if you change plotting symbol to one of these; you can put transparency back,
-  but iNZight may become unresponsive while it tries to draw the graph.
+    <p>iNZight will turn off transparency if you change plotting symbol to one of these; you can put transparency back,
+    but iNZight may become unresponsive while it tries to draw the graph.</p>
   </div>
 </div>
+///
 
 ***
 ## Trend Lines and Curves  {#lines}
@@ -281,14 +303,13 @@ you can add various types of lines to the graph.
 
 
 ### Trend Curves
+///HTML:
 <div class="pull-sm-right text-center">
   <div class="thumbnail">
     <img src="../../img/user_guides/plotoptions/02-trendlines.png" alt="General Appearance">
-    <!-- <div class="caption">
-      <small>Trend Lines and Curves</small>
-    </div> -->
   </div>
 </div>
+///
 
 
 ///SCRIPT: https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML ///
@@ -360,14 +381,13 @@ are the same (for example, "before" and "after" measurements).
 
 ### Axis Labels
 
+///HTML:
 <div class="pull-sm-right text-center">
   <div class="thumbnail">
     <img src="../../img/user_guides/plotoptions/03-axes.png" alt="Axes and Labels">
-    <!-- <div class="caption">
-      <small>Trend Lines and Curves</small>
-    </div> -->
   </div>
 </div>
+///
 
 Type your own labels to override those automatically created by iNZight.
 
@@ -396,6 +416,8 @@ effectively allowing you to "zoom in" on specific regions.
 On bar charts, you can adjust the total number of bars shown at a time.
 This is useful if a categorical factor has too many levels to display all at ones.
 
+
+///HTML:<div class="clearfix"></div>///
 ***
 ## Identify Points   {#identify}
 
@@ -403,14 +425,13 @@ This is useful if a categorical factor has too many levels to display all at one
 This allows users to label points in one of three ways (text labels, colour labels, and related points), using one of three methods (clicking, selecting values, or labelling extreme points).
 
 ___How do you want to label points?___
+///HTML:
 <div class="pull-sm-right text-center">
   <div class="thumbnail">
     <img src="../../img/user_guides/plotoptions/04-identify_1-how.png" alt="Locate Points">
-    <!-- <div class="caption">
-      <small>Trend Lines and Curves</small>
-    </div> -->
   </div>
 </div>
+///
 
 - __Text labels__ allows you to select a variable from the data set with which to label selected points
 - __Colour points__ allows selected points to be filled in with a selected color. (See [ways of choosing colours](#ColourChoices).)
@@ -423,43 +444,39 @@ ___How do you want to label points?___
 
 ___How do you want to select points?___
 
+///HTML:
 <div class="pull-sm-right text-center">
   <div class="thumbnail">
     <img src="../../img/user_guides/plotoptions/04-identify_2-click.png" alt="Locate Points">
-    <!-- <div class="caption">
-      <small>Trend Lines and Curves</small>
-    </div> -->
   </div>
 </div>
+///
 
 - __Clicking with the mouse__: After clicking "Click to Locate ...", you can then click a point on the plot.
   iNZight will then label it using the options you defined above. You can select multiple points by clicking the button again and locating new points without losing the current selection.
 
    _Note_: due to the way the software works, you may see a "Busy" cursor after you click the "Click to Locate ..." button. This will not go away until you click a point, so go ahead and click points ignoring the cursor.
 
-
+///HTML:
 <div class="clearfix"></div>
 <div class="pull-sm-right text-center">
   <div class="thumbnail">
     <img src="../../img/user_guides/plotoptions/04-identify_2-value.png" alt="Locate Points">
-    <!-- <div class="caption">
-      <small>Trend Lines and Curves</small>
-    </div> -->
   </div>
 </div>
+///
 - __Select by value of ...__: this will allow you to select a variable to use to select points.
 
    If the variable is a factor (or a numeric with less than 20 unique values) a slider will appear allowing you so quickly select the levels you wish to label. If the variable is numeric, or you want to select multiple levels, you can click the "Select levels ..." button to do so.
 
+///HTML:
 <div class="clearfix"></div>
 <div class="pull-sm-right text-center">
   <div class="thumbnail">
     <img src="../../img/user_guides/plotoptions/04-identify_2-extreme.png" alt="Locate Points">
-    <!-- <div class="caption">
-      <small>Trend Lines and Curves</small>
-    </div> -->
   </div>
 </div>
+///
 - __Extreme values__: This will use a very simple algorithm that will select the points "farthest away" from the bulk of the data.
 
    This will display a slider, allowing you to select more or less points as desired. Once you have selected the points, you can optionally save the selection (e.g., if you want to track the same observations over multiple plots) you can click the "Save these points ..." button. From there you can use the "With the same level of" option to select related points, etc.
@@ -469,4 +486,4 @@ ___How do you want to select points?___
 
 
 
-<div class="clearfix"></div>
+///HTML:<div class="clearfix"></div>///

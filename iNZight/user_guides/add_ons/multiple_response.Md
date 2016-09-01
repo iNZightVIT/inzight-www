@@ -2,6 +2,7 @@
 
 A module that provides the ability for analysing data with multiple (binary) response options. Think of this as a checkbox answer, as opposed to a radiobox:
 
+///HTML:
 <div style="max-width: 800px; margin: 0 auto">
 
 <div style="display:block; max-width: 400px; float: left; margin-right: 80px">
@@ -33,6 +34,7 @@ A module that provides the ability for analysing data with multiple (binary) res
 </div>
 
 <div style="clear:both; height: 50px"></div>
+///
 
 The first only lets you provide one option, so the variable only has one column in the dataset:
 
@@ -76,7 +78,9 @@ Here, we will investigate __tech__: each student was asked to select all technol
 Once you've loading the Multiple Response window, you'll be able to select variables to compare.
 In our example, we will use the variable __tech__, and select the respones __tv__, __internet__, __facebook__, __twitter__, and __skype__.
 
-<div class="note">HINT: To select multiple variables, hold the <code>CTRL</code> key (or Command on Mac).</div>
+///HTML:
+<div class="note">HINT: To select multiple variables, hold the <kbd>CTRL</kbd> key (or Command on Mac).</div>
+///
 
 ![Multiple response plot](../../img/user_guides/advanced/multipleresponse/2_multipleresponse_plot.png) {.width600}
 

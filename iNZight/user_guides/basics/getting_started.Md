@@ -20,15 +20,21 @@ iNZight on Mac is located in __Applications__ > __iNZightVIT__.
 
 You can start iNZight by double-clicking on __iNZight__.
 
+///HTML:
 <div class="panel panel-warning">
   <div class="panel-heading">
     <strong>Unknown Developer Warning</strong>
   </div>
-  <div class="panel-body" markdown="1">
-  If you're unable to start iNZight due to an "Unknown Developer" warning,
-  simply __Right-click__ the iNZight icon, and click __Open__.
-  In the window that pops up, click __Open__ to allow iNZight to run.
+  <div class="panel-body">
+    <p>
+      If you're unable to start iNZight due to an "Unknown Developer" warning,
+      simply __Right-click__ the iNZight icon, and click __Open__.
+      In the window that pops up, click __Open__ to allow iNZight to run.
+    </p>
 
-  You should only have to do this the first time you start iNZight.
+    <p>
+      You should only have to do this the first time you start iNZight.
+    </p>
   </div>
 </div>
+///

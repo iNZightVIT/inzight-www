@@ -44,6 +44,8 @@ if (isset($topic)) {
         echo "</div>";
       } else if (preg_match("/^SCRIPT: /", $text)) {
         echo "<script src='". str_replace("SCRIPT: ", "", $text) ."'></script>";
+      } else if (preg_match("/^HTML:/", $text)) {
+        echo str_replace("HTML:", "", $text);
       } else {
         echo $Pd->text($text);
       }
