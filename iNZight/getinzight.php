@@ -199,6 +199,22 @@ if ($auto) {
         </a>
       </div>
 
+      <hr>
+      <div class="">
+        <h4 class="panel-title">OS X 10.8 and earlier</h4>
+        <p>
+          Unfortunately, we no longer support iNZight on OS X 10.8 and earlier.
+        </p>
+        <p>
+          If you are still running one of these versions of OS X, you'll need to install iNZight version 2.5:
+        </p>
+        <p>
+          <a href="downloads/iNZightVIT-2.5.1-osx-ml.pkg">iNZightVIT 2.5 Installer for OS X 10.6&ndash;10.8</a>
+          (<?php echo getFileSize($link_base . "iNZightVIT-2.5.1-osx-ml.pkg"); ?>)
+        </p>
+
+      </div>
+
       <div id="macInstall_full">
         <h4>Awesome! iNZight is on its way to your Downloads folder.</h4>
 
