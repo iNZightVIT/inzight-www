@@ -12,7 +12,8 @@ Npull:
 
 
 fixPermissions:
-	sudo chmod -R 775 .
+	find . -type f -exec chmod 666 {} +
+	find . -type d -exec chmod 775 {} +
 
 nothing:
 	sudo chmod 777 iNZight/newsletters/newmailer.Md
