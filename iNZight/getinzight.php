@@ -308,6 +308,41 @@ if ($auto) {
         </div>
       </div>
 
+      <p><strong>Alternatively</strong>, you can install it through R yourself:</p>
+      <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#Rcommands">
+        Manual R Package Instructions
+      </button>
+
+      <div id="Rcommands" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4>Install iNZight through R</h4>
+            </div>
+
+            <div class="modal-body">
+              <p>
+                If you use R yourself, you may prefer to install iNZight yourself.
+              </p>
+
+<pre>install.packages('iNZight', dependencies = TRUE,
+                 repos = c('http://r.docker.stat.auckland.ac.nz', 'https://cran.rstudio.com'))</pre>
+
+              <p>
+                The <code>dependencies = TRUE</code> argument is recommended, as it will ensure you get the full set of iNZight packages (<code>Depends</code>, <code>Imports</code>, <em>and</em> <code>Suggests</code>), some of which include colour palettes and add-on modules.
+              </p>
+              <p>
+                You may also switch <code>https://cran.rstudio.com</code> with your preferred CRAN mirror.
+              </p>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <hr>
       <h4 class="space-above">Run iNZight</h4>
 
@@ -345,5 +380,5 @@ if ($auto) {
 
 
 <?php
-require_once($rel . 'assets/includes/3-bottom_matter.php'); 
+require_once($rel . 'assets/includes/3-bottom_matter.php');
 ?>
