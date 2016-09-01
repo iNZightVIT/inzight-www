@@ -10,4 +10,4 @@ You can also obtain numerical summaries for the variables by clicking on the __G
 
 This is all shown in the ___video___ below.
 
-///VIDEO: https://www.youtube.com/embed/fNrN_01BSJY ///
+///VIDEO: https://www.youtube.com/embed/ZEX13Sz8GEc ///

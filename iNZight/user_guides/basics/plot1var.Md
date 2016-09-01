@@ -11,7 +11,7 @@ You can also obtain a numeric summary of the variable by clicking the __Get Summ
 The following ___video___ demonstrates how to use iNZight to plot a single variable.
 <div class="note">NOTE: the video was made using an older version of iNZight, so there will be some minor differences in the appearance.</div>
 
-///VIDEO: https://www.youtube.com/embed/OwYutOJNdko ///
+///VIDEO: https://www.youtube.com/embed/idEQ6VULiu4 ///
 
 
 ## You can follow along
