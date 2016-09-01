@@ -49,7 +49,11 @@ if ($pkg == "none") { ?>
     The change log for the modules in the Advanced menu (e.g, Time Series, Model Fitting, etc.)
     are contained in the following package:
     <ul>
-      <li><a href="./?pkg=iNZightModules">iNZightModules</a></li>
+      <?php
+      foreach (array("iNZightModules") as $pkg) {
+      echo '<li><a href="./?pkg='.$pkg.'">' . $pkg . '</a></li>';
+      }
+      ?>
     </ul>
   </p>
 
@@ -57,7 +61,7 @@ if ($pkg == "none") { ?>
     The remaining change logs for other packages related to iNZight can be found here:
     <ul>
       <?php
-      foreach (array("iNZightPlots", "iNZightTS", "iNZightMR", "iNZightRegression") as $pkg) {
+      foreach (array("iNZightPlots", "iNZightTS", "iNZightMR", "iNZightRegression", "iNZightMaps") as $pkg) {
       echo '<li><a href="./?pkg='.$pkg.'">' . $pkg . '</a></li>';
       }
       ?>
@@ -68,9 +72,14 @@ if ($pkg == "none") { ?>
 
 <?php } else { ?>
 
+  <h3>Changes for <?php echo $pkg; ?></h3>
   <div class="rhistory">
+
     <?php
-      include "changes/" . $pkg . ".php";
+      include_once($rel . 'assets/libraries/md.php');
+      $Pd = new ParsedownExtra();
+      $text = file_get_contents("changes/" . $pkg . ".Md");
+      echo $Pd->text($text);
     ?>
   </div>
 
