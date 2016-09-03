@@ -33,4 +33,4 @@ that came with iNZight.
 
 <div class="note">NOTE: the video was made using an older version of iNZight, so there will be some minor differences in the appearance.</div>
 
-///VIDEO: https://www.youtube.com/embed/PsoCp8z8WaE ///
+///VIDEO: https://www.youtube.com/embed/q8a3ZWvUPmA ///
