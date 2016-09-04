@@ -21,13 +21,14 @@ require_once($rel . 'assets/includes/2-header.php');
     if ('.' === $file) continue;
     if ('..' === $file) continue;
     if ($file === "template.html") continue;
+    if ($file === "index.php") continue;
 
     if (filetype($file) === "link") continue;
 
-    if (preg_match("/.html/", $file)) {
+    if (preg_match("/.php/", $file)) {
       $date = explode("-", $file);
       $title = str_replace("_", " ", $date[3]);
-      $title = str_replace(".html", "", $title);
+      $title = str_replace(".php", "", $title);
       echo "$date[2]/$date[1]/$date[0] - <a href='$file'>$title</a>";
       echo "<br>";
     }
