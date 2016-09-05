@@ -2,11 +2,6 @@
 
 include_once("assets/objects/setup.php");
 
-if (preg_match('/stat.auckland.ac.nz/', $_SERVER['HTTP_HOST']) === 1) {
-	include_once('assets/includes/analyticstracking.php');
-} else {
-	echo "<!-- development environment -->";
-}
 
 /**
  * Copyright 2012 Armand Niculescu - media-division.com

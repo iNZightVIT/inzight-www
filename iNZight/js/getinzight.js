@@ -32,7 +32,7 @@ $(document).ready(function() {
         url = $(this).data("filename");
 
     $("#osDesc_mac .os-icon").addClass("animate-away");
-    $("#osDesc_mac>h4").fadeOut();
+    $("#osDesc_mac>h4, #osDesc_mac>.depreciation-notice").fadeOut();
 
     setTimeout(function() {
       $("#osDesc_mac .os-icon").addClass("hidden");

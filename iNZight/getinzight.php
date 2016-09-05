@@ -199,8 +199,8 @@ if ($auto) {
         </a>
       </div>
 
-      <hr>
-      <div class="">
+      <div class="depreciation-notice">
+        <hr>
         <h4 class="panel-title">OS X 10.8 and earlier</h4>
         <p>
           Unfortunately, we no longer support iNZight on OS X 10.8 and earlier.
