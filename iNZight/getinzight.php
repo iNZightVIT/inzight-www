@@ -380,6 +380,7 @@ if ($auto) {
       <p>
         If you no longer want iNZight, just run
         <pre>cd ~/iNZightVIT &amp;&amp; make uninstall</pre>
+        (You might need to add <code>sudo</code> before <code>make uninstall</code>).<br>
         This will delete the <code>inzight</code> command (if you made one)
         and delete the <code>~/iNZightVIT</code> directory.
       </p>
