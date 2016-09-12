@@ -250,7 +250,15 @@ if ($auto) {
         </p>
 
         <hr>
-        <h4>Dependencies</h4>
+        <h4>
+          Dependencies
+          <p class="pull-right">
+            <!-- <small>On Twitter or Github?</small> -->
+            <a href="https://gitter.im/iNZightVIT/Lobby">
+              <img src="https://badges.gitter.im/iNZightVIT/lobby.png" alt="Get help on Gitter" />
+            </a>
+          </p>
+        </h4>
 
         <p>
           To run iNZight, you'll need the following dependencies.
