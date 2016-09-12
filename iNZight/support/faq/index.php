@@ -77,7 +77,8 @@ if (isset($_GET["section"])) {
       }
     } else { ?>
       If you're having trouble with iNZight, this should be your first stop.
-      There are some issues we know about, and offer solutions in the following pages.
+      There are some issues we know about, and offer solutions in the following pages. <br>
+	  [<i>These pages deal only with issues for the current version of iNZight (version 3). For issues with older versions, see the <a href="https://www.stat.auckland.ac.nz/~wild/iNZight_2016-08/support/faq/"> FAQ pages from the old website</a>.</i>]
   <?php } ?>
 </p>
 

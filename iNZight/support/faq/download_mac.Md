@@ -1,14 +1,4 @@
-# iNZight is running, but its very slow/laggy on Mavericks/Yosemite/El Capitan {#disable-appnap}
-
-This is a problem caused by "App Nap". To disable this feature ... 
-1. Find the __iNZightVIT__ folder (normally it would be inside Applications).
-2. __Single-click__ the __iNZightVIT__ icon inside the iNZightVIT folder, and press __Command-I__ (that's i not L) on your keyboard. <br>
-<sub> If your initial install was older there will not be a __iNZightVIT__ icon inside the iNZightVIT folder. Instead there will be a __R__ icon. Apply the instructions to that instead. <br>
-3. In the Info window that opens, tick the box to __Prevent App Nap__. (If you don't see this option, it simply means your machine doesn't support Power Nap)
-
-It should work the next time you start up iNZightVIT.
-
-App Nap behaviour can be strange. We have had several reports from people who have found that speed is much better when the R-console window is sitting directly behind the iNZight window.
+[<i>These pages deal only with issues for the current version of iNZight (version 3). For issues with older versions, see the <a href="https://www.stat.auckland.ac.nz/~wild/iNZight_2016-08/support/faq/"> FAQ pages from the old website</a>.</i>]
 
 # I can't start iNZight after upgrading to OS X 10.10 Yosemite {#yosemite-update}
 
@@ -50,4 +40,4 @@ If you have a newer version of iNZight (version 2.0.3 or later), then we would l
 
 Especially in the Snow Leopard/Lion/Mountain Lion versions of iNZightVIT, there are a some error messages that may look scary. The only time you should worry about these is if you don't get the iNZight window opening.
 
-If iNZight is not working, and you're getting error messages, copy them and [send us a bug report](/support/contact/) and we will get back to you as soon as possible.
+If iNZight is not working, and you're getting error messages, copy them and [send us a bug report](../contact/) and we will get back to you as soon as possible.

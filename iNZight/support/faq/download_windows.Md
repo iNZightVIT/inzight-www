@@ -1,3 +1,6 @@
+
+[<i>These pages deal only with issues for the current version of iNZight (version 3). For issues with older versions, see the <a href="https://www.stat.auckland.ac.nz/~wild/iNZight_2016-08/support/faq/"> FAQ pages from the old website</a>.</i>]
+
 # Windows wont let me run the installer due to security issues
 
 If you are not an admin user, Windows might not let you run the installer if you open it directly from your web browser.
@@ -9,40 +12,14 @@ The reason for this is because we haven't paid Microsoft to give us a license, s
 
 ****
 
-## Using ZIP file instead of the new Windows Installer:
-
-# I don't understand zip files and don't know what to do with know what to do with iNZightVIT-latest-zipfile {#unzipping-inzight}
-
-This video shows how to drag the iNZightVIT folder (the one we want to use) out of iNZightVIT-latest-zipfile<br>
-///VIDEO: https://www.youtube.com/embed/7Lh1Uo8CzSs ///
 
 
-# I'm getting the error: 'Windows cannot find 'prog_files/bin/i386/Rgui.exe'. Make sure you typed the name correctly, and then try again.' {#cannot-find-inzight}
+# I can't get iNZight to run {#inzight-wont-run}
 
-This is typically due to permissions on the computer. Often, iNZight will not be allowed to run from the Desktop. Instead, you can copy the __iNZightVIT__ folder to somewhere on the __C:/__ drive and run it from there.
+If iNZight seems to have installed properly but will not run it may be because you are using an institutionally-owned computer with security settings which are preventing iNZight from running.
 
-If you still see the error message, you can try running iNZight from a USB stick (simply copy the folder to one and run from there).
+- Sometimes in this case the security settings will still allow iNZight to run from a memory stick. To try this out, either install onto the stick or copy the INZightVIT folder from wherever you have installed it onto the stick. To start, go inside the iNZight VIT folder and click the iNZight shortcut. (Desktop shortcuts may not work as the drive letter for the disk is not the same every timew you insert it.)
 
-Failing this, you may need to follow one of the options below.
-
-
-# I can't get iNZight to run, even from a memory stick! {#inzight-wont-run}
-
-If you are using an institutionally-owned computer, it may have overly high security settings which are preventing iNZight from running. To allow iNZight to run, you will need to ask an administrator to:
-
-- Place the __iNZightVIT__ folder inside __Program Files__
-- Create a shortcut to __START_iNZightVIT.bat__ on the desktop <br>
-(right click on START_iNZightVIT, select Create Shortcut. It will automatically be put on the desktop. Do the same with UPDATE_iNZightVIT.)
-
-You can use this shortcut to start iNZight.
+- Otherwise you will need to involve someone with administrator privileges to install iNZightVIT inside __Program Files__.
 
 
-# My school disables `.bat` files; how can I make iNZightVIT available to students? {#disabled-bat-files}
-
-- Create a shortcut to `prog_files\bin\i386\Rgui.exe` for them to use to fire up `R`
-- They will then have to paste the following into the R console window:
-```
-library(vit)
-iNZightVIT()
-```
-- When students etc want to find iNZight's data folder, they will have to click on the `iNZightVIT` tab at the top of the browse navigation panel
