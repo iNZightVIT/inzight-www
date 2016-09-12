@@ -268,7 +268,16 @@ if ($auto) {
 
     <!-- ###################################################################### LINUX -->
     <div class="col-md-12 col-lg-10 col-lg-push-1 os-desc" id="osDesc_linux">
-      <h4>Installing iNZight on Linux</h4>
+
+      <h4>
+        Installing iNZight on Linux
+        <p class="pull-right">
+          <!-- <small>On Twitter or Github?</small> -->
+          <a href="https://gitter.im/iNZightVIT/Lobby">
+            <img src="https://badges.gitter.im/iNZightVIT/lobby.png" alt="Get help on Gitter" />
+          </a>
+        </p>
+      </h4>
 
       <p>
         You'll first need to make sure you have the necessary dependencies.

@@ -10,7 +10,15 @@ unset($subdirs["default"]);
 ?>
 
 <div class="container">
-  <h3>iNZight Support</h3>
+  <h3>
+    iNZight Support
+    <p class="pull-right">
+      <!-- <small>On Twitter or Github?</small> -->
+      <a href="https://gitter.im/iNZightVIT/Lobby">
+        <img src="https://badges.gitter.im/iNZightVIT/lobby.png" alt="Get help on Gitter" />
+      </a>
+    </p>
+  </h3>
 
   <p>
     There are several options available to help you if you get stuck. If you haven't yet checked out the user guides,

@@ -174,6 +174,15 @@ if (isset($_GET["section"])) {
   </div>
   <?php } ?>
 
+  <div>
+    <p>
+      <a href="https://gitter.im/iNZightVIT/Lobby">
+        <img src="https://badges.gitter.im/iNZightVIT/lobby.png" alt="Get help on Gitter" />
+      </a> &mdash;
+      If you're on Twitter or Github, and still can't find an answer to your problem,
+      you could try our public chat.
+    </p>
+  </div>
 </div>
 
 <?php

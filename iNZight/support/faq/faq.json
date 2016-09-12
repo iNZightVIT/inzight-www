@@ -5,7 +5,7 @@
     "sections": {
       "download" : {
         "title" : "Download Issues",
-        "desc" : "If you can't download iNZight, perhaps due to security isssues, try here. If you have iNZight downloaded but you can't get it to run, check the Installation sections."
+        "desc" : "Solutions to some common download problems. If you have successfully downloaded iNZight but can't get it to run, check the Installation sections."
       },
       "windows" : {
         "title" : "Windows Installation Issues"
