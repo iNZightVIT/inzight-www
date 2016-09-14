@@ -1,7 +1,7 @@
 <?php
   $baseURL = "https://www.stat.auckland.ac.nz/~wild/iNZight/";   // This should be the main host ...
   $download_dir = "downloads/";
-  $cloud_URL = "";
+  $amazon = "https://futurelearn.s3.amazonaws.com/";
   $include_secondary_links = false;
   $cloud_as_main = false;  // if TRUE, the *main* links will point to the cloud files
 

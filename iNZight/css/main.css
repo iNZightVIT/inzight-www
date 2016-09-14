@@ -8048,6 +8048,9 @@ a.thumb {
 #osSelect {
   margin-top: 50px; }
 
+.backuplink a.original {
+  display: none; }
+
 a.os-icon {
   padding-top: 30px;
   font-weight: normal; }

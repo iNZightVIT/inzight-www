@@ -119,7 +119,17 @@ if ($auto) {
       ?>
     </div>
 
+
     <div class="legacy">
+      <div class="row">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="onCampus">
+            Downloading from the <strong>University of Auckland campus</strong>?
+            Check to download from the local server (faster, but only from on campus).
+          </label>
+        </div>
+      </div>
       <hr>
       <h5>Prefer to go Legacy?</h5>
 
@@ -147,10 +157,11 @@ if ($auto) {
     <div class="col-md-12 col-lg-10 col-lg-push-1 os-desc" id="osDesc_windows">
       <h4>Great! Your download should start automatically.</h4>
 
-      <p class="small">
+      <small class="backuplink">
         If not, use this link:
-        <a href="<?php echo $link_base . $download_links["Windows"]; ?>"><?php echo $linkBase . $download_links["Windows"]; ?></a>
-      </p>
+        <a class="original" href="<?php echo $link_base . $download_links["Windows"]; ?>"><?php echo $linkBase . $download_links["Windows"]; ?></a>
+        <a class="alt" href="<?php echo $amazon . $download_links["Windows"]; ?>"><?php echo $amazon . $download_links["Windows"]; ?></a>
+      </small>
 
       <hr>
       <?php include('instructions/install_windows.php'); ?>
@@ -218,9 +229,10 @@ if ($auto) {
       <div id="macInstall_full">
         <h4>Awesome! iNZight is on its way to your Downloads folder.</h4>
 
-        <p>
+        <p class="backuplink">
           If it doesn't happen automatically, use this link:<br>
-          <a href="<?php echo $link_base . $download_links["osx"]; ?>"><?php echo $linkBase . $download_links["osx"]; ?></a>
+          <a class="original" href="<?php echo $link_base . $download_links["osx"]; ?>"><?php echo $linkBase . $download_links["osx"]; ?></a>
+          <a class="alt" href="<?php echo $amazon . $download_links["osx"]; ?>"><?php echo $amazon . $download_links["osx"]; ?></a>
         </p>
 
         <hr>
@@ -340,6 +352,21 @@ if ($auto) {
           </p>
         </div>
       </div>
+      <div class="panel panel-warning">
+        <div class="panel-heading">
+          <h5 class="panel-title">Getting error messages?</h5>
+        </div>
+        <div class="panel-body">
+          <p>
+            <strong>Missing certificates:</strong>
+            <code>curl: (77) error setting certificate verify locations</code><br>
+            You need to install <code>ca-certificates</code> (using <code>apt-get install</code> on debian-based OS).<br>
+            On some distros (such as Elementary OS) you may need to tell curl where to find them.
+            Run this in a terminal:
+            <pre>export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt</pre>
+          </p>
+        </div>
+      </div>
 
       <p><strong>Alternatively</strong>, you can install it through R yourself:</p>
       <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#Rcommands">
@@ -376,6 +403,7 @@ if ($auto) {
         </div>
       </div>
 
+
       <hr>
       <h4 class="space-above">Run iNZight</h4>
 
@@ -401,7 +429,9 @@ if ($auto) {
         This will delete the <code>inzight</code> command (if you made one)
         and delete the <code>~/iNZightVIT</code> directory.
       </p>
+
     </div>
+
   </div>
 
 </div>

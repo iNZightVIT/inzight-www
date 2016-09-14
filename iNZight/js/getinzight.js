@@ -20,10 +20,22 @@ $(document).ready(function() {
     // start the download?
     if (os == "windows") {
       setTimeout(function() {
-        window.location.href = 'download.php?file=' + url;
+        window.location.href =
+          ($("#onCampus").is(":checked") ? 'download.php?file=' :
+            'https://futurelearn.s3.amazonaws.com/') + url;
       }, 600);
     }
 
+  });
+
+  $("#onCampus").on('change', function() {
+    if ($(this).is(":checked")) {
+      $(".backuplink a.original").show();
+      $(".backuplink a.alt").hide();
+    } else {
+      $(".backuplink a.alt").show();
+      $(".backuplink a.original").hide();
+    }
   });
 
   $("#osDesc_mac .os-icon").on("click", function(e) {
@@ -43,7 +55,9 @@ $(document).ready(function() {
     }, 400);
 
     setTimeout(function() {
-      window.location.href = 'download.php?file=' + url;
+      window.location.href =
+        ($("#onCampus").is(":checked") || file == "self" ? 'download.php?file=' :
+          'https://futurelearn.s3.amazonaws.com/') + url;
     }, 600);
 
   });
