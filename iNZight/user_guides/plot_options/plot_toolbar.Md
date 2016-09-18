@@ -8,37 +8,38 @@ The buttons are described below, from left to right.
 
 
 
-## New Plot Window
+## New Plot Window {.header-image .button-new-plot-window}
 
 Clicking this button will open up a new graphics window that uses the default R device instead of the "container" used by iNZight. This has two particular uses:
 - To permit copying and pasting of graphics (including in metafile form) by right-clicking on the graphics window,
 - To permit easier resizing of the plotting window, including full screen.
 
 
-## New Plot
+## New Plot Tab {.header-image .button-new-plot-tab}
 
 This will create a new plot tab, allowing the currently displayed plot to be retained.
 Subsequent plots will use the new tab.
 You can switch between tabs by _double-clicking_ on the tab you wish to plot into.
 
 
-## Refresh
+## Redraw {.header-image .button-redraw-plot}
 
-Use if the plot window seems to have stopped working or is not displaying your plot properly. It re-plots the data and usually corrects the error.
+Use if the plot window seems to have stopped working or is not displaying your plot properly.
+It re-draws the data and usually corrects the error.
 
 
 
-## Rename
+## Rename Plot Tab {.header-image .button-rename-plot-tab}
 
 Used to rename the tab of the current plotting window.
 
 
-## Save
+## Save Plot {.header-image .button-save-plot}
 
 Enables you to save the contents of the displayed plot as a file (in `.jpeg`, `.png`, `.bmp`, `.tiff`, or `.pdf` formats).
 
 
-## Close
+## Close Tab {.header-image .button-close-plot-tab}
 
 This will close the current __plot tab__, _not the iNZight window_.
 

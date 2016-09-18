@@ -7971,6 +7971,18 @@ h1.header-image, h2.header-image, h3.header-image {
   background-position: left center;
   background-repeat: no-repeat;
   background-size: 30px; }
+  h1.header-image.button-new-plot-window, h2.header-image.button-new-plot-window, h3.header-image.button-new-plot-window {
+    background-image: url(../img/user_guides/plotoptions/toolbar/newplot.png); }
+  h1.header-image.button-new-plot-tab, h2.header-image.button-new-plot-tab, h3.header-image.button-new-plot-tab {
+    background-image: url(../img/user_guides/plotoptions/toolbar/newtab.png); }
+  h1.header-image.button-redraw-plot, h2.header-image.button-redraw-plot, h3.header-image.button-redraw-plot {
+    background-image: url(../img/user_guides/plotoptions/toolbar/redraw.png); }
+  h1.header-image.button-rename-plot-tab, h2.header-image.button-rename-plot-tab, h3.header-image.button-rename-plot-tab {
+    background-image: url(../img/user_guides/plotoptions/toolbar/rename.png); }
+  h1.header-image.button-save-plot, h2.header-image.button-save-plot, h3.header-image.button-save-plot {
+    background-image: url(../img/user_guides/plotoptions/toolbar/saveplot.png); }
+  h1.header-image.button-close-plot-tab, h2.header-image.button-close-plot-tab, h3.header-image.button-close-plot-tab {
+    background-image: url(../img/user_guides/plotoptions/toolbar/closetab.png); }
   h1.header-image.button-add-to-plot, h2.header-image.button-add-to-plot, h3.header-image.button-add-to-plot {
     background-image: url(../img/user_guides/plotoptions/toolbar/add-to-plot.png); }
   h1.header-image.button-remove-additions, h2.header-image.button-remove-additions, h3.header-image.button-remove-additions {
