@@ -29,13 +29,16 @@ set start date to 2.
 
 
 __2. To do this for daily data__, use the following values for the Provide Time Information window:
--	__Start Date__: set this to 1 (or, if you have daily data starting on, say, Friday, enter 5, etc.)*
--	__Season Number__: the number of the day-of-the-week you start in (e.g., 1 = Monday, 5 = Friday, etc)**
+-	__Start Date__: set this to 1*
+-	__Season Number__: the number of the day-of-the-week of the first observation
+  (e.g., if you have a weekly cycle with 7 days per week, and the first observation is on a Tuesday,
+  set this to 2 if you want weeks to start on a Monday)
 -	__Frequency__: set this to 7 (for all days of the week), or 5 (if you only go by weekdays)
 
-*This assumes your cycle is over days of the week; if you prefer a fortnightly (or otherwise) cycle, you'll need to make sure to adjust the frequency accordingly.
-
-**There's no reason for the days of a week to start on "Monday"; if you prefer cycles to run Sunday to Saturday, then just remember that 1 = Sunday (so, if your first observation is from a Tuesday, you want to set season number = 3).
+*if it makes sense for the data not to start on the first week (or whatever your chosen cycle is),
+you can adjust the start date.
+For example, if you have daily data in weekly cycles for a year, but the data starts in the second week,
+set the start date to 2.
 
 NOTE: "years" will not exist; if you have daily observations over several years, the week numbers will continue to increase beyond 52.
 
