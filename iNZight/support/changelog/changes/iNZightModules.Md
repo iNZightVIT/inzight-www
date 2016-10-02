@@ -1,5 +1,5 @@
 # Version 2.0
-__Release date__: 11 July, 2015
+__Release date__: 11 July, 2016
 
 ## Major Changes
 
@@ -7,6 +7,15 @@ __Release date__: 11 July, 2015
 - Redesigned Maps module
 - Change how module dependencies are imported (using `::`)
 
+## Patches
+
+### 2.0-1 - 05/09/2016
+
+- Fix depreciation of `add3rdmouseButtonDropMenu` to `addRightclickDropMenu` in `gWidgets2` package.
+
+### 2.0-2 - 23/09/2016
+
+- Catch fatal errors in trying to guess TS information
 
 ***
 # Version 1.2
