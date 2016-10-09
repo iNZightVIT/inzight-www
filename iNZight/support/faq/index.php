@@ -5,11 +5,8 @@ if (isset($_GET["section"])) {
 } else {
   $faqurl = "active";
 }
-$crumbs = array("Support" => "../", "FAQ" => $faqurl);
-require_once($rel . 'assets/includes/1-top_matter.php');
-require_once($rel . 'assets/includes/2-header.php');
-require_once($rel . 'assets/libraries/md.php');
 
+require_once($rel . 'assets/libraries/md.php');
 $Pd = new ParsedownExtra();
 $contents = json_decode(file_get_contents("faq.json"), true);
 $sections = array_keys($contents);
@@ -28,6 +25,9 @@ if (isset($_GET["section"])) {
         if (array_key_exists($_GET["sub"], $section["sections"])) {
           $display = false;
           $section = $section["sections"][$_GET["sub"]];
+          if (isset($section["url"])) {
+            header('Location: ' . $section["url"]);
+          }
           $file = $_GET["section"] . "_" . $_GET["sub"];
         } else {
           $contents = $section["sections"];
@@ -38,6 +38,12 @@ if (isset($_GET["section"])) {
     }
   }
 }
+
+
+$crumbs = array("Support" => "../", "FAQ" => $faqurl);
+require_once($rel . 'assets/includes/1-top_matter.php');
+require_once($rel . 'assets/includes/2-header.php');
+
 ?>
 
 <div class="container">
@@ -148,32 +154,37 @@ if (isset($_GET["section"])) {
 
     <div class="markdown faq">
 
-    <?php
-      // search for Videos:
-      $textArray = explode("///", $text);
+      <?php
+        // search for Videos:
+        $textArray = explode("///", $text);
 
-      foreach($textArray as $text) {
-        if (preg_match("/^VIDEO: /", $text)) {
-          // remove the video text and ponk the URL down:
-          echo "<div class='video-wrapper asp16x9 halfsize'>";
-          echo "  <iframe width='560' height='315'";
-          echo "   src='".str_replace("VIDEO: ", "", $text)."'";
-          echo "   frameborder='0' allowfullscreen></iframe>";
-          echo "</div>";
-        } else if (preg_match("/^SCRIPT: /", $text)) {
-          echo "<script src='". str_replace("SCRIPT: ", "", $text) ."'></script>";
-        } else {
-          echo $Pd->text($text);
+        foreach($textArray as $text) {
+          if (preg_match("/^VIDEO: /", $text)) {
+            // remove the video text and ponk the URL down:
+            echo "<div class='video-wrapper asp16x9 halfsize'>";
+            echo "  <iframe width='560' height='315'";
+            echo "   src='".str_replace("VIDEO: ", "", $text)."'";
+            echo "   frameborder='0' allowfullscreen></iframe>";
+            echo "</div>";
+          } else if (preg_match("/^SCRIPT: /", $text)) {
+            echo "<script src='". str_replace("SCRIPT: ", "", $text) ."'></script>";
+          } else {
+            echo $Pd->text($text);
+          }
         }
-      }
-    } else {
-      echo "Something went wrong ... " . $file;
-    }
-  ?>
+      ?>
 
-  </div>
+    </div>
+
+    <?php } else {
+      //echo "Something went wrong ... " . $file;
+      }
+    ?>
+
+  <!-- </div> -->
   <?php } ?>
 
+  <hr>
   <div>
     <p>
       <a href="https://gitter.im/iNZightVIT/Lobby">
