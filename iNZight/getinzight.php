@@ -320,7 +320,7 @@ if ($auto) {
           </p>
         </li>
         <li>
-          <a href="https://www.r-project.org/">R (>= 3.0)</a>
+          <a href="https://www.r-project.org/">R (>= 3.2)</a>
           &mdash; the bash installer assumes R is installed and can be run using <code>R</code>
         </li>
       </ul>
