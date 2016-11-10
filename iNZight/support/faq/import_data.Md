@@ -21,6 +21,27 @@ Make sure the saved file has a `.csv` extension at the end of its name.
 
   You will need to open the file in Excel (or similar) and change the type of the column to "Number".
 
+- __hashtags (&#35;)__: iNZight treats this as a _comment character_; this means that __any text on a line after a hashtag will be ignored__.
+
+  You can add additional information to a dataset at the top (or anywhere you like) by prefixing the line with a hashtag:
+  ```
+ # this is an example data set with comments. You may wish to describe your variables.
+ # Variable1 is a letter; variable2 is a number; variable3 is either 'yes' or 'no'
+ # you can have as many comments as you like
+variable1,variable2,variable3
+A,3,yes
+B,2,no
+...
+  ```
+  __Important__: this also means that you cannot use a hashtag in any of the values.
+  Take the following example:
+  ```
+name,favourite_movie,year,genre
+jack,the public enemy,1931,crime/drama
+david,public enemy #2,1993,comedy
+  ```
+  The second row of data will ignore everything after the &#35;, so the year and genre will show up as missing values.
+
 
 # When I load a `.csv`, it just get strings of text `'gender;age;region'` rather than columns {#incorretly-formatted-data}
 
@@ -61,24 +82,3 @@ There are two possible causes of this.
 
 
 # Notes of Special Characters {#special-characters}
-
-- __hashtags (&#35;)__: iNZight treats this as a _comment character_; this means that __any text on a line after a hashtag will be ignored__.
-
-  You can add additional information to a dataset at the top (or anywhere you like) by prefixing the line with a hashtag:
-  ```
- # this is an example data set with comments. You may wish to describe your variables.
- # Variable1 is a letter; variable2 is a number; variable3 is either 'yes' or 'no'
- # you can have as many comments as you like
-variable1,variable2,variable3
-A,3,yes
-B,2,no
-...
-  ```
-  __Important__: this also means that you cannot use a hashtag in any of the values.
-  Take the following example:
-  ```
-name,favourite_movie,year,genre
-jack,the public enemy,1931,crime/drama
-david,public enemy #2,1993,comedy
-  ```
-  The second row of data will ignore everything after the &#35;, so the year and genre will show up as missing values.
