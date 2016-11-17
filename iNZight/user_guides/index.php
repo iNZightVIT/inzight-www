@@ -36,6 +36,16 @@ unset($subdirs["default"]);
         }
       ?>
     </ol>
+
+    <hr>
+    <ul>
+      <li>
+        <a href="https://www.stat.auckland.ac.nz/~wild/d2i/exercises/">Data to insight Exercises</a>
+        <p class="desc">
+          A set of introductory Exercises for learning to use iNZight
+        </p>
+      </li>
+    </ul>
   </div>
 
 </div>
