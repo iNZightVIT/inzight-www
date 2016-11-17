@@ -304,6 +304,10 @@ if ($auto) {
         Exactly what these are depends on your specific version of linux.
       </p>
 
+      <p><strong>NOTE:</strong>
+        If you are familiar with WINE, see <a href="#alternatives">alternative installation methods</a> below.
+      </p>
+
       <ul>
         <li>
           <strong>GTK2+</strong>
@@ -368,40 +372,57 @@ if ($auto) {
         </div>
       </div>
 
-      <p><strong>Alternatively</strong>, you can install it through R yourself:</p>
-      <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#Rcommands">
-        Manual R Package Instructions
-      </button>
+      <p id="alternatives"><strong>Alternatives</strong></p>
 
-      <div id="Rcommands" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4>Install iNZight through R</h4>
-            </div>
+      <ul>
+        <li>
+          <p>You can install iNZight through R yourself:</p>
+          <p>
+            <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#Rcommands">
+              Manual R Package Instructions
+            </button>
+          </p>
+        </li>
 
-            <div class="modal-body">
-              <p>
-                If you use R yourself, you may prefer to install iNZight yourself.
-              </p>
+        <div id="Rcommands" class="modal fade" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4>Install iNZight through R</h4>
+              </div>
 
-<pre>install.packages('iNZight', dependencies = TRUE,
-                 repos = c('http://r.docker.stat.auckland.ac.nz', 'https://cran.rstudio.com'))</pre>
+              <div class="modal-body">
+                <p>
+                  If you use R yourself, you may prefer to install iNZight yourself.
+                </p>
 
-              <p>
-                The <code>dependencies = TRUE</code> argument is recommended, as it will ensure you get the full set of iNZight packages (<code>Depends</code>, <code>Imports</code>, <em>and</em> <code>Suggests</code>), some of which include colour palettes and add-on modules.
-              </p>
-              <p>
-                You may also switch <code>https://cran.rstudio.com</code> with your preferred CRAN mirror.
-              </p>
-            </div>
+  <pre>install.packages('iNZight', dependencies = TRUE,
+                   repos = c('http://r.docker.stat.auckland.ac.nz', 'https://cran.rstudio.com'))</pre>
 
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <p>
+                  The <code>dependencies = TRUE</code> argument is recommended, as it will ensure you get the full set of iNZight packages (<code>Depends</code>, <code>Imports</code>, <em>and</em> <code>Suggests</code>), some of which include colour palettes and add-on modules.
+                </p>
+                <p>
+                  You may also switch <code>https://cran.rstudio.com</code> with your preferred CRAN mirror.
+                </p>
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+
+        <li>
+          <p>You can install and run iNZight for Windows via <a href="https://www.winehq.org/">WINE</a>.</p>
+
+          <p>
+            Follow the WINE instructions, and the iNZight for Windows installation instructions
+            (reload this page to select and download the Windows installer).
+          </p>
+        </li>
+      </ul>
 
 
       <hr>
