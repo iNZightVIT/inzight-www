@@ -13,6 +13,9 @@ __Release date__: 11 July, 2016
 
 - pass the current environment to `iNZightPlot` so `data=` works
 
+### Version 1.1-2 - 19/11/2016
+
+- fix up an issue where longitude value range was too large at 0 and +-180
 
 ***
 # Version 1.0
