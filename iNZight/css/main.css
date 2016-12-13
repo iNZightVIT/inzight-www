@@ -7788,6 +7788,12 @@ nav.navbar .navbar-nav > li:hover > .dropdown-menu {
     clear: both; }
   .markdown > ol > li, .rhistory > ol > li {
     clear: both; }
+  .markdown table tr, .rhistory table tr {
+    border-bottom: solid 1px #ddd; }
+  .markdown table td, .rhistory table td, .markdown table th, .rhistory table th {
+    padding: 0.2em 0.5em; }
+  .markdown table thead, .rhistory table thead {
+    border-bottom: solid 2px #ddd; }
   .markdown .pull-sm-right, .rhistory .pull-sm-right {
     margin-top: 1em; }
     @media (min-width: 768px) {

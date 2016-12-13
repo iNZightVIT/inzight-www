@@ -105,5 +105,3 @@ The first sub-setting variable is __gender__, and the second is __age__.
 If we want to more easily compare the first sub-setting variable, we can check the box __Display subset variable 1 side-by-side__:
 
 ![Multiple response subsetting two variables side by side](../../img/user_guides/advanced/multipleresponse/5_multipleresponse_subset_sidebyside.png) {.width600}
-
-OK!
