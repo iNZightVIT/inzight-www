@@ -7912,6 +7912,8 @@ a img {
   margin: 2em 0 0; }
 .rhistory p {
   margin: 0.5em 0 1em; }
+.rhistory li > ul {
+  margin-top: 10px; }
 
 .top_message, .support_message {
   font-size: 12px;
