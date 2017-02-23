@@ -61,7 +61,7 @@ if ($pkg == "none") { ?>
     The remaining change logs for other packages related to iNZight can be found here:
     <ul>
       <?php
-      foreach (array("iNZightPlots", "iNZightTS", "iNZightMR", "iNZightRegression", "iNZightMaps") as $pkg) {
+      foreach (array("iNZightPlots", "iNZightTS", "iNZightMR", "iNZightRegression", "iNZightMaps", "iNZightTools") as $pkg) {
       echo '<li><a href="./?pkg='.$pkg.'">' . $pkg . '</a></li>';
       }
       ?>
