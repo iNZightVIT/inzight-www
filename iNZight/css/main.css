@@ -7643,6 +7643,9 @@ ol.alpha {
 .large-button {
   width: 250px; }
 
+.btn-link {
+  color: #18afe3; }
+
 nav.navbar .navbar-brand {
   padding: 10px 0 5px; }
   nav.navbar .navbar-brand img {

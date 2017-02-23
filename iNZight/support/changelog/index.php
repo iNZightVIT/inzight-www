@@ -36,36 +36,38 @@ if ($pkg == "none") { ?>
 
   <p>
     The change log for the main iNZight packages can be viewed here:
-    <ul>
+    <div>
       <?php
       foreach (array("iNZight" => "iNZight", "VIT" => "vit") as $pkg => $url) {
-      echo '<li><a href="./?pkg='.$url.'">' . $pkg . '</a></li>';
+      echo '<a href="./?pkg='.$url.'" class="btn btn-link">' . $pkg . '</a>';
       }
       ?>
-    </ul>
+    </div>
   </p>
 
   <p>
     The change log for the modules in the Advanced menu (e.g, Time Series, Model Fitting, etc.)
     are contained in the following package:
-    <ul>
+    <div>
       <?php
       foreach (array("iNZightModules") as $pkg) {
-      echo '<li><a href="./?pkg='.$pkg.'">' . $pkg . '</a></li>';
+      echo '<a href="./?pkg='.$pkg.'" class="btn btn-link">' . $pkg . '</a>';
       }
       ?>
-    </ul>
+    </div>
   </p>
 
   <p>
     The remaining change logs for other packages related to iNZight can be found here:
-    <ul>
+    <div>
       <?php
-      foreach (array("iNZightPlots", "iNZightTS", "iNZightMR", "iNZightRegression", "iNZightMaps", "iNZightTools") as $pkg) {
-      echo '<li><a href="./?pkg='.$pkg.'">' . $pkg . '</a></li>';
+      $pkgs = array("iNZightPlots", "iNZightTS", "iNZightMR", "iNZightRegression", "iNZightMaps", "iNZightTools");
+      asort($pkgs);
+      foreach ($pkgs as $pkg) {
+      echo '<a href="./?pkg='.$pkg.'" class="btn btn-link">' . $pkg . '</a>';
       }
       ?>
-    </ul>
+    </div>
   </p>
 </div>
 
