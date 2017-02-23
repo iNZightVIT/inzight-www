@@ -93,54 +93,7 @@ __Release date__: 18 January 2014
 - When doing randomisation testing with a 2 level categorical
   variable as the first variable, changing the level of interest
   could cause all data to be plotted as if it belonged to the level
-  of interest.newdevice <- function(width, height,
-                      useAcinonyx = "Acinonyx" %in% rownames(installed.packages()),
-                      ...) {
-    ## The windows device works fine (for now), only attempt to speed up
-    ## any other devices that we're going to be using.
-    ## We speed them up by getting rid of bufferring.
-    if (useAcinonyx) {
-        ## Because of build issues with Acinonyx, it does not work on OS X 10.8,
-        ## although the iNZight module works fine (VIT lags too much).
-        ac <- suppressWarnings(try(library(Acinonyx), silent = TRUE))
-        if (inherits(ac, "try-error")) {
-            gmessage(paste("Unfortunately, the package used for animation in",
-                           "iNZightVIT is incompatible with your system. While you",
-                           "can still use VIT, you may experience some serious",
-                           "animation issues. We suggest you download",
-                           "our iNZightVIT module for older Mac operating systems:\n\n",
-                           "https://www.stat.auckland.ac.nz/~wild/iNZight/mac.html"),
-                     title = "VIT Animation Compatiblity Issue")
-            newdevice(width, height, useAcinonyx = FALSE)
-        } else {
-            ## Check if a `.vitprofile` file exists in the current directory
-            ps <- 12
-            dpi <- 90
-            if (".vitprofile" %in% list.files(all.files = TRUE)) {
-                try({
-                    prof <- suppressWarnings(read.table(".vitprofile"))
-                    rownames(prof) <- prof[, 1]
-                    colnames(prof) <- NULL
-                    prof <- as.data.frame(t(prof[, 2, drop = FALSE]))
-
-                    if (!is.null(prof$ps)) ps <- prof$ps
-                    if (!is.null(prof$dpi)) dpi <- prof$dpi
-                }, TRUE)
-            }
-
-            ## Acinonyx uses pixels rather than inches, convert inches to
-            ## pixels to determine dims. Assume 90 dpi.
-            width.in <- round(width * dpi)
-            height.in <- round(height * dpi)
-            Acinonyx::idev(width = width.in, height = height.in, ps = ps, dpi = dpi)
-        }
-    } else {
-        if (.Platform$OS.type != "windows" && Sys.info()["sysname"] != "Darwin")
-            dev.new(width = width, height = height, type = "nbcairo", ...)
-        else
-            dev.new(width = width, height = height, ...)
-    }
-}
+  of interest.
 
 
 ***
