@@ -11,6 +11,7 @@ who have worked part-time on making various parts of iNZight.
 ***
 # Current Team
 
+///HTML:
 <div class="row">
   <div class="col-md-6">
     <h5><a href="http://tomelliott.co.nz">Tom Elliott</a></h5>
@@ -47,11 +48,13 @@ who have worked part-time on making various parts of iNZight.
     </ul>
   </div>
 </div>
+///
 
 
 ***
 # Previous Team
 
+///HTML:
 <div class="row">
   <div class="col-md-4">
     <h5><strong>Dineika Chandrananda</strong></h5>
@@ -110,7 +113,7 @@ who have worked part-time on making various parts of iNZight.
     </p>
   </div>
 </div>
-
+///
 
 ***
 # Summer Students

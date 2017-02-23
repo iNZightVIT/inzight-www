@@ -19,11 +19,15 @@ require_once($rel . 'assets/includes/2-header.php');
       foreach($textArray as $text) {
         if (preg_match("/^VIDEO: /", $text)) {
           // remove the video text and ponk the URL down:
-          echo "<div class='video-wrapper asp16x9'>";
-          echo "  <iframe width='560' height='315'";
+          echo "<div class='embed-responsive embed-responsive-16by9'>";
+          echo "  <iframe  class='embed-responsive-item'";
           echo "   src='".str_replace("VIDEO: ", "", $text)."'";
-          echo "   frameborder='0' allowfullscreen></iframe>";
+          echo "   allowfullscreen></iframe>";
           echo "</div>";
+        } else if (preg_match("/^SCRIPT: /", $text)) {
+          echo "<script src='". str_replace("SCRIPT: ", "", $text) ."'></script>";
+        } else if (preg_match("/^HTML:/", $text)) {
+          echo str_replace("HTML:", "", $text);
         } else {
           echo $Pd->text($text);
         }
