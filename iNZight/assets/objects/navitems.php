@@ -32,8 +32,8 @@
     'About' => array(
       'default' => 'about/',
       'Team' => 'team/',
-      'Development' => 'development/',
-      'Privacy' => 'privacy/'
+      'Development' => 'development/'
+      // 'Privacy' => 'privacy/'
     ),
     'Related' => array(
       'default' => 'related/',
