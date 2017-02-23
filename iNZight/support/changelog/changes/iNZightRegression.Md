@@ -1,3 +1,10 @@
+# Changes in version 1.1.5
+__Release date__: 9 January 2017
+
+- fix a bug preventing plots from drawing when provided a `glm` object
+
+
+***
 # Changes in version 1.1.4
 __Release date__: 20 July 2015
 
