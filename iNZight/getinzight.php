@@ -16,61 +16,18 @@ $install_only = isset($_GET["inst"]);
 $link_base = "./" . $download_dir;
 $linkBase = $baseURL . $download_dir;
 
+$selectedOS = "";
+$selectedVersion = "";
 if (isset($_GET["os"])) {
-  $OS = $_GET["os"];
-
-  // if (in_array($OS, array("Windows", "Mac", "Linux"))) {
-  //   $os = $OS;
-  //   // auto download for Windows
-  //   if ($os == "Windows") {
-  //     if ($download_links["Windows_cloud"] === true) {
-  //       $fromCloud = "&cloud";
-  //       $link_base = $cloud_URL;
-  //       $linkBase = $link_base;
-  //     }
-  //     $file = $download_links[$os];
-  //     if (!$install_only) {
-  //       $metatags = "<meta http-equiv='Refresh' content='3; url=download.php?file=" . $file . $fromCloud . "'>";
-  //     }
-  //     $auto = true;
-  //   } else if ($os == "Mac") {
-  //     // necessary to grab the OS version:
-  //     if (isset($_GET["v"])) {
-  //       $os_version = (int)$_GET["v"];
-  //       if ($os_version < 6 | $os_version > 12) {
-  //         $os_version = 0;
-  //       } else {
-  //         $mac_version = ($os_version > 8) ? "osx" : (($os_version > 6) ? "osx-ml" : "osx-sl");
-  //         $file = $download_links[$mac_version];
-  //         if ($download_links[$mac_version . "_cloud"] === true) {
-  //           $fromCloud = "&cloud";
-  //           $link_base = $cloud_URL;
-  //           $linkBase = $link_base;
-  //         }
-  //         if (!$install_only) {
-  //           $metatags = "<meta http-equiv='Refresh' content='3; url=download.php?file=" . $file . $fromCloud . "'>";
-  //         }
-  //         $auto = true;
-  //       }
-  //     }
-  //   } else if ($os == "Linux") {
-  //     if (isset($_GET["dist"])) {
-  //       // we only want to allow these strings for now:
-  //       if (in_array($_GET["dist"], $linux_dists)) {
-  //         $distribution = $_GET["dist"];
-  //       }
-  //     }
-  //   }
-  // } else {
-  //   unset($os);
-  // }
+  $selectedOS = $_GET["os"];
+  if ($selectedOS == "mac" && isset($_GET["v"])) {
+    $selectedVersion = $_GET["v"];
+  }
 }
 
+// Do some automation
 
-if (!isset($os)) {
-  require_once('assets/functions/os_detect.php');
-  $os = getOS();
-}
+
 // The main page starts here:
 require_once('assets/includes/1-top_matter.php');
 require_once('assets/includes/2-header.php');
@@ -84,7 +41,19 @@ if ($auto) {
 
 
   <div class="col-md-12 col-lg-10 col-lg-push-1" id="osSelect">
-    <!-- <h3>Download iNZight</h3> -->
+
+    <?php if ($selectedOS == "" ||
+              ($selectedOS == "mac" && $selectedVersion == "")) { ?>
+    <div class="checkbox" id="campusBox">
+      <label>
+        <input type="checkbox" id="onCampus">
+        Check this box if downloading from <strong>University of Auckland campus</strong>.
+      </label>
+      <div style="margin-bottom: 2em"></div>
+    </div>
+    <?php } ?>
+
+    <?php if ($selectedOS == "") { ?>
     <div class="row">
       <?php
         foreach ($operating_systems as $os => $osname) {
@@ -121,15 +90,7 @@ if ($auto) {
 
 
     <div class="legacy">
-      <div class="row">
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" id="onCampus">
-            Downloading from the <strong>University of Auckland campus</strong>?
-            Check to download from the local server (faster, but only from on campus).
-          </label>
-        </div>
-      </div>
+
       <hr>
       <h5>Prefer to go Legacy?</h5>
 
@@ -149,12 +110,19 @@ if ($auto) {
         </li>
       </ul>
     </div>
+    <?php } ?>
   </div>
 
 
   <div id="osDesc">
     <!-- ###################################################################### WINDOWS -->
-    <div class="col-md-12 col-lg-10 col-lg-push-1 os-desc" id="osDesc_windows">
+    <div class="col-md-12 col-lg-10 col-lg-push-1 os-desc<?php echo ($selectedOS == "windows" ? " visible animate-up" : ""); ?>"
+        id="osDesc_windows">
+      <?php if ($selectedOS == "windows") { ?>
+        <h4>Download iNZightVIT for Windows</h4>
+
+        <a class="original" href="<?php echo $link_base . $download_links["Windows"]; ?>"><?php echo $linkBase . $download_links["Windows"]; ?></a>
+      <?php } else { ?>
       <h4>Great! Your download should start automatically.</h4>
 
       <small class="backuplink">
@@ -162,25 +130,26 @@ if ($auto) {
         <a class="original" href="<?php echo $link_base . $download_links["Windows"]; ?>"><?php echo $linkBase . $download_links["Windows"]; ?></a>
         <a class="alt" href="<?php echo $amazon . $download_links["Windows"]; ?>"><?php echo $amazon . $download_links["Windows"]; ?></a>
       </small>
+      <?php } ?>
 
       <hr>
       <?php include('instructions/install_windows.php'); ?>
     </div>
 
     <!-- ###################################################################### MAC -->
-    <div class="col-md-12 col-lg-10 col-lg-push-1 os-desc" id="osDesc_mac">
-      <!-- <h4>Download iNZightVIT on Mac</h4> -->
+    <div class="col-md-12 col-lg-10 col-lg-push-1 os-desc<?php echo ($selectedOS == "mac" ? " visible animate-up" : ""); ?>" id="osDesc_mac">
 
+      <?php if ($selectedVersion == "") { ?>
       <div class="row space-above">
         <a href="#" data-file="full" data-filename="<?php echo $download_links["osx"]; ?>"
            class="col-md-8 col-md-offset-2 thumbnail text-center os-icon os-icon-macfull alert alert-info">
           <div class="caption">
             <h4>iNZightVIT Full Installer</h4>
             <p>
-              iNZight + dependencies
+              iNZightVIT Application Folder + dependencies
             </p>
             <p>
-              If you're new to iNZight, this is what you'll want.
+              Choose this if you are <strong>new to iNZight</strong>.
             </p>
             <small class="os-details">
               <span class="glyphicon glyphicon-circle-arrow-down"></span>
@@ -193,13 +162,14 @@ if ($auto) {
         <a href="#" data-file="self" data-filename="<?php echo $download_links["osx-self"]; ?>"
            class="col-md-8 col-md-offset-2 thumbnail text-center os-icon os-icon-macself alert alert-warning">
           <div class="caption">
-            <h4>iNZightVIT Self-installer</h4>
+            <h4>iNZightVIT Application Folder</h4>
             <p>
-              No dependencies &mdash; you'll need to install them yourself.<br>
-              Will install necessary packages when you launch iNZight.
+              <strong>No dependencies</strong> &mdash; you'll need to install them yourself<br>
+              (details and links provided in README file).
             </p>
             <p>
-              If you use R, this is what you want.
+              Choose this if you are <strong>upgrading an existing installation</strong> of iNZight,<br>
+              or if you are an <strong>R user</strong>.
             </p>
             <small class="os-details">
               <span class="glyphicon glyphicon-circle-arrow-down"></span>
@@ -225,8 +195,13 @@ if ($auto) {
         </p>
 
       </div>
+      <?php } ?>
 
-      <div id="macInstall_full">
+      <div id="macInstall_full"<?php echo ($selectedVersion == "full") ? " class='visible animate-up'" : "" ?>>
+        <?php if ($selectedVersion == "full") { ?>
+          <h4>Download iNZightVIT All-in-one</h4>
+          <a class="original" href="<?php echo $link_base . $download_links["osx"]; ?>"><?php echo $linkBase . $download_links["osx"]; ?></a>
+        <?php } else { ?>
         <h4>Awesome! iNZight is on its way to your Downloads folder.</h4>
 
         <p class="backuplink">
@@ -234,17 +209,25 @@ if ($auto) {
           <a class="original" href="<?php echo $link_base . $download_links["osx"]; ?>"><?php echo $linkBase . $download_links["osx"]; ?></a>
           <a class="alt" href="<?php echo $amazon . $download_links["osx"]; ?>"><?php echo $amazon . $download_links["osx"]; ?></a>
         </p>
+        <?php } ?>
 
         <hr>
         <?php include('instructions/install_mac.php'); ?>
       </div>
-      <div id="macInstall_self">
+
+
+      <div id="macInstall_self"<?php echo ($selectedVersion == "self") ? " class='visible animate-up'" : "" ?>>
+        <?php if ($selectedVersion == "self") { ?>
+          <h4>Download iNZightVIT Application Folder</h4>
+          <a class="original" href="<?php echo $link_base . $download_links["osx"]; ?>"><?php echo $linkBase . $download_links["osx"]; ?></a>
+        <?php } else { ?>
         <h4>Awesome! The download should be done by now.</h4>
 
         <small>
           If it didn't start automatically, use this link:
           <a href="<?php echo $link_base . $download_links["osx-self"]; ?>"><?php echo $linkBase . $download_links["osx-self"]; ?></a>
         </small>
+        <?php } ?>
 
         <hr>
 
@@ -275,7 +258,7 @@ if ($auto) {
         <p>
           To run iNZight, you'll need the following dependencies.
           If you've had iNZight running on your machine before,
-          you'll already have 1 and 2.
+          you'll already have GTK and XQuartz.
         </p>
 
         <ul>
@@ -287,7 +270,7 @@ if ($auto) {
     </div>
 
     <!-- ###################################################################### LINUX -->
-    <div class="col-md-12 col-lg-10 col-lg-push-1 os-desc" id="osDesc_linux">
+    <div class="col-md-12 col-lg-10 col-lg-push-1 os-desc<?php echo ($selectedOS == "linux" ? " visible animate-up" : ""); ?>" id="osDesc_linux">
 
       <h4>
         Installing iNZight on Linux
