@@ -59,7 +59,7 @@ if ($auto) {
         foreach ($operating_systems as $os => $osname) {
           ?>
             <div class="col-md-4 text-center">
-                <a href="#" class="thumbnail os-icon os-icon-<?php echo $os; ?>" data-os="<?php echo $os; ?>"
+                <a href="?os=<?php echo $os; ?>" class="thumbnail os-icon os-icon-<?php echo $os; ?>" data-os="<?php echo $os; ?>"
                    data-filename="<?php echo $download_links["Windows"]; ?>">
                   <img src="img/<?php echo $os; ?>-icon.png" alt="Windows">
                   <div class="caption">
@@ -141,7 +141,7 @@ if ($auto) {
 
       <?php if ($selectedVersion == "") { ?>
       <div class="row space-above">
-        <a href="#" data-file="full" data-filename="<?php echo $download_links["osx"]; ?>"
+        <a href="?os=mac&v=full" data-file="full" data-filename="<?php echo $download_links["osx"]; ?>"
            class="col-md-8 col-md-offset-2 thumbnail text-center os-icon os-icon-macfull alert alert-info">
           <div class="caption">
             <h4>iNZightVIT Full Installer</h4>
@@ -159,7 +159,7 @@ if ($auto) {
           </div>
         </a>
 
-        <a href="#" data-file="self" data-filename="<?php echo $download_links["osx-self"]; ?>"
+        <a href="?os=mac&v=self" data-file="self" data-filename="<?php echo $download_links["osx-self"]; ?>"
            class="col-md-8 col-md-offset-2 thumbnail text-center os-icon os-icon-macself alert alert-warning">
           <div class="caption">
             <h4>iNZightVIT Application Folder</h4>
