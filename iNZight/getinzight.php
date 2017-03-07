@@ -90,7 +90,10 @@ if ($auto) {
 
 
     <div class="legacy">
-
+      <p>
+        Check the <a href="user_guides/basics/getting_started.php">getting started</a> page for a video
+        showing the installation process on Mac.
+      </p>
       <hr>
       <h5>Prefer to go Legacy?</h5>
 
