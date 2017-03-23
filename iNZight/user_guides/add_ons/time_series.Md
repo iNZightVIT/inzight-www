@@ -37,11 +37,8 @@ The following table shows the formula for these time variables (code letters in 
 If your data doesn't fit one of the above structures, or you don't want to manually create the variable,
 you can easily specify the structure of your time series data by choosing "Provide Time Information".
 
-* __Frequency__ is the number of observations you make in each period. For example, if your data consists of monthly observations going on over several years, then the frequency is 12 (for the 12 months of the year). If instead you take one observation every 6 months, then the frequency will be 2.
-* __Start Date__ is the number of the first __period__. For example, if you take monthly observations beginning in 1990, then the start date is 1990. In most other situations, there's no logical "start date"; for example, if you take daily observations with a weekly cycle, then --- unless you explicitely want for example weeks in the year --- then you'll simply set the start date to 1.
-* __Start Season__ is the season number of the first observation. For example, if you take monthly observations beginning in March, then the start season will be 3.
-
-
+* Use the table above to determine what the __period__ and __frequency__ of your data should be, and then choose the appropriate options from the drop downs.
+* You can specify you own ("custom") frequency if it is not one of the common ones listed above; for example, if you have daily data over a period of __work weeks__ (Monday &ndash; Friday), set the frequency to 5.
 
 ## Additional Documentation
 

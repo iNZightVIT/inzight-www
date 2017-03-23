@@ -19,9 +19,10 @@ switch ($v) {
 
   case "mac":
     ?>
-    <label>Which version of Mac OS X are you using?</label>
+    <label>Which version of macOS are you using?</label>
     <select name="inzight_version_detail_val" class="form-control" id="inzightVersionDetailVal">
       <option value="">Choose ...</option>
+      <option value="10" <?php if ($v2 == "12") { echo "selected"; } ?>>10.12: Sierra</option>
       <option value="10" <?php if ($v2 == "11") { echo "selected"; } ?>>10.11: El Capitan</option>
       <option value="10" <?php if ($v2 == "10") { echo "selected"; } ?>>10.10: Yosemite</option>
       <option value="9" <?php if ($v2 == "9") { echo "selected"; } ?>>10.9: Mavericks</option>

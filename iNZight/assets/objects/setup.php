@@ -25,7 +25,7 @@
   );
 
   $inzight_version = "3.1";
-  $release_date    = "13th December, 2016";
+  $release_date    = "23 March, 2017";
 
   $inzight_online_link = "http://lite.docker.stat.auckland.ac.nz/";
   $inzight_repository_link = "http://r.docker.stat.auckland.ac.nz/R";
