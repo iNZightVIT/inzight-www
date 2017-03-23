@@ -8024,10 +8024,9 @@ a {
   a:hover {
     color: #094b85; }
 
-li:not(.default) {
+ul:not(.nav-tabs) li:not(.default) {
   margin: 0 0 1em; }
-
-li:not(.default) > p {
+ul:not(.nav-tabs) li:not(.default) > p {
   margin-left: 0; }
 
 ol.breadcrumb > li {
@@ -8067,6 +8066,9 @@ a.thumb {
     a.thumb img:hover {
       cursor: -webkit-zoom-in;
       cursor: -moz-zoom-in; }
+
+.tab-content {
+  padding-top: 1em; }
 
 #osSelect {
   margin-top: 50px; }

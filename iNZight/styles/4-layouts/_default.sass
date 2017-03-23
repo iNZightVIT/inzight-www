@@ -36,11 +36,12 @@ a
 // p
 //   margin: 0.5em 2em 1em
 
-li:not(.default)
-  margin: 0 0 1em
+ul:not(.nav-tabs)
+  li:not(.default)
+    margin: 0 0 1em
 
-li:not(.default)>p
-  margin-left: 0
+  li:not(.default)>p
+    margin-left: 0
 
 ol.breadcrumb > li
   margin: 0
@@ -80,3 +81,7 @@ a.thumb
     &:hover
       cursor: -webkit-zoom-in
       cursor: -moz-zoom-in
+
+
+.tab-content
+  padding-top: 1em

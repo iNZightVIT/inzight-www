@@ -72,4 +72,9 @@ $(document).ready(function() {
     }, 600);
 
   });
+
+  $("#linuxTabs a").click(function (e) {
+      e.preventDefault();
+      $(this).tab('show');
+  });
 });
