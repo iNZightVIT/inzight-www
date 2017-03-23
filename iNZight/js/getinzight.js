@@ -4,6 +4,9 @@ $(document).ready(function() {
     var os = $(this).data("os"),
         url = $(this).data("filename");
 
+    // Set the URL
+    window.history.pushState("", "", "?os=" + os);
+
     // make the links disappear!
     $("#osSelect .os-icon").addClass("animate-up");
     $("#osSelect h3").fadeOut();
@@ -26,6 +29,10 @@ $(document).ready(function() {
       }, 600);
     }
 
+    // hide checkbox
+    if (os == "windows" || os == "linux") {
+      $("#campusBox").slideUp();
+    }
   });
 
   $("#onCampus").on('change', function() {
@@ -43,6 +50,10 @@ $(document).ready(function() {
     var file = $(this).data("file"),
         url = $(this).data("filename");
 
+    // Set the URL
+    window.history.pushState("", "", "?os=mac&v=" + file);
+
+    $("#campusBox").slideUp();
     $("#osDesc_mac .os-icon").addClass("animate-away");
     $("#osDesc_mac>h4, #osDesc_mac>.depreciation-notice").fadeOut();
 

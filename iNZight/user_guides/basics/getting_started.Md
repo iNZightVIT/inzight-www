@@ -16,6 +16,8 @@ Alternatively, you can start iNZight by going to __Start__ &gt; __iNZightVIT__ (
 ***
 ## Mac OS X
 
+///VIDEO: https://www.youtube.com/embed/vGOPyM3J34w ///
+
 iNZight on Mac is located in __Applications__ > __iNZightVIT__.
 
 You can start iNZight by double-clicking on __iNZight__.
