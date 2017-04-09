@@ -320,6 +320,10 @@ if ($auto) {
           <a href="https://www.r-project.org/">R (>= 3.2)</a>
           &mdash; the bash installer assumes R is installed and can be run using <code>R</code>
         </li>
+        <li>
+          Some other libraries that may be required (dependending on your system):<br>
+          <code>libxml2-dev</code>
+        </li>
       </ul>
 
       <hr>
