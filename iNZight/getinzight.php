@@ -349,7 +349,7 @@ if ($auto) {
                       <li><strong>Clone the repository</strong>
                           <ul>
                               <li><strong>If you have <code>git</code> installed</strong>, just run
-<p><pre>git clone git@github.com:iNZightVIT/linux.git iNZightVIT</pre></p>
+<p><pre>git clone https://github.com/iNZightVIT/linux.git iNZightVIT</pre></p>
                                   This will create an <code>iNZightVIT</code> directory.
                               </li>
 
