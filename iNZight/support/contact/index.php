@@ -98,6 +98,13 @@ $captchaEnc = hashValue($captchaAns);
     or just saying thanks.
   </p>
 
+<!--  <div class="alert alert-danger" role="alert">
+    <p><strong>Support Email Server is currently experiencing problems</strong>.</p>
+<p>
+  Until this is fixed, please <strong>email</strong> <a href="mailto:tom.elliott@auckland.ac.nz">tom.elliott@auckland.ac.nz</a> instead. Apologies for any inconvenience.
+</p>
+  </div>-->
+
   <div class="form row">
     <form id="contactform" method="post" action="./">
       <div class="col-md-6">
