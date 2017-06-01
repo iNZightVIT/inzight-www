@@ -6,6 +6,7 @@ Some of them have been documented on this page.
 
 - [iNZight Display Mode](#display-mode)
 - [Colour Specification](#colours)
+- [Export Interactive HTML Graphs](#interactive)
 
 
 
@@ -51,3 +52,42 @@ The 6-digit HEX code is divided into three 2-digit codes that specify red, green
 ### Opacity
 
 You can also specify opacity when using HEX codes. This is done simply by adding two additional digits (forming an 8-digit code), where 00 = 0% opacity = completely invisible.
+
+
+
+
+***
+## Export Interactive HTML Graphs <span class="label label-warning">developmental</span> {#interactive}
+
+A new feature of iNZight is the ability to export plots as SVG and Interactive HTML pages. It's still a work-in-progress that was part of a student's summer project. Please play around with it and let us know what you like, what doesn't work so well, and any other feedback you have!
+
+
+Let's load the `gapminder-2008` data from the FutureLearn module:
+<img src="../../img/user_guides/interact/FIG1.png" alt="iNZight Home - single window" class="width700">
+
+__File__ &gt; __Example Data__ and select the Gapminder 2008 dataset:
+<img src="../../img/user_guides/interact/FIG2.png" alt="Example Data - gapminder_2008" class="width500">
+
+Now plot some variables. Here we're using ChildrenPerWoman and Infantmortality, coloured by Region and sized by Populationtotal, but you can use whichever you prefer.
+<img src="../../img/user_guides/interact/FIG3.png" alt="Example Data - gapminder_2008" class="width700">
+
+
+Now click the "Save" icon in the [plot toolbar](../plot_options/?topic=plot_toolbar), or from the Plot menu.
+<img src="../../img/user_guides/interact/FIG4.png" alt="Example Data - gapminder_2008" class="width400">
+* __File type__: choose "Interactive HTML"
+* __Save location__: You can leave this as default, which is the iNZightVIT/Saved Plots folder in your Documents.
+* __File name__: choose something appropriate
+* __Additional variable__: We've selected "Country" as an additional variable to export, so we can use it to label points.
+
+
+Once you click save, you might be prompted to install additional packages. Click "Yes" and wait while that happens, then you can save again.
+
+The HTML file will open in your browser.
+<iframe src="../../img/user_guides/interact/gapminder_2008.html" border="0" frameborder="0" style="width:100%;height:1000px"></iframe>
+
+* __Hover your mouse over points__ to see details about that observation
+* __Click points__ to add to selection, and "View Table" to see the rows of the data set for those observations
+* __Click-and-drag__ to select a region of points
+* __Click a legend label__ to highlight points in that group
+
+[Click here to open the file](../../img/user_guides/interact/gapminder_2008.html)
