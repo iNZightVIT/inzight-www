@@ -17,6 +17,10 @@ __Release date__: 11 July, 2016
 
 - fix up an issue where longitude value range was too large at 0 and +-180
 
+### Version 1.1-3 - 10/04/2017
+
+- fix bug where difference in range approx 0 but not quite
+
 ***
 # Version 1.0
 __Release date__: 24 February, 2016

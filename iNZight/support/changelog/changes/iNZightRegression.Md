@@ -1,3 +1,10 @@
+# Changes in version 1.1.6
+__Release date__: 23 March 2017
+
+- fix bootstrapping method for linear models
+
+
+***
 # Changes in version 1.1.5
 __Release date__: 9 January 2017
 

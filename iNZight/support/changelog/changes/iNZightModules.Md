@@ -1,3 +1,19 @@
+# Version 2.1
+__Release date__: 23 March, 2017
+
+## Major Changes
+
+- Release of newly designed Time Series module. All the usual features, but a far nicer interface, and a smoothness-slider!
+
+
+## Patches
+
+### 2.1.1 - 02/06/2017
+
+- Fix updatePlot return value so it works with `iNZightPlots`'s `exportXXX()` functions
+
+***
+
 # Version 2.0
 __Release date__: 11 July, 2016
 

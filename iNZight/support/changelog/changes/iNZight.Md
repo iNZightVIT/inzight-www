@@ -23,6 +23,23 @@ t-tests performed on request.
 - Fix a bug in inference output where reorded factors' confidence intervals and p-values were _not_ reordered!
 - Fix issue where confidence intervals for two-way table row proportions were ordered incorrectly
 
+
+## Patches
+
+### Patch 3.1.1 - 23/03/2017
+
+- Additions:
+  - Time Series module update to new UI
+  - Added Import Data (Beta) module (alongside existing one)
+  - Save plots as SVG or Interactive HTML (Beta)
+- Update Gapminder data
+- Survey design object is now passed to Model Fitting module (will soon be depreciated)
+- Various other bug fixes in supporting packages
+
+### Patch 3.2.1 - 02/06/2017
+
+- Integrate changes in `iNZightPlots`
+
 ***
 
 # Version 3.0
