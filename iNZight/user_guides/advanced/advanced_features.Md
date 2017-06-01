@@ -83,7 +83,9 @@ Now click the "Save" icon in the [plot toolbar](../plot_options/?topic=plot_tool
 Once you click save, you might be prompted to install additional packages. Click "Yes" and wait while that happens, then you can save again.
 
 The HTML file will open in your browser.
+///HTML:
 <iframe src="../../img/user_guides/interact/gapminder_2008.html" border="0" frameborder="0" style="width:100%;height:1000px"></iframe>
+///
 
 * __Hover your mouse over points__ to see details about that observation
 * __Click points__ to add to selection, and "View Table" to see the rows of the data set for those observations
