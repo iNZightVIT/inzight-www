@@ -247,6 +247,23 @@ if ($auto) {
           </ol>
         </p>
 
+        <div class = "alert alert-warning">
+          <p><strong>iNZight not yet supported with R 3.4.0 on macOS El Captian or later</strong></p>
+          <p>
+            Due to significant changes in the latest release of R (3.4.0),
+            the <a href="https://cran.r-project.org/package=RGtk2">dependency RGtk2</a>
+            is not yet available to users running macOS El&nbsp;Capitan or later (10.11+).
+            If you have R 3.4, you can install an older version (we recommend 3.3.3),
+            and then download the
+            <a href="https://r.research.att.com/#other">RSwitch App</a>
+            to change versions of R <strong>before</strong> running iNZight.
+          </p>
+          <p>
+            Of course, if you have installed the necessary command line tools to compile R packages with R 3.4.0,
+            you should be OK installing iNZight and it's dependencies.
+          </p>
+        </div>
+
         <hr>
         <h4>
           Dependencies
@@ -267,7 +284,7 @@ if ($auto) {
         <ul>
           <li><a href="<?php echo $download_links["gtk-2.24"]; ?>">GTK2+</a> (direct download link)</li>
           <li><a href="<?php echo $download_links["xquartz"]; ?>">XQuartz</a></li>
-          <li><a href="https://www.r-project.org/">R (>= 3.0)</a></li>
+          <li><a href="https://www.r-project.org/">R (>= 3.0)</a> NOTE: R 3.4.0 not yet supported (see note above)</li>
         </ul>
       </div>
     </div>
