@@ -253,7 +253,7 @@ if ($auto) {
             Due to significant changes in the latest release of R (3.4.0),
             the <a href="https://cran.r-project.org/package=RGtk2">dependency RGtk2</a>
             is not yet available to users running macOS El&nbsp;Capitan or later (10.11+).
-            If you have R 3.4, you can install an older version (we recommend 3.3.3),
+            If you have R 3.4, you can install an older version (2.4.4 or <em>earlier</em>),
             and then download the
             <a href="https://r.research.att.com/#other">RSwitch App</a>
             to change versions of R <strong>before</strong> running iNZight.
