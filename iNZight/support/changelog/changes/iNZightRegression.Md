@@ -1,3 +1,10 @@
+# Changes in version 1.1.7
+__Release date__: 18 August 2017
+
+- various fixes, package maintenance
+
+***
+
 # Changes in version 1.1.6
 __Release date__: 23 March 2017
 
