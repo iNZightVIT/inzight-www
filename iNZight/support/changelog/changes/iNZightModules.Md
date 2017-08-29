@@ -1,3 +1,23 @@
+# Version 2.2
+__Release date__: 18 August, 2017
+
+## BETA RELEASE: New + Improved _Model Fitting_ module
+
+As we have done with the Multiple Response and Time Series modules,
+we've completely redesigned the interface for model fitting with iNZight.
+
+- More intuitive user experience
+- Responsive modelling: summary and plots of fitted models are provided as you build them
+- ... and more to come!
+
+
+__Please note__: that this _is_ a beta release, and therefore expect some things to not work.
+Let us know what you did to break it so we can fix it, or if there's anything else you'd like to see,
+or not see, just let us know!
+
+
+***
+
 # Version 2.1
 __Release date__: 23 March, 2017
 

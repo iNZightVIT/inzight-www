@@ -1,3 +1,8 @@
+# Version 1.2.7
+__Release date__: 22 June 2017
+
+- Fix a bug in the NAMESPACE not exporting functions correctly
+
 # Version 1.2.6
 __Release date__: 03 Feburary 2017
 

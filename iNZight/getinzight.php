@@ -339,7 +339,9 @@ if ($auto) {
         </li>
         <li>
           Some other libraries that may be required (dependending on your system):<br>
-          <code>libxml2-dev</code>
+          <code>libxml2-dev</code>,
+          <code>r-cran-rodbc</code>,
+          <code>r-cran-rgtk2</code>
         </li>
       </ul>
 
@@ -448,8 +450,9 @@ sudo make uninstall</pre></p>
                     If you use R yourself, you may prefer to install iNZight yourself.
                   </p>
 
-<pre>install.packages('iNZight', dependencies = TRUE,
-                 repos = c('http://r.docker.stat.auckland.ac.nz/R', 'https://cran.rstudio.com'))</pre>
+<pre>install.packages(c('iNZight', 'vit'), dependencies = TRUE,
+                 repos = c('http://r.docker.stat.auckland.ac.nz/R', 'https://cran.rstudio.com'),
+                 Ncpus = 1) # if you have cores to spare, increase this to speed up install time</pre>
 
                   <p>
                     The <code>dependencies = TRUE</code> argument is recommended, as it will ensure you get the full set of iNZight packages (<code>Depends</code>, <code>Imports</code>, <em>and</em> <code>Suggests</code>), some of which include colour palettes and add-on modules.
@@ -457,6 +460,14 @@ sudo make uninstall</pre></p>
                   <p>
                     You may also switch <code>https://cran.rstudio.com</code> with your preferred CRAN mirror.
                   </p>
+
+                  <p><strong>To run iNZight:</strong></p>
+<pre>library(iNZight)
+iNZight()</pre>
+
+                  <p><strong>To run VIT:</strong></p>
+<pre>library(vit)
+iNZightVIT()</pre>
               </div>
 
               <div role="tabpanel" class="tab-pane" id="install-wine">
