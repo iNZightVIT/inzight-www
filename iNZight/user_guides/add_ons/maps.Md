@@ -16,9 +16,6 @@ In this example, we will be using the __New Zealand Quakes 2000__ data, which yo
 
 ![Loading the NZ Quakes Data](../../img/user_guides/advanced/maps/01_maps_loadquakes.png)
 
-![Loading the NZ Quakes Data](../../img/user_guides/advanced/maps/01_maps_loadquakes[[ VLITE ? _lite ]].png)
-![Loading the NZ Quakes Data](../../img/user_guides/advanced/maps/01_maps_loadquakes[[ VLITE ? true : false ]].png)
-
 Once this is loaded, you can launch the Maps module from __Advanced__ > __Maps__.
 
 <div class="note">

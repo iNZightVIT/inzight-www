@@ -7,6 +7,20 @@
 
 session_start();
 $isIE = strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') || strpos($_SERVER['HTTP_USER_AGENT'], 'Trident');
+
+if (isset($_GET["ver"])) {
+  $_SESSION["VLITE"] = ($_GET["ver"] == "lite");
+  // --- this is just complex and silly ...
+  // $url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+  // $url = strtok($url, "?");
+  // unset($_GET["ver"]);
+  // if (count($_GET)) {
+  //   $url .= "?" . http_build_query($_GET);
+  // }
+  // header("Location: $url");
+}
+if (!isset($_SESSION["VLITE"])) $_SESSION["VLITE"] = false;
+$VLITE = $_SESSION["VLITE"];
 ?>
 
 <!DOCTYPE html>

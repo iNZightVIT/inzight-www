@@ -51,17 +51,13 @@ if (isset($topic)) {
         // (with the : FALSE part optional)
         preg_match_all("/\\[{2}\s*([^\s]+)\s*\\?\s*([^\s]+)\s*(\\:\s*([^\s]+)\s*)?\\]{2}/",
             $text, $matches);
-        echo "<pre>";
         for ($i=0; $i<count($matches[0]);$i++) {
-          echo "echo $" . $matches[1][$i]
-            . " ? " . $matches[2][$i];
-          if ($matches[4][$i] != "") echo " : " . $matches[4][$i];
-          echo ";\n";
+          $str = "\$txt = $" . $matches[1][$i] . " ? \""
+              . $matches[2][$i] . "\" : \""
+              . $matches[4][$i] . "\";";
+          eval($str);
+          $text = str_replace($matches[0][$i], $txt, $text);
         }
-        echo "</pre>";
-        // foreach ($matches as $match) {
-        //   preg_match("")
-        // }
         echo $Pd->text($text);
       }
     }

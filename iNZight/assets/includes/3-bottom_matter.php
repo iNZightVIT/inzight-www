@@ -39,6 +39,23 @@
       $.post("<?php echo $rel; ?>hideSupport.php");
       $(".support_message").slideUp();
     });
+
+    // some versioning stuff ...
+    var url = "https://www.stat.auckland.ac.nz/~wild/iNZight/_setversion.php";
+    $("#useDesktop").on("click", function(e) {
+      e.preventDefault();
+      $.post(url, {"version": "desktop"},
+        function(r) {
+          location.reload();
+        });
+    });
+    $("#useLite").on("click", function(e) {
+      e.preventDefault();
+      $.post(url, {"version": "lite"},
+        function(r) {
+          location.reload();
+        });
+    });
     </script>
   </body>
 </html>
