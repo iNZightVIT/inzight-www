@@ -49,8 +49,11 @@ if (isset($topic)) {
       } else {
         // convert [[ VAR ? TRUE : FALSE ]] -> echo $VAR ? TRUE : FALSE
         // (with the : FALSE part optional)
-        preg_match_all("/\\[{2}\s*([^\s]+)\s*\\?\s*([^\s]+)\s*(\\:\s*([^\s]+)\s*)?\\]{2}/",
+        preg_match_all("/\\[{2}\s*([^\\]]+)\s*\\?\s*([^\\]\\:]+)\s*(\\:\s*([^\\]]+)\s*)?\\]{2}/",
             $text, $matches);
+        // echo "<pre>";
+        // print_r($matches);
+        // echo "</pre>";
         for ($i=0; $i<count($matches[0]);$i++) {
           $str = "\$txt = $" . $matches[1][$i] . " ? \""
               . $matches[2][$i] . "\" : \""
