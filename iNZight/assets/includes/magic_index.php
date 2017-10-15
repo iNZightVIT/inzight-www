@@ -59,8 +59,12 @@ if (isset($topic)) {
               . $matches[2][$i] . "\" : \""
               . $matches[4][$i] . "\";";
           eval($str);
+		  $txt = trim($txt);
           $text = str_replace($matches[0][$i], $txt, $text);
         }
+		// echo "<pre>";
+		// print_r ($text);
+		// echo "</pre>";
         echo $Pd->text($text);
       }
     }
