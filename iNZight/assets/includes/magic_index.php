@@ -47,6 +47,21 @@ if (isset($topic)) {
       } else if (preg_match("/^HTML:/", $text)) {
         echo str_replace("HTML:", "", $text);
       } else {
+        // convert [[ VAR ? TRUE : FALSE ]] -> echo $VAR ? TRUE : FALSE
+        // (with the : FALSE part optional)
+        preg_match_all("/\\[{2}\s*([^\s]+)\s*\\?\s*([^\s]+)\s*(\\:\s*([^\s]+)\s*)?\\]{2}/",
+            $text, $matches);
+        echo "<pre>";
+        for ($i=0; $i<count($matches[0]);$i++) {
+          echo "echo $" . $matches[1][$i]
+            . " ? " . $matches[2][$i];
+          if ($matches[4][$i] != "") echo " : " . $matches[4][$i];
+          echo ";\n";
+        }
+        echo "</pre>";
+        // foreach ($matches as $match) {
+        //   preg_match("")
+        // }
         echo $Pd->text($text);
       }
     }
