@@ -41,7 +41,9 @@
     });
 
     // some versioning stuff ...
-    var url = "https://www.stat.auckland.ac.nz/~wild/iNZight/_setversion.php";
+    // 
+    var url = "<?php echo ($_SERVER['HTTP_HOST'] == "localhost:8181" ? "" : "https://www.stat.auckland.ac.nz/~wild/iNZight") . "/_setversion.php"; ?>";
+
     $("#useDesktop").on("click", function(e) {
       e.preventDefault();
       $.post(url, {"version": "desktop"},
