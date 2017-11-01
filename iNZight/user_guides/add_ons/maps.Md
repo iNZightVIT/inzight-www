@@ -12,9 +12,9 @@ There are two situations that iNZight can handle:
 Co-ordinates give a unique position of any point on the Earth.
 The __latitude__ defines the __vertical y position__ (North/South), while the __longitude__ defines the __horizontal x position__ (Eash/West).
 
-In this example, we will be using the __New Zealand Quakes 2000__ data, which you can load by going to __File__ > [[ VLITE ? __Dataset Examples__ : __Example data__ ]], selecting the __Maps__ [[ VLITE ? category : module ]], and choosing the data __nzquakes__ (see screenshot below).
+In this example, we will be using the __New Zealand Quakes 2000__ data, which you can load by going to __File__ > [[ VLITE ?? __Dataset Examples__ || __Example data__ ]], selecting the __Maps__ [[ VLITE ?? category || module ]], and choosing the data __nzquakes__ (see screenshot below).
 
-![Loading the NZ Quakes Data](../../img/user_guides/advanced/maps/01_maps_loadquakes[[ VLITE ? _lite ]].png)
+![Loading the NZ Quakes Data](../../img/user_guides/advanced/maps/01_maps_loadquakes[[ VLITE ?? _lite ]].png)
 
 Once this is loaded, you can launch the Maps module from __Advanced__ > __Maps__.
 
