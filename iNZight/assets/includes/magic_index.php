@@ -31,10 +31,36 @@ if (isset($topic)) {
     $Pd = new ParsedownExtra();
     $text = file_get_contents($topic . ".Md");
 
+    // echo "<pre>";
+    // echo $text;
+    // echo "</pre>";
+
+    // convert [[ VAR ? TRUE : FALSE ]] -> echo $VAR ? TRUE : FALSE
+    // (with the : FALSE part optional)
+    preg_match_all("/\\[{2}\s*([^\\]]+)\s*\\?{2}\s*([^\\]\\|]+)\s*(\\|\\|\s*([^\\]]+)\s*)?\\]{2}/",
+                  $text, $matches);
+    // echo "<pre>";
+    // print_r($matches);
+    // echo "</pre>";
+
+    for ($i=0; $i<count($matches[0]);$i++) {
+        $str = "\$txt = $" . $matches[1][$i] . " ? \""
+            . $matches[2][$i] . "\" : \""
+            . $matches[4][$i] . "\";";
+        eval($str);
+        $txt = trim($txt);
+        $text = str_replace($matches[0][$i], $txt, $text);
+    }
+
+    // echo "<pre>";
+    // echo htmlspecialchars($text);
+    // echo "</pre>";
+
     // search for Videos:
     $textArray = explode("///", $text);
 
     foreach($textArray as $text) {
+
       if (preg_match("/^VIDEO: /", $text)) {
         // remove the video text and ponk the URL down:
         echo "<div class='embed-responsive embed-responsive-16by9'>";
@@ -47,29 +73,11 @@ if (isset($topic)) {
       } else if (preg_match("/^HTML:/", $text)) {
         echo str_replace("HTML:", "", $text);
       } else {
-        // convert [[ VAR ? TRUE : FALSE ]] -> echo $VAR ? TRUE : FALSE
-        // (with the : FALSE part optional)
-        preg_match_all("/\\[{2}\s*([^\\]]+)\s*\\?\s*([^\\]\\:]+)\s*(\\:\s*([^\\]]+)\s*)?\\]{2}/",
-            $text, $matches);
-        // echo "<pre>";
-        // print_r($matches);
-        // echo "</pre>";
-        for ($i=0; $i<count($matches[0]);$i++) {
-          $str = "\$txt = $" . $matches[1][$i] . " ? \""
-              . $matches[2][$i] . "\" : \""
-              . $matches[4][$i] . "\";";
-          eval($str);
-		  $txt = trim($txt);
-          $text = str_replace($matches[0][$i], $txt, $text);
-        }
-		// echo "<pre>";
-		// print_r ($text);
-		// echo "</pre>";
         echo $Pd->text($text);
       }
+
     }
 
-//    echo $Pd->text($text);
   } else {
     echo "<h1>Sorry, this page isn't ready yet.</h1>";
   }
