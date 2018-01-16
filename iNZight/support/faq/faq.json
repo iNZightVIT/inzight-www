@@ -32,5 +32,9 @@
   },
   "time_series" : {
     "title" : "Time Series Module"
+  },
+  "vit" : {
+    "title" : "VIT: Visual Inference Tools",
+    "desc" : "Common issues with the VIT part of iNZightVIT."
   }
 }
