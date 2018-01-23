@@ -1,3 +1,19 @@
+# Version 2.3
+__Release date__: 23 January 2018
+
+
+## Beta release: New __Maps__ module for plotting geographic regional data
+
+The new maps module is an overhaul of the previous one, with much more control
+over maps and options for graphs.
+
+## Minor Changes
+
+- __Time series__: now using `ggplot2` for several of the graphs.
+
+
+***
+
 # Version 2.2
 __Release date__: 18 August, 2017
 
