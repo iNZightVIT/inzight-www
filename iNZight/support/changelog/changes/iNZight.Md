@@ -1,26 +1,3 @@
-# Version 3.2
-__Release date:__ 23 January 2018
-
-## New Features
-
-- New developmental __code writing__ feature has been added, which writes tidyverse code
-  for common data/variable manipulations
-- Manage your datasets with the updated data set widget, just above the data set view!
-- Added the ability to control font size in Summary/Inference windows via File > Preferences
-
-## Minor Changes
-
-- The __Reorder Levels__ window has been reconfigured to, hopefully, make it easier to use
-- Filtering no longer clears the slots 
-- Import data [beta] is ... no longer beta!
-- Updated the splash screen to be up-to-date, and attempt to be friendly ...
-
-
-## Bug Fixes
-- saving residuals/predicted values works if you select only quadratic or cubic
-
-
-***
 # Version 3.1
 __Release date:__ 13 December, 2016
 
@@ -77,10 +54,6 @@ t-tests performed on request.
 ### Patch 3.1.5 - 02/10/2017
 
 - More bug fixes/minor improvements
-
-### Patch 3.1.6 - 12/01/2018
-
-- Add font size option to preferences for the Get Summary/Inference windows
 
 ***
 
