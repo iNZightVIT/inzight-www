@@ -11,6 +11,10 @@ over maps and options for graphs.
 
 - __Time series__: now using `ggplot2` for several of the graphs.
 
+## Patches
+
+### 2.3-1 - 12/02/2018
+- fix bugs in time series modules for annual data and manual time specification
 
 ***
 
