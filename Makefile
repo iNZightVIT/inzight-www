@@ -17,8 +17,8 @@ Npull:
 fixPermissions:
 	-sudo chown -R tell029 *
 	-sudo chgrp -R 62215 *
-	-find . -type f -exec chmod 755 {} +
-	-find . -type d -exec chmod 755 {} +
+	-sudo find . -type f -exec chmod 755 {} +
+	-sudo find . -type d -exec chmod 755 {} +
 
 nothing:
 	sudo chmod 777 iNZight/newsletters/newmailer.Md
