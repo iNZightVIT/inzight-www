@@ -68,11 +68,6 @@ if (isset($_POST["submit"])) {
              $p['screenshot']['type'] != "image/gif") {
     $errors = true;
     $imageUploadError = "Please upload a PNG, JPEG, or GIF screenshot.";
-  } else {
-    // $file = fopen($p['screenshot']['tmp_name'], 'rb');
-    // $img = fread($file, $p['screenshot']['size']);
-    // fclose($file);
-    // $p['screenshot']['content'] = $img;
   }
 
   // Now validate using PHP (incase they get past jQuery)
@@ -235,7 +230,7 @@ $captchaEnc = hashValue($captchaAns);
 
       <div class="col-md-6">
         <!-- Additional iNZight log output -->
-        <div class="form-group <?php if (!$submit | ($p["message_reason"] != "Technical")) { echo "hideme"; } ?>" id="logFile">
+        <div class="form-group hideme <?php if (!$submit | ($p["message_reason"] != "Technical")) { echo "hideme"; } ?>" id="logFile">
           <label for="inzight_log">To help diagnose your problem, generate an <code>iNZight.log</code> 
             file and attach it here.</label>
           <p>You can find this in the 'Help' menu of iNZight.</p>

@@ -73,7 +73,7 @@ $("#inzightVersionVal").change(function() {
     }
     $("#message").fadeIn();
     if ($("#messageReason").val() == "Technical") {
-      $("#logFile").fadeIn();
+      // $("#logFile").fadeIn();
     }
     $("#screenshotImg").fadeIn();
     $("#userName").fadeIn();
@@ -82,17 +82,6 @@ $("#inzightVersionVal").change(function() {
     $("#sendButton").fadeIn();
   }
 });
-
-// $("#captchaValue").keyup(function() {
-//   $userVal = $(this).val();
-//   $trueVal = $("#trueCaptchaValue").val();
-//
-//   if ($userVal == $trueVal) {
-//     $("#sendButton").fadeIn();
-//   } else {
-//     $("#sendButton").fadeOut();
-//   }
-// });
 
 
 

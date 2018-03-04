@@ -6,7 +6,6 @@ if ($p["inzight_version"] == "online") {
 } else {
   $sendto = "inzight_support@stat.auckland.ac.nz";
 }
-$sendto = "tom.elliott@auckland.ac.nz";
 
 // some filters
 function clean_num($a)
