@@ -1,5 +1,4 @@
 $("#alternate").hide();
-console.log("Hello");
 $("#reason").show();
 
 $("#messageReason").change(function() {
@@ -73,6 +72,10 @@ $("#inzightVersionVal").change(function() {
       $("#message label").append("<br>If you are experiencing issues with a particular R package, specify which one and the version you are running.")
     }
     $("#message").fadeIn();
+    if ($("#messageReason").val() == "Technical") {
+      $("#logFile").fadeIn();
+    }
+    $("#screenshotImg").fadeIn();
     $("#userName").fadeIn();
     $("#userEmail").fadeIn();
     $("#areYouHuman").fadeIn();

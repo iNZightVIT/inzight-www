@@ -1,6 +1,4 @@
 <?php
-echo "here";
-
 
 // THE EMAIL ADDRESS TO SEND BUG REPORTS TO:
 if ($p["inzight_version"] == "online") {
@@ -8,6 +6,7 @@ if ($p["inzight_version"] == "online") {
 } else {
   $sendto = "inzight_support@stat.auckland.ac.nz";
 }
+$sendto = "tom.elliott@auckland.ac.nz";
 
 // some filters
 function clean_num($a)
@@ -70,8 +69,16 @@ if ($inz != "online") {
 $name = clean_str($p["user_name"]);
 $email = clean_str($p["user_email"]);
 
+if ($p['screenshot']['error'] === 0) {
+  $attachment = chunk_split(base64_encode(file_get_contents($p['screenshot']['tmp_name'])));
+  $filename = $p['screenshot']['name'];
+  $boundary = md5(date('r', time()));
+}
+
 $headers  = "MIME-Version: 1.0" . "\r\n";
-$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+$headers .= 
+  (isset($attachment) ? "Content-type:multipart/mixed; boundary=\"_1_$boundary\";" : "Content-type:text/html;") . 
+  "\r\n";
 $headers .= 'From: ' . $sendto . "\r\n";
 if (strlen($email) > 0) {
   if (strlen($name) > 0) {
@@ -81,12 +88,12 @@ if (strlen($email) > 0) {
   }
 }
 
-
 $message  = "<div style='font-family: sans-serif; width: 100%; font-size: 14px'>";
 
 $message .= "<div style ='padding: 1em 0.5em'>";
 $message .= nl2br($p["message_content"]);
 $message .= "</div>";
+
 
 $message .= "<div style='font-size: 0.8em; background: #ccc; padding: 0.5em; line-height: 2em'>";
 $message .= "<b>Technical Information</b><br>";
@@ -112,9 +119,40 @@ $message .= "<br><b>Debugging Info</b><br>";
 $message .= "User Agent: " . $s["HTTP_USER_AGENT"] . "<br>";
 $message .= "HTTP Language: " . $s["HTTP_ACCEPT_LANGUAGE"] . "<br>";
 
+
+// Additional log file info
+if (isset($p['log_file']['content'])) {
+  $message .= "<br><b>iNZight Log File</b></br>";
+  $message .= $p['log_file']['content'];
+}
+
+
 $message .= "</div>";
 $message .= "</div>";
 
+$multimessage = '';
+if (isset($attachment)) {
+  $multimessage .= "This is a multi-part message in MIME format.
+--_1_$boundary
+Content-Type: multipart/alternative; boundary=\"_2_$boundary\"
+
+--_2_$boundary 
+Content-Type: text/html; charset=\"UTF-8\"
+Content-Transfer-Encoding: 7bit
+
+$message
+
+--_2_$boundary--
+--_1_$boundary
+Content-Type: application/octet-stream; name=\"$filename\"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment
+
+$attachment
+--_1_$boundary--";
+  
+  $message = $multimessage;
+}
 
 if (mail($sendto, $subject, $message, $headers)) {
   header("Location: success.php");
