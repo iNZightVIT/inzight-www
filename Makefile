@@ -1,19 +1,19 @@
 push:
-	sudo rsync -rlv --delete --exclude "downloads" --exclude "OLD" iNZight/ tell029@login02.fos.auckland.ac.nz:/mnt/tell029/web/homepages.stat/inzight-www/iNZight
+	sudo rsync -rlv --delete --exclude "downloads" --exclude "OLD" --exclude "TESTING" iNZight/ tell029@login02.fos.auckland.ac.nz:/mnt/tell029/web/homepages.stat/inzight-www/iNZight
 pushTest:
 		sudo rsync -rlv --delete --exclude "downloads" --exclude "OLD" iNZight/ tell029@login02.fos.auckland.ac.nz:/mnt/tell029/web/homepages.stat/inzight-www/iNZight/TESTING
 
 pushA:
-	sudo rsync -av --delete --exclude "downloads" --exclude "OLD" iNZight/ tell029@login02.fos.auckland.ac.nz:/mnt/tell029/web/homepages.stat/inzight-www/iNZight
+	sudo rsync -av --delete --exclude "downloads" --exclude "OLD" --exclude "TESTING" iNZight/ tell029@login02.fos.auckland.ac.nz:/mnt/tell029/web/homepages.stat/inzight-www/iNZight
 
 pull:
-	sudo rsync -rlv --delete --exclude "downloads" --exclude "OLD" tell029@login02.fos.auckland.ac.nz:/mnt/tell029/web/homepages.stat/inzight-www/iNZight/ iNZight
+	sudo rsync -rlv --delete --exclude "downloads" --exclude "OLD" --exclude "TESTING" tell029@login02.fos.auckland.ac.nz:/mnt/tell029/web/homepages.stat/inzight-www/iNZight/ iNZight
 
 Npush:
-	sudo rsync -rlnv --delete --exclude "downloads" --exclude "OLD" iNZight/ tell029@login02.fos.auckland.ac.nz:/mnt/tell029/web/homepages.stat/inzight-www/iNZight
+	sudo rsync -rlnv --delete --exclude "downloads" --exclude "OLD" --exclude "TESTING" iNZight/ tell029@login02.fos.auckland.ac.nz:/mnt/tell029/web/homepages.stat/inzight-www/iNZight
 
 Npull:
-	sudo rsync -rlnv --delete --exclude "downloads" --exclude "OLD" tell029@login02.fos.auckland.ac.nz:/mnt/tell029/web/homepages.stat/inzight-www/iNZight/ iNZight
+	sudo rsync -rlnv --delete --exclude "downloads" --exclude "OLD" --exclude "TESTING" tell029@login02.fos.auckland.ac.nz:/mnt/tell029/web/homepages.stat/inzight-www/iNZight/ iNZight
 
 
 fixPermissions:
