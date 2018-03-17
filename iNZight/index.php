@@ -49,9 +49,11 @@ $oss = array("Windows", "Mac", "Linux");
     <a href="<?php echo $inzight_online_link; ?>" class="thumbnail alert-info lite text-center">
       <h4><?php echo $inzight_text; ?> Lite</h4>
     </a>
+    <div class="twitter-feed">
+<a href="https://twitter.com/intent/tweet?screen_name=iNZightUoA&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false">Tweet to @iNZightUoA</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
   </div>
 </div>
-
 
 
 
