@@ -7,6 +7,8 @@ DBNAME=inzight
 DBUSER=root
 DBPASSWD=root
 
+locale-gen en_NZ.UTF-8
+
 echo -e "\n--- Mkay, installing now... ---\n"
 
 echo -e "\n--- Updating packages list ---\n"
@@ -120,7 +122,7 @@ export DB_PASS=$DBPASSWD
 EOF
 
 echo -e "\n--- Setting up Sass ---\n"
-gem install sass > /dev/null 2>&1
+gem install sass -v 3.4.25 > /dev/null 2>&1
 
 cat > /usr/bin/runsass <<EOF
 #!/bin/bash

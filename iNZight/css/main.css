@@ -7701,9 +7701,11 @@ nav.navbar .navbar-nav > li:hover > .dropdown-menu {
   background: #cdeefa; }
   @media (min-width: 992px) {
     .feature a.alert-info {
-      margin-top: 100px; } }
+      margin-top: 50px; } }
   .feature a.alert-info:hover {
     text-decoration: none; }
+.feature iframe {
+  vertical-align: middle; }
 .feature a.alert-info.lite {
   margin-top: 0;
   background: #cdeefa; }

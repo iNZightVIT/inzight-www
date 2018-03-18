@@ -183,6 +183,17 @@ if ($auto) {
         </a>
       </div>
 
+      <div>
+        <hr>
+        <h4 class="panel-title">R users running R 3.3 or later</h4>
+        <p>
+          It's currently not possible for the installer to setup iNZight using R versions
+          3.3 or 3.4 (the issues lies with CRAN not building RGtk2 binaries). 
+          Please use the "iNZightVIT Application Folder" and follow the instructions
+          to install iNZight.
+        </p>
+      </div>
+
       <div class="depreciation-notice">
         <hr>
         <h4 class="panel-title">OS X 10.8 and earlier</h4>
@@ -248,19 +259,12 @@ if ($auto) {
         </p>
 
         <div class = "alert alert-warning">
-          <p><strong>iNZight not yet supported with R 3.4.0 on macOS El Captian or later</strong></p>
+          <p><strong>iNZight not yet supported with R 3.3 or later</strong></p>
           <p>
             Due to significant changes in the latest release of R (3.4.0),
             the <a href="https://cran.r-project.org/package=RGtk2">dependency RGtk2</a>
             is not yet available to users running macOS El&nbsp;Capitan or later (10.11+).
-            If you have R 3.4, you can install an older version (3.2.4 or <em>earlier</em>),
-            and then download the
-            <a href="https://r.research.att.com/#other">RSwitch App</a>
-            to change versions of R <strong>before</strong> running iNZight.
-          </p>
-          <p>
-            Of course, if you have installed the necessary command line tools to compile R packages with R 3.4.0,
-            you should be OK installing iNZight and it's dependencies.
+            Please see the instructions at the bottom of the page.
           </p>
         </div>
 
@@ -286,6 +290,39 @@ if ($auto) {
           <li><a href="<?php echo $download_links["xquartz"]; ?>">XQuartz</a></li>
           <li><a href="https://www.r-project.org/">R (>= 3.0)</a> NOTE: R 3.4.0 not yet supported (see note above)</li>
         </ul>
+  
+        <hr>
+        <h4>Installing iNZight on R 3.4</h4>
+        <p>
+          You'll need to be able to install packages from source in order to get iNZight
+          running. The following information is extracted 
+          <a href="http://cran.stat.auckland.ac.nz/bin/macosx/tools/">from the CRAN tools page</a>.
+        </p>
+        <ol>
+          <li>Install gfortran: 
+            <a href="http://cran.stat.auckland.ac.nz/bin/macosx/tools/gfortran-4.2.3.pkg">gfortran-4.2.3.pkg</a>
+            (direct download link)
+          </li>
+          <li>Install the XCode Command Line Tools for macOS<br>
+            From a terminal, run <code>xcode-select --install</code>
+          </li>
+          <li>Create a <code>~/.R/Makevars</code> file. Running the following code in terminal will do that:
+            <pre>mkdir -p ~/.R
+cat << EOF > ~/.R/Makevars
+CC=/usr/local/clang4/bin/clang
+CXX=/usr/local/clang4/bin/clang++
+LDFLAGS=-L/usr/local/clang4/lib
+EOF
+</pre>
+          </li>
+          <li>Once you've following the steps at the top of the page and have an iNZightVIT folder in Applications,
+            go ahead and run iNZight and it should install the necessary packages. If it fails, try install RGtk2 manually. In R:
+            <pre>install.packages('RGtk2', type='source')</pre>
+            If that succeeds and iNZight still fails to start, contact support.<br>
+            If it fails, <a href="https://gist.github.com/sebkopf/9405675">here's a gist</a> that
+            gives a suite of things to work through to get it installed. Get in touch with us if you're stuck.
+          </li>
+        </ol>
       </div>
     </div>
 

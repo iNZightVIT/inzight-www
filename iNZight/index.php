@@ -23,6 +23,13 @@ $oss = array("Windows", "Mac", "Linux");
   </div>
 
   <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-0">
+        <h5><strong>Looing for assistance?</strong></h5>
+        <div class="help-feed">
+          <a href="https://twitter.com/intent/tweet?screen_name=iNZightUoA&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false">Tweet to @iNZightUoA</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <a href="https://gitter.im/iNZightVIT/Lobby">
+              <img src="https://badges.gitter.im/iNZightVIT/lobby.png" alt="Get help on Gitter" />
+          </a>
+        </div>
     <a href="getinzight.php" class="thumbnail alert alert-info text-center">
       <h4>Download Now</h4>
       <p>
@@ -49,9 +56,7 @@ $oss = array("Windows", "Mac", "Linux");
     <a href="<?php echo $inzight_online_link; ?>" class="thumbnail alert-info lite text-center">
       <h4><?php echo $inzight_text; ?> Lite</h4>
     </a>
-    <div class="twitter-feed">
-<a href="https://twitter.com/intent/tweet?screen_name=iNZightUoA&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false">Tweet to @iNZightUoA</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    </div>
+
   </div>
 </div>
 
