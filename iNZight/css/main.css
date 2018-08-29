@@ -8041,6 +8041,9 @@ ol.breadcrumb > li {
   ol.breadcrumb > li a {
     font-weight: normal; }
 
+ol.spread > li {
+  margin-bottom: 1em; }
+
 .small {
   font-size: 0.8em; }
 
@@ -8082,6 +8085,10 @@ a.thumb {
 .backuplink a.original {
   display: none; }
 
+.download-icon {
+  color: #4ab24a;
+  margin-right: 2px; }
+
 a.os-icon {
   padding-top: 30px;
   font-weight: normal; }
@@ -8093,11 +8100,13 @@ a.os-icon {
     transform: scaleY(0.95);
     opacity: 0;
     transition: all 0.4s ease-in-out; }
-  a.os-icon:hover {
+  a.os-icon:hover, a.os-icon.active {
     text-decoration: none; }
-    a.os-icon:hover img, a.os-icon:hover .os-details {
+    a.os-icon:hover img, a.os-icon:hover .os-details, a.os-icon.active img, a.os-icon.active .os-details {
       transform: scaleY(1);
       opacity: 1; }
+  a.os-icon.active {
+    background: #eeeeee; }
   a.os-icon.animate-up {
     opacity: 0;
     transform: translateY(-80px) scale(0.9);

@@ -1,7 +1,4 @@
 <?php
-  $rel = "../";
-  require_once($rel . 'assets/objects/setup.php');
-
   $dist = $_POST["dist"];
   if ($dist == "Other") { ?>
 

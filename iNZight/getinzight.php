@@ -1,4 +1,7 @@
 <?php
+
+// header("Location: install");
+
 $rel = "./";
 require_once($rel . 'assets/objects/setup.php');
 require_once($rel . 'assets/functions/filesize.php');
