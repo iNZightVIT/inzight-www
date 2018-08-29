@@ -36,7 +36,20 @@ __Release date__: 23 March 2017
 ### Patch 2.7.6 - 21/02/2018
 - Again, more fixes/features for interactive plots - Yu Han is working hard!
 
+### Patch 2.7.7 - 18/04/2018
+- more fixes and improvements to interactive plots
 
+### Patch 2.7.8 - 23/05/2018
+- fix bug showing up in changes to R 3.5.0
+- latest interact updates
+- reword the inference output for two-way chisquare test: proportions -> distributions
+
+### Patch 2.7.9 - 14/08/2018
+- restructure templates dir into inst dir to make html/css/js templates accessible via `system.file()`
+- various other bug fixes and changes to interactive plots
+
+### Patch 2.7.10 - 17/08/2018
+- fix a bug in exportHTML where arguments not passed correctly
 
 ***
 # Version 2.6

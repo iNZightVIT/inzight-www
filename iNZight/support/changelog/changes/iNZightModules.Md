@@ -1,3 +1,19 @@
+# Version 2.4
+_Release date__: 14 August 2018
+
+## Major changes
+
+* updated maps module UI for lat/lon data
+* Add to Plot features now implemented in maps
+
+## Changes/Fixes
+
+* many additions and fixes to the shapes maps module
+* removed some redundant code from timeseries and modelfitting modules
+
+
+***
+
 # Version 2.3
 __Release date__: 23 January 2018
 

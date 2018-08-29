@@ -1,3 +1,15 @@
+# Version 3.3
+__Release date:__ 15 August 2018
+
+## Major Changes
+
+- import data now uses updated functions which return the file-specified code,
+  available from Advanced > R Code history
+- maps module completely renovated
+- interactive plots have recieved more updates and fixes
+
+
+***
 # Version 3.2
 __Release date:__ 23 January 2018
 
@@ -25,6 +37,10 @@ __Release date:__ 23 January 2018
 ### Patch 3.2.1 - 21/02/2018
 - fix small issue in import module that prevented reading of non-UTF-8 csv files
 
+### Patch 3.2.2 - 25/05/2018
+- fix bug in import window where some character encodings were being distorted
+- fix typo in import window info box
+- catch import errors, so the "please wait" dialog hopefully doesn't stay open forever
 
 ***
 # Version 3.1

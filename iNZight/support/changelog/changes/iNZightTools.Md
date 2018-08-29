@@ -1,3 +1,16 @@
+# Version 1.6
+__Release date__: 14 Auguest 2018
+
+## Breaking Changes
+
+- data import is now performed by the `smart_read()` function
+
+## Minor Changes and Fixes
+
+- new function to generate R variable names (for code writing)
+- various bug fixes
+
+
 # Version 1.5
 __Release date__: 23 January 2018
 
@@ -11,6 +24,12 @@ __Release date__: 23 January 2018
 
 ### Patch 1.5.1 - 21/02/2018
 - fix tiny bug in encoding default that prevented non-UTF-8 files from reading
+
+### Patch 1.5.2 - 22/02/2018
+- fix a bug where timezone NA on macs prevented reading data
+
+### Patch 1.5.3 - 12/03/2018
+- fix a bug in csv reading on macos
 
 ***
 

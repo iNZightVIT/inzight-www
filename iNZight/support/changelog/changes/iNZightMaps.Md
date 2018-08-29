@@ -1,3 +1,15 @@
+# Version 2.0
+__Release date__: 14 August 2018
+
+Massive overhaul of the mapping module, using ggplot2 and sf packages.
+
+## New Features
+- Ability to map data to arbitrary shapefiles and plot variables using filled regions or centroids
+- For spatial time series data: plot animated maps over time, overlay small line plots on regions or aggregate values
+- Retrieve the code used for these maps 
+- Add most point appearance options from regular iNZightPlots scatterplots into iNZightMaps coordinate maps
+
+***
 # Version 1.1
 __Release date__: 11 July, 2016
 
