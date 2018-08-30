@@ -90,9 +90,7 @@ In this example, we will be using the __Gap Minder__ data, which you can load by
 
 Once this is loaded, you can launch the Maps module from __Advanced__ > __Maps__.
 [[VLITE ??   ||
-<div class=\"note\">
   NOTE: The first time you launch it, you'll need to download the module - this will happen automatically.
-</div>
 ]]
 
 ## Selecting the Variables
@@ -107,7 +105,7 @@ First, make sure the __Regions__ option is selected, and then specify the follow
 
 - __Location Variable__: this dropdown tells iNZight which variable in the dataset contains the geographical location. In the Gap Minder dataset, the variable __Country__ contains the names of countries.
 
-[[ VLITE ??    || 
+[[ VLITE ??    || ]]
 
 Once you've selected those, click **Ok** and iNZight will load the necessary files.
 
