@@ -18,13 +18,9 @@ In this example, we will be using the __New Zealand Quakes 2000__ data, which yo
 
 Once this is loaded, you can launch the Maps module from __Advanced__ > __Maps__.
 
-///HTML:
 [[ VLITE ??  || 
-<div class=\"note\">
-  NOTE: The first time you launch it, you'll need to download the module - this will happen automatically.
-</div>
+NOTE: The first time you launch it, you'll need to download the module - this will happen automatically.
 ]]
-///
 
 ## Selecting the Variables
 
