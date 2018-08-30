@@ -9,7 +9,9 @@ Using iNZight, it is easy to create a graph of your variables. Simply __drag and
 You can also obtain a numeric summary of the variable by clicking the __Get Summary__ button at the bottom of the iNZight window. Note that you have to have dragged a variable into Variable 1 first.
 
 The following ___video___ demonstrates how to use iNZight to plot a single variable.
+///HTML:
 <div class="note">NOTE: the video was made using an older version of iNZight, so there will be some minor differences in the appearance.</div>
+///
 
 ///VIDEO: https://www.youtube.com/embed/idEQ6VULiu4 ///
 
