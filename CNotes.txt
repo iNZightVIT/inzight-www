@@ -33,7 +33,7 @@ to edit files
        go back to the repository in Github app ... ...  
        1.  Type something into the *Summary* Box before ...
        2.  Press "Commit ..." 
-	   3.  Push (to update it on Github proper)
+	   3.  Push origin (to update it on Github proper)
    
 Traps to avoid
 --------------
