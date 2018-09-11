@@ -28,6 +28,12 @@ to edit files
    
    Edit files
    
+   Then Commit the changes to Github
+   ---------------------------------
+       go back to the repository in Github app ... ...  
+       Type something into the *Summary* Box before ...
+   Press "Commit ..." to update it on Github proper
+   
 Traps to avoid
 --------------
 Inside the version switching code (iNZight/Lite) do not use any html mark-up (works in VirtualBox but not in the server)
