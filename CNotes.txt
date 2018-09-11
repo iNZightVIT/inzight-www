@@ -1,3 +1,33 @@
 Chris Wild's notes about how to update using vagrant
 ====================================================
 
+(Remote Desktop Connection)
+
+Need VirtualBox, Vagrant and Github installed
+
+Sign in to Github (1st time)
+
+  (to bring in a repository)  File > Clone Repository  and Select "inzight-www" (or whatever)
+  Change Current branch to "feature/update-docs"
+  
+
+   View > Repository List  (to see Repositories that have been cloned)
+   OR left-click on Current Repository
+   
+to see webpage
+--------------
+   Right click on inzight-www and Select "Open in Command Prompt" (may have to click Open without Git)
+   
+   In Cmd window >vagrant up
+   In browser go to ...  localhost:8181   
+   
+to edit files
+--------------
+   Right click on inzight-www and Select "Show in Explorer"
+   Opens the Github/inzight-www folder
+   
+   Edit files
+   
+Traps to avoid
+--------------
+Inside the version switching code (iNZight/Lite) do not use any html mark-up (works in VirtualBox but not in the server)
