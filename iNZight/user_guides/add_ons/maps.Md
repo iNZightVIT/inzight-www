@@ -12,7 +12,9 @@ There are two situations that iNZight can handle:
 Co-ordinates give a unique position of any point on the Earth.
 The __latitude__ defines the __vertical y position__ (North/South), while the __longitude__ defines the __horizontal x position__ (East/West).
 
-In this example, we will be using the __New Zealand Quakes 2000__ data, which you can load by going to __File__ > [[ VLITE ?? __Dataset Examples__ || __Example data__ ]], selecting the __Maps__ [[ VLITE ?? category || module ]], and choosing the data __nzquakes__ (see screenshot below).
+In this example, we will be using the __New Zealand Quakes 2000__ data, which you can load by going to
+ __File__ > [[ VLITE ?? __Dataset Examples__ || __Example data__ ]], selecting the 
+ __Maps__ [[ VLITE ?? category || module ]], and choosing the data __nzquakes__ (see screenshot below).
 
 ![Loading the NZ Quakes Data](../../img/user_guides/advanced/maps/01_maps_loadquakes[[ VLITE ?? _lite ]].png)
 
@@ -23,10 +25,14 @@ NOTE: The first time you launch it, you'll need to download the module - this wi
 ]]
 
 ## Select a background map
-Either select one of the inbuilt maps using the drop down menus or import your own Shapefile. Here we will use the map for New Zealand DHBs (2012) as that most closely maps our data.
+
+Either select one of the inbuilt maps using the drop down menus or import your own Shapefile. Here we will use the 
+map for New Zealand DHBs (2012) as that most closely maps our data.
+
 ![Select a background map](../../img/user_guides/advanced/maps/01_map_select[[ VLITE ?? _lite ]].png)
 
-The bottom right window shows any data with no matching region in the map. There are none so we can select Use Map.
+The lower left window shows any data with no matching region in the map. There are none so we can select Use Map.
+
 ![Unmatched data](../../img/user_guides/advanced/maps/01_unmatched_data[[ VLITE ?? _lite ]].png)
 
 ## Selecting the Variables
