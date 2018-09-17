@@ -22,6 +22,13 @@ Once this is loaded, you can launch the Maps module from __Advanced__ > __Maps__
 NOTE: The first time you launch it, you'll need to download the module - this will happen automatically.
 ]]
 
+## Select a background map
+Either select one of the inbuilt maps using the drop down menus or import your own Shapefile. Here we will use the map for New Zealand DHBs (2012) as that most closely maps our data.
+![Select a background map](../../img/user_guides/advanced/maps/01_map_select[[ VLITE ?? _lite ]].png)
+
+The bottom right window shows any data with no matching region in the map. There are none so we can select Use Map.
+![Unmatched data](../../img/user_guides/advanced/maps/01_unmatched_data[[ VLITE ?? _lite ]].png)
+
 ## Selecting the Variables
 
 When you launch the maps module, you'll be presented with a window to let you select the variables to use.
