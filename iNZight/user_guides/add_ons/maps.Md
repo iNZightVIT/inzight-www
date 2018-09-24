@@ -38,6 +38,7 @@ Once you've selected those, click "Ok" and iNZight will plot your data on a map!
 ![Selecting the latitude and longitude](../../img/user_guides/advanced/maps/03_maps_main1[[ VLITE ?? _lite ]].png) {.width600}
 
 ## testing the push which doesn't seem to be working!!!
+![Selecting the latitude and longitude](../../img/user_guides/advanced/maps/03_maps_main1[[ VLITE ?? _lite ]].png) {.width600}
 
 ## Coding More Variables
 
