@@ -43,23 +43,33 @@ Once you've selected those, click "Ok" and iNZight will plot your data on a map!
 
 ###__Extra Plot Options__: iNZight Maps uses Google to provide the map and there are several type to choose from:
 
-    - __roadmap__ - this is the default, and, not surprisingly, shows roads
-    - __satellite__ - this map type uses satellite imagery
-    - __terrain__ - this map type shows the terrain
-    - __hybrid__ - combines road map and satellite maps
+    __roadmap__ - this is the default, and, not surprisingly, shows roads
+    __satellite__ - this map type uses satellite imagery
+    __terrain__ - this map type shows the terrain
+    __hybrid__ - combines road map and satellite maps
 	
-	- __Overall size scale__ - defaults to 1 but can scale the point symbol between .5 and 2 times original size.
+	__Overall size scale__ - defaults to 1 but can scale the point symbol between .5 and 2 times original size.
 
-### __Colour__: allows you to select a variable to colour of points, a colour palette, number of quantiles and then you can cycle through maps by quantile. Alternative options are to using ranking instead of actual values and then reverse the colour palette if more appropriate.
+### __Colour__: 
 
-### __Size__: this lets just adjust the overall size of points from .05 to 3 times original size. Alternative variables can be selected and the resize can be proportional or emphasize.
+Allows you to select a variable to colour of points, a colour palette, number of quantiles and then you can cycle through maps by quantile. Alternative options are to using ranking instead of actual values and then reverse the colour palette if more appropriate.
 
-### __Opacity__: this adjusts the overall transparency of points, where 0 is fully visible, to 1 is fully invisible. This can be specified by variable and opacity can be in reverse order. 
+### __Size__: 
+
+This lets just adjust the overall size of points from .05 to 3 times original size. Alternative variables can be selected and the resize can be proportional or emphasize.
+
+### __Opacity__: 
+
+This adjusts the overall transparency of points, where 0 is fully visible, to 1 is fully invisible. This can be specified by variable and opacity can be in reverse order. 
 
 [[ VLITE ??  - __Connect points by lines__: Select to reveal the line colour selection and draw lines between points
 ||
-### __Point Symbol__: select from circle, square, diamond, triangle and inverted triangle. Select the variable to show and line width for the symbol.
-### __Connect Points__: Check the box to draw lines between points. You can change the line colour and width.
+### __Point Symbol__: 
+
+Select from circle, square, diamond, triangle and inverted triangle. Select the variable to show and line width for the symbol.
+### __Connect Points__: 
+
+Check the box to draw lines between points. You can change the line colour and width.
 
 ## Coding More Variables
 
