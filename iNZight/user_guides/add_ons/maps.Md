@@ -41,14 +41,9 @@ Once you've selected those, click "Ok" and iNZight will plot your data on a map!
 
 ## Mapping Options
 
-###__Extra Plot Options__: iNZight Maps uses Google to provide the map and there are several type to choose from:
-
-    __roadmap__ - this is the default, and, not surprisingly, shows roads
-    __satellite__ - this map type uses satellite imagery
-    __terrain__ - this map type shows the terrain
-    __hybrid__ - combines road map and satellite maps
-	
-	__Overall size scale__ - defaults to 1 but can scale the point symbol between .5 and 2 times original size.
+###__Extra Plot Options__: 
+iNZight Maps uses Google to provide the map and as within Google, the map options are road map, satellite, terrain and a hybrid of road and satellite.
+You can also select an Overall point size scale which defaults to 1 but can scale the point symbol between .5 and 2 times original size.
 
 ### __Colour__: 
 
@@ -60,10 +55,11 @@ This lets just adjust the overall size of points from .05 to 3 times original si
 
 ### __Opacity__: 
 
-This adjusts the overall transparency of points, where 0 is fully visible, to 1 is fully invisible. This can be specified by variable and opacity can be in reverse order. 
+This adjusts the overall transparency of points, from 0 - fully visible to 1 - fully invisible. This can be specified by variable and the point opacity can be in reverse order. 
 
 [[ VLITE ??  - __Connect points by lines__: Select to reveal the line colour selection and draw lines between points
 ||
+]]
 ### __Point Symbol__: 
 
 Select from circle, square, diamond, triangle and inverted triangle. Select the variable to show and line width for the symbol.
@@ -71,17 +67,10 @@ Select from circle, square, diamond, triangle and inverted triangle. Select the 
 
 Check the box to draw lines between points. You can change the line colour and width.
 
-## Coding More Variables
 
-Once you've got a map displayed, you can explore trends by coding features of the plot:
+### __Sub-setting__: 
 
-- __Colour by__: points will be coloured by the chosen variable.
-
-- __Size by__: the area of each point will be proportional to the value of the chosen variable.
-
-- __Opacify by__: the opacity (how visible the points are) will be proportional to the value of the selected variable.
-
-- __Sub-setting__: as with the main iNZight program, you can generate subsets by selecting a variable from either one or both of the subset menus.
+As with the main iNZight program, you can generate subsets by selecting a variable from either one or both of the subset menus.
 
 ### And there's more to come!
 
