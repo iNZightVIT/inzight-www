@@ -26,5 +26,9 @@
 "maps" : {
   "title" : "Maps",
   "desc"  : "Explore geographical data using iNZight's Maps Module."
+},
+"aboutmaps" : {
+  "title" : "About Maps",
+  "desc"  : "Explore geographical data using iNZight's Maps Module."
 }
 }

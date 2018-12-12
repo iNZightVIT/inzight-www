@@ -63,41 +63,23 @@ ___Additional options__ which appear once a __Colour-by__ variable has been sele
 * __Cycle levels__ (_categorical colour-by variable_)__:__ Clicking the arrow icons results in just the points from one category at a time being highlighted, with the others dimmed
 * __Cycle quantiles__ (_numeric colour-by variable_)__:__ Behaves in the same way with just the points in a quantile being highlighted. By default just 4 quantiles are used (useful if the colour-by variable is highly skewed), but …
  *	__\#quantiles__ allows you to change 4 to some other number of quantiles
-* __Back cycle _icon___ results in all of the points being highlighted again
+* __Back cycle icon__ results in all of the points being highlighted again
 
 
 ### __Size__: 
 
-__Overall__ (_slider_)__:__ Multiply the current size of each point by value chosen (default value 1)
+This lets just adjust the overall size of points from .05 to 3 times original size. Alternative variables can be selected and the resize can be proportional or emphasize.
 
-__Size by:__ Select a variable to differentially size the points by  (i.e., size according to the values of the chosen variable)
+### __Opacity__: 
 
-___Additional option__ which appears once a __Size-by__ variable has been selected_:
-* __Resize method:__ make the area of the point either ___proportional___ to the value of the size-by variable, or ___emphasize___ (map the smallest values to a hard-coded small point-size and the largest to a large size – sometimes useful when the ratio largest/smallest is not very big)
-
-### __Transparency/Opacity__: 
-
-__Overall__ (_slider_)__:__ Adjust the transparency levels of all of the points uniformly (default value 0 = no change; maximum makes all points completely transparent) 
-
-__Opacify by:__ (Opacity is the opposite of transparency) Select a variable to differentially set the opacity the points by (high values map to most visible, low to most transparent)
-
-___Additional option__ which appears once a __Opacify-by__ variable has been selected_:
-
-* __Reverse opacification__ (_check-box_)__:__ Reverse the way the values of the opacify-by variable are mapped to opacity/transparency levels
-
+This adjusts the overall transparency of points, from 0 - fully visible to 1 - fully invisible. This can be specified by variable and the point opacity can be in reverse order. 
 
 [[ VLITE ??  - __Connect points by lines__: Select to reveal the line colour selection and draw lines between points
 ||
 ]]
 ### __Point Symbol__: 
 
-__Symbol:__ Select from _circle_, _square_, _diamond_, _triangle_ and _inverted triangle_
-
-__Filled in symbols__ (_check-box_)__:__ Click to fill in all symbols
-
-__Symbol by:__ Can be done according to a categorical variable which has 5 or fewer categories  
-* __Symbol line width:__ Line-width multiplier
-
+Select from circle, square, diamond, triangle and inverted triangle. Select the variable to show and line width for the symbol.
 ### __Connect Points__: 
 
 Check the box to draw lines between points. You can change the line colour and width.
@@ -105,10 +87,13 @@ Check the box to draw lines between points. You can change the line colour and w
 
 ### __Sub-setting__: 
 
-___Works the same way___ as in the ___main part of iNZight___, you can generate subsets by selecting a variable from either one or both of the subset menus.
+As with the main iNZight program, you can generate subsets by selecting a variable from either one or both of the subset menus.
 
-Subset selection ___sliders and play buttons appear___ once a subset-by variable has been selected.
+### And there's more to come!
 
+The maps module is still being developed, and there's a lot we are waiting to release!
+
+- __Colour palettes__: this will give you a far better choice of colours, letting you customise your plot even more.
 
 
 
@@ -117,46 +102,7 @@ Subset selection ___sliders and play buttons appear___ once a subset-by variable
 ## Geographical Regions {#regions}
 
 In many cases, you might have data with regional information (where "region" can be countries, states, provinces, electorates, etc.).
-
-iNZight allows you to display this information on a map of outlines, with each region coloured depending on a chosen variable. Alternative representations  are also catered for.
-
-## .... Selecting a  Map
-
-### Select Map
-
-Choose either __Use inbuilt Map__ (_default_) to use one of the maps already in iNZight 
- * Choose from a selection of maps of Continents, several Countries, and World maps  
-or __Import Shapefile__ to start up a dialog for reading a shape file stored on your computer
-
-Then click … __Import Map__
-
-When a map has been imported, iNZight will also try to find a variable in your data file which best matches one of the region-naming variables on the map. It will display the names it has found beside __Data variable__ and __Map variable__. Selection boxes allow you to select replacement variables for these two roles.
-
-It will also draw the map. Regions for which _data is present_ in the data set are shaded _green_.  
-Any Regions which have _no data_ are shaded _orange_.
-
-__Unmatched Data:__ the names of any region-values in the data that are not represented in the map will be listed here once the map has been imported. You can decide to use the map anyway or exit maps and go back to your data to do something about the non-matching names. 
-
-__Multiple observations for each region were found__ (___Warning___)__:__ If any particular region name is found on more than row of the file this warning will appear. This often happens when we have observations for a region for several different years.  
-The module will try to find a variable that “explains” the multiple observations. For want of a better name we called it a __sequence variable__
-
-* __Select sequence variable:__ If an “explaining variable” is found its name will be displayed in a selection box alongside this title. You have the freedom to change it
-
-__Use Map__ (_Button_)__:__ __Click__ to tell the program "I will use this map"  
-    * The program will then replace the map-selection command panel with a command panel for plotting and draw an unshaded map with the appropriate boundaries
-
-## .... Plotting on the Map
-
-The ___first time___ you use this module ___ignore___ the sections __Map Options__ and __Extra Plot Options__
-
-__Select Variable to display:__ Click on the name of an appropriate variable and it
-
-### Connect Points:
-
-__Connect points with lines__ (_check-box_)__:__ Check the box to draw lines between points. Connected in the order they appear in the data file. 
-
-
-
+iNZight allows you to display this information on a map of outlines, with each region coloured depending on a chosen variable.
 
 In this example, we will be using the __Gap Minder__ data, which you can load by going to  __File__ > __[[VLITE ?? Dataset Examples || Example data]]__, selecting the[[VLITE ?? __ Future Learn__ category ||    __ Default__ module]], and choosing the data __gapminder__ (see screenshot below).
 

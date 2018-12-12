@@ -26,7 +26,7 @@ to edit files
    Right click on inzight-www and Select "Show in Explorer"
    Opens the Github/inzight-www folder
    
-   Edit files
+   Edit files    (**We are using Markdown Extra**)
    
    Then Commit the changes to Github
    ---------------------------------
