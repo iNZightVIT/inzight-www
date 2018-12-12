@@ -36,7 +36,7 @@ First, make sure the __Coordinate__ option is selected, and then specify the Lat
 
 Once you've selected those, click "Ok" and iNZight will plot your data on a map!
 
-![Selecting the latitude and longitude](../../img/user_guides/advanced/maps/03_maps_main1[[ VLITE ?? _lite ]].png) {.width600}
+![Selecting the latitude and longitude](../../img/user_guides/advanced/maps/03_maps_main1[[ VLITE ?? _lite ]].png) {.width700}
 
 
 
