@@ -1,10 +1,18 @@
 # Maps
 
+
+[[ VLITE ??  || 
+__ (NOTE:__ __Maps__ is not contained in the initial installation of iNZight.   
+&emsp;&ensp; * It downloads and installs automatically the first time you try to launch it (go __Advanced > Maps__)    
+&emsp;&ensp;&emsp;&ensp; - ___But you need to have some data set loaded___  (any data set) before you can access the __Advanced__ menu __)__
+]]
+
+
 The Maps Module aims at making it easy to visualise geographical data on a map, and investigate patterns of variables.
 There are two situations that iNZight can handle:
 
-1. [Each observation has a __co-ordinate__ value](#coordinates), or
-2. [The data are associated with __regions__](#regions) (such as __Countries__, __states__, etc).
+1. [Each observation has latitude and longitude values ](#coordinates) __(__ i.e. __"Geographical Co-ordinate Data")__, or
+2. [The data are associated with __geographic regions__](#regions) (such as __Countries__, __states__, etc).
 
 
 ## Geographical Co-ordinate Data  {#coordinates}
@@ -16,45 +24,44 @@ In this example, we will be using the __New Zealand Quakes 2000__ data, which yo
  __File__ > [[ VLITE ?? __Dataset Examples__ || __Example data__ ]], selecting the 
  __Maps__ [[ VLITE ?? category || module ]], and choosing the data __nzquakes__ (see screenshot below).
 
-![Loading the NZ Quakes Data](../../img/user_guides/advanced/maps/01_maps_loadquakes[[ VLITE ?? _lite ]].png)
+![Loading the NZ Quakes Data](../../img/user_guides/advanced/maps/01_maps_loadquakes[[ VLITE ?? _lite ]].png) {.width100}
 
 Once this is loaded, you can launch the Maps module from __Advanced__ > __Maps__.
 
-[[ VLITE ??  || 
-NOTE: The first time you launch it, you'll+
-ad the module - this will happen automatically.
-]]
 
-
-## Selecting the Variables
+## Selecting the Latitude and Longitude Variables
 
 When you launch the maps module, you'll be presented with a window to let you select the variables to use.
 
 ![Selecting the latitude and longitude](../../img/user_guides/advanced/maps/02_maps_load[[ VLITE ?? _lite ]].png)
 
-First, make sure the __Coordinate__ option is selected, and then specify the Latitude and Longitude variables (iNZight will try to guess these automatically, but you might need to select them manually if they have nonstandard names).
+First, make sure the __Coordinate__ option is selected, and then specify the __Latitude__ and __Longitude__ variables.  
+iNZight will try to guess these automatically, but you will have to select them manually if they have nonstandard names.
 
-Once you've selected those, click "Ok" and iNZight will plot your data on a map!
+Once you've selected those, ___click_ "OK"__ and iNZight will plot your data on a map.
+
 
 ![Selecting the latitude and longitude](../../img/user_guides/advanced/maps/03_maps_main1[[ VLITE ?? _lite ]].png) {.width700}
 
 
+[___This only works if you are connected to the internet___ because iNZight Maps ___downloads___ appropriate [Stamen map](https://stamen.com/opensource/) tiles (via ggmap) to form the background of the plot]
 
-## Mapping Options
+Plot appearance can be changed and information about other variables added to the plot using the following controls.
+* Click on the __"+"__ ___buttons___ to expand the option panels
 
 ###__Extra Plot Options__: 
-iNZight Maps uses Stamen map tiles (via ggmap)
+iNZight Maps ___downloads___ appropriate Stamen map tiles (via ggmap) to make the background of the plot
  
-__Map-type:__ options are _terrain_ (coloured terrain map with some features names), _terrain-background_ (no added names), _toner-lite_ (white map on grey background) and _toner_ (white map on black background).
+__Map-type:__ options are ___terrain___ (_default_ - coloured terrain map with some features named), ___terrain-background___ (no added names), ___toner-lite___ (white map on grey background) and ___toner___ (white map on black background).
 
 __Overall point size__ (_Slider_)__:__ scale everything drawn on top of the plot/map to a chosen multiple of their current sizes (default =1)
 
 ### __Colour__: 
 
 _Either choose a ..._  
-__Point colour:__ select a single colour to apply to all of the points  
+&emsp;&ensp;__Point colour:__ select a single colour to apply to all of the points  
 _Or select the names of a ..._  
-__Colour by _variable___ to differentially colour points according the values of the chosen variable.
+&emsp;&ensp;__Colour by _variable___ to differentially colour points according the values of the chosen variable.
 
 ___Additional options__ which appear once a __Colour-by__ variable has been selected_:
 * __Palette__ for selecting a colour palette
@@ -98,119 +105,159 @@ __Filled in symbols__ (_check-box_)__:__ Click to fill in all symbols
 __Symbol by:__ Can be done according to a categorical variable which has 5 or fewer categories  
 * __Symbol line width:__ Line-width multiplier
 
-### __Connect Points__: 
-
-Check the box to draw lines between points. You can change the line colour and width.
-
-
-### __Sub-setting__: 
-
-___Works the same way___ as in the ___main part of iNZight___, you can generate subsets by selecting a variable from either one or both of the subset menus.
-
-Subset selection ___sliders and play buttons appear___ once a subset-by variable has been selected.
-
-
-
-
-
-
-## Geographical Regions {#regions}
-
-In many cases, you might have data with regional information (where "region" can be countries, states, provinces, electorates, etc.).
-
-iNZight allows you to display this information on a map of outlines, with each region coloured depending on a chosen variable. Alternative representations  are also catered for.
-
-## .... Selecting a  Map
-
-### Select Map
-
-Choose either __Use inbuilt Map__ (_default_) to use one of the maps already in iNZight 
- * Choose from a selection of maps of Continents, several Countries, and World maps  
-or __Import Shapefile__ to start up a dialog for reading a shape file stored on your computer
-
-Then click … __Import Map__
-
-When a map has been imported, iNZight will also try to find a variable in your data file which best matches one of the region-naming variables on the map. It will display the names it has found beside __Data variable__ and __Map variable__. Selection boxes allow you to select replacement variables for these two roles.
-
-It will also draw the map. Regions for which _data is present_ in the data set are shaded _green_.  
-Any Regions which have _no data_ are shaded _orange_.
-
-__Unmatched Data:__ the names of any region-values in the data that are not represented in the map will be listed here once the map has been imported. You can decide to use the map anyway or exit maps and go back to your data to do something about the non-matching names. 
-
-__Multiple observations for each region were found__ (___Warning___)__:__ If any particular region name is found on more than row of the file this warning will appear. This often happens when we have observations for a region for several different years.  
-The module will try to find a variable that “explains” the multiple observations. For want of a better name we called it a __sequence variable__
-
-* __Select sequence variable:__ If an “explaining variable” is found its name will be displayed in a selection box alongside this title. You have the freedom to change it
-
-__Use Map__ (_Button_)__:__ __Click__ to tell the program "I will use this map"  
-    * The program will then replace the map-selection command panel with a command panel for plotting and draw an unshaded map with the appropriate boundaries
-
-## .... Plotting on the Map
-
-The ___first time___ you use this module ___ignore___ the sections __Map Options__ and __Extra Plot Options__
-
-__Select Variable to display:__ Click on the name of an appropriate variable and it
 
 ### Connect Points:
 
 __Connect points with lines__ (_check-box_)__:__ Check the box to draw lines between points. Connected in the order they appear in the data file. 
 
 
+### __Sub-setting__: 
 
+___Works the same way___ as in the ___main part of iNZight___, you can generate subsets by selecting a variable from either one or both of the subset menus.
 
-In this example, we will be using the __Gap Minder__ data, which you can load by going to  __File__ > __[[VLITE ?? Dataset Examples || Example data]]__, selecting the[[VLITE ?? __ Future Learn__ category ||    __ Default__ module]], and choosing the data __gapminder__ (see screenshot below).
+Subset selection ___sliders___ and ___play buttons___ _appear_ once a subset-by variable has been selected.
+ 
+### Interactive Coordinate Maps
 
-![Loading the Gap minder Data](../../img/user_guides/advanced/maps/04_maps_loadgapminder[[VLITE ?? _lite]].png)
+![Interactive plot icon](../../img/user_guides/advanced/maps/R11_InterativeIcon.png){.width36}
+When you click on the ___Interactive plot icon___ (immediately above), iNZight makes a temporary interactive html file and opens it using your default browser.
 
-Once this is loaded, you can launch the Maps module from __Advanced__ > __Maps__.
-[[VLITE ??   ||
-  NOTE: The first time you launch it, you'll need to download the module - this will happen automatically.
-]]
+* Interactive versions of the maps are ___not available when there is more than one map___ in the plotting window 
 
-## Selecting the Variables
+To save a permanent file, click on the ___Save Plot icon___, or go __Plot > Save Plot__.  
+Choose the __interactive HTML__ as your file type.
 
-When you launch the maps module, you'll be presented with a window to let you select the variables to use.
-
-[[VLITE ??   || <img src='../../img/user_guides/advanced/maps/05_maps_shapeload.png' alt='Select Variables to load'> ]]
-
-First, make sure the __Regions__ option is selected, and then specify the following information:
-
-- __Map Location__: this is the overall location of your data. For this example, the Gap Minder dataset contains data on countries, so we have selected the __world__ map.
-
-- __Location Variable__: this dropdown tells iNZight which variable in the dataset contains the geographical location. In the Gap Minder dataset, the variable __Country__ contains the names of countries.
-
-[[ VLITE ??    || ]]
-
-Once you've selected those, click **Ok** and iNZight will load the necessary files.
-
-
-## Plotting Variables ]]
-
-To generate a map and display your data, select a variable [[VLITE ?? ||from the dropdown at the top-left of the window]]. Here, we have chosen __ChildrenPerWoman__.
-
-![Selecting the plotting variable](../../img/user_guides/advanced/maps/06_maps_shapemain[[VLITE ?? _lite]].png) {.width600}
-
-
-## Sub-setting the data
-
-As with the main iNZight program, you can view multiple subsets easily by selecting a sub-setting variable. In the image below, we have selected __Year\_cat__, which contains a factor version of the year for each record.
-This allows us to see how the average number of children per woman changes over time.
-
-![Selecting the subsetting variable](../../img/user_guides/advanced/maps/07_maps_subset[[VLITE ?? _lite]].png) {.width600}
+These files work independently of iNZight
 
 
 
-## Plot Options
+___
+___
 
-There are several plot options available in this module.
+## Data on Geographical Regions {#regions}
 
-- __Colour__: you can adjust the colour used on the map from here. At the bottom, there are two options, __heat__ and __terrain__, which offer alternative colour palettes. The screenshow below uses the __heat__ palette.
-
-- __Missing value colour__: To make missing values more or less visible, you can modify the colour used to shade those regions.
-
-- __Plot labels__: this lets you add labels to the plot. The options are __Name__, which adds the region names, __Value__, which adds the value of the chosen variable, and __Both__, which adds the Name and Value.
-
-[[VLITE ?? || - __Zooming__: You can zoom in on a region by clicking the __zoom__ icon (magnifying glass) in the plot toolbar (bottom right of the screen), and then clicking a point on the map to zoom in to. ]]
+![US Map](../../img/user_guides/advanced/maps/R0_USMap[[ VLITE ?? _lite ]].png){.width300}
 
 
-![Some other options](../../img/user_guides/advanced/maps/08_maps_heatcolour[[VLITE ?? _lite]].png) {.width600}
+In many cases, you might have data with regional information (where "region" can be countries, states, provinces, electorates, etc.).
+
+iNZight allows you to display this information on a map of outlines, with each region coloured according to the value of a chosen variable. (Some alternative representations  are also catered for.)
+
+* _Jump to ..._ [Selecting a map](#SelectMap) | [Plotting data on the map](#PlotOnMap) | [Multiple observations per region](#MultiObs) | [Interactive maps](#InteractiveRMaps)
+
+## .... Selecting a  Map {#SelectMap}
+
+![Selecting a  Map](../../img/user_guides/advanced/maps/R1_SelectMap[[ VLITE ?? _lite ]].png){.width600}
+
+### Select Map
+
+Choose either __Use inbuilt Map__ (_default_) to use one of the maps already in iNZight  
+&emsp;&ensp;(choose from a selection of maps of _Continents_, several _Countries_, and _World_ maps)   
+or __Import Shapefile__ to start up a dialog for reading a shape file stored on your computer
+
+Then click … __Import Map__
+
+### Select Variables
+When a map has been imported, iNZight will also try to find a variable in your data file which best matches one of the region-naming variables on the map. It will display the names it has found beside __Data variable__ and __Map variable__. Selection boxes allow you to select replacement variables for these two roles.
+* ___Selection boxes___ allow you to ___change the variables___ used for each of these two roles.
+
+___It will also draw the map___. Regions for which _data is present_ in the data set are shaded _green_.  
+Any Regions which have _no data_ are shaded _orange_.
+
+![Variable matching and Unmatched data](../../img/user_guides/advanced/maps/R2_UnmatchedData[[ VLITE ?? _lite ]].png){.width800}
+
+__Unmatched Data:__  
+The names of any Regions in the data that are not represented in the map will be listed here once the map has been imported. You can decide to use the map anyway or exit maps and go back to your data to do something about the non-matching names. 
+
+__Multiple observations for each region were found: (_only appears when this is true_)__  
+This often happens when, for example, we have observations for a region for several different years with different years corresponding to different rows in the data set.  
+  The module will then try to find a variable that “explains” the multiple observations. We are called it a "_sequence variable_"  
+&emsp;&ensp;* __Select sequence variable:__ If an “explaining variable” is found its name will be displayed in the selection box. You have the freedom to change it
+
+__Use Map__ (_Button_)__:__ __Click__ to tell the program "___I want to use this map___"  
+    * The program will then replace the map-selection command panel with a new command panel for plotting. An unshaded map with the appropriate boundaries will appear (as follows)
+
+![Initial appearance of Variables view](../../img/user_guides/advanced/maps/R3_InitialVariablesView[[ VLITE ?? _lite ]].png){.width500}
+
+## .... Plotting data on the Map {#PlotOnMap}
+
+If you are using this module for the ___first time___ it is best to ___ignore___ the __Map Options__ and __Extra Plot Options__ paragraphs initially and see how the plotting of variables works. So that is what we are going to discuss next.
+* _Jump to_ ... [Map Options](#MapOptions) | [Extra Plot Options](#ExtraPlotOptions)
+
+### Select Variable/s to display
+Click on the name of the desired variable and it will display on the map
+
+![PlotVariable](../../img/user_guides/advanced/maps/R4_PlotVariable[[ VLITE ?? _lite ]].png){.width600}
+
+If you ___select several variables___ you will get a map plot for each of those variables …
+
+![Plot 2 Variables](../../img/user_guides/advanced/maps/R5_Plot2Variables[[ VLITE ?? _lite ]].png){.width500}
+
+__Regions__ _radio button_ gives ___shaded maps___ … 
+ 
+![Plotting shaded maps](../../img/user_guides/advanced/maps/R6_ShadedMaps[[ VLITE ?? _lite ]].png){.width600}
+
+ 
+__Centroids__ _radio button_  gives …
+
+![Plotting centroids](../../img/user_guides/advanced/maps/R7_Centroids[[ VLITE ?? _lite ]].png){.width600}
+
+___Additional options___ _that become available_ ___when Centroids___ _is turned on_:  
+&emsp;&ensp;__Size by:__  (_typically use a relevant population-size variable_)  
+&emsp;&ensp;__Overall size__ (_slider_)__:__ makes the disks bigger or smaller uniformly  
+&emsp;&ensp;__Transparency of map__ (_slider_): transparency of map outlines  
+
+![Map Options](../../img/user_guides/advanced/maps/R8_MapOptions[[ VLITE ?? _lite ]].png){.width300}
+
+### Map Options {#MapOptions}
+
+__Current Map:__ Opportunity to change your mind and select a different map   
+__Regional selection boxes:__  use to remove regions from the plotted map  
+__Projection__ (_dropdown list_)__:__ Opportunity to change the map projection (default is the projection suggested by the shapefile)
+
+
+### Extra Plot Options: {#ExtraPlotOptions}
+
+__Plot Title:__ change plot title  
+__Palette:__ change colour palette  
+___Check boxes_: Dark__ (makes sea go dark), __Grid Lines__ (use to add), __Axis labels__ (use to add)  
+__Map Scales:__ Choices for _independent scales_/_same scale_ to be used across a set of plots   
+__Font Size__ (_slider_):
+__Region Labels__ (_check box_)__:__ add labels  
+___Additional options___ _that become_ ___available when Region Labels___ _are turned on_ :  
+&emsp;&ensp;Selection box for selecting ___variable___ to use ___for labelling___   
+&emsp;&ensp;__Region label font size:__ (_slider_)
+
+
+### Dataset has multiple observations per region {#MultiObs}
+(_only appears when this is true_)
+
+![Multple observations choices](../../img/user_guides/advanced/maps/R9_MultiChoices[[ VLITE ?? _lite ]].png){.width600}
+ 
+* __Single value:__ display just the last value  
+___Additional options___ _that become available_ ___when_ Single Value__ _is chosen_:  
+&emsp;&ensp;__Value of ... variable__ (_slider_) __:__ choose value of the explaining variable (e.g. year)   
+&emsp;&ensp;___Play button___ and ___playback timer button_:__ controls playing through the values/images 
+* __Aggregate:__ display an aggregate of the values (e.g. mean, median)  
+* __All Values:__ display mini time-series glyph ("___sparklines___") for each region  
+___Additional options___ _that become available_ ___when_ All Values__ _is chosen_:  
+&emsp;&ensp;__Sparklines__ can be plotted for  ___Absolute___ (the raw numbers), ___Relative___ (ratio to the first value), ___Percent Change___ (between successive observations)  
+&emsp;&ensp;__Overall size__ (_slider_) __:__ controls size of the sparkline glyphs  
+&emsp;&ensp;__Transparency of map__ (_slider_)__:__ transparency of map outlines
+
+
+![All values and sparklines](../../img/user_guides/advanced/maps/R10_SparkLines[[ VLITE ?? _lite ]].png){.width600}
+
+___
+ 
+### Interactive Maps {#InteractiveRMaps}
+
+![Interactive plot icon](../../img/user_guides/advanced/maps/R11_InterativeIcon.png){.width36}
+When you click on the ___Interactive plot icon___ (immediately above), iNZight makes a temporary interactive html file and opens it using your default browser.
+
+* Interactive versions of the maps are ___not available when there is more than one map___ in the plotting window 
+
+To save a permanent file, click on the ___Save Plot icon___, or go __Plot > Save Plot__.  
+Choose the __interactive HTML__ as your file type.
+
+These files work independently of iNZight
