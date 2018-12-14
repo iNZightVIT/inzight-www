@@ -1,20 +1,29 @@
 # About Presenting Data on Maps
-(_This is an __article__ discussing possibilities and ideas. It is __not__ software __documentation___)
+(_This article gives an overview of plotting data on maps. It is not software documentation. The software documentation is_ [ here ...](../../user_guides/add_ons/?topic=maps))
+
+
+Plotting data on maps is a specialised area that is quite different from normal graphing. This article describes the sorts of data we can present using maps and ways in which we can use maps in constructing data visualisations to help ourselves and others better understand that data. 
+
+We start by outlining the types of data that are appropriate for presentation on maps and then go on to show ways of visualizing data using maps; addressing important issues about using maps for data visualization as they arise.   
+
+_Everything you see illustrated in this article is very fast and easy to obtain using iNZight's Maps module_. 
+
  
- ## The types of data most commonly plotted on maps are:
+ ## The types of data most commonly plotted on maps
 
+ The two types of data most commonly plotted on maps are ___location___ (or coordinate) data and ___regional___ data.
 
-* [__Location data:__](#Location) data on things that have happened at particular _geographical __locations___. The most widely understood way of specifying a location is by its ___Latitude___ and ___Longitude___, though there other location coordinate-systems. Additional variables give information about what happened there,
+* [__Location data:__](#Location) This is data on things that have happened at particular _geographical __locations___. The most widely understood way of specifying a location is by its ___Latitude___ and ___Longitude___, though there other location coordinate-systems. Additional variables give information about what happened there,
   * __Example:__  the data below on earthquakes in New Zealand in the year 2000 where we have information about where the epicentre of the quake was (latitude and longitude), how deep underground it was, how strong it was, when it occurred, and several other variables. 
 
 ![NZ quakes data for 2000](../../img/user_guides/advanced/aboutmaps/01_QuakesData.png) {.width600}
 
  
-* [__Regional data:__](#Regional) Data is available for different geographical regions. By regions we mean things like countries of the world; or states/counties/electoral districts within a country. The associated variables usually give summary measures for each region,  
+* [__Regional data:__](#Regional) This is (region-level) data on different geographical regions. By regions we mean things like countries of the world; or states/counties/electoral districts within a country. The associated variables usually give summary measures for each region,  
     * __Example:__ the table extract below shows data on different countries of the world which includes: the year the data relates to, average life expectancy, population size, and GDP per capita.
 
 ![Some data from Gapminder](../../img/user_guides/advanced/aboutmaps/02_GapminderData1.png) {.width500}
-(_In this data_, continent _could also be used as a region variable if our data was recorded at the level of continents_)
+<center>(<i>In this data</i>, continent <i>could also be used as a region variable if our data was recorded at the level of continents</i>)</center>
 	
 ___Statistical exploration of data using maps___ is typically concerned with ___finding patterns in the data that are related to geography___, leveraging off what we can see about what is close to what (or far from what), and the reminders the maps give us of our own general knowledge about different locations. We are particularly looking for patterns that make some sort of sense (or are interesting) geographically, and any notable exceptions to those patterns.
 

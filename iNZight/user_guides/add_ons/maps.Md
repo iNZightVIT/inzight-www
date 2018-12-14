@@ -1,47 +1,33 @@
 # Maps
 
-__If you have never used the Maps module__ we strongly advise you to    
-&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;[read this overview of plotting data on maps first](../../user_guides/add_ons/?topic=aboutmaps)
 
+### If you have never used the Maps module
 
+Plotting data on maps is a specialised area that is quite different from normal graphing. The article [here](../../user_guides/add_ons/?topic=aboutmaps) tells you about the sorts of data that we can present using maps and ways in which we can use maps in constructing data visualisations.
 
 [[ VLITE ??  || 
-__ (NOTE:__ __Maps__ is not contained in the initial installation of iNZight.   
-&emsp;&ensp; * It downloads and installs automatically the first time you try to launch it (go __Advanced > Maps__) 
-<!---   
-&emsp;&ensp;&emsp;&ensp; - ___But you need to have some data set loaded___  (any data set) before you can access the __Advanced__ menu __)__
-]] --->
+The Maps module is not part of the initial installation of iNZight. It downloads and installs automatically the first time you try to launch it by going  __Advanced > Maps__]] 
 
 
-The Maps Module aims at making it easy to visualise geographical data on a map, and investigate patterns of variables.
-There are two situations that iNZight can handle:
 
-1. [Each observation has latitude and longitude values ](#coordinates) __(__ i.e. __"Geographical Co-ordinate Data")__, or
-2. [The data are associated with __geographic regions__](#regions) (such as __Countries__, __states__, etc).
+
+## Selecting data type
+
+The iNZight Maps module can handle two types of data, ___Coordinate___  data and ___Regional___ data. The first step is to tell the program whether you have _Coordinate data_  or _Regional data_. 
+
+![Selecting the latitude and longitude](../../img/user_guides/advanced/maps/02_maps_load[[ VLITE ?? _lite ]].png)
+
+The program behaves differently depending on this choice. The documentation deals first with Coordinate data and then with Regional data.
+
+ * ___Jump to ...___ [Coordinate data](#coordinates) |  [Regional data](#regions)
+ 
+The __nzquakes__ data obtained available from __File__ > [[ VLITE ?? __Dataset Examples__ || __Example data__ ]] and selecting the 
+ __Maps__ [[ VLITE ?? category || module ]] is an example of _coordinate data_. The __NSSATS__ data also available there, is an example of _regional data_.
 
 
 ## Geographical Co-ordinate Data  {#coordinates}
 
-Co-ordinates give a unique position of any point on the Earth.
-The __latitude__ defines the __vertical y position__ (North/South), while the __longitude__ defines the __horizontal x position__ (East/West).
-
-In this example, we will be using the __New Zealand Quakes 2000__ data, which you can load by going to
- __File__ > [[ VLITE ?? __Dataset Examples__ || __Example data__ ]], selecting the 
- __Maps__ [[ VLITE ?? category || module ]], and choosing the data __nzquakes__ (see screenshot below).
-
-![Loading the NZ Quakes Data](../../img/user_guides/advanced/maps/01_maps_loadquakes[[ VLITE ?? _lite ]].png) {.width100}
-
-Once this is loaded, you can launch the Maps module from __Advanced__ > __Maps__.
-
-
-## Selecting the Latitude and Longitude Variables
-
-When you launch the maps module, you'll be presented with a window to let you select the variables to use.
-
-![Selecting the latitude and longitude](../../img/user_guides/advanced/maps/02_maps_load[[ VLITE ?? _lite ]].png)
-
-First, make sure the __Coordinate__ option is selected, and then specify the __Latitude__ and __Longitude__ variables.  
-iNZight will try to guess these automatically, but you will have to select them manually if they have nonstandard names.
+iNZight will try to guess the __Latitude__ and __Longitude__ variables  automatically, but you will have to select them manually if they have nonstandard names.
 
 Once you've selected those, ___click_ "OK"__ and iNZight will plot your data on a map.
 
