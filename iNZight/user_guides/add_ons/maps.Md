@@ -1,11 +1,16 @@
 # Maps
 
+__If you have never used the Maps module__ we strongly advise you to    
+&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;&emsp;&ensp;[read this overview of plotting data on maps first](../../user_guides/add_ons/?topic=aboutmaps)
+
+
 
 [[ VLITE ??  || 
 __ (NOTE:__ __Maps__ is not contained in the initial installation of iNZight.   
-&emsp;&ensp; * It downloads and installs automatically the first time you try to launch it (go __Advanced > Maps__)    
+&emsp;&ensp; * It downloads and installs automatically the first time you try to launch it (go __Advanced > Maps__) 
+<!---   
 &emsp;&ensp;&emsp;&ensp; - ___But you need to have some data set loaded___  (any data set) before you can access the __Advanced__ menu __)__
-]]
+]] --->
 
 
 The Maps Module aims at making it easy to visualise geographical data on a map, and investigate patterns of variables.

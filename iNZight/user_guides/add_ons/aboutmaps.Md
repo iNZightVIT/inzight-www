@@ -1,162 +1,159 @@
-# Maps
-
-The Maps Module aims at making it easy to visualise geographical data on a map, and investigate patterns of variables.
-There are two situations that iNZight can handle:
-
-1. [Each observation has a __co-ordinate__ value](#coordinates), or
-2. [The data are associated with __regions__](#regions) (such as __Countries__, __states__, etc).
-
-
-## Geographical Co-ordinate Data  {#coordinates}
-
-Co-ordinates give a unique position of any point on the Earth.
-The __latitude__ defines the __vertical y position__ (North/South), while the __longitude__ defines the __horizontal x position__ (East/West).
-
-In this example, we will be using the __New Zealand Quakes 2000__ data, which you can load by going to
- __File__ > [[ VLITE ?? __Dataset Examples__ || __Example data__ ]], selecting the 
- __Maps__ [[ VLITE ?? category || module ]], and choosing the data __nzquakes__ (see screenshot below).
-
-![Loading the NZ Quakes Data](../../img/user_guides/advanced/maps/01_maps_loadquakes[[ VLITE ?? _lite ]].png)
-
-Once this is loaded, you can launch the Maps module from __Advanced__ > __Maps__.
-
-[[ VLITE ??  || 
-NOTE: The first time you launch it, you'll+
-ad the module - this will happen automatically.
-]]
-
-
-## Selecting the Variables
-
-When you launch the maps module, you'll be presented with a window to let you select the variables to use.
-
-![Selecting the latitude and longitude](../../img/user_guides/advanced/maps/02_maps_load[[ VLITE ?? _lite ]].png)
-
-First, make sure the __Coordinate__ option is selected, and then specify the Latitude and Longitude variables (iNZight will try to guess these automatically, but you might need to select them manually if they have nonstandard names).
-
-Once you've selected those, click "Ok" and iNZight will plot your data on a map!
-
-![Selecting the latitude and longitude](../../img/user_guides/advanced/maps/03_maps_main1[[ VLITE ?? _lite ]].png) {.width600}
-
-
-
-## Mapping Options
-
-###__Extra Plot Options__: 
-iNZight Maps uses Stamen map tiles (via ggmap)
+# About Presenting Data on Maps
+(_This is an __article__ discussing possibilities and ideas. It is __not__ software __documentation___)
  
-__Map-type:__ options are _terrain_ (coloured terrain map with some features names), _terrain-background_ (no added names), _toner-lite_ (white map on grey background) and _toner_ (white map on black background).
-
-__Overall point size__ (_Slider_)__:__ scale everything drawn on top of the plot/map to a chosen multiple of their current sizes (default =1)
-
-### __Colour__: 
-
-_Either choose a ..._  
-__Point colour:__ select a single colour to apply to all of the points  
-_Or select the names of a ..._  
-__Colour by _variable___ to differentially colour points according the values of the chosen variable.
-
-___Additional options__ which appear once a __Colour-by__ variable has been selected_:
-* __Palette__ for selecting a colour palette
-* __Reverse palette__ (_check-box_)__:__ Reverse the way the values of the colour-by variable are mapped to colours (smallest-to-biggest/biggest-to-smallest)
-* __Use percentiles__ (_check-box_)__:__ Apply the colour range according to the percentiles of the colour-by variable instead of its raw values.
-* __Cycle levels__ (_categorical colour-by variable_)__:__ Clicking the arrow icons results in just the points from one category at a time being highlighted, with the others dimmed
-* __Cycle quantiles__ (_numeric colour-by variable_)__:__ Behaves in the same way with just the points in a quantile being highlighted. By default just 4 quantiles are used (useful if the colour-by variable is highly skewed), but …
- *	__\#quantiles__ allows you to change 4 to some other number of quantiles
-* __Back cycle icon__ results in all of the points being highlighted again
+ ## The types of data most commonly plotted on maps are:
 
 
-### __Size__: 
+* [__Location data:__](#Location) data on things that have happened at particular _geographical __locations___. The most widely understood way of specifying a location is by its ___Latitude___ and ___Longitude___, though there other location coordinate-systems. Additional variables give information about what happened there,
+  * __Example:__  the data below on earthquakes in New Zealand in the year 2000 where we have information about where the epicentre of the quake was (latitude and longitude), how deep underground it was, how strong it was, when it occurred, and several other variables. 
 
-This lets just adjust the overall size of points from .05 to 3 times original size. Alternative variables can be selected and the resize can be proportional or emphasize.
+![NZ quakes data for 2000](../../img/user_guides/advanced/aboutmaps/01_QuakesData.png) {.width600}
 
-### __Opacity__: 
+ 
+* [__Regional data:__](#Regional) Data is available for different geographical regions. By regions we mean things like countries of the world; or states/counties/electoral districts within a country. The associated variables usually give summary measures for each region,  
+    * __Example:__ the table extract below shows data on different countries of the world which includes: the year the data relates to, average life expectancy, population size, and GDP per capita.
 
-This adjusts the overall transparency of points, from 0 - fully visible to 1 - fully invisible. This can be specified by variable and the point opacity can be in reverse order. 
+![Some data from Gapminder](../../img/user_guides/advanced/aboutmaps/02_GapminderData1.png) {.width500}
+(_In this data_, continent _could also be used as a region variable if our data was recorded at the level of continents_)
+	
+___Statistical exploration of data using maps___ is typically concerned with ___finding patterns in the data that are related to geography___, leveraging off what we can see about what is close to what (or far from what), and the reminders the maps give us of our own general knowledge about different locations. We are particularly looking for patterns that make some sort of sense (or are interesting) geographically, and any notable exceptions to those patterns.
 
-[[ VLITE ??  - __Connect points by lines__: Select to reveal the line colour selection and draw lines between points
-||
-]]
-### __Point Symbol__: 
+## Plotting Location data   {#Location}
 
-Select from circle, square, diamond, triangle and inverted triangle. Select the variable to show and line width for the symbol.
-### __Connect Points__: 
+With location data we start by plotting the locations (latitudes and longitudes) on the map using some form of plotting symbol (e.g. a circle). But doing that that just shows us the locations for which we have data. It does not communicate any of the information we have about what happened at each of those locations. So we need ways of putting the additional information from some of these other variables onto the map as well.
 
-Check the box to draw lines between points. You can change the line colour and width.
+![NZ quakes in 2000 on map](../../img/user_guides/advanced/aboutmaps/03_nzquakes.png) {.width600}
+<center>(<i>We have sized by the intensity of the earthquake and coloured by its depth </i>)</center>
 
+### Adding more information than just locations
 
-### __Sub-setting__: 
+(_for static, dynamic  and interactive maps_)  
+___Relate the values of different variables___ to some of the following:  
+&emsp;&emsp; - ___Size_:__ 	the size of the plotting symbol   
+&emsp;&emsp; - ___Colour_:__ the colour of the plotting symbol  
+&emsp;&emsp; - ___Shape_:__ 	the shape of the plotting symbol   
+&emsp;&emsp; - ___Opacity_:__ the opacity vs. transparency of the plotting symbol  
+&emsp;&emsp; - ___Labels_:__ Put labels by the points (names, numbers)  
+Also,  
+&emsp;&emsp; - ___Connect points by lines_:__ if the data is in time order this conveys information on the order in which  
+&emsp;&emsp;&emsp;&emsp; things happened (and, e.g., trace the migration path of a whale)  
+&emsp;&emsp; - ___Have the points appear sequentially in time order_:__ another way of conveying the sequence of events (_not implemented in iNZight yet_)  
 
-As with the main iNZight program, you can generate subsets by selecting a variable from either one or both of the subset menus.
+(_for [interactive maps](#InteractLoc) only_)  
+&emsp;&emsp; - ___Hover over_:__ 	Display the values of variables when the mouse hovers over a point  
+&emsp;&emsp; - ___Select/Brush_:__ 	When points on the map are selected in some way, initiate some sort of new display.  
+&emsp;&emsp;&emsp;&emsp; This make be as simple as showing labels and variable values, or we could throw up some new graph,  
+&emsp;&emsp;&emsp;&emsp;  or highlight related features in another graph
 
-### And there's more to come!
+   
+### Subsetting/Faceting
+  
+&emsp;&emsp; - ___Array of maps_:__ let’s you see a lot of maps at once and compare them  
+&emsp;&emsp; - ___Playing through a sequence of maps_:__ Can be good for looking at changes (e.g. over time)
+ 
 
-The maps module is still being developed, and there's a lot we are waiting to release!
+![Array of NZ quakes maps - one for each month](../../img/user_guides/advanced/aboutmaps/04_nzquakesArray2.png) {.width871}
+<center>(<i>Here we have a different map for every month of the year</i>)</center>
 
-- __Colour palettes__: this will give you a far better choice of colours, letting you customise your plot even more.
+![NZ quakes animated gif](../../img/user_guides/advanced/aboutmaps/05_nzquakesByMo_5x.gif) {.width400}
+<center>(<i>Small animated gif to show the effect of playing through subsets (here =  playing through the months)</i>)</center>
 
+###Interactive Map plots {#InteractLoc}
 
+__Example__  
+Here is an interactive version of the February plot. This one responds to hovering over points, and selecting a set of points by left-clicking and dragging. Which variables get displayed when hovering is controlled by te "Variables to display" dialog a the top of the frame. When a set of points is selected by dragging, their data values appear in the Table.  Clicking on "Table" at the top of the frame toggles between removing the Table and bringing it back again.  
 
+<iframe src="../../img/user_guides/advanced/aboutmaps/FebQuakes.html" style="border:2px;" height="800" width="1200"></iframe>
 
-
-## Geographical Regions {#regions}
-
-In many cases, you might have data with regional information (where "region" can be countries, states, provinces, electorates, etc.).
-iNZight allows you to display this information on a map of outlines, with each region coloured depending on a chosen variable.
-
-In this example, we will be using the __Gap Minder__ data, which you can load by going to  __File__ > __[[VLITE ?? Dataset Examples || Example data]]__, selecting the[[VLITE ?? __ Future Learn__ category ||    __ Default__ module]], and choosing the data __gapminder__ (see screenshot below).
-
-![Loading the Gap minder Data](../../img/user_guides/advanced/maps/04_maps_loadgapminder[[VLITE ?? _lite]].png)
-
-Once this is loaded, you can launch the Maps module from __Advanced__ > __Maps__.
-[[VLITE ??   ||
-  NOTE: The first time you launch it, you'll need to download the module - this will happen automatically.
-]]
-
-## Selecting the Variables
-
-When you launch the maps module, you'll be presented with a window to let you select the variables to use.
-
-[[VLITE ??   || <img src='../../img/user_guides/advanced/maps/05_maps_shapeload.png' alt='Select Variables to load'> ]]
-
-First, make sure the __Regions__ option is selected, and then specify the following information:
-
-- __Map Location__: this is the overall location of your data. For this example, the Gap Minder dataset contains data on countries, so we have selected the __world__ map.
-
-- __Location Variable__: this dropdown tells iNZight which variable in the dataset contains the geographical location. In the Gap Minder dataset, the variable __Country__ contains the names of countries.
-
-[[ VLITE ??    || ]]
-
-Once you've selected those, click **Ok** and iNZight will load the necessary files.
-
-
-## Plotting Variables ]]
-
-To generate a map and display your data, select a variable [[VLITE ?? ||from the dropdown at the top-left of the window]]. Here, we have chosen __ChildrenPerWoman__.
-
-![Selecting the plotting variable](../../img/user_guides/advanced/maps/06_maps_shapemain[[VLITE ?? _lite]].png) {.width600}
+###Contour plotting
+  
+(cf. the contours of equal atmospheric pressure ("isobars") on a weather map, or of equal altitude on a topographical map -- _Still to be written- not implemented in iNZight yet_)
 
 
-## Sub-setting the data
+## Plotting Regional data {#Regional}
 
-As with the main iNZight program, you can view multiple subsets easily by selecting a sub-setting variable. In the image below, we have selected __Year\_cat__, which contains a factor version of the year for each record.
-This allows us to see how the average number of children per woman changes over time.
+Typically people colour regions of a map according to the value of a (single) variable. Such maps have historically been called ___choropleth maps___. If the colouring has been done according to the values of a continuous variable the result is sometimes called a _heat map_. <small>(Different shading patterns are sometimes used as an alternative to using different colours.)</small>
 
-![Selecting the subsetting variable](../../img/user_guides/advanced/maps/07_maps_subset[[VLITE ?? _lite]].png) {.width600}
+![Africa life expectancies map](../../img/user_guides/advanced/aboutmaps/06_africa.png) {.width500}
+
+   
+
+### Issues:
+* __Matching data points with regions on a map:__ Mapping software typically draws regional maps using so-called ___shape files___ which contain the boundary of each region (as the vertices of a polygon) and the names of the regions.  To produce a choropleth map, the shape file is used to draw the outlines of each region. Then a variable in the data set containing the names of the regions has to be matched with a corresponding naming-variable in the shape file so the program knows what observations in the data file correspond to what regions on the map.  
+   * Several sets of name variables are often included in a shape file (e.g. the set off full names and a parallel set of common abbreviations) to make it more likely that there will be a set of names that matches with the region-name variable in a data set. Otherwise the names in the data set will have to be changed to conform with one of the naming conventions available in the shape file.
+* __Labels:__  Viewers will seldom reliably know which regions are which just by looking at the map so name-labels are often added (e.g. the names of each state or their abbreviated form). The numeric value of the plotted variable might also be added for each region.
+
+![US states map labeled](../../img/user_guides/advanced/aboutmaps/07_USstate_labelled.png) {.width500}
+
+* __Scales:__ Each map only displays the values of a single variable (in addition to region), but we can look at the behaviour of several variables at the same time if we put several maps on the same page, one for each variable.
+
+![Maps showing variables with different scales](../../img/user_guides/advanced/aboutmaps/08_DifferentScales.png) {.width700}
+<center>(<i>GDP per capita and Life Expectancy are measured on very different scales</i>)</center>
+
+&nbsp;
 
 
+* Then the issue of what to do about scales becomes important. Are the scales the variables are measured on comparable? (e.g., are they all percentages?)
+ * ___Non-comparable scales case_:__ When the scales are not comparable (as with GDP per capita and Life Expectancy in the plots above) we translate values to colours in graphs independently of one another
 
-## Plot Options
+ ![Maps showing variables with the same scale](../../img/user_guides/advanced/aboutmaps/09_SameScales.png) {.width700}
+<center>(<i>One map shows the proportion of medical centres accepting Medicaid and the other accepting Military Insurance</i>)</center>
 
-There are several plot options available in this module.
+ * ___Comparable scales_:__ But when the different variables are measured on the same scale (as in the plots above where both variables are proportions), we generally want to translate variable-values to colour values in the same way for all of the graphs
+ 
+  
+  
+* __Distortions due to land area:__ Colouring regions misleadingly makes large unpopulated areas look more important than smaller highly populated areas (e.g. US political maps produced in this way misleadingly make the unpopulated centre regions of the country look much more important contributors to election results than the heavily populated coastal regions)
+  * __Alternatives__ that try to get around this problem__:__
+      * __Colour superimposed symbols rather that the regions themselves:__ Use colour shapes (e.g. disks) centred at the centre of each region and size the shapes proportional to population
+      * __Cartograms:__ distort the shapes in the map so the region sizes are approximately proportional to population sizes (_not implemented in iNZight yet_)
+      * __Dots:__ pepper regions with coloured dots, with each dot representing the same number of people  (_not implemented in iNZight yet_)
 
-- __Colour__: you can adjust the colour used on the map from here. At the bottom, there are two options, __heat__ and __terrain__, which offer alternative colour palettes. The screenshow below uses the __heat__ palette.
+![Plotting shaded maps](../../img/user_guides/advanced/aboutmaps/10_ColoursCentroids.png){.width600}
+<center>(<i>Shading versus population-sized centroids</i>)</center>
 
-- __Missing value colour__: To make missing values more or less visible, you can modify the colour used to shade those regions.
+	  
+* __Conveying several variables on a single map__
+  * There are a variety of multivariate glyphs that can be used as superimposed objects (instead of colouring regions)
+* __Changes over time (or values of some other variable):__ 
+  * __Playing through a sequence of maps:__ Can be good for looking at changes over time  
+  * __Superimpose glyphs__ that are a mini time-series 
+      * Interactive graphs link to more detailed time series in various ways
+ 
+![Africa life expectancies animated gif](../../img/user_guides/advanced/aboutmaps/ForAfricaGif.gif) {.width871}
+<center>(<i><b>Playing through a sequence</b> of maps, <b>one for each year</b> - animated gif</i>)</center>
 
-- __Plot labels__: this lets you add labels to the plot. The options are __Name__, which adds the region names, __Value__, which adds the value of the chosen variable, and __Both__, which adds the Name and Value.
+ &emsp;
+ 
+![All values and sparklines](../../img/user_guides/advanced/aboutmaps/11_Sparklines.png){.width400}
+<center>(<i>Drawing a mini time-series for each country</i>)</center>
+ 
+### Interactive Plots {#InteractReg}
+ 
+Preview of Example (_still image_)
 
-[[VLITE ?? || - __Zooming__: You can zoom in on a region by clicking the __zoom__ icon (magnifying glass) in the plot toolbar (bottom right of the screen), and then clicking a point on the map to zoom in to. ]]
+![All values and sparklines](../../img/user_guides/advanced/maps/temp_InteractiveSparklines.png){.width700}
+<center>(<i>Linking countries and detailed time series</i>)</center>
+
+__Example__ of an interactive plot for showing changes over time with time series
+ 
+There is a great deal of interactivity besides hover-over in this plot. Clicking on a Country (but not on the little icon within the country) highlights the detailed time-series plot for that country on the right. Holding down the shift key while you click enables you to add countries. You can likewise hover over the set of time series on the right-hand plot to discover details, or click (or shift-click) to link back to the map on the left. You can also pan (click and drag) and zoom (mouse wheel) on the map plot to get closer to small areas.
+
+<iframe src="../../img/user_guides/advanced/aboutmaps/AfricaOverTime_Spark.html" style="border:2px;" height="800" width="1200"></iframe>
+
+__Example__ of an interactive plot for showing changes over time using a "movie"
+
+Click "Table" to remove the table. You can change the year using the slider at the upper-right, or play across years by clicking play button just under it. You can change the variable being represented on the map by changing "Variable to display". Panning and zooming works here to0.
+ 
+
+<iframe src="../../img/user_guides/advanced/aboutmaps/AfricaOverTime_Shaded2.html" style="border:2px;" height="800" width="1200"></iframe>
 
 
-![Some other options](../../img/user_guides/advanced/maps/08_maps_heatcolour[[VLITE ?? _lite]].png) {.width600}
+### Some more issues
+
+(_yet to discuss_)
+
+* Map projections
+* Colour palettes – what’s good for what
+* Compensating for deficiencies in colour perception – augmenting maps with complementary plots/tables
+
