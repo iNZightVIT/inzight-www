@@ -11,6 +11,18 @@ _Release date__: 14 August 2018
 * many additions and fixes to the shapes maps module
 * removed some redundant code from timeseries and modelfitting modules
 
+## Patches
+
+### Patch 2.4.1 - 15/11/2018
+
+- [change] update available map types after switching from Google to Stamen maps
+- [change] remove zoom feature until it is reimplemented for stamen maps
+- [fix] add scrollbars to lat/lon UI to prevent window resizing
+
+### Patch 2.4.2 - 21/11/2018
+- minor changes to GUI defaults
+- "Percentiles" replaces "Ranks" (underlying method exactly the same)
+- fixes for UI, etc.
 
 ***
 
