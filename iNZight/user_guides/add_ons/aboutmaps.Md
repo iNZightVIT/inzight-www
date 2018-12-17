@@ -1,5 +1,5 @@
 # About Presenting Data on Maps
-(_This article gives an overview of plotting data on maps. It is not software documentation. The software documentation is_ [ here ...](../../user_guides/add_ons/?topic=maps))
+_This article gives an overview of plotting data on maps. It is not software documentation._ ([The software documentation is here](../../user_guides/add_ons/?topic=maps))
 
 
 Plotting data on maps is a specialised area that is quite different from normal graphing. This article describes the sorts of data we can present using maps and ways in which we can use maps in constructing data visualisations to help ourselves and others better understand that data. 
@@ -11,9 +11,10 @@ _Everything you see illustrated in this article is very fast and easy to obtain 
  
  ## The types of data most commonly plotted on maps
 
- The two types of data most commonly plotted on maps are ___location___ (or coordinate) data and ___regional___ data.
+ The two types of data most commonly plotted on maps are ___location___ (or geographical coordinate) data and ___regional___ data.
 
-* [__Location data:__](#Location) This is data on things that have happened at particular _geographical __locations___. The most widely understood way of specifying a location is by its ___Latitude___ and ___Longitude___, though there other location coordinate-systems. Additional variables give information about what happened there,
+* [__Location (or Graphical Coordinate) data:__](#Location) 
+This is data on things that have happened at particular _geographical __locations___. The most widely understood way of specifying a location is by its ___Latitude___ and ___Longitude___, though there other location coordinate-systems. Additional variables give information about what happened there,
   * __Example:__  the data below on earthquakes in New Zealand in the year 2000 where we have information about where the epicentre of the quake was (latitude and longitude), how deep underground it was, how strong it was, when it occurred, and several other variables. 
 
 ![NZ quakes data for 2000](../../img/user_guides/advanced/aboutmaps/01_QuakesData.png) {.width600}
@@ -29,7 +30,7 @@ ___Statistical exploration of data using maps___ is typically concerned with ___
 
 ## Plotting Location data   {#Location}
 
-With location data we start by plotting the locations (latitudes and longitudes) on the map using some form of plotting symbol (e.g. a circle). But doing that that just shows us the locations for which we have data. It does not communicate any of the information we have about what happened at each of those locations. So we need ways of putting the additional information from some of these other variables onto the map as well.
+With location data we start by plotting the locations (latitudes and longitudes) on the map using some form of plotting symbol (e.g. a circle). But doing that that just shows us the locations we have data for. It does not communicate any of the information we have about what happened at each of those locations. So we need ways of putting the additional information from some of these other variables onto the map as well.
 
 ![NZ quakes in 2000 on map](../../img/user_guides/advanced/aboutmaps/03_nzquakes.png) {.width600}
 <center>(<i>We have sized by the intensity of the earthquake and coloured by its depth </i>)</center>
@@ -48,7 +49,7 @@ Also,
 &emsp;&emsp;&emsp;&emsp; things happened (and, e.g., trace the migration path of a whale)  
 &emsp;&emsp; - ___Have the points appear sequentially in time order_:__ another way of conveying the sequence of events (_not implemented in iNZight yet_)  
 
-(_for [interactive maps](#InteractLoc) only_)  
+(_for interactive maps_) &emsp;&emsp; (- _jump to_ [interactive maps](#InteractLoc))  
 &emsp;&emsp; - ___Hover over_:__ 	Display the values of variables when the mouse hovers over a point  
 &emsp;&emsp; - ___Select/Brush_:__ 	When points on the map are selected in some way, initiate some sort of new display.  
 &emsp;&emsp;&emsp;&emsp; This make be as simple as showing labels and variable values, or we could throw up some new graph,  
@@ -65,14 +66,16 @@ Also,
 <center>(<i>Here we have a different map for every month of the year</i>)</center>
 
 ![NZ quakes animated gif](../../img/user_guides/advanced/aboutmaps/05_nzquakesByMo_5x.gif) {.width400}
-<center>(<i>Small animated gif to show the effect of playing through subsets (here =  playing through the months)</i>)</center>
+<center>(<i>Small animated gif to show the effect of playing through subsets</i> (<i>here,  playing through the month plots</i>))</center>
 
 ###Interactive Map plots {#InteractLoc}
 
 __Example__  
-Here is an interactive version of the February plot. This one responds to hovering over points, and selecting a set of points by left-clicking and dragging. Which variables get displayed when hovering is controlled by te "Variables to display" dialog a the top of the frame. When a set of points is selected by dragging, their data values appear in the Table.  Clicking on "Table" at the top of the frame toggles between removing the Table and bringing it back again.  
+Here is an interactive version of the February plot. This one responds to hovering over points, and selecting a set of points by left-clicking and dragging. Which variables get displayed when hovering is controlled by the "Variables to display" dialog a the top of the frame. When a set of points is selected by dragging, their data values appear in the Table.  Clicking on "Table" at the top of the frame toggles between removing the Table and bringing it back again.  
 
 <iframe src="../../img/user_guides/advanced/aboutmaps/FebQuakes.html" style="border:2px;" height="800" width="1200"></iframe>
+<center>(<i>African counties coloured by their Life Expectancy values</i>))</center>
+
 
 ###Contour plotting
   

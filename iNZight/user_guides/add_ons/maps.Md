@@ -2,7 +2,7 @@
 
 ### If you have never used the Maps module
 
-Plotting data on maps is a specialised area that is quite different from normal graphing. The article [here](../../user_guides/add_ons/?topic=aboutmaps) tells you about the sorts of data that we can present using maps and ways in which we can use maps in constructing data visualisations.
+Plotting data on maps is a specialised area that is quite different from normal graphing. [The article here](../../user_guides/add_ons/?topic=aboutmaps) tells you about the sorts of data that we can present using maps and ways in which we can use maps in constructing data visualisations.
 
 [[ VLITE ??  || The Maps module is not part of the initial installation of iNZight. It downloads and installs automatically the first time you try to launch it by going to the __Advanced > Maps__ ]] 
 
@@ -20,7 +20,7 @@ The program behaves differently depending on this choice. The documentation deal
  * ___Jump to ...___ [Coordinate data](#coordinates) |  [Regional data](#regions)
  
 The __nzquakes__ data obtained available from __File__ > [[ VLITE ?? __Dataset Examples__ || __Example data__ ]] and selecting the 
- __Maps__ [[ VLITE ?? category || module ]] is an example of _coordinate data_. The __NSSATS__ data also available there, is an example of _regional data_.
+ __Maps__ [[ VLITE ?? category || module ]] is an example of _coordinate data_. The __NSSATS__ data also available there, is an example of _regional data_ (data about US states).
 
 
 ## Geographical Co-ordinate Data  {#coordinates}
