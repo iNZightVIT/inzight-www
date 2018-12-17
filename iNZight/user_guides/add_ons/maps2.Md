@@ -30,7 +30,7 @@ iNZight will try to guess the __Latitude__ and __Longitude__ variables  automati
 [[ VLITE ?? iNZight will now plot || Once you've selected those, ___click_ OK__ and iNZight will now plot ]] your data on a map (it may take a little while for the underlying map to download)
 
 
-![Selecting the latitude and longitude](../../img/user_guides/advanced/maps/03_maps_main1[[ VLITE ?? _lite ]].png) {.width800}
+![Selecting the latitude and longitude](../../img/user_guides/advanced/maps/03_maps_main1[[ VLITE ?? _lite ]].png) {.width700}
 
 
 [___This only works if you are connected to the internet___ because iNZight Maps ___downloads___ appropriate [Stamen map](https://stamen.com/opensource/) tiles (via ggmap) to form the background of the plot]
@@ -45,10 +45,14 @@ __Map-type:__ options are ___terrain___ (_default_ - coloured terrain map with s
 
 __Overall point size__ (_Slider_)__:__ scale everything drawn on top of the plot/map to a chosen multiple of their current sizes (default =1)
 
-[[ VLITE ?? The ___options to follow___ become available when you click on this __Select Variables_ tab___ ... ||  ]]
+[[ VLITE ?? The ___following options___ become available when you click on this __Select Variables_ tab___ ... ||  ]]
+
+[[ VLITE ?? Hi || HJi2 ]]
 
 
-[[ VLITE ?? <img src='../../img/user_guides/advanced/maps/04.SelectVariables_lite.png' alt='JUNK' width='280'> </a> ]]
+[[ VLITE ?? <img src="../../img/user_guides/advanced/maps/R11_InterativeIcon_lite.png" alt="JUNK"> </a> ]]
+
+[[ VLITE ?? ![Select Vars tab](../../img/user_guides/advanced/maps/04.SelectVariables_lite.png){.width600} ]]
 
 
 ### __Colour__: 
@@ -58,7 +62,7 @@ _Either choose a ..._
 _Or select the names of a ..._  
 &emsp;&ensp;__Colour by _variable___ to differentially colour points according the values of the chosen variable.
 
-&emsp;___Additional options__ which appear once a __Colour-by__ variable has been selected_:
+___Additional options__ which appear once a __Colour-by__ variable has been selected_:
 * __Palette__ for selecting a colour palette
 * __Reverse palette__ (_check-box_)__:__ Reverse the way the values of the colour-by variable are mapped to colours (smallest-to-biggest/biggest-to-smallest)
 * __Use percentiles__ (_check-box_)__:__ Apply the colour range according to the percentiles of the colour-by variable instead of its raw values.
@@ -74,7 +78,7 @@ __Overall__ (_slider_)__:__ Multiply the current size of each point by value cho
 
 __Size by:__ Select a variable to differentially size the points by  (i.e., size according to the values of the chosen variable)
 
-&emsp;___Additional option__ which appears once a __Size-by__ variable has been selected_:
+___Additional option__ which appears once a __Size-by__ variable has been selected_:
 * __Resize method:__ make the area of the point either ___proportional___ to the value of the size-by variable, or ___emphasize___ (map the smallest values to a hard-coded small point-size and the largest to a large size – sometimes useful when the ratio largest/smallest is not very big)
 
 ### __Transparency/Opacity__: 
@@ -83,7 +87,7 @@ __Overall__ (_slider_)__:__ Adjust the transparency levels of all of the points 
 
 __Opacify by:__ (Opacity is the opposite of transparency) Select a variable to differentially set the opacity the points by (high values map to most visible, low to most transparent)
 
-&emsp;___Additional option__ which appears once a __Opacify-by__ variable has been selected_:
+___Additional option__ which appears once a __Opacify-by__ variable has been selected_:
 
 * __Reverse opacification__ (_check-box_)__:__ Reverse the way the values of the opacify-by variable are mapped to opacity/transparency levels
 
@@ -91,7 +95,6 @@ __Opacify by:__ (Opacity is the opposite of transparency) Select a variable to d
 [[ VLITE ??  - __Connect points by lines__: Select to reveal the line colour selection and draw lines between points
 ||
 ]]
-
 ### __Point Symbol__: 
 
 __Symbol:__ Select from _circle_, _square_, _diamond_, _triangle_ and _inverted triangle_
@@ -104,11 +107,7 @@ __Symbol by:__ Can be done according to a categorical variable which has 5 or fe
 
 ### Connect Points:
 
-__Connect points with lines__ (_check-box_)__:__ Check the box to draw lines between points. Connected in the order they appear in the data file.  
-&emsp; _ __Additional options__ which then appear_:  
-&emsp;&emsp;&emsp;
-&#9679; __Line colour__ (_selection box_);  &emsp; 
-&#9679; __Line width:__ (_slider_) 
+__Connect points with lines__ (_check-box_)__:__ Check the box to draw lines between points. Connected in the order they appear in the data file. 
 
 
 ### __Sub-setting__: 
@@ -117,11 +116,17 @@ ___Works the same way___ as in the ___main part of iNZight___, you can generate 
 
 Subset selection ___sliders___ and ___play buttons___ _appear_ once a subset-by variable has been selected.
 
+![Interactive plot icon](../../img/user_guides/advanced/maps/R11_InterativeIcon.png)
+
+[[ VLITE ?? <img src="../../img/user_guides/advanced/maps/R11_InterativeIcon_lite.png" alt="JUNK"> </a> ]]
+
+
  
 ### Interactive Coordinate Maps
 
 ![Interactive plot icon](../../img/user_guides/advanced/maps/R11_InterativeIcon[[ VLITE ?? _lite ]].png)
-[[ VLITE ?? || When you click on the ___Interactive plot icon___ (immediately above), iNZight makes a temporary interactive html file and opens it using your default browser. ]]
+![Interactive plot icon](../../img/user_guides/advanced/maps/R11_InterativeIcon_lite.png)
+When you click on the ___Interactive plot icon___ (immediately above), iNZight makes a temporary interactive html file and opens it using your default browser.
 
 * Interactive versions of the maps are ___not available when there is more than one map___ in the plotting window 
 
@@ -137,7 +142,7 @@ ___
 
 ## Data on Geographical Regions {#regions}
 
-![US Map](../../img/user_guides/advanced/maps/R0_USMap.png){.width300}
+![US Map](../../img/user_guides/advanced/maps/R0_USMap[[ VLITE ?? _lite ]].png){.width300}
 
 
 In many cases, you might have data with regional information (where "region" can be countries, states, provinces, electorates, etc.).
@@ -148,9 +153,7 @@ iNZight allows you to display this information on a map of outlines, with each r
 
 ## .... Selecting a  Map {#SelectMap}
 
-[[ VLITE ?? || <img src='../../img/user_guides/advanced/maps/R1_SelectMap.png' alt='JUNK' width='600'> </a> ]]
-[[ VLITE ?? <img src='../../img/user_guides/advanced/maps/R1_SelectMap_lite.png' alt='JUNK' width='300'> </a> ]]
-
+![Selecting a  Map](../../img/user_guides/advanced/maps/R1_SelectMap[[ VLITE ?? _lite ]].png){.width600}
 
 ### Select Map
 
@@ -174,7 +177,7 @@ The names of any Regions in the data that are not represented in the map will be
 
 __Multiple observations for each region were found: (_only appears when this is true_)__  
 This often happens when, for example, we have observations for a region for several different years with different years corresponding to different rows in the data set.  
-  The module will then try to find a variable that "explains" the multiple observations. We are called it a "_sequence variable_"  
+  The module will then try to find a variable that “explains” the multiple observations. We are called it a "_sequence variable_"  
 &emsp;&ensp;* __Select sequence variable:__ If an “explaining variable” is found its name will be displayed in the selection box. You have the freedom to change it
 
 __Use Map__ (_Button_)__:__ __Click__ to tell the program "___I want to use this map___"  
@@ -205,21 +208,21 @@ __Centroids__ _radio button_  gives …
 
 ![Plotting centroids](../../img/user_guides/advanced/maps/R7_Centroids[[ VLITE ?? _lite ]].png){.width600}
 
-&emsp;___Additional options___ _that become available_ ___when Centroids___ _is turned on_:  
+___Additional options___ _that become available_ ___when Centroids___ _is turned on_:  
 &emsp;&ensp;__Size by:__  (_typically use a relevant population-size variable_)  
 &emsp;&ensp;__Overall size__ (_slider_)__:__ makes the disks bigger or smaller uniformly  
 &emsp;&ensp;__Transparency of map__ (_slider_): transparency of map outlines  
 
 ![Map Options](../../img/user_guides/advanced/maps/R8_MapOptions[[ VLITE ?? _lite ]].png){.width300}
 
-### [[ VLITE ?? Advanced || ]] Map Options {#MapOptions}
+### Map Options {#MapOptions}
 
 __Current Map:__ Opportunity to change your mind and select a different map   
 __Regional selection boxes:__  use to remove regions from the plotted map  
 __Projection__ (_dropdown list_)__:__ Opportunity to change the map projection (default is the projection suggested by the shapefile)
 
 
-### [[ VLITE ?? Advanced || Extra ]] Plot Options:  {#ExtraPlotOptions}
+### Extra Plot Options: {#ExtraPlotOptions}
 
 __Plot Title:__ change plot title  
 __Palette:__ change colour palette  
@@ -227,7 +230,7 @@ ___Check boxes_: Dark__ (makes sea go dark), __Grid Lines__ (use to add), __Axis
 __Map Scales:__ Choices for _independent scales_/_same scale_ to be used across a set of plots   
 __Font Size__ (_slider_):
 __Region Labels__ (_check box_)__:__ add labels  
-&emsp;___Additional options___ _that become_ ___available when Region Labels___ _are turned on_ :  
+___Additional options___ _that become_ ___available when Region Labels___ _are turned on_ :  
 &emsp;&ensp;Selection box for selecting ___variable___ to use ___for labelling___   
 &emsp;&ensp;__Region label font size:__ (_slider_)
 
@@ -235,15 +238,15 @@ __Region Labels__ (_check box_)__:__ add labels
 ### Dataset has multiple observations per region {#MultiObs}
 (_only appears when this is true_)
 
-![Multple observations choices](../../img/user_guides/advanced/maps/R9_MultiChoices[[ VLITE ?? _lite ]].png){.width700}
+![Multple observations choices](../../img/user_guides/advanced/maps/R9_MultiChoices[[ VLITE ?? _lite ]].png){.width600}
  
 * __Single value:__ display just the last value  
-&emsp;___Additional options___ _that become available_ ___when_ Single Value__ _is chosen_:  
+___Additional options___ _that become available_ ___when_ Single Value__ _is chosen_:  
 &emsp;&ensp;__Value of ... variable__ (_slider_) __:__ choose value of the explaining variable (e.g. year)   
 &emsp;&ensp;___Play button___ and ___playback timer button_:__ controls playing through the values/images 
 * __Aggregate:__ display an aggregate of the values (e.g. mean, median)  
 * __All Values:__ display mini time-series glyph ("___sparklines___") for each region  
-&emsp;___Additional options___ _that become available_ ___when_ All Values__ _is chosen_:  
+___Additional options___ _that become available_ ___when_ All Values__ _is chosen_:  
 &emsp;&ensp;__Sparklines__ can be plotted for  ___Absolute___ (the raw numbers), ___Relative___ (ratio to the first value), ___Percent Change___ (between successive observations)  
 &emsp;&ensp;__Overall size__ (_slider_) __:__ controls size of the sparkline glyphs  
 &emsp;&ensp;__Transparency of map__ (_slider_)__:__ transparency of map outlines
@@ -256,9 +259,7 @@ ___
  
 ### Interactive Maps {#InteractiveRMaps}
 
-
-![Interactive plot icon](../../img/user_guides/advanced/maps/R11_InterativeIcon[[ VLITE ?? _lite ]].png)
-[[ VLITE ?? || When you click on the ___Interactive plot icon___ (immediately above), iNZight makes a temporary interactive html file and opens it using your default browser. ]]
+![Interactive plot icon](../../img/user_guides/advanced/maps/R11_InterativeIcon.png){.width36}
 
 
 
