@@ -71,11 +71,9 @@ Also,
 ###Interactive Map plots {#InteractLoc}
 
 __Example__  
-Here is an interactive version of the February plot. This one responds to hovering over points, and selecting a set of points by left-clicking and dragging. Which variables get displayed when hovering is controlled by the "Variables to display" dialog a the top of the frame. When a set of points is selected by dragging, their data values appear in the Table.  Clicking on "Table" at the top of the frame toggles between removing the Table and bringing it back again.  
+Here is an interactive version of the February plot. This one responds to hovering over points, and selecting a set of points by left-clicking and dragging. Which variables get displayed when hovering is controlled by the "Variables to display" dialog a the top of the frame. When a set of points is selected by dragging, their data values appear in the Table.  Clicking on "Table" at the top of the frame toggles between removing the Table and bringing it back again.   (_Click the graphic's help page -- small "?" at top right._)
 
 <iframe src="../../img/user_guides/advanced/aboutmaps/FebQuakes.html" style="border:2px;" height="800" width="1200"></iframe>
-<center>(<i>African counties coloured by their Life Expectancy values</i>))</center>
-
 
 ###Contour plotting
   
@@ -87,6 +85,9 @@ Here is an interactive version of the February plot. This one responds to hoveri
 Typically people colour regions of a map according to the value of a (single) variable. Such maps have historically been called ___choropleth maps___. If the colouring has been done according to the values of a continuous variable the result is sometimes called a _heat map_. <small>(Different shading patterns are sometimes used as an alternative to using different colours.)</small>
 
 ![Africa life expectancies map](../../img/user_guides/advanced/aboutmaps/06_africa.png) {.width500}
+///HTML:
+<center>(<i>African counties coloured by their Life Expectancy values</i>))</center>
+///
 
    
 
@@ -105,13 +106,15 @@ Typically people colour regions of a map according to the value of a (single) va
 &nbsp;
 
 
-* Then the issue of what to do about scales becomes important. Are the scales the variables are measured on comparable? (e.g., are they all percentages?)
+* Then the issue of what to do about scales becomes important. Are the scales the variables are measured on comparable?
  * ___Non-comparable scales case_:__ When the scales are not comparable (as with GDP per capita and Life Expectancy in the plots above) we translate values to colours in graphs independently of one another
 
  ![Maps showing variables with the same scale](../../img/user_guides/advanced/aboutmaps/09_SameScales.png) {.width700}
 <center>(<i>One map shows the proportion of medical centres accepting Medicaid and the other accepting Military Insurance</i>)</center>
 
- * ___Comparable scales_:__ But when the different variables are measured on the same scale (as in the plots above where both variables are proportions), we generally want to translate variable-values to colour values in the same way for all of the graphs
+ &emsp;
+ 
+ * ___Comparable scales_:__ But when the different variables are measured on the same scale (as in the plots above where both variables are proportions), we generally want to translate variable-values to colour values in the same way for all of the graphs so that we can compare values across graphs
  
   
   
@@ -145,17 +148,17 @@ Typically people colour regions of a map according to the value of a (single) va
 Preview of Example (_still image_)
 
 ![All values and sparklines](../../img/user_guides/advanced/maps/temp_InteractiveSparklines.png){.width700}
-<center>(<i>Linking countries and detailed time series</i>)</center>
+<center>(<i>Linking countries and detailed time series (screenshot)</i>)</center>
 
 __Example__ of an interactive plot for showing changes over time with time series
  
-There is a great deal of interactivity besides hover-over in this plot. Clicking on a Country (but not on the little icon within the country) highlights the detailed time-series plot for that country on the right. Holding down the shift key while you click enables you to add countries. You can likewise hover over the set of time series on the right-hand plot to discover details, or click (or shift-click) to link back to the map on the left. You can also pan (click and drag) and zoom (mouse wheel) on the map plot to get closer to small areas.
+There is a great deal of interactivity besides hover-over in this plot. Clicking on a Country (but not on the little icon within the country) highlights the detailed time-series plot for that country on the right. Holding down the shift key while you click enables you to add countries. You can likewise hover over the set of time series on the right-hand plot to discover details, or click (or shift-click  to accumulate countries) to link back to the map on the left. You can also pan (click and drag) and zoom (mouse wheel) on the map plot to get closer to small areas. (_Click the graphic's help page -- small "?" at top right._)
 
 <iframe src="../../img/user_guides/advanced/aboutmaps/AfricaOverTime_Spark.html" style="border:2px;" height="800" width="1200"></iframe>
 
 __Example__ of an interactive plot for showing changes over time using a "movie"
 
-Click "Table" to remove the table. You can change the year using the slider at the upper-right, or play across years by clicking play button just under it. You can change the variable being represented on the map by changing "Variable to display". Panning and zooming works here to0.
+Click "Table" to remove the table. You can change the year using the slider at the upper-right, or play across years by clicking play button just under it. The variable being represented on the map can be changed using "Variable to display". Panning and zooming works here too.  (_Click the graphic's help page -- small "?" at top right._)
  
 
 <iframe src="../../img/user_guides/advanced/aboutmaps/AfricaOverTime_Shaded2.html" style="border:2px;" height="800" width="1200"></iframe>
