@@ -1,55 +1,82 @@
-# Version 2.4
-_Release date__: 14 August 2018
+## iNZight 2.4.3
+__Release date:__ 07 January 2019
 
-## Major changes
+- revert to single landing window for both maps submodules
 
-* updated maps module UI for lat/lon data
-* Add to Plot features now implemented in maps
 
-## Changes/Fixes
+## iNZight 2.4.2
+__Release date:__ 21 November 2018
 
-* many additions and fixes to the shapes maps module
-* removed some redundant code from timeseries and modelfitting modules
-
-## Patches
-
-### Patch 2.4.1 - 15/11/2018
-
-- [change] update available map types after switching from Google to Stamen maps
-- [change] remove zoom feature until it is reimplemented for stamen maps
-- [fix] add scrollbars to lat/lon UI to prevent window resizing
-
-### Patch 2.4.2 - 21/11/2018
 - minor changes to GUI defaults
 - "Percentiles" replaces "Ranks" (underlying method exactly the same)
 - fixes for UI, etc.
 
-***
+## iNZightModules 2.4.1
+__Release date:__ 15 November 2018
 
-# Version 2.3
+- update available map types after switching from Google to Stamen maps
+- remove zoom feature until it is reimplemented for stamen maps
+- add scrollbars to lat/lon UI to prevent window resizing
+
+
+# iNZightModules 2.4
+__Release date__: 14 August 2018
+
+## Major changes
+
+- updated maps module UI for lat/lon data
+- Add to Plot features now implemented in maps
+
+## Changes/Fixes
+
+- many additions and fixes to the shapes maps module
+- removed some redundant code from timeseries and modelfitting modules
+
+
+## iNZightModules 2.3-1
+__Release date:__ 12 February 2018
+
+- fix bugs in time series modules for annual data and manual time specification
+
+
+# iNZightModules 2.3
 __Release date__: 23 January 2018
 
 
-## Beta release: New __Maps__ module for plotting geographic regional data
+### Beta release: New __Maps__ module for plotting geographic regional data
 
 The new maps module is an overhaul of the previous one, with much more control
 over maps and options for graphs.
 
-## Minor Changes
+### Minor Changes
 
 - __Time series__: now using `ggplot2` for several of the graphs.
 
-## Patches
 
-### 2.3-1 - 12/02/2018
-- fix bugs in time series modules for annual data and manual time specification
+## iNZightModules 2.2.0-3
+__Release date:__ 20 October 2017
 
-***
+- \[TS Module\] display error message when time series is missing values (or fails some other way)
+
+
+## iNZightModules 2.2.0-2
+__Release date:__ 25 August 2017
+
+- code history for model fitting module
+- more bug fixes
+
+## iNZightModules 2.2.0-1
+__Release date:__ 23 August 2017
+
+- bug fixes: bootstrapping, residual plots
+- better handling of errors
+- extra features, etc
+
 
 # Version 2.2
 __Release date__: 18 August, 2017
 
-## BETA RELEASE: New + Improved _Model Fitting_ module
+### BETA RELEASE: New + Improved _Model Fitting_ module
 
 As we have done with the Multiple Response and Time Series modules,
 we've completely redesigned the interface for model fitting with iNZight.
@@ -64,154 +91,112 @@ Let us know what you did to break it so we can fix it, or if there's anything el
 or not see, just let us know!
 
 
-## Patches
+## iNZightModules 2.1.1
+__Release date:__ 02 June 2017
 
-### 2.2.0-1 - 23/08/2017
-- bug fixes: bootstrapping, residual plots
-- better handling of errors
-- extra features, etc
+- Fix updatePlot return value so it works with `iNZightPlots`'s `exportXXX()` functions
 
-### 2.2.0-2 - 25/08/2017
-- code history for model fitting module
-- more bug fixes
 
-### 2.2.0-3 - 20/10/2017
-
-- \[TS Module\] display error message when time series is missing values (or fails some other way)
-
-***
-
-# Version 2.1
+# iNZightModules 2.1
 __Release date__: 23 March, 2017
 
-## Major Changes
 
 - Release of newly designed Time Series module. All the usual features, but a far nicer interface, and a smoothness-slider!
 
 
-## Patches
+## iNZightModules 2.0-2
+__Release date:__ 23 September 2016
 
-### 2.1.1 - 02/06/2017
+- Catch fatal errors in trying to guess TS information
 
-- Fix updatePlot return value so it works with `iNZightPlots`'s `exportXXX()` functions
 
-***
+## iNZightModules 2.0-1
+__Release date:__ 05 September 2016
 
-# Version 2.0
+- Fix depreciation of `add3rdmouseButtonDropMenu` to `addRightclickDropMenu` in `gWidgets2` package.
+
+
+# iNZightModules 2.0
 __Release date__: 11 July, 2016
-
-## Major Changes
 
 - Redesigned Multiple Response Module
 - Redesigned Maps module
 - Change how module dependencies are imported (using `::`)
 
-## Patches
 
-### 2.0-1 - 05/09/2016
-
-- Fix depreciation of `add3rdmouseButtonDropMenu` to `addRightclickDropMenu` in `gWidgets2` package.
-
-### 2.0-2 - 23/09/2016
-
-- Catch fatal errors in trying to guess TS information
-
-***
-# Version 1.2
+# iNZightModules 1.2
 __Release date__: 25 August, 2015
-
-## Bug Fixes
 
 - Import entire `iNZightTools` package
 
 
-***
-# Version 1.1
+# iNZightModules 1.1
 __Release date__: 22 April, 2015
 
-Updated to conincide with the release of iNZight version 2.1.
+- Updated to conincide with the release of iNZight version 2.1.
 
 
-***
-# Version 1.0.8
+## iNZightModules 1.0.8
 __Release date__: 18 March, 2015
-
-## Bug Fixes
 
 - fix a bug where iNZightTS wasn't being imported properly
 
 
-***
-# Version 1.0.7
+## iNZightModules 1.0.7
 __Release date__: 23 February, 2015
-
-## Bug Fixes
 
 - remove `RGL` from `NAMESPACE` completely
 
 
-***
-# Version 1.0.6
+## iNZightModules 1.0.6
 __Release date__: 4 February, 2015
-
-## Bug Fixes
 
 - fix an issue where RGL causes R on some Windows 8 machines to crash
 
 
-***
-# Version 1.0.5
+## iNZightModules 1.0.5
 __Release date__: 27 November, 2014
-
-## Minor Changes
 
 - add scrollbars to Time Series window if it doesn't fit on
   the screen
 
 
-***
-# Version 1.0.4
+## iNZightModules 1.0.4
 
 - along with change in iNZightTS, allow x-label on more plots
 
 
-***
-# Verson 1.0.3
+## iNZightModules 1.0.3
 
-## New Features
+### New Features
 
 - the pairs plot, or scatter plot matrix, now takes a grouping variable.
 - 2-variable explore plots in the Quick Explore menu
 
-## Minor Changes
+### Minor Changes
 
 - Changes to the time series module to allow specification of
   multiplicative time series models.
 - Add y-axis label functionality.
 
 
-***
-# Version 1.0.2
-
-## Minor Changes
+## iNZightModules 1.0.2
 
 - the pairs/scatter plot matrix draws a jittered dotplot rather than a
   barcode plot.
 
 
-***
-# Version 1.0.1
+## iNZightModules 1.0.1
 
 - Minor changes in package information and structure.
 
 
-***
-# Version 1.0
+# iNZightModules 1.0
 
 This is the first release of this package, although it was previously
 bundled inside the iNZight package.
 
-## Major Changes
+### Major Changes
 
 - The model fitting module
 
