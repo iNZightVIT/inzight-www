@@ -156,7 +156,7 @@ iNZight allows you to display this information on a map of outlines, with each r
 
 Choose either __Use inbuilt Map__ (_default_) to use one of the maps already in iNZight  
 &emsp;&ensp;(choose from a selection of maps of _Continents_, several _Countries_, and _World_ maps)   
-or __Import Shapefile__ to start up a dialog for reading a shape file stored on your computer
+or __[Import Shapefile](#ShapeFiles)__ to start up a dialog for reading a shape file stored on your computer
 
 Then click … __Import Map__
 
@@ -270,3 +270,34 @@ To save a permanent file, click on the ___Save Plot icon___, or go __Plot > Save
 Choose the __interactive HTML__ as your file type.
 
 These files work independently of iNZight
+
+___
+
+ 
+### Shape files and importing shape files {#ShapeFiles}
+
+___Shapefiles___ are a method of storing geographical data for use in GIS (geographical information systems) or similar software. Despite the singular name, shapefiles are actually a collection of files that each correspond to a particular aspect of the data. Three files are mandatory:
+* The geometry of the data (polygons in our case) in a <b>.shp</b> file
+* An index of the geometries contained in the .shp file to allow software to know where each geometry is located within the file. This is contained in a <b>.shx</b> file.
+* Attributes for each geometry contained in the <b>.shp</b> file. These attributes can be any data and function similarly to a data frame where each row corresponds to a single geometry. These are stored in a <b>.dbf</b> file and can be inspected with Microsoft Excel.
+
+Most shapefiles will have additional files containing other information such as map projections or indexes of the spatial distance between geometries. 
+ Shapefiles are typically stored in separate directories for each map, with all the files that make up the shapefile contained within a single directory.
+Shapefiles are generally distributed on the internet as archive files, e.g. ZIP files. Currently these have to be decompressed to use in iNZight. 
+
+* In the __Import Shape file__ dialog, open the <b>.shp</b> file in the relevant shapefile folder
+
+
+___Other shapefile-information file formats___ that can be used in iNZight are __GeoJSON__ and __TopoJSON files__. These are a single file that stores much the same information as a shapefile by storing a geometry and set of properties for each feature in the dataset. GeoJSON can be used in most GIS software and is a standard format for web-based mapping technologies such as Leaflet. TopoJSON is a closely related format that includes topology and typically has file size that is smaller than GeoJSON as TopoJSON only stores one copy of any borders that are shared by two countries.
+
+* In the __Import Shape file__ dialog, just open the relevant <b>.GeoJSON</b> or <b>.TopoJSON</b> file
+ 
+
+___***Coming___ (Daniels's notes)__:__  
+* Add ability to import zipped shape files as is
+* A newer, faster method of map simplification
+* A more integrated map selection interface where we download less common shapefiles on-demand, but still list them in a tree diagram
+* As an additional note, my current method of simplifying our “built-in” maps is to use a webpage that uses this method. Once I put it into a script, I can send it to you and we won’t need to jump between different software to add a map to your server (or perhaps more importantly, not rely on other services) 
+
+
+

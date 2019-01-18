@@ -87,12 +87,10 @@ Typically people colour regions of a map according to the value of a (single) va
 ![Africa life expectancies map](../../img/user_guides/advanced/aboutmaps/06_africa.png) {.width500}
 ///HTML:
 <center>(<i>African counties coloured by their Life Expectancy values</i>))</center>
-///
-
-   
+///   
 
 ### Issues:
-* __Matching data points with regions on a map:__ Mapping software typically draws regional maps using so-called ___shape files___ which contain the boundary of each region (as the vertices of a polygon) and the names of the regions.  To produce a choropleth map, the shape file is used to draw the outlines of each region. Then a variable in the data set containing the names of the regions has to be matched with a corresponding naming-variable in the shape file so the program knows what observations in the data file correspond to what regions on the map.  
+* __Matching data points with regions on a map:__ Mapping software typically draws regional maps using so-called __[shapefiles](../../user_guides/add_ons/?topic=maps#ShapeFiles)__ which contain the boundary of each region (as the vertices of a polygon) and the names of the regions.  To produce a choropleth map, the shape file is used to draw the outlines of each region. Then a variable in the data set containing the names of the regions has to be matched with a corresponding naming-variable in the shape file so the program knows what observations in the data file correspond to what regions on the map.  
    * Several sets of name variables are often included in a shape file (e.g. the set off full names and a parallel set of common abbreviations) to make it more likely that there will be a set of names that matches with the region-name variable in a data set. Otherwise the names in the data set will have to be changed to conform with one of the naming conventions available in the shape file.
 * __Labels:__  Viewers will seldom reliably know which regions are which just by looking at the map so name-labels are often added (e.g. the names of each state or their abbreviated form). The numeric value of the plotted variable might also be added for each region.
 
@@ -118,9 +116,9 @@ Typically people colour regions of a map according to the value of a (single) va
  
   
   
-* __Distortions due to land area:__ Colouring regions misleadingly makes large unpopulated areas look more important than smaller highly populated areas (e.g. US political maps produced in this way misleadingly make the unpopulated centre regions of the country look much more important contributors to election results than the heavily populated coastal regions)
+* __Distortions due to land area:__ Colouring regions misleadingly makes large unpopulated areas look more important than smaller highly populated areas (e.g. US political maps produced in this way misleadingly make the much-less-populated centre regions of the country look much more important contributors to election results than the heavily populated coastal regions)
   * __Alternatives__ that try to get around this problem__:__
-      * __Colour superimposed symbols rather that the regions themselves:__ Use colour shapes (e.g. disks) centred at the centre of each region and size the shapes proportional to population
+      * __Colour superimposed symbols rather that the regions themselves:__ Use colour shapes (e.g. disks) centred at the centre of each region and size the shapes proportional to population (as in the "heart" example below). We call these disks ___centroids___.
       * __Cartograms:__ distort the shapes in the map so the region sizes are approximately proportional to population sizes (_not implemented in iNZight yet_)
       * __Dots:__ pepper regions with coloured dots, with each dot representing the same number of people  (_not implemented in iNZight yet_)
 
