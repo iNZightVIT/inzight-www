@@ -24,7 +24,9 @@ This is data on things that have happened at particular _geographical __location
     * __Example:__ the table extract below shows data on different countries of the world which includes: the year the data relates to, average life expectancy, population size, and GDP per capita.
 
 ![Some data from Gapminder](../../img/user_guides/advanced/aboutmaps/02_GapminderData1.png) {.width500}
+///HTML:
 <center>(<i>In this data</i>, continent <i>could also be used as a region variable if our data was recorded at the level of continents</i>)</center>
+///
 	
 ___Statistical exploration of data using maps___ is typically concerned with ___finding patterns in the data that are related to geography___, leveraging off what we can see about what is close to what (or far from what), and the reminders the maps give us of our own general knowledge about different locations. We are particularly looking for patterns that make some sort of sense (or are interesting) geographically, and any notable exceptions to those patterns.
 
@@ -33,7 +35,9 @@ ___Statistical exploration of data using maps___ is typically concerned with ___
 With location data we start by plotting the locations (latitudes and longitudes) on the map using some form of plotting symbol (e.g. a circle). But doing that that just shows us the locations we have data for. It does not communicate any of the information we have about what happened at each of those locations. So we need ways of putting the additional information from some of these other variables onto the map as well.
 
 ![NZ quakes in 2000 on map](../../img/user_guides/advanced/aboutmaps/03_nzquakes.png) {.width600}
+///HTML:
 <center>(<i>We have sized by the intensity of the earthquake and coloured by its depth </i>)</center>
+///
 
 ### Adding more information than just locations
 
@@ -63,17 +67,22 @@ Also,
  
 
 ![Array of NZ quakes maps - one for each month](../../img/user_guides/advanced/aboutmaps/04_nzquakesArray2.png) {.width871}
+///HTML:
 <center>(<i>Here we have a different map for every month of the year</i>)</center>
+///
 
 ![NZ quakes animated gif](../../img/user_guides/advanced/aboutmaps/05_nzquakesByMo_5x.gif) {.width400}
+///HTML:
 <center>(<i>Small animated gif to show the effect of playing through subsets</i> (<i>here,  playing through the month plots</i>))</center>
-
+///
 ###Interactive Map plots {#InteractLoc}
 
 __Example__  
 Here is an interactive version of the February plot. This one responds to hovering over points, and selecting a set of points by left-clicking and dragging. Which variables get displayed when hovering is controlled by the "Variables to display" dialog a the top of the frame. When a set of points is selected by dragging, their data values appear in the Table.  Clicking on "Table" at the top of the frame toggles between removing the Table and bringing it back again.   (_Click the graphic's help page -- small "?" at top right._)
 
+///HTML:
 <iframe src="../../img/user_guides/advanced/aboutmaps/FebQuakes.html" style="border:2px;" height="800" width="1200"></iframe>
+///
 
 ###Contour plotting
   
@@ -99,7 +108,9 @@ Typically people colour regions of a map according to the value of a (single) va
 * __Scales:__ Each map only displays the values of a single variable (in addition to region), but we can look at the behaviour of several variables at the same time if we put several maps on the same page, one for each variable.
 
 ![Maps showing variables with different scales](../../img/user_guides/advanced/aboutmaps/08_DifferentScales.png) {.width700}
+///HTML:
 <center>(<i>GDP per capita and Life Expectancy are measured on very different scales</i>)</center>
+///
 
 &nbsp;
 
@@ -108,7 +119,9 @@ Typically people colour regions of a map according to the value of a (single) va
  * ___Non-comparable scales case_:__ When the scales are not comparable (as with GDP per capita and Life Expectancy in the plots above) we translate values to colours in graphs independently of one another
 
  ![Maps showing variables with the same scale](../../img/user_guides/advanced/aboutmaps/09_SameScales.png) {.width700}
+ ///HTML:
 <center>(<i>One map shows the proportion of medical centres accepting Medicaid and the other accepting Military Insurance</i>)</center>
+///
 
  &emsp;
  
@@ -123,7 +136,9 @@ Typically people colour regions of a map according to the value of a (single) va
       * __Dots:__ pepper regions with coloured dots, with each dot representing the same number of people  (_not implemented in iNZight yet_)
 
 ![Plotting shaded maps](../../img/user_guides/advanced/aboutmaps/10_ColoursCentroids.png){.width600}
+///HTML:
 <center>(<i>Shading versus population-sized centroids</i>)</center>
+///
 
 	  
 * __Conveying several variables on a single map__
@@ -134,32 +149,40 @@ Typically people colour regions of a map according to the value of a (single) va
       * Interactive graphs link to more detailed time series in various ways
  
 ![Africa life expectancies animated gif](../../img/user_guides/advanced/aboutmaps/ForAfricaGif.gif) {.width871}
+///HTML:
 <center>(<i><b>Playing through a sequence</b> of maps, <b>one for each year</b> - animated gif</i>)</center>
+///
 
  &emsp;
  
 ![All values and sparklines](../../img/user_guides/advanced/aboutmaps/11_Sparklines.png){.width400}
+///HTML:
 <center>(<i>Drawing a mini time-series for each country</i>)</center>
+///
  
 ### Interactive Plots {#InteractReg}
  
 Preview of Example (_still image_)
 
 ![All values and sparklines](../../img/user_guides/advanced/maps/temp_InteractiveSparklines.png){.width700}
+///HTML:
 <center>(<i>Linking countries and detailed time series (screenshot)</i>)</center>
-
+///
 __Example__ of an interactive plot for showing changes over time with time series
  
 There is a great deal of interactivity besides hover-over in this plot. Clicking on a Country (but not on the little icon within the country) highlights the detailed time-series plot for that country on the right. Holding down the shift key while you click enables you to add countries. You can likewise hover over the set of time series on the right-hand plot to discover details, or click (or shift-click  to accumulate countries) to link back to the map on the left. You can also pan (click and drag) and zoom (mouse wheel) on the map plot to get closer to small areas. (_Click the graphic's help page -- small "?" at top right._)
 
+///HTML:
 <iframe src="../../img/user_guides/advanced/aboutmaps/AfricaOverTime_Spark.html" style="border:2px;" height="800" width="1200"></iframe>
+///
 
 __Example__ of an interactive plot for showing changes over time using a "movie"
 
 Click "Table" to remove the table. You can change the year using the slider at the upper-right, or play across years by clicking play button just under it. The variable being represented on the map can be changed using "Variable to display". Panning and zooming works here too.  (_Click the graphic's help page -- small "?" at top right._)
  
-
+///HTML:
 <iframe src="../../img/user_guides/advanced/aboutmaps/AfricaOverTime_Shaded2.html" style="border:2px;" height="800" width="1200"></iframe>
+///
 
 
 ### Some more issues

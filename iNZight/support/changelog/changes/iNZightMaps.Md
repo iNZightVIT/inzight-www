@@ -1,3 +1,16 @@
+# Version 2.1
+__Release date__: 15 November 2018
+
+## Major changes
+- Replaced Google Maps with Stamen Maps due to the former no longer offering free maps
+
+## Patches
+
+### Patch 2.1.1 - 03/12/2018
+- fix bug where Shiny graphics device would plot white background
+
+***
+
 # Version 2.0
 __Release date__: 14 August 2018
 
@@ -8,6 +21,13 @@ Massive overhaul of the mapping module, using ggplot2 and sf packages.
 - For spatial time series data: plot animated maps over time, overlay small line plots on regions or aggregate values
 - Retrieve the code used for these maps 
 - Add most point appearance options from regular iNZightPlots scatterplots into iNZightMaps coordinate maps
+
+## Patches
+
+### Patch 2.0.1 - 13/09/2018
+- Add example datasets to package
+- Change "opacity" labels to "transparency"
+- Overall transparency slider now always visible
 
 ***
 # Version 1.1

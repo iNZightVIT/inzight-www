@@ -25,6 +25,11 @@ to make the Model Fitting module better (over on `iNZightModules`).
 
 - fix bootstrapping algorithm
 
+### Patch 1.2.1, 15/11/2018
+
+- [add] display baseline level for binary glms
+- [fix] summary of model with only confounders (i.e., "adjusted intercept")
+
 ***
 
 # Changes in version 1.1.7
