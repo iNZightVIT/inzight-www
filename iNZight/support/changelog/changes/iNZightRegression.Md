@@ -1,62 +1,68 @@
-# Version 1.2
+## iNZightRegression 1.2.2
+__Release date__: 01 February 2019
+
+- fix bug where residual plot for null model was painfully slow to draw
+
+
+## iNZightRegression 1.2.1
+__Release date__: 15 November 2018
+
+- display baseline level for binary glms
+
+
+## iNZightRegression 1.2.0-2
+__Release date__: 02 October 2017
+
+- fix bootstrapping algorithm
+- summary of model with only confounders (i.e., "adjusted intercept")
+
+
+## iNZightRegression 1.2.0-1
+__Release date__: 25 August 2017
+
+- remove NAs from qq-plot abline
+
+
+# iNZightRegression 1.2
 __Release date__: 23 August 2017
 
 This isn't a hugely updated version, however fixing up a bunch of bugs
 to make the Model Fitting module better (over on `iNZightModules`).
 
 
-## Minor changes
+### Minor changes
 
 - export a `Poly()` function, which is just a `poly()` function that supports `NA`s
 
-## Bug fixes:
+### Bug fixes:
 
 - catch errors in model bootstrapping so the rest of the plot still works
 - use the `subset` argument to `lm` (via `update()`) to perform bootraps, rather than the long-winded data-bootstrapping call-modifying version that was buggy
 - fix up bootstrapping algorithms for QQplot and histogram arrays
 
 
-## Patches
-### Patch 1.2.0-1, 25/08/2017
-
-- remove NAs from qq-plot abline
-
-### Patch 1.2.0-2, 02/10/2017
-
-- fix bootstrapping algorithm
-
-### Patch 1.2.1, 15/11/2018
-
-- [add] display baseline level for binary glms
-- [fix] summary of model with only confounders (i.e., "adjusted intercept")
-
-***
-
-# Changes in version 1.1.7
+## iNZightRegression 1.1.7
 __Release date__: 18 August 2017
 
 - various fixes, package maintenance
 
-***
 
-# Changes in version 1.1.6
+## iNZightRegression 1.1.6
 __Release date__: 23 March 2017
 
 - fix bootstrapping method for linear models
 
 
-***
-# Changes in version 1.1.5
+## iNZightRegression 1.1.5
 __Release date__: 9 January 2017
 
 - fix a bug preventing plots from drawing when provided a `glm` object
 
 
-***
-# Changes in version 1.1.4
+## iNZightRegression 1.1.4
 __Release date__: 20 July 2015
 
-## Minor Changes
+### Minor Changes
 
 - added an extra argument `use.inzightplots` to the
   plotting functions that allows users to enabled/disable the use of
@@ -64,36 +70,34 @@ __Release date__: 20 July 2015
   latest version of `iNZightPlots` is incompatible with
   `iNZightRegression`.
 
-
-## Bug Fixes
+### Bug Fixes
 
 - added missed function and method exports
 
-***
-# Changes in version 1.1.3
+
+## iNZightRegression 1.1.3
 __Release date__: 17 September 2014
 
-## Bug Fixes
+### Bug Fixes
 
 - on some graphics devices (eg. RStudio) `grid.rect()` is not
   transparent - now enforces these to be transparent
 
-***
-# Changes in version 1.1.2
+
+## iNZightRegression 1.1.2
 __Release date__: 4 April 2014
 
-## Minor Changes
+### Minor Changes
 
 - Continuing on from previous update, the partial residual
   plots are now modified to make use of the `iNZightPlots` library
   if it is installed.
 
 
-***
-# Changes in version 1.1.1
+## iNZightRegression 1.1.1
 __Release date__: 27 March 2014
 
-## New Features
+### New Features
 
 - Residual summary plots from `plotlm6` can now make use of
   the `iNZightPlots` graphics rather than the defaults. It requires
@@ -104,8 +108,7 @@ __Release date__: 27 March 2014
   rather than loess smoothers. This greatly increases efficiency
   when large data sets are analysed.
 
-
-## Minor Changes
+### Minor Changes
 
 - Maximum sample size for drawing bootstraps implemented
   (currently at 4000), as over this they don't provide much
@@ -114,17 +117,15 @@ __Release date__: 27 March 2014
 - p-values for normality test are printed as "P < 0.001"
   rather than "P = 0".
 
-
 ## Bug Fixes
 
 - Shapiro Wilk test not used if sample size > 5000 (resulted in an error).
 
 
-***
-# Changes in version 1.1
+# iNZightRegression 1.1
 __Release date__: 18 January 2014
 
-## New Features
+### New Features
 
 - Support for generalised lienar models (GLMs) and `svyglm`
   objects from the `survey` package.
@@ -137,21 +138,18 @@ __Release date__: 18 January 2014
 
   - Displays the type of fit (e.g., Suvey / Generalised Linear / Model).
 
-
 - The QQ-plot array has been replaced by a single plot with
   the parametric bootstrap data QQ-plots all on a single plot,
   overlaid by the QQ plot of the true data (this was suggested by
   Thomas Lumley).
 
-
-## Changes
+### Changes
 
 - The Histogram Array has been rewritten using `grid`, and
   minimises margin whitespace and draws simulated histograms in a
   different color.
 
-
-## Bug Fixes
+### Bug Fixes
 
 - The bootstrap models functions have been re-written to
   account for the `design` option in survey GLMs, as well as the
@@ -167,17 +165,15 @@ __Release date__: 18 January 2014
   for GLMs.
 
 
-***
-# Changes in version 1.0.2-20130913
-## New Features
+## iNZightRegression 1.0.2-20130913
 
 - Initial support for generalised linear models (GLMs),
   including the `survey` package's `svyglm`.
 
 
-***
-# Changes in version 1.0.2-20130122
-## New Features
+## iNZightRegression 1.0.2-20130122
+
+### New Features
 
 - First release of new package. Contains model fitting subset
   used for the `iNZight` package.
@@ -240,7 +236,6 @@ __Release date__: 18 January 2014
 - Adding bootstrapped estimates to `iNZightSummary`. Accessed by
   calling the function with `method="bootstrap"`.
 
-
-## Bug Fixes
+### Bug Fixes
 
 - Using `loess` for smoothers instead of `lowess` (newer and more robust).
