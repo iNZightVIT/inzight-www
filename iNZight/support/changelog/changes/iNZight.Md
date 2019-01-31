@@ -1,3 +1,15 @@
+## iNZight 3.3.5
+__Release date__: 01 February 2019
+
+- update API for module windows to create header (title), body (with scrollbar), and footer (for buttons)
+
+
+## iNZight 3.3.4
+__Release date:__ 16 January 2019
+
+- fix a bug in which the preferences menu wouldn't open up
+
+
 ## iNZight 3.3.3
 __Release date:__ 07 January 2019
 
