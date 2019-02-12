@@ -135,6 +135,15 @@ These students worked on iNZight for their Summer Scholarship.
 - __Dongning Zhang__: expanded the range of Time Series formats that iNZight recognises, allowing for weekly (2012W01) and daily (2015D01) data, as well as days-per-week (W01D01) and hours-per-day (D01H02).
 - __Yu Han Soh__: started work on exporting iNZight's plots as interactive HTML/Javascript documents.
 
+#### Summar 2017/18
+
+- __Daniel Barnett__: developed the regional maps module, allowing users to import shape files and plot regional (e.g., country, state, etc) data onto a map
+
+#### Summer 2018/19
+
+- __Lushi Cai__: worked on a code-tidying algorithm which works with tidyverse-style code that collapses to fill the available width
+- __Monica Merchant__: began work on predictive model building module which allows users to use multiple methods and criteria to build a predictive model
+- __Yiwen He__: implemented datetime facilities to iNZight to allow users to create datetime variables and extract information (such as the year, hour) from a datetime; implemented data joining facilities
 
 ***
 
