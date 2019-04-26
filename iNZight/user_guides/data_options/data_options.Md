@@ -113,6 +113,162 @@ In this case, we would select `Week1`, `Week2`, and `Week3` as the variables in 
 Of course, you can rename the variables as appropriate using "Manipulate Variables" > "Rename Variables".
 
 #### {.clear}
+## Dateset operation
+It offers three tools for the users to modify their dataset.
+
+<img src='../../img/user_guides/dataset/9_dataset_operation_menu.png' alt='dataset operation menu' width='300'> 
+
+### Reshape dataset
+
+Provides two methods for reshaping the dataset:
+1.	Convert from a wide format to a long format
+2.	Convert from a long format to a wide format
+
+<img src='../../img/user_guides/dataset/10_reshape_dataset.png' alt='reshape dataset' width='250'> 
+
+<img src='../../img/user_guides/dataset/11_reshape_wide_to_long.png' alt='reshape wide to long' width='200' align = "right"> 
+
+__1. Wide to long__
+
+This allows you to select a column or multiple columns from your dataset.
+
+One new column (default name `key`) is populated by the column name(s) of the selected column(s) The other new column (default name `value`) will contain the column value from the selected columns. 
+
+The selected column(s) will be removed and two new columns will be added to the dataset.
+
+A preview panel shows what the new dataset will look like.
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+__2. Long to wide__
+<img src='../../img/user_guides/dataset/12_reshape_long_to_wide.png' alt='reshape long to wide' width='200' align = "right"> 
+
+You can select a column to spread out into multiple columns (the column is named `key` in the example).
+
+It will use the column values of the selected column as a set of names for new columns.
+
+You then select another column with corresponding values to be put into the new columns (the column is named `value` in the example).
+
+<br>
+<br>
+<br>
+
+### Separate dataset
+
+This tool provides a way of:
+
+1.	Separate a _column_ into multiple columns
+2.	Separate a _column_ into multiple rows
+
+<img src='../../img/user_guides/dataset/13_separate.png' alt='Separate menu' width='300'> 
+
+<img src='../../img/user_guides/dataset/14_separate_to_columns.png' alt='Separate to columns' width='200' align = "right"> 
+
+__1. Separate a column into several columns__
+
+Allows you to separate a column into several columns using a user-defined separator. 
+
+It will separate at every instance of the separator until no further separators are found.
+
+If no separator is found, the new variable will be given `NA`.
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<img src='../../img/user_guides/dataset/15_separate_to_rows.png' alt='Separate to rows' width='200' align = "right"> 
+
+__2. Separate a column into multiple rows__
+
+This allows you to separate a column to several rows. 
+
+It will separate at every instance of the separator until no further separators are found.
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<img src='../../img/user_guides/dataset/16_unite_columns.png' alt='Unite columns' width='200' align = "right"> 
+
+### Unite columns
+
+Allows you to select multiple columns and “unite” them using a defined separator (default to “_”). The united column name will be the combination of the selected columns with a “.” in between.
+
+In this example, column “v1999” and column “v2000” are united by “_”. The new column name is “v1999.v2000”.
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Join Datasets
+
+<img src='../../img/user_guides/dataset/17_join_datasets.png' alt='Join datasets' width='200' align = "right"> 
+
+Joins the current dataset with another imported dataset by the column values. 
+
+By default, the tool will join the two datasets by columns that have a common name using the inner join method. 
+
+User can specify columns to join from two datasets and method on how to join them. 
+
+In this example, column “x1” and column “x2” are found in both datasets and have same values, so they are joined and only one copy of the two columns are in the output dataset. 
+
+Both datasets have column “x3” but have different values, so we decide to keep both columns in the output dataset. The column from the original dataset is labeled as “x3.Orig” and the column from the imported dataset is labeled as “x3.New”.
+
+Column “x4” and column “x5“ are distinct columns in two datasets and have no match, so they are both kept in the output dataset.
+
+
+## Append rows
+
+<img src='../../img/user_guides/dataset/18_append_rows.png' alt='Append rows' width='200' align = "right"> 
+
+Appends rows from the imported dataset to the original dataset.
+
+User can choose to attach a timestamp to the dataset.
+
+If there exists a column with common name in the two datasets but in different type, both columns will be kept in the output dataset with column name changed to include the type.
+
+
+#### {.clear}
+## Validate Dataset (coming very soon)
+![Validate dataset](../../img/user_guides/dataset/20_validate.png){.fright .nobox}
+
+Often, we would like to validate that the data in a dataset adheres to our expectations based on the real world or our external knowledge of the dataset. For example, we expect the heights of humans are not negative or someone cannot work for more than 24 hours in a single day. The validation window gives us the ability to define and check rules such as these.
+
+In the validation window, rules can be typed into the "Validation Rules" text box in the top left or imported from a text file using the "Open Rules" button.
+
+Using the first example, the rule to check whether heights are above 0 can be written in this textbox as `height > 0` in this text box (given there is a variable named `height` in our dataset). To check all of the rules that have been defined in this textbox, click the "Validate Dataset" button. The results of each rule are presented in a table at the bottom of the window and show the number of observations that were checked ("Total"), the number of passes and failures ("Passes" and "Fails" respectively), and the fail percentage ("Fails (%)"). This table is sorted by failure percentage.
+
+Double clicking on a row of the results table will generate a detailed breakdown of the results in the "Details" section on the right-hand side of the window. This breakdown will provide details about the observations which failed on that particular rule, giving the row numbers of these observations and the values used to assess the rule. If there is a variable containing unique identifiers in the dataset, this can be displayed by changing the "Unique Identifier" dropdown box to the variable containing that identifier. 
+
+Validation rules or changes to imported rule files are discarded once the validation window is closed. If you would like to store the set of rules you have defined or save any changes to an imported rule file, this can be done using the "Save Rules" button. They are saved into a text file on your computer that can be imported again using the "Open Rules" button or viewed using a text editor. 
+
+The rules you use to validate the dataset do not need to be simple comparisons between a variable and a static value as in the previous example. More complex rules can be built by performing calculations on the variables, e.g. `weight / height^2 < 50` will verify that each observation's body mass index is below 50. The values of each variable contained in the calculation as well as the end result are provided in the detailed breakdown. 
+
+Instead of comparisons between a variable/calculation and a static value, we can compare against another variable or a calculation based on the data. For example, to check that the income of an individual (contained in variable `Income`) is no more than 1000 times their number of hours per week (contained in variable `Hours`), we can use the following rule: `Income <= Hours * 1000`. This will calculate a different value to compare income against for each observation. 
+
+For more information on what is possible using validation rules, the vignettes and help files of the underlying R package (validate) might be useful: [Introduction to Validate vignette](https://cran.r-project.org/web/packages/validate/vignettes/introduction.html#validation-rule-syntax) and [Validate package (in particular, the syntax section of the reference manual)](https://cran.r-project.org/web/packages/validate/index.html).
+
+#### {.clear}
 ## Restore Dataset
 
 Restores the data set to the way it was when it was initially imported.

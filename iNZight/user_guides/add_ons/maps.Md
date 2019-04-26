@@ -154,9 +154,11 @@ iNZight allows you to display this information on a map of outlines, with each r
 
 ### Select Map
 
-Choose either __Use inbuilt Map__ (_default_) to use one of the maps already in iNZight  
+Choose either __Use Inbuilt Map__ (_default_) to use one of the maps already in iNZight  
 &emsp;&ensp;(choose from a selection of maps of _Continents_, several _Countries_, and _World_ maps)   
 or __[Import Shapefile](#ShapeFiles)__ to start up a dialog for reading a shape file stored on your computer
+
+Double clicking on a map name in the __Use Inbuilt Map__ section will plot a preview of the map in the plotting area and display a brief description of the map.
 
 Then click … __Import Map__
 
@@ -174,8 +176,8 @@ The names of any Regions in the data that are not represented in the map will be
 
 __Multiple observations for each region were found: (_only appears when this is true_)__  
 This often happens when, for example, we have observations for a region for several different years with different years corresponding to different rows in the data set.  
-  The module will then try to find a variable that "explains" the multiple observations. We are called it a "_sequence variable_"  
-&emsp;&ensp;* __Select sequence variable:__ If an “explaining variable” is found its name will be displayed in the selection box. You have the freedom to change it
+  The module will then try to find a variable that "explains" the multiple observations. We call this a "_sequence variable_".  
+	* __Select sequence variable:__ If an “explaining variable” is found its name will be displayed in the selection box. You have the freedom to change it
 
 __Use Map__ (_Button_)__:__ __Click__ to tell the program "___I want to use this map___"  
     * The program will then replace the map-selection command panel with a new command panel for plotting. An unshaded map with the appropriate boundaries will appear (as follows)
@@ -262,7 +264,7 @@ ___
 
 
 
-When you click on the ___Interactive plot icon___ (immediately above), iNZight makes a temporary interactive html file and opens it using your default browser.
+<!-- When you click on the ___Interactive plot icon___ (immediately above), iNZight makes a temporary interactive html file and opens it using your default browser. -->
 
 * Interactive versions of the maps are ___not available when there is more than one map___ in the plotting window 
 
