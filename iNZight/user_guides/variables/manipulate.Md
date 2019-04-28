@@ -118,3 +118,18 @@ For example, the variable `age = {15, 12, 19, 16}` would result in the new varia
 ### Convert to Categorical (Multiple)
 
 This works the same as the previous "Convert to Categorical" tool, however it allows users to convert multiple variables at once.
+
+## Dates and Times
+![Manipulate Dates and Times Menu](../../img/user_guides/variables/3_menu_dates_and_times.png){.borderbox}
+
+### Convert to ...
+
+Convert a variable to a standard dates and times (POSIXct) format.
+
+### Extract from ...
+
+Creates a variable by extracting specific component (e.g. data, year, time...) from a dates and times variable.
+
+### Aggregate to ...
+
+Creates a categorical variable by aggregating a single times series variable to a weekly, monthly, quarterly or yearly time series variable.
