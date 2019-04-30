@@ -1,8 +1,28 @@
 # Dataset ("Row") Operations
+![Data Operations Menu](../../img/user_guides/interface/3_inzight_menu_dataset.png){.fright .borderbox}
+* [Filter](#filter) data ...
+* [Sort (dataset) by variables ...](#sort)   
+* [Aggregate](#aggregate) data   
+* [Stack](#stack) variables   
+* [Dataset operations:](#datasetop)   
+&emsp;&ensp;- [Reshape dataset](#reshape)   
+&emsp;&ensp;- [Separate column into ...](#separate)   
+&emsp;&ensp; - [Unite columns](#unite)   
+* [Validate](#validate) dataset
+* __Rename__ dataset 
+* __Restore original dataset__    
+* __Delete current dataset__ 
+* [Merge datasets:](#merge)  
+&emsp;&ensp;- [Join datasets](#join)     
+&emsp;&ensp;- [Append rows](#append)     
+* __Specify survey design__  
+* __Remove (survey) design__  
+* __Expand table__ 
 
-![Data Operations Menu](../../img/user_guides/interface/3_inzight_menu_dataset.png){.borderbox}
 
-## Filter Dataset
+
+
+## Filter Dataset {#filter}
 
 This tool provides several methods for filtering the dataset.
 The window that opens has four options for you to choose from:
@@ -10,7 +30,7 @@ The window that opens has four options for you to choose from:
 ![Data Operations Menu](../../img/user_guides/dataset/1_filter.png)
 
 1. __Levels of a categorical variables__
-  ![Filter by categorical levels](../../img/user_guides/dataset/2_filter_levels.png){.fright .nobox .halfwidth}
+  ![Filter by categorical levels](../../img/user_guides/dataset/2_filter_levels.png){.fright .nobox}
 
   After selecting a categorical variable from the drop down box, you can select which levels you want to retain in the data set.
 
@@ -48,7 +68,7 @@ The window that opens has four options for you to choose from:
 
 
 #### {.clear}
-## Sort data by variables
+## Sort data by variables {#sort}
 ![Sort data](../../img/user_guides/dataset/6_sortdata.png){.fright .nobox}
 
 Sort the rows of the data by one or more variables. The ordering will be nested, so that the data is first ordered by "Variable 1",
@@ -56,7 +76,7 @@ and then "Variable 2", etc. For categorical variables, the ordering will be base
 
 
 #### {.clear}
-## Aggregate data
+## Aggregate data  {#aggregate}
 ![Aggregate data](../../img/user_guides/dataset/7_aggregate.png){.fright .nobox}
 
 This function essentially allows you to obtain "summaries" of all of the numeric variables in the data set for combinations of categorical variables.
@@ -79,7 +99,7 @@ Clicking on "Get Summary" would provide the same information. The advantage of u
 
 
 #### {.clear}
-## Stack variables
+## Stack variables {#stack}
 ![Stack variables](../../img/user_guides/dataset/8_stackvariables.png){.fright .nobox}
 
 Convert from _table form_ (rows corresponding to subjects) to _long form_ (rows corresponding to observations).
@@ -113,12 +133,12 @@ In this case, we would select `Week1`, `Week2`, and `Week3` as the variables in 
 Of course, you can rename the variables as appropriate using "Manipulate Variables" > "Rename Variables".
 
 #### {.clear}
-## Dateset operation
+## Dateset operation  {#datasetop}
 It offers three tools for the users to modify their dataset.
 
 <img src='../../img/user_guides/dataset/9_dataset_operation_menu.png' alt='dataset operation menu' width='300'> 
 
-### Reshape dataset
+### Reshape dataset {#reshape}
 
 Provides two methods for reshaping the dataset:
 1.	Convert from a wide format to a long format
@@ -158,7 +178,7 @@ You then select another column with corresponding values to be put into the new 
 <br>
 <br>
 
-### Separate dataset
+### Separate column into ... {#separate}
 
 This tool provides a way of:
 
@@ -203,7 +223,7 @@ It will separate at every instance of the separator until no further separators 
 
 <img src='../../img/user_guides/dataset/16_unite_columns.png' alt='Unite columns' width='200' align = "right"> 
 
-### Unite columns
+### Unite columns {#unite}
 
 Allows you to select multiple columns and “unite” them using a defined separator (default to “_”). The united column name will be the combination of the selected columns with a “.” in between.
 
@@ -220,7 +240,8 @@ In this example, column “v1999” and column “v2000” are united by “_”
 <br>
 <br>
 
-## Join Datasets
+## Merge datesets  {#merge}
+### Join Datasets {#join}
 
 <img src='../../img/user_guides/dataset/17_join_datasets.png' alt='Join datasets' width='200' align = "right"> 
 
@@ -237,7 +258,7 @@ Both datasets have column “x3” but have different values, so we decide to ke
 Column “x4” and column “x5“ are distinct columns in two datasets and have no match, so they are both kept in the output dataset.
 
 
-## Append rows
+### Append rows  {#apppend}
 
 <img src='../../img/user_guides/dataset/18_append_rows.png' alt='Append rows' width='200' align = "right"> 
 
@@ -249,7 +270,7 @@ If there exists a column with common name in the two datasets but in different t
 
 
 #### {.clear}
-## Validate Dataset (coming very soon)
+## Validate Dataset {#validate}
 ![Validate dataset](../../img/user_guides/dataset/20_validate.png){.fright .nobox}
 
 Often, we would like to validate that the data in a dataset adheres to our expectations based on the real world or our external knowledge of the dataset. For example, we expect the heights of humans are not negative or someone cannot work for more than 24 hours in a single day. The validation window gives us the ability to define and check rules such as these.

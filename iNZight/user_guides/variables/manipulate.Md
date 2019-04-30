@@ -11,7 +11,7 @@ If __any of the values__ contains even one __alphabetic character__, then the wh
 
 ![Manipulate Variables Menu](../../img/user_guides/interface/4_inzight_menu_variables.png){.borderbox}
 
-Type-specific submenus: [Categorical Variables](#catvars), [Numeric Variables](#numvars)
+Type-specific submenus: [Categorical Variables](#catvars), [Numeric Variables](#numvars), [Dates and Times](#datetimes)
 
 ### Convert to Categorical
 
@@ -119,17 +119,17 @@ For example, the variable `age = {15, 12, 19, 16}` would result in the new varia
 
 This works the same as the previous "Convert to Categorical" tool, however it allows users to convert multiple variables at once.
 
-## Dates and Times
+## Dates and Times {#datetimes}
 ![Manipulate Dates and Times Menu](../../img/user_guides/variables/3_menu_dates_and_times.png){.borderbox}
 
-### Convert to ...
+### Convert to ... {#dtconvert}
 
 Convert a variable to a standard dates and times (POSIXct) format.
 
-### Extract from ...
+### Extract from ...  {#dtextract}
 
 Creates a variable by extracting specific component (e.g. data, year, time...) from a dates and times variable.
 
-### Aggregate to ...
+### Aggregate to ...  {#dtaggregate}
 
 Creates a categorical variable by aggregating a single times series variable to a weekly, monthly, quarterly or yearly time series variable.
