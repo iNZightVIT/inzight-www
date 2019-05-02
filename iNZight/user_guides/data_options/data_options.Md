@@ -273,7 +273,9 @@ If there exists a column with common name in the two datasets but in different t
 ## Validate Dataset {#validate}
 ![Validate dataset](../../img/user_guides/dataset/20_validate.png){.fright .nobox}
 
-Often, we would like to validate that the data in a dataset adheres to our expectations based on the real world or our external knowledge of the dataset. For example, we expect the heights of humans are not negative or someone cannot work for more than 24 hours in a single day. The validation window gives us the ability to define and check rules such as these.
+Often, we would like to validate that the data in a dataset adheres to our expectations based on the real world or our external knowledge of the dataset. For example, we expect the heights of humans are not negative or someone cannot work for more than 24 hours in a single day. 
+
+Validating a data set necessarily requires user-supplied validation rules such as these. The validation window gives us the ability to define, or import, and check rules.
 
 In the validation window, rules can be typed into the "Validation Rules" text box in the top left or imported from a text file using the "Open Rules" button.
 
