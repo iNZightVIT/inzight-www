@@ -123,12 +123,24 @@ This works the same as the previous "Convert to Categorical" tool, however it al
 ![Manipulate Dates and Times Menu](../../img/user_guides/variables/3_menu_dates_and_times.png){.borderbox}
 
 ### Convert to ... {#dtconvert}
+Convert a variable to a standard dates and times (POSIXct) format and ___saves___ as a ___new variable___.
+___
+_In the example that follows_, Time.stamp _is a categorical variable that we wish to convert to a 
+variable that iNZight recognises as a datetime variable._
 
-Convert a variable to a standard dates and times (POSIXct) format.
+![Manipulate Categorical Variables Menu](../../img/user_guides/variables/dateyear_convert_big_50pc.png){.borderbox}
+
+
 
 ### Extract from ...  {#dtextract}
 
-Creates a variable by extracting specific component (e.g. data, year, time...) from a dates and times variable.
+Creates a new variable by extracting specific component (e.g. data, year, time...) from a dates and times variable in a large variety of levels of detail and of format.  
+* The pattern is to ___expand the option___ (click the "+") referring to the ___most detailed level of information___ you want in the result. The preview will show you what the result of your choice  will look like.
+
+_In the example that follows_, Time.stamp.dt _is a categorical variable that we wish to convert to a 
+variable that iNZight recognises as a datetime variable_ Timestamp.dt. _Whaty we want to do is extract a new variable containing the Year and the decimal part of the Year ("Decimal Year")_ 
+
+![Manipulate Categorical Variables Menu](../../img/user_guides/variables/dateyear_extract_big.png){.borderbox}
 
 ### Aggregate to ...  {#dtaggregate}
 
