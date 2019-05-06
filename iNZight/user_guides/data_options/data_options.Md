@@ -22,22 +22,19 @@
 
 
 
+![Data Operations Menu](../../img/user_guides/dataset/1_filter.png){.fright}
 ## Filter Dataset {#filter}
-
 This tool provides several methods for filtering the dataset.
 The window that opens has four options for you to choose from:
 
-![Data Operations Menu](../../img/user_guides/dataset/1_filter.png)
 
 1. __Levels of a categorical variables__
-  ![Filter by categorical levels](../../img/user_guides/dataset/2_filter_levels.png){.fright .nobox}
-
+  ![Filter by categorical levels](../../img/user_guides/dataset/2_filter_levels.png){.fright}
   After selecting a categorical variable from the drop down box, you can select which levels you want to retain in the data set.
 
 
-
 2. __Numeric condition__
-  ![Filter by numeric condition](../../img/user_guides/dataset/3_filter_numeric.png){.fright .nobox .halfwidth}
+  ![Filter by numeric condition](../../img/user_guides/dataset/3_filter_numeric.png){.fright}
 
   This allows you to define a condition with which to filter your data.
 
@@ -48,52 +45,40 @@ The window that opens has four options for you to choose from:
 
 
 3. __Row number__
-   ![Filter by row number](../../img/user_guides/dataset/4_filter_rows.png){.fright .nobox .halfwidth}
-
+   ![Filter by row number](../../img/user_guides/dataset/4_filter_rows.png){.fright}
   Exclude a range of row numbers as follows:
   - Entering 101:1000 (and then __Submit__) will exclude all rows from 101 to 1000
   - Similarly, 1, 5, 99, 101:1000 will exclude rows 1, 5, 99, and everything from 101 to 1000
 
 
 4. __Randomly__
-  ![Filter randomly](../../img/user_guides/dataset/5_filter_random.png){.fright .nobox .halfwidth}
-
-  Essentially, this allows you to perform bootstrap randomisation manually.
-
-  The current behaviour is this:
+  ![Filter randomly](../../img/user_guides/dataset/5_filter_random.png){.fright}
+ Essentially, this allows you to perform bootstrap randomisation manually.  
+ The current behaviour is this:
   - "Sample Size", _n_, is the number of observations to draw for each sample,
   - "Number of Samples", _m_, is the number of samples to create in the new data set.
   - The output will be a data set with _n_ x _m_ rows, which _must be smaller than the total number of rows in the data set_.
   - The observations are drawn randomly _without replacement_ from the data set.
 
-
 #### {.clear}
+![Sort data](../../img/user_guides/dataset/6_sortdata.png){.fright}
 ## Sort data by variables {#sort}
-![Sort data](../../img/user_guides/dataset/6_sortdata.png){.fright .nobox}
-
 Sort the rows of the data by one or more variables. The ordering will be nested, so that the data is first ordered by "Variable 1",
 and then "Variable 2", etc. For categorical variables, the ordering will be based on the order of the variable (by default, this will be alphabetical unless manually changed in "Manipulate Variables" > "Categorical Variables" > "Reorder Levels").
 
 
 #### {.clear}
+![Aggregate data](../../img/user_guides/dataset/7_aggregate.png){.fright}
 ## Aggregate data  {#aggregate}
-![Aggregate data](../../img/user_guides/dataset/7_aggregate.png){.fright .nobox}
-
-This function essentially allows you to obtain "summaries" of all of the numeric variables in the data set for combinations of categorical variables.
-
-- _Variables_: if only one variable is specified, the new data set will have one row for each level of the variable.
-
+This function essentially allows you to obtain "summaries" of all of the numeric variables in the data set for combinations of categorical variables.  
+- _Variables_: if only one variable is specified, the new data set will have one row for each level of the variable.  
   If two (or more) are specified, then there will be one row for each combination.
-  For example, the categorical variables `gender = {male, female}` and `ethnicity = {white, black, asian, other}` will
-  result in a data set with 2x4 rows.
-
-- _Summaries_: each row will have the chosen summaries given for each numeric variable in the data set.
-
+  For example, the categorical variables `gender = {male, female}` and `ethnicity = {white, black, asian, other}` will result in a data set with 2x4 rows.  
+- _Summaries_: each row will have the chosen summaries given for each numeric variable in the data set.  
   For example, if the data set has the variables `gender (cat)` and `height (num)`, and if the user selects `Mean` and `Sd`,
   then the new data set will have the columns `gender`, `height.Mean` and `height.Sd`.
   In the rows, the values will be _for that combination of categorical variables_;
-  the row for `gender = female` will have the mean height _of the females_, and the standard deviation of height _for the females_.
-
+  the row for `gender = female` will have the mean height _of the females_, and the standard deviation of height _for the females_.  
 A visual example of this would be do drag `height` into the Variable 1 slot, and `gender` into the Variable 2 slot.
 Clicking on "Get Summary" would provide the same information. The advantage of using Aggregate is that the summaries are calculated _for every numeric variable in the data set_, not just one of them.
 
@@ -133,43 +118,35 @@ In this case, we would select `Week1`, `Week2`, and `Week3` as the variables in 
 Of course, you can rename the variables as appropriate using "Manipulate Variables" > "Rename Variables".
 
 #### {.clear}
-## Dateset operation  {#datasetop}
-It offers three tools for the users to modify their dataset.
+## Dataset operations  {#datasetop}
+<img src='../../img/user_guides/dataset/9_dataset_operation_menu.png' alt='dataset operation menu' width='400' align = "right"> 
+It offers three types of tools for the users to modify their dataset:  
+&emsp;&ensp; - [Reshape dataset](#reshape)  
+&emsp;&ensp; - [Separate column](#separate)  
+&emsp;&ensp; - [Unite columns](#unite)
 
-<img src='../../img/user_guides/dataset/9_dataset_operation_menu.png' alt='dataset operation menu' width='300'> 
-
+#### {.clear}
+<img src='../../img/user_guides/dataset/10_reshape_dataset.png' alt='reshape dataset' width='300' align = "right"> 
 ### Reshape dataset {#reshape}
+Provides two methods for reshaping the dataset:  
+&emsp;&ensp;  1.	Convert from a ___wide___ format ___to___ a ___long___ format  
+&emsp;&ensp;  2.	Convert from a ___long___ format ___to___ a ___wide___ format
 
-Provides two methods for reshaping the dataset:
-1.	Convert from a wide format to a long format
-2.	Convert from a long format to a wide format
 
-<img src='../../img/user_guides/dataset/10_reshape_dataset.png' alt='reshape dataset' width='250'> 
-
+#### {.clear}
 <img src='../../img/user_guides/dataset/11_reshape_wide_to_long.png' alt='reshape wide to long' width='200' align = "right"> 
+__1. Wide to long__  
+This allows you to select a column or multiple columns from your dataset.  
+&emsp;&ensp;  - One new column (default name `key`) is populated by the column name(s) of the selected column(s)  
+&emsp;&ensp;  - The other new column (default name `value`) will contain the column value from the selected columns.   
+&emsp;&ensp;  - The selected column(s) will be removed and two new columns will be added to the dataset.  
+&emsp;&ensp;  - A preview panel shows what the new dataset will look like.
 
-__1. Wide to long__
 
-This allows you to select a column or multiple columns from your dataset.
-
-One new column (default name `key`) is populated by the column name(s) of the selected column(s) The other new column (default name `value`) will contain the column value from the selected columns. 
-
-The selected column(s) will be removed and two new columns will be added to the dataset.
-
-A preview panel shows what the new dataset will look like.
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-__2. Long to wide__
+#### {.clear}
 <img src='../../img/user_guides/dataset/12_reshape_long_to_wide.png' alt='reshape long to wide' width='200' align = "right"> 
-
-You can select a column to spread out into multiple columns (the column is named `key` in the example).
-
+__2. Long to wide__  
+You can select a column to spread out into multiple columns (the column is named `key` in the example).  
 It will use the column values of the selected column as a set of names for new columns.
 
 You then select another column with corresponding values to be put into the new columns (the column is named `value` in the example).
