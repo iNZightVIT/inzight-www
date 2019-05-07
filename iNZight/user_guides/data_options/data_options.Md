@@ -1,4 +1,4 @@
-# Dataset ("Row" Operations)
+# Dataset ("Row") Operations
 
 ## Page Contents
 
@@ -280,22 +280,37 @@ _In this example, column “v1999” and column “v2000” are united by “_�
 
 ### Join Datasets {#join}
 
-<img src='../../img/user_guides/dataset/17_join_datasets.png' alt='Join datasets' width='200' align = "right"> 
+This "joins", or brings together, information in two data sets: the current dataset in iNZight and a newly imported dataset (read in using the __Import data__ facility) shown at the mid-right. 
 
-Joins the current dataset with another imported dataset by the column values. 
+__Left Join:__ The default joining method is called a ___Left Join___, the main purpose of which is to add new variables to the original dataset by extracting the information from the new dataset.
+<img src='../../img/user_guides/dataset/17_join_datasets.png' alt='Join datasets' width='400' align = "right"> 
 
-By default, the tool will join the two datasets by columns that have a common name using the inner join method. 
+__Matching rows__: The main problem is to identify what pieces of information belong together. The most straightforward case occurs where there is a variable in the original dataset which is a unique identifier. If that variable is also in the imported dataset (even if under a different name) we can use it to match up the data which belongs to the same unit/entity.
 
-User can specify columns to join from two datasets and method on how to join them. 
+To semi-automate the process, iNZight looks for variables with the same name in both datasets (_originally x1, x2, and x3 in the Example to the right_) and offers those for determining matches.
 
-In this example, column “x1” and column “x2” are found in both datasets and have same values, so they are joined and only one copy of the two columns are in the output dataset. 
+_In the Example, we have rejected x3 using the delete button beside it and so have effectively told the program that it is units with the same values of both x1 and x2 that belong together._ 
 
-Both datasets have column “x3” but have different values, so we decide to keep both columns in the output dataset. The column from the original dataset is labeled as “x3.Orig” and the column from the imported dataset is labeled as “x3.New”.
+* The __Preview__ panel shows us the effects of our choices
 
-Column “x4” and column “x5“ are distinct columns in two datasets and have no match, so they are both kept in the output dataset.
+___Click___ the __Join__ button at the bottom once you are happy with the way the data is being joined.
+
+___The details of how the data is treated depend on the type of Join___ and we will document that after finishing describing the Example.
+
+_In the Example, x4 is a new variable so that has been added to the preview-dataset. A complication is x3 which is in both datasets but with different values for the "same" units. So the program has decided to make two variables, one for the x3 values from the original dataset and one for the x3 values from the new dataset._
 
 
-### Append rows  {#apppend}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+### Append rows {#append}
 
 <img src='../../img/user_guides/dataset/18_append_rows.png' alt='Append rows' width='200' align = "right"> 
 
