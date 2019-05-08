@@ -2,7 +2,7 @@
 
 ## Page Contents
 
-![Data Operations Menu](../../img/user_guides/interface/3_inzight_menu_dataset.png){.fright .borderbox}
+![Data Operations Menu](../../img/user_guides/interface/3_inzight_menu_dataset.png){.fright .borderbox .width300}
 * [Filter ...](#filter) data ...
 * [Sort (dataset) by variables ...](#sort)   
 * [Aggregate ...](#aggregate) data   
@@ -16,7 +16,7 @@
 * __Restore original dataset__    
 * __Delete current dataset__ validate
 
-* [Merge datasets:](#merge)  
+* [Merge/Join datasets:](#merge)  
 &emsp;&ensp;&bull; [Join datasets](#join)     
 &emsp;&ensp;&bull; [Append rows](#append)     
 * __Specify survey design__  
@@ -273,21 +273,22 @@ _In this example, column “v1999” and column “v2000” are united by “_�
 <br>
 <br>
 
-## Merge/join datasets  {#merge}
+## Merge/Join datasets  {#merge}
 &emsp;&ensp;&bull; [Join datasets](#join)     
 &emsp;&ensp;&bull; [Append rows](#append)     
+    
 
 
 ### Join Datasets {#join}
 
 This "joins", or brings together, information in two data sets: the current dataset in iNZight and a newly imported dataset (read in using the __Import data__ facility) shown at the mid-right. 
 
-__Left Join:__ The default joining method is called a ___Left Join___, the main purpose of which is to add new variables to the original dataset by extracting the information from the new dataset.
+__Left Join:__ The most important joining method is called a ___Left Join___, the main purpose of which is to add new variables to the original dataset by extracting the information from the new dataset.
 <img src='../../img/user_guides/dataset/17_join_datasets.png' alt='Join datasets' width='400' align = "right"> 
 
 __Matching rows__: The main problem is to identify what pieces of information belong together. The most straightforward case occurs where there is a variable in the original dataset which is a unique identifier. If that variable is also in the imported dataset (even if under a different name) we can use it to match up the data which belongs to the same unit/entity.
 
-To semi-automate the process, iNZight looks for variables with the same name in both datasets (_originally x1, x2, and x3 in the Example to the right_) and offers those for determining matches.
+To partially automate the process, iNZight looks for variables with the same name in both datasets (_originally x1, x2, and x3 in the Example to the right_) and offers those for determining matches.
 
 _In the Example, we have rejected x3 using the delete button beside it and so have effectively told the program that it is units with the same values of both x1 and x2 that belong together._ 
 
@@ -295,11 +296,31 @@ _In the Example, we have rejected x3 using the delete button beside it and so ha
 
 ___Click___ the __Join__ button at the bottom once you are happy with the way the data is being joined.
 
-___The details of how the data is treated depend on the type of Join___ and we will document that after finishing describing the Example.
+___The details of how the data is treated depend on the type of Join___ and we will [document that](#jointypes) after finishing describing the Example.
 
 _In the Example, x4 is a new variable so that has been added to the preview-dataset. A complication is x3 which is in both datasets but with different values for the "same" units. So the program has decided to make two variables, one for the x3 values from the original dataset and one for the x3 values from the new dataset._
 
+####Types of Join {#jointypes}
+__Left Join__  
+- The joined dataset has rows corresponding to ___all of the rows in the original dataset___ and all of its columns.   
+- Rows of the ___new___ dataset ___that do not have a match___ in the original dataset ___are not used___.  
+- The joined dataset ___also has the columns from the new dataset___ that were not used for matching.
+* Rows in the original that ___have no match___ in the newly imported dataset get `NA`s for the additional columns
+* __Warning: __ Rows from the original dataset that have ___more than one match___ in the new dataset generate multiple rows in the joined dataset (which invalidates many simple analyses). For example, if there are 3 matches then the original (single) row will be replaced by 3 rows. The cell-values for the additional columns will be obtained from the new data set and the values for the original columns from repeating the original cell values.
 
+
+__How other joins differ from the Left Join__
+
+* __Inner Join:__ Only use rows corresponding to matches between the two datasets
+
+* __Full Join (Outer Join):__ Also use all the non-matching rows from both data sets 
+
+[__Right Join:__ iNZight does not have this. Just import the datasets in the reverse order and use a left join.]
+
+The following are just used to filter data. No columns are added to the join from the new dataset.
+* __Semi Join:__ Use only rows in the original which have  ___a match___ in the new 
+
+* __Anti Join:__ Use only rows in the original which have  ___no match___ in the new
 
 <br>
 <br>
@@ -312,13 +333,18 @@ _In the Example, x4 is a new variable so that has been added to the preview-data
 
 ### Append rows {#append}
 
-<img src='../../img/user_guides/dataset/18_append_rows.png' alt='Append rows' width='200' align = "right"> 
+<img src='../../img/user_guides/dataset/18_append_rows.png' alt='Append rows' width='300' align = "right"> 
 
-Appends rows from the imported dataset to the original dataset.
+Adds to the bottom of the original dataset rows from a newly imported dataset (imported using the Import facility provided).
+* The column names from both datasets are matched so the right data goes into the right columns
+* Columns that appear in one dataset and not the other _will_ appear in the result
+* An error will be reported and not appending will be possible if two column names match but their types (e.g. numeric or categorical) do not match
 
-User can choose to attach a timestamp to the dataset.
+* If the Tick-box option is selected a timestamp variable called __When__\___Added__ will be added to the dataset recording when the new observations were added
+* If there is already a variable called __When__\___Added__ present in the original data (must be of type date-time, "(t)" in View Variables) the new timestamps will be appended to that existing variable  
 
-If there exists a column with common name in the two datasets but in different type, both columns will be kept in the output dataset with column name changed to include the type.
+___Where data is periodically being added to a dataset___, this facility can be used to keep track of when each row was added -- thus facilitating analyses of the data as it was up until any particular time point 
+
 
 
 #### {.clear}
