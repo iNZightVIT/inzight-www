@@ -8,7 +8,7 @@ By default, if __all the values__ of a variable are __numbers__, then that varia
 If __any of the values__ contains even one __alphabetic character__, then (by default) the whole variable will be treated as a __categorical variable__ (i.e., one that gives group membership). The one exception is  the value `NA`, which is treated as a missing-value code in both numeric and categorical variables.
 
 ##Page Contents:
-![Manipulate Variables Menu](../../img/user_guides/interface/4_inzight_menu_variables.png){.borderbox .fright}
+![Manipulate Variables Menu](../../img/user_guides/interface/4_inzight_menu_variables.png){.borderbox .fright, width="150px"}
 * [Convert to Categorical ...](#convert1)
 * [Categorical Variables](#catvars)  
 &emsp;&ensp;&bull; [Reorder Levels ...](#reorder)   
