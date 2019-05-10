@@ -11,7 +11,7 @@ If __any of the values__ contains even one __alphabetic character__, then (by de
 ![Manipulate Variables Menu](../../img/user_guides/interface/4_inzight_menu_variables.png){.borderbox .fright .width600}
 * [Convert to Categorical ...](#convert1)
 * [Categorical Variables](#catvars)  
-&emsp;&ensp;&bull; [Reorder Levels ...](#reorder)   
+&emsp;&ensp;&bull; [Reorder Levels ...](#reorderlevs)   
 &emsp;&ensp;&bull; [Collapse Levels ...](#collapse)   
 &emsp;&ensp;&bull; [Rename Levels ...](#renamelevs)   
 &emsp;&ensp;&bull; [Combine Categorical Variables ...](#catcombine)   
@@ -44,7 +44,7 @@ By default, the levels of a categorical variable are displayed in alpha-numeric 
 ### Collapse Levels {#collapse}
 Combine levels within a categorical parent variable to make a new variable with a smaller number of levels. (The levels of a categorical variable are the set of unique, or distinct, values it takes).
 
-### Rename Levels {#catrename}
+### Rename Levels {#renamelevs}
 Change the names of the levels of a categorical variable, e.g. from (ages) {"< 12", "12-17", "18-69", "> 69"} to {"child", "adolescent", "adult", "elder"}.
 
 ### Combine Categorical Variables {#catcombine}
