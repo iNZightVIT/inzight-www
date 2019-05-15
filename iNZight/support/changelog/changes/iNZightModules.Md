@@ -1,3 +1,11 @@
+## iNZightModules 2.4.5
+__Release date__: 30 April 2019
+
+- initialize testing using testthat (for model fitting module)
+- add travis, appveyor, and covr for continuous integration
+- add View to menubar to allow reopening of closed windows (e.g., model output)
+
+
 ## iNZightModules 2.4.4
 __Release date__: 01 February 2019
 
