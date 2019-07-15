@@ -1,9 +1,18 @@
+## iNZightModules 2.4.6
+__Release date__: 15 July 2019
+
+- time series module allows you to specify sub-series to plot or use in forecast model
+- fix calling of AIC and BIC functions in modelling module
+
+
 ## iNZightModules 2.4.5
 __Release date__: 30 April 2019
 
 - initialize testing using testthat (for model fitting module)
 - add travis, appveyor, and covr for continuous integration
 - add View to menubar to allow reopening of closed windows (e.g., model output)
+- add option to switch between logit and probit link function in binary regression
+- add model comparison section (limited to AIC and BIC, for now)
 
 
 ## iNZightModules 2.4.4

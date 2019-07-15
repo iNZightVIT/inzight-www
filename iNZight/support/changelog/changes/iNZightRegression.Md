@@ -1,3 +1,10 @@
+## iNZightRegression 1.2.4
+__Release date__: 15 July 2019
+
+- disable smoother for intercept-only models (`y ~ 1`)
+- fix some issues with bootstrapping
+
+
 ## iNZightRegression 1.2.3
 __Release date__: 30 April 2019
 
