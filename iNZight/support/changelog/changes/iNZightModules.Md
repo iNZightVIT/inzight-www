@@ -1,3 +1,11 @@
+## iNZightModules 2.4.7
+__Release date__: 13 August 2019
+
+- fixes AIC and BIC output for comparing regression models (including BIC for [nested] survey models)
+- factor comparisons returns pairwise comparison matrix (with estimates, CIs, and [adjusted] p-values)
+- add in dot density plot option for iNZightMaps
+
+
 ## iNZightModules 2.4.6
 __Release date__: 15 July 2019
 

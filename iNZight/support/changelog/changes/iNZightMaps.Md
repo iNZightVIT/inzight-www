@@ -1,3 +1,9 @@
+## iNZightMaps 2.2
+__Release date__: 13 August 2019
+
+- Add dot density maps
+
+
 ## iNZightMaps 2.1.2
 __Release date__: 30 April 2019
 
