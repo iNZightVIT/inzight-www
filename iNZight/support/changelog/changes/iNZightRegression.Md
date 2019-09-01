@@ -1,3 +1,17 @@
+## iNZightRegression 1.2.5.9000
+__Release date__: TBA
+
+
+
+## iNZightRegression 1.2.5
+__Release date__: 2 September 2019
+
+- add parameter confidence limits to regression summary output
+- add model comparison function (AIC, BIC)
+- add `factorComp()` function to obtain adjusted pairwise comparisons of
+  factor levels in a model
+
+
 ## iNZightRegression 1.2.4
 __Release date__: 15 July 2019
 
