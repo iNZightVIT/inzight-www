@@ -1,8 +1,3 @@
-## iNZightRegression 1.2.5.9000
-__Release date__: TBA
-
-
-
 ## iNZightRegression 1.2.5
 __Release date__: 2 September 2019
 
