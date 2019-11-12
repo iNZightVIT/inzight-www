@@ -48,6 +48,28 @@ who have worked part-time on making various parts of iNZight.
     </ul>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-md-6">
+    <h5><a href="">Daniel Barnett</a></h5>
+    <p><strong>Core responsibilities:</strong></p>
+    <ul>
+      <li>Maintaneance of the Maps module for iNZight</li>
+      <li>Development and maintenance of the new <code>ggplot</code> graph styles
+      <li>General testing and bug fixing of the desktop application</li>
+    </ul>
+  </div>
+
+  <div class="col-md-6">
+    <h5><a href="https://unidirectory.auckland.ac.nz/profile/tche929">Tong Chen</a></h5>
+    <p><strong>Core responsibilities:</strong></p>
+    <ul>
+      <li>Development of Lite and implementation of new features as they appear in the software version of iNZight</li>
+      <li>Maintenance of the public shiny containers</li>
+      <li>Technical support for Lite users</li>
+    </ul>
+  </div>
+</div>
 ///
 
 
