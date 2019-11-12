@@ -6,7 +6,7 @@ require_once($rel . 'assets/functions/filesize.php');
 
 <hr>
 <div class="col-md-12 col-lg-10 col-lg-push-1 os-desc" id="osDesc_mac">
-  
+
   <h4>1. Download and Install Dependencies</h4>
 
   <p>Before you can run iNZight, you must first download and install these three dependencies.
@@ -18,14 +18,18 @@ require_once($rel . 'assets/functions/filesize.php');
     <li><a href="<?php echo $download_links["xquartz"]; ?>">XQuartz</a> (website link, download the latest version)</li>
     <li><a href="<?php echo $download_links["r3.3"]; ?>">R 3.3.3</a> (direct download link).<br>
       <p class="note">
-      NOTE: if you already have R installed, and it is NOT version 3.3, this installer will not work. Please email us.</p>
+        NOTE: if you already have R installed, and it is NOT version 3.3,
+        iNZight cannot be installed on your mac.
+        You could try looking into <a href="https://rud.is/rswitch/">this RSwitch App</a>,
+        which allows you to switch between versions of R.
+      </p>
     </li>
   </ol>
-  
+
   <hr>
   <h4>2. Restart your computer</h4>
-  
-  <p>If you don't restart your computer before trying to run iNZight, 
+
+  <p>If you don't restart your computer before trying to run iNZight,
     you may experience problems or be unable to get the program running.</p>
 
   <hr>
@@ -33,7 +37,7 @@ require_once($rel . 'assets/functions/filesize.php');
   <h4>3. Download and Install Application</h4>
 
   <p>
-    Click the link to download 
+    Click the link to download
     <a href="<?php echo $download_dir . $download_links["osx"]; ?>">
       <?php echo $download_links["osx"]; ?>
     </a>
