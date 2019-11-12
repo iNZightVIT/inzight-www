@@ -1,5 +1,5 @@
-# iNZightPlots 2.10.3.9000
-__Release date__: TBA
+# iNZightPlots 2.10.4
+__Release date__: 11 November 2019
 
 - add `use.plotly` attribute to ggplots
 - new method of plotting barcode plots using `geom_spoke`
@@ -12,6 +12,9 @@ __Release date__: TBA
 - fix up inference information for surveys (+ tests)
 - fix bug where colour by ranks was returning an error
 - fix bug where x axis transformation was wrong for dotplot by factor when x was the factor and y the numeric
+- Enable transparency options for ridgeline plots
+- Add colour options for barcode and dot strip plots
+- Change default title of cumulative curve plots to "Cumulative Curve ..." (was "Cumulative Count ...")
 
 
 # iNZightPlots 2.10.3
