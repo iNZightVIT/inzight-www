@@ -48,8 +48,10 @@ require_once($rel . 'assets/functions/filesize.php');
     </p>
   </li>
   <li>
-    <a href="https://www.r-project.org/">R (>= 3.3)</a>
-    &mdash; the bash installer assumes R is installed and can be run using <code>R</code>
+    <a href="https://www.r-project.org/">R (>= 3.5)</a>
+    &mdash; the bash installer assumes R is installed and can be run using <code>R</code><br>
+    Note: the R version on some package managers (e.g., apt on Ubuntu) use an older version of R. 
+    Ubuntu users can use <a href="https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-18-04">these instructions</a>.
   </li>
   <li>
     Some other libraries that may be required (dependending on your system):<br>
