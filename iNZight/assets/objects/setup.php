@@ -19,8 +19,8 @@
     // "osx_ml-man_cloud" => false, // not implemented ...
 
     "xquartz" => "http://xquartz.macosforge.org/",
-    "gtk-2.18" => "http://r.research.att.com/libs/GTK_2.18.5-X11.pkg",
-    "gtk-2.24" => "http://r.research.att.com/libs/GTK_2.24.17-X11.pkg",
+    "gtk-2.18" => "http://mac.r-project.org/libs/GTK_2.18.5-X11.pkg",
+    "gtk-2.24" => "http://mac.r-project.org/libs/GTK_2.24.17-X11.pkg",
     "r3.3" => "http://cran.stat.auckland.ac.nz/bin/macosx/R-3.3.3.pkg",
     "linux" => "https://raw.githubusercontent.com/iNZightVIT/dev/master/scripts/install_inzight.sh"
   );
