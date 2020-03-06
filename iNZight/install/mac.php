@@ -7,6 +7,18 @@ require_once($rel . 'assets/functions/filesize.php');
 <hr>
 <div class="col-md-12 col-lg-10 col-lg-push-1 os-desc" id="osDesc_mac">
 
+  <div class="panel panel-danger space-above">
+    <div class="panel-heading">
+      <h5 class="panel-title">macOS Catalina</h5>
+    </div>
+    <div class="panel-body">
+      Due to recent changes in the latest iteration of macOS 'Catalina', some users are currently
+      experiencing issues running iNZight due to permissions restrictions. At this time, there is
+      no available solution and users are asked to use a iNZight on a Windows computer or
+      the try <a href="https://lite.docker.stat.auckland.ac.nz">iNZight Lite</a>.
+    </div>
+  </div>
+
   <h4>1. Download and Install Dependencies</h4>
 
   <p>Before you can run iNZight, you must first download and install these three dependencies.
