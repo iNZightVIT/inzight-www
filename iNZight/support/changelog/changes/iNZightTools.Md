@@ -1,3 +1,21 @@
+## iNZightTools 1.8.3
+
+- new `add_suffix()` function to smartly add suffixes to object names and append counter if suffix is already present
+- edit package description to meet CRAN standards
+
+
+## iNZightTools 1.8.2
+
+- fix issues from CRAN submission
+
+## iNZightTools 1.8.1
+
+- new `read_text()` function to read from text string/clipboard
+- `smart_read()` now supports URLs by downloading to a temporary file, with the same name
+- Extract from datetime no longer includes space in `2010M01`, etc. so it works correctly with `iNZightTS`
+- Reshape (wide to long) returns a factor to work with the rest of iNZight
+
+
 ## iNZightTools 1.8
 __Release date__: 11 November 2019
 
@@ -62,7 +80,7 @@ __Release date__: 04 September 2018
 
 
 # iNZightTools 1.6
-__Release date__: 14 Auguest 2018
+__Release date__: 14 August 2018
 
 ### Breaking Changes
 
@@ -100,7 +118,7 @@ __Release date__: 23 January 2018
 __Release date__: 25 August 2017
 
 - Code history features: interpolate code
-- Redocument package; pass CRAN checks
+- Re-document package; pass CRAN checks
 - start converting data modification functions to tidyverse
 
 ## Patches
@@ -123,11 +141,11 @@ __Release date__: 5 September, 2016
 - New device function uses the cairo device on Linux
 
 
-## Patch 1.2.1 - 3 Febuary, 2017
+## Patch 1.2.1 - 3 February, 2017
 
 - Only use the Acinonyx package on Mac (crashes R on Linux)
 
-## Patch 1.2.2 - 18 Febuary, 2017
+## Patch 1.2.2 - 18 February, 2017
 
 - Stop using `type = "nbcairo"` as macOS fallback in `newdevice()`
 
