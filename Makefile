@@ -1,7 +1,9 @@
 push:
-	fixPermissions
+	make fixPermissions USER=tell029
+	ls -al
+	echo "* Permissions should be for tell029"
 	sudo rsync -rlv --delete --exclude "downloads" --exclude "OLD" --exclude "TESTING" iNZight/ tell029@login02.fos.auckland.ac.nz:/mnt/tell029/web/homepages.stat/inzight-www/iNZight
-	fixPermissions USER=$(whoami)
+	make fixPermissions
 pushTest:
 		sudo rsync -rlv --delete --exclude "downloads" --exclude "OLD" iNZight/ tell029@login02.fos.auckland.ac.nz:/mnt/tell029/web/homepages.stat/inzight-www/iNZight/TESTING
 
