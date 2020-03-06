@@ -12,9 +12,9 @@ require_once($rel . 'assets/functions/filesize.php');
       <h5 class="panel-title">macOS Catalina</h5>
     </div>
     <div class="panel-body">
-      Due to recent changes in the latest iteration of macOS 'Catalina', some users are currently
+      Due to changes in the latest iteration of macOS 'Catalina', some users are
       experiencing issues running iNZight due to permissions restrictions. At this time, there is
-      no available solution and users are asked to use a iNZight on a Windows computer or
+      no available solution and users are asked to use iNZight on a Windows computer or
       the try <a href="https://lite.docker.stat.auckland.ac.nz">iNZight Lite</a>.
     </div>
   </div>
