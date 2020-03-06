@@ -1,5 +1,11 @@
 [<i>These pages deal only with issues for the current version of iNZight (version 3). For issues with older versions, see the <a href="https://www.stat.auckland.ac.nz/~wild/iNZight_2016-08/support/faq/"> FAQ pages from the old website</a>.</i>]
 
+
+# I can't get iNZight to work on macOS Catalina {#catalina}
+
+Unforunately Apple have made some significant changes to the way software permissions are handled, which seems to be blocking some packages that iNZight depends on from running. We are currently unable to provide a solution, and are asking users to either use a Windows computer or the online version. We apologise for any inconveniences and are waiting for other developers to fix some issues before we can fix iNZight.
+
+
 # I can't start iNZight after upgrading to OS X 10.10 Yosemite {#yosemite-update}
 
 The latest update to the Mac operating system, 10.10 Yosemite, has moved some things around. For now, it looks like you will need to reinstall XQuartz, which can be downloaded [from here](http://xquartz.macosforge.org/downloads/SL/XQuartz-2.7.7.dmg).
