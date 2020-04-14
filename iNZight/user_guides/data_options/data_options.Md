@@ -1,6 +1,6 @@
-# Dataset ("Row") Operations
-
-## Page Contents
+# Dataset Menu
+(_Organise and restructure your data, specify special structures, and filter out unwanted observations_)
+## Contents
 
 ![Data Operations Menu](../../img/user_guides/interface/3_inzight_menu_dataset.png){.fright .borderbox .width300}
 * [Filter ...](#filter) data ...

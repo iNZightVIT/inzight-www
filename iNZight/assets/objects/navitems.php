@@ -15,10 +15,11 @@
       'default' => 'user_guides/',
       'The Basics' => 'basics/',
       'Interface' => 'interface/',
-      'Plot Options' => 'plot_options/',
-      'Variables' => 'variables/',
-      'Data Options' => 'data_options/',
-      'Advanced Modules' => 'add_ons/',
+      'File Menu' => 'file_options/',
+      'Dataset Menu' => 'data_options/',
+      'Variables Menu' => 'variables/',
+      'Plot Menu' => 'plot_options/',
+      'Advanced Menu' => 'add_ons/',
       'Extra Features' => 'advanced/'
     ),
     'Support' => array(
