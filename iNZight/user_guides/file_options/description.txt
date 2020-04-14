@@ -1,1 +1,1 @@
-Getting data into and out of iNZight (Import, Paste, Export, Examples); Preferences=program controls 
+Getting data into and out of iNZight (Import, Paste, Examples, Export); Preferences=program controls 

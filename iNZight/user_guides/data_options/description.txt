@@ -1,1 +1,1 @@
-Organise your data, specify structure, and filter out unwanted observations.
+Organise and restructure your data, specify special structures, and filter out unwanted observations

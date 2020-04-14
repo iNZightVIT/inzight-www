@@ -1,7 +1,7 @@
 <?php
 
 $rel = "../../";
-$crumbs = array("User Guides" => "../", "File Menu Options" => "active");
+$crumbs = array("User Guides" => "../", "File Menu" => "active");
 require_once($rel . 'assets/includes/1-top_matter.php');
 require_once($rel . 'assets/includes/2-header.php');
 
@@ -15,7 +15,7 @@ $cont = json_decode(file_get_contents("contents.js"));
       // display the contents
       include_once($rel . 'assets/libraries/md.php');
       $Pd = new ParsedownExtra();
-      $text = file_get_contents("data_options.Md");
+      $text = file_get_contents("file_options.Md");
 
       // search for Videos:
       $textArray = explode("///", $text);

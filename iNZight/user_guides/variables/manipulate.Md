@@ -1,5 +1,6 @@
-# Variables
-_(Called __'Manipulate Variables'__ in iNZight Lite)_
+# Variables Menu
+(_Called __'Manipulate Variables'__ in iNZight Lite <br>
+Convert variables to new types, create new variables, and rename existing ones)_
 
 __iNZight assumes that data sets are in rows = cases by columns = variables format.__ For example, the cases (also often called units) may be individual people and the columns = variables contain different types of "measures" on those people.
 
