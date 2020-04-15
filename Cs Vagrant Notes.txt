@@ -35,11 +35,4 @@ to edit files
        2.  Press "Commit ..." 
 	   3.  Push origin (to update it on Github proper)
    
-Traps to avoid
---------------
-Inside the version switching code (iNZight/Lite) do not use any html mark-up (works in VirtualBox but not in the server)
-
-Orders and names of Contents items for User Guides??
-===========================================================
-inzight-www\iNZight\assets\objects\navitems.php
 
