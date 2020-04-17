@@ -3,25 +3,34 @@
 ## Contents
 
 ![Data Operations Menu](../../img/user_guides/interface/3_inzight_menu_dataset.png){.fright .borderbox .width300}
-* [Filter ...](#filter) data ...
-* [Sort (dataset) by variables ...](#sort)   
-* [Aggregate ...](#aggregate) data   
-* [Stack ...](#stack) variables   
+* [Filter ...](#filter) (_dataset_)
+* [Sort (_dataset_) by variable(s) ...](#sort)   
+* [Aggregate ...](#aggregate) (_data_)   
+* [Stack ...](#stack) (_variables_)   
 * [Dataset operations:](#datasetop)   
 &emsp;&ensp;&bull; [Reshape dataset](#reshape)   
 &emsp;&ensp;&bull; [Separate column (into) ...](#separate)   
 &emsp;&ensp; &bull; [Unite columns ...](#unite)   
-* [Validate](#validate) dataset
-* __Rename__ dataset 
-* __Restore original dataset__    
-* __Delete current dataset__ validate
+* [Validate ...](#validate) (_dataset_)
+* __View full dataset__   
+* __Rename ...__ (_dataset_) 
+* [Restore original dataset](#restore)    
+* __Delete current dataset__ 
 
 * [Merge/Join datasets:](#merge)  
 &emsp;&ensp;&bull; [Join datasets](#join)     
 &emsp;&ensp;&bull; [Append rows](#append)     
-* __Specify survey design__  
-* __Remove (survey) design__  
-* __Expand table__ 
+
+* [Survey design](#svydesign) (_for data from complex survey designs_)   
+&emsp;&ensp;&bull; Specify design ...       
+&emsp;&ensp;&bull; Specify replicate design ...      
+&emsp;&ensp;&bull; Post stratify ... (_or rake or calibrate_)       
+&emsp;&ensp;&bull; Remove design ...       
+
+* [Frequency  tables](#freqtables) (_values plus frequencies data format_)   
+&emsp;&ensp;&bull; Expand table       
+&emsp;&ensp;&bull; Specify frequency column       
+&emsp;&ensp;&bull; Remove frequency column       
 
 
 
@@ -348,6 +357,39 @@ ___Where data is periodically being added to a dataset___, this facility can be 
 
 
 #### {.clear}
+
+
+
+![Survey design](../../img/user_guides/dataset/21_svydesign.png){.borderbox .fright .width400}
+##Survey design  {#svydesign}
+
+___When a survey design has been defined___ almost all relevant parts of iNZight will ___apply analysis and graphics methods appropriate___ for data obtained using ___this survey design___ by applying functions in R's [survey package](http://r-survey.r-forge.r-project.org/survey/). 
+
+__Specify design__   
+Specifying a survey design in terms of weighting, strata and clustering variables etc.  
+For more information on quantities referred to in the dialogue box [see here ...](http://r-survey.r-forge.r-project.org/survey/example-design.html)
+
+__Specify replicate design__  
+Specifying a replicate-weight design.   
+For more information on quantities referred to in the dialogue box [see here ...](http://r-survey.r-forge.r-project.org/survey/example-svrepdesign1.html)
+
+__Post stratify__  
+___Poststratifying/raking/calibrating___ a design that has already been defined as above.  
+Categorical variables in the data set are offered as possible poststratification/raking/calibration candidates.  
+Corresponding population counts can be input by typing or reading from files.  
+For more information on quantities referred to in the dialogue box [see here ...](http://r-survey.r-forge.r-project.org/survey/example-poststrat.html)
+
+__Remove design__  
+Discard design information and ___revert to using standard methods of analysis___
+
+![Frequencies](../../img/user_guides/dataset/22_freqtables.png){.borderbox .fright .width400}
+##Frequency tables (_values plus frequencies data format_) {#freqtables}
+
+When a __frequency column__ is specified, graphics and summaries respond to a combinations-of-variables-plus-their-frequencies data structure. Only categorical variables are retained.
+
+The __expand table__ option can be used to work with both numeric and categorical variables. The storage and efficiency savings of working with a unique combinations of variables plus frequencies will typically be very much smaller here.
+<br><br><br><br><br><br><br><br><br>
+
 ## Validate Dataset {#validate}
 
 Often, we want to validate that the data in a dataset adheres to our expectations about how that data should behave based on external real world-knowledge.
@@ -391,6 +433,7 @@ For example, to check that the income of an individual (contained in variable `I
 For more information on what is possible using validation rules, the vignettes and help files of the underlying R package (validate) might be useful: [Introduction to Validate vignette](https://cran.r-project.org/web/packages/validate/vignettes/introduction.html#validation-rule-syntax) and [Validate package (in particular, the syntax section of the reference manual)](https://cran.r-project.org/web/packages/validate/index.html).
 
 #### {.clear}
-## Restore Dataset
+
+## Restore Dataset {#restore}
 
 Restores the data set to the way it was when it was initially imported.

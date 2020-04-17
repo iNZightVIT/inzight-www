@@ -42,7 +42,7 @@ unset($subdirs["default"]);
       <li>
         <a href="https://www.stat.auckland.ac.nz/~wild/d2i/exercises/">Data to insight Exercises</a>
         <p class="desc">
-          A set of introductory Exercises for learning to use iNZight
+          A set of introductory Exercises for learning to use iNZight, iNZight Lite and R
         </p>
       </li>
     </ul>

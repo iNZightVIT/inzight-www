@@ -1,1 +1,1 @@
-See how iNZight can be extended to include some more advanced modules.
+"Advanced" modules catering for specialized forms of data

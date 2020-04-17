@@ -12,8 +12,9 @@ The __File menu also__ allows for ___saving/exporting___ data. e.g., if you have
 ## Contents
 
 ![File Menu](../../img/user_guides/file/1_file_menu.png){.borderbox .fright .width300}
-* [Import data ...](#import)(_from file on computer or internet_)  
-    &emsp;&ensp;&bull;&ensp; [File types](#filetypes)
+* [Import data ...](#import)(_from a file on computer or internet_)  
+    &emsp;&ensp;&bull;&ensp; [File types](#filetypes)  
+    &emsp;&ensp;&bull;&ensp; [Metadata in csv files](#metacsv)  
 
 * [Export data ...](#export)(_useful if have modified the dataset_)
 * [Paste from ...](#paste) (_import by pasting copied data_)
@@ -52,13 +53,51 @@ iNZight can import files of the following types:<br>
    &emsp;&ensp;&bull;&ensp;SAS Xport files (.xpt)<br>
    &emsp;&ensp;&bull;&ensp;STATA fles (.dta)<br>
    &emsp;&ensp;&bull;&ensp;R Object files (.rds)<br>
-   &emsp;&ensp;&bull;&ensp;RDAta files (.RData, .rda)<br>
+   &emsp;&ensp;&bull;&ensp;RData files (.RData, .rda)<br>
 
 ___By default___, iNZight identifies the type of the file being imported by looking for one of these filename extensions. iNZight attempts to read the file and populate the __Preview panel__. If no preview appears iNZight has been unable to read the file.
 
 Click the __Import__ button (at bottom right) when you are happy with what appears in the Preview panel.
 
 The __Advanced Options__ at the bottom-left of the Import dialog box (Click on the “__+__” to expand) allows you to change default behaviour.
+
+###Metadata in csv files {#metacsv}
+(__Metadata__ is _information about the data_.)
+
+When .csv files and are .txt files are imported into iNZight, all lines in the data file beginning with a "#" are ignored (there is one exception below).
+
+This enables you to include __metadata__ in your .csv or .txt data files by starting each line of metadata information with a "#". 
+
+___With .csv files___, you can go further and include ___instructions telling iNZight to treat variables in various ways___. This is particularly useful for instructing iNZight to order the levels of a categorical variable in a desired way, rather than the default way.
+
+Lines starting with \#' @ are interpreted by iNZight's smart read function as containing instructions of this form  
+
+__Example:__  
+We will use the following lines from the top of  the file at ... https://www.stat.auckland.ac.nz/~wild/data/test/Census%20at%20School-500&meta.csv
+to show how this works.
+
+\## --- Meta Data --- ##  
+\#' @factor gender[male,female]  
+\#' @factor cellsource[pocket,parent,job,other]  
+\#' @factor getlunch[home,tuckshop,dairy,school,friend,none]  
+\#' @numeric age  
+\#' @factor year  
+\#' @factor school=year[primary=5|6,intermediate=7|8,high=9|10|11]  
+\#' @factor travel[walk,bike,car=motor,public=bus|train,other]  
+\#' @factor cellsource  
+\#' @numeric phonebill=cellcost  
+\## --- Data --- ##
+
+___Note:___ _By default in R, and therefore iNZight, the categories (levels) of a categorical variable (factor) are ordered alphanumerically._
+  
+The 1st (real) line above is an instruction for __gender__ to be treated as a categorical variable (factor) with levels in the order "male, female", rather than the alphabetic default "female, male". 
+The next 2 lines are doing the same sort of reorderings for __cellsource__ and __getlunch__.
+
+__year__ in the data file has numeric values ranging from 4 to 13 and so by default will be treated as a numeric variable. "\#' @factor year " is an instruction to treat it as a categorical variable (factor).
+
+The next line, "\#' @factor school=year[primary=5|6,intermediate=7|8,high=9|10|11]" is an instruction to construct a new categorical variable called __school__ from __year__ in which students in year-levels 5 & 6 become a category called "primary", ..., those in year-levels 9 to 11 become a category called "high". Year-levels 4, 12 an 13 are not mentioned in the statement so those categories remain unchanged and sort after those mentioned in the statement.
+
+The next line redefines __travel__ by combining categories "bus" and "train" into a category called "public".
 
 
 ![Export dialog](../../img/user_guides/file/5_export.png){.borderbox .fright .width300}
