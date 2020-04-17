@@ -19,7 +19,7 @@
       'Dataset Menu' => 'data_options/',
       'Variables Menu' => 'variables/',
       'Plot Menu' => 'plot_options/',
-      'Advanced Menu' => 'add_ons/',
+      'Advanced (Modules) Menu' => 'add_ons/',
       'Extra Features' => 'advanced/'
     ),
     'Support' => array(
