@@ -1,3 +1,7 @@
+## iNZightModules 2.4.9
+- change default value of the time series smoother to 15 (was 10)
+- add-on management system
+
 ## iNZightModules 2.4.8
 __Release date__: 11 November 2019
 
