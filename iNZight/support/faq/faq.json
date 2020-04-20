@@ -27,6 +27,10 @@
     "title" : "Importing Data",
     "desc" : "Having trouble importing your data into iNZight? We might have a solution for you."
   },
+  "export_data" : {
+    "title" : "Avoiding losing the changes you have made to your data",
+    "desc" : "How can I export data in a way the saves all the changes I have made?"
+  },
   "plotting" : {
     "title" : "Graphics and Plotting Issues"
   },
