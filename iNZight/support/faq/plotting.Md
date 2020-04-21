@@ -1,13 +1,29 @@
-# How and when can I get an interactive version of a plot? {#interactive}
+# When I resized the window my plot disappeared{#disappearing-plot}
+
+This is mainly an issue with dotplots. Click the __Redraw plot icon__ shown below ...
+<img src="img/redraw.png" style="float:left" alt='Redraw plot' width='30'/>  
+&emsp;&ensp;(you can always hover over the icons to see what they do)  
+
+# Unwanted colour segmentation in a bar chart{#unwanted-col-bar}
+
+You have a colour-by setting that is still active. Go to __Remove Additions__ underneath the plot and then check __Remove colour-by__, then click __OK__.
+<img src="img/remove-additions.png" style="float:left" alt='Remove additions icon' width='28'/>
+<br><br>
+# Plot didn’t change when I reordered categories and clicked "Reorder"{#reord-cat}
+
+___Reordering categories___ using __Variables > Categorical Variables > Reorder levels ...__ does not create a new graph, it creates a new variable (e.g. myvarname.reord). To get the new (reordered) graph you have to drag/select the new variable.
+
+
+# How can I get an interactive version of a plot? {#interactive}
 
 Most iNZight plots involving a single graph on a page, have an interactive version available. 
 
-look for this little icon
+look for this little icon ...
 <br>
-<img src="img/interactive-yes.png" style="float:left" alt='Interactive plot available' width='28'/> &emsp;&ensp;
+<img src="img/interactive-yes.png" style="float:left" alt='Interactive plot available icon' width='28'/> &emsp;&ensp;
 (blue) there ___is___ an interactive version available_.
 
-<img src="img/interactive-no.png" style="float:left" alt='No interactive plot available' width='30'/>  
+<img src="img/interactive-no.png" style="float:left" alt='No interactive plot available icon' width='30'/>  
 &emsp;&ensp;(grey) there is ___no___ interactive version available.
 
 Clicking on the (blue) icon results in an interactive plot popping up in your default browser. If that is a modern browser like Chrome, Firefox or Safari (but not Internet Explorer) this will then give you an interactive version of the graph that lets you query it in various ways like hovering over bars or clicking them. Explore!
