@@ -6,8 +6,10 @@ This is mainly an issue with dotplots. Click the __Redraw plot icon__ shown belo
 
 # Unwanted colour segmentation in a bar chart{#unwanted-col-bar}
 
-You have a colour-by setting that is still active. Go to __Remove Additions__ underneath the plot and then check __Remove colour-by__, then click __OK__.
+You have a colour-by setting that is still active. Go to __Remove Additions icon__ (_see below_) then check __Remove colour-by__ and then click __OK__.
 <img src="img/remove-additions.png" style="float:left" alt='Remove additions icon' width='28'/>
+ 
+&emsp;&ensp;(_you can also get to it by going_ __Plot > Remove additions ...__)
 <br><br>
 # Plot didn’t change when I reordered categories and clicked "Reorder"{#reord-cat}
 
