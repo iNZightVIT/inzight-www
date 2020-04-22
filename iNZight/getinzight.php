@@ -191,7 +191,7 @@ if ($auto) {
         <h4 class="panel-title">R users running R 3.3 or later</h4>
         <p>
           It's currently not possible for the installer to setup iNZight using R versions
-          3.3 or 3.4 (the issues lies with CRAN not building RGtk2 binaries). 
+          3.3 or 3.4 (the issues lies with CRAN not building RGtk2 binaries).
           Please use the "iNZightVIT Application Folder" and follow the instructions
           to install iNZight.
         </p>
@@ -293,16 +293,16 @@ if ($auto) {
           <li><a href="<?php echo $download_links["xquartz"]; ?>">XQuartz</a></li>
           <li><a href="https://www.r-project.org/">R (>= 3.0)</a> NOTE: R 3.4.0 not yet supported (see note above)</li>
         </ul>
-  
+
         <hr>
         <h4>Installing iNZight on R 3.4</h4>
         <p>
           You'll need to be able to install packages from source in order to get iNZight
-          running. The following information is extracted 
+          running. The following information is extracted
           <a href="http://cran.stat.auckland.ac.nz/bin/macosx/tools/">from the CRAN tools page</a>.
         </p>
         <ol>
-          <li>Install gfortran: 
+          <li>Install gfortran:
             <a href="http://cran.stat.auckland.ac.nz/bin/macosx/tools/gfortran-4.2.3.pkg">gfortran-4.2.3.pkg</a>
             (direct download link)
           </li>

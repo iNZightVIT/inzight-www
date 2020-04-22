@@ -142,6 +142,13 @@ $captchaEnc = hashValue($captchaAns);
     or just saying thanks.
   </p>
 
+  <p>
+    <strong>Please note</strong> that we operate from New Zealand,
+    so our work hours may be quite different from yours!
+    <span id="curtime"></span>
+    <!--  The time here is currently .  -->
+  </p>
+
 <!--  <div class="alert alert-danger" role="alert">
     <p><strong>Support Email Server is currently experiencing problems</strong>.</p>
 <p>
@@ -297,6 +304,23 @@ $captchaEnc = hashValue($captchaAns);
 
   <script src="<?php echo $rel; ?>js/contactform.js"></script>
 </div>
+
+
+<script>
+var url = "https://worldtimeapi.org/api/timezone/pacific/auckland";
+function showtime() {
+  $.get(url, function(data) {
+    var x = new Date(data.datetime);
+    hr = x.getHours();
+    ampm = hr >= 12 ? "pm" : " am";
+    var timestr = "The current time is " +
+      (hr % 12) + ":" + x.getMinutes() + ampm + ".";
+    $("#curtime").html(timestr);
+  });
+}
+showtime();
+setInterval(showtime, 60 * 1000);
+</script>
 
 <?php
 require_once($rel . 'assets/includes/3-bottom_matter.php');
