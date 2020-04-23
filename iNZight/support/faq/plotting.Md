@@ -47,6 +47,15 @@ __Notes__
 3. The __Save__ under the __File__ menu is for saving data files, not for saving plots
 
 
+# RStudio: plots are not displaying correctly {#rstudio}
+
+Unfortunately there are some differences with RStudio's built-in graphics device, which means some of iNZight's graphs to not display correctly. If you are using R to access iNZight's functions (i.e., by calling `iNZightPlot()`) please use the default R application instead of RStudio, if possible, until we can resolve these issues.
+
+Known issues include:
+* dot plots do not display correctly
+* interactive plots do not render correctly
+
+
 # The text and/or points in the VIT modules are too large/unreadable {#unreadable}
 
 This problem has mostly been encountered on Retina MacBook Pros, and is caused by the high resolution of the screen.
