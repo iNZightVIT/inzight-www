@@ -64,14 +64,6 @@ if ($inz != "online") {
   $subject .= " - iNZight " . $ver;
 }
 
-// Random code for reference number:
-$ref_no = date ('yz-His');
-$subject .= " (ref #" . $ref_no . ")";
-
-if ($sendto == "tom.elliott@auckland.ac.nz") {
-  $subject .= " - TEST";
-}
-
 
 $name = clean_str($p["user_name"]);
 $email = clean_str($p["user_email"]);
@@ -86,17 +78,17 @@ $headers  = "MIME-Version: 1.0" . "\r\n";
 $headers .=
   (isset($attachment) ? "Content-type:multipart/mixed; boundary=\"_1_$boundary\";" : "Content-type:text/html;") .
   "\r\n";
+$headers .= 'From: ' . $sendto . "\r\n";
 if (strlen($email) > 0) {
-  $headers_conf = $headers . "From: iNZight Support <" . $sendto . ">" . "\r\n";
   if (strlen($name) > 0) {
-    $headers .= "Reply-to: "  . $name . " <" . $email . ">" . "\r\n";
+    $headers .= "Reply-To: " . $name . " <" . $email . ">" . "\r\n";
   } else {
-    $headers .= "Reply-to: " . $email . "\r\n";
+    $headers .= 'Reply-To: ' . $email . "\r\n";
   }
 }
-$headers .= "From: " . $sendto . "\r\n";
 
-$message = "";
+$message  = "<div style='font-family: sans-serif; width: 100%; font-size: 14px'>";
+
 $message .= "<div style ='padding: 1em 0.5em'>";
 $message .= nl2br($p["message_content"]);
 $message .= "</div>";
@@ -122,9 +114,9 @@ if ($inz == "online") {
 
 $s = $_SERVER;
 
-// $message .= "<br><b>Debugging Info</b><br>";
-// $message .= "User Agent: " . $s["HTTP_USER_AGENT"] . "<br>";
-// $message .= "HTTP Language: " . $s["HTTP_ACCEPT_LANGUAGE"] . "<br>";
+$message .= "<br><b>Debugging Info</b><br>";
+$message .= "User Agent: " . $s["HTTP_USER_AGENT"] . "<br>";
+$message .= "HTTP Language: " . $s["HTTP_ACCEPT_LANGUAGE"] . "<br>";
 
 
 // Additional log file info
@@ -135,21 +127,7 @@ if (isset($p['log_file']['content'])) {
 
 
 $message .= "</div>";
-$message_conf = $message;
-$message = "<div style='font-family: sans-serif; width: 100%; font-size: 14px'>" .
-  $message . "</div>";
-
-if (strlen($email) > 0) {
-  $hello = "Kia ora";
-  if (strlen($name) > 0) $hello .= " " . $name;
-  $message_conf = "<div style='font-family: sans-serif; width: 100%; font-size: 14px'>" .
-    $hello . ",<br><br>" .
-    "We have recieved your message and will be in touch as soon as possible. " .
-    "Please reply to this email if you have any follow-up queries or additional information." .
-    "<br><br>Thanks,<br>The iNZight Team." .
-    "<br><hr>" .
-    $message_conf . "</div>";
-}
+$message .= "</div>";
 
 $multimessage = '';
 if (isset($attachment)) {
@@ -176,17 +154,15 @@ $attachment
 }
 
 if (mail($sendto, $subject, $message, $headers)) {
-  if (strlen($email) > 0) {
-    mail($email, $subject, $message_conf, $headers_conf);
-  }
   header("Location: success.php");
   die("Message sent. Thank you.");
 }
 
-$msg  = "There was an issue sending the message.\n\nPlease manually sent this email:\n\n";
+$msg  = "There was an issue sending the bug report.\n\nPlease manually sent this email:\n\n";
 $msg .= "To: " . $sendto . "\n";
 $msg .= "Subject: " . $subject . "\n\n";
 $msg .= "Email body (copy and paste):\n\n" . $message;
+
 
 ?>
 
