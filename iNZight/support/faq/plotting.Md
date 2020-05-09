@@ -46,6 +46,12 @@ __Notes__
 2. The __Save Plot__ dialog _for Interactive HTML_ allows other variables to also be exported with the plot so that they too are available for interactivity
 3. The __Save__ under the __File__ menu is for saving data files, not for saving plots
 
+# Playing over a set of plots is jerky or too fast/slow {#play}
+
+Windows users can expect jerky transitions between plots in single-window mode. Change to dual-window mode (see [Preferences](../../user_guides/file_options/#preferences)).
+
+<img src="img/timer-play.png" style="float:left" alt='timer icon' width='40'/> &emsp;&ensp; Play speed is controlled by the Set-timing-options button (tiny clock face) immediately to the left of the Play button.
+
 
 # RStudio: plots are not displaying correctly {#rstudio}
 
