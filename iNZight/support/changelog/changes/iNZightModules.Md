@@ -1,6 +1,24 @@
+
+
+
+# iNZightModules 2.5
+
+### New features
+
+- iNZight Module Manager to add, update, and remove addons from
+  our repository, a URL, or a local file
+
+### Other changes
+
+- specify `stringsAsFactors = TRUE` for upcoming R 4.0.0
+- fix 3d plot's "locate" functionality
+- disabled Summary button in Multiple Response when two subsetting variables selected (this is not available)
+- [model fitting] enable users to remove intercept from the model
+
 ## iNZightModules 2.4.9
 - change default value of the time series smoother to 15 (was 10)
 - add-on management system
+
 
 ## iNZightModules 2.4.8
 __Release date__: 11 November 2019

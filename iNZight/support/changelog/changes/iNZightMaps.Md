@@ -1,4 +1,13 @@
-## iNZightMaps 2.2
+
+
+# iNZightMaps 2.3
+
+- fix handling of colour by and join points (simultaneously)
+- pass subset and size-by information through to plot title
+- move the `geom_sparkline` function from the `ggsfextra` package into `iNZightMaps`
+- replace the `geom_sftext` from `ggsfextra` by the `geom_sf_text` function now included in `ggplot2`
+
+# iNZightMaps 2.2
 __Release date__: 13 August 2019
 
 - Add dot density maps
