@@ -52,6 +52,10 @@ Windows users can expect jerky transitions between plots in single-window mode. 
 
 <img src="img/timer-play.png" style="float:left" alt='timer icon' width='40'/> &emsp;&ensp; Play speed is controlled by the Set-timing-options button (tiny clock face) immediately to the left of the Play button.
 
+# Dotplot issues {#dotplot1}
+
+## Dotplot issues {#dotplot2}
+
 
 # RStudio: plots are not displaying correctly {#rstudio}
 

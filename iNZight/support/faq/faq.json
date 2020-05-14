@@ -37,6 +37,10 @@
   "time_series" : {
     "title" : "Time Series Module"
   },
+  "lite-sheets" : {
+    "title" : "Using website links to make your online data open in iNZight Lite",
+      "desc" : "Adding visualisation capabilities to your data repositories, integration with Google sheets, ..."
+},
   "vit" : {
     "title" : "VIT: Visual Inference Tools",
     "desc" : "Common issues with the VIT part of iNZightVIT."
