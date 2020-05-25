@@ -4,19 +4,57 @@ This is mainly an issue with dotplots. Click the __Redraw plot icon__ shown belo
 <img src="img/redraw.png" style="float:left" alt='Redraw plot' width='30'/>
 &emsp;&ensp;(you can always hover over the icons to see what they do)
 
-# Unwanted colour segmentation in a bar chart{#unwanted-col-bar}
+# Saving graphs: How do I save my graph from iNZight for use in another document? {#save-graph}
+<img src="img/save-plot.png" style="float:left" alt='timer icon' width='30'/> &emsp;&ensp; Click on the __Save Plot__ icon (or go __Plot > Save Plot__). There many formats available, e.g. pdf, png, … ([See also saving as Interactive HTML files](#save-interactive)) <br>
+&emsp;&ensp; In Windows if you are using dual-windows mode, or start up a new graphics window (see below), the graphics window itself offers additional saving and copy/paste options.
+
+# Copy/paste: How do I copy and paste my graph from iNZight into another document? {#copy-paste}
+Copy and paste only works in Windows. (Otherwise you have either to use screen shots or [save a graphics file](#save-graph) as above.)<br>
+If you are operating in _dual-windows mode_, the separate R plotting window itself enables you to copy as a _Bitmap_ or as a _Metafile_ by right-clicking or using the __File__ menu ___on the plotting window___ (_Copy as Metafile does not work for dot plots_). <br>
+But if you are in the default _single window mode_ ...<br>
+<img src="img/new-graphics-window-dual.png" style="float:left" alt='timer icon' width='30'/> &emsp;&ensp;  you will have to open a new graphics window by clicking on the New Graphics Window icon at left (or go __Plot > New Graphics Window__) <br>
+<img src="img/redraw.png" style="float:left" alt='Redraw plot' width='30'/>
+&emsp;&ensp; and then click the Redraw icon to get your plot into the new plotting window.
+
+# I want a different type of plot {#other-plots}
+Once you have selected your variables, iNZight instantly delivers a graph with the default plot-type for the combination of variable-types you have specified. In most cases there are many other appropriate choices for plot type. To see (and get) them ... <br> 
+<img src="img/add-to-plot.png" style="float:left" alt='timer icon' width='30'/> &emsp;&ensp; use __Add to Plot__ and under __Customise Plot Apearance__ (the default initial screen) use the  __Plot type__ selection box. To look quickly at all possibile plots you can click into the box and roll the mouse wheel to scroll through the available plots.
+
+
+# Titles and axis labels: How do I change them? {#Change-titles-labels}
+<img src="img/add-to-plot.png" style="float:left" alt='timer icon' width='40'/> &emsp;&ensp; In __Add to Plot__ select __Axes and labels__.
+
+# Barplots/charts: Unwanted colour segmentation in a bar chart{#unwanted-col-bar}
 
 You have a colour-by setting that is still active. Go to __Remove Additions icon__ (_see below_) then check __Remove colour-by__ and then click __OK__.
 <img src="img/remove-additions.png" style="float:left" alt='Remove additions icon' width='28'/>
 
 &emsp;&ensp;(_you can also get to it by going_ __Plot > Remove additions ...__)
 <br><br>
-# Plot didn’t change when I reordered categories and clicked "Reorder"{#reord-cat}
+# Barplots/charts: Plot didn’t change when I reordered categories and clicked "Reorder"{#reord-cat}
 
 ___Reordering categories___ using __Variables > Categorical Variables > Reorder levels ...__ does not create a new graph, it creates a new variable (e.g. myvarname.reord). To get the new (reordered) graph you have to drag/select the new variable.
 
 
-# How can I get an interactive version of a plot? {#interactive}
+# Dotplots: When I resized the window my plot disappeared {#dotplot-disappearing}
+See general item on this [above](#disappearing-plot). 
+
+# Dotplots: I see columns of dots that look like they are suspended in mid-air {#dotplot-hover-midair}
+iNZight stacks points that are close together but not identical. This problem occurs when the points are discretely spaced but too big to drop down onto the axis. Either ___reduce the___ __Point Size__ until they drop down,
+or widen the plotting window and click the Redraw icon<br>
+<img src="img/redraw.png" style="float:left" alt='Redraw plot' width='30'/> <br>
+
+# Dotplots: How can I add labels to points in the plot? {#dotplot-labels}
+<img src="img/add-to-plot.png" style="float:left" alt='timer icon' width='30'/> &emsp;&ensp; Under __Add to Plot__ select __Identify points__. Ensure the __Text Labels__ box is checked and select a variable to provide the labels. There are several ways of choosing which points are to have labels attached.
+
+# Playing over a set of plots is jerky or too fast/slow {#play}
+
+Windows users can expect jerky transitions between plots in single-window mode. Change to dual-window mode (see [Preferences](../../user_guides/file_options/#preferences)).
+
+<img src="img/timer-play.png" style="float:left" alt='timer icon' width='40'/> &emsp;&ensp; Play speed is controlled by the Set-timing-options button (tiny clock face) immediately to the left of the Play button.
+
+
+# Interactive: How can I get an interactive version of a plot? {#interactive}
 
 Most iNZight plots involving a single graph on a page, have an interactive version available.
 
@@ -32,11 +70,11 @@ Clicking on the (blue) icon results in an interactive plot popping up in your de
 
 The interactive plots can be saved using the browsers' capability for saving a page, but there is a better way (_as follows_)
 
-# Saving your graph as File Type: Interactive HTML{#save-interactive}
+# Interactive: Saving your graph as Interactive HTML files {#save-interactive}
 
-___To save a plot___ click the __little disk icon__ or go __Plot > Save Plot__
-You will have to supply a name for the file and select File type __Interactive HTML__.
-Once saved, the file will automatically open up in your default browser as above.
+<img src="img/save-plot.png" style="float:left" alt='timer icon' width='30'/> &emsp;&ensp; Click on the _Save Plot_ icon (or go __Plot > Save Plot__). <br>
+&emsp;&ensp; You will have to supply a name for the file and select File type __Interactive HTML__. <br>
+&emsp;&ensp; Once saved, the file will also automatically open up in your default browser as above.
 
 You can give such files to others. They can be included in other webpages. They do not need to be connected to iNZight to work.
 
@@ -46,15 +84,7 @@ __Notes__
 2. The __Save Plot__ dialog _for Interactive HTML_ allows other variables to also be exported with the plot so that they too are available for interactivity
 3. The __Save__ under the __File__ menu is for saving data files, not for saving plots
 
-# Playing over a set of plots is jerky or too fast/slow {#play}
 
-Windows users can expect jerky transitions between plots in single-window mode. Change to dual-window mode (see [Preferences](../../user_guides/file_options/#preferences)).
-
-<img src="img/timer-play.png" style="float:left" alt='timer icon' width='40'/> &emsp;&ensp; Play speed is controlled by the Set-timing-options button (tiny clock face) immediately to the left of the Play button.
-
-# Dotplot issues {#dotplot1}
-
-## Dotplot issues {#dotplot2}
 
 
 # RStudio: plots are not displaying correctly {#rstudio}
