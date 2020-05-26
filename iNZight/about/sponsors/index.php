@@ -1,6 +1,6 @@
 <?php
 $rel = "../../";
-$crumbs = array("About" => "../", "Team" => "active");
+$crumbs = array("About" => "../", "Sponsors" => "active");
 require_once($rel . 'assets/includes/1-top_matter.php');
 require_once($rel . 'assets/includes/2-header.php');
 
@@ -11,7 +11,7 @@ require_once($rel . 'assets/includes/2-header.php');
       // display the contents
       include_once($rel . 'assets/libraries/md.php');
       $Pd = new ParsedownExtra();
-      $text = file_get_contents("team.Md");
+      $text = file_get_contents("sponsors.Md");
 
       // search for Videos:
       $textArray = explode("///", $text);

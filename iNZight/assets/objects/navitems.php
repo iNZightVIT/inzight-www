@@ -33,7 +33,8 @@
     'About' => array(
       'default' => 'about/',
       'Team' => 'team/',
-      'Development' => 'development/'
+      'Development' => 'development/',
+      'Sponsors' => 'sponsors/'
       // 'Privacy' => 'privacy/'
     ),
     'Related' => array(
