@@ -2,6 +2,8 @@
 
 We are proudly supported by &hellip;
 
+
+///HTML:
 <div class="sponsors">
   <a href="https://auckland.ac.nz">
     <img src="../../img/uoa_logo.png" alt="University of Auckland">
@@ -19,3 +21,4 @@ We are proudly supported by &hellip;
     <img src="https://oversixtydev.blob.core.windows.net/media/7831220/1.jpg" alt="Australian Bureau of Statistics">
   </a> -->
 </div>
+///
