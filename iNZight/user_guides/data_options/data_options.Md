@@ -22,10 +22,11 @@
 &emsp;&ensp;&bull; [Append rows](#append)     
 
 * [Survey design](#svydesign) (_for data from complex survey designs_)   
-&emsp;&ensp;&bull; Specify design ...       
-&emsp;&ensp;&bull; Specify replicate design ...      
-&emsp;&ensp;&bull; Post stratify ... (_or rake or calibrate_)       
-&emsp;&ensp;&bull; Remove design ...       
+&emsp;&ensp;&bull; [About survey data](#about)       
+&emsp;&ensp;&bull; [Specify design ...](#specify-design)       
+&emsp;&ensp;&bull; [Specify replicate design ...](#specify-rep-design)      
+&emsp;&ensp;&bull; [Post stratify ... (_or rake or calibrate_)](#post-stratify)       
+&emsp;&ensp;&bull; [Remove design ...](#remove)       
 
 * [Frequency  tables](#freqtables) (_values plus frequencies data format_)   
 &emsp;&ensp;&bull; Expand table       
@@ -274,7 +275,7 @@ Allows you to select multiple columns and “unite” them using a defined separ
 
 _In this example, column “v1999” and column “v2000” are united by “_”. The new column name is “v1999.v2000”._
 
-* It is alloable to have ___no separator___. Just clear the ___Enter the separator___ field (delete the “_”) 
+* It is allowable to have ___no separator___. Just clear the ___Enter the separator___ field (delete the “_”) 
 <br>
 <br>
 <br>
@@ -360,26 +361,78 @@ ___Where data is periodically being added to a dataset___, this facility can be 
 
 
 
-![Survey design](../../img/user_guides/dataset/21_svydesign.png){.borderbox .fright .width400}
+<img src='../../img/user_guides/dataset/21_svydesign.png' alt='Survey design dialog' width='400' align = "right"> 
 ##Survey design  {#svydesign}
+&emsp;&ensp;&bull; [About survey data](#about)       
+&emsp;&ensp;&bull; [Specify design ...](#specify-design)       
+&emsp;&ensp;&bull; [Specify replicate design ...](#specify-rep-design)      
+&emsp;&ensp;&bull; [Post stratify ... (_or rake or calibrate_)](#post-stratify)       
+&emsp;&ensp;&bull; [Remove design ...](#remove)       
+
+####About survey data {#about}   
+
+It is important that specialist methods be applied when analyzing data obtained using complex survey designs. Failure to do so typically leads biased estimates and incorrect standard errors, confidence intervals and p-values. 
 
 ___When a survey design has been defined___ almost all relevant parts of iNZight will ___apply analysis and graphics methods appropriate___ for data obtained using ___this survey design___ by applying functions in R's [survey package](http://r-survey.r-forge.r-project.org/survey/). 
 
-__Specify design__   
+__Important difference__ for __Get Summary__. Whereas, generally, iNZight's __Get Summary__ provides summary information about the dataset itself, when a survey design is specified __Get Summary__ provides estimates of population quantities -- clearly labeled as such. (Raw summaries of survey data are often meaningless because of unequal probabilities of selection.) 
+
+Regular statistical software analyses data as if the data were collected using simple random sampling. Many surveys, however, are conducted using more complicated sampling methods. Not only is it often nearly impossible to implement simple random sampling, more complex methods are more efficient both financially and statistically. These methods use some or all of _stratified sampling_, _cluster sampling_ and _unequal sampling rates_ whereby some parts of a population are sampled more heavily (i.e. with _higher probabilities of selection_) than others parts. These sampling features have to be allowed for in the analysis. While sometimes it may be possible to get reasonably accurate results using non-survey software, there is no practical way to know beforehand how far wrong the results from non-survey software will be.  
+* See [Brief introduction to survey analysis ideas](survey-notes.html)  
+* For an in-depth account, see [__"_iNZight and Sample Surveys_"__](https://homepages.ecs.vuw.ac.nz/~rarnold/STAT392/iNZightManual/_book/) by [Richard Arnold](https://www.wgtn.ac.nz/sms/about/staff/richard-arnold).
+
+Survey designs are typically specified to analysis programs either by [specifying a survey design](#specify-design) in terms of weighting, strata and clustering variables etc in the data set, or by selecting a set of variables in the dataset containing so-called [replicate weights](#specify-rep-design). [Post-stratification/raking/calibration](#post-stratify) facilitate using additional population information (external to the survey data) to improve survey estimates. This is done after a survey design has been specified (by either method). 
+
+
+<img src='../../img/user_guides/dataset/22_specify-design.png' alt='Design specification dialog' width='400' align = "right"> 
+####Specify design {#specify-design}   
 Specifying a survey design in terms of weighting, strata and clustering variables etc.  
-For more information on quantities referred to in the dialogue box [see here ...](http://r-survey.r-forge.r-project.org/survey/example-design.html)
 
-__Specify replicate design__  
-Specifying a replicate-weight design.   
-For more information on quantities referred to in the dialogue box [see here ...](http://r-survey.r-forge.r-project.org/survey/example-svrepdesign1.html)
+iNZight’s survey methods cater for simple random sampling, stratified random sampling (random sampling within each population stratum), cluster sampling and multistage cluster sampling, and complex  designs involving cluster sampling within population strata.  
+* __Strata variable:__ If [stratified sampling](survey-notes.html#stratified) has been performed, use to select the variable that specifies which stratum each observation comes from. (This variable can be either numeric or categorical.)  
+* __1st stage clustering variable:__ If [cluster sampling](survey-notes.html#cluster) has been performed, use to select the 1st-stage clustering variable; this specifies which [1st-stage cluster](survey-notes.html#multistage) each observation comes from. (Clustering variables can also be either numeric or categorical.)  
+* __2nd stage clustering variable:__ If two or more stages of cluster sampling have been performed, use to select the 2nd-stage clustering variable (specifies which [2nd-stage cluster](survey-notes.html#multistage) each observation comes from). Any further levels of cluster sampling (3rd stage, etc., are not used)   
+* __Use nested sampling:__ Quite often, compilers of survey data "reuse" cluster names from stratum to stratum. Let us take, as an example, a survey in which American states for the starts and counties form the clusters. Sampled counties from Washington State may be given a County value of 1, 2, ... and counties from Arizona may also be given a County value of  1, 2, ... Clearly County 1 from Washington refers to an entirely different county from County 1 from Arizona even though they have the same value of the County variable.  
+-- ___Click___ the __Use nested sampling__ check-box if cluster labels are being recycled/reused in the data. 
+* __Weighting variable:__ If the sampling design used unequal probabilities of selection, use this to select a variable containing the ___sampling weight___ (1 over the probability of selection) for each observation. Certain estimates will be wrong if the sampling weights do not add up to the population size, in particular estimated _population_ or _subpopulation  __totals___ and estimated _population_ or _sub__population sizes___. Sampling weights are often _adjusted_ to allow for _unit non-response_.  
+* __Finite population correction:__ Use this when descriptive inferences are wanted about properties of the finite population being sampled and the sample size is an appreciable proportion of the population size (e.g. > 5 or 10%). If stratified sampling has not been used, this variable should contain an estimate of the size of the population being sampled, repeated for every observation. If stratified sampling has been used, the values of this variable should contain an estimate of the size of the population stratum being sampled (differing across strata but constant within each stratum).
+As an alternative to using population/stratum sizes, proportions _of the total population_ being sampled can be used.
 
-__Post stratify__  
-___Poststratifying/raking/calibrating___ a design that has already been defined as above.  
-Categorical variables in the data set are offered as possible poststratification/raking/calibration candidates.  
-Corresponding population counts can be input by typing or reading from files.  
-For more information on quantities referred to in the dialogue box [see here ...](http://r-survey.r-forge.r-project.org/survey/example-poststrat.html)
+For more information on quantities referred to in the dialog box see the documentation of the [svydesign](http://r-survey.r-forge.r-project.org/survey/html/svydesign.html) function in R's survey package.
 
-__Remove design__  
+####Specify replicate design {#specify-rep-design}
+Because making public factors like cluster membership can make it easier than survey agencies are comfortable with to identify individuals, many agencies do not distribute such information to outsiders. Instead they distribute sets of so-called _replicate weights_, slightly varying copies of the sampling weights variable that still enable survey analysis programs to make the proper adjustments to analyses of survey data.
+<img src='../../img/user_guides/dataset/23.replicate-weights.png' alt='Design specification dialog' width='800'> 
+
+* __Sampling Weights:__ See variable selection box at the top-left  
+* __Replication weights incorporate sampling weights__ (_checkbox_)__:__ This should be ___checked if___ the replicate weights already include the sampling weights (which is usually the case). ___Uncheck this___ if the replicate weights are very similar in size to the sampling weights.  
+* __Select replicate weights:__ The large (lower) panel on the left-hand side displays the names of the variables in the dataset. Use to select the replicate-weights variables. In the example shown the replicate-weights variables were called _repw01_, _repw02_, _repw03_, ...
+
+__Right-hand panel__  
+* __Type of replication weights:__  Depends on the type of replicate weights the person who compiled the dataset has used. Select from list - _BRR_, _Fay_, _JK1_, _JKn_, _bootstrap_, _other_. 
+* __Overall scales:__  Only used for Types _bootstrap_ and _other_.
+
+For more information on quantities referred to above  
+* see the documentation for the [svrepdesign](http://r-survey.r-forge.r-project.org/survey/html/svrepdesign.html) function in R's survey package and also [here](http://r-survey.r-forge.r-project.org/survey/example-svrepdesign1.html)  
+* see also the [section on replicate weights](https://homepages.ecs.vuw.ac.nz/~rarnold/STAT392/iNZightManual/_book/Complex-Designs.html#replicate-weights-for-variance-estimation) in [__"_iNZight and Sample Surveys_"__](https://homepages.ecs.vuw.ac.nz/~rarnold/STAT392/iNZightManual/_book/) by [Richard Arnold](https://www.wgtn.ac.nz/sms/about/staff/richard-arnold)..
+
+<img src='../../img/user_guides/dataset/24.post-stratify.png' alt='Design specification dialog' width='400' align = "right"> 
+####Post stratify {#post-stratify}  
+This allows for ___poststratifying/raking/calibrating___ a design that has already been defined using either of the methods above above.
+<span style="font-size: 90%">(Technically the design is updated using the <a href="http://r-survey.r-forge.r-project.org/survey/html/calibrate.html">calibrate</a> function in R's survey package.)</span>
+
+This allows a data-analyst to improve estimation by augmenting the information in the survey data by adding information on the whole population where this is available from other sources. Categorical variables in the data set are offered as possible poststratification/raking/calibration candidates. Corresponding population counts can be input by typing or reading from files.
+
+In the example in the screenshot, there are 3 categorical variables in the data set offered as possible candidates and 2 have been selected. The design would then be calibrated using user-supplied information on population counts for the all the categories of both __admin\_type__ and __ethgp__.
+
+This is fine when you only want to use information about single variables, but what if you have population information on the cross-classification (all possible combinations) of __admin\_type__ and __ethgp__, say? Then you would have to create a new variable in the dataset, called say __admin\_type.ethgp__ that has all these combinations. This can be done with __Variables > Categorical Variables > Combine categorical variables__.  
+
+___Warning_:__ Currently the new variables have to be set up before specifying a survey design. If you only think about it later yu will need to use __Remove design__ (next item), set up new variables and then re-specify the design.
+
+ 
+For more information on quantities referred to in the dialog box [see here ...](http://r-survey.r-forge.r-project.org/survey/example-poststrat.html).
+
+####Remove design {#remove-design}  
 Discard design information and ___revert to using standard methods of analysis___
 
 ![Frequencies](../../img/user_guides/dataset/22_freqtables.png){.borderbox .fright .width400}
