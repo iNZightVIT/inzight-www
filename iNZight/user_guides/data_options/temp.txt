@@ -1,0 +1,9 @@
+The __nzquakes__ data obtained available from __File__ > [[ VLITE ?? __Dataset Examples__ || __Example data__ ]] and selecting the 
+ __Maps__ [[ VLITE ?? category || module ]] is an example of _coordinate data_. The __NSSATS__ data also available there, is an example of _regional data_ (data about US states).
+
+
+[[ VLITE ?? __Dataset Examples__ || __Example data__ ]]
+
+[[ VLITE ?? <img src='../../img/user_guides/dataset/21_svydesign-lite.png' alt='Survey design dialog' width='700' align = "right"> </a>]]
+
+[[|<img src='../../img/user_guides/dataset/21_svydesign.png' alt='Survey design dialog' width='400' align = "right"> ]]

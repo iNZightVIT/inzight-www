@@ -3,6 +3,10 @@
 
 ## Contents
 
+[[ VLITE ??  || The Maps module is not part of the initial installation of iNZight. It downloads and installs automatically the first time you try to launch it by going to the __Advanced > Maps__ ]]
+
+[[ VLITE ?? __ LITE page__ || __ DESKTOP PAGE__ ]]
+
 ![Data Operations Menu](../../img/user_guides/interface/3_inzight_menu_dataset.png){.fright .borderbox .width300}
 * [Filter ...](#filter) (_dataset_)
 * [Sort (_dataset_) by variable(s) ...](#sort)
@@ -361,8 +365,6 @@ ___Where data is periodically being added to a dataset___, this facility can be 
 #### {.clear}
 
 
-
-<img src='../../img/user_guides/dataset/21_svydesign.png' alt='Survey design dialog' width='400' align = "right">
 ##Survey design  {#svydesign}
 &emsp;&ensp;&bull; [About survey data](#about)
 &emsp;&ensp;&bull; [Specify design ...](#specify-design)
