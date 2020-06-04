@@ -82,3 +82,7 @@ There are two possible causes of this.
 
 
 # Notes of Special Characters {#special-characters}
+
+# "View Data Set" is greyed out/disabled {#view-datset-disabled}
+
+__View Data Set__ is not just a display. It has editing capabilities as well.  When the data set gets too large it slows the program down unacceptably. So we disable it when the dataset has more than about 200,000 cells.  You can still view the data set using __Dataset > View full dataset__.
