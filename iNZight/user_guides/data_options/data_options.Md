@@ -3,47 +3,45 @@
 
 ## Contents
 
-[[ VLITE ??  || The Maps module is not part of the initial installation of iNZight. It downloads and installs automatically the first time you try to launch it by going to the __Advanced > Maps__ ]]
-
-[[ VLITE ?? __ LITE page__ || __ DESKTOP PAGE__ ]]
-
-![Data Operations Menu](../../img/user_guides/interface/3_inzight_menu_dataset.png){.fright .borderbox .width300}
+[[ VLITE ?? || <img src='../../img/user_guides/interface/3_inzight_menu_dataset.png' alt='Data Operations Menu' width='300' align = 'right'> </a> ]]
+[[ VLITE ?? <img src='../../img/user_guides/interface/3_inzight_menu_dataset_lite.png' alt='Data Operations Menu' width='350' align = 'right'> </a> ]]
 * [Filter ...](#filter) (_dataset_)
 * [Sort (_dataset_) by variable(s) ...](#sort)
 * [Aggregate ...](#aggregate) (_data_)
 * [Stack ...](#stack) (_variables_)
-* [Dataset operations:](#datasetop)
-&emsp;&ensp;&bull; [Reshape dataset](#reshape)
-&emsp;&ensp;&bull; [Separate column (into) ...](#separate)
-&emsp;&ensp; &bull; [Unite columns ...](#unite)
-* [Validate ...](#validate) (_dataset_)
-* __View full dataset__
-* __Rename ...__ (_dataset_)
-* [Restore original dataset](#restore)
-* __Delete current dataset__
+* [Dataset operations:](#datasetop)  
+&emsp;&ensp;&bull; [Reshape dataset](#reshape)  
+&emsp;&ensp;&bull; [Separate column (into) ...](#separate)  
+&emsp;&ensp; &bull; [Unite columns ...](#unite)  
+* [Validate ...](#validate) (_dataset_)  
+* __View full dataset__  
+* __Rename ...__ (_dataset_)  
+* [Restore original dataset](#restore)  
+* __Delete current dataset__  
 
-* [Merge/Join datasets:](#merge)
-&emsp;&ensp;&bull; [Join datasets](#join)
-&emsp;&ensp;&bull; [Append rows](#append)
+* [Merge/Join datasets:](#merge)  
+&emsp;&ensp;&bull; [Join datasets](#join)  
+&emsp;&ensp;&bull; [Append rows](#append)  
 
 * [Survey design](#svydesign) (_for data from complex survey designs_)
-&emsp;&ensp;&bull; [About survey data](#about)
-&emsp;&ensp;&bull; [Specify design ...](#specify-design)
-&emsp;&ensp;&bull; [Specify replicate design ...](#specify-rep-design)
-&emsp;&ensp;&bull; [Post stratify ... (_or rake or calibrate_)](#post-stratify)
-&emsp;&ensp;&bull; [Remove design ...](#remove)
+&emsp;&ensp;&bull; [About survey data](#about)  
+&emsp;&ensp;&bull; [Specify design ...](#specify-design)  
+&emsp;&ensp;&bull; [Specify replicate design ...](#specify-rep-design)  
+&emsp;&ensp;&bull; [Post stratify ... (_or rake or calibrate_)](#post-stratify)  
+&emsp;&ensp;&bull; [Remove design ...](#remove)  
 
-* [Frequency  tables](#freqtables) (_values plus frequencies data format_)
-&emsp;&ensp;&bull; Expand table
-&emsp;&ensp;&bull; Specify frequency column
-&emsp;&ensp;&bull; Remove frequency column
+* [Frequency  tables](#freqtables) (_values plus frequencies data format_)  
+&emsp;&ensp;&bull; Expand table  
+&emsp;&ensp;&bull; Specify frequency column  
+&emsp;&ensp;&bull; Remove frequency column  
 
 
 
 #### {.clear}
 
-![Data Operations Menu](../../img/user_guides/dataset/1_filter.png){.fright}
+[[ VLITE ?? || <img src='../../img/user_guides/dataset/1_filter.png' alt='Filter dialog' width='300' align = 'right'> </a> ]]
 ## Filter Dataset {#filter}
+[[ VLITE ?? <img src='../../img/user_guides/dataset/1_filter_lite.png' alt='Filter dialog' width='600'> </a> ]]  
 This tool provides several methods for filtering the dataset.
 The window that opens has four options for you to choose from:
 * [Levels of a categorical variable](#levcatvar)
@@ -360,17 +358,17 @@ Adds to the bottom of the original dataset rows from a newly imported dataset (i
 
 ___Where data is periodically being added to a dataset___, this facility can be used to keep track of when each row was added -- thus facilitating analyses of the data as it was up until any particular time point
 
+<br><br>
 
-
+[[ VLITE ?? || <img src='../../img/user_guides/dataset/21_svydesign.png' alt='Survey design dialog' width='400' align = 'right'> </a> ]]
 #### {.clear}
-
-
-##Survey design  {#svydesign}
-&emsp;&ensp;&bull; [About survey data](#about)
-&emsp;&ensp;&bull; [Specify design ...](#specify-design)
-&emsp;&ensp;&bull; [Specify replicate design ...](#specify-rep-design)
-&emsp;&ensp;&bull; [Post stratify ... (_or rake or calibrate_)](#post-stratify)
-&emsp;&ensp;&bull; [Remove design ...](#remove)
+##Survey design  {#svydesign}  
+[[ VLITE ?? <img src='../../img/user_guides/dataset/21_svydesign_lite.png' alt='Survey design dialog' width='800'> </a> ]]
+&emsp;&ensp;&bull; [About survey data](#about)  
+&emsp;&ensp;&bull; [Specify design ...](#specify-design)  
+&emsp;&ensp;&bull; [Specify replicate design ...](#specify-rep-design)  
+&emsp;&ensp;&bull; [Post stratify ... (_or rake or calibrate_)](#post-stratify)  
+&emsp;&ensp;&bull; [Remove design ...](#remove)  
 
 ####About survey data {#about}
 
@@ -386,8 +384,8 @@ Regular statistical software analyses data as if the data were collected using s
 
 Survey designs are typically specified to analysis programs either by [specifying a survey design](#specify-design) in terms of weighting, strata and clustering variables etc in the data set, or by selecting a set of variables in the dataset containing so-called [replicate weights](#specify-rep-design). [Post-stratification/raking/calibration](#post-stratify) facilitate using additional population information (external to the survey data) to improve survey estimates. This is done after a survey design has been specified (by either method).
 
-
-<img src='../../img/user_guides/dataset/22_specify-design.png' alt='Design specification dialog' width='400' align = "right">
+[[ VLITE ?? <img src='../../img/user_guides/dataset/22_specify-design_lite.png' alt='Design specification dialog' width='300' align = 'right'> </a> ]]
+[[ VLITE ?? || <img src='../../img/user_guides/dataset/22_specify-design.png' alt='Design specification dialog' width='400' align = 'right'> </a> ]]
 ####Specify design {#specify-design}
 Specifying a survey design in terms of weighting, strata and clustering variables etc.
 
@@ -403,12 +401,13 @@ As an alternative to using population/stratum sizes, proportions _of the total p
 
 For more information on quantities referred to in the dialog box see the documentation of the [svydesign](http://r-survey.r-forge.r-project.org/survey/html/svydesign.html) function in R's survey package.
 
+[[ VLITE ?? <img src='../../img/user_guides/dataset/23.replicate-weights_lite.png' alt='Replicate design specification specification dialog' width='350' align = 'right'> </a> ]]
 ####Specify replicate design {#specify-rep-design}
 Because making public factors like cluster membership can make it easier than survey agencies are comfortable with to identify individuals, many agencies do not distribute such information to outsiders. Instead they distribute sets of so-called _replicate weights_, slightly varying copies of the sampling weights variable that still enable survey analysis programs to make the proper adjustments to analyses of survey data.
-<img src='../../img/user_guides/dataset/23.replicate-weights.png' alt='Design specification dialog' width='800'>
+[[ VLITE ?? || <img src='../../img/user_guides/dataset/23.replicate-weights.png' alt='Replicate design specification specification dialog' width='800' > </a> ]]
 
 * __Sampling Weights:__ See variable selection box at the top-left
-* __Replication weights incorporate sampling weights__ (_checkbox_)__:__ This should be ___checked if___ the replicate weights already include the sampling weights (which is usually the case). ___Uncheck this___ if the replicate weights are very similar in size to the sampling weights.
+* __Replication weights incorporate sampling weights__ (_checkbox_)__:__ This should be ___checked if___ the replicate weights already include the sampling weights (which is usually the case). ___Uncheck this___ if the replicate weights are very different in size to the sampling weights.
 * __Select replicate weights:__ The large (lower) panel on the left-hand side displays the names of the variables in the dataset. Use to select the replicate-weights variables. In the example shown the replicate-weights variables were called _repw01_, _repw02_, _repw03_, ...
 
 __Right-hand panel__
@@ -419,8 +418,13 @@ For more information on quantities referred to above
 * see the documentation for the [svrepdesign](http://r-survey.r-forge.r-project.org/survey/html/svrepdesign.html) function in R's survey package and also [here](http://r-survey.r-forge.r-project.org/survey/example-svrepdesign1.html)
 * see also the [section on replicate weights](https://homepages.ecs.vuw.ac.nz/~rarnold/STAT392/iNZightManual/_book/Complex-Designs.html#replicate-weights-for-variance-estimation) in [__"_iNZight and Sample Surveys_"__](https://homepages.ecs.vuw.ac.nz/~rarnold/STAT392/iNZightManual/_book/) by [Richard Arnold](https://www.wgtn.ac.nz/sms/about/staff/richard-arnold)..
 
-<img src='../../img/user_guides/dataset/24.post-stratify.png' alt='Design specification dialog' width='400' align = "right">
+[[ VLITE ?? <br><br><br><br><br><br> ]]
+
+
+[[ VLITE ?? || <img src='../../img/user_guides/dataset/24.post-stratify.png' alt='Post-stratify dialog' width='400' align = 'right'> </a> ]]
+
 ####Post stratify {#post-stratify}
+[[ VLITE ?? <img src='../../img/user_guides/dataset/24.post-stratify_lite.png' alt='Post-stratify dialog' width='600'> </a> ]]  
 This allows for ___poststratifying/raking/calibrating___ a design that has already been defined using either of the methods above above.
 <span style="font-size: 90%">(Technically the design is updated using the <a href="http://r-survey.r-forge.r-project.org/survey/html/calibrate.html">calibrate</a> function in R's survey package.)</span>
 
@@ -430,24 +434,26 @@ In the example in the screenshot, there are 3 categorical variables in the data 
 
 This is fine when you only want to use information about single variables, but what if you have population information on the cross-classification (all possible combinations) of __admin\_type__ and __ethgp__, say? Then you would have to create a new variable in the dataset, called say __admin\_type.ethgp__ that has all these combinations. This can be done with __Variables > Categorical Variables > Combine categorical variables__.
 
-___Warning_:__ Currently the new variables have to be set up before specifying a survey design. If you only think about it later yu will need to use __Remove design__ (next item), set up new variables and then re-specify the design.
+___Warning_:__ Currently the new variables have to be set up before specifying a survey design. If you only think about it later you will need to use __Remove design__ (next item), set up new variables and then re-specify the design.
 
 
 For more information on quantities referred to in the dialog box [see here ...](http://r-survey.r-forge.r-project.org/survey/example-poststrat.html).
 
 ####Remove design {#remove-design}
-Discard design information and ___revert to using standard methods of analysis___
+Discard design information and ___revert to using standard methods of analysis___.   
+[[ VLITE ?? Use the __blue REMOVE DESIGN button__ at the bottom of the Select Survey design control panel.]]
 
-![Frequencies](../../img/user_guides/dataset/22_freqtables.png){.borderbox .fright .width400}
+[[ VLITE ?? || <img src='../../img/user_guides/dataset/25_freqtables.png' alt='Frequencies' width='400' align = 'right'> </a> ]]
 ##Frequency tables (_values plus frequencies data format_) {#freqtables}
+[[ VLITE ?? <img src='../../img/user_guides/dataset/25_freqtables_lite.png' alt='Frequencies' width='600'> </a> ]]
 
-When a __frequency column__ is specified, graphics and summaries respond to a combinations-of-variables-plus-their-frequencies data structure. Only categorical variables are retained.
+[[ VLITE ??  (___Not implemented in Lite yet___) In desktop iNZight w]] [[ VLITE ?? || W]]hen a __frequency column__ is specified, graphics and summaries respond to a combinations-of-variables-plus-their-frequencies data structure. Only categorical variables are retained.
 
 The __expand table__ option can be used to work with both numeric and categorical variables. The storage and efficiency savings of working with a unique combinations of variables plus frequencies will typically be very much smaller here.
 <br><br><br><br><br><br><br><br><br>
 
 ## Validate Dataset {#validate}
-
+[[ VLITE ?? (___Validate Dataset is not implemented in Lite yet___)]]  
 Often, we want to validate that the data in a dataset adheres to our expectations about how that data should behave based on external real world-knowledge.
 
 * ___Validating a data set necessarily requires user-supplied validation rules___.
