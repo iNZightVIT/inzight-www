@@ -5,13 +5,22 @@
 
 [[ VLITE ?? || <img src='../../img/user_guides/interface/3_inzight_menu_dataset.png' alt='Data Operations Menu' width='300' align = 'right'> </a> ]]
 [[ VLITE ?? <img src='../../img/user_guides/interface/3_inzight_menu_dataset_lite.png' alt='Data Operations Menu' width='350' align = 'right'> </a> ]]
-* [Filter ...](#filter) (_dataset_)
+* [Filter ...](#filter) (_dataset_)  
+&emsp;&ensp;&bull; [Levels of a categorical variable](#levcatvar)  
+&emsp;&ensp;&bull; [Numeric condition](#numcond)  
+&emsp;&ensp;&bull; [Row number](#rownumber)  
+&emsp;&ensp;&bull; [Randomly](#randomly)  
+
 * [Sort (_dataset_) by variable(s) ...](#sort)
 * [Aggregate ...](#aggregate) (_data_)
 * [Stack ...](#stack) (_variables_)
 * [Dataset operations:](#datasetop)  
 &emsp;&ensp;&bull; [Reshape dataset](#reshape)  
+&emsp;&ensp;&emsp;&ensp;- [Wide to long](#widetolong)  
+&emsp;&ensp;&emsp;&ensp;- [Long to wide](#longtowide)    
 &emsp;&ensp;&bull; [Separate column (into) ...](#separate)  
+&emsp;&ensp;&emsp;&ensp;- [into several columns](#sepcols)  
+&emsp;&ensp;&emsp;&ensp;- [into several rows](#sepcolsrows)  
 &emsp;&ensp; &bull; [Unite columns ...](#unite)  
 * [Validate ...](#validate) (_dataset_)  
 * __View full dataset__  
@@ -20,10 +29,10 @@
 * __Delete current dataset__  
 
 * [Merge/Join datasets:](#merge)  
-&emsp;&ensp;&bull; [Join datasets](#join)  
+&emsp;&ensp;&bull; [Join datasets](#join) (_several [types](#jointypes) of join_)  
 &emsp;&ensp;&bull; [Append rows](#append)  
 
-* [Survey design](#svydesign) (_for data from complex survey designs_)
+* [Survey design](#svydesign) (_for data from complex survey designs_)  
 &emsp;&ensp;&bull; [About survey data](#about)  
 &emsp;&ensp;&bull; [Specify design ...](#specify-design)  
 &emsp;&ensp;&bull; [Specify replicate design ...](#specify-rep-design)  
@@ -54,9 +63,10 @@ The window that opens has four options for you to choose from:
 
 #### {.clear}
 
-![Filter by categorical levels](../../img/user_guides/dataset/2_filter_levels.png){.fright}
+[[ VLITE ?? <img src='../../img/user_guides/dataset/2_filter_levels_lite.png' alt='Filter by cat levels dialog' width='500' align = 'right'> </a> ]]  
+[[ VLITE ?? || <img src='../../img/user_guides/dataset/2_filter_levels.png' alt='Filter by cat levels dialog' width='300' align = 'right'> </a> ]]
 ####(Filter by) Levels of a categorical variable  {#levcatvar}
-After selecting a categorical variable from the drop down box, you can select which levels you want to retain in the data set.
+After selecting a categorical variable from the drop down box, you can select which levels you want ___to keep___ in the data set.
 <br>
 <br>
 <br>
@@ -66,10 +76,13 @@ After selecting a categorical variable from the drop down box, you can select wh
 <br>
 <br>
 <br>
+<br><br><br><br>
+[[ VLITE ?? || <br><br><br><br><br>]]
 
 #### {.clear}
 
-![Filter by numeric condition](../../img/user_guides/dataset/3_filter_numeric.png){.fright}
+[[ VLITE ?? <img src='../../img/user_guides/dataset/3_filter_numeric_lite.png' alt='Filter by numeric condition' width='350' align = 'right'> </a> ]]  
+[[ VLITE ?? || <img src='../../img/user_guides/dataset/3_filter_numeric.png' alt='Filter by numeric condition' width='350' align = 'right'> </a> ]]
 ####(Filter by) Numeric condition  {#numcond}
   This allows you to define a condition with which to filter your data.
   For example, you could include only the observations of `height` over 180 cm by
@@ -82,11 +95,12 @@ After selecting a categorical variable from the drop down box, you can select wh
 <br>
 <br>
 <br>
-
+<br><br><br><br>
 
 #### {.clear}
 
-![Filter by row number](../../img/user_guides/dataset/4_filter_rows.png){.fright}
+[[ VLITE ?? <img src='../../img/user_guides/dataset/4_filter_rows_lite.png' alt='Filter by row number' width='350' align = 'right'> </a> ]]  
+[[ VLITE ?? || <img src='../../img/user_guides/dataset/4_filter_rows.png' alt='Filter by row number' width='300' align = 'right'> </a> ]]
 ####(Filter by) Row number {#rownumber}
   Exclude a range of row numbers as follows:
   - Entering 101:1000 (and then __Submit__) will exclude all rows from 101 to 1000
@@ -95,11 +109,13 @@ After selecting a categorical variable from the drop down box, you can select wh
 <br>
 <br>
 <br>
-<br>
+<br><br><br><br>
+<br><br><br>
 
   #### {.clear}
 
-![Filter randomly](../../img/user_guides/dataset/5_filter_random.png){.fright}
+[[ VLITE ?? <img src='../../img/user_guides/dataset/5_filter_random_lite.png' alt='Filter randomly' width='350' align = 'right'> </a> ]]  
+[[ VLITE ?? || <img src='../../img/user_guides/dataset/5_filter_random.png' alt='Filter randomly' width='200' align = 'right'> </a> ]]
 ####(Filter by) Randomly  {#randomly}
  Essentially, this allows you to perform bootstrap randomisation manually.
  The current behaviour is this:
@@ -107,11 +123,14 @@ After selecting a categorical variable from the drop down box, you can select wh
   - "Number of Samples", _m_, is the number of samples to create in the new data set.
   - The output will be a data set with _n_ x _m_ rows, which _must be smaller than the total number of rows in the data set_.
   - The observations are drawn randomly _without replacement_ from the data set.
+<br><br><br>
+[[ VLITE ??  <br><br>]]
 
  #### {.clear}
 
+[[ VLITE ?? <img src='../../img/user_guides/dataset/6_sortdata_lite.png' alt='Sort data' width='350' align = 'right'> </a> ]]  
+[[ VLITE ?? || <img src='../../img/user_guides/dataset/6_sortdata.png' alt='Sort data' width='350' align = 'right'> </a> ]]
 ## Sort data by variables {#sort}
-![Sort data](../../img/user_guides/dataset/6_sortdata.png){.fright}
 Sort the rows of the data by one or more variables
 * The ordering will be nested, so that the data is first ordered by "Variable 1",
 and then "Variable 2", etc.
@@ -121,12 +140,15 @@ and then "Variable 2", etc.
 <br>
 <br>
 <br>
-<br>
+<br><br>
+<br><br><br><br>
+[[ VLITE ?? <br><br>]]
 
 
 #### {.clear}
 
-![Aggregate data](../../img/user_guides/dataset/7_aggregate.png){.fright}
+[[ VLITE ?? <img src='../../img/user_guides/dataset/7_aggregate_lite.png' alt='Aggregate data' width='400' align = 'right'> </a> ]]  
+[[ VLITE ?? || <img src='../../img/user_guides/dataset/7_aggregate.png' alt='Aggregate data' width='350' align = 'right'> </a> ]]
 ## Aggregate data  {#aggregate}
 This function essentially allows you to obtain "summaries" of all of the numeric variables in the data set for combinations of categorical variables.
 - _Variables_: if only one variable is specified, the new data set will have one row for each level of the variable.
@@ -141,12 +163,15 @@ A visual example of this would be do drag `height` into the Variable 1 slot, and
 Clicking on "Get Summary" would provide the same information. The advantage of using Aggregate is that the summaries are calculated _for every numeric variable in the data set_, not just one of them.
 <br>
 <br>
+<br><br>
+[[ VLITE ?? <br><br><br><br>]]
 
 
 #### {.clear}
 
+[[ VLITE ?? <img src='../../img/user_guides/dataset/8_stackvariables_lite.png' alt='Stack variables' width='400' align = 'right'> </a> ]]  
+[[ VLITE ?? || <img src='../../img/user_guides/dataset/8_stackvariables.png' alt='Stack variables' width='400' align = 'right'> </a> ]]
 ## Stack variables {#stack}
-![Stack variables](../../img/user_guides/dataset/8_stackvariables.png){.fright}
 
 Convert from _table form_ (rows corresponding to subjects) to _long form_ (rows corresponding to observations).
 
@@ -180,23 +205,27 @@ Of course, you can rename the variables as appropriate using "Manipulate Variabl
 
 #### {.clear}
 ## Dataset operations  {#datasetop}
-<img src='../../img/user_guides/dataset/9_dataset_operation_menu.png' alt='dataset operation menu' width='400' align = "right">
-It offers three types of tools for the users to modify their dataset:
-&emsp;&ensp; &bull; [Reshape dataset](#reshape)
-&emsp;&ensp; &bull; [Separate column](#separate)
-&emsp;&ensp; &bull; [Unite columns](#unite)
+[[ VLITE ?? || <img src='../../img/user_guides/dataset/9_dataset_operation_menu.png' alt='dataset operation menu' width='400' align = 'right'>]]
+It offers three types of tools for the users to modify their dataset:  
+&emsp;&ensp; &bull; [Reshape dataset](#reshape)  
+&emsp;&ensp; &bull; [Separate column](#separate)  
+&emsp;&ensp; &bull; [Unite columns](#unite)  
 
 #### {.clear}
-<img src='../../img/user_guides/dataset/10_reshape_dataset.png' alt='reshape dataset' width='300' align = "right">
+
+
+[[ VLITE ?? <img src='../../img/user_guides/dataset/10_reshape_dataset_lite.png' alt='reshape dataset' width='350' align = 'right'> </a> ]]  
+[[ VLITE ?? || <img src='../../img/user_guides/dataset/10_reshape_dataset.png' alt='reshape dataset' width='350' align = 'right'> </a> ]]
 ### Reshape dataset {#reshape}
 <br>
 * [Wide to long](#widetolong)
 * [Long to wide](#longtowide)
-
-<br>
+<br><br><br><br>
 
 #### {.clear}
-<img src='../../img/user_guides/dataset/11_reshape_wide_to_long.png' alt='reshape wide to long' width='200' align = "right">
+
+[[ VLITE ?? <img src='../../img/user_guides/dataset/11_reshape_wide_to_long_lite.png' alt='reshape wide to long' width='600' align = 'right'> </a> ]]  
+[[ VLITE ?? || <img src='../../img/user_guides/dataset/11_reshape_wide_to_long.png' alt='reshape wide to long' width='350' align = 'right'> </a> ]]
 ####(Reshape) Wide to long {#widetolong}
 This allows you to select a column or multiple columns from your dataset.
 * One new column (default name `key`) is populated by the column name(s) of the selected column(s)
@@ -209,8 +238,14 @@ This allows you to select a column or multiple columns from your dataset.
 <br>
 <br>
 <br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+[[ VLITE ?? || <br><br><br><br><br>]]
 
-<img src='../../img/user_guides/dataset/12_reshape_long_to_wide.png' alt='reshape long to wide' width='200' align = "right">
+
+[[ VLITE ?? <img src='../../img/user_guides/dataset/12_reshape_long_to_wide_lite.png' alt='reshape long to wide' width='600' align = 'right'> </a> ]]  
+[[ VLITE ?? || <img src='../../img/user_guides/dataset/12_reshape_long_to_wide.png' alt='reshape long to wide' width='350' align = 'right'> </a> ]]
 ####(Reshape) Long to wide {#longtowide}
 You can select a column to spread out into multiple columns (the column is named `key` in the example).
 It will use the column values of the selected column as a set of names for new columns.
@@ -225,17 +260,23 @@ You then select another column with corresponding values to be put into the new 
 <br>
 <br>
 <br>
+<br><br><br><br><br><br>
+[[ VLITE ?? || <br><br><br>]]
 
-<img src='../../img/user_guides/dataset/13_separate.png' alt='Separate menu' width='300' align = "right">
+
+[[ VLITE ?? <img src='../../img/user_guides/dataset/13_separate_lite.png' alt='Separate menu' width='250' align = 'right'> </a> ]]  
+[[ VLITE ?? || <img src='../../img/user_guides/dataset/13_separate.png' alt='Separate menu' width='350' align = 'right'> </a> ]]
 ### Separate column into ... {#separate}
 
 * [Separate a column into several columns](#sepcols)
 * [Separate a _column into several rows](#sepcolsrows)
-<br>
-<br>
+<br><br><br><br>
+[[ VLITE ?? <br><br><br><br><br><br>]]
 
-<img src='../../img/user_guides/dataset/14_separate_to_columns.png' alt='Separate to columns' width='200' align = "right">
 
+
+[[ VLITE ?? <img src='../../img/user_guides/dataset/14_separate_to_columns_lite.png' alt='Separate to columns' width='650' align = 'right'> </a> ]]  
+[[ VLITE ?? || <img src='../../img/user_guides/dataset/14_separate_to_columns.png' alt='Separate to columns' width='350' align = 'right'> </a> ]]
 ####Separate a column into several columns {#sepcols}
 
 Allows you to separate a column into several columns using a user-defined separator.
@@ -252,9 +293,11 @@ The maximum number of fields in column __A__ after separation is 3 ("A_0.7K_2K")
 * Expanding __Change column names__ (click the "+") allows you to change the default column names to something else.
 <br>
 <br>
+[[ VLITE ?? || <br><br><br><br><br><br><br><br><br><br>]]
 
-<img src='../../img/user_guides/dataset/15_separate_to_rows.png' alt='Separate to rows' width='200' align = "right">
 
+[[ VLITE ?? <img src='../../img/user_guides/dataset/15_separate_to_rows_lite.png' alt='Separate to rows' width='650' align = 'right'> </a> ]]  
+[[ VLITE ?? || <img src='../../img/user_guides/dataset/15_separate_to_rows.png' alt='Separate to rows' width='350' align = 'right'> </a> ]]
 ####Separate a column into several rows {#sepcolsrows}
 
 Instead of forming more columns this version of Separate keeps the same number of columns, with the same names, but writes more rows.
@@ -262,16 +305,12 @@ Instead of forming more columns this version of Separate keeps the same number o
 ___Using the same data as in the example above___, the entry "A_0.7K_2K" in column __A__ in the original dataset results in 3 rows in column __A__  in the new dataset.
 
 * The corresponding entries in any other columns (e.g. column __B__ in the example) ___are duplicated___.
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<br><br><br><br><br>
+[[ VLITE ?? || <br><br><br><br><br><br><br><br><br><br><br>]]
 
-<img src='../../img/user_guides/dataset/16_unite_columns.png' alt='Unite columns' width='200' align = "right">
 
+[[ VLITE ?? <img src='../../img/user_guides/dataset/16_unite_columns_lite.png' alt='Unite columns' width='650' align = 'right'> </a> ]]  
+[[ VLITE ?? || <img src='../../img/user_guides/dataset/16_unite_columns.png' alt='Unite columns' width='350' align = 'right'> </a> ]]
 ### Unite columns {#unite}
 
 Allows you to select multiple columns and “unite” them using a defined separator (defaults to “_”). The united column name will be the combination of the selected columns with a “.” in between.
@@ -279,27 +318,26 @@ Allows you to select multiple columns and “unite” them using a defined separ
 _In this example, column “v1999” and column “v2000” are united by “_”. The new column name is “v1999.v2000”._
 
 * It is allowable to have ___no separator___. Just clear the ___Enter the separator___ field (delete the “_”)
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<br><br><br>
+<br><br><br><br><br><br>
+[[ VLITE ?? || <br><br><br><br><br><br><br><br><br><br><br><br><br>]]
+
 
 ## Merge/Join datasets  {#merge}
-&emsp;&ensp;&bull; [Join datasets](#join)
+&emsp;&ensp;&bull; [Join datasets](#join)  
 &emsp;&ensp;&bull; [Append rows](#append)
 
 
 
+[[ VLITE ?? <img src='../../img/user_guides/dataset/17_join_datasets_lite.png' alt='Join datasets' width='700' align = 'right'> </a> ]]  
+[[ VLITE ?? || <img src='../../img/user_guides/dataset/17_join_datasets.png' alt='Join datasets' width='450' align = 'right'> </a> ]]
 ### Join Datasets {#join}
 
 This "joins", or brings together, information in two data sets: the current dataset in iNZight and a newly imported dataset (read in using the __Import data__ facility) shown at the mid-right.
 
 __Left Join:__ The most important joining method is called a ___Left Join___, the main purpose of which is to add new variables to the original dataset by extracting the information from the new dataset.
-<img src='../../img/user_guides/dataset/17_join_datasets.png' alt='Join datasets' width='400' align = "right">
 
-__Matching rows__: The main problem is to identify what pieces of information belong together. The most straightforward case occurs where there is a variable in the original dataset which is a unique identifier. If that variable is also in the imported dataset (even if under a different name) we can use it to match up the data which belongs to the same unit/entity.
+__Matching rows__: (___Not yet fully implemented in Lite___.) The main problem is to identify what pieces of information belong together. The most straightforward case occurs where there is a variable in the original dataset which is a unique identifier. If that variable is also in the imported dataset (even if under a different name) we can use it to match up the data which belongs to the same unit/entity.
 
 To partially automate the process, iNZight looks for variables with the same name in both datasets (_originally x1, x2, and x3 in the Example to the right_) and offers those for determining matches.
 
@@ -336,20 +374,14 @@ The following are just used to filter data. No columns are added to the join fro
 * __Anti Join:__ Use only rows in the original which have  ___no match___ in the new
 
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
 
+[[ VLITE ?? <img src='../../img/user_guides/dataset/18_append_rows_lite.png' alt='Append rows' width='300' align = 'right'> </a> ]]  
+[[ VLITE ?? || <img src='../../img/user_guides/dataset/18_append_rows.png' alt='Append rows' width='400' align = 'right'> </a> ]]
 ### Append rows {#append}
 
-<img src='../../img/user_guides/dataset/18_append_rows.png' alt='Append rows' width='300' align = "right">
-
 Adds to the bottom of the original dataset rows from a newly imported dataset (imported using the Import facility provided).
-* The column names from both datasets are matched so the right data goes into the right columns
+* The column names from both datasets are matched so the correct data goes into the correct columns
 * Columns that appear in one dataset and not the other _will_ appear in the result
 * An error will be reported and not appending will be possible if two column names match but their types (e.g. numeric or categorical) do not match
 
@@ -363,7 +395,7 @@ ___Where data is periodically being added to a dataset___, this facility can be 
 [[ VLITE ?? || <img src='../../img/user_guides/dataset/21_svydesign.png' alt='Survey design dialog' width='400' align = 'right'> </a> ]]
 #### {.clear}
 ##Survey design  {#svydesign}  
-[[ VLITE ?? <img src='../../img/user_guides/dataset/21_svydesign_lite.png' alt='Survey design dialog' width='800'> </a> ]]
+[[ VLITE ?? <img src='../../img/user_guides/dataset/21_svydesign_lite.png' alt='Survey design dialog' width='800'> </a> ]]  
 &emsp;&ensp;&bull; [About survey data](#about)  
 &emsp;&ensp;&bull; [Specify design ...](#specify-design)  
 &emsp;&ensp;&bull; [Specify replicate design ...](#specify-rep-design)  
@@ -445,7 +477,7 @@ Discard design information and ___revert to using standard methods of analysis__
 
 [[ VLITE ?? || <img src='../../img/user_guides/dataset/25_freqtables.png' alt='Frequencies' width='400' align = 'right'> </a> ]]
 ##Frequency tables (_values plus frequencies data format_) {#freqtables}
-[[ VLITE ?? <img src='../../img/user_guides/dataset/25_freqtables_lite.png' alt='Frequencies' width='600'> </a> ]]
+[[ VLITE ?? <img src='../../img/user_guides/dataset/25_freqtables_lite.png' alt='Frequencies' width='700'> </a> ]]
 
 [[ VLITE ??  (___Not implemented in Lite yet___) In desktop iNZight w]] [[ VLITE ?? || W]]hen a __frequency column__ is specified, graphics and summaries respond to a combinations-of-variables-plus-their-frequencies data structure. Only categorical variables are retained.
 
