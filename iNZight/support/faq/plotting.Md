@@ -17,7 +17,7 @@ But if you are in the default _single window mode_ ...<br>
 &emsp;&ensp; and then click the Redraw icon to get your plot into the new plotting window.
 
 # I want a different type of plot {#other-plots}
-Once you have selected your variables, iNZight instantly delivers a graph with the default plot-type for the combination of variable-types you have specified. In most cases there are many other appropriate choices for plot type. To see (and get) them ... <br> 
+Once you have selected your variables, iNZight instantly delivers a graph with the default plot-type for the combination of variable-types you have specified. In most cases there are many other appropriate choices for plot type. To see (and get) them ... <br>
 <img src="img/add-to-plot.png" style="float:left" alt='timer icon' width='30'/> &emsp;&ensp; use __Add to Plot__ and under __Customise Plot Apearance__ (the default initial screen) use the  __Plot type__ selection box. To look quickly at all possibile plots you can click into the box and roll the mouse wheel to scroll through the available plots.
 
 
@@ -37,7 +37,7 @@ ___Reordering categories___ using __Variables > Categorical Variables > Reorder 
 
 
 # Dotplots: When I resized the window my plot disappeared {#dotplot-disappearing}
-See general item on this [above](#disappearing-plot). 
+See general item on this [above](#disappearing-plot).
 
 # Dotplots: I see columns of dots that look like they are suspended in mid-air {#dotplot-hover-midair}
 iNZight stacks points that are close together but not identical. This problem occurs when the points are discretely spaced but too big to drop down onto the axis. Either ___reduce the___ __Point Size__ until they drop down,
@@ -85,6 +85,14 @@ __Notes__
 3. The __Save__ under the __File__ menu is for saving data files, not for saving plots
 
 
+# Interactive on macOS (through R) {#mac-interactive-R}
+
+If you are using iNZightPlots through R on macOS and try exporting an interactive plot, you may get some strange error messages (along the lines of _"We shouldn't be here!"_). If that's the case, run the following commands to get permission from macOS to write files:
+```
+setwd(".")
+getwd()
+```
+You should get a pop-up asking for access to the desktop. Now try running `exportHTML()` once more.
 
 
 # RStudio: plots are not displaying correctly {#rstudio}
