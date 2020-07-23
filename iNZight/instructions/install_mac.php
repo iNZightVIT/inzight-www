@@ -37,7 +37,7 @@
       or press <kbd><kbd>&#8984;</kbd> + <kbd>SPACE</kbd></kbd> on your keyboard,
       and then start typing <strong>iNZight</strong>.<br>
       Press <kbd>return</kbd> once Spotlight finds iNZight to launch it.
-    </p>
+    </p>z
   </div>
 </div>
 

@@ -5,59 +5,132 @@ require_once($rel . 'assets/functions/filesize.php');
 ?>
 
 <hr>
-<div class="col-md-12 col-lg-10 col-lg-push-1 os-desc" id="osDesc_mac">
 
-  <div class="panel panel-danger space-above">
-    <div class="panel-heading">
-      <h5 class="panel-title">macOS Catalina</h5>
+
+<h3>Running iNZight on macOS</h3>
+
+<p>
+  Due to breaking changes in recent versions of macOS, and the lack of further development
+  of Gtk2+ (one of our major dependencies), we are no longer able to provide an installer
+  for iNZight on macOS. The following alternatives are currently available:
+</p>
+
+
+<div>
+    <ul class="nav nav-tabs" role="tablist" id="linuxTabs">
+        <li role="presentation" class="active"><a href="#macos-lite" role="tab" data-toggle="tab">iNZight Lite</a></li>
+        <!--<li role="presentation"><a href="#macos-wine" role="tab" data-toggle="tab">Wine</a></li>-->
+        <!--<li role="presentation"><a href="#macos-r" role="tab" data-toggle="tab">Homebrew + R</a></li>-->
+    </ul>
+
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="macos-lite">
+          <p>
+            Our online version is being actively maintained and, as much as possible,
+            kept as similar to the desktop version as possible.
+          </p>
+
+          <p><a href="https://lite.docker.stat.auckland.ac.nz">Try iNZight Lite</a></p>
+        </div>
+
+        <div role="tabpanel" class="tab-pane" id="macos-wine">
+          <p>
+            It is possible to run iNZight for Windows on your mac by first installing
+            <a href="https://www.winehq.org/">Wine</a>,
+            a free program for running Windows software on macOS.
+          </p>
+
+          <h4>1. Download and install XQuartz and Wine</h4>
+
+          <p>
+            Head to the following pages to download XQuartz and Wine for macOS.
+          </p>
+
+          <ul>
+            <li><a href="https://xquartz.org">XQuartz</a></li>
+            <li><a href="https://wiki.winehq.org/MacOS">Wine</a>
+              (you want the installer for "Wine Stable")</li>
+          </ul>
+
+          <p>Run the installers for each of the programs before continuing.</p>
+
+          <hr>
+          <h4>2. Download the Windows iNZight Installer</h4>
+
+          <p>
+            Download the installer below.
+            Be sure to save it somewhere you can easily find. On most browsers,
+            this will be in your Downloads folder.
+          </p>
+
+          <ul>
+            <li><a href="<?php echo $download_dir . $download_links["Windows"]; ?>">
+              <?php echo $download_links["Windows"]; ?></a></li>
+          </ul>
+
+          <hr>
+          <h4>3. Install iNZight through Wine</h4>
+
+          <p>
+            Open up the Terminal on mac (use spotlight search, <kbd><kbd>&#8984;</kbd> + <kbd>SPACE</kbd></kbd>)
+            and paste the following:
+          </p>
+          <p><pre>mkdir ~/Documents/iNZightVIT
+cd ~/Documents/iNZightVIT
+wine64 ~/Downloads/iNZightVIT-WIN.exe</pre></p>
+
+          <p>
+            Wait while Wine initialises and then follow the prompts to install iNZight.
+          </p>
+
+          <hr>
+          <h4>Start iNZight</h4>
+          <p>To start iNZight, open a Terminal (see step 3 above) and enter the following:</p>
+          <p><pre>cd ~/Documents/iNZightVIT
+wine64 start iNZight.lnk</pre></p>
+
+        </div>
+
+        <div role="tabpanel" class="tab-pane" id="macos-r">
+
+          <p>
+            It is possible to run iNZight using R installed via Homebrew.
+            The basic steps are given below, but this is only recommend
+            for users who are comfortable with using the command line.
+            This makes use of Yihui Xie's <a href="https://macos.rbind.io/">R package repository</a>.
+          </p>
+
+          <ul>
+            <li>Download and install Homebrew from <a href="https://brew.sh/">https://brew.sh/</a></li>
+
+            <li>Use Homebrew to install R and gtk
+              <p><pre>brew cask install r
+brew install gtk+
+</pre></p>
+            </li>
+
+            <li>Start R from Terminal:
+              <p><pre>r</pre></p>
+            </li>
+
+            <li>Install iNZight by running the following in R:
+              <p><pre>options(repos = c(
+  inzight = 'https://r.docker.stat.auckland.ac.nz',
+  CRANextra = 'https://macos.rbind.io',
+  CRAN = 'https://cran.rstudio.com'
+))
+
+install.packages(c('iNZight', 'vit'), dependencies = TRUE)
+</pre></p>
+            </li>
+
+            <li>Run iNZight:
+              <p><pre>library(iNZight)
+iNZight()</pre></p>
+            </li>
+
+          </ul>
+
+        </div>
     </div>
-    <div class="panel-body">
-      Due to changes in the latest iteration of macOS 'Catalina', some users are
-      experiencing issues running iNZight due to permissions restrictions. At this time, there is
-      no available solution and users are asked to use iNZight on a Windows computer or
-      the try <a href="https://lite.docker.stat.auckland.ac.nz">iNZight Lite</a>.
-    </div>
-  </div>
-
-  <h4>1. Download and Install Dependencies</h4>
-
-  <p>Before you can run iNZight, you must first download and install these three dependencies.
-    Follow the package installer for each one, and then return to this page.
-  </p>
-
-  <ol class="spread">
-    <li><a href="<?php echo $download_links["gtk-2.24"]; ?>">GTK_2.24.17-X11.pkg</a> (direct download link)</li>
-    <li><a href="<?php echo $download_links["xquartz"]; ?>">XQuartz</a> (website link, download the latest version)</li>
-    <li><a href="<?php echo $download_links["r3.3"]; ?>">R 3.3.3</a> (direct download link).<br>
-      <p class="note">
-        NOTE: if you already have R installed, and it is NOT version 3.3,
-        iNZight cannot be installed on your mac.
-        You could try looking into <a href="https://rud.is/rswitch/">this RSwitch App</a>,
-        which allows you to switch between versions of R.
-      </p>
-    </li>
-  </ol>
-
-  <hr>
-  <h4>2. Restart your computer</h4>
-
-  <p>If you don't restart your computer before trying to run iNZight,
-    you may experience problems or be unable to get the program running.</p>
-
-  <hr>
-
-  <h4>3. Download and Install Application</h4>
-
-  <p>
-    Click the link to download
-    <a href="<?php echo $download_dir . $download_links["osx"]; ?>">
-      <?php echo $download_links["osx"]; ?>
-    </a>
-  </p>
-
-  <p>
-    Once the download completes, open it and <strong>Drag the iNZightVIT folder onto the Applications folder</strong>, following the arrow.
-  </p>
-
-  <?php include($rel.'instructions/install_mac.php'); ?>
 </div>

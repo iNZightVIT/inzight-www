@@ -32,9 +32,6 @@ $oss = array("Windows", "Mac", "Linux");
         </div>
     <a href="getinzight.php" class="thumbnail alert alert-info text-center">
       <h4>Download Now</h4>
-      <p>
-        For Windows, Mac, and Linux
-      </p>
     </a>
 
     <dl class="dl-horizontal">
