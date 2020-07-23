@@ -42,7 +42,7 @@
 
     // some versioning stuff ...
     //
-    var url = "<?php echo ($_SERVER['HTTP_HOST'] == "localhost:8181" ? "" : "https://www.stat.auckland.ac.nz/~wild/iNZight") . "/_setversion.php"; ?>";
+    var url = "<?php echo ($_SERVER['HTTP_HOST'] == "localhost:8181" ? "" : $baseURL) . "/_setversion.php"; ?>";
 
     $("#useDesktop").on("click", function(e) {
       e.preventDefault();
