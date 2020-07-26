@@ -1,3 +1,9 @@
+## iNZightTS 1.5.4
+- fix bug which meant passing `recompose = TRUE` to the plot method for decomposition objects was being ignored
+
+## iNZightTS 1.5.3
+- fix small bug in detecting time information where `[` subset operator returns tibble/dataframe (not vector)
+
 ## iNZightTS 1.5.2
 - disable multiplicative series if any values are zero or lower
 - add appropriate subtitle to trend panel of decomposition plot
