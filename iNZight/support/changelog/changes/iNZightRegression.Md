@@ -1,4 +1,15 @@
+## iNZightRegression 1.2.8
+
+- add column for exponentiated estimates where appropriate
+- add `exponentiate.cis` argument to `iNZightSummary` which replaces the CIs
+  with exponentiated versions if appropriate (`FALSE` by default)
+- factorComp() for survey GLMs includes Wald test for term effects (regTermTest())
+- add summary method for Cox PH models
+
+
 ## iNZightRegression 1.2.7
+__Release date__: 21 April 2020
+
 - specify `stringsAsFactors = TRUE` for upcoming R 4.0.0
 - fix bug in processing summary for models with `exlude`d variables
 

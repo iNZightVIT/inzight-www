@@ -1,5 +1,3 @@
-
-
 # iNZightMaps 2.3
 
 - fix handling of colour by and join points (simultaneously)
