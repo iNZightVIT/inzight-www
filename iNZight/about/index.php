@@ -8,6 +8,7 @@ $subdirs = $navitems['About'];
 unset($subdirs["default"]);
 
 ?>
+
 <div class="container">
   <h3>About iNZight</h3>
 

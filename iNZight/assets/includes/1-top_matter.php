@@ -1,13 +1,13 @@
 <?php
 
+session_save_path("/tmp");
 
-
-
-
-
-session_start();
+if (!session_start()) {
+  echo "Unable to start session..<br>";
+}
 $isIE = strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') || strpos($_SERVER['HTTP_USER_AGENT'], 'Trident');
 
+// var_dump($_SESSION);
 if (isset($_GET["ver"])) {
   $_SESSION["VLITE"] = ($_GET["ver"] == "lite");
   // --- this is just complex and silly ...

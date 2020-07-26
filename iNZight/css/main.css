@@ -8007,6 +8007,18 @@ h1.header-image, h2.header-image, h3.header-image {
   h1.header-image.button-inference-information, h2.header-image.button-inference-information, h3.header-image.button-inference-information {
     background-image: url(../img/user_guides/plotoptions/toolbar/inference-information.png); }
 
+.sponsors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto; }
+  .sponsors a {
+    margin: 10px 30px; }
+  .sponsors img {
+    height: 100px; }
+
 html, body {
   height: 100%;
   background: #fff;

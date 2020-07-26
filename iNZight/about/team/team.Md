@@ -1,12 +1,10 @@
 # The iNZight Team
 
 The iNZightVIT project is led by [Professor Chris Wild](https://www.stat.auckland.ac.nz/~wild/)
-from the [Department of Statistics](https://www.stat.auckland.ac.nz) at the University of Auckland.
-He comes up with the big (and small) ideas that make iNZight intuitive and easy to learn.
+from the [Department of Statistics](https://www.stat.auckland.ac.nz) at the University of Auckland. He comes up with the big (and small) ideas that make iNZight intuitive and easy to learn. Since 2018, [Andrew Sporle](https://unidirectory.auckland.ac.nz/profile/a-sporle) from McDonaldSporle Ltd has contributed ideas and funding support for extending iNZight's capabilities for use in research and official statistics.
 
 
-The development of iNZight itself has been shared amongst many __statistics students__ from the university,
-who have worked part-time on making various parts of iNZight.
+The development of iNZight itself comes from the work of many __statistics students__ from the university, most working part-time or as part of a research project.
 
 ***
 # Current Team

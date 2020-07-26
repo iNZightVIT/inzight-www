@@ -12,3 +12,9 @@ When you __Import__ this exported data set (which will have a .RData filename ex
 For desktop iNZight, see [User Guide paragraph on exporting data](../../user_guides/file_options/#export)
 
 
+# Saving a survey-design specification as well as the data {#export-with-surveydesign}
+
+Currently this can only be done using the ___Save/Load feature___ for iNZight sessions which is still in _developmental mode_.
+
+To enable this go __File > Preferences__ and click the checkbox for __Enable developmental features__. The ___next time___ you start iNZight the __File__ menu will give you the ability to __Save__ a session. The saved file will have the filename extension__.inzsave__. Saved sessions are read into iNZight using __Load__.  
+
