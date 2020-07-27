@@ -7704,11 +7704,15 @@ nav.navbar .navbar-nav > li:hover > .dropdown-menu {
       margin-top: 50px; } }
   .feature a.alert-info:hover {
     text-decoration: none; }
+  .feature a.alert-info h4 {
+    margin-bottom: 0; }
 .feature iframe {
   vertical-align: middle; }
 .feature a.alert-info.lite {
   margin-top: 0;
   background: #cdeefa; }
+  .feature a.alert-info.lite h4 {
+    margin-bottom: 10px; }
 
 .explore {
   margin-bottom: 30px; }
