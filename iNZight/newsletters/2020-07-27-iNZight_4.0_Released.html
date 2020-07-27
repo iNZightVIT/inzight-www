@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <title>iNZightVIT Newsletter</title>
+
+  <style>
+    .wrapper {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 5px;
+
+      font-size: 14px;
+      font-family: "Helvetica", sans-serif;
+    }
+
+    .preview-text {
+      color: white;
+      display: none;
+      font-size: 1px;
+      line-height: 1px;
+      max-height: 0px;
+      max-width: 0px;
+      opacity: 0;
+      overflow: hidden;
+    }
+
+    .readonline {
+      color: #333;
+      font-size: 10px;
+      text-align: right;
+      margin-bottom: 10px;
+    }
+
+    .header {
+      margin-bottom: 50px
+      float: left;
+    }
+    .header h1 {
+      font-size: 22px;
+      color: #333;
+      margin:0;
+      padding-top: 20px;
+    }
+    .header h2 {
+      font-size: 12px;
+      color: #111;
+      font-style: italic;
+      margin: 0;
+      padding-top: 10px;
+    }
+    .header-image {
+      float: right;
+      border: none;
+    }
+
+    .lead {
+      font-weight: bold;
+    }
+
+    .content {
+      clear: both;
+      margin-top: 50px
+    }
+
+    .section {
+      margin: 20px 0 10px;
+      border-top: solid 1px #094b85;
+    }
+    .section h3 {
+      color: #094b85;
+    }
+
+    .section p {
+      line-height: 1.4
+    }
+
+    ul,ol {
+      line-height: 1.5
+    }
+    ul>li, ol>li {
+      padding: 5px 0
+    }
+    li.grey {
+      color: #999
+    }
+    ul ul {
+      list-style-type: square;
+    }
+
+    .footnote {
+      font-size: 10px;
+      border-top: solid 1px #ccc;
+      margin-top: 20px;
+    }
+
+    .footer {
+      background: #094b85;
+      line-height: 40px;
+      text-align: center;
+      color: white
+    }
+    .footer p {
+      line-height: 1;
+      margin: 0;
+      padding: 10px 0 0;
+    }
+    .footer a {
+      color: white;
+      font-size: 10px;
+      text-decoration: none
+    }
+    .footer p a {
+      font-size: 12px;
+    }
+  </style>
+
+</head>
+
+<body>
+<div class="wrapper">
+  <div class="preview-text">
+    iNZight 4.0 features improved coding capabilities, and minor interface changes.
+  </div>
+
+  <div class="readonline">
+    Having trouble viewing this email? <a href="https://www.stat.auckland.ac.nz/~wild/iNZight/newsletters/2020-07-28-iNZight_4.0_released.html">View it online</a>.
+  </div>
+
+  <a href="https://www.stat.auckland.ac.nz/~wild/iNZight/">
+    <img class="header-image" height="80px" src="https://www.stat.auckland.ac.nz/~wild/iNZight/img/inzight_transp.png">
+  </a>
+  <div class="header">
+    <h1>Update</h1>
+    <h2>27 July, 2020</h2>
+  </div>
+
+  <div class="content">
+    <p class="lead">
+      Hi - here's a quick update to let you all know about our latest release, iNZight 4.0!
+    </p>
+
+    <div class="section">
+      <h3>Live code writing and editing</h3>
+
+      <p>
+        The newest addition to iNZight is the ability to see and edit code for the current plot,
+        allowing users interested in learning R the chance to "get their feet wet". To enable this
+        new feature, head to File > Preferences, and activate the two checkboxes at the
+        bottom of the window.
+      </p>
+
+      <p>
+        Not only does this display code for the current plot, but Get Summary and Get Inference
+        also display code that can be edited and run.
+      </p>
+    </div>
+
+    <div class="section">
+      <h3>Minor changes to Get Inference user interface</h3>
+
+      <p>
+        We've updated the Get Inference panel to be simpler to use and explore
+        by removing the intermediate options panel. Hypothesis tests can now be
+        chosen and modified directly from the Get Inference window,
+        with the output updating instantly.
+      </p>
+
+      <p>
+        We realise many of you may have teaching material that may show the old steps,
+        and we hope that the changes are self-explanatory enough that students can
+        still follow along. However, we have also included a link to the previous build
+        of iNZight (3.5.3) on the Windows download page, so you may direct students
+        to use that instead if you prefer.
+      </p>
+    </div>
+
+    <div class="section">
+      <h3>Updates to survey handling, and much more</h3>
+
+      <p>
+        As always, this release includes a suite of under-the-hood fixes and changes
+        to some of the more advanced features. We've added new functionalities for survey
+        designs and model fitting, all of which are listed on the changes page:
+      </p>
+
+      <p style="text-align: center; font-size: 1.2em">
+        <a href="http://inzight.nz/releases/4.0">iNZight 4.0 Release Notes</a>
+      </p>
+      <p><small>If the link doesn't work, head to: http://inzight.nz/releases/4.0</small></p>
+    </div>
+
+    <div class="section">
+      <h3>This is a big update, so a re-install is required</h3>
+
+      <p>
+        Since this release includes some pretty large changes behind-the-scenes
+        (including upgrading to R 4.0), you'll need to head to the downloads
+        page and download a fresh copy of iNZight. We suggests first uninstalling
+        your current version to avoid conflicts.
+      </p>
+
+      <p style="text-align: center; font-size: 1.2em">
+        <a href="http://inzight.nz/install">iNZight Downloads Page</a>
+      </p>
+      <p>
+        <small>If the link doesn't work, head to: http://inzight.nz/install</small><br>
+        <small>To uninstall, head to your iNZightVIT folder (in Documents unless you installed elsewhere) and run Uninstall.exe</small>
+      </p>
+
+      <p>
+        <strong>A note for mac users:</strong> unfortunately, due to a multitude of changes by Apple
+        and the lack of development of GTK2 for mac, we are currently unable to support
+        iNZight on macOS. Please see the downloads page (above) and choose mac
+        to see alternatives.
+      </p>
+    </div>
+
+    <div class="section">
+      <p>
+        That's all for now! Let us know what you think about the changes,
+        if you run into any problems, or if you have any suggestions for new features.
+        We always try to put user requests first, especially when time is a very
+        limited resource!
+      </p>
+
+      <p>
+        Regards, <br>
+        The iNZight Team.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p>
+      <a href="https://list.science.auckland.ac.nz/sympa/subscribe/stat-inzight-general">inzightgeneral@stat.auckland.ac.nz</a>
+    </p>
+
+    <a href="https://www.stat.auckland.ac.nz/~wild/iNZight/newsletters/">Previous newsletters</a>
+    |
+    <a href="https://list.science.auckland.ac.nz/sympa/signoff/stat-inzight-general">Unsubscribe</a>
+
+  </div>
+
+</div>
+</body>
+
+</html>
