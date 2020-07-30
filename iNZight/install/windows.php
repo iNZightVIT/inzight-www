@@ -18,7 +18,7 @@ require_once($rel . 'assets/functions/filesize.php');
 
   <p>
     <strong>Previous version:</strong><br>
-    <a href="<?php echo $download_dir . "/Windows/iNZightVIT-installer-3.5.3.exe"; ?>">
+    <a href="<?php echo $download_dir . "Windows/iNZightVIT-installer-3.5.3.exe"; ?>">
       iNZightVIT v3.5.3 for Windows
     </a> (released 11 May 2020)
   </p>
