@@ -1,5 +1,7 @@
 <?php
 
+header("Location: https://stat.auckland.ac.nz/~wild/iNZight/user_guides/contact/");
+
 $submit = false;
 
 $rel = "../../";
