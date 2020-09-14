@@ -12,7 +12,7 @@ jobs:
 
       - name: Install iNZight
         run: |
-          install.packages('iNZight', depends = FALSE, repos = c("https://r.docker.stat.auckland.ac.nz", "https://cran.rstudio.org"))
+          install.packages('iNZight', dependencies = FALSE, repos = c("https://r.docker.stat.auckland.ac.nz", "https://cran.rstudio.org"))
         shell: Rscript {0}
 
       - name: Update release version
