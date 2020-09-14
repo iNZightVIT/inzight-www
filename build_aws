@@ -8,3 +8,8 @@ ln -s /home/bitnami/inzight-www/iNZight htdocs
 # clone new site
 cd /home/bitnami
 /opt/bitnami/git/bin/git clone https://github.com/iNZightVIT/inzight-www.git
+
+# setup webhook
+apt update && apt install -y webhook
+chmod +x inzight-www/redeploy.sh
+webhook -hooks inzight-www/hooks.json

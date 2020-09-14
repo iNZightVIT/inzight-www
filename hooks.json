@@ -1,0 +1,7 @@
+[
+  {
+    "id": "redeploy-webhook",
+    "execute-command": "/home/bitnami/inzight-www/redeploy.sh",
+    "command-working-directory": "/home/bitnami"
+  }
+]
