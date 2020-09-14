@@ -5,17 +5,11 @@ jobs:
   update-website:
     name: Update website
     runs-on: ubuntu-latest
-    env:
-      RSPM: "https://packagemanager.rstudio.com/cran/__linux__/bionic/latest"
+
     steps:
       - uses: actions/checkout@v2
 
       - uses: r-lib/actions/setup-r@master
-
-      - name: Install iNZight
-        run: |
-          install.packages('iNZight', repos = c("https://r.docker.stat.auckland.ac.nz", RSPM = Sys.getenv("RSPM"), "https://cran.rstudio.org"))
-        shell: Rscript {0}
 
       - name: Update release version
         run: Rscript website_version.R
