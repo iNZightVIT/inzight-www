@@ -3,7 +3,7 @@ Description=Redeploy Webhook Service
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/webhook -hooks /home/bitnami/inzight-www/hooks.json
+ExecStart=/usr/bin/sudo /usr/bin/webhook -hooks /home/bitnami/inzight-www/hooks.json
 
 [Install]
 WantedBy=multi-user.target

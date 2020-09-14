@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# any changes to webhook.service
+#
+
 cd /home/bitnami/inzight-www
 /opt/bitnami/git/bin/git fetch
 
