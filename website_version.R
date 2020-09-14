@@ -8,13 +8,13 @@ r <- "https://r.docker.stat.auckland.ac.nz"
 V <- available.packages(repos = r)["iNZight", "Version"]
 url <- sprintf("%s/src/contrib/iNZight_%s.tar.gz", r, V)
 t <- tempfile()
-on.exit(unlink(t))
 dir.create("pkg")
-on.exit(unlink("pkg", TRUE, TRUE), add = TRUE)
 download.file(url, t)
 untar(t, exdir = "pkg")
+unlink(t)
 
 DESC <- read.dcf("pkg/iNZight/DESCRIPTION")[1,]
+unlink("pkg", TRUE, TRUE)
 
 s[lv] <- sprintf(gsub("\".+\"", "\"%s\"", s[lv]), DESC["Version"])
 s[ld] <- sprintf(gsub("\".+\"", "\"%s\"", s[ld]),
