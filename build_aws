@@ -16,4 +16,5 @@ cp inzight-www/webhook.service /lib/systemd/system/
 cp /lib/systemd/system/webhook.service /etc/systemd/system/webhook.service
 chmod 644 /etc/systemd/system/webhook.service
 systemctl daemon-reload
+sudo systemctl enable webhook
 systemctl service start webhook
