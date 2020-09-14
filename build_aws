@@ -11,4 +11,5 @@ cd /home/bitnami
 
 # setup webhook
 apt update && apt install -y webhook
-webhook -hooks inzight-www/hooks.json
+# nohup webhook -hooks inzight-www/hooks.json &
+mv inzight-www/webhook.service /lib/systemd/system/
