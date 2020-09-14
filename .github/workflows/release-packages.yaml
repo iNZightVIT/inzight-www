@@ -1,0 +1,17 @@
+name: Update website
+on: repository_dispatch
+
+jobs:
+  update-website:
+    name: Update website
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      # - uses: r-lib/actions/setup-r@master
+
+      # - name: Get iNZight version
+      #   id: inzight
+      #   run: echo "::set-output name=version::$(Rscript get_website_version.R)"
+
+      # - name: Update release version
+      #   run: Rscript website_version.R
