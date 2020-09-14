@@ -1,0 +1,26 @@
+name: Update website version
+on: workflow_dispatch
+
+jobs:
+  update-website:
+    name: Update website
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: r-lib/actions/setup-r@master
+
+      - name: Install iNZight
+        run: |
+          install.packages('iNZight', depends = FALSE, repos = c("https://r.docker.stat.auckland.ac.nz", "https://cran.rstudio.org"))
+        shell: Rscript {0}
+
+      - name: Update release version
+        run: Rscript website_version.R
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git commit iNZight/* -m 'Update version release' || echo "No changes to commit"
+          git push origin || echo "No changes to push"
