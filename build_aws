@@ -11,5 +11,4 @@ cd /home/bitnami
 
 # setup webhook
 apt update && apt install -y webhook
-chmod +x inzight-www/redeploy.sh
 webhook -hooks inzight-www/hooks.json
