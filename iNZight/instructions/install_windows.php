@@ -1,7 +1,7 @@
 <h4>To Install</h4>
 
 <p>
- 
+
   <ol>
 
     <li>
@@ -51,7 +51,7 @@
   <p>
     We recommend you keep iNZight up-to-date,
     as we are frequently fixing bugs and making things better.<br>
-    To see whats changed, <a href="support/changelog/?pkg=iNZight">check out the version history</a>.
+    To see whats changed, <a href="/support/changelog/?pkg=iNZight">check out the version history</a>.
   </p>
 
   <p>
