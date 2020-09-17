@@ -45,7 +45,7 @@ $VLITE = $_SESSION["VLITE"];
 
     <meta property="og:title" content="iNZight for Data Analysis">
     <meta property="og:description" content="A free, easy to use software for statistical data analysis">
-    <meta property="og:image" content="https://inzight.nz/img/inzight_transp.png">
+    <meta property="og:image" content="https://inzight.nz/favicon-chrome-512x512.png">
     <meta property="og:url" content="https://inzight.nz">
     <meta name="twitter:card" content="summary">
 
