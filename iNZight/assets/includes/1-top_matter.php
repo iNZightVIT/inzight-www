@@ -47,7 +47,7 @@ $VLITE = $_SESSION["VLITE"];
     <meta property="og:description" content="A free, easy to use software for statistical data analysis">
     <meta property="og:image" content="https://inzight.nz/img/inzight_transp.png">
     <meta property="og:url" content="https://inzight.nz">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary">
 
     <?php
       // Allow us to define extra meta tags:
