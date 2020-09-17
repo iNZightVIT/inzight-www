@@ -43,6 +43,11 @@ $VLITE = $_SESSION["VLITE"];
     <meta name='description' content='iNZight - a free, easy to use software for statistical data analysis'>
     <meta http-equiv='Content-Language' content='en'>
 
+    <meta property="og:title" content="iNZight for Data Analysis">
+    <meta property="og:description" content="A free, easy to use software for statistical data analysis">
+    <meta property="og:image" content="https://inzight.nz/img/inzight_transp.png">
+    <meta property="og:url" content="https://inzight.nz">
+    <meta property="twitter:card" content="summary_large_image">
 
     <?php
       // Allow us to define extra meta tags:
