@@ -1,3 +1,19 @@
+<script>
+var loc = window.location;
+console.log(loc);
+url = "https://inzight.nz" + loc.pathname;
+if (loc.search != undefined) {
+  url += loc.search;
+}
+if (loc.hash != undefined) {
+  url += loc.hash;
+}
+
+if (loc.pathname != "/support/contact/") {
+  window.location.replace(url);
+}
+</script>
+
 <?php
 
 session_save_path("/tmp");
