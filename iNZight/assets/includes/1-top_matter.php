@@ -1,7 +1,7 @@
 <script>
 var loc = window.location;
-console.log(loc);
-url = "https://inzight.nz" + loc.pathname;
+url = "https://inzight.nz";
+url += loc.pathname.replace("~wild/iNZight/", "");
 if (loc.search != undefined) {
   url += loc.search;
 }
@@ -9,7 +9,7 @@ if (loc.hash != undefined) {
   url += loc.hash;
 }
 
-if (loc.pathname != "/support/contact/") {
+if (loc.pathname.match("/support/contact/") == null) {
   window.location.replace(url);
 }
 </script>
