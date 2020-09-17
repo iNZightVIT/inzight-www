@@ -38,6 +38,12 @@ $VLITE = $_SESSION["VLITE"];
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#094b85">
 
+    <meta http-equiv='Content-type' content='text/html; charset=ISO-8859-1'>
+    <meta name='keywords' content='free, software, statistics, data analysis, inzight'>
+    <meta name='description' content='iNZight - a free, easy to use software for statistical data analysis'>
+    <meta http-equiv='Content-Language' content='en'>
+
+
     <?php
       // Allow us to define extra meta tags:
       if (isset($metatags)) {

@@ -2,11 +2,6 @@
 $rel = "./";
 require_once('assets/objects/setup.php');
 
-$metatags  = "<meta http-equiv='Content-type' content='text/html; charset=ISO-8859-1'>\n    ";
-$metatags .= "<meta name='keywords' content='free, software, statistics, data analysis, inzight'>\n    ";
-$metatags .= "<meta name='description' content='iNZight - a free, easy to use software for statistical data analysis'>\n    ";
-$metatags .= "<meta http-equiv='Content-Language' content='en'>\n";
-
 require_once('assets/includes/1-top_matter.php');
 require_once('assets/includes/2-header.php');
 require_once('assets/functions/os_detect.php');
