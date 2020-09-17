@@ -1,6 +1,9 @@
 {
-  "name":"iNZight",
+  "name":"iNZight for Data Analysis",
+  "short_name": "iNZight",
+  "description": "A free, easy to use software for statistical data analysis",
   "short_name":"",
+  "start_url":"/",
   "icons":[
     {
       "src":"/android-chrome-192x192.png",
