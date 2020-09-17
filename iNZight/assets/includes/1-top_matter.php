@@ -49,7 +49,7 @@ $VLITE = $_SESSION["VLITE"];
       if (preg_match('/inzight.nz/', $_SERVER['HTTP_HOST']) === 1) {
         include_once($rel . 'assets/includes/analyticstracking.php');
       } else {
-        echo "<!-- development environment -->";
+        echo "<!-- development environment here .. -->";
       }
     ?>
 
