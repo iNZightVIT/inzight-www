@@ -9,7 +9,8 @@ if (loc.hash != undefined) {
   url += loc.hash;
 }
 
-if (loc.pathname.match("/support/contact/") == null) {
+if (loc.pathname.match("/support/contact/") == null &
+    loc.origin.match("localhost") == null) {
   window.location.replace(url);
 }
 </script>
