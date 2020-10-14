@@ -1,3 +1,7 @@
+## iNZightModules 2.5.4
+- fix issues with specifying time information for annual data
+
+
 ## iNZightModules 2.5.3
 - ask user to create module directory if it doesn't exist
 - Model Fitting: add negative binomial
