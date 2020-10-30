@@ -17,8 +17,8 @@ We are proudly supported by &hellip;
     <img src="../../img/minedu_logo.png" alt="Ministry of Education">
   </a>
 
-  <!-- <a href="https://abs.gov.au">
+  <a href="https://abs.gov.au">
     <img src="https://oversixtydev.blob.core.windows.net/media/7831220/1.jpg" alt="Australian Bureau of Statistics">
-  </a> -->
+  </a>
 </div>
 ///
