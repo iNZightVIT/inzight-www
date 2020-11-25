@@ -34,7 +34,8 @@
       'default' => 'about/',
       'Team' => 'team/',
       'Development' => 'development/',
-      'Sponsors' => 'sponsors/'
+      'Sponsors' => 'sponsors/',
+      'Brand' => 'brand/'
       // 'Privacy' => 'privacy/'
     ),
     'Related' => array(

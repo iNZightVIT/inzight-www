@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Lato:400,400i,500,700,700i';
+@import 'https://fonts.googleapis.com/css?family=Lato:400,400i,500,700,700i&family=Source+Code+Pro&display=swap';
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -8022,6 +8022,19 @@ h1.header-image, h2.header-image, h3.header-image {
     margin: 10px 30px; }
   .sponsors img {
     height: 100px; }
+
+.markdown .cc-attr, .rhistory .cc-attr {
+  margin-top: 2em; }
+.markdown .swab, .rhistory .swab {
+  display: inline-block;
+  font-size: 1.2em;
+  color: white;
+  padding: 5px 10px;
+  font-family: "Source Code Pro", monospace; }
+
+.logos img {
+  display: inline-block;
+  max-height: 120px; }
 
 html, body {
   height: 100%;
