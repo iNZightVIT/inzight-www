@@ -18,6 +18,8 @@ This is our main, preferred logo for publicising iNZight.
 <img src="/img/inzight_logo.svg">
 </div>
 
+(Right-click and Save-as to get the full-size graphics).
+
 ### Hex logos
 
 These two logos (with and without a border) are used when the wide logo is too big, for example on R hex stickers!
@@ -31,6 +33,9 @@ These two logos (with and without a border) are used when the wide logo is too b
 <img src="/img/inzight_hex.svg">
 <img src="/img/inzight_hex_noborder.svg">
 </div>
+
+(Right-click and Save-as to get the full-size graphics).
+
 
 ### Brand colours
 
