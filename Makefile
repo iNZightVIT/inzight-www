@@ -31,3 +31,20 @@ fixPermissions:
 	-sudo chgrp -R 62215 .
 	-sudo find . -type f -exec chmod 664 {} +
 	-sudo find . -type d -exec chmod 775 {} +
+
+
+# buildserver:
+# 	@sudo docker build -t inzight-server .
+
+startserver:
+	@sudo docker run -d --rm \
+		--name inzight \
+		-p 80:80 \
+		-v "$$PWD"/iNZight:/var/www/html \
+		php:7.1-apache
+
+stopserver:
+	@sudo docker stop inzight
+
+sass:
+	@sass --watch iNZight/styles:iNZight/css
