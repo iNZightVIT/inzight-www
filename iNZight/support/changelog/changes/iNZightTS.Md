@@ -1,3 +1,12 @@
+## iNZightTS 1.5.7
+- print comparison plots so they are always shown in the graphics device
+
+## iNZightTS 1.5.6
+- add colour legend to subtitle of decomposition plot
+
+## iNZightTS 1.5.5
+- fix bug preventing basic plots from working for annual data
+
 ## iNZightTS 1.5.4
 - fix bug which meant passing `recompose = TRUE` to the plot method for decomposition objects was being ignored
 
