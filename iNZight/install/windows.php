@@ -23,6 +23,13 @@ require_once($rel . 'assets/functions/filesize.php');
     </a> (released 11 May 2020)
   </p>
 
+  <p>
+    <strong>Nightly build (development version):</strong><br>
+    <a href="<?php echo $download_dir . "Windows/iNZightVIT-installer-nightly.exe"; ?>">
+      iNZightVIT v<?php echo $nightly_version; ?> for Windows
+    </a> (released <?php echo $nightly_date; ?>)
+  </p>
+
   <hr>
   <?php include($rel.'instructions/install_windows.php'); ?>
 </div>
