@@ -9,9 +9,10 @@ V <- readLines(sprintf("%s/downloads/VERSION-nightly", r))
 D <- strsplit(V, "\\.")[[1]][4]
 D <- as.Date(D, format = "%Y%m%d")
 
-s[lv] <- as.character(V)
+s[lv] <- sprintf(gsub("\".+\"", "\"%s\"", s[lv]), as.character(V))
 s[ld] <- sprintf(gsub("\".+\"", "\"%s\"", s[ld]),
     format(D, "%e %B %Y")
 )
+
 
 writeLines(s, f)
