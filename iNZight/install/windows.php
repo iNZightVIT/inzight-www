@@ -14,7 +14,7 @@ require_once($rel . 'assets/functions/filesize.php');
     <a href="<?php echo $download_dir . $download_links["Windows"]; ?>">
       <?php echo $download_links["Windows"]; ?>
     </a><br>
-    Latest version: <?php echo $inzight_version; ?> (<?php echo $release_date; ?>).
+    Latest version: <?php echo $inzight_version; ?> (<?php echo $release_date; ?>)
   </p>
 
   <p>
