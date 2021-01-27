@@ -29,7 +29,7 @@ require_once($rel . 'assets/functions/filesize.php');
     <a href="<?php echo $download_dir . "Windows/iNZightVIT-installer-nightly.exe"; ?>">
       iNZightVIT v<?php echo $nightly_version; ?> for Windows
     </a> (built <?php echo $nightly_date; ?>)<br>
-    <emph>When using this version, expect changes and bugs! It's not fully tested, nor is it supposed to be stable. If you opt to use this version, send your feedback (bugs, changes you don't like, etc) to <a href="mailto:inzight_support@stat.auckland.ac.nz?Subject=Nightly build">inzight_support@stat.auckland.ac.nz</a></emph>.
+    <emph>When using this version, expect changes and bugs! It's not fully tested, nor is it supposed to be stable. If you opt to use this version, send your feedback (bugs, changes you don't like, etc) to <a href="mailto:inzight_support@stat.auckland.ac.nz?subject=Nightly build">inzight_support@stat.auckland.ac.nz</a></emph>.
   </p>
   <?php } ?>
 
