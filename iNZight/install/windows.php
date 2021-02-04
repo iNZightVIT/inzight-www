@@ -26,7 +26,9 @@ require_once($rel . 'assets/functions/filesize.php');
 
   <?php if ($nightly_version != "") { ?>
   <details>
-    <preview><strong>Nightly build (development version)</strong></preview>
+    <summary>
+      <strong>Nightly build (development version)</strong>
+    </summary>
     <p>
       <a href="<?php echo $download_dir . "Windows/iNZightVIT-installer-nightly.exe"; ?>">
         iNZightVIT v<?php echo $nightly_version; ?> for Windows
