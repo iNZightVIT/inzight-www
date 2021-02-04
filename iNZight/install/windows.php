@@ -37,9 +37,9 @@ require_once($rel . 'assets/functions/filesize.php');
       <summary>What's new in the developmental version?</summary>
       <?php
         if (file_exists($rel . 'install/nightly_changes.md')) {
-          $Pd = new ParsedownExtra();
-          $text = file_get_contents($rel . "install/nightly_changes.md");
-          echo $Pd->text($text);
+          // $Pd = new ParsedownExtra();
+          // $text = file_get_contents($rel . "install/nightly_changes.md");
+          // echo $Pd->text($text);
         }
       ?>
     </details>
