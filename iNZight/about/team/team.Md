@@ -126,6 +126,13 @@ The development of iNZight itself comes from the work of many __statistics stude
 ///
 
 ***
+# Research Students
+
+These students working on iNZight as part of their Honours/Masters research projects.
+
+- __Sophie Jones__ (MSc, 2020): worked on visualisation of longitudinal data under a MSc Statistics, developing a shiny app and an iNZight Addon Module linking to her new 'longZight' package.
+
+***
 # Summer Students
 
 These students worked on iNZight for their Summer Scholarship.
@@ -155,9 +162,6 @@ These students worked on iNZight for their Summer Scholarship.
 - __Monica Merchant__: began work on predictive model building module which allows users to use multiple methods and criteria to build a predictive model
 - __Yiwen He__: implemented datetime facilities to iNZight to allow users to create datetime variables and extract information (such as the year, hour) from a datetime; implemented data joining facilities
 
-##### 2020
-
-- __Sophie Jones__: worked on visualisation of longitudinal data under a MSc Statistics, developing a shiny app and an iNZight Addon Module linking to her new 'longZight' package.
 
 ***
 
