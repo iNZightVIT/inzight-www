@@ -31,6 +31,9 @@ The development of iNZight itself comes from the work of many __statistics stude
 
   <div class="col-md-6">
     <h5><a href="https://unidirectory.auckland.ac.nz/profile/tche929">Tong Chen</a></h5>
+    <p>
+      Tong joined the iNZight team in 2019. He is mainly working on iNZight Lite. Currently, he is studying toward a PhD at the University of Auckland.
+    </p>
     <p><strong>Core responsibilities:</strong></p>
     <ul>
       <li>Development of Lite and implementation of new features as they appear in the software version of iNZight</li>
