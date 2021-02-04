@@ -14,5 +14,11 @@ s[ld] <- sprintf(gsub("\".+\"", "\"%s\"", s[ld]),
     format(D, "%e %B %Y")
 )
 
-
 writeLines(s, f)
+
+# and grab DESCRIPTION file for DEV build
+url <- "https://raw.githubusercontent.com/iNZightVIT/iNZight/dev/NEWS.Md"
+changes <- readLines(url)
+changes <- changes[1:(min(grep("^#", changes)) - 1L)]
+
+writeLines(changes, "iNZight/install/nightly_changes.md")
