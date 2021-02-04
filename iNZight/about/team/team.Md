@@ -117,7 +117,7 @@ The development of iNZight itself comes from the work of many __statistics stude
   </div>
 
   <div class="col-md-4">
-    <h5><a href="https://www.stat.auckland.ac.nz/people/shu454"><strong>Shengwei (Wilson) Hu</strong></a>(2014--2020)</h5>
+    <h5><strong>Shengwei (Wilson) Hu</strong> (2014--2020)</h5>
     <p>
       Wilson worked on <a href="http://lite.docker.stat.auckland.ac.nz">iNZight Lite</a> while completing his PhD is statistics here at the University of Auckland. He was responsible for implementing new features to and fixing bugs in iNZight Lite, as well as maintaining the public shiny containers and providing technical support for users.
     </p>
