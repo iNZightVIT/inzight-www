@@ -130,7 +130,7 @@ The development of iNZight itself comes from the work of many __statistics stude
 
 These students worked on iNZight as part of their Honours/Masters research projects.
 
-- __Sophie Jones__ (MSc, 2020): worked on visualisation of longitudinal data under a MSc Statistics, developing a shiny app and an iNZight Addon Module linking to her new 'longZight' package.
+- __Sophie Jones__ (MSc, 2020): visualisation of longitudinal data. Sophie developed a shiny app and an iNZight Addon linking to her 'longZight' package.
 
 ***
 # Summer Students
