@@ -8,3 +8,4 @@
 * user preferences are are now stored in `tools::R_user_dir()`; user is prompted to create config directories
 * enable code tidying (which uses the 'styler' package)
 
+
