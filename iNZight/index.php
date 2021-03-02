@@ -24,6 +24,7 @@ $oss = array("Windows", "Mac", "Linux");
           <a href="https://gitter.im/iNZightVIT/Lobby">
               <img src="https://badges.gitter.im/iNZightVIT/lobby.png" alt="Get help on Gitter" />
           </a>
+          <a onClick="FB.CustomerChat.showDialog()" href="#">Facebook Chat</a>
         </div>
     <a href="getinzight.php" class="thumbnail alert alert-info text-center">
       <h4>Download Now</h4>
