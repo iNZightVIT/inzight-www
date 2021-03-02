@@ -25,11 +25,11 @@
     "linux" => "https://raw.githubusercontent.com/iNZightVIT/dev/master/scripts/install_inzight.sh"
   );
 
-  $inzight_version = "4.0.2";
-  $release_date    = " 3 December 2020";
+  $inzight_version = "4.0.3";
+  $release_date    = " 2 March 2021";
 
-  $nightly_version = "4.0.2.20210204";
-  $nightly_date    = " 4 February 2021";
+  $nightly_version = "4.0.3.20210303";
+  $nightly_date    = " 3 March 2021";
 
   $inzight_online_link = "http://lite.docker.stat.auckland.ac.nz/";
   $inzight_repository_link = "http://r.docker.stat.auckland.ac.nz";

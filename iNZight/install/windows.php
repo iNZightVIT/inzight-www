@@ -27,7 +27,7 @@ require_once($rel . 'assets/functions/filesize.php');
   <?php if ($nightly_version != "") { ?>
   <p>
     <strong>Nightly build (development version)</strong>:<br>
-    <a href="<?php echo $download_dir . "Windows/iNZightVIT-installer-nightly.exe"; ?>">
+    <a href="<?php echo $download_dir . "iNZightVIT-installer-nightly.exe"; ?>">
       iNZightVIT v<?php echo $nightly_version; ?> for Windows
     </a> (built <?php echo $nightly_date; ?>)<br>
     <emph>When using this version, expect changes and bugs! It's not fully tested, nor is it supposed to be stable. If you opt to use this version, send your feedback (bugs, changes you don't like, etc) to <a href="mailto:inzight_support@stat.auckland.ac.nz?subject=iNZight nightly build <?php echo $nightly_version; ?>">inzight_support@stat.auckland.ac.nz</a></emph>.
