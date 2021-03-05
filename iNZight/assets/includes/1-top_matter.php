@@ -114,8 +114,8 @@ $VLITE = $_SESSION["VLITE"];
         attribution="setup_tool"
         page_id="100566192069494"
         theme_color="#18afe3"
-        logged_in_greeting="Kia ora, how can we help? Please note our hours are 9AM-3PM Mon-Fri NZST."
-        logged_out_greeting="Kia ora, how can we help? Please note our hours are 9AM-3PM Mon-Fri NZST.">
+        logged_in_greeting="Kia ora, how can we help? We'll try to respond between 9AM-3PM Mon-Fri NZST."
+        logged_out_greeting="Kia ora, how can we help? We'll try to respond between 9AM-3PM Mon-Fri NZST.">
       </div>
 
     <?php
