@@ -1,6 +1,6 @@
 <?php
 
-header("Location: /user_guides/basics/?topic=update_inzight");
+header("Location: user_guides/basics/?topic=update_inzight");
 
 ?>
 
