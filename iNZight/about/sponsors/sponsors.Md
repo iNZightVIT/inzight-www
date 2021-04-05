@@ -24,5 +24,9 @@ We are proudly supported by &hellip;
   <a href="https://terourou.org">
     <img src="../../img/terourou_logo.png" alt="Te Rourou Tātaritanga">
   </a>
+
+  <a href="#">
+    <img src="../../img/inzight_analytics_logo.png" alt="iNZight Analytics">
+  </a>
 </div>
 ///
