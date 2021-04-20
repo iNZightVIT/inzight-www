@@ -6,7 +6,7 @@ require_once($rel . 'assets/includes/2-header.php');
 $papers = array(
     array(
         'title' => "iNZight: A Graphical User Interface for Data Visualisation and Analysis through R",
-        'authors' => "Elliott, Wild, Barnett, & Sporle",
+        'authors' => "Elliott, Wild, Barnett & Sporle",
         'year' => "2021",
         'journal' => "Journal of Statistical Software",
         'url' => "https://github.com/iNZightVIT/papers/raw/main/2021_jss/index.pdf"
@@ -33,7 +33,7 @@ $papers = array(
                 $p_title = $paper["title"];
                 $p_journal = $paper["journal"];
                 echo "<li>";
-                echo "<a href=\"\">$p_authors ($p_year).</a>";
+                echo "<a href=\"$p_url\">$p_authors ($p_year).</a>";
                 // echo "<a href=\"$p_url\">$p_authors ($p_year). $p_title. $p_journal.</a>";
                 echo "</li>";
             }
