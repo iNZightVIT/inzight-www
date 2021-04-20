@@ -27,13 +27,13 @@ $papers = array(
         <ol>
             <?php
             foreach ($papers as $paper) {
-                $url = $paper["url"];
-                $authors = $paper["authors"];
-                $year = $paper["year"];
-                $title = $paper["title"];
-                $journal = $paper["journal"];
+                $p_url = $paper["url"];
+                $p_authors = $paper["authors"];
+                $p_year = $paper["year"];
+                $p_title = $paper["title"];
+                $p_journal = $paper["journal"];
                 echo "<li>";
-                echo "<a href='$url\">$authors ($year). $title. $journal.</a>";
+                echo "<a href='$p_url'>$p_authors ($p_year). $p_title. $p_journal.</a>";
                 echo "</li>";
             }
             ?>
