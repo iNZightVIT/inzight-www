@@ -13,6 +13,10 @@ $papers = array(
     )
 );
 
+echo '<pre>';
+dput($papers)
+echo '</pre>';
+
 ?>
 
 <div class="container">
