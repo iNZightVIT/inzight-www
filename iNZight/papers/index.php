@@ -13,9 +13,7 @@ $papers = array(
     )
 );
 
-echo '<pre>';
-var_dump($papers)
-echo '</pre>';
+
 
 ?>
 
