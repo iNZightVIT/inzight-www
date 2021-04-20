@@ -31,7 +31,7 @@ $papers = array(
                 print_r($paper);
                 echo "</pre>";
                 echo "<li>";
-                echo "<a href=\"$paper->url\">$paper->authors ($paper->year). $paper->title. $paper->journal.</a>";
+                echo "<a href=\"" . $paper->url . "\">$paper->authors ($paper->year). $paper->title. $paper->journal.</a>";
                 echo "</li>";
             }
             ?>
