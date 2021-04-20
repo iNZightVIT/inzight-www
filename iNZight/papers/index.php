@@ -4,7 +4,7 @@ require_once($rel . 'assets/includes/1-top_matter.php');
 require_once($rel . 'assets/includes/2-header.php');
 
 $papers = array(
-    array(
+    '2021_jss' => array(
         'title' => "iNZight: A Graphical User Interface for Data Visualisation and Analysis through R",
         'authors' => "Elliott, Wild, Barnett & Sporle",
         'year' => "2021",
@@ -13,11 +13,19 @@ $papers = array(
     )
 );
 
-
-
 ?>
 
 <div class="container">
+
+    <?php
+    if (isset($_GET['paper']) && isset($papers[$_GET['paper']])) {
+        // just show the one paper:
+        $paper = $papers[$_GET['paper']];
+    ?>
+
+    <h3><?php echo $paper['title']; ?></h3>
+
+    <?php } else { ?>
 
     <h3>Journal Articles</h3>
 
@@ -34,12 +42,13 @@ $papers = array(
                 $p_journal = $paper["journal"];
                 echo "<li>";
                 echo "$p_authors ($p_year). <a href=\"$p_url\"> $p_title.</a> $p_journal.";
-                // echo "<a href=\"$p_url\">$p_authors ($p_year). $p_title. $p_journal.</a>";
                 echo "</li>";
             }
             ?>
         </ol>
     </div>
+
+    <?php } ?>
 
 </div>
 
