@@ -32,9 +32,9 @@ $papers = array(
                 $p_year = $paper["year"];
                 $p_title = $paper["title"];
                 $p_journal = $paper["journal"];
-                echo "<li>";
-                echo "<a href=\"$p_url\">$p_authors ($p_year). $p_title. $p_journal.</a>";
-                echo "</li>";
+                // echo "<li>";
+                // echo "<a href=\"$p_url\">$p_authors ($p_year). $p_title. $p_journal.</a>";
+                // echo "</li>";
             }
             ?>
         </ol>
