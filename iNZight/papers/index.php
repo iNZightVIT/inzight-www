@@ -15,24 +15,25 @@ $papers = array(
 
 ?>
 
-<h3>Journal Articles</h3>
+<div class="container">
+
+    <h3>Journal Articles</h3>
 
 
-<div class="contents_list">
-  <div class="label">Table of Contents</div>
+    <div class="contents_list">
 
-  <ol>
-    <?php
-      foreach ($papers as $paper) {
-        echo "<li>";
-        echo "<a href='$paper->url'>$paper->authors ($paper->year). $paper->title. $paper->journal.</a>";
-        echo "</li>";
-      }
-    ?>
-  </ol>
+        <ol>
+            <?php
+            foreach ($papers as $paper) {
+                echo "<li>";
+                echo "<a href='$paper->url'>$paper->authors ($paper->year). $paper->title. $paper->journal.</a>";
+                echo "</li>";
+            }
+            ?>
+        </ol>
+    </div>
+
 </div>
-
-
 
 
 
