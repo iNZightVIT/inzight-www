@@ -27,6 +27,9 @@ $papers = array(
         <ol>
             <?php
             foreach ($papers as $paper) {
+                echo "<pre>";
+                print_r($paper);
+                echo "</pre>";
                 echo "<li>";
                 echo "<a href='$paper->url'>$paper->authors ($paper->year). $paper->title. $paper->journal.</a>";
                 echo "</li>";
