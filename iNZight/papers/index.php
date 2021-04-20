@@ -24,6 +24,11 @@ $papers = array(
     ?>
 
     <h3><?php echo $paper['title']; ?></h3>
+    <h5><?php echo $paper['authors']; ?></h5>
+
+    <p>
+        URL: <a href="<?php echo $paper['url']; ?>"><?php echo $paper['url']; ?></a>
+    </p>
 
     <?php } else { ?>
 
