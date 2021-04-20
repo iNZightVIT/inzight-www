@@ -14,7 +14,7 @@ $papers = array(
 );
 
 echo '<pre>';
-dput($papers)
+var_dump($papers)
 echo '</pre>';
 
 ?>
