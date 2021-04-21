@@ -8,7 +8,6 @@ include_once($rel . 'assets/libraries/md.php');
 
 <div class="container">
 
-  <h3>here</h3>
   <?php
     $Pd = new ParsedownExtra();
     $text = file_get_contents("info.Md");
