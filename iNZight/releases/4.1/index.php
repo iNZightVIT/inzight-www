@@ -6,13 +6,15 @@ include_once($rel . 'assets/libraries/md.php');
 
 ?>
 
-<div class="container row">
-  <div class="col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
-    <?php
-      $Pd = new ParsedownExtra();
-      $text = file_get_contents("info.Md");
-      echo $Pd->text($text);
-    ?>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
+      <?php
+        $Pd = new ParsedownExtra();
+        $text = file_get_contents("info.Md");
+        echo $Pd->text($text);
+      ?>
+    </div>
   </div>
 
 </div>
