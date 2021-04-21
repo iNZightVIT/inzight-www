@@ -2,6 +2,17 @@
 
 The latest release features a major overhaul of iNZight's handling of survey designs, as well as several other significant user interface changes. Our focus has been on making iNZight a development tool for researchers to use on a wide range of data, specifically from survey designs, in a way that minimises specialist skills (such as understanding the underlying structure of the survey).
 
+In addition, this release includes several much-needed interface redesigns of various components (details below) to make them more user friendly, and makes some fundamental changes to the inner workings in preparation for our upcoming release to CRAN. This will make iNZight available to research groups who may not be able to install the Desktop version on their organisation machines, but do have access to R and are able to install packages from CRAN.
+
+
+
+### Achnowledgement
+
+This release has been made possible by support from [Te Rourou Tātaritanga](https://terourou.org), a research group based at Victoria University of Wellington and the University of Auckland, and is funded by an MBIE Endeavour Grant, ref 62506 ENDRP. This funding support has allowed us to develop iNZight for use as a rapid research development tool with special emphasis on survey designs.
+
+
+***
+
 ### Major changes
 
 #### Surveys
@@ -32,13 +43,6 @@ The latest release features a major overhaul of iNZight's handling of survey des
 
 
 **Plus many other fixes and changes from other iNZight packages!**
-
-
-***
-
-## Achnowledgement
-
-This release has been made possible by support from [Te Rourou Tātaritanga](https://terourou.org), allowing us to develop iNZight for use as a rapid research development tool with special emphasis on survey designs. Te Rourou Tātaritanga is a research group based at Victoria University of Wellington and the University of Auckland, and is funded by an MBIE Endeavour Grant, ref 62506 ENDRP.
 
 
 
