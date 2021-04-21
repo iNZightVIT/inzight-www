@@ -1,6 +1,6 @@
 # iNZight 4.1
 
-The latest release features a major overhaul of iNZight's handling of survey designs, as well as several other significant user interface changes.
+The latest release features a major overhaul of iNZight's handling of survey designs, as well as several other significant user interface changes. Our focus has been on making iNZight a development tool for researchers to use on a wide range of data, specifically from survey designs, in a way that minimises specialist skills (such as understanding the underlying structure of the survey).
 
 ### Major changes
 
@@ -31,7 +31,15 @@ The latest release features a major overhaul of iNZight's handling of survey des
 * Removes superfluous colon (:) from package install list in R history
 
 
-**Plus many other fixes and changes from other iNZight packages**
+**Plus many other fixes and changes from other iNZight packages!**
+
+
+***
+
+## Achnowledgement
+
+This release has been made possible by support from [Te Rourou Tātaritanga](https://terourou.org), allowing us to develop iNZight for use as a rapid research development tool with special emphasis on survey designs. Te Rourou Tātaritanga is a research group based at Victoria University of Wellington and the University of Auckland, and is funded by an MBIE Endeavour Grant, ref 62506 ENDRP.
+
 
 
 ***
@@ -70,10 +78,3 @@ Changes that are visible to GUI users are in **bold**.
 * Adds new `form_class_intervals()` function.
 * Updates `import_survey()` to handle URL as the data argument.
 * Fixes bug in `reorderLevels(..., freq = TRUE)`.
-
-
-***
-
-## Support
-
-This release has been made possible by support from [Te Rourou Tātaritanga](https://terourou.org), allowing us to develop iNZight for use as a rapid research development tool.
