@@ -10,7 +10,6 @@ For those interested, a detailed list of changes is given below, including chang
 
 As always, if you have any questions about these changes, run into problems, or would like to leave feedback of any kind, please get in touch! We now have several ways of doing so: you can find us on Twitter ([@iNZightUoA](https://twitter.com/iNZightUoA)), Facebook ([iNZight](https://facebook.com/inzightuoa)), GitHub ([@iNZightVIT](https://github.com/iNZightVIT)), and e-mail ([inzight_support@stat.auckland.ac.nz](mailto:inzight_support@stat.auckland.ac.nz)).
 
-Heoi anō tāku mō nāianei / That's all for now.
 
 Ngā mihi nui,
 
