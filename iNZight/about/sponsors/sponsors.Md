@@ -22,7 +22,7 @@ We are proudly supported by &hellip;
   </a>
 
   <a href="https://terourou.org">
-    <img src="../../img/terourou_logo.png" alt="Te Rourou Tātaritanga">
+    <img src="https://terourou.org/img/logo.png" alt="Te Rourou Tātaritanga">
   </a>
 
   <a href="#">
