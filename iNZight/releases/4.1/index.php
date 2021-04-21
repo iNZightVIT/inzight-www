@@ -6,7 +6,7 @@ include_once($rel . 'assets/libraries/md.php');
 
 ?>
 
-<div class="container">
+<div class="markdown">
 
   <?php
     $Pd = new ParsedownExtra();
