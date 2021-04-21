@@ -1,8 +1,20 @@
 # iNZight 4.1
 
+Kia ora koutou katoa!
+
 The latest release features a major overhaul of iNZight's handling of survey designs, as well as several other significant user interface changes. Our focus has been on making iNZight a development tool for researchers to use on a wide range of data, specifically from survey designs, in a way that minimises specialist skills (such as understanding the underlying structure of the survey).
 
 In addition, this release includes several much-needed interface redesigns of various components (details below) to make them more user friendly, and makes some fundamental changes to the inner workings in preparation for our upcoming release to CRAN. This will make iNZight available to research groups who may not be able to install the Desktop version on their organisation machines, but do have access to R and are able to install packages from CRAN.
+
+For those interested, a detailed list of changes is given below, including changes made to the several of the underlying packages used by iNZight.
+
+As always, if you have any questions about these changes, run into problems, or would like to leave feedback of any kind, please get in touch! We now have several ways of doing so: you can find us on Twitter ([@iNZightUoA](https://twitter.com/iNZightUoA)), Facebook ([iNZight](https://facebook.com/inzightuoa)), GitHub ([@iNZightVIT](https://github.com/iNZightVIT)), and e-mail ([inzight_support@stat.auckland.ac.nz](mailto:inzight_support@stat.auckland.ac.nz)).
+
+Heoi anō tāku mō nāianei / That's all for now.
+
+Ngā mihi nui,
+
+The iNZight Team.
 
 
 ***
