@@ -8,7 +8,7 @@ In addition, this release includes several much-needed interface redesigns of va
 
 For those interested, a detailed list of changes is given below, including changes made to the several of the underlying packages used by iNZight.
 
-As always, if you have any questions about these changes, run into problems, or would like to leave feedback of any kind, please get in touch! We now have several ways of doing so: you can find us on Twitter ([@iNZightUoA](https://twitter.com/iNZightUoA)), Facebook ([iNZight](https://facebook.com/inzightuoa)), GitHub ([@iNZightVIT](https://github.com/iNZightVIT)), and e-mail ([inzight_support@stat.auckland.ac.nz](mailto:inzight_support@stat.auckland.ac.nz)).
+As always, if you have any questions about these changes, run into problems, or would like to leave feedback of any kind, please get in touch! We now have several ways of doing so: you can find us on Twitter ([@iNZightUoA](https://twitter.com/iNZightUoA)), Facebook ([iNZight](https://facebook.com/inzightuoa), including live chat on our website), GitHub ([@iNZightVIT](https://github.com/iNZightVIT)), and e-mail ([inzight_support@stat.auckland.ac.nz](mailto:inzight_support@stat.auckland.ac.nz)).
 
 
 Ngā mihi nui,
