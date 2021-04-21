@@ -6,7 +6,7 @@ In addition, this release includes several much-needed interface redesigns of va
 
 
 
-### Achnowledgement
+#### Achnowledgement
 
 This release has been made possible by support from [Te Rourou Tātaritanga](https://terourou.org), a research group based at Victoria University of Wellington and the University of Auckland, and is funded by an MBIE Endeavour Grant, ref 62506 ENDRP. This funding support has allowed us to develop iNZight for use as a rapid research development tool with special emphasis on survey designs.
 
