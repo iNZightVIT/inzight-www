@@ -1,6 +1,5 @@
 dirs <- c(
     "basics",
-    "interface",
     "file_options",
     "data_options",
     "variables",

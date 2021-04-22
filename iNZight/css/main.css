@@ -7917,10 +7917,10 @@ a img {
       .pager.navpanel li > a {
         display: block;
         float: none; } }
-  @media print {
-    .pager.navpanel {
-      display: none !important; } }
 
+@media print {
+  .navpanel {
+    display: none !important; } }
 .faq h1 {
   font-size: 1em;
   border-left: solid 3px #222;
