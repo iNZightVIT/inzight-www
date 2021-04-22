@@ -134,9 +134,6 @@ a img
     top: 0
     left: 0
 
-  @media print
-    display: none !important
-
 .extraInfo
   border: solid 1px black
   background: $comp-color-1
@@ -157,3 +154,7 @@ a img
   table
     border: none
     width: 100%
+
+@media print
+  .embed-responsive
+    display: none !important

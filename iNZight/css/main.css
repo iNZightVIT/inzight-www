@@ -7884,9 +7884,6 @@ a img {
     height: 100%;
     top: 0;
     left: 0; }
-  @media print {
-    .video-wrapper {
-      display: none !important; } }
 
 .extraInfo {
   border: solid 1px black;
@@ -7905,6 +7902,9 @@ a img {
     border: none;
     width: 100%; }
 
+@media print {
+  .embed-responsive {
+    display: none !important; } }
 .pager.navpanel {
   margin-top: 30px; }
   .pager.navpanel li > a {
