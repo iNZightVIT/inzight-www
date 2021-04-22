@@ -7704,7 +7704,10 @@ nav.navbar .navbar-nav > li:hover > .dropdown-menu {
 
 @media print {
   a[href]:after {
-    content: none !important; } }
+    content: none !important; }
+
+  .fb_dialog_content iframe {
+    display: none !important; } }
 .feature a.alert-info {
   margin-top: 40px;
   background: #cdeefa; }
