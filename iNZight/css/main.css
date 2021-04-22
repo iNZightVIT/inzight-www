@@ -7676,6 +7676,9 @@ nav.navbar .navbar-nav > li:hover > .dropdown-menu {
     .footer .thanks {
       text-align: right; } }
 
+@media print {
+  .footer {
+    display: none !important; } }
 .content {
   font-size: 1em;
   line-height: 1.5em;
