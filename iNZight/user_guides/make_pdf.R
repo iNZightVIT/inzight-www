@@ -21,8 +21,32 @@ pages <- unlist(
             pages <- names(jsonlite::fromJSON(cp))
             unlist(
                 lapply(pages[pages != "index"],
-                    function(page) file.path(base_url, dir, page))
+                    function(page) {
+                        if (grepl("\\.php$", page))
+                            file.path(base_url, dir, page)
+                        else
+                            paste0(file.path(base_url, dir), "?topic=", page)
+                    }
+                )
+
             )
         }
     )
 )
+
+dir.create("PDFguide")
+counter <- 1L
+for (page in pages) {
+    system(
+        sprintf("wkhtmltopdf --disable-external-links %s PDFguide/page%02d.pdf",
+            paste(pages[counter], collapse = " "),
+            counter
+        )
+    )
+    counter <- counter + 1L
+}
+
+files <- list.files("PDFguide", full.names = TRUE)
+system(sprintf("pdfunite %s iNZight_User_Guide.pdf", paste(files, collapse = " ")))
+
+unlink("PDFguide", TRUE, TRUE)
