@@ -7884,6 +7884,9 @@ a img {
     height: 100%;
     top: 0;
     left: 0; }
+  @media print {
+    .video-wrapper {
+      display: none !important; } }
 
 .extraInfo {
   border: solid 1px black;
@@ -7914,6 +7917,9 @@ a img {
       .pager.navpanel li > a {
         display: block;
         float: none; } }
+  @media print {
+    .pager.navpanel {
+      display: none !important; } }
 
 .faq h1 {
   font-size: 1em;

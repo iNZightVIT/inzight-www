@@ -19,16 +19,18 @@ pages <- unlist(
             cp <- file.path(dir, "contents.js")
             if (!file.exists(cp)) return()
             pages <- names(jsonlite::fromJSON(cp))
-            unlist(
-                lapply(pages[pages != "index"],
-                    function(page) {
-                        if (grepl("\\.php$", page))
-                            file.path(base_url, dir, page)
-                        else
-                            paste0(file.path(base_url, dir), "?topic=", page)
-                    }
+            c(
+                file.path(base_url, dir),
+                unlist(
+                    lapply(pages[pages != "index"],
+                        function(page) {
+                            if (grepl("\\.php$", page))
+                                file.path(base_url, dir, page)
+                            else
+                                paste0(file.path(base_url, dir), "?topic=", page)
+                        }
+                    )
                 )
-
             )
         }
     )
@@ -38,7 +40,7 @@ dir.create("PDFguide")
 counter <- 1L
 for (page in pages) {
     system(
-        sprintf("wkhtmltopdf --disable-external-links %s PDFguide/page%02d.pdf",
+        sprintf("wkhtmltopdf --print-media-type --disable-external-links %s PDFguide/page%02d.pdf",
             paste(pages[counter], collapse = " "),
             counter
         )
