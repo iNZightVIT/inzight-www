@@ -7702,6 +7702,9 @@ nav.navbar .navbar-nav > li:hover > .dropdown-menu {
   color: #333;
   border: solid 1px #ccc; }
 
+@media print {
+  a[href]:after {
+    content: none !important; } }
 .feature a.alert-info {
   margin-top: 40px;
   background: #cdeefa; }
