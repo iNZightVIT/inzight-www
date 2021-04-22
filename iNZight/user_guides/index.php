@@ -48,6 +48,11 @@ unset($subdirs["default"]);
     </ul>
   </div>
 
+  <p>
+    Download User Guides as a PDF (links and videos do not work):
+    <a href="iNZight_User_Guide.pdf">iNZight_User_Guide.pdf</a>.
+  </p>
+
 </div>
 
 
