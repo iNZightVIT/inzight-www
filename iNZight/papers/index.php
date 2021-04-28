@@ -7,7 +7,7 @@ $papers = array(
     '2021_jss' => array(
         'title' => "iNZight: A Graphical User Interface for Data Visualisation and Analysis through R",
         'authors' => "Elliott, Wild, Barnett & Sporle",
-        'year' => "2021 (in press)",
+        'year' => "2021 in press",
         'journal' => "Journal of Statistical Software",
         'url' => "https://github.com/iNZightVIT/papers/raw/main/2021_jss/index.pdf"
     )
