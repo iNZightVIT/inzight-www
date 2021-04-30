@@ -6,7 +6,7 @@ The latest release features a major overhaul of iNZight's handling of survey des
 
 In addition, this release includes several much-needed interface redesigns of various components (details below) to make them more user friendly, and makes some fundamental changes to the inner workings in preparation for our upcoming release to CRAN. This will make iNZight available to research groups who may not be able to install the Desktop version on their organisation machines, but do have access to R and are able to install packages from CRAN.
 
-For those interested, a detailed list of changes is given below, including changes made to the several of the underlying packages used by iNZight.
+For those interested, a detailed list of changes is given below, including changes made to several of the underlying packages used by iNZight.
 
 As always, if you have any questions about these changes, run into problems, or would like to leave feedback of any kind, please get in touch! We now have several ways of doing so: you can find us on Twitter ([@iNZightUoA](https://twitter.com/iNZightUoA)), Facebook ([iNZight](https://facebook.com/inzightuoa), including live chat on our website), GitHub ([@iNZightVIT](https://github.com/iNZightVIT)), and e-mail ([inzight_support@stat.auckland.ac.nz](mailto:inzight_support@stat.auckland.ac.nz)).
 
@@ -20,7 +20,7 @@ The iNZight Team.
 
 **Acknowledgement**
 
-This release has been made possible by support from [Te Rourou Tātaritanga](https://terourou.org), a research group based at Victoria University of Wellington, University of Auckland and iNZight Analytics Ltd, and is funded by an MBIE Endeavour Grant, ref 62506 ENDRP. This funding support, as well as support from iNZight Analytics Ltd,  has allowed us to develop iNZight for use as a rapid research development tool with special emphasis on survey designs.
+This release has been made possible by support from [Te Rourou Tātaritanga](https://terourou.org), a research group based in Victoria University of Wellington, University of Auckland, and iNZight Analytics Ltd, and is funded by an MBIE Endeavour Grant, ref 62506 ENDRP. This funding support, as well as support from iNZight Analytics Ltd,  has allowed us to develop iNZight for use as a rapid research development tool with special emphasis on survey designs.
 
 
 ***
