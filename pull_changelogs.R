@@ -12,7 +12,7 @@ pkgs <- c(
 
 for (pkg in pkgs) {
     # download NEWS.md -> iNZight/support/changelog/changes/{pkg}.Md
-    url <- sprintf("https://raw.githubusercontent.com/iNZightVIT/%s/master/NEWS.Md", pkg)
-    file <- sprintf("iNZight/support/changelog/changes/%s.Md", pkg)
+    url <- sprintf("https://raw.githubusercontent.com/iNZightVIT/%s/master/NEWS.*d", pkg)
+    file <- sprintf("iNZight/support/changelog/changes/%s.md", pkg)
     download.file(url, file, quiet = TRUE)
 }
