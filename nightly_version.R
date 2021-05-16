@@ -17,7 +17,7 @@ s[ld] <- sprintf(gsub("\".+\"", "\"%s\"", s[ld]),
 writeLines(s, f)
 
 # and grab DESCRIPTION file for DEV build
-url <- "https://raw.githubusercontent.com/iNZightVIT/iNZight/dev/NEWS.*d"
+url <- "https://raw.githubusercontent.com/iNZightVIT/iNZight/dev/NEWS.Md"
 changes <- readLines(url)
 changes <- changes[1:(min(grep("^#", changes)) - 1L)]
 
