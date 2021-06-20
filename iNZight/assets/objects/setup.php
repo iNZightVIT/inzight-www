@@ -28,8 +28,8 @@
   $inzight_version = "4.1.2";
   $release_date    = "17 May 2021";
 
-  $nightly_version = "4.1.1.20210620";
-  $nightly_date    = "20 June 2021";
+  $nightly_version = "4.1.1.20210621";
+  $nightly_date    = "21 June 2021";
 
   $inzight_online_link = "http://lite.docker.stat.auckland.ac.nz/";
   $inzight_repository_link = "http://r.docker.stat.auckland.ac.nz";
