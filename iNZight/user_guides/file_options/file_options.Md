@@ -73,8 +73,7 @@ ___With .csv files___, you can go further and include ___instructions telling iN
 Lines starting with \#' @ are interpreted by iNZight's smart read function as containing instructions of this form  
 
 __Example:__  
-We will use the following lines from the top of  the file at ... https://www.stat.auckland.ac.nz/~wild/data/test/Census%20at%20School-500&meta.csv
-to show how this works.
+We will use the following lines from the top of  the file at ... https://www.stat.auckland.ac.nz/~wild/data/test/CensusAtSchool-500-w-meta.csv to show how this works.
 
 \## --- Meta Data --- ##  
 \#' @factor gender[male,female]  
