@@ -3,4 +3,7 @@
 * fix bug introduced by readr 2.0 causing hang when grouping_mark is empty string
 * fix bug in Filter data window where cancel button did not work
 * fix typo in 'Expand Table' information prompt
+* create new `iNZWindow` 'superclass' to make it easier to create consistent pop-up windows (#375, @tmelliott). The following windows now inherit from `iNZWindow`: `iNZFilterWin`
+  * code only displayed when user preference specified (`iNZFilterWin`)
+* create new `iNZExportWin` to replace broken `iNZSaveWin` (#374, @tmelliott)
 
