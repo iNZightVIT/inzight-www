@@ -64,18 +64,24 @@ $("#inzightVersionVal").change(function() {
     $("#inzightVersionNumber").fadeIn();
     if ($(this).val() == "online") {
       //$("#inzightVersionNumberVal").val("online");
-      $("#inzightVersionNumber .help-block").html("Copy and paste the URL of your iNZightLite session");
+      $("#inzightVersionNumber .help-block").html("Copy and paste the URL of your iNZight Lite session");
     } else {
-      $("#inzightVersionNumber .help-block").html("e.g., '3.0' (displayed at the top of the iNZight window)");
+      $("#inzightVersionNumber .help-block").html(
+        "e.g., '4.1.3' (displayed at the top of the iNZight window)<br/>" +
+        "If you've just downloaded iNZight and can't install/start it, enter 'latest'."
+      );
     }
     if ($("#messageReason").val() == "Technical" && $(this).val() == "ruser") {
       $("#message label").append("<br>If you are experiencing issues with a particular R package, specify which one and the version you are running.")
     }
     $("#message").fadeIn();
-    if ($("#messageReason").val() == "Technical") {
-      // $("#logFile").fadeIn();
-    }
+    // if ($("#messageReason").val() == "Technical" && $(this).val() == "desktop") {
+      // conditional code is not necessarily correct :)
+    //   $("#logFile").fadeIn();
+    // }
     $("#screenshotImg").fadeIn();
+    $("#datasetAttach").fadeIn();
+    $("#classInfo").fadeIn();
     $("#userName").fadeIn();
     $("#userEmail").fadeIn();
     $("#areYouHuman").fadeIn();
