@@ -329,7 +329,7 @@ $captchaEnc = hashValue($captchaAns);
   </div>
 
 
-  <script src="<?php echo $rel; ?>js/contactform_new.js"></script>
+  <script src="<?php echo $rel; ?>js/contactform.js"></script>
 </div>
 
 
