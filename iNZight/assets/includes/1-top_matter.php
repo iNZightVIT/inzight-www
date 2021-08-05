@@ -3,19 +3,20 @@ var loc = window.location;
 url = "https://inzight.nz";
 url += loc.pathname.replace("~wild/iNZight/", "");
 
-if (log.pathname.match(url) == null) {
-  if (loc.search != undefined) {
-    url += loc.search;
-  }
-  if (loc.hash != undefined) {
-    url += loc.hash;
-  }
-
-  if (loc.pathname.match("/support/contact") == null &
-      loc.origin.match("localhost") == null) {
-    window.location.replace(url);
-  }
+if (loc.search != undefined) {
+  url += loc.search;
 }
+if (loc.hash != undefined) {
+  url += loc.hash;
+}
+
+// if NOT /support/contact AND not localhost AND not inzight.nz
+if (loc.pathname.match("/support/contact") == null &
+    loc.origin.match("localhost") == null &
+    log.pathname.match(url) == null) {
+  window.location.replace(url);
+}
+
 </script>
 
 <?php
