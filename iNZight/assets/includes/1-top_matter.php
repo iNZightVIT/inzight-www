@@ -10,12 +10,10 @@ if (loc.hash != undefined) {
   url += loc.hash;
 }
 
-// if (NOT /support/contact OR NOT inzight.nz) AND not localhost
-console.log(loc);
-if (loc.pathname.match(url) == null &
-    loc.pathname.match("/support/contact") == null &
-    loc.origin.match("localhost") == null) {
-  // window.location.replace(url);
+// if stat.auckland and NOT support/contact ...
+if (loc.location === "www.stat.auckland.ac.nz" &
+    loc.pathname.match("/support/contact") == null) {
+  window.location.replace(url);
 }
 
 </script>
