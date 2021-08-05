@@ -11,6 +11,7 @@ if (loc.hash != undefined) {
 }
 
 // if (NOT /support/contact OR NOT inzight.nz) AND not localhost
+console.log(loc);
 if (loc.pathname.match(url) == null &
     loc.pathname.match("/support/contact") == null &
     loc.origin.match("localhost") == null) {

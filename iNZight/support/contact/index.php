@@ -1,6 +1,8 @@
 <?php
 
-header("Location: https://stat.auckland.ac.nz/~wild/iNZight/support/contact/");
+if ($_SERVER['HTTP_HOST'] === "inzight.nz") {
+  header("Location: https://stat.auckland.ac.nz/~wild/iNZight/support/contact/");
+}
 
 $submit = false;
 
