@@ -10,10 +10,9 @@ if (loc.hash != undefined) {
   url += loc.hash;
 }
 
-// if NOT /support/contact AND not localhost AND not inzight.nz
-if (loc.pathname.match("/support/contact") == null &
-    loc.origin.match("localhost") == null &
-    log.pathname.match(url) == null) {
+// if (NOT /support/contact OR NOT inzight.nz) AND not localhost
+if (log.pathname.match(url) == null | loc.pathname.match("/support/contact") == null) &
+    loc.origin.match("localhost") == null) {
   window.location.replace(url);
 }
 
