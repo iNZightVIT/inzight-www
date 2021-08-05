@@ -1,4 +1,9 @@
 {
+  "lite": {
+    "title": "iNZight Lite",
+    "desc": "A separate FAQ for iNZight Lite is found here.",
+    "url": "lite"
+  },
   "download": {
     "title": "Download and Installation",
     "desc" : "Can't download or open the file? Unable to start iNZight? Try here!",
@@ -37,10 +42,6 @@
   "time_series" : {
     "title" : "Time Series Module"
   },
-  "lite-sheets" : {
-    "title" : "Making online data files open up in iNZight Lite (via web-links)",
-      "desc" : "Adding visualisation capabilities to your data repositories, integration with Google sheets, ..."
-},
   "vit" : {
     "title" : "VIT: Visual Inference Tools",
     "desc" : "Common issues with the VIT part of iNZightVIT."

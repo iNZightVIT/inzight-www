@@ -1,5 +1,5 @@
 <?php
-$rel = "../../";
+$rel = "../../../";
 if (isset($_GET["section"])) {
   $faqurl = "./";
 } else {
@@ -43,7 +43,7 @@ if (isset($_GET["section"])) {
 }
 
 
-$crumbs = array("Support" => "../", "FAQ" => $faqurl);
+$crumbs = array("Support" => "../", "FAQ" => "../", "Lite" => $faqurl);
 require_once($rel . 'assets/includes/1-top_matter.php');
 require_once($rel . 'assets/includes/2-header.php');
 
@@ -68,7 +68,7 @@ require_once($rel . 'assets/includes/2-header.php');
 ?>
 
 <h3>
-  iNZight FAQ<?php
+  iNZight Lite FAQ<?php
     if ($sec) {
       echo ": " . $section["title"];
     } else {
@@ -85,8 +85,9 @@ require_once($rel . 'assets/includes/2-header.php');
         echo $section["desc"];
       }
     } else { ?>
-      If you're having trouble with iNZight, this should be your first stop.
-      There are some issues we know about, and offer solutions in the following pages. <br/>
+      If you're having trouble with iNZight Lite, this should be your first stop.
+      There are some issues we know about, and offer solutions in the following pages. <br /><br />
+      For issues with iNZight Desktop, go to the <a href="../">dedicated FAQ</a>.
   <?php } ?>
 </p>
 

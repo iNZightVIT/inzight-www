@@ -1,0 +1,10 @@
+{
+  "import_data" : {
+    "title" : "Importing Data",
+    "desc" : "Having trouble importing your data into iNZight? We might have a solution for you."
+  },
+  "lite-sheets" : {
+    "title" : "Making online data files open up in iNZight Lite (via web-links)",
+    "desc" : "Adding visualisation capabilities to your data repositories, integration with Google sheets, ..."
+  }
+}
