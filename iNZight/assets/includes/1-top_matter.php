@@ -11,7 +11,7 @@ if (loc.hash != undefined) {
 }
 
 // if stat.auckland and NOT support/contact ...
-if (loc.location === "www.stat.auckland.ac.nz" &
+if (loc.hostname === "www.stat.auckland.ac.nz" &
     loc.pathname.match("/support/contact") == null) {
   window.location.replace(url);
 }
