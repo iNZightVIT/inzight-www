@@ -2,16 +2,19 @@
 var loc = window.location;
 url = "https://inzight.nz";
 url += loc.pathname.replace("~wild/iNZight/", "");
-if (loc.search != undefined) {
-  url += loc.search;
-}
-if (loc.hash != undefined) {
-  url += loc.hash;
-}
 
-if (loc.pathname.match("/support/contact") == null |
-    loc.origin.match("localhost") == null) {
-  window.location.replace(url);
+if (log.pathname.match(url) == null) {
+  if (loc.search != undefined) {
+    url += loc.search;
+  }
+  if (loc.hash != undefined) {
+    url += loc.hash;
+  }
+
+  if (loc.pathname.match("/support/contact") == null &
+      loc.origin.match("localhost") == null) {
+    window.location.replace(url);
+  }
 }
 </script>
 
