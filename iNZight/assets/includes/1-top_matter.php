@@ -11,7 +11,7 @@ if (loc.hash != undefined) {
 
 if (loc.pathname.match("/support/contact") == null &
     loc.origin.match("localhost") == null) {
-  // window.location.replace(url);
+  window.location.replace(url);
 }
 </script>
 
