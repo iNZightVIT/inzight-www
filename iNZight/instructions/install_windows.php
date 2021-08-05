@@ -16,7 +16,7 @@
       <div class="note">
         <b>NOTE:</b>
         We don't have a Microsoft developers account for them to make iNZight a "trusted application", so you'll likely get a security warning (shown above).
-        So long as the download comes from "https://stat.auckland.ac.nz/" or "https://r.docker.stat.auckland.ac.nz", you are fine.
+        So long as the download comes from "https://inzight.nz/" or "https://r.docker.stat.auckland.ac.nz", you are fine.
       </div>
     </li>
 

@@ -1,5 +1,5 @@
 <?php
-  $baseURL = "https://www.stat.auckland.ac.nz/~wild/iNZight/";   // This should be the main host ...
+  $baseURL = "https://inzight.nz/";   // This should be the main host ...
   $download_dir = "https://r.docker.stat.auckland.ac.nz/downloads/";
   $amazon = "https://futurelearn.s3.amazonaws.com/";
   $include_secondary_links = false;
@@ -25,8 +25,11 @@
     "linux" => "https://raw.githubusercontent.com/iNZightVIT/dev/master/scripts/install_inzight.sh"
   );
 
-  $inzight_version = "4.0.2";
-  $release_date    = " 3 December 2020";
+  $inzight_version = "4.1.3";
+  $release_date    = "16 July 2021";
+
+  $nightly_version = "4.1.3.20210805";
+  $nightly_date    = " 5 August 2021";
 
   $inzight_online_link = "http://lite.docker.stat.auckland.ac.nz/";
   $inzight_repository_link = "http://r.docker.stat.auckland.ac.nz";

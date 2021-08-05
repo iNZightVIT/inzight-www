@@ -13,9 +13,12 @@ jobs:
 
       - name: Update release version
         run: Rscript website_version.R
-      
+
       - name: Update changelogs
         run: Rscript pull_changelogs.R
+
+      - name: Update nightly build version
+        run: Rscript nightly_version.R
 
       - name: Commit changes
         run: |
