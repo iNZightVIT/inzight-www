@@ -1,4 +1,4 @@
-# No graph and/or summary show up
+# No graph and/or summary show up {#clear-cache}
 
 Sometimes you need to clear the cache on your browser.
 
