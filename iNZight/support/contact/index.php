@@ -1,6 +1,6 @@
 <?php
 
-// header("Location: https://stat.auckland.ac.nz/~wild/iNZight/support/contact/");
+header("Location: https://stat.auckland.ac.nz/~wild/iNZight/support/contact/");
 
 $submit = false;
 
