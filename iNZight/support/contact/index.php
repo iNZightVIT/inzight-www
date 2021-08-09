@@ -6,6 +6,7 @@ if ($_SERVER['HTTP_HOST'] === "inzight.nz") {
   if (isset($_GET['v'])) {
     $url .= "?v=" $_GET['v'];
   }
+  echo $url;
   header("Location: " . $url);
 }
 
