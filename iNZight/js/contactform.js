@@ -32,6 +32,9 @@ $("#messageReason").change(function() {
       $("#checkGuides").fadeOut();
       $("#checkFAQ").fadeOut();
       $("#inzightVersion").fadeIn();
+      if ($("#inzightVersionVal").val() != "") {
+        $("#inzightVersionVal").change();
+      }
       break;
   }
 });
@@ -65,7 +68,7 @@ $("#inzightVersionVal").change(function() {
     });
     $("#inzightVersionDetail").fadeIn();
     $("#inzightVersionNumber").fadeIn();
-    if ($(this).val() == "online") {
+    if ($(this).val() == "lite") {
       //$("#inzightVersionNumberVal").val("online");
       $("#inzightVersionNumber .help-block").html("Copy and paste the URL of your iNZight Lite session");
     } else {
