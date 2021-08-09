@@ -1,7 +1,12 @@
 <?php
 
 if ($_SERVER['HTTP_HOST'] === "inzight.nz") {
-  header("Location: https://stat.auckland.ac.nz/~wild/iNZight/support/contact/");
+  $url = "https://stat.auckland.ac.nz/~wild/iNZight/support/contact/";
+
+  if (isset($_GET['v'])) {
+    $url .= "?v=" $_GET['v'];
+  }
+  header("Location: $url");
 }
 
 $version = "";

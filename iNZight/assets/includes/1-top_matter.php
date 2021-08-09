@@ -10,6 +10,8 @@ if (loc.hash != undefined) {
   url += loc.hash;
 }
 
+// any other stuff...
+
 // if stat.auckland and NOT support/contact ...
 if (loc.hostname === "www.stat.auckland.ac.nz" &
     loc.pathname.match("/support/contact") == null) {
