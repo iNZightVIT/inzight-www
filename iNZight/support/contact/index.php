@@ -4,9 +4,9 @@ if ($_SERVER['HTTP_HOST'] === "inzight.nz") {
   $url = "https://stat.auckland.ac.nz/~wild/iNZight/support/contact/";
 
   if (isset($_GET['v'])) {
-    $url .= "?v=" $_GET['v'];
+    $url .= "?v=" . $_GET['v'];
   }
-  echo $url;
+
   header("Location: " . $url);
 }
 
