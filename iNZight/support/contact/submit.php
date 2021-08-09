@@ -1,7 +1,7 @@
 <?php
 
 // THE EMAIL ADDRESS TO SEND BUG REPORTS TO:
-if ($p["inzight_version"] == "online") {
+if ($p["inzight_version"] == "lite") {
   $sendto = "inzightlite_support@stat.auckland.ac.nz";
 } else {
   $sendto = "inzight_support@stat.auckland.ac.nz";
@@ -47,7 +47,7 @@ switch($inz) {
     $os = " Mac OS X 10." . $inzdet;
     $subject .= $os;
     break;
-  case "online":
+  case "lite":
     $subject .= " Lite";
     break;
   case "ruser":
@@ -57,10 +57,10 @@ switch($inz) {
 }
 
 $ver = clean_str($p["inzight_version_number"]);
-if (!preg_match("/^v/", $ver) & $inz != "online") {
+if (!preg_match("/^v/", $ver) & $inz != "lite") {
   $ver = "v" . $ver;
 }
-if ($inz != "online") {
+if ($inz != "lite") {
   $subject .= " - iNZight " . $ver;
 }
 
@@ -120,7 +120,7 @@ if (strlen($email) > 0) {
   } else {
     $rts .= $email;
   }
-  if ($p["inzight_version"] == "online") {
+  if ($p["inzight_version"] == "lite") {
     $rts .= ", iNZight Lite Support <" . $sendto . ">";
   } else {
     $rts .= ", iNZight Support <" . $sendto . ">";
@@ -147,7 +147,7 @@ if (strlen($email) > 0) {
   $message .= "No reply email supplied.<br>";
 }
 
-if ($inz == "online") {
+if ($inz == "lite") {
   $message .= "iNZight Lite accessed from <b>" . $ver . "</b> using <b>" . $inzdet . "</b><br>";
 } else {
   $message .= "Installation Info: " . $os . ", iNZight " . $ver . "<br>";

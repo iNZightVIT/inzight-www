@@ -36,7 +36,7 @@ switch ($v) {
     <?php
     break;
 
-  case "online":
+  case "lite":
     ?>
     <label>What device and browser are you using?</label>
     <input type="text" class="form-control" name="inzight_version_detail_val" id="inzightVersionDetailVal"

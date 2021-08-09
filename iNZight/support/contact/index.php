@@ -4,6 +4,11 @@ if ($_SERVER['HTTP_HOST'] === "inzight.nz") {
   header("Location: https://stat.auckland.ac.nz/~wild/iNZight/support/contact/");
 }
 
+$version = "";
+if (isset($_GET["v"])) {
+  $version = $_GET["v"];
+}
+
 $submit = false;
 
 $rel = "../../";
@@ -117,7 +122,7 @@ if (isset($_POST["submit"])) {
     "message_reason" => "",
     "userguides" => "",
     "faqs" => "",
-    "inzight_version" => "",
+    "inzight_version" => $version,
     "inzight_version_detail_val" => "",
     "inzight_version_number" => "",
     "message_content" => "",
@@ -199,7 +204,7 @@ $captchaEnc = hashValue($captchaAns);
           <label>
             <input type="checkbox" name="faqs" id="checkFAQBox"
             <?php if ($p["faqs"] == "on") { echo "checked"; }?>>
-            I've looked to see if my question is answered in the <a href="../faq/">the FAQ</a>
+            I've looked to see if my question is answered in the <a href="../faq/<?php echo $version === "lite" ? "lite" : ""; ?>">the FAQ</a>
           </label>
         </div>
 
@@ -213,7 +218,7 @@ $captchaEnc = hashValue($captchaAns);
             <option value="">Choose ...</option>
             <option value="windows" <?php if ($p["inzight_version"] == "windows") { echo "selected"; }?>>iNZight Desktop on Windows</option>
             <!-- <option value="mac" <?php if ($p["inzight_version"] == "mac") { echo "selected"; }?>>Mac (desktop)</option> -->
-            <option value="online" <?php if ($p["inzight_version"] == "online") { echo "selected"; }?>>iNZight Lite (online)</option>
+            <option value="lite" <?php if ($p["inzight_version"] == "lite") { echo "selected"; }?>>iNZight Lite (online)</option>
             <option value="ruser" <?php if ($p["inzight_version"] == "ruser") { echo "selected"; }?>>Manual R Install (incl. Linux)</option>
           </select>
         </div>

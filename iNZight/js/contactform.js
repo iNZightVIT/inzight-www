@@ -50,6 +50,9 @@ $("#checkGuidesBox").change(function() {
 $("#checkFAQBox").change(function() {
   if ($(this).is(':checked') && ($("#messageReason").val() == "Technical" || $("#checkGuidesBox").is(":checked"))) {
     $("#inzightVersion").fadeIn();
+    if ($("#inzightVersionVal").val() != "") {
+      $("#inzightVersionVal").change();
+    }
   } else {
     $("#inzightVersion").fadeOut();
   }
