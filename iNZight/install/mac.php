@@ -74,17 +74,14 @@ require_once($rel . 'assets/functions/filesize.php');
           <h4>3. Install the Lite application</h4>
           <p>
             Download and unzip the latest Lite application ZIP archive:
-            <a href="https://github.com/iNZightVIT/Lite/archive/refs/heads/master.zip">https://github.com/iNZightVIT/Lite/archive/refs/heads/master.zip</a>. Extract the files to anywhere (maybe Downloads or Documents) just make sure you know the path.
+            <a href="https://github.com/iNZightVIT/Lite/archive/refs/heads/master.zip">https://github.com/iNZightVIT/Lite/archive/refs/heads/master.zip</a>. Extract the files and move the <strong>Lite-master</strong> folder to your Documents folder. <em>If you save them somewhere else, you'll need to adjust the path in the following step!!</em>.
           </p>
 
           <h4>4. Run iNZight Lite</h4>
           <p>
             Open R (launch it if you closed it earlier). Copy and paste the following:
           </p>
-          <p><pre>shiny::runApp(file.choose())</pre></p>
-          <p>
-            In the window the pops up, look for the directory called "Lite-master" that you extracted earlier. Choose <strong>The folder</strong> and click Open.
-          </p>
+          <p><pre>shiny::runApp('~/Documents/Lite-master')</pre></p>
           <p>
             The app should open automatically in your browser. If not, you'll see the URL printed in the R Console, something like: <pre>Listening on http://127.0.0.1:7184</pre>.
           </p>
