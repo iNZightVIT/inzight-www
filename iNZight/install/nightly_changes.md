@@ -48,4 +48,9 @@
   - "View dataset" and "View variables" buttons replaced by icons
   - Spreadsheet view is paginated, so even large datasets can now be viewed
 - Fix Gtk-critcal error (#141)
+- Control Widget:
+  - Enable/disable buttons and dropdowns based on what application state
+  - Refactor layout of Get Summary / Get Inference buttons (added to `iNZCtrlWidget`)
+  - Add Subset-filter button to quickly subset the dataset based on slider values
+- Change in wording of "Delete dataset" dialog to clarify what's happening
 
