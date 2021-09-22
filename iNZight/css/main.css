@@ -9202,7 +9202,7 @@ details > summary {
   cursor: pointer;
 }
 details > summary:hover {
-  border-bottom: dotted 1px black;
+  font-weight: bold;
 }
 
 .image-row img {
