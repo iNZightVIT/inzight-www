@@ -54,4 +54,5 @@
   - Refactor layout of Get Summary / Get Inference buttons (added to `iNZCtrlWidget`)
   - Add Subset-filter button to quickly subset the dataset based on slider values
 - Change in wording of "Delete dataset" dialog to clarify what's happening
+- Changing values in the data view updates R Code History
 
