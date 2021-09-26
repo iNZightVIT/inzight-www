@@ -64,7 +64,7 @@ require_once($rel . 'assets/functions/filesize.php');
           <p><pre>install.packages(
   c(
     "iNZightPlots", "iNZightRegression",  "iNZightTS", "iNZightMR", "iNZightTools", "iNZightMaps",
-    "pairs", "GGally","RJSONIO", "sas7bdat", "shinydashboard", "shinyjs", "shinyWidgets",
+    "pairs", "GGally","RJSONIO", "sas7bdat", "shiny", "shinydashboard", "shinyjs", "shinyWidgets",
     "shinyalert", "shinycssloaders", "DT"
   ),
   repos = c("https://r.docker.stat.auckland.ac.nz", "https://cran.rstudio.com"),
