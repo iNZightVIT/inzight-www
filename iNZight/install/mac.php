@@ -61,7 +61,8 @@ require_once($rel . 'assets/functions/filesize.php');
           <p>
             Copy and paste the following commands into R and press Enter to run them. This will install the named packages.
           </p>
-          <p><pre>install.packages(
+          <p><pre>options(install.packages.compile.from.source = "never")
+install.packages(
   c(
     "iNZightPlots", "iNZightRegression",  "iNZightTS", "iNZightMR", "iNZightTools", "iNZightMaps",
     "GGally","RJSONIO", "sas7bdat", "shiny", "shinydashboard", "shinyjs", "shinyWidgets",
