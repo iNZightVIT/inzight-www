@@ -34,8 +34,7 @@ $oss = array("Windows", "Mac", "Linux");
       <dt>Latest Version:</dt>
       <dd>
         <?php echo $inzight_version; ?>
-        <a href="https://github.com/iNZightVIT/iNZight/releases/tag/<?php echo $inzight_version; ?>"
-          class="small">(what's new?)</a>
+        <a href="support/changelog/?pkg=iNZight" class="small">(what's new?)</a>
       </dd>
 
       <dt>Release Date:</dt>
