@@ -61,4 +61,5 @@
 - Add some extra space around plot toolbar in pop-out mode
 - Fix tooltip for 'Refresh Plot' icon
 - Simulate P-value checkbox removed for survey chi-square test
+- fix bug in disabling of log axes in scatter plots
 
