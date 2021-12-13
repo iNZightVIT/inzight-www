@@ -10,6 +10,8 @@ pkgs <- c(
     "iNZightTools"
 )
 
+install.packages("RCurl")
+
 for (pkg in pkgs) {
     # download NEWS.md -> iNZight/support/changelog/changes/{pkg}.md
     url <- sprintf("https://raw.githubusercontent.com/iNZightVIT/%s/master/NEWS.md", pkg)
