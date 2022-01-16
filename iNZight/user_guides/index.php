@@ -40,6 +40,13 @@ unset($subdirs["default"]);
     <hr>
     <ul>
       <li>
+        <a href="/docs/transition-to-4.2/">Transitioning to iNZight 4.2</a>
+        <p class="desc">
+          iNZight 4.2 includes some visual changes to the interface, so here's a quick overview
+          of them.
+        </p>
+      </li>
+      <li>
         <a href="https://www.stat.auckland.ac.nz/~wild/d2i/exercises/">Data to insight Exercises</a>
         <p class="desc">
           A set of introductory Exercises for learning to use iNZight, iNZight Lite and R
