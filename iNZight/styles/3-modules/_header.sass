@@ -1,6 +1,6 @@
 nav.navbar
   .navbar-brand
-    padding: 10px 0 5px
+    padding: 10px 0 8px
     img
       height: 100%
 
@@ -14,3 +14,7 @@ nav.navbar
     &:hover
       > .dropdown-menu
         display: block
+
+@media print
+  nav.navbar
+    display: none !important

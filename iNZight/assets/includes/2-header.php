@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="<?php echo $rel; ?>">
-        <img alt="iNZight" src="<?php echo $rel; ?>img/inzight_transp.png">
+        <img alt="iNZight" src="<?php echo $rel; ?>img/inzight_logo.png">
       </a>
     </div>
 

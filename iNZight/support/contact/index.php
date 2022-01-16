@@ -1,6 +1,19 @@
 <?php
 
-header("Location: https://stat.auckland.ac.nz/~wild/iNZight/support/contact/");
+if ($_SERVER['HTTP_HOST'] === "inzight.nz") {
+  $url = "https://stat.auckland.ac.nz/~wild/iNZight/support/contact/";
+
+  if (isset($_GET['v'])) {
+    $url .= "?v=" . $_GET['v'];
+  }
+
+  header("Location: " . $url);
+}
+
+$version = "";
+if (isset($_GET["v"])) {
+  $version = $_GET["v"];
+}
 
 $submit = false;
 
@@ -12,6 +25,7 @@ $inzightVersionNumberError = "";
 $messageContentError = "";
 $fileUploadError = "";
 $imageUploadError = "";
+$dataUploadError = "";
 $userEmailError = "";
 $captchaError = "";
 $errors = false;
@@ -31,6 +45,8 @@ if (isset($_POST["submit"])) {
     "message_content" => htmlspecialchars($_POST["message_content"]),
     "log_file" => $_FILES['inzight_log'],
     "screenshot" => $_FILES['screenshot'],
+    "dataset" => $_FILES['dataset'],
+    "class_info" => trim(htmlspecialchars($_POST["class_info"])),
     "user_name" => trim(htmlspecialchars($_POST["user_name"])),
     "user_email" => trim(htmlspecialchars($_POST["user_email"]))
   );
@@ -72,6 +88,11 @@ if (isset($_POST["submit"])) {
     $imageUploadError = "Please upload a PNG, JPEG, or GIF screenshot.";
   }
 
+  if ($p['dataset']['error'] > 0) {
+
+  }
+
+
   // Now validate using PHP (incase they get past jQuery)
   if (strlen($p["inzight_version_number"]) < 1) {
     $inzightVersionNumberError = "Please specify which version of iNZight you are using.";
@@ -107,12 +128,14 @@ if (isset($_POST["submit"])) {
     "message_reason" => "",
     "userguides" => "",
     "faqs" => "",
-    "inzight_version" => "",
+    "inzight_version" => $version,
     "inzight_version_detail_val" => "",
     "inzight_version_number" => "",
     "message_content" => "",
     "log_file" => "",
     "screenshot" => "",
+    "dataset" => "",
+    "class_info" => "",
     "user_name" => "",
     "user_email" => ""
   );
@@ -187,7 +210,7 @@ $captchaEnc = hashValue($captchaAns);
           <label>
             <input type="checkbox" name="faqs" id="checkFAQBox"
             <?php if ($p["faqs"] == "on") { echo "checked"; }?>>
-            I've looked to see if my question is answered in the <a href="../faq/">the FAQ</a>
+            I've looked to see if my question is answered in the <a href="../faq/<?php echo $version === "lite" ? "lite" : ""; ?>">the FAQ</a>
           </label>
         </div>
 
@@ -195,13 +218,13 @@ $captchaEnc = hashValue($captchaAns);
       <div class="col-md-6">
         <!-- VERSION TYPE OF INZIGHT -->
         <div class="question form-group <?php if (!$submit) {echo "hideme";} ?>" id="inzightVersion">
-          <label>Which platform are you using?</label>
+          <label>Which iNZight platform are you using?</label>
 
           <select name="inzight_version" class="form-control" id="inzightVersionVal">
             <option value="">Choose ...</option>
-            <option value="windows" <?php if ($p["inzight_version"] == "windows") { echo "selected"; }?>>Windows (desktop)</option>
-            <option value="mac" <?php if ($p["inzight_version"] == "mac") { echo "selected"; }?>>Mac (desktop)</option>
-            <option value="online" <?php if ($p["inzight_version"] == "online") { echo "selected"; }?>>iNZight Lite (online)</option>
+            <option value="windows" <?php if ($p["inzight_version"] == "windows") { echo "selected"; }?>>iNZight Desktop on Windows</option>
+            <!-- <option value="mac" <?php if ($p["inzight_version"] == "mac") { echo "selected"; }?>>Mac (desktop)</option> -->
+            <option value="lite" <?php if ($p["inzight_version"] == "lite") { echo "selected"; }?>>iNZight Lite (online)</option>
             <option value="ruser" <?php if ($p["inzight_version"] == "ruser") { echo "selected"; }?>>Manual R Install (incl. Linux)</option>
           </select>
         </div>
@@ -217,12 +240,13 @@ $captchaEnc = hashValue($captchaAns);
 
         <!-- VERSION NUMBER OF INZIGHT -->
         <div class="question form-group has-feedback <?php if (!$submit) {echo "hideme";} ?>" id="inzightVersionNumber">
-          <label>What version of iNZight are you running?</label>
+          <label>What version are you using? </label>
 
           <input type="text" class="form-control" name="inzight_version_number" id="inzightVersionNumberVal"
                  value="<?php echo $p["inzight_version_number"]; ?>">
           <span class="text-danger glyphicon glyphicon-asterisk form-control-feedback"></span>
-          <span class="help-block">e.g., '3.0' (displayed at the top of the iNZight window)</span>
+          <span class="help-block"></span>
+
 
           <p class="error"><?php echo $inzightVersionNumberError; ?></p>
         </div>
@@ -255,11 +279,25 @@ $captchaEnc = hashValue($captchaAns);
           <p class="error"><?php echo $imageUploadError; ?></p>
         </div>
 
+        <!-- data set -->
+        <div class="form-group <?php if (!$submit) { echo "hideme"; } ?>" id="datasetAttach">
+            <label for="dataset">If possible, please attach the dataset.</label>
+            <p>We can only accept files less than 5MB.</p>
+            <input type="file" class="form-control" name="dataset" />
+            <p class="error"><?php echo $dataUploadError; ?></p>
+        </div>
+
 
       </div>
 
       <!-- <div class="col-md-6 col-md-offset-6"> -->
       <div class="col-md-6">
+        <div class="question form-group <?php if (!$submit) {echo "hideme";} ?>" id="classInfo">
+          <label>If you're using iNZight for class work, please enter your school/university name and course name.</label>
+          <input type="text" class="form-control" name="class_info" id="classInfoVal" maxlength="50"
+                 value="<?php echo $p["class_info"]; ?>">
+        </div>
+
         <!-- USER INFO -->
         <div class="question form-group <?php if (!$submit) {echo "hideme";} ?>" id="userName">
           <p>If you would like a reply to your message, please provide the following information.</p>

@@ -17,8 +17,16 @@ We are proudly supported by &hellip;
     <img src="../../img/minedu_logo.png" alt="Ministry of Education">
   </a>
 
-  <!-- <a href="https://abs.gov.au">
+  <a href="https://abs.gov.au">
     <img src="https://oversixtydev.blob.core.windows.net/media/7831220/1.jpg" alt="Australian Bureau of Statistics">
-  </a> -->
+  </a>
+
+  <a href="https://terourou.org">
+    <img src="https://terourou.org/img/logo.png" alt="Te Rourou Tātaritanga">
+  </a>
+
+  <a href="#">
+    <img src="../../img/inzight_analytics_logo.png" alt="iNZight Analytics">
+  </a>
 </div>
 ///

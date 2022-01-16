@@ -1,7 +1,7 @@
 <h4>To Install</h4>
 
 <p>
- 
+
   <ol>
 
     <li>
@@ -16,7 +16,7 @@
       <div class="note">
         <b>NOTE:</b>
         We don't have a Microsoft developers account for them to make iNZight a "trusted application", so you'll likely get a security warning (shown above).
-        So long as the download comes from "https://stat.auckland.ac.nz/" or "https://r.docker.stat.auckland.ac.nz", you are fine.
+        So long as the download comes from "https://inzight.nz/" or "https://r.docker.stat.auckland.ac.nz", you are fine.
       </div>
     </li>
 
@@ -51,7 +51,7 @@
   <p>
     We recommend you keep iNZight up-to-date,
     as we are frequently fixing bugs and making things better.<br>
-    To see whats changed, <a href="support/changelog/?pkg=iNZight">check out the version history</a>.
+    To see whats changed, <a href="/support/changelog/?pkg=iNZight">check out the version history</a>.
   </p>
 
   <p>

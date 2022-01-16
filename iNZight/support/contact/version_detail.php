@@ -11,9 +11,9 @@ if (isset($_POST["v"])) {
 switch ($v) {
   case "windows":
     ?>
-    <label>Which version of Windows are you using?</label>
+    <!--<label>Which version of Windows are you using?</label>
     <input type="text" class="form-control" name="inzight_version_detail_val" id="inzightVersionDetailVal" maxlength="10"
-           value="<?php echo $v2; ?>">
+           value="<?php echo $v2; ?>">-->
     <?php
     break;
 
@@ -36,9 +36,9 @@ switch ($v) {
     <?php
     break;
 
-  case "online":
+  case "lite":
     ?>
-    <label>What are you using to use iNZight Lite? Specify browser if applicable.</label>
+    <label>What device and browser are you using?</label>
     <input type="text" class="form-control" name="inzight_version_detail_val" id="inzightVersionDetailVal"
            value="<?php echo $v2; ?>">
     <span class="help-block">e.g., "Apple iPad - Safari", "Chromebook", "Windows 7 - Firefox"</span>

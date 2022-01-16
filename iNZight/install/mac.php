@@ -19,6 +19,7 @@ require_once($rel . 'assets/functions/filesize.php');
 <div>
     <ul class="nav nav-tabs" role="tablist" id="linuxTabs">
         <li role="presentation" class="active"><a href="#macos-lite" role="tab" data-toggle="tab">iNZight Lite</a></li>
+        <li role="presentation"><a href="#macos-lite-local" role="tab" data-toggle="tab">Install Lite locally</a></li>
         <!--<li role="presentation"><a href="#macos-wine" role="tab" data-toggle="tab">Wine</a></li>-->
         <!--<li role="presentation"><a href="#macos-r" role="tab" data-toggle="tab">Homebrew + R</a></li>-->
     </ul>
@@ -31,6 +32,66 @@ require_once($rel . 'assets/functions/filesize.php');
           </p>
 
           <p><a href="https://lite.docker.stat.auckland.ac.nz">Try iNZight Lite</a></p>
+        </div>
+
+        <div role="tabpanel" class="tab-pane" id="macos-lite-local">
+          <p>
+            It is possible to install and run iNZight Lite locally. This requires that you install R along with some necessary pacakges, and download the Lite application files.
+          </p>
+
+          <h4>1. Install R</h4>
+          <p>
+            R for macOS can be downloaded and install from CRAN:
+            <a href="https://cran.r-project.org/">https://cran.r-project.org/</a>.
+          </p>
+          <p>
+            Head to the website above, and click <strong>Download R for macOS</strong>, then download the latest release (something like <strong>R-4.y.z.pkg (notarized and signed)</strong>).
+          </p>
+          <p>
+            After downloading, run the R package installer and follow the step-by-step instructions. Once finished, you'll have R installed on your machine.
+          </p>
+
+          <h4>2. Install R dependencies</h4>
+          <p>
+            Start R from <strong>Applications > R</strong>.
+          </p>
+          <p>
+            You should be presented with an R Console, or a mostly blank window with a place to type into (after the &gt;).
+          </p>
+          <p>
+            Copy and paste the following commands into R and press Enter to run them. This will install the named packages.
+          </p>
+          <p><pre>options(install.packages.compile.from.source = "never")
+install.packages(
+  c(
+    "iNZightPlots", "iNZightRegression",  "iNZightTS", "iNZightMR", "iNZightTools", "iNZightMaps",
+    "GGally","RJSONIO", "sas7bdat", "shiny", "shinydashboard", "shinyjs", "shinyWidgets",
+    "shinyalert", "shinycssloaders", "DT"
+  ),
+  repos = c("https://r.docker.stat.auckland.ac.nz", "https://cran.rstudio.com"),
+  dependencies = TRUE
+)</pre></p>
+
+          <h4>3. Install the Lite application</h4>
+          <p>
+            Download and unzip the latest Lite application ZIP archive:
+            <a href="https://github.com/iNZightVIT/Lite/archive/refs/heads/master.zip">https://github.com/iNZightVIT/Lite/archive/refs/heads/master.zip</a>. Extract the files and move the <strong>Lite-master</strong> folder to your Documents folder. <em>If you save them somewhere else, you'll need to adjust the path in the following step!!</em>.
+          </p>
+
+          <h4>4. Run iNZight Lite</h4>
+          <p>
+            Open R (launch it if you closed it earlier). Copy and paste the following:
+          </p>
+          <p><pre>shiny::runApp('~/Documents/Lite-master')</pre></p>
+          <p>
+            The app should open automatically in your browser. If not, you'll see the URL printed in the R Console, something like: <pre>Listening on http://127.0.0.1:7184</pre>.
+          </p>
+
+          <h4>4. Close once you're finished</h4>
+          <p>
+            When you've finished, simply close the R session (Command+C to stop the server, and Command+Q to quit R).
+          </p>
+
         </div>
 
         <div role="tabpanel" class="tab-pane" id="macos-wine">

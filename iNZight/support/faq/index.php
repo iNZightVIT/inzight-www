@@ -17,6 +17,9 @@ if (isset($_GET["section"])) {
   if (in_array($_GET["section"], $sections)) {
     $sec = true;
     $section = $contents[$_GET["section"]];
+    if (isset($section["url"])) {
+      header('Location: ' . $section["url"]);
+    }
     if (!isset($section["sections"])) {
       $display = false;
       $file = $_GET["section"];
@@ -83,8 +86,7 @@ require_once($rel . 'assets/includes/2-header.php');
       }
     } else { ?>
       If you're having trouble with iNZight, this should be your first stop.
-      There are some issues we know about, and offer solutions in the following pages. <br>
-	  [<i>These pages deal only with issues for the current version of iNZight (version 3). For issues with older versions, see the <a href="https://www.stat.auckland.ac.nz/~wild/iNZight_2016-08/support/faq/"> FAQ pages from the old website</a>.</i>]
+      There are some issues we know about, and offer solutions in the following pages. <br/>
   <?php } ?>
 </p>
 

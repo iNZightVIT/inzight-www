@@ -1,3 +1,25 @@
+<script>
+var loc = window.location;
+url = "https://inzight.nz";
+url += loc.pathname.replace("~wild/iNZight/", "");
+
+if (loc.search != undefined) {
+  url += loc.search;
+}
+if (loc.hash != undefined) {
+  url += loc.hash;
+}
+
+// any other stuff...
+
+// if stat.auckland and NOT support/contact ...
+if (loc.hostname === "www.stat.auckland.ac.nz" &
+    loc.pathname.match("/support/contact") == null) {
+  window.location.replace(url);
+}
+
+</script>
+
 <?php
 
 session_save_path("/tmp");
@@ -36,6 +58,18 @@ $VLITE = $_SESSION["VLITE"];
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#094b85">
+
+    <meta http-equiv='Content-type' content='text/html; charset=ISO-8859-1'>
+    <meta name='keywords' content='free, software, statistics, data analysis, inzight'>
+    <meta name='description' content='iNZight - a free, easy to use software for statistical data analysis'>
+    <meta http-equiv='Content-Language' content='en'>
+
+    <meta property="og:title" content="iNZight for Data Analysis">
+    <meta property="og:description" content="A free, easy to use software for statistical data analysis">
+    <meta property="og:image" content="https://inzight.nz/android-chrome-512x512.png">
+    <meta property="og:url" content="https://inzight.nz">
+    <meta name="twitter:card" content="summary">
 
     <?php
       // Allow us to define extra meta tags:
@@ -46,12 +80,17 @@ $VLITE = $_SESSION["VLITE"];
       /**
         * Google Analytics
       **/
-      if (preg_match('/stat.auckland.ac.nz/', $_SERVER['HTTP_HOST']) === 1) {
+      if (preg_match('/inzight.nz/', $_SERVER['HTTP_HOST']) === 1) {
         include_once($rel . 'assets/includes/analyticstracking.php');
       } else {
         echo "<!-- development environment -->";
       }
     ?>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 
     <link rel="stylesheet" type="text/css" href="<?php echo $rel; ?>css/main.css">
 
@@ -73,6 +112,34 @@ $VLITE = $_SESSION["VLITE"];
   </head>
 
   <body>
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v10.0'
+          });
+        };
+
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = 'https://connect.facebook.net/en_GB/sdk/xfbml.customerchat.js';
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+      </script>
+
+      <!-- Your Chat Plugin code -->
+      <div class="fb-customerchat"
+        attribution="setup_tool"
+        page_id="100566192069494"
+        theme_color="#18afe3"
+        logged_in_greeting="Kia ora, how can we help? We'll try to respond between 9AM-3PM Mon-Fri NZST."
+        logged_out_greeting="Kia ora, how can we help? We'll try to respond between 9AM-3PM Mon-Fri NZST.">
+      </div>
+
     <?php
       if (!isset($_SESSION["hide"])) {
         $_SESSION["hide"] = false;

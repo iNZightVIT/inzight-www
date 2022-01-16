@@ -8,7 +8,7 @@
       'default' => 'getinzight.php',
       'Desktop' => 'getinzight.php',
       // 'Linux/R Users' => 'getinzight.php?os=Linux',
-      'Tablets' => 'http://docker.stat.auckland.ac.nz/spawn/?application=lite',
+      'Tablets' => 'https://lite.docker.stat.auckland.ac.nz',
       'Data' => 'data.php'
     ),
     'User Guides' => array(
@@ -34,7 +34,8 @@
       'default' => 'about/',
       'Team' => 'team/',
       'Development' => 'development/',
-      'Sponsors' => 'sponsors/'
+      'Sponsors' => 'sponsors/',
+      'Brand' => 'brand/'
       // 'Privacy' => 'privacy/'
     ),
     'Related' => array(

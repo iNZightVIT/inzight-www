@@ -1,0 +1,65 @@
+- catches loading failure caused by missing/inaccessible Cairo installation, reloading iNZight in dual-window mode (#309, @tmelliott)
+- fix bug in Get Summary/Inference windows preventing font size preferences from being respected
+- fix bug in Filter data window where cancel button did not work
+- fix typo in 'Expand Table' information prompt
+- create new `iNZWindow` 'superclass' to make it easier to create consistent pop-up windows (#375, @tmelliott). The following windows now inherit from `iNZWindow`: `iNZFilterWin`, `iNZSortWin`, `iNZAggregateWin`, `iNZStackWin`, `iNZReorderWin`, `iNZReshapeWin`, `iNZSeparateWin`, `iNZUniteWin`, `iNZJoinWin`, `iNZAppendRowsWin`, `iNZDataReportWin`, `iNZValidateWin`, `iNZRenameDataWin`, `iNZConToCatWin`, `iNZTransformWin`, `iNZStandardiseWin`, `iNZFormClassIntervalsWin`, `iNZRankWin`, `iNZConToCatMultiWin`, `iNZReorderWin`, `iNZRenameFactorLevelsWin`, `iNZCombineWin`, `iNZConToDtWin`, `iNZExtFromDtWin`, `iNZAggDtWin`, `iNZCreateVarWin`, `iNZMissToCatWin`, `iNZDeleteVarWin`
+  - code only displayed when user preference specified (`iNZFilterWin`)
+  - renamed `iNZSortbyDataWin` to `iNZSortWin`
+  - renamed `iNZstackVarWin` to `iNZStackWin`
+  - renamed `iNZReorderVarsWin` to `iNZReorderWin`
+  - renamed `iNZReshapeDataWin` to `iNZReshapeWin`
+  - renamed `iNZSeparateDataWin` to `iNZSeparateWin`
+  - renamed `iNZUniteDataWin` to `iNZUniteWin`
+  - renamed `iNZjoinDataWin` to `iNZJoinWin`
+  - renamed `iNZappendrowWin` to `iNZAppendRowsWin`
+  - renamed `iNZrenameDataWin` to `iNZRenameDataWin`
+  - renamed `iNZconToCatWin` to `iNZConToCatWin`
+  - renamed `iNZtrnsWin` to `iNZTransformWin`
+  - renamed `iNZstdVarWin` to `iNZStandardiseWin`
+  - renamed `iNZformClassIntervals` to `iNZFormClassIntervalsWin`
+  - renamed `iNZrankNumWin` to `iNZRankWin`
+  - renamed `iNZctocatmulWin` to `iNZConToCatMultiWin`
+  - renamed `iNZreorderWin` to `iNZReorderWin`
+  - renamed `iNZcllpsWin` to `iNZCollapseWin`
+  - renamed `iNZrenameWin` to `iNZRenameFactorLevelsWin`
+  - renamed `iNZcmbCatWin` to `iNZCombineWin`
+  - renamed `iNZconTodtWin` to `iNZConToDtWin`
+  - renamed `iNZExtfromdtWin` to `iNZExtFromDtWin`
+  - renamed `iNZAggregatedtWin` to `iNZAggDtWin`
+  - renamed `iNZrnmVarWin` to `iNZRenameVarWin`
+  - renamed `iNZcrteVarWin` to `iNZCreateVarWin`
+  - renamed `iNZmissCatWin` to `iNZMissToCatWin`
+  - renamed `iNZdeleteVarWin` to `iNZDeleteVarWin`
+- create new `iNZExportWin` to replace broken `iNZSaveWin` (#374, @tmelliott)
+- `iNZexpandTblWin` uses new `update_document()` method
+- `iNZTransformWin` redesigned with dropdown to select boxes and buttons to apply transforms - drag-and-drop still works
+- `iNZCollapseWin` uses `_` instead of `.` in new variable name
+- `iNZRenameFactorLevelsWin` window modified slightly to be a little more intuitive
+- `iNZConToDtWin`, `iNZExtFromDtWin`, `iNZAggregatedtWin` redesigned to have previews on the right-hand-side (rather than below)
+- Reading a survey specification file imports calibration information correctly (so it can be adjusted by the user)
+- Ensure reading survey spec file addes 'survey design' label to data name (#365)
+- Menu items disabled/hidden when specifying/removing survey design
+- `iNZSurveyDesign` and `iNZSurveyPostStrat` specification windows using new `iNZWindow` class, and improved accuracy of estimated population size display
+- Fix bug in R code history formatting
+- add CI level control to Get Inference window (#74, @tmelliott) and Plot Inference panel
+- Get Summary and Get Inference now scroll output window to the top (rather than the bottom)
+- Data view/switch widget updated/refactored
+  - `iNZViewSwitcherWidget` -> `iNZDataToolbar`
+  - "View dataset" and "View variables" buttons replaced by icons
+  - Add 'Dataset info' button to view data summary (using `skimr::skim()`)
+  - Spreadsheet view is paginated, so even large datasets can now be viewed (rows and columns)
+  - Variable view shows additional information, including range (for numeric) or number of levels (for factors), and number of missing values
+- Fix Gtk-critcal error (#141)
+- Control Widget:
+  - Enable/disable buttons and dropdowns based on what application state
+  - Refactor layout of Get Summary / Get Inference buttons (added to `iNZCtrlWidget`)
+  - Add Subset-filter button to quickly subset the dataset based on slider values
+- Change in wording of "Delete dataset" dialog to clarify what's happening
+- Changing values in the data view updates R Code History
+- Change icon for 'variable switch' buttons (to differentiate from pagination arrows)
+- Add horizontal/vertical toggle in table summaries
+- Add some extra space around plot toolbar in pop-out mode
+- Fix tooltip for 'Refresh Plot' icon
+- Simulate P-value checkbox removed for survey chi-square test
+- fix bug in disabling of log axes in scatter plots
+

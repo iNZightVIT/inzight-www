@@ -1,10 +1,12 @@
 name: Update website version
-on: workflow_dispatch
+on:
+  repository_dispatch:
+    types: [update-website]
 
 jobs:
   update-website:
     name: Update website
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
       - uses: actions/checkout@v2
@@ -14,9 +16,15 @@ jobs:
       - name: Update release version
         run: Rscript website_version.R
 
+      - name: Update changelogs
+        run: Rscript pull_changelogs.R
+
+      - name: Update nightly build version
+        run: Rscript nightly_version.R
+
       - name: Commit changes
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git commit iNZight/* -m 'Update version release' || echo "No changes to commit"
+          git commit iNZight/** -m 'Update version release' || echo "No changes to commit"
           git push origin || echo "No changes to push"

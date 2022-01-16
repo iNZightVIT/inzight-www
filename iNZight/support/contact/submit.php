@@ -1,7 +1,7 @@
 <?php
 
 // THE EMAIL ADDRESS TO SEND BUG REPORTS TO:
-if ($p["inzight_version"] == "online") {
+if ($p["inzight_version"] == "lite") {
   $sendto = "inzightlite_support@stat.auckland.ac.nz";
 } else {
   $sendto = "inzight_support@stat.auckland.ac.nz";
@@ -40,14 +40,14 @@ $inz = $p["inzight_version"];
 $inzdet = clean_str($p["inzight_version_detail_val"]);
 switch($inz) {
   case "windows":
-    $os = " Windows " . $inzdet;
+    $os = " Windows Desktop";
     $subject .= $os;
     break;
   case "mac":
     $os = " Mac OS X 10." . $inzdet;
     $subject .= $os;
     break;
-  case "online":
+  case "lite":
     $subject .= " Lite";
     break;
   case "ruser":
@@ -57,10 +57,10 @@ switch($inz) {
 }
 
 $ver = clean_str($p["inzight_version_number"]);
-if (!preg_match("/^v/", $ver) & $inz != "online") {
+if (!preg_match("/^v/", $ver) & $inz != "lite") {
   $ver = "v" . $ver;
 }
-if ($inz != "online") {
+if ($inz != "lite") {
   $subject .= " - iNZight " . $ver;
 }
 
@@ -75,24 +75,57 @@ if ($sendto == "tom.elliott@auckland.ac.nz") {
 
 $name = clean_str($p["user_name"]);
 $email = clean_str($p["user_email"]);
+$class_info = clean_str($p["class_info"]);
+
+$boundary = "==Multipart_Boundary_x" . md5(date('r', time())) . "x";
+
+$attachment = '';
 
 if ($p['screenshot']['error'] === 0) {
-  $attachment = chunk_split(base64_encode(file_get_contents($p['screenshot']['tmp_name'])));
-  $filename = $p['screenshot']['name'];
-  $boundary = md5(date('r', time()));
+  $f_data = chunk_split(base64_encode(file_get_contents($p['screenshot']['tmp_name'])));
+  $f_name = $p['screenshot']['name'];
+  $attachment .= "--{$boundary}\n" .
+    "Content-Type: application/octet-stream; name=\"$f_name\"\n" .
+    "Content-Disposition: attachment;\n" .
+    "Content-Transfer-Encoding: base64\n\n" . $f_data . "\n\n";
+}
+
+if ($p['dataset']['error'] === 0) {
+  $f_data = chunk_split(base64_encode(file_get_contents($p['dataset']['tmp_name'])));
+  $f_name = $p['dataset']['name'];
+  $attachment .= "--{$boundary}\n" .
+    "Content-Type: application/octet-stream; name=\"$f_name\"\n" .
+    "Content-Disposition: attachment;\n" .
+    "Content-Transfer-Encoding: base64\n\n" . $f_data . "\n\n";
 }
 
 $headers  = "MIME-Version: 1.0" . "\r\n";
 $headers .=
-  (isset($attachment) ? "Content-type:multipart/mixed; boundary=\"_1_$boundary\";" : "Content-type:text/html;") .
+  (isset($attachment) ? "Content-type:multipart/mixed;\n boundary=\"$boundary\";" : "Content-type:text/html;") .
   "\r\n";
 if (strlen($email) > 0) {
-  $headers_conf = $headers . "From: iNZight Support <" . $sendto . ">" . "\r\n";
+  $headers_conf =
+    "From: $sendto \r\n".
+    "MIME-Version: 1.0" . "\r\n" .
+    "Content-type: text/html; charset=UTF-8" . "\r\n";
+
+
+  "MIME-Version: 1.0" . "\r\n" .
+      "Content-type:text/html;\r\n" .
+      "From: " . $sendto . "\r\n";
+
+  $rts = "";
   if (strlen($name) > 0) {
-    $headers .= "Reply-to: "  . $name . " <" . $email . ">" . "\r\n";
+    $rts .= $name . " <" . $email . ">";
   } else {
-    $headers .= "Reply-to: " . $email . "\r\n";
+    $rts .= $email;
   }
+  if ($p["inzight_version"] == "lite") {
+    $rts .= ", iNZight Lite Support <" . $sendto . ">";
+  } else {
+    $rts .= ", iNZight Support <" . $sendto . ">";
+  }
+  $headers .= "Reply-to: " . $rts . "\r\n";
 }
 $headers .= "From: " . $sendto . "\r\n";
 
@@ -114,10 +147,14 @@ if (strlen($email) > 0) {
   $message .= "No reply email supplied.<br>";
 }
 
-if ($inz == "online") {
+if ($inz == "lite") {
   $message .= "iNZight Lite accessed from <b>" . $ver . "</b> using <b>" . $inzdet . "</b><br>";
 } else {
   $message .= "Installation Info: " . $os . ", iNZight " . $ver . "<br>";
+}
+
+if (strlen($class_info) > 0) {
+  $message .= "Class information: <em>" . $class_info . "</em><br/>";
 }
 
 $s = $_SERVER;
@@ -128,10 +165,10 @@ $s = $_SERVER;
 
 
 // Additional log file info
-if (isset($p['log_file']['content'])) {
-  $message .= "<br><b>iNZight Log File</b></br>";
-  $message .= $p['log_file']['content'];
-}
+// if (isset($p['log_file']['content'])) {
+//   $message .= "<br><b>iNZight Log File</b></br>";
+//   $message .= $p['log_file']['content'];
+// }
 
 
 $message .= "</div>";
@@ -153,31 +190,35 @@ if (strlen($email) > 0) {
 
 $multimessage = '';
 if (isset($attachment)) {
-  $multimessage .= "This is a multi-part message in MIME format.
---_1_$boundary
-Content-Type: multipart/alternative; boundary=\"_2_$boundary\"
-
---_2_$boundary
-Content-Type: text/html; charset=\"UTF-8\"
-Content-Transfer-Encoding: 7bit
-
-$message
-
---_2_$boundary--
---_1_$boundary
-Content-Type: application/octet-stream; name=\"$filename\"
-Content-Transfer-Encoding: base64
-Content-Disposition: attachment
-
-$attachment
---_1_$boundary--";
+  $multimessage .= "--$boundary\n" . "Content-Type: text/html; charset=\"UTF-8\"\n" .
+    "Content-Transfer-Encoding: 7bit\n\n" . $message . "\n\n" .
+    $attachment . "\n" .
+    "--$boundary}--";
 
   $message = $multimessage;
 }
 
+// $res = mail($email, $subject, $message_conf, $headers_conf);
+// if ($res) {
+//   echo "success - ";
+// } else {
+//   echo "fail - ";
+// }
+
 if (mail($sendto, $subject, $message, $headers)) {
   if (strlen($email) > 0) {
     mail($email, $subject, $message_conf, $headers_conf);
+    // echo "Email: ";
+    // print_r($email);
+    // echo "<br>Subject: ";
+    // print_r($subject);
+    // echo "<br>Message: <br><br>";
+    // print_r($message_conf);
+    // echo "<br><br>Headers: <br><pre>";
+    // print_r($headers_conf);
+    // echo "</pre>";
+
+    // die($res);
   }
   header("Location: success.php");
   die("Message sent. Thank you.");
