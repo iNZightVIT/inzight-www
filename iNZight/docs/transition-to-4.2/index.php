@@ -14,7 +14,7 @@ require_once($rel . 'assets/includes/2-header.php');
       so here we have provided a basic guide to transitioning to the new version.
   </p>
 
-  <img src="inzight-ui.png" width=600 />
+  <img src="inzight-ui.png" width=700 />
 
   <hr />
 
@@ -60,7 +60,7 @@ require_once($rel . 'assets/includes/2-header.php');
     right on Linux.
   </p>
 
-  <img src="inzight-window-buttons.png" width=400 />
+  <img src="inzight-window-buttons.png" width=600 />
 
   <p>
     Some other windows have been changed slightly in their layout, but these are obvious and should

@@ -17,8 +17,25 @@ require_once($rel . 'assets/functions/filesize.php');
     Latest version: <?php echo $inzight_version; ?> (<?php echo $release_date; ?>)
   </p>
 
+  <div class="panel panel-info space-above">
+    <div class="panel-heading">
+      <h4 class="panel-title">iNZight 4.2 Transition Guide</h4>
+    </div>
+
+    <div class="panel-body">
+      <p>
+        The new version of iNZight contains some interface changes.
+        Check out the <a href="/docs/transition-to-4.2/">Transitioning to iNZight 4.2</a>
+        guide to see what's changed.
+      </p>
+    </div>
+  </div>
+
   <p>
     <strong>Previous version:</strong><br>
+    <a href="<?php echo $download_dir . "Windows/iNZightVIT-installer-4.1.4.exe"; ?>">
+      iNZightVIT v4.1.4 for Windows
+    </a> (released 13 August 2021)<br>
     <a href="<?php echo $download_dir . "Windows/iNZightVIT-installer-4.0.3.exe"; ?>">
       iNZightVIT v4.0.3 for Windows
     </a> (released 2 March 2021)<br>
