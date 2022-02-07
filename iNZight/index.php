@@ -44,6 +44,11 @@ $oss = array("Windows", "Mac", "Linux");
       <dd>100% Free!</dd>
     </dl>
 
+    <p><strong>Returning users:</strong><br/>
+      Check out the <a href="/docs/transition-to-4.2">transition guide</a>
+      for help navigating the changes in the latest version of iNZight!
+    </p>
+
     <hr>
     <p><strong>On a Tablet? Try our online version:</strong></p>
     <a href="<?php echo $inzight_online_link; ?>" class="thumbnail alert-info lite text-center">
