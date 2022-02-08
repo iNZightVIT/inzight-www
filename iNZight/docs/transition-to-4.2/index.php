@@ -21,7 +21,7 @@ require_once($rel . 'assets/includes/2-header.php');
   <h4>Switching between variable and spreadsheet view</h4>
 
   <p>
-    When you load iNZight, you'll notice a more concice interface in the top-left corner of the window.
+    When you load iNZight, you'll notice a more concise interface in the top-left corner of the window.
     This has allowed us to add some new features, at the cost of removing the great big "View Variables"
     and "View Dataset" buttons and replacing them with smaller icons. In the image below, the two buttons
     are highlighted:
