@@ -5,6 +5,9 @@ cd /opt/bitnami/apache2
 rm -rf htdocs
 ln -s /home/bitnami/inzight-www/iNZight htdocs
 
+# configure git
+/opt/bitnami/git/bin/git config --global pull.rebase true
+
 # clone new site
 cd /home/bitnami
 /opt/bitnami/git/bin/git clone https://github.com/iNZightVIT/inzight-www.git
