@@ -47,6 +47,10 @@ The development of iNZight itself comes from the work of many **statistics stude
 <div class="row">
   <div class="col-md-6">
     <h5><a href="">Daniel Barnett</a></h5>
+    <p>
+      Daniel started working with iNZight as part of a summer project in 2017/18,
+      and has since been involved in adding graphics, reinventing the maps module, and adding some epidemiological tests and modelling features.
+    </p>
     <p><strong>Core responsibilities:</strong></p>
     <ul>
       <li>Maintaneance of the Maps module for iNZight</li>
@@ -78,20 +82,20 @@ The development of iNZight itself comes from the work of many **statistics stude
 
 <div class="row">
   <div class="col-md-4">
-    <h5><strong>Dineika Chandrananda</strong></h5>
+    <h5><strong>Dineika Chandrananda</strong> (2010&ndash;2011)</h5>
     <p>
       One of the original developers of iNZight, responsible for the original ideas behind iNZight's interface and workflow.
     </p>
   </div>
   <div class="col-md-4">
-    <h5><strong><a href="http://sjp.co.nz">Simon Potter</a></strong></h5>
+    <h5><strong><a href="http://sjp.co.nz">Simon Potter</a></strong> (2011&ndash;2013)</h5>
     <p>
       While studying at the University of Auckland, Simon was the main developer of iNZight,
       responsible for the website, installers, and much of the package developement.
     </p>
   </div>
   <div class="col-md-4">
-    <h5><strong>David Banks</strong></h5>
+    <h5><strong>David Banks</strong> (2011&ndash;2013)</h5>
     <p>
       David worked on various parts of iNZight, including graphics, regression, time series, etc.
     </p>
@@ -99,7 +103,7 @@ The development of iNZight itself comes from the work of many **statistics stude
 </div>
 <div class="row">
   <div class="col-md-5 col-md-push-1">
-    <h5><strong>Junjie Zheng</strong></h5>
+    <h5><strong>Junjie Zheng</strong> (2012&ndash;2014)</h5>
     <p>
       Junjie started working on iNZight as part of his MSc project,
       most of which is incorporated into the
@@ -134,7 +138,7 @@ The development of iNZight itself comes from the work of many **statistics stude
   </div>
 
   <div class="col-md-4">
-    <h5><strong>Shengwei (Wilson) Hu</strong> (2014--2020)</h5>
+    <h5><strong>Shengwei (Wilson) Hu</strong> (2014&ndash;2020)</h5>
     <p>
       Wilson worked on <a href="http://lite.docker.stat.auckland.ac.nz">iNZight Lite</a> while completing his PhD is statistics here at the University of Auckland. He was responsible for implementing new features to and fixing bugs in iNZight Lite, as well as maintaining the public shiny containers and providing technical support for users.
     </p>
