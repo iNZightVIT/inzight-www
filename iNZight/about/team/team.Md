@@ -3,13 +3,14 @@
 The iNZightVIT project is led by [Professor Chris Wild](https://www.stat.auckland.ac.nz/~wild/)
 from the [Department of Statistics](https://www.stat.auckland.ac.nz) at the University of Auckland. He comes up with the big (and small) ideas that make iNZight intuitive and easy to learn. Since 2018, [Andrew Sporle](https://unidirectory.auckland.ac.nz/profile/a-sporle) from iNZight Analytics Ltd has contributed ideas and funding support for extending iNZight's capabilities for use in research and official statistics.
 
+The development of iNZight itself comes from the work of many **statistics students** from the university, most working part-time or as part of a research project.
 
-The development of iNZight itself comes from the work of many __statistics students__ from the university, most working part-time or as part of a research project.
+---
 
-***
 # Current Team
 
 ///HTML:
+
 <div class="row">
   <div class="col-md-6">
     <h5><a href="http://tomelliott.co.nz">Tom Elliott</a></h5>
@@ -22,17 +23,17 @@ The development of iNZight itself comes from the work of many __statistics stude
     <ul>
       <li>Maintainenance of the <a href="http://r.docker.stat.auckland.ac.nz/R">iNZight R repository</a>
         and <a href="https://github.com/iNZightVIT">Github reposititories</a> for all packages</li>
-      <li>Windows and Mac installers</li>
+      <li>Windows installer</li>
       <li>Technical support for users</li>
-      <li>Development and maintainenance the website</li>
+      <li>Development and maintainenance of the website</li>
       <li>Oversees summer students and helps to implement their work</li>
     </ul>
   </div>
 
   <div class="col-md-6">
-    <h5><a href="https://unidirectory.auckland.ac.nz/profile/tche929">Tong Chen</a></h5>
+    <h5><a href="https://unidirectory.auckland.ac.nz/profile/jcai849">Jason Cairns</a></h5>
     <p>
-      Tong joined the iNZight team in 2019. He is mainly working on iNZight Lite. Currently, he is studying toward a PhD at the University of Auckland.
+      Jason joined the iNZight team in 2021, and will be taking over responsibilities as the primary maintainer of iNZight Lite while studying towards a PhD at the University of Auckland.
     </p>
     <p><strong>Core responsibilities:</strong></p>
     <ul>
@@ -53,20 +54,33 @@ The development of iNZight itself comes from the work of many __statistics stude
       <li>General testing and bug fixing of the desktop application</li>
     </ul>
   </div>
+
+  <div class="col-md-6">
+      <h5><a href="https://unidirectory.auckland.ac.nz/profile/tche929">Tong Chen</a></h5>
+    <p>
+      Tong joined the iNZight team in 2019. He is mainly working on iNZight Lite. Currently, he is studying toward a PhD at the University of Auckland.
+    </p>
+    <p><strong>Core responsibilities:</strong></p>
+    <ul>
+      <li>Development of Lite and implementation of new features as they appear in the software version of iNZight</li>
+      <li>Maintenance of the public shiny containers</li>
+      <li>Technical support for Lite users</li>
+    </ul>
+  </div>
 </div>
 ///
 
+---
 
-***
 # Previous Team
 
 ///HTML:
+
 <div class="row">
   <div class="col-md-4">
     <h5><strong>Dineika Chandrananda</strong></h5>
     <p>
-      One of the original developers of iNZight, responsible for the original ideas being iNZight's interface
-      and workflow.
+      One of the original developers of iNZight, responsible for the original ideas behind iNZight's interface and workflow.
     </p>
   </div>
   <div class="col-md-4">
@@ -128,44 +142,45 @@ The development of iNZight itself comes from the work of many __statistics stude
 </div>
 ///
 
-***
+---
+
 # Research Students
 
 These students worked on iNZight as part of their Honours/Masters research projects.
 
-- __Sophie Jones__ (MSc, 2020): visualisation of longitudinal data. Sophie developed a shiny app and an iNZight Addon linking to her 'longZight' package.
+- **Sophie Jones** (MSc, 2020): visualisation of longitudinal data. Sophie developed a shiny app and an iNZight Addon linking to her 'longZight' package.
 
-***
+---
+
 # Summer Students
 
 These students worked on iNZight for their Summer Scholarship.
 
 ##### Summer 2014/15
 
-- __Eric Lim__: modularised iNZight's Advanced Modules (Maps, Time Series, Multiple Response)
+- **Eric Lim**: modularised iNZight's Advanced Modules (Maps, Time Series, Multiple Response)
   so that they open in the same window, and did preliminary work on the Maps module.
 
 ##### Summer 2015/16
 
-- __Jason Wen__: developed the iNZightMaps package, used in the [Maps module](../../user_guides/add_ons/?topic=maps).
+- **Jason Wen**: developed the iNZightMaps package, used in the [Maps module](../../user_guides/add_ons/?topic=maps).
 
 ##### Summer 2016/17
 
-- __Akshay Gupta__: implemented an improved Import functionality, allowing users to read a range of different files, as well as support Meta information at the top of the file.
-- __Dongning Zhang__: expanded the range of Time Series formats that iNZight recognises, allowing for weekly (2012W01) and daily (2015D01) data, as well as days-per-week (W01D01) and hours-per-day (D01H02).
-- __Yu Han Soh__: started work on exporting iNZight's plots as interactive HTML/Javascript documents.
+- **Akshay Gupta**: implemented an improved Import functionality, allowing users to read a range of different files, as well as support Meta information at the top of the file.
+- **Dongning Zhang**: expanded the range of Time Series formats that iNZight recognises, allowing for weekly (2012W01) and daily (2015D01) data, as well as days-per-week (W01D01) and hours-per-day (D01H02).
+- **Yu Han Soh**: started work on exporting iNZight's plots as interactive HTML/Javascript documents.
 
 ##### Summer 2017/18
 
-- __Daniel Barnett__: developed the regional maps module, allowing users to import shape files and plot regional (e.g., country, state, etc) data onto a map
+- **Daniel Barnett**: developed the regional maps module, allowing users to import shape files and plot regional (e.g., country, state, etc) data onto a map
 
 ##### Summer 2018/19
 
-- __Lushi Cai__: worked on a code-tidying algorithm which works with tidyverse-style code that collapses to fill the available width
-- __Monica Merchant__: began work on predictive model building module which allows users to use multiple methods and criteria to build a predictive model
-- __Yiwen He__: implemented datetime facilities to iNZight to allow users to create datetime variables and extract information (such as the year, hour) from a datetime; implemented data joining facilities
+- **Lushi Cai**: worked on a code-tidying algorithm which works with tidyverse-style code that collapses to fill the available width
+- **Monica Merchant**: began work on predictive model building module which allows users to use multiple methods and criteria to build a predictive model
+- **Yiwen He**: implemented datetime facilities to iNZight to allow users to create datetime variables and extract information (such as the year, hour) from a datetime; implemented data joining facilities
 
-
-***
+---
 
 If you've been left off this list, or want anything on it to change, just <a href="mailto:inzight_support@stat.auckland.ac.nz?subject=Change my iNZight Team information">send me a message</a>.
