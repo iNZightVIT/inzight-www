@@ -11,7 +11,7 @@ require_once($rel . 'assets/includes/2-header.php');
 
   <p>
       iNZight 4.2 includes some significant changes to the user interface,
-      so here we have provided a basic guide to transitioning to the new version!
+      so here we have provided a basic guide to transitioning to the new version.
   </p>
 
   <img src="inzight-ui.png" width=700 />
