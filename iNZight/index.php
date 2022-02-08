@@ -50,7 +50,7 @@ $oss = array("Windows", "Mac", "Linux");
     </p>
 
     <hr>
-    <p><strong>On a Tablet? Try our online version:</strong></p>
+    <p><strong>On a mac or tablet? Try our online version:</strong></p>
     <a href="<?php echo $inzight_online_link; ?>" class="thumbnail alert-info lite text-center">
       <h4><?php echo $inzight_text; ?> Lite</h4>
     </a>
@@ -84,7 +84,7 @@ $oss = array("Windows", "Mac", "Linux");
     </div>
 
     <div class="image col-md-6">
-        <img src="img/smartGraphs.gif">
+        <img src="img/smart_graphs.gif">
     </div>
   </div>
 
@@ -100,7 +100,7 @@ $oss = array("Windows", "Mac", "Linux");
       </p>
     </div>
     <div class="image col-md-6 col-md-pull-6">
-        <img src="img/subsetColourSize.gif">
+        <img src="img/subset_colour_size.gif">
     </div>
   </div>
 
@@ -118,7 +118,7 @@ $oss = array("Windows", "Mac", "Linux");
       </p>
     </div>
     <div class="image col-md-6">
-        <img src="img/summaryInfo.gif">
+        <img src="img/summary_info.gif">
     </div>
   </div>
 
