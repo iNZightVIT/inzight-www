@@ -84,7 +84,7 @@ $oss = array("Windows", "Mac", "Linux");
     </div>
 
     <div class="image col-md-6">
-        <img src="img/smart_graphs.gif">
+        <img src="img/01_landing/smart_graphs.gif">
     </div>
   </div>
 
@@ -100,7 +100,7 @@ $oss = array("Windows", "Mac", "Linux");
       </p>
     </div>
     <div class="image col-md-6 col-md-pull-6">
-        <img src="img/subset_colour_size.gif">
+        <img src="img/01_landing/subset_colour_size.gif">
     </div>
   </div>
 
@@ -118,7 +118,7 @@ $oss = array("Windows", "Mac", "Linux");
       </p>
     </div>
     <div class="image col-md-6">
-        <img src="img/summary_info.gif">
+        <img src="img/01_landing/summary_info.gif">
     </div>
   </div>
 
