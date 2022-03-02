@@ -5,7 +5,7 @@ require_once($rel . 'assets/includes/2-header.php');
 
 $papers = array(
     '2021_jss' => array(
-        'title' => "iNZight: A Graphical User Interface for Data Visualisation and Analysis through R",
+        'title' => "iNZight: A Graphical User Interface for Democratising Data with R",
         'authors' => "Elliott, Wild, Barnett & Sporle",
         'year' => "in press",
         'journal' => "Journal of Statistical Software",
