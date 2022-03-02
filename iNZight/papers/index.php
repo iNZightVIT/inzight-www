@@ -4,7 +4,7 @@ require_once($rel . 'assets/includes/1-top_matter.php');
 require_once($rel . 'assets/includes/2-header.php');
 
 $papers = array(
-    '2021_jss' => array(
+    'inzight' => array(
         'title' => "iNZight: A Graphical User Interface for Democratising Data with R",
         'authors' => "Elliott, Wild, Barnett & Sporle",
         'year' => "in press",
