@@ -18,7 +18,7 @@ require_once($rel . 'assets/functions/filesize.php');
 
   <ul>
     <li>
-      <a href="<? echo $rel; ?>downloads/iNZight_data.zip">Download the entire data folder</a> (<?php echo getFileSize($rel . 'downloads/iNZight_data.zip'); ?>)
+      <a href="https://www.stat.auckland.ac.nz/~wild/iNZight/downloads/iNZight_data.zip">Download the entire data folder</a> (5.8M)
     </li>
 
     <li>
