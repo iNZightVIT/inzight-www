@@ -9,7 +9,7 @@
       'Desktop' => 'getinzight.php',
       // 'Linux/R Users' => 'getinzight.php?os=Linux',
       'Tablets' => 'https://lite.docker.stat.auckland.ac.nz',
-      'Data' => 'data.php'
+      'Data' => 'data/'
     ),
     'User Guides' => array(
       'default' => 'user_guides/',
