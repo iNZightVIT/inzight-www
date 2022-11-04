@@ -1,3 +1,13 @@
+<?php
+
+session_save_path("/tmp");
+if (!session_start()) {
+  echo "Unable to start session..<br>";
+}
+
+?>
+
+
 <script>
 var loc = window.location;
 url = "https://inzight.nz";
@@ -22,11 +32,6 @@ if (loc.hostname === "www.stat.auckland.ac.nz" &
 
 <?php
 
-session_save_path("/tmp");
-
-if (!session_start()) {
-  echo "Unable to start session..<br>";
-}
 $isIE = strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') || strpos($_SERVER['HTTP_USER_AGENT'], 'Trident');
 
 // var_dump($_SESSION);
