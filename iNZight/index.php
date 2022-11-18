@@ -30,7 +30,7 @@ $social = array(
           <?php
             // print each social media link
             foreach ($social as $key => $value) {
-              echo "<a href='$value' target='_blank'><img src='img/icons/icons8-$key.svg' height='30' /></a>";
+              echo "<a href='$value' rel='me' target='_blank'><img src='img/icons/icons8-$key.svg' height='30' /></a>";
             }
           ?>
         </div>
