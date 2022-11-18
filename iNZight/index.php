@@ -9,6 +9,13 @@ require_once('assets/functions/os_detect.php');
 $os = getOS();
 $oss = array("Windows", "Mac", "Linux");
 
+$social = array(
+    "twitter" => "https://twitter.com/iNZightVIT",
+    "mastodon" => "https://fosstodon.org/@inzight",
+    "github" => "https://github.com/iNZightVIT",
+    "facebook" => "https://www.facebook.com/iNZightVIT",
+)
+
 ?>
 
 
@@ -18,14 +25,22 @@ $oss = array("Windows", "Mac", "Linux");
   </div>
 
   <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-0">
-        <h5><strong>Looking for assistance?</strong></h5>
+        <h5><strong>Where to find help:</strong></h5>
         <div class="help-feed">
+          <?php
+            // print each social media link
+            foreach ($social as $key => $value) {
+              echo "<a href='$value' target='_blank'><img src='img/icons/icons8-$key.svg' height='30' /></a>";
+            }
+          ?>
+        </div>
+        <!-- <div class="help-feed">
           <a href="https://twitter.com/intent/tweet?screen_name=iNZightUoA&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false">Tweet to @iNZightUoA</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           <a href="https://gitter.im/iNZightVIT/Lobby">
               <img src="https://badges.gitter.im/iNZightVIT/lobby.png" alt="Get help on Gitter" />
           </a>
           <a onClick="FB.CustomerChat.showDialog()" href="#" class="btn btn-primary btn-xs">Facebook Chat</a>
-        </div>
+        </div>-->
     <a href="getinzight.php" class="thumbnail alert alert-info text-center">
       <h4>Download Now</h4>
     </a>
