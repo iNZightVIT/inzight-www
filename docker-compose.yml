@@ -4,3 +4,5 @@ services:
     build: .
     ports:
       - "8181:80"
+    environment:
+      - PORT=80
