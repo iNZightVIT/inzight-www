@@ -12,9 +12,10 @@ require_once($rel . 'assets/includes/2-header.php');
 
 ?>
 
+<?php /*
 <div class="container">
   <div class="col-md-12 col-lg-10 col-lg-push-1" id="osSelect">
-    
+
     <h4>Choose your operating system</h4>
     <div class="row">
       <?php
@@ -40,6 +41,9 @@ require_once($rel . 'assets/includes/2-header.php');
 </div><!--#container-->
 
 <script src="<?php echo $rel; ?>js/install.js"></script>
+*/ ?>
+
+<h1>Install.</h1>
 
 <?php
 require_once($rel . 'assets/includes/3-bottom_matter.php');
