@@ -1,6 +1,6 @@
 <?php
 
-header("Location: /install");
+header("Location: /install/");
 
 $rel = "./";
 require_once($rel . 'assets/objects/setup.php');
