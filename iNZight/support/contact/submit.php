@@ -7,8 +7,6 @@ if (file_exists(__DIR__ . '/../../../.env')) {
   $dotenv->load();
 }
 
-var_dump($_ENV);
-
 use MailerSend\MailerSend;
 use MailerSend\Helpers\Builder\Variable;
 use MailerSend\Helpers\Builder\Recipient;
