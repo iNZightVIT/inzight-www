@@ -4,6 +4,8 @@ require __DIR__ . '/../../../vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../../');
 $dotenv->load();
 
+var_dump($_ENV);
+
 use MailerSend\MailerSend;
 use MailerSend\Helpers\Builder\Variable;
 use MailerSend\Helpers\Builder\Recipient;
