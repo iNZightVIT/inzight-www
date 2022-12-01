@@ -1,4 +1,34 @@
 <?php
+require __DIR__ . '/../../../vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../../');
+$dotenv->load();
+
+use MailerSend\MailerSend;
+use MailerSend\Helpers\Builder\Variable;
+use MailerSend\Helpers\Builder\Recipient;
+use MailerSend\Helpers\Builder\EmailParams;
+
+# die if MAILERSEND_API_TOKEN is not set
+$key = $_ENV['MAILERSEND_API_TOKEN'];
+if (empty($key)) {
+    die('MailerSend API key not set');
+}
+$mailersend = new MailerSend(['api_key' => $key]);
+
+// send a test message
+$recipients = [
+  new Recipient('tomelliottnz@gmail.com', "Tom Elliott"),
+];
+
+$variables = [
+  new Variable('tomelliottnz@gmail.com',
+    ['userName' => 'Tom', 'userMessage' => 'This is your message.'])
+];
+
+// read reply.template file
+$reply = file_get_contents(__DIR__ . '/reply.template');
+
 
 // THE EMAIL ADDRESS TO SEND BUG REPORTS TO:
 if ($p["inzight_version"] == "lite") {
@@ -6,6 +36,21 @@ if ($p["inzight_version"] == "lite") {
 } else {
   $sendto = "inzight_support@stat.auckland.ac.nz";
 }
+
+$emailParams = (new EmailParams())
+    ->setFrom('noreply@inzight.nz')
+    ->setFromName('iNZight Support')
+    ->setReplyTo($sendto)
+    ->setRecipients($recipients)
+    ->setSubject('Test message')
+    ->setHtml($reply)
+    ->setText('This is the text content')
+    ->setVariables($variables);
+
+$mailersend->email->send($emailParams);
+
+
+die('OK');
 
 // some filters
 function clean_num($a)

@@ -9,3 +9,6 @@ npm-debug.log
 *.tar.bz2
 iNZight/_SYNCAPP
 .vscode
+.env
+
+/vendor/
