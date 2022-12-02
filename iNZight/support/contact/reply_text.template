@@ -1,0 +1,14 @@
+Thank you for your message!
+
+Kia ora {$userName},
+
+We have recieved your message and will be in touch with you soon. You may reply to this email if you would like to add anything else.
+
+Ngā mihi,
+The iNZight Team
+
+***
+
+You sent the following message:
+
+{$userMessage}

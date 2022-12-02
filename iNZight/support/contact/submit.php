@@ -9,51 +9,10 @@ if (file_exists(__DIR__ . '/../../../.env')) {
 
 use MailerSend\MailerSend;
 use MailerSend\Helpers\Builder\Variable;
+use MailerSend\Helpers\Builder\Personalization;
+use MailerSend\Helpers\Builder\Attachment;
 use MailerSend\Helpers\Builder\Recipient;
 use MailerSend\Helpers\Builder\EmailParams;
-
-# die if MAILERSEND_API_TOKEN is not set
-$key = $_ENV['MAILERSEND_API_TOKEN'];
-if (empty($key)) {
-    die('MailerSend API key not set');
-}
-$mailersend = new MailerSend(['api_key' => $key]);
-
-// send a test message
-$recipients = [
-  new Recipient('tomelliottnz@gmail.com', "Tom Elliott"),
-];
-
-$variables = [
-  new Variable('tomelliottnz@gmail.com',
-    ['userName' => 'Tom', 'userMessage' => 'This is your message.'])
-];
-
-// read reply.template file
-$reply = file_get_contents(__DIR__ . '/reply.template');
-
-
-// THE EMAIL ADDRESS TO SEND BUG REPORTS TO:
-if ($p["inzight_version"] == "lite") {
-  $sendto = "inzightlite_support@stat.auckland.ac.nz";
-} else {
-  $sendto = "inzight_support@stat.auckland.ac.nz";
-}
-
-$emailParams = (new EmailParams())
-    ->setFrom('noreply@inzight.nz')
-    ->setFromName('iNZight Support')
-    ->setReplyTo($sendto)
-    ->setRecipients($recipients)
-    ->setSubject('Test message')
-    ->setHtml($reply)
-    ->setText('This is the text content')
-    ->setVariables($variables);
-
-$mailersend->email->send($emailParams);
-
-
-die('OK');
 
 // some filters
 function clean_num($a)
@@ -68,6 +27,13 @@ function clean_email($a)
 {
   return filter_var($a, FILTER_SANITIZE_EMAIL);
 }
+
+# die if MAILERSEND_API_TOKEN is not set
+$key = $_ENV['MAILERSEND_API_TOKEN'];
+if (empty($key)) {
+    die('MailerSend API key not set');
+}
+$mailersend = new MailerSend(['api_key' => $key]);
 
 $reason = clean_str($p["message_reason"]);
 switch($reason) {
@@ -116,14 +82,138 @@ if ($inz != "lite") {
 $ref_no = date ('yz-His');
 $subject .= " (ref #" . $ref_no . ")";
 
-if ($sendto == "tom.elliott@auckland.ac.nz") {
-  $subject .= " - TEST";
+// THE EMAIL ADDRESS TO SEND BUG REPORTS TO:
+if ($p["inzight_version"] == "lite") {
+  $sendto = "inzightlite_support@stat.auckland.ac.nz";
+} else {
+  $sendto = "inzight_support@stat.auckland.ac.nz";
 }
-
 
 $name = clean_str($p["user_name"]);
 $email = clean_str($p["user_email"]);
 $class_info = clean_str($p["class_info"]);
+
+$message = nl2br($p["message_content"]);
+
+$recipients = [
+  new Recipient($email, $name),
+];
+
+$variables = [
+  new Variable(
+    $email,
+    ['userName' => $name, 'userMessage' => $message]
+  )
+];
+
+// add attachements
+$attachments = [];
+if ($p['screenshot']['error'] === 0) {
+  $attachments[] = new Attachment(
+    file_get_contents($p['screenshot']['tmp_name']),
+    $p['screenshot']['name']
+  );
+}
+if ($p['dataset']['error'] === 0) {
+  $attachments[] = new Attachment(
+    file_get_contents($p['dataset']['tmp_name']),
+    $p['dataset']['name']
+  );
+}
+
+$details = [];
+$details[] = [
+  "label" => "Name",
+  "value" => strlen($name) > 0 ? $name : "Anonymous"
+];
+$details[] = [
+  "label" => "Email",
+  "value" => strlen($email) > 0 ? $email : "Not provided"
+];
+
+if ($inz == "lite") {
+  $details[] = [
+    "label" => "Lite Version",
+    "value" => $ver
+  ];
+  $details[] = [
+    "label" => "Browser",
+    "value" => $inzdet
+  ];
+} else {
+  $details[] = [
+    "label" => "iNZight Version",
+    "value" => $ver
+  ];
+  $details[] = [
+    "label" => "Operating System",
+    "value" => $os
+  ];
+}
+
+if (strlen($class_info) > 0) {
+  $details[] = [
+    "label" => "Class Info",
+    "value" => $class_info
+  ];
+}
+
+
+$ticketDetails = [
+  new Personalization($sendto, ["details" => $details])
+];
+
+// create and send ticket
+$ticket = file_get_contents(__DIR__ . '/ticket.template');
+$ticketText = file_get_contents(__DIR__ . '/ticket_text.template');
+$ticketVars = [
+  new Variable(
+    $sendto,
+    [
+      'name' => $name,
+      'message' => $message,
+      'date' => date("l jS \of F Y, h:i:s A")
+    ]
+  ),
+
+];
+
+$ticketSendTo = [
+  new Recipient($sendto, "iNZight Support")
+];
+
+$ticketParams = (new EmailParams())
+  ->setFrom('noreply@inzight.nz')
+  ->setFromName('iNZight Support')
+  ->setReplyTo($email)
+  ->setRecipients($ticketSendTo)
+  ->setSubject($subject)
+  ->setText($ticketText)
+  ->setHtml($ticket)
+  ->setAttachments($attachments)
+  ->setVariables($ticketVars)
+  ->setPersonalization($ticketDetails);
+
+$mailersend->email->send($ticketParams);
+
+// read reply.template file
+$reply = file_get_contents(__DIR__ . '/reply.template');
+$replyTxt = file_get_contents(__DIR__ . '/reply_text.template');
+
+$emailParams = (new EmailParams())
+    ->setFrom('noreply@inzight.nz')
+    ->setFromName('iNZight Support')
+    ->setReplyTo($sendto)
+    ->setRecipients($recipients)
+    ->setSubject("iNZight Support message recieved (ref #" . $ref_no . ")")
+    ->setHtml($reply)
+    ->setText($replyTxt)
+    ->setVariables($variables);
+
+$mailersend->email->send($emailParams);
+
+
+die('OK');
 
 $boundary = "==Multipart_Boundary_x" . md5(date('r', time())) . "x";
 

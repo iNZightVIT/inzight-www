@@ -34,7 +34,6 @@ if (isset($_POST["submit"])) {
   $submit = true;
   $_POST;
 
-
   $p = array(
     "message_reason" => $_POST["message_reason"],
     "userguides" => isset($_POST["userguides"]),
@@ -104,8 +103,8 @@ if (isset($_POST["submit"])) {
     $errors = true;
   }
 
-  $emailReg = "/^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/";
-  if (!preg_match($emailReg, $p["user_email"])) {
+  $email = filter_var($p["user_email"], FILTER_VALIDATE_EMAIL);
+  if (!$email) {
     $userEmailError = "Enter a valid email address.";
     $errors = true;
   }

@@ -1,0 +1,10 @@
+{$message}
+
+***
+
+**Technical information**
+
+Sent on: {$date}
+{% for detail in details %}
+{{ detail.label }}: {{ detail.value }}
+{% endfor %}
