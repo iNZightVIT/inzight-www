@@ -27,51 +27,30 @@ The development of iNZight itself comes from the work of many **statistics stude
       <li>Technical support for users</li>
       <li>Development and maintainenance of the website</li>
       <li>Oversees summer students and helps to implement their work</li>
+      <li>Maintenance and urgent bug fixes in iNZight Lite</li>
     </ul>
   </div>
-
   <div class="col-md-6">
-    <h5><a href="https://unidirectory.auckland.ac.nz/profile/jcai849">Jason Cairns</a></h5>
+    <h5><a href="https://www.stat.auckland.ac.nz/~wild/">Chris Wild</a></h5>
     <p>
-      Jason joined the iNZight team in 2021, and will be taking over responsibilities as the primary maintainer of iNZight Lite while studying towards a PhD at the University of Auckland.
+      Chris is the founder of iNZight and has been at his helm ever since. His strong ties with statistical education have helped
+      guide the direction of development, and he has provided mentorship to all of iNZight's student (and other) developers.
     </p>
-    <p><strong>Core responsibilities:</strong></p>
-    <ul>
-      <li>Development of Lite and implementation of new features as they appear in the software version of iNZight</li>
-      <li>Maintenance of the public shiny containers</li>
-      <li>Technical support for Lite users</li>
-    </ul>
+    <p>
+      These days, Chris is usually off enjoying his well-earned retirement, but continues to provide direction and oversight of iNZight.
+    </p>
+    <h5><a href="https://inzight.co.nz/">Andrew Sporle</a></h5>
+    <p>
+      Andrew has provided ideas and funding to develop iNZight, and has advocated for the software in government and research groups.
+      Through his company iNZight Analytics, Andrew supports iNZight's developers through personnel and development contracts.
+    </p>
+    <p>
+
+    </p>
+
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-6">
-    <h5><a href="">Daniel Barnett</a></h5>
-    <p>
-      Daniel started working with iNZight as part of a summer project in 2017/18,
-      and has since been involved in adding graphics, reinventing the maps module, and adding some epidemiological tests and modelling features.
-    </p>
-    <p><strong>Core responsibilities:</strong></p>
-    <ul>
-      <li>Maintaneance of the Maps module for iNZight</li>
-      <li>Development and maintenance of the new <code>ggplot</code> graph styles
-      <li>General testing and bug fixing of the desktop application</li>
-    </ul>
-  </div>
-
-  <div class="col-md-6">
-      <h5><a href="https://unidirectory.auckland.ac.nz/profile/tche929">Tong Chen</a></h5>
-    <p>
-      Tong joined the iNZight team in 2019. He is mainly working on iNZight Lite. Currently, he is studying toward a PhD at the University of Auckland.
-    </p>
-    <p><strong>Core responsibilities:</strong></p>
-    <ul>
-      <li>Development of Lite and implementation of new features as they appear in the software version of iNZight</li>
-      <li>Maintenance of the public shiny containers</li>
-      <li>Technical support for Lite users</li>
-    </ul>
-  </div>
-</div>
 ///
 
 ---
@@ -144,6 +123,31 @@ The development of iNZight itself comes from the work of many **statistics stude
     </p>
   </div>
 </div>
+<div class="row">
+  <div class="col-md-4">
+    <h5><strong>Daniel Barnett</strong> (2017&ndash;2021)</h5>
+    <p>
+      Daniel worked on iNZight as part of a summer project in 2017/18,
+      and later extended the graphics to include the Financial Times Chart Library.
+      He also rebuilt the maps module and added some epidemiological tests and modelling features.
+    </p>
+  </div>
+  <div class="col-md-4">
+    <h5><strong>Tong Chen</strong> (2019&ndash;2021)</h5>
+    <p>
+      Tong was responsible to maintaining and extending iNZigiht Lite while completing his PhD at the University of Auckland.
+      He also added the Experimental Design module to Lite.
+    </p>
+  </div>
+
+  <div class="col-md-4">
+    <h5><strong><a href="https://jason.cair.nz/">Jason Cairns</a></strong> (2021&ndash;2022)</h5>
+    <p>
+      Jason maintained iNZight Lite and refactored the build process to significantly speed up and minimise resource usage,
+      while lead to massive improvements in the stability of the application.
+    </p>
+  </div>
+</div>
 ///
 
 ---
@@ -184,6 +188,10 @@ These students worked on iNZight for their Summer Scholarship.
 - **Lushi Cai**: worked on a code-tidying algorithm which works with tidyverse-style code that collapses to fill the available width
 - **Monica Merchant**: began work on predictive model building module which allows users to use multiple methods and criteria to build a predictive model
 - **Yiwen He**: implemented datetime facilities to iNZight to allow users to create datetime variables and extract information (such as the year, hour) from a datetime; implemented data joining facilities
+
+##### Summer 2021/22
+
+- **Stephen Su**: refactored the **iNZightTS** package to use packages from the **tidyverts** (**tsibble**, **fable**, and **feasts**).
 
 ---
 
