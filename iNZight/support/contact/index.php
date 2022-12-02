@@ -1,14 +1,14 @@
 <?php
 
-if ($_SERVER['HTTP_HOST'] === "inzight.nz") {
-  $url = "https://stat.auckland.ac.nz/~wild/iNZight/support/contact/";
+// if ($_SERVER['HTTP_HOST'] === "inzight.nz") {
+//   $url = "https://stat.auckland.ac.nz/~wild/iNZight/support/contact/";
 
-  if (isset($_GET['v'])) {
-    $url .= "?v=" . $_GET['v'];
-  }
+//   if (isset($_GET['v'])) {
+//     $url .= "?v=" . $_GET['v'];
+//   }
 
-  header("Location: " . $url);
-}
+//   header("Location: " . $url);
+// }
 
 $version = "";
 if (isset($_GET["v"])) {
