@@ -164,6 +164,12 @@ $ticketDetails = [
   new Personalization($sendto, ["details" => $details])
 ];
 
+// get datetime in Pacific/Auckland timezone
+$tz = 'Pacific/Auckland';
+$timestamp = time();
+$dt = new DateTime("now", new DateTimeZone($tz)); //first argument "must" be a string
+$dt->setTimestamp($timestamp); //adjust the object to correct timestamp
+
 // create and send ticket
 $ticket = file_get_contents(__DIR__ . '/ticket.template');
 $ticketText = file_get_contents(__DIR__ . '/ticket_text.template');
@@ -173,10 +179,9 @@ $ticketVars = [
     [
       'name' => $name,
       'message' => $message,
-      'date' => date("l jS \of F Y, h:i:s A")
+      'date' => $dt->format("l jS \of F Y, h:i:s A")
     ]
-  ),
-
+  )
 ];
 
 $ticketSendTo = [
