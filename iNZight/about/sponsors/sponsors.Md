@@ -2,8 +2,8 @@
 
 We are proudly supported by &hellip;
 
-
 ///HTML:
+
 <div class="sponsors">
   <a href="https://auckland.ac.nz">
     <img src="../../img/uoa_logo.png" alt="University of Auckland">
@@ -19,6 +19,10 @@ We are proudly supported by &hellip;
 
   <a href="https://abs.gov.au">
     <img src="https://oversixtydev.blob.core.windows.net/media/7831220/1.jpg" alt="Australian Bureau of Statistics">
+  </a>
+
+  <a href="https://growingup.co.nz">
+    <img src="../../img/guinz_logo.png" alt="Growing Up in New Zealand">
   </a>
 
   <a href="https://terourou.org">
