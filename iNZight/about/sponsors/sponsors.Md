@@ -1,6 +1,6 @@
 # Our Sponsors
 
-We are proudly supported by &hellip;
+Development of iNZight is made possible by funding opportunities from these organisations:
 
 ///HTML:
 
@@ -34,3 +34,5 @@ We are proudly supported by &hellip;
   </a>
 </div>
 ///
+
+If you would like to support iNZight, please get in touch! We are especially open to working with organisations to develop and implement new functionality that makes iNZight better suited to your environment.
