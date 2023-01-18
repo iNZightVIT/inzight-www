@@ -1,9 +1,9 @@
 # Our Sponsors
 
-We are proudly supported by &hellip;
-
+Development of iNZight is made possible by funding opportunities from these organisations:
 
 ///HTML:
+
 <div class="sponsors">
   <a href="https://auckland.ac.nz">
     <img src="../../img/uoa_logo.png" alt="University of Auckland">
@@ -21,6 +21,10 @@ We are proudly supported by &hellip;
     <img src="https://oversixtydev.blob.core.windows.net/media/7831220/1.jpg" alt="Australian Bureau of Statistics">
   </a>
 
+  <a href="https://growingup.co.nz">
+    <img src="../../img/guinz_logo.png" alt="Growing Up in New Zealand">
+  </a>
+
   <a href="https://terourou.org">
     <img src="https://terourou.org/img/logo.png" alt="Te Rourou Tātaritanga">
   </a>
@@ -30,3 +34,5 @@ We are proudly supported by &hellip;
   </a>
 </div>
 ///
+
+If you would like to support iNZight, please get in touch! We are especially open to working with organisations to develop and implement new functionality that makes iNZight better suited to your environment.

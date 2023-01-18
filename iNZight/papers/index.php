@@ -9,7 +9,7 @@ $papers = array(
         'authors' => "Elliott, Wild, Barnett & Sporle",
         'year' => "in press",
         'journal' => "Journal of Statistical Software",
-        'url' => "https://github.com/iNZightVIT/papers/raw/main/2021_jss/index.pdf"
+        'url' => "https://github.com/iNZightVIT/papers/raw/main/2022_inzight_jss/index.pdf"
     )
 );
 

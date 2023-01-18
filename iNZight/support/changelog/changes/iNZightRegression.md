@@ -1,9 +1,13 @@
-## iNZightRegression 1.3.2
+# iNZightRegression 1.3.3
+
+- add forest plot
+
+# iNZightRegression 1.3.2
 
 - `show.bootstraps` defaults to `TRUE` only if fewer than 100,000 observations
 - fix bug in intercept-only models where upper CI was missing
 
-## iNZightRegression 1.3.1
+# iNZightRegression 1.3.1
 
 - add marginal model plots (from 'car') which are useful for `glm` objects
 
@@ -12,7 +16,7 @@
 - refactor plots using ggplot creating new method for `inzplot` (from iNZightPlots)
 - removes some functions that aren't used by iNZightRegression, and are available in iNZightMR instead
 
-## iNZightRegression 1.2.8
+# iNZightRegression 1.2.8
 
 - add column for exponentiated estimates where appropriate
 - add `exponentiate.cis` argument to `iNZightSummary` which replaces the CIs
@@ -20,20 +24,20 @@
 - factorComp() for survey GLMs includes Wald test for term effects (regTermTest())
 - add summary method for Cox PH models
 
-## iNZightRegression 1.2.7
+# iNZightRegression 1.2.7
 
 **Release date**: 21 April 2020
 
 - specify `stringsAsFactors = TRUE` for upcoming R 4.0.0
 - fix bug in processing summary for models with `exlude`d variables
 
-## iNZightRegression 1.2.6
+# iNZightRegression 1.2.6
 
 **Release date**: 11 November 2019
 
 - fix bug in regression summary causing interactions to fail
 
-## iNZightRegression 1.2.5
+# iNZightRegression 1.2.5
 
 **Release date**: 2 September 2019
 
@@ -42,40 +46,40 @@
 - add `factorComp()` function to obtain adjusted pairwise comparisons of
   factor levels in a model
 
-## iNZightRegression 1.2.4
+# iNZightRegression 1.2.4
 
 **Release date**: 15 July 2019
 
 - disable smoother for intercept-only models (`y ~ 1`)
 - fix some issues with bootstrapping
 
-## iNZightRegression 1.2.3
+# iNZightRegression 1.2.3
 
 **Release date**: 30 April 2019
 
 - display link function used in binomial regression fits
 - suppress warnings from `loess()` calls
 
-## iNZightRegression 1.2.2
+# iNZightRegression 1.2.2
 
 **Release date**: 01 February 2019
 
 - fix bug where residual plot for null model was painfully slow to draw
 
-## iNZightRegression 1.2.1
+# iNZightRegression 1.2.1
 
 **Release date**: 15 November 2018
 
 - display baseline level for binary GLMs
 
-## iNZightRegression 1.2.0-2
+# iNZightRegression 1.2.0-2
 
 **Release date**: 02 October 2017
 
 - fix bootstrapping algorithm
 - summary of model with only confounding variables (i.e., "adjusted intercept")
 
-## iNZightRegression 1.2.0-1
+# iNZightRegression 1.2.0-1
 
 **Release date**: 25 August 2017
 
@@ -98,25 +102,25 @@ to make the Model Fitting module better (over on `iNZightModules`).
 - use the `subset` argument to `lm` (via `update()`) to perform bootstraps, rather than the long-winded data-bootstrapping call-modifying version that was buggy
 - fix up bootstrapping algorithms for QQ-plot and histogram arrays
 
-## iNZightRegression 1.1.7
+# iNZightRegression 1.1.7
 
 **Release date**: 18 August 2017
 
 - various fixes, package maintenance
 
-## iNZightRegression 1.1.6
+# iNZightRegression 1.1.6
 
 **Release date**: 23 March 2017
 
 - fix bootstrapping method for linear models
 
-## iNZightRegression 1.1.5
+# iNZightRegression 1.1.5
 
 **Release date**: 9 January 2017
 
 - fix a bug preventing plots from drawing when provided a `glm` object
 
-## iNZightRegression 1.1.4
+# iNZightRegression 1.1.4
 
 **Release date**: 20 July 2015
 
@@ -132,7 +136,7 @@ to make the Model Fitting module better (over on `iNZightModules`).
 
 - added missed function and method exports
 
-## iNZightRegression 1.1.3
+# iNZightRegression 1.1.3
 
 **Release date**: 17 September 2014
 
@@ -141,7 +145,7 @@ to make the Model Fitting module better (over on `iNZightModules`).
 - on some graphics devices (e.g., RStudio) `grid.rect()` is not
   transparent; now enforces these to be transparent
 
-## iNZightRegression 1.1.2
+# iNZightRegression 1.1.2
 
 **Release date**: 4 April 2014
 
@@ -151,7 +155,7 @@ to make the Model Fitting module better (over on `iNZightModules`).
   plots are now modified to make use of the `iNZightPlots` library
   if it is installed.
 
-## iNZightRegression 1.1.1
+# iNZightRegression 1.1.1
 
 **Release date**: 27 March 2014
 
@@ -221,12 +225,12 @@ to make the Model Fitting module better (over on `iNZightModules`).
 
 - `factorMeans` and `adjustedMeans` have been enhanced to work with GLMs.
 
-## iNZightRegression 1.0.2-20130913
+# iNZightRegression 1.0.2-20130913
 
 - Initial support for generalized linear models (GLMs),
   including the `survey` package's `svyglm`.
 
-## iNZightRegression 1.0.2-20130122
+# iNZightRegression 1.0.2-20130122
 
 ### New Features
 
