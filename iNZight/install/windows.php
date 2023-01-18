@@ -32,7 +32,10 @@ require_once($rel . 'assets/functions/filesize.php');
   </div>
 
   <p>
-    <strong>Previous version:</strong><br>
+    <strong>Previous versions:</strong><br>
+    <a href="<?php echo $download_dir . "Windows/iNZightVIT-installer-4.2.0.exe"; ?>">
+      iNZightVIT v4.2.0 for Windows
+    </a> (released 8 February 2022)
     <a href="<?php echo $download_dir . "Windows/iNZightVIT-installer-4.1.4.exe"; ?>">
       iNZightVIT v4.1.4 for Windows
     </a> (released 13 August 2021)<br>
