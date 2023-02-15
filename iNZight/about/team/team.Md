@@ -30,7 +30,7 @@ The development of iNZight itself comes from the work of many **statistics stude
       <li>Maintenance and urgent bug fixes in iNZight Lite</li>
     </ul>
 
-    <h5><a href="">Charco Hui</a></h5>
+    <h5><a href="https://charcohui.com">Charco Hui</a></h5>
     <p>
       Charco is a PhD student at the University of Auckland and recently joined the iNZight team as our Lite developer.
       He will be responsible for maintenance and development of iNZight Lite, and providing email support to our users.
