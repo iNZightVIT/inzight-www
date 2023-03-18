@@ -118,7 +118,7 @@ $VLITE = $_SESSION["VLITE"];
 
   <body>
     <!-- Load Facebook SDK for JavaScript -->
-    <div id="fb-root"></div>
+    <!--  <div id="fb-root"></div>  */}}
       <script>
         window.fbAsyncInit = function() {
           FB.init({
@@ -136,14 +136,14 @@ $VLITE = $_SESSION["VLITE"];
         }(document, 'script', 'facebook-jssdk'));
       </script>
 
-      <!-- Your Chat Plugin code -->
+      <!-- Your Chat Plugin code -- >
       <div class="fb-customerchat"
         attribution="setup_tool"
         page_id="100566192069494"
         theme_color="#18afe3"
         logged_in_greeting="Kia ora, how can we help? We'll try to respond between 9AM-3PM Mon-Fri NZST."
         logged_out_greeting="Kia ora, how can we help? We'll try to respond between 9AM-3PM Mon-Fri NZST.">
-      </div>
+      </div> -->
 
     <?php
       if (!isset($_SESSION["hide"])) {
