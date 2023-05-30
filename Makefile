@@ -47,4 +47,4 @@ stopserver:
 	@sudo docker stop inzight
 
 sass:
-	@sass --watch iNZight/styles:iNZight/css
+	@node-sass --watch iNZight/styles -o iNZight/css

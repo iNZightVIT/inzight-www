@@ -29,7 +29,7 @@ Development of iNZight is made possible by funding opportunities from these orga
     <img src="https://terourou.org/img/logo.png" alt="Te Rourou Tātaritanga">
   </a>
 
-  <a href="#">
+  <a href="https://inzight.co.nz">
     <img src="../../img/inzight_analytics_logo.png" alt="iNZight Analytics">
   </a>
 </div>
