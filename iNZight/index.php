@@ -11,13 +11,34 @@ $oss = array("Windows", "Mac", "Linux");
 
 $social = array(
     "twitter" => "https://twitter.com/iNZightVIT",
-    "mastodon" => "https://fosstodon.org/@inzight",
+    // "mastodon" => "https://fosstodon.org/@inzight",
     "github" => "https://github.com/iNZightVIT",
     "facebook" => "https://www.facebook.com/inzightuoa",
+    "discord" => "https://discord.gg/vQN8Mbnv",
 )
 
 ?>
 
+
+<div class="container feature current-sponsors">
+  <div class="col-md-12 text-center">
+    <div class="sponsor-group">
+      <h4>iNZight development is currently supported by:</h4>
+      <div class="sponsor-logos" style="">
+        <a href="https://stat.auckland.ac.nz">
+          <img src="/img/uoa_logo.png" height="50" alt="University of Auckland, Department of Statistics" />
+        </a>
+        <a href="https://terourou.org">
+          <img src="https://terourou.org/img/logo.png" height="50" alt="Te Rourou Tātaritanga" />
+        </a>
+        <a href="https://inzight.co.nz">
+          <img src="https://inzight.co.nz/inzight-light.png" alt="iNZight Analytics" height="50">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12 text-right sponsors-all"><a href="/about/sponsors">See all sponsors &gt;</a></div>
+</div>
 
 <div class="container feature">
   <div class="col-md-8 text-center">
