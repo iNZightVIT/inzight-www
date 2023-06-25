@@ -1,3 +1,12 @@
+# iNZightTools 1.13.4
+
+- `read_text()` function handles all invalid characters (as `smart_read()` does)
+- `read_text()` applies string to factor conversion
+
+# iNZightTools 1.13.3
+
+- `read_text()` function replaces spaces with underscores in column names
+
 # iNZightTools 1.13.2
 
 - add global options to set/override default comment character (this will allow Lite to change the default without changing the package's default behaviour; default set as # at load time)
