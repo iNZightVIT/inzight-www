@@ -13,8 +13,8 @@ $social = array(
     "twitter" => "https://twitter.com/iNZightVIT",
     // "mastodon" => "https://fosstodon.org/@inzight",
     "github" => "https://github.com/iNZightVIT",
-    "facebook" => "https://www.facebook.com/inzightuoa",
-    "discord" => "https://discord.gg/vQN8Mbnv",
+    // "facebook" => "https://www.facebook.com/inzightuoa",
+    "discord" => "https://discord.gg/kxQuEUSE",
 )
 
 ?>
