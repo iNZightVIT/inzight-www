@@ -5,5 +5,12 @@
     "message": "We will be updating iNZight Lite from June 26 to July 14, 2023. During this time, iNZight Lite may be unavailable. We apologise for any inconvenience.",
     "validFrom": "2023-06-26T00:00:00+12:00",
     "validTo": "2023-07-14T23:59:59+12:00"
+  },
+  {
+    "title": "New Release 2023.06",
+    "type": "info",
+    "message": "Last month we released the June update for iNZight Lite. This update includes a number of new features and bug fixes. For more information, see the <a href='https://github.com/iNZightVIT/Lite/releases/latest/'>the change log</a>.",
+    "validFrom": "2023-07-01T00:00:00+12:00",
+    "validTo": "2023-07-31T23:59:59+12:00"
   }
 ]
