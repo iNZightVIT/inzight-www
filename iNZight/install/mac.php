@@ -39,13 +39,17 @@ require_once($rel . 'assets/functions/filesize.php');
             It is possible to install and run iNZight Lite locally. This requires that you install R along with some necessary pacakges, and download the Lite application files.
           </p>
 
-          <h4>1. Install R</h4>
+          <h4>1. Install R version 4.2</h4>
           <p>
             R for macOS can be downloaded and install from CRAN:
             <a href="https://cran.r-project.org/">https://cran.r-project.org/</a>.
           </p>
           <p>
-            Head to the website above, and click <strong>Download R for macOS</strong>, then download the latest release (something like <strong>R-4.y.z.pkg (notarized and signed)</strong>).
+            <strong>Important:</strong> You must install version 4.2 and <em>not</em> the latest version (currently 4.3). The direct link is:
+            <a href="https://cran.r-project.org/bin/macosx/base/R-4.2.3.pkg">https://cran.r-project.org/bin/macosx/base/R-4.2.3.pkg</a>.
+          </p>
+          <p>
+              If you prefer to navigate to the file yourself, head to the website above and click <strong>Download R for macOS</strong>. On the <strong>R for macOS</strong> page, scroll to the bottom and click the link to <strong>base</strong>. This will take you to a page of links: click the link for <strong>R-4.2.3.pkg</strong>.
           </p>
           <p>
             After downloading, run the R package installer and follow the step-by-step instructions. Once finished, you'll have R installed on your machine.
