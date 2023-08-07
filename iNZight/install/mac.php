@@ -66,6 +66,8 @@ require_once($rel . 'assets/functions/filesize.php');
             Copy and paste the following commands into R and press Enter to run them. This will install the named packages.
           </p>
           <p><pre>options(install.packages.compile.from.source = "never")
+install.packages("remotes", repos = "https://cran.rstudio.com")
+remotes::install_version("MatrixModels", "0.5-1")
 install.packages(
   c(
     "iNZightPlots", "iNZightRegression",  "iNZightTS", "iNZightMR", "iNZightTools", "iNZightMaps",
