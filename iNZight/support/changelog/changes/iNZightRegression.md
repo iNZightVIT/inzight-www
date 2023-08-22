@@ -1,3 +1,7 @@
+# iNZightRegression 1.3.4
+
+- fix documentation for package (adding missing alias required by CRAN, and bring pkg doc page up to date)
+
 # iNZightRegression 1.3.3
 
 - add forest plot
