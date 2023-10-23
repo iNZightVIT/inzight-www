@@ -12,5 +12,12 @@
     "message": "Last month we released the June update for iNZight Lite. This update includes a number of new features and bug fixes. For more information, see the <a href='https://github.com/iNZightVIT/Lite/releases/latest/'>change log</a>.",
     "validFrom": "2023-07-01T00:00:00+12:00",
     "validTo": "2023-07-31T23:59:59+12:00"
+  },
+  {
+    "title": "Ongoing server issues",
+    "type": "warning",
+    "message": "We are aware of a server issue causing some users to be disconnected. If this doesn't resolve automatically, we will have another solution ready within 24 hours. Thank you for your patience.",
+    "validFrom": "2023-10-20T00:00:00+12:00",
+    "validTo": "2023-10-31T23:59:59+12:00"
   }
 ]
