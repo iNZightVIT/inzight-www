@@ -16,7 +16,7 @@
   {
     "title": "Ongoing server issues",
     "type": "warning",
-    "message": "We are aware of a server issue causing some users to be disconnected. If this doesn't resolve automatically, we will have another solution ready within 24 hours. Thank you for your patience.",
+    "message": "We are aware of a server issue causing some users to be disconnected. Please try hard-refreshing the page every few minutes. If you need Lite for anything URGENT (e.g., a test), please email us for a back-up link. Thank you for your patience.",
     "validFrom": "2023-10-20T00:00:00+12:00",
     "validTo": "2023-10-31T23:59:59+12:00"
   }
