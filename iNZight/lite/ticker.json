@@ -16,8 +16,15 @@
   {
     "title": "Ongoing server issues",
     "type": "warning",
-    "message": "We are aware of a server issue causing some users to be disconnected. Please try hard-refreshing the page every few minutes. If you need Lite for anything URGENT (e.g., a test), please email us for a back-up link. Thank you for your patience.",
+    "message": "We are aware of a server issue causing some users to be disconnected. Please try hard-refreshing the page every 5 minutes. Let us know if you're consistently unable to connect. Thank you for your patience.",
     "validFrom": "2023-10-20T00:00:00+12:00",
     "validTo": "2023-10-31T23:59:59+12:00"
+  },
+  {
+    "title": "QUAN101 test back-up",
+    "type": "info",
+    "message": "If you are urgently needing Lite for your test today and are having connection issues, use this back-up instead: https://lite-quan102.up.railway.app/ - this is very limited resource, please only use it for the test if the normal Lite server isn't letting you connect.",
+    "validFrom": "2023-10-25T00:00:00+12:00",
+    "validTo": "2023-10-26T23:59:59+12:00"
   }
 ]
