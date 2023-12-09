@@ -2,9 +2,9 @@
   {
     "title": "Scheduled maintenance",
     "type": "warning",
-    "message": "We will be updating iNZight Lite from June 26 to July 14, 2023. During this time, iNZight Lite may be unavailable. We apologise for any inconvenience.",
-    "validFrom": "2023-06-26T00:00:00+12:00",
-    "validTo": "2023-07-14T23:59:59+12:00"
+    "message": "We will be performing updates to iNZight Lite from December 13 to December 22, 2023. During this time, iNZight Lite may be unavailable or unstable. Please get in touch if you need to use iNZight Lite during this time.",
+    "validFrom": "2023-12-08T00:00:00+12:00",
+    "validTo": "2023-12-22T23:59:59+12:00"
   },
   {
     "title": "New Release 2023.06",
@@ -19,12 +19,5 @@
     "message": "We are aware of a server issue causing some users to be disconnected. Please try hard-refreshing the page every 5 minutes. Let us know if you're consistently unable to connect. Thank you for your patience.",
     "validFrom": "2023-10-20T00:00:00+12:00",
     "validTo": "2023-10-31T23:59:59+12:00"
-  },
-  {
-    "title": "QUAN101 test back-up",
-    "type": "info",
-    "message": "If you are urgently needing Lite for your test today and are having connection issues, use this back-up instead: https://lite-quan102.up.railway.app/ - this is very limited resource, please only use it for the test if the normal Lite server isn't letting you connect.",
-    "validFrom": "2023-10-25T00:00:00+12:00",
-    "validTo": "2023-10-26T23:59:59+12:00"
   }
 ]
