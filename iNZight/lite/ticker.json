@@ -2,7 +2,7 @@
   {
     "title": "Scheduled maintenance",
     "type": "warning",
-    "message": "We will be performing updates to iNZight Lite from December 13 to December 22, 2023. During this time, iNZight Lite may be unavailable or unstable. Please get in touch if you need to use iNZight Lite during this time.",
+    "message": "We will be performing updates to iNZight Lite from December 20 to December 22, 2023. During this time, iNZight Lite may be unavailable or unstable. Please get in touch if you need to use iNZight Lite during this time.",
     "validFrom": "2023-12-08T00:00:00+12:00",
     "validTo": "2023-12-22T23:59:59+12:00"
   },
