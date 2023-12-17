@@ -21,7 +21,7 @@
     "validTo": "2023-10-31T23:59:59+12:00"
   },
   {
-    "title": "iNZight Lite back-up for VUW students",
+    "title": "Back-up for VUW students",
     "type": "info",
     "message": "If you are having trouble accessing Lite for your test, we have a back-up version available at <a href='https://lite-vuw.up.railway.app'>lite-vuw.up.railway.app</a>. Please note that this version has lower resources and may be slower than usual, so please only use this if the main version is not working for you",
     "validFrom": "2023-12-17T00:00:00+12:00",
