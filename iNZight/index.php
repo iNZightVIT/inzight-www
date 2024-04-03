@@ -25,11 +25,11 @@ $social = array(
     <div class="sponsor-group">
       <h4>iNZight development is currently supported by:</h4>
       <div class="sponsor-logos" style="">
-        <a href="https://stat.auckland.ac.nz">
-          <img src="/img/uoa_logo.png" height="50" alt="University of Auckland, Department of Statistics" />
-        </a>
         <a href="https://inzight.co.nz">
           <img src="https://inzight.co.nz/inzight-light.png" alt="iNZight Analytics" height="50">
+        </a>
+        <a href="https://stat.auckland.ac.nz">
+          <img src="/img/uoa_logo.png" height="50" alt="University of Auckland, Department of Statistics" />
         </a>
       </div>
     </div>
