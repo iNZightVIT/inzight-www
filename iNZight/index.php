@@ -28,9 +28,6 @@ $social = array(
         <a href="https://stat.auckland.ac.nz">
           <img src="/img/uoa_logo.png" height="50" alt="University of Auckland, Department of Statistics" />
         </a>
-        <a href="https://terourou.org">
-          <img src="https://terourou.org/img/logo.png" height="50" alt="Te Rourou Tātaritanga" />
-        </a>
         <a href="https://inzight.co.nz">
           <img src="https://inzight.co.nz/inzight-light.png" alt="iNZight Analytics" height="50">
         </a>
