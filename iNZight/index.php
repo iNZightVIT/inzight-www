@@ -14,7 +14,7 @@ $social = array(
     // "mastodon" => "https://fosstodon.org/@inzight",
     "github" => "https://github.com/iNZightVIT",
     // "facebook" => "https://www.facebook.com/inzightuoa",
-    "discord" => "https://discord.gg/kxQuEUSE",
+    "discord" => "https://discord.gg/gxEMdqWE",
 )
 
 ?>
