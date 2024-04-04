@@ -37,7 +37,7 @@
   {
     "title": "Looking for new update testers",
     "type": "info",
-    "message": "We are looking for users to test the latest updates to iNZight Lite. If you are interested, simply use the developmental version at <a href='https://lite-staging.up.railway.app'>lite-staging.up.railway.app</a>. Please report any issues you encounter to the iNZight team.",
+    "message": "We are looking for users to test the latest updates to iNZight Lite. If you are interested, simply use the developmental version at <a href='https://lite-staging.inzight.nz'>lite-staging.inzight.nz</a>. Please report any issues you encounter to the iNZight team.",
     "validFrom": "2024-04-01T00:00:00+12:00",
     "validTo": "2024-04-30T23:59:59+12:00",
     "target": "https://lite.docker.stat.auckland.ac.nz"
