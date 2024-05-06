@@ -19,7 +19,7 @@ require_once($rel . 'assets/functions/filesize.php');
 <div>
     <ul class="nav nav-tabs" role="tablist" id="linuxTabs">
         <li role="presentation" class="active"><a href="#macos-lite" role="tab" data-toggle="tab">iNZight Lite</a></li>
-        <li role="presentation"><a href="#macos-lite-local" role="tab" data-toggle="tab">Install Lite locally</a></li>
+        <!--<li role="presentation"><a href="#macos-lite-local" role="tab" data-toggle="tab">Install Lite locally</a></li>-->
         <!--<li role="presentation"><a href="#macos-wine" role="tab" data-toggle="tab">Wine</a></li>-->
         <!--<li role="presentation"><a href="#macos-r" role="tab" data-toggle="tab">Homebrew + R</a></li>-->
     </ul>
