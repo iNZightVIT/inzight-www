@@ -1,3 +1,8 @@
+# iNZightModules 2.5.9
+
+- drop module manager (moved to iNZight)
+- switch to iNZightTS legacy version
+
 # iNZightModules 2.5.8
 
 - Add forest plot to regression plot list
