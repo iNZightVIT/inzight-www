@@ -222,6 +222,7 @@ $zohoParams = (new EmailParams())
   ->setFrom('noreply@inzight.nz')
   ->setFromName('iNZight Support')
   ->setReplyTo($email)
+  ->setReplyToName($name)
   ->setRecipients($zohoTo)
   ->setSubject($subject)
   ->setText($ticketText)
@@ -252,12 +253,12 @@ try {
 } catch (MailerSendValidationException $e) {
   // print error if GET parameter DEBUG is set
   // if (isset($_GET['DEBUG'])) {
-    echo "\n---------------- DEBUG ----------------\n";
-    echo $e->getMessage();
-    echo "\n---------------------------------------\n";
-    die();
+    // echo "\n---------------- DEBUG ----------------\n";
+    // echo $e->getMessage();
+    // echo "\n---------------------------------------\n";
+    // die();
   // }
-  // $sendError = true;
+  $sendError = true;
 }
 
 if (!$sendError) {
