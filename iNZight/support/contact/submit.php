@@ -214,6 +214,9 @@ $zohoVars = [
     ]
   )
 ];
+$zohoDetails = [
+  new Personalization("support@inzight.zohodesk.com.au", ["details" => $details])
+];
 
 $zohoParams = (new EmailParams())
   ->setFrom('noreply@inzight.nz')
@@ -225,7 +228,7 @@ $zohoParams = (new EmailParams())
   ->setHtml($ticket)
   ->setAttachments($attachments)
   ->setVariables($zohoVars)
-  ->setPersonalization($ticketDetails);
+  ->setPersonalization($zohoDetails);
 
 // read reply.template file
 $reply = file_get_contents(__DIR__ . '/reply.template');
