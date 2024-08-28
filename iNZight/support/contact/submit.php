@@ -246,9 +246,9 @@ $emailParams = (new EmailParams())
 
 $sendError = false;
 try {
-  $mailersend->email->send($ticketParams);
+  // $mailersend->email->send($ticketParams);
   $mailersend->email->send($zohoParams);
-  $mailersend->email->send($emailParams);
+  // $mailersend->email->send($emailParams);
 } catch (MailerSendValidationException $e) {
   // print error if GET parameter DEBUG is set
   // if (isset($_GET['DEBUG'])) {
