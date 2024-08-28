@@ -216,8 +216,8 @@ $zohoVars = [
 ];
 
 $zohoParams = (new EmailParams())
-  ->setFrom(strlen($email) > 0 ? $email : "Not provided")
-  ->setFromName(strlen($name) > 0 ? $name : "Anonymous")
+  ->setFrom('noreply@inzight.nz')
+  ->setFromName('iNZight Support')
   ->setReplyTo($email)
   ->setRecipients($zohoTo)
   ->setSubject($subject)
