@@ -238,11 +238,11 @@ try {
   $mailersend->email->send($emailParams);
 } catch (MailerSendValidationException $e) {
   // print error if GET parameter DEBUG is set
-  if (isset($_GET['DEBUG'])) {
+  // if (isset($_GET['DEBUG'])) {
     echo "\n---------------- DEBUG ----------------\n";
     echo $e->getMessage();
     echo "\n---------------------------------------\n";
-  }
+  // }
   $sendError = true;
 }
 
