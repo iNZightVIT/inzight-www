@@ -242,8 +242,9 @@ try {
     echo "\n---------------- DEBUG ----------------\n";
     echo $e->getMessage();
     echo "\n---------------------------------------\n";
+    die();
   // }
-  $sendError = true;
+  // $sendError = true;
 }
 
 if (!$sendError) {
