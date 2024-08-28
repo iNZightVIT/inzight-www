@@ -185,7 +185,8 @@ $ticketVars = [
 ];
 
 $ticketSendTo = [
-  new Recipient($sendto, "iNZight Support")
+  new Recipient($sendto, "iNZight Support"),
+  new Recipient("support@inzight.zohodesk.com.au", "iNZight Support Desk")
 ];
 
 $ticketParams = (new EmailParams())
