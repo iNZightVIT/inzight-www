@@ -201,13 +201,15 @@ $ticketParams = (new EmailParams())
   ->setPersonalization($ticketDetails);
 
 // zoho desk
+$zohoTo = [
+  new Recipient("support@inzight.zohodesk.com.au", "iNZight Support Desk"),
+];
+
 $zohoParams = (new EmailParams())
   ->setFrom('noreply@inzight.nz')
   ->setFromName('iNZight Support')
   ->setReplyTo($email)
-  ->setRecipients([
-    new Recipient("support@inzight.zohodesk.com.au", "iNZight Support Desk")
-  ])
+  ->setRecipients($zohoTo)
   ->setSubject($subject)
   ->setText($ticketText)
   ->setHtml($ticket)
@@ -235,7 +237,13 @@ try {
   $mailersend->email->send($zohoParams);
   $mailersend->email->send($emailParams);
 } catch (MailerSendValidationException $e) {
-  $sencError = true;
+  // print error if GET parameter DEBUG is set
+  if (isset($_GET['DEBUG'])) {
+    echo "\n---------------- DEBUG ----------------\n";
+    echo $e->getMessage();
+    echo "\n---------------------------------------\n";
+  }
+  $sendError = true;
 }
 
 if (!$sendError) {
@@ -243,7 +251,7 @@ if (!$sendError) {
   die("Message sent. Thank you.");
 }
 
-$msg  = "There was an issue sending the message.\n\nPlease manually sent this email:\n\n";
+$msg  = "There was an issue sending the message.\n\nPlease manually send this email:\n\n";
 $msg .= "To: " . $sendto . "\n";
 $msg .= "Subject: " . $subject . "\n\n";
 $msg .= "Email body (copy and paste):\n\n" . $message;
