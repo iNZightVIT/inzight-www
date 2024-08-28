@@ -200,6 +200,21 @@ $ticketParams = (new EmailParams())
   ->setVariables($ticketVars)
   ->setPersonalization($ticketDetails);
 
+// zoho desk
+$zohoParams = (new EmailParams())
+  ->setFrom('noreply@inzight.nz')
+  ->setFromName('iNZight Support')
+  ->setReplyTo($email)
+  ->setRecipients([
+    new Recipient("support@inzight.zohodesk.com.au", "iNZight Support Desk")
+  ])
+  ->setSubject($subject)
+  ->setText($ticketText)
+  ->setHtml($ticket)
+  ->setAttachments($attachments)
+  ->setVariables($ticketVars)
+  ->setPersonalization($ticketDetails);
+
 // read reply.template file
 $reply = file_get_contents(__DIR__ . '/reply.template');
 $replyTxt = file_get_contents(__DIR__ . '/reply_text.template');
@@ -217,6 +232,7 @@ $emailParams = (new EmailParams())
 $sendError = false;
 try {
   $mailersend->email->send($ticketParams);
+  $mailersend->email->send($zohoParams);
   $mailersend->email->send($emailParams);
 } catch (MailerSendValidationException $e) {
   $sencError = true;
