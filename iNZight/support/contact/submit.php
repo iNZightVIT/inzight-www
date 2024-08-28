@@ -204,17 +204,27 @@ $ticketParams = (new EmailParams())
 $zohoTo = [
   new Recipient("support@inzight.zohodesk.com.au", "iNZight Support Desk"),
 ];
+$zohoVars = [
+  new Variable(
+    "support@inzight.zohodesk.com.au",
+    [
+      'name' => $name,
+      'message' => $message,
+      'date' => $dt->format("l jS \of F Y, h:i:s A")
+    ]
+  )
+];
 
 $zohoParams = (new EmailParams())
-  ->setFrom('noreply@inzight.nz')
-  ->setFromName('iNZight Support')
+  ->setFrom(strlen($email) > 0 ? $email : "Not provided")
+  ->setFromName(strlen($name) > 0 ? $name : "Anonymous")
   ->setReplyTo($email)
   ->setRecipients($zohoTo)
   ->setSubject($subject)
   ->setText($ticketText)
   ->setHtml($ticket)
   ->setAttachments($attachments)
-  ->setVariables($ticketVars)
+  ->setVariables($zohoVars)
   ->setPersonalization($ticketDetails);
 
 // read reply.template file
