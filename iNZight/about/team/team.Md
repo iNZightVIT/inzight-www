@@ -17,7 +17,7 @@ The development of iNZight itself comes from the work of many **statistics stude
     <p>
       Tom started working on iNZight in 2013, and is the lead developer and maintainer.
       He has worked on all of the iNZight packages to varying degrees.
-      After completing a PhD at the University of Auckland (2015&ndash;2020), he is currently a postdoctoral research fellow at The School of Health, Victoria University of Wellington, although he remains based in Auckland.
+      After has a PhD in Statistics from the University of Auckland (2015&ndash;2020), and is now a senior researcher at <a href="https://inzight.co.nz">iNZight Analytics Ltd</a> where he is completing a 4 year Ngā Puanga Pūtaiao Fellowship.
     </p>
     <p><strong>Core responsibilities:</strong></p>
     <ul>
