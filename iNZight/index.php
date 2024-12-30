@@ -10,11 +10,11 @@ $os = getOS();
 $oss = array("Windows", "Mac", "Linux");
 
 $social = array(
-    "twitter" => "https://twitter.com/iNZightVIT",
+    "twitter" => "https://twitter.com/iNZightUoA",
     // "mastodon" => "https://fosstodon.org/@inzight",
     "github" => "https://github.com/iNZightVIT",
     // "facebook" => "https://www.facebook.com/inzightuoa",
-    "discord" => "https://discord.gg/gxEMdqWE",
+    // "discord" => "https://discord.gg/gxEMdqWE",
 )
 
 ?>

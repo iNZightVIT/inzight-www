@@ -173,32 +173,32 @@ $dt->setTimestamp($timestamp); //adjust the object to correct timestamp
 // create and send ticket
 $ticket = file_get_contents(__DIR__ . '/ticket.template');
 $ticketText = file_get_contents(__DIR__ . '/ticket_text.template');
-$ticketVars = [
-  new Variable(
-    $sendto,
-    [
-      'name' => $name,
-      'message' => $message,
-      'date' => $dt->format("l jS \of F Y, h:i:s A")
-    ]
-  )
-];
+// $ticketVars = [
+//   new Variable(
+//     $sendto,
+//     [
+//       'name' => $name,
+//       'message' => $message,
+//       'date' => $dt->format("l jS \of F Y, h:i:s A")
+//     ]
+//   )
+// ];
 
-$ticketSendTo = [
-  new Recipient($sendto, "iNZight Support")
-];
+// $ticketSendTo = [
+//   new Recipient($sendto, "iNZight Support")
+// ];
 
-$ticketParams = (new EmailParams())
-  ->setFrom('noreply@inzight.nz')
-  ->setFromName('iNZight Support')
-  ->setReplyTo($email)
-  ->setRecipients($ticketSendTo)
-  ->setSubject($subject)
-  ->setText($ticketText)
-  ->setHtml($ticket)
-  ->setAttachments($attachments)
-  ->setVariables($ticketVars)
-  ->setPersonalization($ticketDetails);
+// $ticketParams = (new EmailParams())
+//   ->setFrom('noreply@inzight.nz')
+//   ->setFromName('iNZight Support')
+//   ->setReplyTo($email)
+//   ->setRecipients($ticketSendTo)
+//   ->setSubject($subject)
+//   ->setText($ticketText)
+//   ->setHtml($ticket)
+//   ->setAttachments($attachments)
+//   ->setVariables($ticketVars)
+//   ->setPersonalization($ticketDetails);
 
 // zoho desk
 $zohoTo = [
@@ -232,32 +232,23 @@ $zohoParams = (new EmailParams())
   ->setPersonalization($zohoDetails);
 
 // read reply.template file
-$reply = file_get_contents(__DIR__ . '/reply.template');
-$replyTxt = file_get_contents(__DIR__ . '/reply_text.template');
+// $reply = file_get_contents(__DIR__ . '/reply.template');
+// $replyTxt = file_get_contents(__DIR__ . '/reply_text.template');
 
-$emailParams = (new EmailParams())
-    ->setFrom('noreply@inzight.nz')
-    ->setFromName('iNZight Support')
-    ->setReplyTo($sendto)
-    ->setRecipients($recipients)
-    ->setSubject("iNZight Support message recieved (ref #" . $ref_no . ")")
-    ->setHtml($reply)
-    ->setText($replyTxt)
-    ->setVariables($variables);
+// $emailParams = (new EmailParams())
+//     ->setFrom('noreply@inzight.nz')
+//     ->setFromName('iNZight Support')
+//     ->setReplyTo($sendto)
+//     ->setRecipients($recipients)
+//     ->setSubject("iNZight Support message recieved (ref #" . $ref_no . ")")
+//     ->setHtml($reply)
+//     ->setText($replyTxt)
+//     ->setVariables($variables);
 
 $sendError = false;
 try {
-  // $mailersend->email->send($ticketParams);
   $mailersend->email->send($zohoParams);
-  // $mailersend->email->send($emailParams);
 } catch (MailerSendValidationException $e) {
-  // print error if GET parameter DEBUG is set
-  // if (isset($_GET['DEBUG'])) {
-    // echo "\n---------------- DEBUG ----------------\n";
-    // echo $e->getMessage();
-    // echo "\n---------------------------------------\n";
-    // die();
-  // }
   $sendError = true;
 }
 
