@@ -30,9 +30,9 @@
   {
     "title": "Back-up",
     "type": "info",
-    "message": "If you are having trouble accessing Lite, we have a back-up version available at <a href='https://lite-prod.up.railway.app'>https://lite-prod.up.railway.app</a>. This version has lower resources and may be slower than usual - please only use it if the main version is not working after trying the troubleshooting steps.",
-    "validFrom": "2024-05-07T00:00:00+12:00",
-    "validTo": "2024-10-25T12:00:00+12:00",
+    "message": "If you are having trouble accessing Lite, we have a back-up version available at <a href='https://lite-prod.up.railway.app'>https://lite-prod.up.railway.app</a>. This version has lower capacity so please only use it if the main version is not working after trying the troubleshooting steps.",
+    "validFrom": "2025-04-01T00:00:00+12:00",
+    "validTo": "2025-05-01T12:00:00+12:00",
     "target": "https://lite.docker.stat.auckland.ac.nz"
   },
   {
