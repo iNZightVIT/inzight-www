@@ -25,8 +25,8 @@
     "linux" => "https://raw.githubusercontent.com/iNZightVIT/dev/master/scripts/install_inzight.sh"
   );
 
-  $inzight_version = "4.4.0";
-  $release_date    = " 1 August 2023";
+  $inzight_version = "4.4.2";
+  $release_date    = "14 April 2025";
 
   $nightly_version = "4.4.2.20250414";
   $nightly_date    = "14 April 2025";
