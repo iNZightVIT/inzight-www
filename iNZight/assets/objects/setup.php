@@ -6,7 +6,8 @@
   $cloud_as_main = false;  // if TRUE, the *main* links will point to the cloud files
 
   $download_links = array(
-    "Windows" => "iNZightVIT-installer.exe",
+    // "Windows" => "iNZightVIT-installer.exe",
+    "Windows" => "Windows/iNZightVIT-installer-4.4.0.exe",
     "osx"     => "iNZightVIT-mac.dmg",
     // "osx-self"=> "iNZightVIT-selfinstall.tar.bz2",
 
@@ -25,8 +26,8 @@
     "linux" => "https://raw.githubusercontent.com/iNZightVIT/dev/master/scripts/install_inzight.sh"
   );
 
-  $inzight_version = "4.4.2";
-  $release_date    = "14 April 2025";
+  $inzight_version = "4.4.0";
+  $release_date    = "08 April 2024";
 
   $nightly_version = "4.4.2.20250415";
   $nightly_date    = "15 April 2025";
