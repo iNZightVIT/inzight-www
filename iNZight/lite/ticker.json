@@ -9,7 +9,7 @@
   {
     "title": "Ongoing connection issues",
     "type": "warning",
-    "message": "We are aware of some connectivity issues with Lite. If you are unable to use Lite, please use the alternative link: <a href='https://lite-prod.up.railway.app'>lite-prod.up.railway.app</a>. Please note that this version has lower resources and may be less performant. ",
+    "message": "We are aware of some connectivity issues with Lite. If you are unable to use Lite, please use the alternative link: <a href='https://lite-prod.up.railway.app'>lite-prod.up.railway.app</a>. Please note that this version has lower resources and may be less performant. Please use this only if you have tried the other troubleshooting steps first.",
     "validFrom": "2025-08-01T15:00:00+12:00",
     "validTo": "2025-08-172T23:59:59+12:00"
   },
