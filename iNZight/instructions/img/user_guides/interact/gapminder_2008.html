@@ -1,0 +1,2048 @@
+<!DOCTYPE HTML>
+<!-- template for HTML conversion plot -->
+<html>
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--[if IE]>
+    <p>
+    You're on Internet Explorer!
+    There's no support available yet, we're still working on it - please switch to Chrome or Firefox.
+    </p>
+    <![endif]-->
+
+    <title> iNZight Plot </title>
+
+      <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <!-- style sheet -->
+      <style>
+/* STYLING:
+- Originally written in JS, styling has been moved to CSS.
+Note: there are some stylings still done with JS (such as control of background colors,
+but hopefully that can be somehow transferred some other day...)*/
+
+ body {
+  padding: 20px;
+}
+
+.table {
+  overflow-x: auto;
+}
+
+.table-fit {
+  white-space: nowrap;
+  width: 1%;
+}
+
+.table-responsive {
+  display: table;
+}
+
+/*svg container */
+
+.contained {
+  margin-left: 0;
+  padding: 0;
+  margin-right: 0;
+}
+
+/*** TABLE PROPERTIES ***/
+/*totals column  or totals row */
+
+.tc {
+  font-weight:bold;
+}
+
+tr {
+  align: center;
+}
+
+td {
+  text-align: center;
+}
+
+th {
+  text-align: center;
+}
+
+/* xheading and yheading */
+.headings {
+  font-style: italic;
+  font-weight:normal;
+  text-decoration: underline;
+  text-align: center;
+  align: center;
+  visibility:visible;
+}
+
+/* groups for two way bar plots */
+.yGroup {
+  text-align: center;
+  font-weight: bold;
+}
+
+
+/*** BUTTONS ***/
+
+#viewTable {
+  background-color: DeepSkyBlue;
+  margin-right: 10px;
+}
+
+#reset {
+  background-color: rgb(0, 128, 0);
+  margin-right: 10px;
+}
+
+.ButtonPercentage {
+  background-color:rgb(0, 0, 255);
+  opacity: 0.5;
+  margin-left: 10px;
+}
+
+.ButtonCount {
+ background-color: purple;
+ opacity: 0.5;
+ margin-left: 10px;
+}
+
+
+.dark {
+  opacity: 1;
+}
+
+#form {
+  display: inline-table;
+  padding: 20px;
+}
+
+/*** LABEL PROPERTIES ***/
+/* style for rectangular labels */
+.gRect {
+  visibility: inherit;
+  fill: white;
+  fill-opacity: 0.8;
+  rx: 5;
+  ry: 5;
+  stroke: lightgray;
+}
+
+/* textlabels in general */
+.label {
+  font-size: 12;
+  fill: black;
+  stroke: none;
+  fill-opacity: 1;
+  text-anchor: middle;
+  visibility: inherit;
+  font-weight: normal;
+}
+
+.groupLabel { /* make group label bold */
+  font-weight: bold;
+}
+
+.propLabel {
+  font-weight: bold;
+}
+
+/* tlabels */
+.tLabel {
+  font-weight: bold;
+  visibility: inherit;
+}
+
+
+/* BAR PROPERTIES (for bar charts) */
+.bar {
+  stroke: none;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* bars on hover on and off */
+
+.normal {
+  fill-opacity: 1;
+}
+
+/* upon selection */
+.selected {
+  opacity: 1;
+  visibility: visible;
+
+}
+
+.none {
+  opacity: 0.3;
+}
+
+/* svg rectangle */
+.rect {
+  width: 200%;
+  height: 200%;
+}
+
+
+/* hiding elements - extra bars and lines... */
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.visible {
+  display: inline;
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+/*highlighting data */
+.totalRow {
+  align: center;
+  font-weight: bold;
+}
+
+.tabSelect {
+  font-weight: bold;
+}
+
+.rowSelect {
+  display: table-row;
+  opacity: 1;
+}
+
+
+/* legend interactions and styling */
+.show {
+  font-size: 115%;
+  fill-opacity: 0.5;
+}
+
+.out {
+  font-size: 100%;
+  fill-opacity: 1;
+}
+
+.keyText {
+  fill: black;
+}
+
+.select {
+  font-weight: bold;
+}
+
+/* for box plots - dot plots, histograms */
+.box {
+  fill: gray;
+  fill-opacity: 0.5;
+}
+
+.fillBox {
+  fill-opacity: 0.3;
+}
+
+/* for dot plots and scatter plots */
+
+.showPoint { /* showPoint */
+  fill: currentColor;
+  stroke-width: 50%;
+  fill-opacity: 1;
+}
+
+/* control of columns */
+.showColumn {
+  display: table-cell;
+  visibility: visible;
+}
+
+/* for histograms */
+.histBar {
+  stroke: white;
+  stroke-width: 0.25;
+}
+
+.classLabel {
+  font-weight:bold;
+}
+
+/* hexbins */
+.hexbin {
+  stroke: none;
+}
+
+.hx_hy {
+  font-weight: bold;
+}
+
+/* user selection drag box */
+.selectRect {
+  fill: transparent;
+  stroke: black;
+  stroke-width: 1px;
+}
+      </style>
+
+      <!-- Bootstrap: JQuery + JS -->
+      <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <!-- Latest compiled JavaScript -->
+    <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <div class="row">
+      <div class = "col-xs-12 col-md-12 col-lg-12">
+        <div id = "svg-container"> 
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1189px" height="767px" viewBox="0 0 1189 767" version="1.1">
+  <metadata xmlns:gridsvg="http://www.stat.auckland.ac.nz/~paul/R/gridSVG/">
+    <gridsvg:generator name="gridSVG" version="1.5-1" time="2017-06-02 10:00:40"/>
+    <gridsvg:argument name="name" value=""/>
+    <gridsvg:argument name="exportCoords" value="none"/>
+    <gridsvg:argument name="exportMappings" value="none"/>
+    <gridsvg:argument name="exportJS" value="none"/>
+    <gridsvg:argument name="res" value="72"/>
+    <gridsvg:argument name="prefix" value=""/>
+    <gridsvg:argument name="addClasses" value="FALSE"/>
+    <gridsvg:argument name="indent" value="TRUE"/>
+    <gridsvg:argument name="htmlWrapper" value="FALSE"/>
+    <gridsvg:argument name="usePaths" value="vpPaths"/>
+    <gridsvg:argument name="uniqueNames" value="TRUE"/>
+    <gridsvg:separator name="id.sep" value="."/>
+    <gridsvg:separator name="gPath.sep" value="::"/>
+    <gridsvg:separator name="vpPath.sep" value="::"/>
+  </metadata>
+  <g transform="translate(0, 767) scale(1, -1)">
+    <g id="gridSVG" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="0.75" font-size="12" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" opacity="1" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-opacity="1" fill-opacity="0" font-weight="normal" font-style="normal">
+      <defs>
+        <symbol id="gridSVG.pch21" viewBox="-5 -5 10 10" overflow="visible">
+          <circle cx="0" cy="0" r="3.75"/>
+        </symbol>
+      </defs>
+      <g id="container.1" font-size="12">
+        <g id="container::VP:TOPlayout.1">
+          <g id="container::VP:TOPlayout::GRID.VP.752.1"/>
+          <g id="container::VP:TOPlayout::GRID.VP.753.1">
+            <g id="GRID.text.1246.1">
+              <g id="GRID.text.1246.1.1" transform="translate(594.5, 756.95)" stroke-width="0.1">
+                <g id="GRID.text.1246.1.1.scale" transform="scale(1, -1)">
+                  <text x="0" y="0" id="GRID.text.1246.1.1.text" text-anchor="middle" fill="rgb(0,0,0)" fill-opacity="1" font-size="14.4">
+                    <tspan id="GRID.text.1246.1.1.tspan.1" dy="5.03" x="0">ChildrenPerWoman versus Infantmortality (size proportional to Populationtotal)</tspan>
+                  </text>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="container.2" font-size="12">
+        <g id="container::VP:TOPlayout.2">
+          <g id="container::VP:TOPlayout::GRID.VP.754.1">
+            <g id="GRID.text.1248.1">
+              <g id="GRID.text.1248.1.1" transform="translate(8.64, 393.55)" stroke-width="0.1">
+                <g id="GRID.text.1248.1.1.scale" transform="scale(1, -1)">
+                  <text x="0" y="0" id="GRID.text.1248.1.1.text" transform="rotate(-90)" text-anchor="middle" fill="rgb(0,0,0)" fill-opacity="1" font-size="12">
+                    <tspan id="GRID.text.1248.1.1.tspan.1" dy="4.31" x="0">ChildrenPerWoman</tspan>
+                  </text>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="container.3" font-size="12">
+        <g id="container::VP:TOPlayout.3">
+          <g id="container::VP:TOPlayout::GRID.VP.755.1">
+            <g id="GRID.text.1247.1">
+              <g id="GRID.text.1247.1.1" transform="translate(512.74, 23)" stroke-width="0.1">
+                <g id="GRID.text.1247.1.1.scale" transform="scale(1, -1)">
+                  <text x="0" y="0" id="GRID.text.1247.1.1.text" text-anchor="middle" fill="rgb(0,0,0)" fill-opacity="1" font-size="12">
+                    <tspan id="GRID.text.1247.1.1.tspan.1" dy="4.31" x="0">Infantmortality</tspan>
+                  </text>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="container.4" font-size="12">
+        <g id="container::VP:TOPlayout.4">
+          <g id="container::VP:TOPlayout::GRID.VP.756.1">
+            <g id="container::VP:TOPlayout::GRID.VP.756::VP:LEGlayout.1"/>
+          </g>
+        </g>
+      </g>
+      <g id="container.5" font-size="12">
+        <g id="container::VP:TOPlayout.5">
+          <g id="container::VP:TOPlayout::GRID.VP.756.2">
+            <g id="container::VP:TOPlayout::GRID.VP.756::VP:LEGlayout.2">
+              <g id="container::VP:TOPlayout::GRID.VP.756::VP:LEGlayout::GRID.VP.757.1">
+                <g id="container::VP:TOPlayout::GRID.VP.756::VP:LEGlayout::GRID.VP.757::GRID.VP.738.1">
+                  <g id="GRID.frame.1257.1">
+                    <g id="container::VP:TOPlayout::GRID.VP.756::VP:LEGlayout::GRID.VP.757::GRID.VP.738::GRID.VP.739.1">
+                      <g id="GRID.cellGrob.1258.1">
+                        <g id="GRID.text.1249.1">
+                          <g id="GRID.text.1249.1.1" transform="translate(1090.71, 448.85)" stroke-width="0.1">
+                            <g id="GRID.text.1249.1.1.scale" transform="scale(1, -1)">
+                              <text x="0" y="0" id="GRID.text.1249.1.1.text" text-anchor="middle" fill="rgb(0,0,0)" fill-opacity="1" font-size="12">
+                                <tspan id="GRID.text.1249.1.1.tspan.1" dy="4.31" x="0">Region</tspan>
+                              </text>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                    <g id="container::VP:TOPlayout::GRID.VP.756::VP:LEGlayout::GRID.VP.757::GRID.VP.738::GRID.VP.740.1">
+                      <g id="GRID.cellGrob.1260.1">
+                        <g id="GRID.points.1259.1">
+                          <use id="GRID.points.1259.1.1" xlink:href="#gridSVG.pch21" x="1020.03" y="424.42" width="12" height="12" transform="translate(-6,-6)" stroke="rgb(228,26,28)" stroke-width="1.25" fill="rgb(228,26,28)" stroke-opacity="1" fill-opacity="1" font-size="12"/>
+                        </g>
+                      </g>
+                    </g>
+                    <g id="container::VP:TOPlayout::GRID.VP.756::VP:LEGlayout::GRID.VP.757::GRID.VP.738::GRID.VP.741.1">
+                      <g id="GRID.cellGrob.1262.1">
+                        <g id="GRID.text.1261.1">
+                          <g id="GRID.text.1261.1.1" transform="translate(1034.43, 424.42)" stroke-width="0.1">
+                            <g id="GRID.text.1261.1.1.scale" transform="scale(1, -1)">
+                              <text x="0" y="0" id="GRID.text.1261.1.1.text" text-anchor="start" fill="rgb(0,0,0)" fill-opacity="1" font-size="12">
+                                <tspan id="GRID.text.1261.1.1.tspan.1" dy="4.31" x="0">America</tspan>
+                              </text>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                    <g id="container::VP:TOPlayout::GRID.VP.756::VP:LEGlayout::GRID.VP.757::GRID.VP.738::GRID.VP.742.1">
+                      <g id="GRID.cellGrob.1264.1">
+                        <g id="GRID.points.1263.1">
+                          <use id="GRID.points.1263.1.1" xlink:href="#gridSVG.pch21" x="1020.03" y="407.18" width="12" height="12" transform="translate(-6,-6)" stroke="rgb(55,126,184)" stroke-width="1.25" fill="rgb(55,126,184)" stroke-opacity="1" fill-opacity="1" font-size="12"/>
+                        </g>
+                      </g>
+                    </g>
+                    <g id="container::VP:TOPlayout::GRID.VP.756::VP:LEGlayout::GRID.VP.757::GRID.VP.738::GRID.VP.743.1">
+                      <g id="GRID.cellGrob.1266.1">
+                        <g id="GRID.text.1265.1">
+                          <g id="GRID.text.1265.1.1" transform="translate(1034.43, 407.18)" stroke-width="0.1">
+                            <g id="GRID.text.1265.1.1.scale" transform="scale(1, -1)">
+                              <text x="0" y="0" id="GRID.text.1265.1.1.text" text-anchor="start" fill="rgb(0,0,0)" fill-opacity="1" font-size="12">
+                                <tspan id="GRID.text.1265.1.1.tspan.1" dy="4.31" x="0">East Asia &amp; Pacific</tspan>
+                              </text>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                    <g id="container::VP:TOPlayout::GRID.VP.756::VP:LEGlayout::GRID.VP.757::GRID.VP.738::GRID.VP.744.1">
+                      <g id="GRID.cellGrob.1268.1">
+                        <g id="GRID.points.1267.1">
+                          <use id="GRID.points.1267.1.1" xlink:href="#gridSVG.pch21" x="1020.03" y="389.95" width="12" height="12" transform="translate(-6,-6)" stroke="rgb(77,175,74)" stroke-width="1.25" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="12"/>
+                        </g>
+                      </g>
+                    </g>
+                    <g id="container::VP:TOPlayout::GRID.VP.756::VP:LEGlayout::GRID.VP.757::GRID.VP.738::GRID.VP.745.1">
+                      <g id="GRID.cellGrob.1270.1">
+                        <g id="GRID.text.1269.1">
+                          <g id="GRID.text.1269.1.1" transform="translate(1034.43, 389.95)" stroke-width="0.1">
+                            <g id="GRID.text.1269.1.1.scale" transform="scale(1, -1)">
+                              <text x="0" y="0" id="GRID.text.1269.1.1.text" text-anchor="start" fill="rgb(0,0,0)" fill-opacity="1" font-size="12">
+                                <tspan id="GRID.text.1269.1.1.tspan.1" dy="4.31" x="0">Europe &amp; Central Asia</tspan>
+                              </text>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                    <g id="container::VP:TOPlayout::GRID.VP.756::VP:LEGlayout::GRID.VP.757::GRID.VP.738::GRID.VP.746.1">
+                      <g id="GRID.cellGrob.1272.1">
+                        <g id="GRID.points.1271.1">
+                          <use id="GRID.points.1271.1.1" xlink:href="#gridSVG.pch21" x="1020.03" y="372.72" width="12" height="12" transform="translate(-6,-6)" stroke="rgb(152,78,163)" stroke-width="1.25" fill="rgb(152,78,163)" stroke-opacity="1" fill-opacity="1" font-size="12"/>
+                        </g>
+                      </g>
+                    </g>
+                    <g id="container::VP:TOPlayout::GRID.VP.756::VP:LEGlayout::GRID.VP.757::GRID.VP.738::GRID.VP.747.1">
+                      <g id="GRID.cellGrob.1274.1">
+                        <g id="GRID.text.1273.1">
+                          <g id="GRID.text.1273.1.1" transform="translate(1034.43, 372.72)" stroke-width="0.1">
+                            <g id="GRID.text.1273.1.1.scale" transform="scale(1, -1)">
+                              <text x="0" y="0" id="GRID.text.1273.1.1.text" text-anchor="start" fill="rgb(0,0,0)" fill-opacity="1" font-size="12">
+                                <tspan id="GRID.text.1273.1.1.tspan.1" dy="4.31" x="0">Middle East &amp; North Africa</tspan>
+                              </text>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                    <g id="container::VP:TOPlayout::GRID.VP.756::VP:LEGlayout::GRID.VP.757::GRID.VP.738::GRID.VP.748.1">
+                      <g id="GRID.cellGrob.1276.1">
+                        <g id="GRID.points.1275.1">
+                          <use id="GRID.points.1275.1.1" xlink:href="#gridSVG.pch21" x="1020.03" y="355.49" width="12" height="12" transform="translate(-6,-6)" stroke="rgb(255,127,0)" stroke-width="1.25" fill="rgb(255,127,0)" stroke-opacity="1" fill-opacity="1" font-size="12"/>
+                        </g>
+                      </g>
+                    </g>
+                    <g id="container::VP:TOPlayout::GRID.VP.756::VP:LEGlayout::GRID.VP.757::GRID.VP.738::GRID.VP.749.1">
+                      <g id="GRID.cellGrob.1278.1">
+                        <g id="GRID.text.1277.1">
+                          <g id="GRID.text.1277.1.1" transform="translate(1034.43, 355.49)" stroke-width="0.1">
+                            <g id="GRID.text.1277.1.1.scale" transform="scale(1, -1)">
+                              <text x="0" y="0" id="GRID.text.1277.1.1.text" text-anchor="start" fill="rgb(0,0,0)" fill-opacity="1" font-size="12">
+                                <tspan id="GRID.text.1277.1.1.tspan.1" dy="4.31" x="0">South Asia</tspan>
+                              </text>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                    <g id="container::VP:TOPlayout::GRID.VP.756::VP:LEGlayout::GRID.VP.757::GRID.VP.738::GRID.VP.750.1">
+                      <g id="GRID.cellGrob.1280.1">
+                        <g id="GRID.points.1279.1">
+                          <use id="GRID.points.1279.1.1" xlink:href="#gridSVG.pch21" x="1020.03" y="338.26" width="12" height="12" transform="translate(-6,-6)" stroke="rgb(255,255,51)" stroke-width="1.25" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="12"/>
+                        </g>
+                      </g>
+                    </g>
+                    <g id="container::VP:TOPlayout::GRID.VP.756::VP:LEGlayout::GRID.VP.757::GRID.VP.738::GRID.VP.751.1">
+                      <g id="GRID.cellGrob.1282.1">
+                        <g id="GRID.text.1281.1">
+                          <g id="GRID.text.1281.1.1" transform="translate(1034.43, 338.26)" stroke-width="0.1">
+                            <g id="GRID.text.1281.1.1.scale" transform="scale(1, -1)">
+                              <text x="0" y="0" id="GRID.text.1281.1.1.text" text-anchor="start" fill="rgb(0,0,0)" fill-opacity="1" font-size="12">
+                                <tspan id="GRID.text.1281.1.1.tspan.1" dy="4.31" x="0">Sub-Saharan Africa</tspan>
+                              </text>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="container.6" font-size="12">
+        <g id="container::VP:TOPlayout.6">
+          <g id="container::VP:TOPlayout::GRID.VP.758.1">
+            <g id="GRID.text.1283.1">
+              <g id="GRID.text.1283.1.1" transform="translate(512.74, 7.18)" stroke-width="0.1">
+                <g id="GRID.text.1283.1.1.scale" transform="scale(1, -1)">
+                  <text x="0" y="0" id="GRID.text.1283.1.1.text" text-anchor="middle" fill="rgb(0,0,0)" fill-opacity="1" font-size="9.6">
+                    <tspan id="GRID.text.1283.1.1.tspan.1" dy="3.59" x="0">59 missing values (43 in Infantmortality, 39 in ChildrenPerWoman)</tspan>
+                  </text>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="container.7" font-size="12">
+        <g id="container::VP:TOPlayout.7">
+          <g id="container::VP:TOPlayout::GRID.VP.759.1">
+            <g id="container::VP:TOPlayout::GRID.VP.759::VP:PLOTlayout.1"/>
+          </g>
+        </g>
+      </g>
+      <g id="container.8" font-size="12">
+        <g id="container::VP:TOPlayout.8">
+          <g id="container::VP:TOPlayout::GRID.VP.759.2">
+            <g id="container::VP:TOPlayout::GRID.VP.759::VP:PLOTlayout.2">
+              <g id="container::VP:TOPlayout::GRID.VP.759::VP:PLOTlayout::GRID.VP.760.1" font-size="14.4">
+                <g id="container::VP:TOPlayout::GRID.VP.759::VP:PLOTlayout::GRID.VP.760::GRID.VP.761.1">
+                  <defs>
+                    <clipPath id="container::VP:TOPlayout::GRID.VP.759::VP:PLOTlayout::GRID.VP.760::GRID.VP.761::VP:locate.these.points.1.clipPath">
+                      <rect x="48.89" y="63.25" width="927.7" height="660.61" fill="none" stroke="none"/>
+                    </clipPath>
+                  </defs>
+                  <g id="container::VP:TOPlayout::GRID.VP.759::VP:PLOTlayout::GRID.VP.760::GRID.VP.761::VP:locate.these.points.1" clip-path="url(#container::VP:TOPlayout::GRID.VP.759::VP:PLOTlayout::GRID.VP.760::GRID.VP.761::VP:locate.these.points.1.clipPath)">
+                    <g id="GRID.rect.1285.1">
+                      <rect id="GRID.rect.1285.1.1" x="48.89" y="63.25" width="927.7" height="660.61" fill="rgb(51,51,51)" stroke-dasharray="none" fill-opacity="1"/>
+                    </g>
+                    <g id="GRID.polyline.1286.1">
+                      <polyline id="GRID.polyline.1286.1.1" points="76.93,63.25 76.93,723.86" stroke="rgb(0,0,0)" stroke-width="0.75" stroke-opacity="0.13" fill="none"/>
+                      <polyline id="GRID.polyline.1286.1.2" points="211.44,63.25 211.44,723.86" stroke="rgb(0,0,0)" stroke-width="0.75" stroke-opacity="0.13" fill="none"/>
+                      <polyline id="GRID.polyline.1286.1.3" points="345.95,63.25 345.95,723.86" stroke="rgb(0,0,0)" stroke-width="0.75" stroke-opacity="0.13" fill="none"/>
+                      <polyline id="GRID.polyline.1286.1.4" points="480.46,63.25 480.46,723.86" stroke="rgb(0,0,0)" stroke-width="0.75" stroke-opacity="0.13" fill="none"/>
+                      <polyline id="GRID.polyline.1286.1.5" points="614.96,63.25 614.96,723.86" stroke="rgb(0,0,0)" stroke-width="0.75" stroke-opacity="0.13" fill="none"/>
+                      <polyline id="GRID.polyline.1286.1.6" points="749.47,63.25 749.47,723.86" stroke="rgb(0,0,0)" stroke-width="0.75" stroke-opacity="0.13" fill="none"/>
+                      <polyline id="GRID.polyline.1286.1.7" points="883.98,63.25 883.98,723.86" stroke="rgb(0,0,0)" stroke-width="0.75" stroke-opacity="0.13" fill="none"/>
+                      <polyline id="GRID.polyline.1286.1.8" points="1018.49,63.25 1018.49,723.86" stroke="rgb(0,0,0)" stroke-width="0.75" stroke-opacity="0.13" fill="none"/>
+                    </g>
+                    <g id="GRID.polyline.1287.1">
+                      <polyline id="GRID.polyline.1287.1.1" points="48.89,72.72 976.59,72.72" stroke="rgb(0,0,0)" stroke-width="0.75" stroke-opacity="0.13" fill="none"/>
+                      <polyline id="GRID.polyline.1287.1.2" points="48.89,167 976.59,167" stroke="rgb(0,0,0)" stroke-width="0.75" stroke-opacity="0.13" fill="none"/>
+                      <polyline id="GRID.polyline.1287.1.3" points="48.89,261.28 976.59,261.28" stroke="rgb(0,0,0)" stroke-width="0.75" stroke-opacity="0.13" fill="none"/>
+                      <polyline id="GRID.polyline.1287.1.4" points="48.89,355.56 976.59,355.56" stroke="rgb(0,0,0)" stroke-width="0.75" stroke-opacity="0.13" fill="none"/>
+                      <polyline id="GRID.polyline.1287.1.5" points="48.89,449.84 976.59,449.84" stroke="rgb(0,0,0)" stroke-width="0.75" stroke-opacity="0.13" fill="none"/>
+                      <polyline id="GRID.polyline.1287.1.6" points="48.89,544.11 976.59,544.11" stroke="rgb(0,0,0)" stroke-width="0.75" stroke-opacity="0.13" fill="none"/>
+                      <polyline id="GRID.polyline.1287.1.7" points="48.89,638.39 976.59,638.39" stroke="rgb(0,0,0)" stroke-width="0.75" stroke-opacity="0.13" fill="none"/>
+                      <polyline id="GRID.polyline.1287.1.8" points="48.89,732.67 976.59,732.67" stroke="rgb(0,0,0)" stroke-width="0.75" stroke-opacity="0.13" fill="none"/>
+                    </g>
+                    <g id="SCATTERPOINTS.1">
+                      <use id="SCATTERPOINTS.1.1" xlink:href="#gridSVG.pch21" x="267.26" y="389.4" width="2.48" height="2.48" transform="translate(-1.24,-1.24)" stroke="rgb(55,126,184)" stroke-width="6.04" opacity="0.61" fill="rgb(55,126,184)" stroke-opacity="1" fill-opacity="1" font-size="2.07"/>
+                      <use id="SCATTERPOINTS.1.2" xlink:href="#gridSVG.pch21" x="115.94" y="104.21" width="21.49" height="21.49" transform="translate(-10.75,-10.75)" stroke="rgb(77,175,74)" stroke-width="0.7" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="17.91"/>
+                      <use id="SCATTERPOINTS.1.3" xlink:href="#gridSVG.pch21" x="581.34" y="482.17" width="10.75" height="10.75" transform="translate(-5.37,-5.37)" stroke="rgb(255,255,51)" stroke-width="1.4" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="8.96"/>
+                      <use id="SCATTERPOINTS.1.4" xlink:href="#gridSVG.pch21" x="147.55" y="182.46" width="1.02" height="1.02" transform="translate(-0.51,-0.51)" stroke="rgb(228,26,28)" stroke-width="14.64" opacity="0.61" fill="rgb(228,26,28)" stroke-opacity="1" fill-opacity="1" font-size="0.85"/>
+                      <use id="SCATTERPOINTS.1.5" xlink:href="#gridSVG.pch21" x="101.82" y="149.94" width="11.32" height="11.32" transform="translate(-5.66,-5.66)" stroke="rgb(77,175,74)" stroke-width="1.33" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="9.43"/>
+                      <use id="SCATTERPOINTS.1.6" xlink:href="#gridSVG.pch21" x="109.89" y="119.67" width="11.67" height="11.67" transform="translate(-5.83,-5.83)" stroke="rgb(228,26,28)" stroke-width="1.29" opacity="0.61" fill="rgb(228,26,28)" stroke-opacity="1" fill-opacity="1" font-size="9.72"/>
+                      <use id="SCATTERPOINTS.1.7" xlink:href="#gridSVG.pch21" x="161" y="356.69" width="1.12" height="1.12" transform="translate(-0.56,-0.56)" stroke="rgb(55,126,184)" stroke-width="13.45" opacity="0.61" fill="rgb(55,126,184)" stroke-opacity="1" fill-opacity="1" font-size="0.93"/>
+                      <use id="SCATTERPOINTS.1.8" xlink:href="#gridSVG.pch21" x="152.26" y="108.93" width="23.57" height="23.57" transform="translate(-11.79,-11.79)" stroke="rgb(77,175,74)" stroke-width="0.64" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="19.65"/>
+                      <use id="SCATTERPOINTS.1.9" xlink:href="#gridSVG.pch21" x="171.76" y="203.02" width="1.93" height="1.93" transform="translate(-0.96,-0.96)" stroke="rgb(255,127,0)" stroke-width="7.78" opacity="0.61" fill="rgb(255,127,0)" stroke-opacity="1" fill-opacity="1" font-size="1.61"/>
+                      <use id="SCATTERPOINTS.1.10" xlink:href="#gridSVG.pch21" x="532.91" y="438.15" width="8.36" height="8.36" transform="translate(-4.18,-4.18)" stroke="rgb(255,255,51)" stroke-width="1.8" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="6.96"/>
+                      <use id="SCATTERPOINTS.1.11" xlink:href="#gridSVG.pch21" x="444.81" y="430.23" width="19.95" height="19.95" transform="translate(-9.98,-9.98)" stroke="rgb(255,255,51)" stroke-width="0.75" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="16.63"/>
+                      <use id="SCATTERPOINTS.1.12" xlink:href="#gridSVG.pch21" x="228.25" y="287.02" width="9.39" height="9.39" transform="translate(-4.7,-4.7)" stroke="rgb(228,26,28)" stroke-width="1.6" opacity="0.61" fill="rgb(228,26,28)" stroke-opacity="1" fill-opacity="1" font-size="7.83"/>
+                      <use id="SCATTERPOINTS.1.13" xlink:href="#gridSVG.pch21" x="99.13" y="119.2" width="3.61" height="3.61" transform="translate(-1.8,-1.8)" stroke="rgb(77,175,74)" stroke-width="4.16" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="3.01"/>
+                      <use id="SCATTERPOINTS.1.14" xlink:href="#gridSVG.pch21" x="105.18" y="131.08" width="4.03" height="4.03" transform="translate(-2.01,-2.01)" stroke="rgb(77,175,74)" stroke-width="3.72" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="3.36"/>
+                      <use id="SCATTERPOINTS.1.15" xlink:href="#gridSVG.pch21" x="526.86" y="475.57" width="10.05" height="10.05" transform="translate(-5.02,-5.02)" stroke="rgb(255,255,51)" stroke-width="1.49" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="8.37"/>
+                      <use id="SCATTERPOINTS.1.16" xlink:href="#gridSVG.pch21" x="491.22" y="308.42" width="10.85" height="10.85" transform="translate(-5.42,-5.42)" stroke="rgb(228,26,28)" stroke-width="1.38" opacity="0.61" fill="rgb(228,26,28)" stroke-opacity="1" fill-opacity="1" font-size="9.04"/>
+                      <use id="SCATTERPOINTS.1.17" xlink:href="#gridSVG.pch21" x="667.42" y="545.72" width="42.67" height="42.67" transform="translate(-21.33,-21.33)" stroke="rgb(255,255,51)" stroke-width="0.35" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="35.56"/>
+                      <use id="SCATTERPOINTS.1.18" xlink:href="#gridSVG.pch21" x="398.41" y="381.48" width="4.19" height="4.19" transform="translate(-2.09,-2.09)" stroke="rgb(255,255,51)" stroke-width="3.58" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="3.49"/>
+                      <use id="SCATTERPOINTS.1.19" xlink:href="#gridSVG.pch21" x="188.57" y="171.15" width="11.13" height="11.13" transform="translate(-5.56,-5.56)" stroke="rgb(152,78,163)" stroke-width="1.35" opacity="0.61" fill="rgb(152,78,163)" stroke-opacity="1" fill-opacity="1" font-size="9.27"/>
+                      <use id="SCATTERPOINTS.1.20" xlink:href="#gridSVG.pch21" x="103.16" y="253.36" width="9.26" height="9.26" transform="translate(-4.63,-4.63)" stroke="rgb(152,78,163)" stroke-width="1.62" opacity="0.61" fill="rgb(152,78,163)" stroke-opacity="1" fill-opacity="1" font-size="7.71"/>
+                      <use id="SCATTERPOINTS.1.21" xlink:href="#gridSVG.pch21" x="222.2" y="256.94" width="30.76" height="30.76" transform="translate(-15.38,-15.38)" stroke="rgb(152,78,163)" stroke-width="0.49" opacity="0.61" fill="rgb(152,78,163)" stroke-opacity="1" fill-opacity="1" font-size="25.64"/>
+                      <use id="SCATTERPOINTS.1.22" xlink:href="#gridSVG.pch21" x="183.87" y="395.72" width="1.48" height="1.48" transform="translate(-0.74,-0.74)" stroke="rgb(55,126,184)" stroke-width="10.12" opacity="0.61" fill="rgb(55,126,184)" stroke-opacity="1" fill-opacity="1" font-size="1.24"/>
+                      <use id="SCATTERPOINTS.1.23" xlink:href="#gridSVG.pch21" x="125.36" y="93.28" width="6.75" height="6.75" transform="translate(-3.38,-3.38)" stroke="rgb(77,175,74)" stroke-width="2.22" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="5.63"/>
+                      <use id="SCATTERPOINTS.1.24" xlink:href="#gridSVG.pch21" x="91.73" y="99.12" width="7.59" height="7.59" transform="translate(-3.8,-3.8)" stroke="rgb(55,126,184)" stroke-width="1.98" opacity="0.61" fill="rgb(55,126,184)" stroke-opacity="1" fill-opacity="1" font-size="6.33"/>
+                      <use id="SCATTERPOINTS.1.25" xlink:href="#gridSVG.pch21" x="565.87" y="693.83" width="13.21" height="13.21" transform="translate(-6.61,-6.61)" stroke="rgb(255,255,51)" stroke-width="1.14" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="11.01"/>
+                      <use id="SCATTERPOINTS.1.26" xlink:href="#gridSVG.pch21" x="169.74" y="189.72" width="21.91" height="21.91" transform="translate(-10.95,-10.95)" stroke="rgb(228,26,28)" stroke-width="0.68" opacity="0.61" fill="rgb(228,26,28)" stroke-opacity="1" fill-opacity="1" font-size="18.26"/>
+                      <use id="SCATTERPOINTS.1.27" xlink:href="#gridSVG.pch21" x="587.39" y="589.46" width="9.8" height="9.8" transform="translate(-4.9,-4.9)" stroke="rgb(255,255,51)" stroke-width="1.53" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="8.16"/>
+                      <use id="SCATTERPOINTS.1.28" xlink:href="#gridSVG.pch21" x="590.75" y="486.13" width="10.12" height="10.12" transform="translate(-5.06,-5.06)" stroke="rgb(255,255,51)" stroke-width="1.48" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="8.43"/>
+                      <use id="SCATTERPOINTS.1.29" xlink:href="#gridSVG.pch21" x="101.14" y="164.46" width="27.39" height="27.39" transform="translate(-13.7,-13.7)" stroke="rgb(77,175,74)" stroke-width="0.55" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="22.83"/>
+                      <use id="SCATTERPOINTS.1.30" xlink:href="#gridSVG.pch21" x="185.88" y="203.49" width="5.73" height="5.73" transform="translate(-2.87,-2.87)" stroke="rgb(228,26,28)" stroke-width="2.62" opacity="0.61" fill="rgb(228,26,28)" stroke-opacity="1" fill-opacity="1" font-size="4.78"/>
+                      <use id="SCATTERPOINTS.1.31" xlink:href="#gridSVG.pch21" x="199.33" y="151.07" width="1.81" height="1.81" transform="translate(-0.91,-0.91)" stroke="rgb(228,26,28)" stroke-width="8.27" opacity="0.61" fill="rgb(228,26,28)" stroke-opacity="1" fill-opacity="1" font-size="1.51"/>
+                      <use id="SCATTERPOINTS.1.32" xlink:href="#gridSVG.pch21" x="138.13" y="158.42" width="7.39" height="7.39" transform="translate(-3.7,-3.7)" stroke="rgb(228,26,28)" stroke-width="2.03" opacity="0.61" fill="rgb(228,26,28)" stroke-opacity="1" fill-opacity="1" font-size="6.16"/>
+                      <use id="SCATTERPOINTS.1.33" xlink:href="#gridSVG.pch21" x="447.5" y="427.3" width="21.56" height="21.56" transform="translate(-10.78,-10.78)" stroke="rgb(255,255,51)" stroke-width="0.7" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="17.96"/>
+                      <use id="SCATTERPOINTS.1.34" xlink:href="#gridSVG.pch21" x="144.86" y="258.55" width="17.78" height="17.78" transform="translate(-8.89,-8.89)" stroke="rgb(152,78,163)" stroke-width="0.84" opacity="0.61" fill="rgb(152,78,163)" stroke-opacity="1" fill-opacity="1" font-size="14.82"/>
+                      <use id="SCATTERPOINTS.1.35" xlink:href="#gridSVG.pch21" x="197.32" y="224.32" width="6.42" height="6.42" transform="translate(-3.21,-3.21)" stroke="rgb(228,26,28)" stroke-width="2.34" opacity="0.61" fill="rgb(228,26,28)" stroke-opacity="1" fill-opacity="1" font-size="5.35"/>
+                      <use id="SCATTERPOINTS.1.36" xlink:href="#gridSVG.pch21" x="234.98" y="234.6" width="8.25" height="8.25" transform="translate(-4.13,-4.13)" stroke="rgb(228,26,28)" stroke-width="1.82" opacity="0.61" fill="rgb(228,26,28)" stroke-opacity="1" fill-opacity="1" font-size="6.88"/>
+                      <use id="SCATTERPOINTS.1.37" xlink:href="#gridSVG.pch21" x="189.25" y="157.29" width="48.11" height="48.11" transform="translate(-24.05,-24.05)" stroke="rgb(228,26,28)" stroke-width="0.31" opacity="0.61" fill="rgb(228,26,28)" stroke-opacity="1" fill-opacity="1" font-size="40.09"/>
+                      <use id="SCATTERPOINTS.1.38" xlink:href="#gridSVG.pch21" x="538.97" y="444.09" width="6.31" height="6.31" transform="translate(-3.16,-3.16)" stroke="rgb(255,255,51)" stroke-width="2.38" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="5.26"/>
+                      <use id="SCATTERPOINTS.1.39" xlink:href="#gridSVG.pch21" x="629.09" y="292.86" width="5.07" height="5.07" transform="translate(-2.54,-2.54)" stroke="rgb(255,255,51)" stroke-width="2.96" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="4.23"/>
+                      <use id="SCATTERPOINTS.1.40" xlink:href="#gridSVG.pch21" x="278.02" y="212.16" width="53.28" height="53.28" transform="translate(-26.64,-26.64)" stroke="rgb(55,126,184)" stroke-width="0.28" opacity="0.61" fill="rgb(55,126,184)" stroke-opacity="1" fill-opacity="1" font-size="44.4"/>
+                      <use id="SCATTERPOINTS.1.41" xlink:href="#gridSVG.pch21" x="148.22" y="250.53" width="5.64" height="5.64" transform="translate(-2.82,-2.82)" stroke="rgb(152,78,163)" stroke-width="2.66" opacity="0.61" fill="rgb(152,78,163)" stroke-opacity="1" fill-opacity="1" font-size="4.7"/>
+                      <use id="SCATTERPOINTS.1.42" xlink:href="#gridSVG.pch21" x="231.62" y="215.08" width="13.75" height="13.75" transform="translate(-6.88,-6.88)" stroke="rgb(77,175,74)" stroke-width="1.09" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="11.46"/>
+                      <use id="SCATTERPOINTS.1.43" xlink:href="#gridSVG.pch21" x="472.39" y="523.47" width="13.01" height="13.01" transform="translate(-6.5,-6.5)" stroke="rgb(255,255,51)" stroke-width="1.15" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="10.84"/>
+                      <use id="SCATTERPOINTS.1.44" xlink:href="#gridSVG.pch21" x="430.69" y="525.07" width="4.45" height="4.45" transform="translate(-2.22,-2.22)" stroke="rgb(255,255,51)" stroke-width="3.37" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="3.71"/>
+                      <use id="SCATTERPOINTS.1.45" xlink:href="#gridSVG.pch21" x="115.94" y="108.27" width="2.24" height="2.24" transform="translate(-1.12,-1.12)" stroke="rgb(77,175,74)" stroke-width="6.71" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="1.86"/>
+                      <use id="SCATTERPOINTS.1.46" xlink:href="#gridSVG.pch21" x="679.53" y="473.12" width="4.19" height="4.19" transform="translate(-2.1,-2.1)" stroke="rgb(255,255,51)" stroke-width="3.58" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="3.49"/>
+                      <use id="SCATTERPOINTS.1.47" xlink:href="#gridSVG.pch21" x="459.61" y="575.98" width="19.46" height="19.46" transform="translate(-9.73,-9.73)" stroke="rgb(255,255,51)" stroke-width="0.77" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="16.22"/>
+                      <use id="SCATTERPOINTS.1.48" xlink:href="#gridSVG.pch21" x="205.39" y="236.39" width="3.19" height="3.19" transform="translate(-1.6,-1.6)" stroke="rgb(55,126,184)" stroke-width="4.7" opacity="0.61" fill="rgb(55,126,184)" stroke-opacity="1" fill-opacity="1" font-size="2.66"/>
+                      <use id="SCATTERPOINTS.1.49" xlink:href="#gridSVG.pch21" x="392.35" y="430.41" width="15.37" height="15.37" transform="translate(-7.68,-7.68)" stroke="rgb(255,255,51)" stroke-width="0.98" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="12.81"/>
+                      <use id="SCATTERPOINTS.1.50" xlink:href="#gridSVG.pch21" x="598.82" y="562.59" width="18.99" height="18.99" transform="translate(-9.49,-9.49)" stroke="rgb(255,127,0)" stroke-width="0.79" opacity="0.61" fill="rgb(255,127,0)" stroke-opacity="1" fill-opacity="1" font-size="15.82"/>
+                      <use id="SCATTERPOINTS.1.51" xlink:href="#gridSVG.pch21" x="437.41" y="373.28" width="16.77" height="16.77" transform="translate(-8.38,-8.38)" stroke="rgb(255,255,51)" stroke-width="0.89" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="13.97"/>
+                      <use id="SCATTERPOINTS.1.52" xlink:href="#gridSVG.pch21" x="216.15" y="147.77" width="4.01" height="4.01" transform="translate(-2.01,-2.01)" stroke="rgb(228,26,28)" stroke-width="3.74" opacity="0.61" fill="rgb(228,26,28)" stroke-opacity="1" fill-opacity="1" font-size="3.34"/>
+                      <use id="SCATTERPOINTS.1.53" xlink:href="#gridSVG.pch21" x="214.13" y="147.01" width="7.29" height="7.29" transform="translate(-3.64,-3.64)" stroke="rgb(77,175,74)" stroke-width="2.06" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="6.07"/>
+                      <use id="SCATTERPOINTS.1.54" xlink:href="#gridSVG.pch21" x="101.14" y="156.85" width="8.15" height="8.15" transform="translate(-4.08,-4.08)" stroke="rgb(77,175,74)" stroke-width="1.84" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="6.79"/>
+                      <use id="SCATTERPOINTS.1.55" xlink:href="#gridSVG.pch21" x="352.67" y="214.71" width="2.91" height="2.91" transform="translate(-1.46,-1.46)" stroke="rgb(255,127,0)" stroke-width="5.15" opacity="0.61" fill="rgb(255,127,0)" stroke-opacity="1" fill-opacity="1" font-size="2.43"/>
+                      <use id="SCATTERPOINTS.1.56" xlink:href="#gridSVG.pch21" x="335.19" y="306.25" width="10.78" height="10.78" transform="translate(-5.39,-5.39)" stroke="rgb(228,26,28)" stroke-width="1.39" opacity="0.61" fill="rgb(228,26,28)" stroke-opacity="1" fill-opacity="1" font-size="8.98"/>
+                      <use id="SCATTERPOINTS.1.57" xlink:href="#gridSVG.pch21" x="128.05" y="186.14" width="4.11" height="4.11" transform="translate(-2.05,-2.05)" stroke="rgb(152,78,163)" stroke-width="3.65" opacity="0.61" fill="rgb(152,78,163)" stroke-opacity="1" fill-opacity="1" font-size="3.42"/>
+                      <use id="SCATTERPOINTS.1.58" xlink:href="#gridSVG.pch21" x="934.42" y="461.9" width="8.24" height="8.24" transform="translate(-4.12,-4.12)" stroke="rgb(255,255,51)" stroke-width="1.82" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="6.86"/>
+                      <use id="SCATTERPOINTS.1.59" xlink:href="#gridSVG.pch21" x="285.42" y="387.9" width="18.98" height="18.98" transform="translate(-9.49,-9.49)" stroke="rgb(152,78,163)" stroke-width="0.79" opacity="0.61" fill="rgb(152,78,163)" stroke-opacity="1" fill-opacity="1" font-size="15.82"/>
+                      <use id="SCATTERPOINTS.1.60" xlink:href="#gridSVG.pch21" x="181.85" y="180.86" width="29.28" height="29.28" transform="translate(-14.64,-14.64)" stroke="rgb(77,175,74)" stroke-width="0.51" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="24.4"/>
+                      <use id="SCATTERPOINTS.1.61" xlink:href="#gridSVG.pch21" x="279.37" y="366.78" width="12.86" height="12.86" transform="translate(-6.43,-6.43)" stroke="rgb(228,26,28)" stroke-width="1.17" opacity="0.61" fill="rgb(228,26,28)" stroke-opacity="1" fill-opacity="1" font-size="10.72"/>
+                      <use id="SCATTERPOINTS.1.62" xlink:href="#gridSVG.pch21" x="120.65" y="173.98" width="60.71" height="60.71" transform="translate(-30.35,-30.35)" stroke="rgb(228,26,28)" stroke-width="0.25" opacity="0.61" fill="rgb(228,26,28)" stroke-opacity="1" fill-opacity="1" font-size="50.59"/>
+                      <use id="SCATTERPOINTS.1.63" xlink:href="#gridSVG.pch21" x="388.99" y="171.62" width="23.89" height="23.89" transform="translate(-11.95,-11.95)" stroke="rgb(55,126,184)" stroke-width="0.63" opacity="0.61" fill="rgb(55,126,184)" stroke-opacity="1" fill-opacity="1" font-size="19.91"/>
+                      <use id="SCATTERPOINTS.1.64" xlink:href="#gridSVG.pch21" x="95.09" y="152.86" width="8.02" height="8.02" transform="translate(-4.01,-4.01)" stroke="rgb(77,175,74)" stroke-width="1.87" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="6.68"/>
+                      <use id="SCATTERPOINTS.1.65" xlink:href="#gridSVG.pch21" x="156.29" y="113.55" width="9.58" height="9.58" transform="translate(-4.79,-4.79)" stroke="rgb(77,175,74)" stroke-width="1.57" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="7.98"/>
+                      <use id="SCATTERPOINTS.1.66" xlink:href="#gridSVG.pch21" x="118.63" y="104.12" width="11" height="11" transform="translate(-5.5,-5.5)" stroke="rgb(77,175,74)" stroke-width="1.36" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="9.17"/>
+                      <use id="SCATTERPOINTS.1.67" xlink:href="#gridSVG.pch21" x="180.5" y="199.62" width="36.56" height="36.56" transform="translate(-18.28,-18.28)" stroke="rgb(228,26,28)" stroke-width="0.41" opacity="0.61" fill="rgb(228,26,28)" stroke-opacity="1" fill-opacity="1" font-size="30.47"/>
+                      <use id="SCATTERPOINTS.1.68" xlink:href="#gridSVG.pch21" x="589.41" y="547.6" width="13.69" height="13.69" transform="translate(-6.85,-6.85)" stroke="rgb(255,255,51)" stroke-width="1.1" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="11.41"/>
+                      <use id="SCATTERPOINTS.1.69" xlink:href="#gridSVG.pch21" x="111.23" y="113.45" width="7.31" height="7.31" transform="translate(-3.65,-3.65)" stroke="rgb(77,175,74)" stroke-width="2.05" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="6.09"/>
+                      <use id="SCATTERPOINTS.1.70" xlink:href="#gridSVG.pch21" x="193.95" y="144.47" width="6.2" height="6.2" transform="translate(-3.1,-3.1)" stroke="rgb(77,175,74)" stroke-width="2.42" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="5.17"/>
+                      <use id="SCATTERPOINTS.1.71" xlink:href="#gridSVG.pch21" x="417.24" y="212.44" width="7.71" height="7.71" transform="translate(-3.85,-3.85)" stroke="rgb(77,175,74)" stroke-width="1.95" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="6.42"/>
+                      <use id="SCATTERPOINTS.1.72" xlink:href="#gridSVG.pch21" x="110.56" y="136.91" width="20.07" height="20.07" transform="translate(-10.03,-10.03)" stroke="rgb(228,26,28)" stroke-width="0.75" opacity="0.61" fill="rgb(228,26,28)" stroke-opacity="1" fill-opacity="1" font-size="16.72"/>
+                      <use id="SCATTERPOINTS.1.73" xlink:href="#gridSVG.pch21" x="569.23" y="327.18" width="3.73" height="3.73" transform="translate(-1.86,-1.86)" stroke="rgb(255,255,51)" stroke-width="4.02" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="3.11"/>
+                      <use id="SCATTERPOINTS.1.74" xlink:href="#gridSVG.pch21" x="141.5" y="197.45" width="15.73" height="15.73" transform="translate(-7.86,-7.86)" stroke="rgb(255,127,0)" stroke-width="0.95" opacity="0.61" fill="rgb(255,127,0)" stroke-opacity="1" fill-opacity="1" font-size="13.11"/>
+                      <use id="SCATTERPOINTS.1.75" xlink:href="#gridSVG.pch21" x="165.71" y="117.69" width="28.72" height="28.72" transform="translate(-14.36,-14.36)" stroke="rgb(55,126,184)" stroke-width="0.52" opacity="0.61" fill="rgb(55,126,184)" stroke-opacity="1" fill-opacity="1" font-size="23.93"/>
+                      <use id="SCATTERPOINTS.1.76" xlink:href="#gridSVG.pch21" x="410.51" y="273.82" width="1.08" height="1.08" transform="translate(-0.54,-0.54)" stroke="rgb(55,126,184)" stroke-width="13.89" opacity="0.61" fill="rgb(55,126,184)" stroke-opacity="1" fill-opacity="1" font-size="0.9"/>
+                      <use id="SCATTERPOINTS.1.77" xlink:href="#gridSVG.pch21" x="93.75" y="105.06" width="39.1" height="39.1" transform="translate(-19.55,-19.55)" stroke="rgb(55,126,184)" stroke-width="0.38" opacity="0.61" fill="rgb(55,126,184)" stroke-opacity="1" fill-opacity="1" font-size="32.59"/>
+                      <use id="SCATTERPOINTS.1.78" xlink:href="#gridSVG.pch21" x="137.46" y="119.96" width="5.24" height="5.24" transform="translate(-2.62,-2.62)" stroke="rgb(77,175,74)" stroke-width="2.86" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="4.37"/>
+                      <use id="SCATTERPOINTS.1.79" xlink:href="#gridSVG.pch21" x="417.91" y="227.62" width="119.96" height="119.96" transform="translate(-59.98,-59.98)" stroke="rgb(255,127,0)" stroke-width="0.13" opacity="0.61" fill="rgb(255,127,0)" stroke-opacity="1" fill-opacity="1" font-size="99.97"/>
+                      <use id="SCATTERPOINTS.1.80" xlink:href="#gridSVG.pch21" x="386.97" y="248.08" width="4.86" height="4.86" transform="translate(-2.43,-2.43)" stroke="rgb(255,255,51)" stroke-width="3.09" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="4.05"/>
+                      <use id="SCATTERPOINTS.1.81" xlink:href="#gridSVG.pch21" x="285.42" y="208.77" width="19.45" height="19.45" transform="translate(-9.73,-9.73)" stroke="rgb(152,78,163)" stroke-width="0.77" opacity="0.61" fill="rgb(152,78,163)" stroke-opacity="1" fill-opacity="1" font-size="16.21"/>
+                      <use id="SCATTERPOINTS.1.82" xlink:href="#gridSVG.pch21" x="358.05" y="266.09" width="12.92" height="12.92" transform="translate(-6.46,-6.46)" stroke="rgb(55,126,184)" stroke-width="1.16" opacity="0.61" fill="rgb(55,126,184)" stroke-opacity="1" fill-opacity="1" font-size="10.77"/>
+                      <use id="SCATTERPOINTS.1.83" xlink:href="#gridSVG.pch21" x="145.53" y="177.09" width="6.36" height="6.36" transform="translate(-3.18,-3.18)" stroke="rgb(228,26,28)" stroke-width="2.36" opacity="0.61" fill="rgb(228,26,28)" stroke-opacity="1" fill-opacity="1" font-size="5.3"/>
+                      <use id="SCATTERPOINTS.1.84" xlink:href="#gridSVG.pch21" x="123.34" y="111" width="10.91" height="10.91" transform="translate(-5.45,-5.45)" stroke="rgb(77,175,74)" stroke-width="1.38" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="9.09"/>
+                      <use id="SCATTERPOINTS.1.85" xlink:href="#gridSVG.pch21" x="433.38" y="361.87" width="8.9" height="8.9" transform="translate(-4.45,-4.45)" stroke="rgb(55,126,184)" stroke-width="1.69" opacity="0.61" fill="rgb(55,126,184)" stroke-opacity="1" fill-opacity="1" font-size="7.41"/>
+                      <use id="SCATTERPOINTS.1.86" xlink:href="#gridSVG.pch21" x="364.78" y="202.54" width="41.93" height="41.93" transform="translate(-20.96,-20.96)" stroke="rgb(255,127,0)" stroke-width="0.36" opacity="0.61" fill="rgb(255,127,0)" stroke-opacity="1" fill-opacity="1" font-size="34.94"/>
+                      <use id="SCATTERPOINTS.1.87" xlink:href="#gridSVG.pch21" x="219.51" y="267.22" width="8.68" height="8.68" transform="translate(-4.34,-4.34)" stroke="rgb(228,26,28)" stroke-width="1.73" opacity="0.61" fill="rgb(228,26,28)" stroke-opacity="1" fill-opacity="1" font-size="7.23"/>
+                      <use id="SCATTERPOINTS.1.88" xlink:href="#gridSVG.pch21" x="416.56" y="459.92" width="11.93" height="11.93" transform="translate(-5.97,-5.97)" stroke="rgb(255,255,51)" stroke-width="1.26" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="9.95"/>
+                      <use id="SCATTERPOINTS.1.89" xlink:href="#gridSVG.pch21" x="191.26" y="207.54" width="23.32" height="23.32" transform="translate(-11.66,-11.66)" stroke="rgb(228,26,28)" stroke-width="0.64" opacity="0.61" fill="rgb(228,26,28)" stroke-opacity="1" fill-opacity="1" font-size="19.43"/>
+                      <use id="SCATTERPOINTS.1.90" xlink:href="#gridSVG.pch21" x="814.71" y="585.03" width="14.76" height="14.76" transform="translate(-7.38,-7.38)" stroke="rgb(255,255,51)" stroke-width="1.02" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="12.3"/>
+                      <use id="SCATTERPOINTS.1.91" xlink:href="#gridSVG.pch21" x="128.72" y="140.79" width="2.76" height="2.76" transform="translate(-1.38,-1.38)" stroke="rgb(77,175,74)" stroke-width="5.44" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="2.3"/>
+                      <use id="SCATTERPOINTS.1.92" xlink:href="#gridSVG.pch21" x="185.88" y="227.06" width="8.62" height="8.62" transform="translate(-4.31,-4.31)" stroke="rgb(152,78,163)" stroke-width="1.74" opacity="0.61" fill="rgb(152,78,163)" stroke-opacity="1" fill-opacity="1" font-size="7.18"/>
+                      <use id="SCATTERPOINTS.1.93" xlink:href="#gridSVG.pch21" x="108.54" y="154.84" width="27.21" height="27.21" transform="translate(-13.6,-13.6)" stroke="rgb(77,175,74)" stroke-width="0.55" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="22.67"/>
+                      <use id="SCATTERPOINTS.1.94" xlink:href="#gridSVG.pch21" x="415.89" y="455.68" width="10.99" height="10.99" transform="translate(-5.5,-5.5)" stroke="rgb(255,255,51)" stroke-width="1.36" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="9.16"/>
+                      <use id="SCATTERPOINTS.1.95" xlink:href="#gridSVG.pch21" x="126.7" y="101.85" width="8.11" height="8.11" transform="translate(-4.05,-4.05)" stroke="rgb(77,175,74)" stroke-width="1.85" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="6.76"/>
+                      <use id="SCATTERPOINTS.1.96" xlink:href="#gridSVG.pch21" x="124.01" y="171.9" width="18.23" height="18.23" transform="translate(-9.11,-9.11)" stroke="rgb(55,126,184)" stroke-width="0.82" opacity="0.61" fill="rgb(55,126,184)" stroke-opacity="1" fill-opacity="1" font-size="15.19"/>
+                      <use id="SCATTERPOINTS.1.97" xlink:href="#gridSVG.pch21" x="154.95" y="114.77" width="41.59" height="41.59" transform="translate(-20.8,-20.8)" stroke="rgb(77,175,74)" stroke-width="0.36" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="34.66"/>
+                      <use id="SCATTERPOINTS.1.98" xlink:href="#gridSVG.pch21" x="620.34" y="479.44" width="2.83" height="2.83" transform="translate(-1.41,-1.41)" stroke="rgb(255,255,51)" stroke-width="5.3" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="2.36"/>
+                      <use id="SCATTERPOINTS.1.99" xlink:href="#gridSVG.pch21" x="462.3" y="468.03" width="30.98" height="30.98" transform="translate(-15.49,-15.49)" stroke="rgb(255,255,51)" stroke-width="0.48" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="25.82"/>
+                      <use id="SCATTERPOINTS.1.100" xlink:href="#gridSVG.pch21" x="345.95" y="251.76" width="18.69" height="18.69" transform="translate(-9.34,-9.34)" stroke="rgb(255,127,0)" stroke-width="0.8" opacity="0.61" fill="rgb(255,127,0)" stroke-opacity="1" fill-opacity="1" font-size="15.57"/>
+                      <use id="SCATTERPOINTS.1.101" xlink:href="#gridSVG.pch21" x="142.17" y="126.46" width="7.1" height="7.1" transform="translate(-3.55,-3.55)" stroke="rgb(152,78,163)" stroke-width="2.11" opacity="0.61" fill="rgb(152,78,163)" stroke-opacity="1" fill-opacity="1" font-size="5.91"/>
+                      <use id="SCATTERPOINTS.1.102" xlink:href="#gridSVG.pch21" x="641.19" y="441.63" width="15.15" height="15.15" transform="translate(-7.57,-7.57)" stroke="rgb(255,255,51)" stroke-width="0.99" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="12.62"/>
+                      <use id="SCATTERPOINTS.1.103" xlink:href="#gridSVG.pch21" x="453.55" y="589.27" width="3.61" height="3.61" transform="translate(-1.81,-1.81)" stroke="rgb(55,126,184)" stroke-width="4.15" opacity="0.61" fill="rgb(55,126,184)" stroke-opacity="1" fill-opacity="1" font-size="3.01"/>
+                      <use id="SCATTERPOINTS.1.104" xlink:href="#gridSVG.pch21" x="123.34" y="175.96" width="2.16" height="2.16" transform="translate(-1.08,-1.08)" stroke="rgb(55,126,184)" stroke-width="6.96" opacity="0.61" fill="rgb(55,126,184)" stroke-opacity="1" fill-opacity="1" font-size="1.8"/>
+                      <use id="SCATTERPOINTS.1.105" xlink:href="#gridSVG.pch21" x="363.43" y="394.31" width="1.39" height="1.39" transform="translate(-0.69,-0.69)" stroke="rgb(255,255,51)" stroke-width="10.79" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="1.16"/>
+                      <use id="SCATTERPOINTS.1.106" xlink:href="#gridSVG.pch21" x="531.57" y="467.75" width="6.65" height="6.65" transform="translate(-3.32,-3.32)" stroke="rgb(255,255,51)" stroke-width="2.26" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="5.54"/>
+                      <use id="SCATTERPOINTS.1.107" xlink:href="#gridSVG.pch21" x="183.19" y="132.12" width="126.69" height="126.69" transform="translate(-63.35,-63.35)" stroke="rgb(55,126,184)" stroke-width="0.12" opacity="0.61" fill="rgb(55,126,184)" stroke-opacity="1" fill-opacity="1" font-size="105.58"/>
+                      <use id="SCATTERPOINTS.1.108" xlink:href="#gridSVG.pch21" x="200.68" y="316.53" width="8.41" height="8.41" transform="translate(-4.2,-4.2)" stroke="rgb(152,78,163)" stroke-width="1.78" opacity="0.61" fill="rgb(152,78,163)" stroke-opacity="1" fill-opacity="1" font-size="7.01"/>
+                      <use id="SCATTERPOINTS.1.109" xlink:href="#gridSVG.pch21" x="104.51" y="116" width="11.68" height="11.68" transform="translate(-5.84,-5.84)" stroke="rgb(77,175,74)" stroke-width="1.28" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="9.73"/>
+                      <use id="SCATTERPOINTS.1.110" xlink:href="#gridSVG.pch21" x="158.98" y="193.59" width="1.12" height="1.12" transform="translate(-0.56,-0.56)" stroke="rgb(228,26,28)" stroke-width="13.4" opacity="0.61" fill="rgb(228,26,28)" stroke-opacity="1" fill-opacity="1" font-size="0.93"/>
+                      <use id="SCATTERPOINTS.1.111" xlink:href="#gridSVG.pch21" x="567.89" y="332.46" width="3.22" height="3.22" transform="translate(-1.61,-1.61)" stroke="rgb(152,78,163)" stroke-width="4.66" opacity="0.61" fill="rgb(152,78,163)" stroke-opacity="1" fill-opacity="1" font-size="2.68"/>
+                      <use id="SCATTERPOINTS.1.112" xlink:href="#gridSVG.pch21" x="595.46" y="500.37" width="16.43" height="16.43" transform="translate(-8.21,-8.21)" stroke="rgb(255,255,51)" stroke-width="0.91" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="13.69"/>
+                      <use id="SCATTERPOINTS.1.113" xlink:href="#gridSVG.pch21" x="547.04" y="465.58" width="15.06" height="15.06" transform="translate(-7.53,-7.53)" stroke="rgb(255,255,51)" stroke-width="1" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="12.55"/>
+                      <use id="SCATTERPOINTS.1.114" xlink:href="#gridSVG.pch21" x="95.76" y="163.23" width="7.6" height="7.6" transform="translate(-3.8,-3.8)" stroke="rgb(77,175,74)" stroke-width="1.97" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="6.33"/>
+                      <use id="SCATTERPOINTS.1.115" xlink:href="#gridSVG.pch21" x="362.09" y="465.2" width="7.73" height="7.73" transform="translate(-3.87,-3.87)" stroke="rgb(152,78,163)" stroke-width="1.94" opacity="0.61" fill="rgb(152,78,163)" stroke-opacity="1" fill-opacity="1" font-size="6.44"/>
+                      <use id="SCATTERPOINTS.1.116" xlink:href="#gridSVG.pch21" x="317.7" y="295.6" width="5.16" height="5.16" transform="translate(-2.58,-2.58)" stroke="rgb(255,255,51)" stroke-width="2.91" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="4.3"/>
+                      <use id="SCATTERPOINTS.1.117" xlink:href="#gridSVG.pch21" x="291.47" y="237.05" width="3.01" height="3.01" transform="translate(-1.51,-1.51)" stroke="rgb(228,26,28)" stroke-width="4.98" opacity="0.61" fill="rgb(228,26,28)" stroke-opacity="1" fill-opacity="1" font-size="2.51"/>
+                      <use id="SCATTERPOINTS.1.118" xlink:href="#gridSVG.pch21" x="91.73" y="131.74" width="2.43" height="2.43" transform="translate(-1.21,-1.21)" stroke="rgb(77,175,74)" stroke-width="6.18" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="2.02"/>
+                      <use id="SCATTERPOINTS.1.119" xlink:href="#gridSVG.pch21" x="130.06" y="162.1" width="8.66" height="8.66" transform="translate(-4.33,-4.33)" stroke="rgb(152,78,163)" stroke-width="1.73" opacity="0.61" fill="rgb(152,78,163)" stroke-opacity="1" fill-opacity="1" font-size="7.22"/>
+                      <use id="SCATTERPOINTS.1.120" xlink:href="#gridSVG.pch21" x="197.32" y="110.43" width="6.1" height="6.1" transform="translate(-3.05,-3.05)" stroke="rgb(77,175,74)" stroke-width="2.46" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="5.08"/>
+                      <use id="SCATTERPOINTS.1.121" xlink:href="#gridSVG.pch21" x="471.71" y="341.7" width="12.27" height="12.27" transform="translate(-6.13,-6.13)" stroke="rgb(255,255,51)" stroke-width="1.22" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="10.22"/>
+                      <use id="SCATTERPOINTS.1.122" xlink:href="#gridSVG.pch21" x="173.78" y="217.06" width="18.41" height="18.41" transform="translate(-9.21,-9.21)" stroke="rgb(228,26,28)" stroke-width="0.81" opacity="0.61" fill="rgb(228,26,28)" stroke-opacity="1" fill-opacity="1" font-size="15.34"/>
+                      <use id="SCATTERPOINTS.1.123" xlink:href="#gridSVG.pch21" x="226.24" y="235.64" width="13.03" height="13.03" transform="translate(-6.52,-6.52)" stroke="rgb(228,26,28)" stroke-width="1.15" opacity="0.61" fill="rgb(228,26,28)" stroke-opacity="1" fill-opacity="1" font-size="10.86"/>
+                      <use id="SCATTERPOINTS.1.124" xlink:href="#gridSVG.pch21" x="187.23" y="197.08" width="8.61" height="8.61" transform="translate(-4.3,-4.3)" stroke="rgb(228,26,28)" stroke-width="1.74" opacity="0.61" fill="rgb(228,26,28)" stroke-opacity="1" fill-opacity="1" font-size="7.17"/>
+                      <use id="SCATTERPOINTS.1.125" xlink:href="#gridSVG.pch21" x="528.21" y="532.9" width="12.23" height="12.23" transform="translate(-6.12,-6.12)" stroke="rgb(255,255,51)" stroke-width="1.23" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="10.19"/>
+                      <use id="SCATTERPOINTS.1.126" xlink:href="#gridSVG.pch21" x="169.07" y="127.31" width="3.94" height="3.94" transform="translate(-1.97,-1.97)" stroke="rgb(255,255,51)" stroke-width="3.81" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="3.28"/>
+                      <use id="SCATTERPOINTS.1.127" xlink:href="#gridSVG.pch21" x="193.28" y="318.6" width="1.66" height="1.66" transform="translate(-0.83,-0.83)" stroke="rgb(55,126,184)" stroke-width="9.04" opacity="0.61" fill="rgb(55,126,184)" stroke-opacity="1" fill-opacity="1" font-size="1.38"/>
+                      <use id="SCATTERPOINTS.1.128" xlink:href="#gridSVG.pch21" x="102.49" y="167.19" width="7.25" height="7.25" transform="translate(-3.63,-3.63)" stroke="rgb(77,175,74)" stroke-width="2.07" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="6.04"/>
+                      <use id="SCATTERPOINTS.1.129" xlink:href="#gridSVG.pch21" x="103.83" y="117.22" width="9.57" height="9.57" transform="translate(-4.78,-4.78)" stroke="rgb(77,175,74)" stroke-width="1.57" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="7.97"/>
+                      <use id="SCATTERPOINTS.1.130" xlink:href="#gridSVG.pch21" x="177.14" y="156.54" width="2.01" height="2.01" transform="translate(-1,-1)" stroke="rgb(228,26,28)" stroke-width="7.47" opacity="0.61" fill="rgb(228,26,28)" stroke-opacity="1" fill-opacity="1" font-size="1.67"/>
+                      <use id="SCATTERPOINTS.1.131" xlink:href="#gridSVG.pch21" x="191.94" y="252.51" width="1.9" height="1.9" transform="translate(-0.95,-0.95)" stroke="rgb(228,26,28)" stroke-width="7.89" opacity="0.61" fill="rgb(228,26,28)" stroke-opacity="1" fill-opacity="1" font-size="1.58"/>
+                      <use id="SCATTERPOINTS.1.132" xlink:href="#gridSVG.pch21" x="142.84" y="231.2" width="5.55" height="5.55" transform="translate(-2.77,-2.77)" stroke="rgb(152,78,163)" stroke-width="2.7" opacity="0.61" fill="rgb(152,78,163)" stroke-opacity="1" fill-opacity="1" font-size="4.62"/>
+                      <use id="SCATTERPOINTS.1.133" xlink:href="#gridSVG.pch21" x="103.83" y="145.6" width="14.12" height="14.12" transform="translate(-7.06,-7.06)" stroke="rgb(77,175,74)" stroke-width="1.06" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="11.77"/>
+                      <use id="SCATTERPOINTS.1.134" xlink:href="#gridSVG.pch21" x="129.39" y="156.44" width="14.25" height="14.25" transform="translate(-7.12,-7.12)" stroke="rgb(228,26,28)" stroke-width="1.05" opacity="0.61" fill="rgb(228,26,28)" stroke-opacity="1" fill-opacity="1" font-size="11.87"/>
+                      <use id="SCATTERPOINTS.1.135" xlink:href="#gridSVG.pch21" x="218.17" y="205.28" width="2.49" height="2.49" transform="translate(-1.25,-1.25)" stroke="rgb(228,26,28)" stroke-width="6.01" opacity="0.61" fill="rgb(228,26,28)" stroke-opacity="1" fill-opacity="1" font-size="2.08"/>
+                      <use id="SCATTERPOINTS.1.136" xlink:href="#gridSVG.pch21" x="111.23" y="178.6" width="7.19" height="7.19" transform="translate(-3.59,-3.59)" stroke="rgb(55,126,184)" stroke-width="2.09" opacity="0.61" fill="rgb(55,126,184)" stroke-opacity="1" fill-opacity="1" font-size="5.99"/>
+                      <use id="SCATTERPOINTS.1.137" xlink:href="#gridSVG.pch21" x="105.85" y="162.85" width="16.12" height="16.12" transform="translate(-8.06,-8.06)" stroke="rgb(55,126,184)" stroke-width="0.93" opacity="0.61" fill="rgb(55,126,184)" stroke-opacity="1" fill-opacity="1" font-size="13.44"/>
+                      <use id="SCATTERPOINTS.1.138" xlink:href="#gridSVG.pch21" x="210.1" y="235.35" width="20.4" height="20.4" transform="translate(-10.2,-10.2)" stroke="rgb(152,78,163)" stroke-width="0.74" opacity="0.61" fill="rgb(152,78,163)" stroke-opacity="1" fill-opacity="1" font-size="17"/>
+                      <use id="SCATTERPOINTS.1.139" xlink:href="#gridSVG.pch21" x="91.06" y="178.13" width="1.94" height="1.94" transform="translate(-0.97,-0.97)" stroke="rgb(77,175,74)" stroke-width="7.74" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="1.61"/>
+                      <use id="SCATTERPOINTS.1.140" xlink:href="#gridSVG.pch21" x="448.85" y="327.56" width="8.99" height="8.99" transform="translate(-4.5,-4.5)" stroke="rgb(77,175,74)" stroke-width="1.67" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="7.49"/>
+                      <use id="SCATTERPOINTS.1.141" xlink:href="#gridSVG.pch21" x="668.09" y="621.14" width="13.22" height="13.22" transform="translate(-6.61,-6.61)" stroke="rgb(255,255,51)" stroke-width="1.13" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="11.02"/>
+                      <use id="SCATTERPOINTS.1.142" xlink:href="#gridSVG.pch21" x="169.74" y="104.78" width="16.15" height="16.15" transform="translate(-8.08,-8.08)" stroke="rgb(77,175,74)" stroke-width="0.93" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="13.46"/>
+                      <use id="SCATTERPOINTS.1.143" xlink:href="#gridSVG.pch21" x="97.11" y="113.64" width="4.94" height="4.94" transform="translate(-2.47,-2.47)" stroke="rgb(77,175,74)" stroke-width="3.04" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="4.12"/>
+                      <use id="SCATTERPOINTS.1.144" xlink:href="#gridSVG.pch21" x="219.51" y="391.48" width="6.8" height="6.8" transform="translate(-3.4,-3.4)" stroke="rgb(152,78,163)" stroke-width="2.21" opacity="0.61" fill="rgb(152,78,163)" stroke-opacity="1" fill-opacity="1" font-size="5.67"/>
+                      <use id="SCATTERPOINTS.1.145" xlink:href="#gridSVG.pch21" x="265.24" y="201.7" width="5.68" height="5.68" transform="translate(-2.84,-2.84)" stroke="rgb(55,126,184)" stroke-width="2.64" opacity="0.61" fill="rgb(55,126,184)" stroke-opacity="1" fill-opacity="1" font-size="4.73"/>
+                      <use id="SCATTERPOINTS.1.146" xlink:href="#gridSVG.pch21" x="121.32" y="112.04" width="6.37" height="6.37" transform="translate(-3.19,-3.19)" stroke="rgb(77,175,74)" stroke-width="2.35" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="5.31"/>
+                      <use id="SCATTERPOINTS.1.147" xlink:href="#gridSVG.pch21" x="196.64" y="221.59" width="18.55" height="18.55" transform="translate(-9.27,-9.27)" stroke="rgb(228,26,28)" stroke-width="0.81" opacity="0.61" fill="rgb(228,26,28)" stroke-opacity="1" fill-opacity="1" font-size="15.45"/>
+                      <use id="SCATTERPOINTS.1.148" xlink:href="#gridSVG.pch21" x="99.13" y="106.47" width="11.34" height="11.34" transform="translate(-5.67,-5.67)" stroke="rgb(77,175,74)" stroke-width="1.32" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="9.45"/>
+                      <use id="SCATTERPOINTS.1.149" xlink:href="#gridSVG.pch21" x="114.6" y="111.94" width="10.82" height="10.82" transform="translate(-5.41,-5.41)" stroke="rgb(77,175,74)" stroke-width="1.39" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="9.01"/>
+                      <use id="SCATTERPOINTS.1.150" xlink:href="#gridSVG.pch21" x="340.57" y="210.09" width="18" height="18" transform="translate(-9,-9)" stroke="rgb(77,175,74)" stroke-width="0.83" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="15"/>
+                      <use id="SCATTERPOINTS.1.151" xlink:href="#gridSVG.pch21" x="724.59" y="620.01" width="11.35" height="11.35" transform="translate(-5.67,-5.67)" stroke="rgb(255,255,51)" stroke-width="1.32" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="9.46"/>
+                      <use id="SCATTERPOINTS.1.152" xlink:href="#gridSVG.pch21" x="94.42" y="159.18" width="10.56" height="10.56" transform="translate(-5.28,-5.28)" stroke="rgb(77,175,74)" stroke-width="1.42" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="8.8"/>
+                      <use id="SCATTERPOINTS.1.153" xlink:href="#gridSVG.pch21" x="206.06" y="153.99" width="32.23" height="32.23" transform="translate(-16.11,-16.11)" stroke="rgb(55,126,184)" stroke-width="0.47" opacity="0.61" fill="rgb(55,126,184)" stroke-opacity="1" fill-opacity="1" font-size="26.86"/>
+                      <use id="SCATTERPOINTS.1.154" xlink:href="#gridSVG.pch21" x="101.14" y="111.47" width="10.04" height="10.04" transform="translate(-5.02,-5.02)" stroke="rgb(77,175,74)" stroke-width="1.49" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="8.37"/>
+                      <use id="SCATTERPOINTS.1.155" xlink:href="#gridSVG.pch21" x="138.13" y="188.59" width="3.57" height="3.57" transform="translate(-1.78,-1.78)" stroke="rgb(152,78,163)" stroke-width="4.21" opacity="0.61" fill="rgb(152,78,163)" stroke-opacity="1" fill-opacity="1" font-size="2.97"/>
+                      <use id="SCATTERPOINTS.1.156" xlink:href="#gridSVG.pch21" x="750.82" y="643.67" width="10.38" height="10.38" transform="translate(-5.19,-5.19)" stroke="rgb(255,255,51)" stroke-width="1.44" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="8.65"/>
+                      <use id="SCATTERPOINTS.1.157" xlink:href="#gridSVG.pch21" x="200.01" y="155.69" width="29.56" height="29.56" transform="translate(-14.78,-14.78)" stroke="rgb(152,78,163)" stroke-width="0.51" opacity="0.61" fill="rgb(152,78,163)" stroke-opacity="1" fill-opacity="1" font-size="24.63"/>
+                      <use id="SCATTERPOINTS.1.158" xlink:href="#gridSVG.pch21" x="101.14" y="107.42" width="31.57" height="31.57" transform="translate(-15.78,-15.78)" stroke="rgb(77,175,74)" stroke-width="0.48" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="26.31"/>
+                      <use id="SCATTERPOINTS.1.159" xlink:href="#gridSVG.pch21" x="582.01" y="316.06" width="44.98" height="44.98" transform="translate(-22.49,-22.49)" stroke="rgb(255,127,0)" stroke-width="0.33" opacity="0.61" fill="rgb(255,127,0)" stroke-opacity="1" fill-opacity="1" font-size="37.48"/>
+                      <use id="SCATTERPOINTS.1.160" xlink:href="#gridSVG.pch21" x="105.85" y="112.23" width="23.36" height="23.36" transform="translate(-11.68,-11.68)" stroke="rgb(77,175,74)" stroke-width="0.64" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="19.46"/>
+                      <use id="SCATTERPOINTS.1.161" xlink:href="#gridSVG.pch21" x="325.1" y="165.68" width="10.4" height="10.4" transform="translate(-5.2,-5.2)" stroke="rgb(77,175,74)" stroke-width="1.44" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="8.66"/>
+                      <use id="SCATTERPOINTS.1.162" xlink:href="#gridSVG.pch21" x="100.47" y="109.68" width="26.9" height="26.9" transform="translate(-13.45,-13.45)" stroke="rgb(77,175,74)" stroke-width="0.56" opacity="0.61" fill="rgb(77,175,74)" stroke-opacity="1" fill-opacity="1" font-size="22.42"/>
+                      <use id="SCATTERPOINTS.1.163" xlink:href="#gridSVG.pch21" x="156.96" y="193.78" width="1.02" height="1.02" transform="translate(-0.51,-0.51)" stroke="rgb(255,255,51)" stroke-width="14.75" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="0.85"/>
+                      <use id="SCATTERPOINTS.1.164" xlink:href="#gridSVG.pch21" x="381.59" y="217.72" width="24.41" height="24.41" transform="translate(-12.21,-12.21)" stroke="rgb(255,255,51)" stroke-width="0.61" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="20.34"/>
+                      <use id="SCATTERPOINTS.1.165" xlink:href="#gridSVG.pch21" x="506.01" y="454.64" width="2.9" height="2.9" transform="translate(-1.45,-1.45)" stroke="rgb(255,255,51)" stroke-width="5.17" opacity="0.61" fill="rgb(255,255,51)" stroke-opacity="1" fill-opacity="1" font-size="2.42"/>
+                      <use id="SCATTERPOINTS.1.166" xlink:href="#gridSVG.pch21" x="251.79" y="285.51" width="33.01" height="33.01" transform="translate(-16.5,-16.5)" stroke="rgb(55,126,184)" stroke-width="0.45" opacity="0.61" fill="rgb(55,126,184)" stroke-opacity="1" fill-opacity="1" font-size="27.51"/>
+                    </g>
+                  </g>
+                  <g id="GRID.rect.1288.1">
+                    <rect id="GRID.rect.1288.1.1" x="48.89" y="63.25" width="927.7" height="660.61" fill="none" fill-opacity="0"/>
+                  </g>
+                  <g id="container::VP:TOPlayout::GRID.VP.759::VP:PLOTlayout::GRID.VP.760::GRID.VP.761::GRID.VP.762.1">
+                    <g id="GRID.xaxis.1289.1" font-size="9.6">
+                      <g id="major.1">
+                        <polyline id="major.1.1" points="76.93,63.25 883.98,63.25" fill="none"/>
+                      </g>
+                      <g id="ticks.1">
+                        <polyline id="ticks.1.1" points="76.93,63.25 76.93,54.61" fill="none"/>
+                        <polyline id="ticks.1.2" points="211.44,63.25 211.44,54.61" fill="none"/>
+                        <polyline id="ticks.1.3" points="345.95,63.25 345.95,54.61" fill="none"/>
+                        <polyline id="ticks.1.4" points="480.46,63.25 480.46,54.61" fill="none"/>
+                        <polyline id="ticks.1.5" points="614.96,63.25 614.96,54.61" fill="none"/>
+                        <polyline id="ticks.1.6" points="749.47,63.25 749.47,54.61" fill="none"/>
+                        <polyline id="ticks.1.7" points="883.98,63.25 883.98,54.61" fill="none"/>
+                      </g>
+                      <g id="labels.1">
+                        <g id="labels.1.1" transform="translate(76.93, 37.33)" stroke-width="0.1">
+                          <g id="labels.1.1.scale" transform="scale(1, -1)">
+                            <text x="0" y="0" id="labels.1.1.text" text-anchor="middle" fill="rgb(0,0,0)" fill-opacity="1">
+                              <tspan id="labels.1.1.tspan.1" dy="5.03" x="0">0</tspan>
+                            </text>
+                          </g>
+                        </g>
+                        <g id="labels.1.2" transform="translate(211.44, 37.33)" stroke-width="0.1">
+                          <g id="labels.1.2.scale" transform="scale(1, -1)">
+                            <text x="0" y="0" id="labels.1.2.text" text-anchor="middle" fill="rgb(0,0,0)" fill-opacity="1">
+                              <tspan id="labels.1.2.tspan.1" dy="5.03" x="0">20</tspan>
+                            </text>
+                          </g>
+                        </g>
+                        <g id="labels.1.3" transform="translate(345.95, 37.33)" stroke-width="0.1">
+                          <g id="labels.1.3.scale" transform="scale(1, -1)">
+                            <text x="0" y="0" id="labels.1.3.text" text-anchor="middle" fill="rgb(0,0,0)" fill-opacity="1">
+                              <tspan id="labels.1.3.tspan.1" dy="5.03" x="0">40</tspan>
+                            </text>
+                          </g>
+                        </g>
+                        <g id="labels.1.4" transform="translate(480.46, 37.33)" stroke-width="0.1">
+                          <g id="labels.1.4.scale" transform="scale(1, -1)">
+                            <text x="0" y="0" id="labels.1.4.text" text-anchor="middle" fill="rgb(0,0,0)" fill-opacity="1">
+                              <tspan id="labels.1.4.tspan.1" dy="5.03" x="0">60</tspan>
+                            </text>
+                          </g>
+                        </g>
+                        <g id="labels.1.5" transform="translate(614.96, 37.33)" stroke-width="0.1">
+                          <g id="labels.1.5.scale" transform="scale(1, -1)">
+                            <text x="0" y="0" id="labels.1.5.text" text-anchor="middle" fill="rgb(0,0,0)" fill-opacity="1">
+                              <tspan id="labels.1.5.tspan.1" dy="5.03" x="0">80</tspan>
+                            </text>
+                          </g>
+                        </g>
+                        <g id="labels.1.6" transform="translate(749.47, 37.33)" stroke-width="0.1">
+                          <g id="labels.1.6.scale" transform="scale(1, -1)">
+                            <text x="0" y="0" id="labels.1.6.text" text-anchor="middle" fill="rgb(0,0,0)" fill-opacity="1">
+                              <tspan id="labels.1.6.tspan.1" dy="5.03" x="0">100</tspan>
+                            </text>
+                          </g>
+                        </g>
+                        <g id="labels.1.7" transform="translate(883.98, 37.33)" stroke-width="0.1">
+                          <g id="labels.1.7.scale" transform="scale(1, -1)">
+                            <text x="0" y="0" id="labels.1.7.text" text-anchor="middle" fill="rgb(0,0,0)" fill-opacity="1">
+                              <tspan id="labels.1.7.tspan.1" dy="5.03" x="0">120</tspan>
+                            </text>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                    <g id="GRID.yaxis.1290.1" font-size="9.6">
+                      <g id="major.2">
+                        <polyline id="major.2.1" points="48.89,72.72 48.89,638.39" fill="none"/>
+                      </g>
+                      <g id="ticks.2">
+                        <polyline id="ticks.2.1" points="48.89,72.72 40.25,72.72" fill="none"/>
+                        <polyline id="ticks.2.2" points="48.89,167 40.25,167" fill="none"/>
+                        <polyline id="ticks.2.3" points="48.89,261.28 40.25,261.28" fill="none"/>
+                        <polyline id="ticks.2.4" points="48.89,355.56 40.25,355.56" fill="none"/>
+                        <polyline id="ticks.2.5" points="48.89,449.84 40.25,449.84" fill="none"/>
+                        <polyline id="ticks.2.6" points="48.89,544.11 40.25,544.11" fill="none"/>
+                        <polyline id="ticks.2.7" points="48.89,638.39 40.25,638.39" fill="none"/>
+                      </g>
+                      <g id="labels.2">
+                        <g id="labels.2.1" transform="translate(31.61, 72.72)" stroke-width="0.1">
+                          <g id="labels.2.1.scale" transform="scale(1, -1)">
+                            <text x="0" y="0" id="labels.2.1.text" transform="rotate(-90)" text-anchor="middle" fill="rgb(0,0,0)" fill-opacity="1">
+                              <tspan id="labels.2.1.tspan.1" dy="0" x="0">1</tspan>
+                            </text>
+                          </g>
+                        </g>
+                        <g id="labels.2.2" transform="translate(31.61, 167)" stroke-width="0.1">
+                          <g id="labels.2.2.scale" transform="scale(1, -1)">
+                            <text x="0" y="0" id="labels.2.2.text" transform="rotate(-90)" text-anchor="middle" fill="rgb(0,0,0)" fill-opacity="1">
+                              <tspan id="labels.2.2.tspan.1" dy="0" x="0">2</tspan>
+                            </text>
+                          </g>
+                        </g>
+                        <g id="labels.2.3" transform="translate(31.61, 261.28)" stroke-width="0.1">
+                          <g id="labels.2.3.scale" transform="scale(1, -1)">
+                            <text x="0" y="0" id="labels.2.3.text" transform="rotate(-90)" text-anchor="middle" fill="rgb(0,0,0)" fill-opacity="1">
+                              <tspan id="labels.2.3.tspan.1" dy="0" x="0">3</tspan>
+                            </text>
+                          </g>
+                        </g>
+                        <g id="labels.2.4" transform="translate(31.61, 355.56)" stroke-width="0.1">
+                          <g id="labels.2.4.scale" transform="scale(1, -1)">
+                            <text x="0" y="0" id="labels.2.4.text" transform="rotate(-90)" text-anchor="middle" fill="rgb(0,0,0)" fill-opacity="1">
+                              <tspan id="labels.2.4.tspan.1" dy="0" x="0">4</tspan>
+                            </text>
+                          </g>
+                        </g>
+                        <g id="labels.2.5" transform="translate(31.61, 449.84)" stroke-width="0.1">
+                          <g id="labels.2.5.scale" transform="scale(1, -1)">
+                            <text x="0" y="0" id="labels.2.5.text" transform="rotate(-90)" text-anchor="middle" fill="rgb(0,0,0)" fill-opacity="1">
+                              <tspan id="labels.2.5.tspan.1" dy="0" x="0">5</tspan>
+                            </text>
+                          </g>
+                        </g>
+                        <g id="labels.2.6" transform="translate(31.61, 544.11)" stroke-width="0.1">
+                          <g id="labels.2.6.scale" transform="scale(1, -1)">
+                            <text x="0" y="0" id="labels.2.6.text" transform="rotate(-90)" text-anchor="middle" fill="rgb(0,0,0)" fill-opacity="1">
+                              <tspan id="labels.2.6.tspan.1" dy="0" x="0">6</tspan>
+                            </text>
+                          </g>
+                        </g>
+                        <g id="labels.2.7" transform="translate(31.61, 638.39)" stroke-width="0.1">
+                          <g id="labels.2.7.scale" transform="scale(1, -1)">
+                            <text x="0" y="0" id="labels.2.7.text" transform="rotate(-90)" text-anchor="middle" fill="rgb(0,0,0)" fill-opacity="1">
+                              <tspan id="labels.2.7.tspan.1" dy="0" x="0">7</tspan>
+                            </text>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                    <g id="GRID.yaxis.1291.1" font-size="9.6">
+                      <g id="major.3">
+                        <polyline id="major.3.1" points="976.59,72.72 976.59,638.39" fill="none"/>
+                      </g>
+                      <g id="ticks.3">
+                        <polyline id="ticks.3.1" points="976.59,72.72 985.23,72.72" fill="none"/>
+                        <polyline id="ticks.3.2" points="976.59,167 985.23,167" fill="none"/>
+                        <polyline id="ticks.3.3" points="976.59,261.28 985.23,261.28" fill="none"/>
+                        <polyline id="ticks.3.4" points="976.59,355.56 985.23,355.56" fill="none"/>
+                        <polyline id="ticks.3.5" points="976.59,449.84 985.23,449.84" fill="none"/>
+                        <polyline id="ticks.3.6" points="976.59,544.11 985.23,544.11" fill="none"/>
+                        <polyline id="ticks.3.7" points="976.59,638.39 985.23,638.39" fill="none"/>
+                      </g>
+                    </g>
+                  </g>
+                  <g id="container::VP:TOPlayout::GRID.VP.759::VP:PLOTlayout::GRID.VP.760::GRID.VP.761::GRID.VP.763.1">
+                    <g id="container::VP:TOPlayout::GRID.VP.759::VP:PLOTlayout::GRID.VP.760::GRID.VP.761::GRID.VP.763::GRID.VP.764.1">
+                      <g id="GRID.xaxis.1292.1" font-size="9.6">
+                        <g id="major.4">
+                          <polyline id="major.4.1" points="76.93,723.86 883.98,723.86" fill="none"/>
+                        </g>
+                        <g id="ticks.4">
+                          <polyline id="ticks.4.1" points="76.93,723.86 76.93,732.5" fill="none"/>
+                          <polyline id="ticks.4.2" points="211.44,723.86 211.44,732.5" fill="none"/>
+                          <polyline id="ticks.4.3" points="345.95,723.86 345.95,732.5" fill="none"/>
+                          <polyline id="ticks.4.4" points="480.46,723.86 480.46,732.5" fill="none"/>
+                          <polyline id="ticks.4.5" points="614.96,723.86 614.96,732.5" fill="none"/>
+                          <polyline id="ticks.4.6" points="749.47,723.86 749.47,732.5" fill="none"/>
+                          <polyline id="ticks.4.7" points="883.98,723.86 883.98,732.5" fill="none"/>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                  <script type="application/ecmascript" id="linkedJSONdata"><![CDATA[
+var names = ["Country","Infantmortality","ChildrenPerWoman","Region","Populationtotal"];
+ var tableData = [{"Country":"Solomon Islands","Infantmortality":28.3,"ChildrenPerWoman":4.359,"Region":"East Asia & Pacific","Populationtotal":0.1724},{"Country":"Poland","Infantmortality":5.8,"ChildrenPerWoman":1.334,"Region":"Europe & Central Asia","Populationtotal":1.4924},{"Country":"Guinea","Infantmortality":75,"ChildrenPerWoman":5.343,"Region":"Sub-Saharan Africa","Populationtotal":0.7464},{"Country":"Antigua and Barbuda","Infantmortality":10.5,"ChildrenPerWoman":2.164,"Region":"America","Populationtotal":0.0712},{"Country":"Belgium","Infantmortality":3.7,"ChildrenPerWoman":1.819,"Region":"Europe & Central Asia","Populationtotal":0.786},{"Country":"Cuba","Infantmortality":4.9,"ChildrenPerWoman":1.498,"Region":"America","Populationtotal":0.8103},{"Country":"Tonga","Infantmortality":12.5,"ChildrenPerWoman":4.012,"Region":"East Asia & Pacific","Populationtotal":0.0774},{"Country":"Ukraine","Infantmortality":11.2,"ChildrenPerWoman":1.384,"Region":"Europe & Central Asia","Populationtotal":1.6371},{"Country":"Maldives","Infantmortality":14.1,"ChildrenPerWoman":2.382,"Region":"South Asia","Populationtotal":0.1339},{"Country":"Togo","Infantmortality":67.8,"ChildrenPerWoman":4.876,"Region":"Sub-Saharan Africa","Populationtotal":0.5802},{"Country":"Sudan","Infantmortality":54.7,"ChildrenPerWoman":4.792,"Region":"Sub-Saharan Africa","Populationtotal":1.3855},{"Country":"Honduras","Infantmortality":22.5,"ChildrenPerWoman":3.273,"Region":"America","Populationtotal":0.6524},{"Country":"Cyprus","Infantmortality":3.3,"ChildrenPerWoman":1.493,"Region":"Europe & Central Asia","Populationtotal":0.2505},{"Country":"Estonia","Infantmortality":4.2,"ChildrenPerWoman":1.619,"Region":"Europe & Central Asia","Populationtotal":0.2797},{"Country":"Benin","Infantmortality":66.9,"ChildrenPerWoman":5.273,"Region":"Sub-Saharan Africa","Populationtotal":0.6978},{"Country":"Haiti","Infantmortality":61.6,"ChildrenPerWoman":3.5,"Region":"America","Populationtotal":0.7532},{"Country":"Nigeria","Infantmortality":87.8,"ChildrenPerWoman":6.017,"Region":"Sub-Saharan Africa","Populationtotal":2.9631},{"Country":"Gabon","Infantmortality":47.8,"ChildrenPerWoman":4.275,"Region":"Sub-Saharan Africa","Populationtotal":0.2907},{"Country":"Tunisia","Infantmortality":16.6,"ChildrenPerWoman":2.044,"Region":"Middle East & North Africa","Populationtotal":0.7728},{"Country":"Israel","Infantmortality":3.9,"ChildrenPerWoman":2.916,"Region":"Middle East & North Africa","Populationtotal":0.6429},{"Country":"Egypt","Infantmortality":21.6,"ChildrenPerWoman":2.954,"Region":"Middle East & North Africa","Populationtotal":2.1364},{"Country":"Samoa","Infantmortality":15.9,"ChildrenPerWoman":4.426,"Region":"East Asia & Pacific","Populationtotal":0.1029},{"Country":"Bosnia and Herzegovina","Infantmortality":7.2,"ChildrenPerWoman":1.218,"Region":"Europe & Central Asia","Populationtotal":0.469},{"Country":"Singapore","Infantmortality":2.2,"ChildrenPerWoman":1.28,"Region":"East Asia & Pacific","Populationtotal":0.5274},{"Country":"Niger","Infantmortality":72.7,"ChildrenPerWoman":7.588,"Region":"Sub-Saharan Africa","Populationtotal":0.9176},{"Country":"Argentina","Infantmortality":13.8,"ChildrenPerWoman":2.241,"Region":"America","Populationtotal":1.5213},{"Country":"Burundi","Infantmortality":75.9,"ChildrenPerWoman":6.481,"Region":"Sub-Saharan Africa","Populationtotal":0.6804},{"Country":"South Sudan","Infantmortality":76.4,"ChildrenPerWoman":5.385,"Region":"Sub-Saharan Africa","Populationtotal":0.7027},{"Country":"France","Infantmortality":3.6,"ChildrenPerWoman":1.973,"Region":"Europe & Central Asia","Populationtotal":1.9023},{"Country":"Jamaica","Infantmortality":16.2,"ChildrenPerWoman":2.387,"Region":"America","Populationtotal":0.3981},{"Country":"Barbados","Infantmortality":18.2,"ChildrenPerWoman":1.831,"Region":"America","Populationtotal":0.1259},{"Country":"Costa Rica","Infantmortality":9.1,"ChildrenPerWoman":1.909,"Region":"America","Populationtotal":0.5133},{"Country":"Kenya","Infantmortality":55.1,"ChildrenPerWoman":4.761,"Region":"Sub-Saharan Africa","Populationtotal":1.497},{"Country":"Saudi Arabia","Infantmortality":10.1,"ChildrenPerWoman":2.971,"Region":"Middle East & North Africa","Populationtotal":1.2348},{"Country":"Panama","Infantmortality":17.9,"ChildrenPerWoman":2.608,"Region":"America","Populationtotal":0.4455},{"Country":"Nicaragua","Infantmortality":23.5,"ChildrenPerWoman":2.717,"Region":"America","Populationtotal":0.5731},{"Country":"Brazil","Infantmortality":16.7,"ChildrenPerWoman":1.897,"Region":"America","Populationtotal":3.341},{"Country":"Mauritania","Infantmortality":68.7,"ChildrenPerWoman":4.939,"Region":"Sub-Saharan Africa","Populationtotal":0.4382},{"Country":"Lesotho","Infantmortality":82.1,"ChildrenPerWoman":3.335,"Region":"Sub-Saharan Africa","Populationtotal":0.3521},{"Country":"Indonesia","Infantmortality":29.9,"ChildrenPerWoman":2.479,"Region":"East Asia & Pacific","Populationtotal":3.7002},{"Country":"Oman","Infantmortality":10.6,"ChildrenPerWoman":2.886,"Region":"Middle East & North Africa","Populationtotal":0.392},{"Country":"Kazakhstan","Infantmortality":23,"ChildrenPerWoman":2.51,"Region":"Europe & Central Asia","Populationtotal":0.9551},{"Country":"Malawi","Infantmortality":58.8,"ChildrenPerWoman":5.781,"Region":"Sub-Saharan Africa","Populationtotal":0.9034},{"Country":"Gambia","Infantmortality":52.6,"ChildrenPerWoman":5.798,"Region":"Sub-Saharan Africa","Populationtotal":0.3088},{"Country":"Malta","Infantmortality":5.8,"ChildrenPerWoman":1.377,"Region":"Europe & Central Asia","Populationtotal":0.1553},{"Country":"Guinea-Bissau","Infantmortality":89.6,"ChildrenPerWoman":5.247,"Region":"Sub-Saharan Africa","Populationtotal":0.2911},{"Country":"Uganda","Infantmortality":56.9,"ChildrenPerWoman":6.338,"Region":"Sub-Saharan Africa","Populationtotal":1.3514},{"Country":"Fiji","Infantmortality":19.1,"ChildrenPerWoman":2.736,"Region":"East Asia & Pacific","Populationtotal":0.2217},{"Country":"Madagascar","Infantmortality":46.9,"ChildrenPerWoman":4.794,"Region":"Sub-Saharan Africa","Populationtotal":1.0673},{"Country":"Afghanistan","Infantmortality":77.6,"ChildrenPerWoman":6.196,"Region":"South Asia","Populationtotal":1.3187},{"Country":"Ghana","Infantmortality":53.6,"ChildrenPerWoman":4.188,"Region":"Sub-Saharan Africa","Populationtotal":1.1643},{"Country":"Trinidad and Tobago","Infantmortality":20.7,"ChildrenPerWoman":1.796,"Region":"America","Populationtotal":0.2785},{"Country":"Georgia","Infantmortality":20.4,"ChildrenPerWoman":1.788,"Region":"Europe & Central Asia","Populationtotal":0.506},{"Country":"Denmark","Infantmortality":3.6,"ChildrenPerWoman":1.8923,"Region":"Europe & Central Asia","Populationtotal":0.566},{"Country":"Bhutan","Infantmortality":41,"ChildrenPerWoman":2.506,"Region":"South Asia","Populationtotal":0.2022},{"Country":"Bolivia","Infantmortality":38.4,"ChildrenPerWoman":3.477,"Region":"America","Populationtotal":0.7487},{"Country":"Qatar","Infantmortality":7.6,"ChildrenPerWoman":2.203,"Region":"Middle East & North Africa","Populationtotal":0.2852},{"Country":"Sierra Leone","Infantmortality":127.5,"ChildrenPerWoman":5.128,"Region":"Sub-Saharan Africa","Populationtotal":0.5719},{"Country":"Iraq","Infantmortality":31,"ChildrenPerWoman":4.343,"Region":"Middle East & North Africa","Populationtotal":1.3183},{"Country":"Turkey","Infantmortality":15.6,"ChildrenPerWoman":2.147,"Region":"Europe & Central Asia","Populationtotal":2.033},{"Country":"Guatemala","Infantmortality":30.1,"ChildrenPerWoman":4.119,"Region":"America","Populationtotal":0.8932},{"Country":"United States of America","Infantmortality":6.5,"ChildrenPerWoman":2.074,"Region":"America","Populationtotal":4.2158},{"Country":"Myanmar","Infantmortality":46.4,"ChildrenPerWoman":2.049,"Region":"East Asia & Pacific","Populationtotal":1.6594},{"Country":"Finland","Infantmortality":2.7,"ChildrenPerWoman":1.85,"Region":"Europe & Central Asia","Populationtotal":0.5566},{"Country":"Bulgaria","Infantmortality":11.8,"ChildrenPerWoman":1.433,"Region":"Europe & Central Asia","Populationtotal":0.6651},{"Country":"Hungary","Infantmortality":6.2,"ChildrenPerWoman":1.333,"Region":"Europe & Central Asia","Populationtotal":0.7642},{"Country":"Mexico","Infantmortality":15.4,"ChildrenPerWoman":2.346,"Region":"America","Populationtotal":2.539},{"Country":"Burkina Faso","Infantmortality":76.2,"ChildrenPerWoman":6.037,"Region":"Sub-Saharan Africa","Populationtotal":0.9509},{"Country":"Croatia","Infantmortality":5.1,"ChildrenPerWoman":1.432,"Region":"Europe & Central Asia","Populationtotal":0.5074},{"Country":"Albania","Infantmortality":17.4,"ChildrenPerWoman":1.761,"Region":"Europe & Central Asia","Populationtotal":0.4306},{"Country":"Turkmenistan","Infantmortality":50.6,"ChildrenPerWoman":2.482,"Region":"Europe & Central Asia","Populationtotal":0.5354},{"Country":"Canada","Infantmortality":5,"ChildrenPerWoman":1.6808,"Region":"America","Populationtotal":1.3936},{"Country":"Swaziland","Infantmortality":73.2,"ChildrenPerWoman":3.699,"Region":"Sub-Saharan Africa","Populationtotal":0.2589},{"Country":"Sri Lanka","Infantmortality":9.6,"ChildrenPerWoman":2.323,"Region":"South Asia","Populationtotal":1.0923},{"Country":"Thailand","Infantmortality":13.2,"ChildrenPerWoman":1.477,"Region":"East Asia & Pacific","Populationtotal":1.9946},{"Country":"Kiribati","Infantmortality":49.6,"ChildrenPerWoman":3.133,"Region":"East Asia & Pacific","Populationtotal":0.075},{"Country":"Japan","Infantmortality":2.5,"ChildrenPerWoman":1.343,"Region":"East Asia & Pacific","Populationtotal":2.7156},{"Country":"Latvia","Infantmortality":9,"ChildrenPerWoman":1.501,"Region":"Europe & Central Asia","Populationtotal":0.3638},{"Country":"India","Infantmortality":50.7,"ChildrenPerWoman":2.643,"Region":"South Asia","Populationtotal":8.3305},{"Country":"Botswana","Infantmortality":46.1,"ChildrenPerWoman":2.86,"Region":"Sub-Saharan Africa","Populationtotal":0.3375},{"Country":"Morocco","Infantmortality":31,"ChildrenPerWoman":2.443,"Region":"Middle East & North Africa","Populationtotal":1.351},{"Country":"Cambodia","Infantmortality":41.8,"ChildrenPerWoman":3.051,"Region":"East Asia & Pacific","Populationtotal":0.8975},{"Country":"Uruguay","Infantmortality":10.2,"ChildrenPerWoman":2.107,"Region":"America","Populationtotal":0.4416},{"Country":"Serbia","Infantmortality":6.9,"ChildrenPerWoman":1.406,"Region":"Europe & Central Asia","Populationtotal":0.7573},{"Country":"Papua New Guinea","Infantmortality":53,"ChildrenPerWoman":4.067,"Region":"East Asia & Pacific","Populationtotal":0.6178},{"Country":"Bangladesh","Infantmortality":42.8,"ChildrenPerWoman":2.377,"Region":"South Asia","Populationtotal":2.9116},{"Country":"Paraguay","Infantmortality":21.2,"ChildrenPerWoman":3.063,"Region":"America","Populationtotal":0.6025},{"Country":"Senegal","Infantmortality":50.5,"ChildrenPerWoman":5.107,"Region":"Sub-Saharan Africa","Populationtotal":0.8288},{"Country":"Colombia","Infantmortality":17,"ChildrenPerWoman":2.43,"Region":"America","Populationtotal":1.6195},{"Country":"Angola","Infantmortality":109.7,"ChildrenPerWoman":6.434,"Region":"Sub-Saharan Africa","Populationtotal":1.0253},{"Country":"Montenegro","Infantmortality":7.7,"ChildrenPerWoman":1.722,"Region":"Europe & Central Asia","Populationtotal":0.1915},{"Country":"Libya","Infantmortality":16.2,"ChildrenPerWoman":2.637,"Region":"Middle East & North Africa","Populationtotal":0.5986},{"Country":"United Kingdom","Infantmortality":4.7,"ChildrenPerWoman":1.871,"Region":"Europe & Central Asia","Populationtotal":1.8896},{"Country":"Rwanda","Infantmortality":50.4,"ChildrenPerWoman":5.062,"Region":"Sub-Saharan Africa","Populationtotal":0.7635},{"Country":"Slovak Republic","Infantmortality":7.4,"ChildrenPerWoman":1.309,"Region":"Europe & Central Asia","Populationtotal":0.5631},{"Country":"Malaysia","Infantmortality":7,"ChildrenPerWoman":2.052,"Region":"East Asia & Pacific","Populationtotal":1.266},{"Country":"Russian Federation","Infantmortality":11.6,"ChildrenPerWoman":1.446,"Region":"Europe & Central Asia","Populationtotal":2.8884},{"Country":"Equatorial Guinea","Infantmortality":80.8,"ChildrenPerWoman":5.314,"Region":"Sub-Saharan Africa","Populationtotal":0.1965},{"Country":"Ethiopia","Infantmortality":57.3,"ChildrenPerWoman":5.193,"Region":"Sub-Saharan Africa","Populationtotal":2.1517},{"Country":"Nepal","Infantmortality":40,"ChildrenPerWoman":2.899,"Region":"South Asia","Populationtotal":1.2979},{"Country":"Lebanon","Infantmortality":9.7,"ChildrenPerWoman":1.57,"Region":"Middle East & North Africa","Populationtotal":0.4928},{"Country":"Cote d'Ivoire","Infantmortality":83.9,"ChildrenPerWoman":4.913,"Region":"Sub-Saharan Africa","Populationtotal":1.0519},{"Country":"Timor-Leste","Infantmortality":56,"ChildrenPerWoman":6.479,"Region":"East Asia & Pacific","Populationtotal":0.2508},{"Country":"Brunei","Infantmortality":6.9,"ChildrenPerWoman":2.095,"Region":"East Asia & Pacific","Populationtotal":0.1497},{"Country":"Sao Tome and Principe","Infantmortality":42.6,"ChildrenPerWoman":4.411,"Region":"Sub-Saharan Africa","Populationtotal":0.0965},{"Country":"Liberia","Infantmortality":67.6,"ChildrenPerWoman":5.19,"Region":"Sub-Saharan Africa","Populationtotal":0.4617},{"Country":"China","Infantmortality":15.8,"ChildrenPerWoman":1.63,"Region":"East Asia & Pacific","Populationtotal":8.798},{"Country":"Jordan","Infantmortality":18.4,"ChildrenPerWoman":3.586,"Region":"Middle East & North Africa","Populationtotal":0.5838},{"Country":"Greece","Infantmortality":4.1,"ChildrenPerWoman":1.459,"Region":"Europe & Central Asia","Populationtotal":0.8112},{"Country":"Grenada","Infantmortality":12.2,"ChildrenPerWoman":2.282,"Region":"America","Populationtotal":0.0777},{"Country":"Djibouti","Infantmortality":73,"ChildrenPerWoman":3.755,"Region":"Middle East & North Africa","Populationtotal":0.2233},{"Country":"Mozambique","Infantmortality":77.1,"ChildrenPerWoman":5.536,"Region":"Sub-Saharan Africa","Populationtotal":1.1408},{"Country":"Cameroon","Infantmortality":69.9,"ChildrenPerWoman":5.167,"Region":"Sub-Saharan Africa","Populationtotal":1.0455},{"Country":"Norway","Infantmortality":2.8,"ChildrenPerWoman":1.96,"Region":"Europe & Central Asia","Populationtotal":0.5277},{"Country":"Eritrea","Infantmortality":42.4,"ChildrenPerWoman":5.163,"Region":"Middle East & North Africa","Populationtotal":0.5369},{"Country":"Namibia","Infantmortality":35.8,"ChildrenPerWoman":3.364,"Region":"Sub-Saharan Africa","Populationtotal":0.3581},{"Country":"Guyana","Infantmortality":31.9,"ChildrenPerWoman":2.743,"Region":"America","Populationtotal":0.2093},{"Country":"Luxembourg","Infantmortality":2.2,"ChildrenPerWoman":1.626,"Region":"Europe & Central Asia","Populationtotal":0.1684},{"Country":"United Arab Emirates","Infantmortality":7.9,"ChildrenPerWoman":1.948,"Region":"Middle East & North Africa","Populationtotal":0.6014},{"Country":"Armenia","Infantmortality":17.9,"ChildrenPerWoman":1.4,"Region":"Europe & Central Asia","Populationtotal":0.4236},{"Country":"Zimbabwe","Infantmortality":58.7,"ChildrenPerWoman":3.853,"Region":"Sub-Saharan Africa","Populationtotal":0.8518},{"Country":"Venezuela","Infantmortality":14.4,"ChildrenPerWoman":2.531,"Region":"America","Populationtotal":1.2787},{"Country":"Ecuador","Infantmortality":22.2,"ChildrenPerWoman":2.728,"Region":"America","Populationtotal":0.9051},{"Country":"El Salvador","Infantmortality":16.4,"ChildrenPerWoman":2.319,"Region":"America","Populationtotal":0.5977},{"Country":"Zambia","Infantmortality":67.1,"ChildrenPerWoman":5.881,"Region":"Sub-Saharan Africa","Populationtotal":0.8494},{"Country":"Mauritius","Infantmortality":13.7,"ChildrenPerWoman":1.579,"Region":"Sub-Saharan Africa","Populationtotal":0.2735},{"Country":"Vanuatu","Infantmortality":17.3,"ChildrenPerWoman":3.608,"Region":"East Asia & Pacific","Populationtotal":0.1153},{"Country":"Ireland","Infantmortality":3.8,"ChildrenPerWoman":2.002,"Region":"Europe & Central Asia","Populationtotal":0.5036},{"Country":"Switzerland","Infantmortality":4,"ChildrenPerWoman":1.472,"Region":"Europe & Central Asia","Populationtotal":0.6643},{"Country":"Bahamas","Infantmortality":14.9,"ChildrenPerWoman":1.889,"Region":"America","Populationtotal":0.1394},{"Country":"Belize","Infantmortality":17.1,"ChildrenPerWoman":2.907,"Region":"America","Populationtotal":0.1321},{"Country":"Kuwait","Infantmortality":9.8,"ChildrenPerWoman":2.681,"Region":"Middle East & North Africa","Populationtotal":0.3854},{"Country":"Netherlands","Infantmortality":4,"ChildrenPerWoman":1.773,"Region":"Europe & Central Asia","Populationtotal":0.9807},{"Country":"Chile","Infantmortality":7.8,"ChildrenPerWoman":1.888,"Region":"America","Populationtotal":0.9893},{"Country":"Suriname","Infantmortality":21,"ChildrenPerWoman":2.406,"Region":"America","Populationtotal":0.1732},{"Country":"New Zealand","Infantmortality":5.1,"ChildrenPerWoman":2.123,"Region":"East Asia & Pacific","Populationtotal":0.4993},{"Country":"Australia","Infantmortality":4.3,"ChildrenPerWoman":1.956,"Region":"East Asia & Pacific","Populationtotal":1.1197},{"Country":"Algeria","Infantmortality":19.8,"ChildrenPerWoman":2.725,"Region":"Middle East & North Africa","Populationtotal":1.4164},{"Country":"Iceland","Infantmortality":2.1,"ChildrenPerWoman":2.118,"Region":"Europe & Central Asia","Populationtotal":0.1346},{"Country":"Tajikistan","Infantmortality":55.3,"ChildrenPerWoman":3.703,"Region":"Europe & Central Asia","Populationtotal":0.6245},{"Country":"Mali","Infantmortality":87.9,"ChildrenPerWoman":6.817,"Region":"Sub-Saharan Africa","Populationtotal":0.918},{"Country":"Romania","Infantmortality":13.8,"ChildrenPerWoman":1.34,"Region":"Europe & Central Asia","Populationtotal":1.1217},{"Country":"Slovenia","Infantmortality":3,"ChildrenPerWoman":1.434,"Region":"Europe & Central Asia","Populationtotal":0.3429},{"Country":"West Bank and Gaza Strip","Infantmortality":21.2,"ChildrenPerWoman":4.381,"Region":"Middle East & North Africa","Populationtotal":0.4722},{"Country":"Mongolia","Infantmortality":28,"ChildrenPerWoman":2.368,"Region":"East Asia & Pacific","Populationtotal":0.3943},{"Country":"Lithuania","Infantmortality":6.6,"ChildrenPerWoman":1.417,"Region":"Europe & Central Asia","Populationtotal":0.4425},{"Country":"Peru","Infantmortality":17.8,"ChildrenPerWoman":2.579,"Region":"America","Populationtotal":1.2879},{"Country":"Portugal","Infantmortality":3.3,"ChildrenPerWoman":1.358,"Region":"Europe & Central Asia","Populationtotal":0.7872},{"Country":"Belarus","Infantmortality":5.6,"ChildrenPerWoman":1.416,"Region":"Europe & Central Asia","Populationtotal":0.7511},{"Country":"Uzbekistan","Infantmortality":39.2,"ChildrenPerWoman":2.457,"Region":"Europe & Central Asia","Populationtotal":1.25},{"Country":"Chad","Infantmortality":96.3,"ChildrenPerWoman":6.805,"Region":"Sub-Saharan Africa","Populationtotal":0.7879},{"Country":"Sweden","Infantmortality":2.6,"ChildrenPerWoman":1.917,"Region":"Europe & Central Asia","Populationtotal":0.7337},{"Country":"Vietnam","Infantmortality":19.2,"ChildrenPerWoman":1.862,"Region":"East Asia & Pacific","Populationtotal":2.238},{"Country":"Austria","Infantmortality":3.6,"ChildrenPerWoman":1.411,"Region":"Europe & Central Asia","Populationtotal":0.6972},{"Country":"Bahrain","Infantmortality":9.1,"ChildrenPerWoman":2.229,"Region":"Middle East & North Africa","Populationtotal":0.2476},{"Country":"Somalia","Infantmortality":100.2,"ChildrenPerWoman":7.056,"Region":"Sub-Saharan Africa","Populationtotal":0.7211},{"Country":"Iran","Infantmortality":18.3,"ChildrenPerWoman":1.88,"Region":"Middle East & North Africa","Populationtotal":2.0525},{"Country":"Germany","Infantmortality":3.6,"ChildrenPerWoman":1.368,"Region":"Europe & Central Asia","Populationtotal":2.1923},{"Country":"Pakistan","Infantmortality":75.1,"ChildrenPerWoman":3.581,"Region":"South Asia","Populationtotal":3.1237},{"Country":"Spain","Infantmortality":4.3,"ChildrenPerWoman":1.419,"Region":"Europe & Central Asia","Populationtotal":1.622},{"Country":"Azerbaijan","Infantmortality":36.9,"ChildrenPerWoman":1.986,"Region":"Europe & Central Asia","Populationtotal":0.7219},{"Country":"Italy","Infantmortality":3.5,"ChildrenPerWoman":1.392,"Region":"Europe & Central Asia","Populationtotal":1.8682},{"Country":"Seychelles","Infantmortality":11.9,"ChildrenPerWoman":2.284,"Region":"Sub-Saharan Africa","Populationtotal":0.0706},{"Country":"South Africa","Infantmortality":45.3,"ChildrenPerWoman":2.538,"Region":"Sub-Saharan Africa","Populationtotal":1.6953},{"Country":"Comoros","Infantmortality":63.8,"ChildrenPerWoman":5.051,"Region":"Sub-Saharan Africa","Populationtotal":0.2015},{"Country":"Philippines","Infantmortality":26,"ChildrenPerWoman":3.257,"Region":"East Asia & Pacific","Populationtotal":2.2923}];
+ colGroupNo = 6;
+]]></script>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg> 
+
+        </div>
+
+
+          <div class ="row" id="control">
+            <button type="button" class="btn btn-info" onclick="reset()" id="reset"> Reset </button>
+            <button type="button" class="btn btn-info" onclick="showTable()" id="viewTable"> View Table </button>
+          </div>
+    </div>
+
+
+          <div class = "col-xs-12 col-md-12 col-lg-12">
+
+<!-- html table generated in R 3.3.1 by xtable 1.8-2 package -->
+<!-- Fri Jun  2 10:00:38 2017 -->
+<table class="table table-fit table-striped table-bordered table-responsive hidden" id="table">
+<caption align="top"> Data </caption>
+<tr> <th> Country </th> <th> Infantmortality </th> <th> ChildrenPerWoman </th> <th> Region </th> <th> Populationtotal </th>  </tr>
+  <tr> <td> Solomon Islands </td> <td align="right"> 28.3 </td> <td align="right"> 4.3590 </td> <td> East Asia &amp; Pacific </td> <td align="right"> 0.1724321 </td> </tr>
+  <tr> <td> Poland </td> <td align="right"> 5.8 </td> <td align="right"> 1.3340 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 1.4923671 </td> </tr>
+  <tr> <td> Guinea </td> <td align="right"> 75.0 </td> <td align="right"> 5.3430 </td> <td> Sub-Saharan Africa </td> <td align="right"> 0.7463590 </td> </tr>
+  <tr> <td> Antigua and Barbuda </td> <td align="right"> 10.5 </td> <td align="right"> 2.1640 </td> <td> America </td> <td align="right"> 0.0711543 </td> </tr>
+  <tr> <td> Belgium </td> <td align="right"> 3.7 </td> <td align="right"> 1.8190 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.7860250 </td> </tr>
+  <tr> <td> Cuba </td> <td align="right"> 4.9 </td> <td align="right"> 1.4980 </td> <td> America </td> <td align="right"> 0.8102917 </td> </tr>
+  <tr> <td> Tonga </td> <td align="right"> 12.5 </td> <td align="right"> 4.0120 </td> <td> East Asia &amp; Pacific </td> <td align="right"> 0.0774404 </td> </tr>
+  <tr> <td> Ukraine </td> <td align="right"> 11.2 </td> <td align="right"> 1.3840 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 1.6371114 </td> </tr>
+  <tr> <td> Maldives </td> <td align="right"> 14.1 </td> <td align="right"> 2.3820 </td> <td> South Asia </td> <td align="right"> 0.1338921 </td> </tr>
+  <tr> <td> Togo </td> <td align="right"> 67.8 </td> <td align="right"> 4.8760 </td> <td> Sub-Saharan Africa </td> <td align="right"> 0.5802085 </td> </tr>
+  <tr> <td> Sudan </td> <td align="right"> 54.7 </td> <td align="right"> 4.7920 </td> <td> Sub-Saharan Africa </td> <td align="right"> 1.3855205 </td> </tr>
+  <tr> <td> Honduras </td> <td align="right"> 22.5 </td> <td align="right"> 3.2730 </td> <td> America </td> <td align="right"> 0.6523520 </td> </tr>
+  <tr> <td> Cyprus </td> <td align="right"> 3.3 </td> <td align="right"> 1.4930 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.2505227 </td> </tr>
+  <tr> <td> Estonia </td> <td align="right"> 4.2 </td> <td align="right"> 1.6190 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.2796654 </td> </tr>
+  <tr> <td> Benin </td> <td align="right"> 66.9 </td> <td align="right"> 5.2730 </td> <td> Sub-Saharan Africa </td> <td align="right"> 0.6978109 </td> </tr>
+  <tr> <td> Haiti </td> <td align="right"> 61.6 </td> <td align="right"> 3.5000 </td> <td> America </td> <td align="right"> 0.7532458 </td> </tr>
+  <tr> <td> Nigeria </td> <td align="right"> 87.8 </td> <td align="right"> 6.0170 </td> <td> Sub-Saharan Africa </td> <td align="right"> 2.9630999 </td> </tr>
+  <tr> <td> Gabon </td> <td align="right"> 47.8 </td> <td align="right"> 4.2750 </td> <td> Sub-Saharan Africa </td> <td align="right"> 0.2907164 </td> </tr>
+  <tr> <td> Tunisia </td> <td align="right"> 16.6 </td> <td align="right"> 2.0440 </td> <td> Middle East &amp; North Africa </td> <td align="right"> 0.7727594 </td> </tr>
+  <tr> <td> Israel </td> <td align="right"> 3.9 </td> <td align="right"> 2.9160 </td> <td> Middle East &amp; North Africa </td> <td align="right"> 0.6428851 </td> </tr>
+  <tr> <td> Egypt </td> <td align="right"> 21.6 </td> <td align="right"> 2.9540 </td> <td> Middle East &amp; North Africa </td> <td align="right"> 2.1364097 </td> </tr>
+  <tr> <td> Samoa </td> <td align="right"> 15.9 </td> <td align="right"> 4.4260 </td> <td> East Asia &amp; Pacific </td> <td align="right"> 0.1029311 </td> </tr>
+  <tr> <td> Bosnia and Herzegovina </td> <td align="right"> 7.2 </td> <td align="right"> 1.2180 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.4689747 </td> </tr>
+  <tr> <td> Singapore </td> <td align="right"> 2.2 </td> <td align="right"> 1.2800 </td> <td> East Asia &amp; Pacific </td> <td align="right"> 0.5273502 </td> </tr>
+  <tr> <td> Niger </td> <td align="right"> 72.7 </td> <td align="right"> 7.5880 </td> <td> Sub-Saharan Africa </td> <td align="right"> 0.9176416 </td> </tr>
+  <tr> <td> Argentina </td> <td align="right"> 13.8 </td> <td align="right"> 2.2410 </td> <td> America </td> <td align="right"> 1.5212917 </td> </tr>
+  <tr> <td> Burundi </td> <td align="right"> 75.9 </td> <td align="right"> 6.4810 </td> <td> Sub-Saharan Africa </td> <td align="right"> 0.6803648 </td> </tr>
+  <tr> <td> South Sudan </td> <td align="right"> 76.4 </td> <td align="right"> 5.3850 </td> <td> Sub-Saharan Africa </td> <td align="right"> 0.7026932 </td> </tr>
+  <tr> <td> France </td> <td align="right"> 3.6 </td> <td align="right"> 1.9730 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 1.9023013 </td> </tr>
+  <tr> <td> Jamaica </td> <td align="right"> 16.2 </td> <td align="right"> 2.3870 </td> <td> America </td> <td align="right"> 0.3981494 </td> </tr>
+  <tr> <td> Barbados </td> <td align="right"> 18.2 </td> <td align="right"> 1.8310 </td> <td> America </td> <td align="right"> 0.1259410 </td> </tr>
+  <tr> <td> Costa Rica </td> <td align="right"> 9.1 </td> <td align="right"> 1.9090 </td> <td> America </td> <td align="right"> 0.5133461 </td> </tr>
+  <tr> <td> Kenya </td> <td align="right"> 55.1 </td> <td align="right"> 4.7610 </td> <td> Sub-Saharan Africa </td> <td align="right"> 1.4969863 </td> </tr>
+  <tr> <td> Saudi Arabia </td> <td align="right"> 10.1 </td> <td align="right"> 2.9710 </td> <td> Middle East &amp; North Africa </td> <td align="right"> 1.2348466 </td> </tr>
+  <tr> <td> Panama </td> <td align="right"> 17.9 </td> <td align="right"> 2.6080 </td> <td> America </td> <td align="right"> 0.4455459 </td> </tr>
+  <tr> <td> Nicaragua </td> <td align="right"> 23.5 </td> <td align="right"> 2.7170 </td> <td> America </td> <td align="right"> 0.5730708 </td> </tr>
+  <tr> <td> Brazil </td> <td align="right"> 16.7 </td> <td align="right"> 1.8970 </td> <td> America </td> <td align="right"> 3.3409691 </td> </tr>
+  <tr> <td> Mauritania </td> <td align="right"> 68.7 </td> <td align="right"> 4.9390 </td> <td> Sub-Saharan Africa </td> <td align="right"> 0.4382112 </td> </tr>
+  <tr> <td> Lesotho </td> <td align="right"> 82.1 </td> <td align="right"> 3.3350 </td> <td> Sub-Saharan Africa </td> <td align="right"> 0.3520990 </td> </tr>
+  <tr> <td> Indonesia </td> <td align="right"> 29.9 </td> <td align="right"> 2.4790 </td> <td> East Asia &amp; Pacific </td> <td align="right"> 3.7002225 </td> </tr>
+  <tr> <td> Oman </td> <td align="right"> 10.6 </td> <td align="right"> 2.8860 </td> <td> Middle East &amp; North Africa </td> <td align="right"> 0.3920045 </td> </tr>
+  <tr> <td> Kazakhstan </td> <td align="right"> 23.0 </td> <td align="right"> 2.5100 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.9551473 </td> </tr>
+  <tr> <td> Malawi </td> <td align="right"> 58.8 </td> <td align="right"> 5.7810 </td> <td> Sub-Saharan Africa </td> <td align="right"> 0.9034047 </td> </tr>
+  <tr> <td> Gambia </td> <td align="right"> 52.6 </td> <td align="right"> 5.7980 </td> <td> Sub-Saharan Africa </td> <td align="right"> 0.3087770 </td> </tr>
+  <tr> <td> Malta </td> <td align="right"> 5.8 </td> <td align="right"> 1.3770 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.1553141 </td> </tr>
+  <tr> <td> Guinea-Bissau </td> <td align="right"> 89.6 </td> <td align="right"> 5.2470 </td> <td> Sub-Saharan Africa </td> <td align="right"> 0.2910616 </td> </tr>
+  <tr> <td> Uganda </td> <td align="right"> 56.9 </td> <td align="right"> 6.3380 </td> <td> Sub-Saharan Africa </td> <td align="right"> 1.3514013 </td> </tr>
+  <tr> <td> Fiji </td> <td align="right"> 19.1 </td> <td align="right"> 2.7360 </td> <td> East Asia &amp; Pacific </td> <td align="right"> 0.2217280 </td> </tr>
+  <tr> <td> Madagascar </td> <td align="right"> 46.9 </td> <td align="right"> 4.7940 </td> <td> Sub-Saharan Africa </td> <td align="right"> 1.0672622 </td> </tr>
+  <tr> <td> Afghanistan </td> <td align="right"> 77.6 </td> <td align="right"> 6.1960 </td> <td> South Asia </td> <td align="right"> 1.3186769 </td> </tr>
+  <tr> <td> Ghana </td> <td align="right"> 53.6 </td> <td align="right"> 4.1880 </td> <td> Sub-Saharan Africa </td> <td align="right"> 1.1643482 </td> </tr>
+  <tr> <td> Trinidad and Tobago </td> <td align="right"> 20.7 </td> <td align="right"> 1.7960 </td> <td> America </td> <td align="right"> 0.2785060 </td> </tr>
+  <tr> <td> Georgia </td> <td align="right"> 20.4 </td> <td align="right"> 1.7880 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.5060227 </td> </tr>
+  <tr> <td> Denmark </td> <td align="right"> 3.6 </td> <td align="right"> 1.8923 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.5659971 </td> </tr>
+  <tr> <td> Bhutan </td> <td align="right"> 41.0 </td> <td align="right"> 2.5060 </td> <td> South Asia </td> <td align="right"> 0.2021671 </td> </tr>
+  <tr> <td> Bolivia </td> <td align="right"> 38.4 </td> <td align="right"> 3.4770 </td> <td> America </td> <td align="right"> 0.7486726 </td> </tr>
+  <tr> <td> Qatar </td> <td align="right"> 7.6 </td> <td align="right"> 2.2030 </td> <td> Middle East &amp; North Africa </td> <td align="right"> 0.2852273 </td> </tr>
+  <tr> <td> Sierra Leone </td> <td align="right"> 127.5 </td> <td align="right"> 5.1280 </td> <td> Sub-Saharan Africa </td> <td align="right"> 0.5718773 </td> </tr>
+  <tr> <td> Iraq </td> <td align="right"> 31.0 </td> <td align="right"> 4.3430 </td> <td> Middle East &amp; North Africa </td> <td align="right"> 1.3182602 </td> </tr>
+  <tr> <td> Turkey </td> <td align="right"> 15.6 </td> <td align="right"> 2.1470 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 2.0329881 </td> </tr>
+  <tr> <td> Guatemala </td> <td align="right"> 30.1 </td> <td align="right"> 4.1190 </td> <td> America </td> <td align="right"> 0.8932113 </td> </tr>
+  <tr> <td> United States of America </td> <td align="right"> 6.5 </td> <td align="right"> 2.0740 </td> <td> America </td> <td align="right"> 4.2158115 </td> </tr>
+  <tr> <td> Myanmar </td> <td align="right"> 46.4 </td> <td align="right"> 2.0490 </td> <td> East Asia &amp; Pacific </td> <td align="right"> 1.6593630 </td> </tr>
+  <tr> <td> Finland </td> <td align="right"> 2.7 </td> <td align="right"> 1.8500 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.5566025 </td> </tr>
+  <tr> <td> Bulgaria </td> <td align="right"> 11.8 </td> <td align="right"> 1.4330 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.6651166 </td> </tr>
+  <tr> <td> Hungary </td> <td align="right"> 6.2 </td> <td align="right"> 1.3330 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.7642119 </td> </tr>
+  <tr> <td> Mexico </td> <td align="right"> 15.4 </td> <td align="right"> 2.3460 </td> <td> America </td> <td align="right"> 2.5390422 </td> </tr>
+  <tr> <td> Burkina Faso </td> <td align="right"> 76.2 </td> <td align="right"> 6.0370 </td> <td> Sub-Saharan Africa </td> <td align="right"> 0.9508643 </td> </tr>
+  <tr> <td> Croatia </td> <td align="right"> 5.1 </td> <td align="right"> 1.4320 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.5074239 </td> </tr>
+  <tr> <td> Albania </td> <td align="right"> 17.4 </td> <td align="right"> 1.7610 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.4305742 </td> </tr>
+  <tr> <td> Turkmenistan </td> <td align="right"> 50.6 </td> <td align="right"> 2.4820 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.5353660 </td> </tr>
+  <tr> <td> Canada </td> <td align="right"> 5.0 </td> <td align="right"> 1.6808 </td> <td> America </td> <td align="right"> 1.3936168 </td> </tr>
+  <tr> <td> Swaziland </td> <td align="right"> 73.2 </td> <td align="right"> 3.6990 </td> <td> Sub-Saharan Africa </td> <td align="right"> 0.2589124 </td> </tr>
+  <tr> <td> Sri Lanka </td> <td align="right"> 9.6 </td> <td align="right"> 2.3230 </td> <td> South Asia </td> <td align="right"> 1.0922908 </td> </tr>
+  <tr> <td> Thailand </td> <td align="right"> 13.2 </td> <td align="right"> 1.4770 </td> <td> East Asia &amp; Pacific </td> <td align="right"> 1.9945622 </td> </tr>
+  <tr> <td> Kiribati </td> <td align="right"> 49.6 </td> <td align="right"> 3.1330 </td> <td> East Asia &amp; Pacific </td> <td align="right"> 0.0750023 </td> </tr>
+  <tr> <td> Japan </td> <td align="right"> 2.5 </td> <td align="right"> 1.3430 </td> <td> East Asia &amp; Pacific </td> <td align="right"> 2.7155695 </td> </tr>
+  <tr> <td> Latvia </td> <td align="right"> 9.0 </td> <td align="right"> 1.5010 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.3638032 </td> </tr>
+  <tr> <td> India </td> <td align="right"> 50.7 </td> <td align="right"> 2.6430 </td> <td> South Asia </td> <td align="right"> 8.3304809 </td> </tr>
+  <tr> <td> Botswana </td> <td align="right"> 46.1 </td> <td align="right"> 2.8600 </td> <td> Sub-Saharan Africa </td> <td align="right"> 0.3375147 </td> </tr>
+  <tr> <td> Morocco </td> <td align="right"> 31.0 </td> <td align="right"> 2.4430 </td> <td> Middle East &amp; North Africa </td> <td align="right"> 1.3510145 </td> </tr>
+  <tr> <td> Cambodia </td> <td align="right"> 41.8 </td> <td align="right"> 3.0510 </td> <td> East Asia &amp; Pacific </td> <td align="right"> 0.8975003 </td> </tr>
+  <tr> <td> Uruguay </td> <td align="right"> 10.2 </td> <td align="right"> 2.1070 </td> <td> America </td> <td align="right"> 0.4415703 </td> </tr>
+  <tr> <td> Serbia </td> <td align="right"> 6.9 </td> <td align="right"> 1.4060 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.7572976 </td> </tr>
+  <tr> <td> Papua New Guinea </td> <td align="right"> 53.0 </td> <td align="right"> 4.0670 </td> <td> East Asia &amp; Pacific </td> <td align="right"> 0.6177823 </td> </tr>
+  <tr> <td> Bangladesh </td> <td align="right"> 42.8 </td> <td align="right"> 2.3770 </td> <td> South Asia </td> <td align="right"> 2.9116432 </td> </tr>
+  <tr> <td> Paraguay </td> <td align="right"> 21.2 </td> <td align="right"> 3.0630 </td> <td> America </td> <td align="right"> 0.6025478 </td> </tr>
+  <tr> <td> Senegal </td> <td align="right"> 50.5 </td> <td align="right"> 5.1070 </td> <td> Sub-Saharan Africa </td> <td align="right"> 0.8287871 </td> </tr>
+  <tr> <td> Colombia </td> <td align="right"> 17.0 </td> <td align="right"> 2.4300 </td> <td> America </td> <td align="right"> 1.6194711 </td> </tr>
+  <tr> <td> Angola </td> <td align="right"> 109.7 </td> <td align="right"> 6.4340 </td> <td> Sub-Saharan Africa </td> <td align="right"> 1.0252572 </td> </tr>
+  <tr> <td> Montenegro </td> <td align="right"> 7.7 </td> <td align="right"> 1.7220 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.1914821 </td> </tr>
+  <tr> <td> Libya </td> <td align="right"> 16.2 </td> <td align="right"> 2.6370 </td> <td> Middle East &amp; North Africa </td> <td align="right"> 0.5986365 </td> </tr>
+  <tr> <td> United Kingdom </td> <td align="right"> 4.7 </td> <td align="right"> 1.8710 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 1.8895749 </td> </tr>
+  <tr> <td> Rwanda </td> <td align="right"> 50.4 </td> <td align="right"> 5.0620 </td> <td> Sub-Saharan Africa </td> <td align="right"> 0.7635331 </td> </tr>
+  <tr> <td> Slovak Republic </td> <td align="right"> 7.4 </td> <td align="right"> 1.3090 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.5631065 </td> </tr>
+  <tr> <td> Malaysia </td> <td align="right"> 7.0 </td> <td align="right"> 2.0520 </td> <td> East Asia &amp; Pacific </td> <td align="right"> 1.2659637 </td> </tr>
+  <tr> <td> Russian Federation </td> <td align="right"> 11.6 </td> <td align="right"> 1.4460 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 2.8883818 </td> </tr>
+  <tr> <td> Equatorial Guinea </td> <td align="right"> 80.8 </td> <td align="right"> 5.3140 </td> <td> Sub-Saharan Africa </td> <td align="right"> 0.1964605 </td> </tr>
+  <tr> <td> Ethiopia </td> <td align="right"> 57.3 </td> <td align="right"> 5.1930 </td> <td> Sub-Saharan Africa </td> <td align="right"> 2.1516727 </td> </tr>
+  <tr> <td> Nepal </td> <td align="right"> 40.0 </td> <td align="right"> 2.8990 </td> <td> South Asia </td> <td align="right"> 1.2978611 </td> </tr>
+  <tr> <td> Lebanon </td> <td align="right"> 9.7 </td> <td align="right"> 1.5700 </td> <td> Middle East &amp; North Africa </td> <td align="right"> 0.4927724 </td> </tr>
+  <tr> <td> Cote d'Ivoire </td> <td align="right"> 83.9 </td> <td align="right"> 4.9130 </td> <td> Sub-Saharan Africa </td> <td align="right"> 1.0518827 </td> </tr>
+  <tr> <td> Timor-Leste </td> <td align="right"> 56.0 </td> <td align="right"> 6.4790 </td> <td> East Asia &amp; Pacific </td> <td align="right"> 0.2508421 </td> </tr>
+  <tr> <td> Brunei </td> <td align="right"> 6.9 </td> <td align="right"> 2.0950 </td> <td> East Asia &amp; Pacific </td> <td align="right"> 0.1497260 </td> </tr>
+  <tr> <td> Sao Tome and Principe </td> <td align="right"> 42.6 </td> <td align="right"> 4.4110 </td> <td> Sub-Saharan Africa </td> <td align="right"> 0.0965157 </td> </tr>
+  <tr> <td> Liberia </td> <td align="right"> 67.6 </td> <td align="right"> 5.1900 </td> <td> Sub-Saharan Africa </td> <td align="right"> 0.4617301 </td> </tr>
+  <tr> <td> China </td> <td align="right"> 15.8 </td> <td align="right"> 1.6300 </td> <td> East Asia &amp; Pacific </td> <td align="right"> 8.7979833 </td> </tr>
+  <tr> <td> Jordan </td> <td align="right"> 18.4 </td> <td align="right"> 3.5860 </td> <td> Middle East &amp; North Africa </td> <td align="right"> 0.5838188 </td> </tr>
+  <tr> <td> Greece </td> <td align="right"> 4.1 </td> <td align="right"> 1.4590 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.8111866 </td> </tr>
+  <tr> <td> Grenada </td> <td align="right"> 12.2 </td> <td align="right"> 2.2820 </td> <td> America </td> <td align="right"> 0.0777457 </td> </tr>
+  <tr> <td> Djibouti </td> <td align="right"> 73.0 </td> <td align="right"> 3.7550 </td> <td> Middle East &amp; North Africa </td> <td align="right"> 0.2232974 </td> </tr>
+  <tr> <td> Mozambique </td> <td align="right"> 77.1 </td> <td align="right"> 5.5360 </td> <td> Sub-Saharan Africa </td> <td align="right"> 1.1408055 </td> </tr>
+  <tr> <td> Cameroon </td> <td align="right"> 69.9 </td> <td align="right"> 5.1670 </td> <td> Sub-Saharan Africa </td> <td align="right"> 1.0455416 </td> </tr>
+  <tr> <td> Norway </td> <td align="right"> 2.8 </td> <td align="right"> 1.9600 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.5277226 </td> </tr>
+  <tr> <td> Eritrea </td> <td align="right"> 42.4 </td> <td align="right"> 5.1630 </td> <td> Middle East &amp; North Africa </td> <td align="right"> 0.5369488 </td> </tr>
+  <tr> <td> Namibia </td> <td align="right"> 35.8 </td> <td align="right"> 3.3640 </td> <td> Sub-Saharan Africa </td> <td align="right"> 0.3580899 </td> </tr>
+  <tr> <td> Guyana </td> <td align="right"> 31.9 </td> <td align="right"> 2.7430 </td> <td> America </td> <td align="right"> 0.2092792 </td> </tr>
+  <tr> <td> Luxembourg </td> <td align="right"> 2.2 </td> <td align="right"> 1.6260 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.1684247 </td> </tr>
+  <tr> <td> United Arab Emirates </td> <td align="right"> 7.9 </td> <td align="right"> 1.9480 </td> <td> Middle East &amp; North Africa </td> <td align="right"> 0.6014046 </td> </tr>
+  <tr> <td> Armenia </td> <td align="right"> 17.9 </td> <td align="right"> 1.4000 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.4235942 </td> </tr>
+  <tr> <td> Zimbabwe </td> <td align="right"> 58.7 </td> <td align="right"> 3.8530 </td> <td> Sub-Saharan Africa </td> <td align="right"> 0.8518255 </td> </tr>
+  <tr> <td> Venezuela </td> <td align="right"> 14.4 </td> <td align="right"> 2.5310 </td> <td> America </td> <td align="right"> 1.2786846 </td> </tr>
+  <tr> <td> Ecuador </td> <td align="right"> 22.2 </td> <td align="right"> 2.7280 </td> <td> America </td> <td align="right"> 0.9050683 </td> </tr>
+  <tr> <td> El Salvador </td> <td align="right"> 16.4 </td> <td align="right"> 2.3190 </td> <td> America </td> <td align="right"> 0.5976626 </td> </tr>
+  <tr> <td> Zambia </td> <td align="right"> 67.1 </td> <td align="right"> 5.8810 </td> <td> Sub-Saharan Africa </td> <td align="right"> 0.8493615 </td> </tr>
+  <tr> <td> Mauritius </td> <td align="right"> 13.7 </td> <td align="right"> 1.5790 </td> <td> Sub-Saharan Africa </td> <td align="right"> 0.2735244 </td> </tr>
+  <tr> <td> Vanuatu </td> <td align="right"> 17.3 </td> <td align="right"> 3.6080 </td> <td> East Asia &amp; Pacific </td> <td align="right"> 0.1152778 </td> </tr>
+  <tr> <td> Ireland </td> <td align="right"> 3.8 </td> <td align="right"> 2.0020 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.5036475 </td> </tr>
+  <tr> <td> Switzerland </td> <td align="right"> 4.0 </td> <td align="right"> 1.4720 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.6643224 </td> </tr>
+  <tr> <td> Bahamas </td> <td align="right"> 14.9 </td> <td align="right"> 1.8890 </td> <td> America </td> <td align="right"> 0.1394414 </td> </tr>
+  <tr> <td> Belize </td> <td align="right"> 17.1 </td> <td align="right"> 2.9070 </td> <td> America </td> <td align="right"> 0.1320525 </td> </tr>
+  <tr> <td> Kuwait </td> <td align="right"> 9.8 </td> <td align="right"> 2.6810 </td> <td> Middle East &amp; North Africa </td> <td align="right"> 0.3853618 </td> </tr>
+  <tr> <td> Netherlands </td> <td align="right"> 4.0 </td> <td align="right"> 1.7730 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.9806724 </td> </tr>
+  <tr> <td> Chile </td> <td align="right"> 7.8 </td> <td align="right"> 1.8880 </td> <td> America </td> <td align="right"> 0.9893198 </td> </tr>
+  <tr> <td> Suriname </td> <td align="right"> 21.0 </td> <td align="right"> 2.4060 </td> <td> America </td> <td align="right"> 0.1732489 </td> </tr>
+  <tr> <td> New Zealand </td> <td align="right"> 5.1 </td> <td align="right"> 2.1230 </td> <td> East Asia &amp; Pacific </td> <td align="right"> 0.4992864 </td> </tr>
+  <tr> <td> Australia </td> <td align="right"> 4.3 </td> <td align="right"> 1.9560 </td> <td> East Asia &amp; Pacific </td> <td align="right"> 1.1196900 </td> </tr>
+  <tr> <td> Algeria </td> <td align="right"> 19.8 </td> <td align="right"> 2.7250 </td> <td> Middle East &amp; North Africa </td> <td align="right"> 1.4164300 </td> </tr>
+  <tr> <td> Iceland </td> <td align="right"> 2.1 </td> <td align="right"> 2.1180 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.1345507 </td> </tr>
+  <tr> <td> Tajikistan </td> <td align="right"> 55.3 </td> <td align="right"> 3.7030 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.6244506 </td> </tr>
+  <tr> <td> Mali </td> <td align="right"> 87.9 </td> <td align="right"> 6.8170 </td> <td> Sub-Saharan Africa </td> <td align="right"> 0.9179585 </td> </tr>
+  <tr> <td> Romania </td> <td align="right"> 13.8 </td> <td align="right"> 1.3400 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 1.1216588 </td> </tr>
+  <tr> <td> Slovenia </td> <td align="right"> 3.0 </td> <td align="right"> 1.4340 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.3429400 </td> </tr>
+  <tr> <td> West Bank and Gaza Strip </td> <td align="right"> 21.2 </td> <td align="right"> 4.3810 </td> <td> Middle East &amp; North Africa </td> <td align="right"> 0.4722180 </td> </tr>
+  <tr> <td> Mongolia </td> <td align="right"> 28.0 </td> <td align="right"> 2.3680 </td> <td> East Asia &amp; Pacific </td> <td align="right"> 0.3942658 </td> </tr>
+  <tr> <td> Lithuania </td> <td align="right"> 6.6 </td> <td align="right"> 1.4170 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.4424821 </td> </tr>
+  <tr> <td> Peru </td> <td align="right"> 17.8 </td> <td align="right"> 2.5790 </td> <td> America </td> <td align="right"> 1.2878995 </td> </tr>
+  <tr> <td> Portugal </td> <td align="right"> 3.3 </td> <td align="right"> 1.3580 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.7872268 </td> </tr>
+  <tr> <td> Belarus </td> <td align="right"> 5.6 </td> <td align="right"> 1.4160 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.7510904 </td> </tr>
+  <tr> <td> Uzbekistan </td> <td align="right"> 39.2 </td> <td align="right"> 2.4570 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 1.2499811 </td> </tr>
+  <tr> <td> Chad </td> <td align="right"> 96.3 </td> <td align="right"> 6.8050 </td> <td> Sub-Saharan Africa </td> <td align="right"> 0.7879353 </td> </tr>
+  <tr> <td> Sweden </td> <td align="right"> 2.6 </td> <td align="right"> 1.9170 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.7336713 </td> </tr>
+  <tr> <td> Vietnam </td> <td align="right"> 19.2 </td> <td align="right"> 1.8620 </td> <td> East Asia &amp; Pacific </td> <td align="right"> 2.2380347 </td> </tr>
+  <tr> <td> Austria </td> <td align="right"> 3.6 </td> <td align="right"> 1.4110 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.6972188 </td> </tr>
+  <tr> <td> Bahrain </td> <td align="right"> 9.1 </td> <td align="right"> 2.2290 </td> <td> Middle East &amp; North Africa </td> <td align="right"> 0.2476401 </td> </tr>
+  <tr> <td> Somalia </td> <td align="right"> 100.2 </td> <td align="right"> 7.0560 </td> <td> Sub-Saharan Africa </td> <td align="right"> 0.7210684 </td> </tr>
+  <tr> <td> Iran </td> <td align="right"> 18.3 </td> <td align="right"> 1.8800 </td> <td> Middle East &amp; North Africa </td> <td align="right"> 2.0524663 </td> </tr>
+  <tr> <td> Germany </td> <td align="right"> 3.6 </td> <td align="right"> 1.3680 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 2.1923047 </td> </tr>
+  <tr> <td> Pakistan </td> <td align="right"> 75.1 </td> <td align="right"> 3.5810 </td> <td> South Asia </td> <td align="right"> 3.1237163 </td> </tr>
+  <tr> <td> Spain </td> <td align="right"> 4.3 </td> <td align="right"> 1.4190 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 1.6219966 </td> </tr>
+  <tr> <td> Azerbaijan </td> <td align="right"> 36.9 </td> <td align="right"> 1.9860 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 0.7219302 </td> </tr>
+  <tr> <td> Italy </td> <td align="right"> 3.5 </td> <td align="right"> 1.3920 </td> <td> Europe &amp; Central Asia </td> <td align="right"> 1.8681923 </td> </tr>
+  <tr> <td> Seychelles </td> <td align="right"> 11.9 </td> <td align="right"> 2.2840 </td> <td> Sub-Saharan Africa </td> <td align="right"> 0.0706146 </td> </tr>
+  <tr> <td> South Africa </td> <td align="right"> 45.3 </td> <td align="right"> 2.5380 </td> <td> Sub-Saharan Africa </td> <td align="right"> 1.6953047 </td> </tr>
+  <tr> <td> Comoros </td> <td align="right"> 63.8 </td> <td align="right"> 5.0510 </td> <td> Sub-Saharan Africa </td> <td align="right"> 0.2015422 </td> </tr>
+  <tr> <td> Philippines </td> <td align="right"> 26.0 </td> <td align="right"> 3.2570 </td> <td> East Asia &amp; Pacific </td> <td align="right"> 2.2923327 </td> </tr>
+   </table>
+
+
+          </div>
+  </div>
+
+    <script defer type = "text/javascript">
+/* ------------------------------------------
+COMMON FUNCTIONS FOR SINGLE PANEL PLOTS:
+- A list of common functions that are used to
+generate interactivity for single panel plots.
+- Created to prevent repetition of code,
+and for a better structure + more
+human readable (hopefully).
+--------------------------------------------*/
+
+/* ------------------------------------------
+FUNCTIONS FOR TABLES
+--------------------------------------------*/
+
+// insert an x-header:
+function insertXHeader() {
+  var xrow = table.insertRow(0),
+    xhead = xrow.insertCell(0);
+xhead.setAttribute('class', 'headings');
+xhead.innerHTML = document.getElementsByTagName('tspan')[2].innerHTML;
+xhead.colSpan = ncol;
+};
+
+// creating a y-header:
+function insertYHeader() {
+  var yHeading = document.getElementsByTagName('th')[0];
+  yHeading.innerHTML = document.getElementsByTagName('tspan')[3].innerHTML;
+  yHeading.setAttribute('class',' headings');
+}
+
+// extend plotRegion:
+function extendPlotRegion(rect) {
+  rect.setAttribute('width', rect.getAttribute('width')*2);
+  rect.setAttribute('height', rect.getAttribute('height')*2);
+  rect.setAttribute('x', rect.getAttribute('x')-20);
+  rect.setAttribute('y', rect.getAttribute('y')-20);
+}
+
+//create buttons:
+function button(name) {
+  var button = document.createElement('button');
+  button.setAttribute("type", "button");
+  button.setAttribute("class","btn btn-primary hidden Button" + name);
+  button.innerHTML = "Show " + name;
+  button.setAttribute("onclick", "change" + name + "()");
+  button.setAttribute('id', 'Button' + name);
+  document.getElementById('control').appendChild(button);
+};
+
+// add classes and remove classes to elements:
+function addClass(id, className) {
+  var el = document.getElementById(id);
+  if (el == null) {
+    return(null);
+  } else {
+    el.classList.add(className);
+  }
+}
+
+function removeClass(id, className) {
+  var el = document.getElementById(id);
+  if (el == null) {
+    return(null);
+  } else {
+      el.classList.remove(className);
+  }
+}
+
+// Additional forms/selections for dotplots and scatterplots:
+function createVariableSelectionForm() {
+  //create form
+  var form = document.createElement('form');
+  form.setAttribute('class', 'form-inline');
+  form.setAttribute('id', 'form');
+  document.getElementById('control').appendChild(form);
+
+  //create label for form
+  var formLabel = document.createElement('label');
+  formLabel.setAttribute('for', 'selectVar');
+  formLabel.innerHTML = "Variables to display";
+  form.appendChild(formLabel);
+
+  //create selection options:
+  var selectVar = document.createElement('select');
+  selectVar.setAttribute('class', 'form-control');
+  selectVar.setAttribute('id', 'selectVar');
+  selectVar.setAttribute('onchange', 'selected()');
+  selectVar.setAttribute('multiple', 'multiple');
+  form.appendChild(selectVar);
+
+  for (i = 0; i<=ncol; i++){
+      var opt = document.createElement('option');
+      if (i == 0) {
+        opt.value = 0;
+        opt.classList.add('select');
+        opt.innerHTML = "Display all";
+        opt.selected = "selected";
+      } else {
+      opt.value = i;
+      opt.innerHTML = th[i-1].innerHTML;
+    }
+    selectVar.appendChild(opt);
+  };
+
+}
+
+/* ------------------------------------------
+FUNCTIONS FOR CREATING LABELS
+--------------------------------------------*/
+function getGrob(chartType) {
+  var polygon = document.getElementsByTagName('polygon');
+  if (chartType == 'hist'){
+    var p = polygon[2];
+  } else if (chartType == 'bar'){
+    var p = polygon[polygon.length-1];
+  } else {
+    var p = polygon[0]; //hexbin, bp-stacked.
+  }
+  var id = p.getAttribute('id');
+  var Grob = id.substring(0, id.lastIndexOf('.'));
+  return(Grob);
+}
+
+//creating group labels:
+function gLabel(i) {
+var panel = document.getElementsByTagName('g')[0];
+var gEl = document.createElementNS("http://www.w3.org/2000/svg", "g");
+    gEl.setAttributeNS(null, 'id', 'gLabel' + i);
+    gEl.setAttributeNS(null, 'class', 'gLabel invisible');
+    panel.appendChild(gEl);
+  }
+
+//function to create rectangles for labels:
+function gRect(i) {
+    var gRect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+        gRect.setAttributeNS(null, 'id', 'gRect' + i);
+        gRect.setAttributeNS(null, 'class', 'gRect');
+    gLabel = document.getElementById('gLabel' + i);
+    gLabel.appendChild(gRect);
+    //insert as the first!
+    gLabel.insertBefore(gRect, gLabel.childNodes[0])
+  };
+
+function label(id, textinput, i, tf) {
+  //attributes for the text SVG element
+    var label = document.createElementNS("http://www.w3.org/2000/svg", "text");
+      label.setAttributeNS(null, 'transform', 'translate('+ (x) + ', ' + (y + tf) +') scale(1, -1)');
+      label.setAttributeNS(null, 'id', id + i);
+      label.setAttributeNS(null, 'class', 'label' + ' ' + id);
+
+  // Creating the text label element:
+    var textNode = document.createTextNode(textinput);
+
+      label.appendChild(textNode);
+      var gLabel = document.getElementById('gLabel' + i);
+      gLabel.appendChild(label);
+  };
+
+//creating tspan labels - for customizing text in bold:
+
+function tLabel(id, textinput, i, lab) {
+    var tLabel = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
+    tLabel.setAttributeNS(null, 'class', 'tLabel' + ' ' + id);
+    tLabel.setAttributeNS(null, 'id', id + '.' + i);
+
+    var textNode = document.createTextNode(textinput);
+    tLabel.appendChild(textNode);
+    lab.appendChild(tLabel);
+
+  }
+
+// draw rectangles to labels according to size of label:
+function drawRectLabel(i) {
+  var gLabel = document.getElementById('gLabel' + i);
+  rectParam = gLabel.getBBox();
+  var gRect = document.getElementById('gRect' + i);
+  gRect.setAttribute('x', rectParam.x-5);
+  gRect.setAttribute('y', rectParam.y-2);
+  gRect.setAttribute('width', rectParam.width+10);
+  gRect.setAttribute('height', rectParam.height+4);
+}
+
+//detach rectangle labels:
+function detachRectLabel(i) {
+  var gRect = document.getElementById('gRect' + i);
+  var parent = gRect.parentNode;
+  parent.removeChild(gRect);
+}
+
+//hide lines in bar plots:
+function hideBarLines() {
+  var polyline = document.getElementsByTagName('polyline');
+  //finding lines that are labeled with "GRID".
+  for (i = 0; i < polyline.length; i ++) {
+   if (polyline[i].id.indexOf("GRID") >= 0) {
+     polyline[i].setAttribute("class", "line");
+   }
+  }
+  var lines = document.getElementsByClassName('line');
+  var lastId = lines[lines.length-1].getAttribute('id');
+  var lastLine = lastId.substring(0, lastId.lastIndexOf('.'));
+
+  //separating bar lines from axes lines
+  for (i = 0; i < lines.length; i++) {
+   if(lines[i].id.indexOf(lastLine) >= 0) {
+     lines[i].classList.add('hidden');
+   } else {
+     lines[i].classList.add('visible');
+    }
+  }
+}
+
+/* ------------------------------------------
+FUNCTIONS FOR BOXPLOTS
+--------------------------------------------*/
+
+// returns the minimum and maximum line id of the box plot:
+function getMinMaxLinesId() {
+  var polyLines = document.getElementsByTagName('polyline');
+  for (i = 1; i <= polyLines.length; i++) {
+  if (polyLines[i-1].id.indexOf('GRID') >= 0) {
+    polyLines[i-1].setAttribute("class", "line");
+  }
+  };
+  var lines = document.getElementsByClassName("line");
+  var lastId = lines[lines.length-1].id;
+  var lastLine = lastId.substring(0, lastId.lastIndexOf('.'));
+  return(lastLine);
+  //obtaining the ends of of the boxplot (lines):
+//min line: lastLine + '.' + 0; max line: lastLine + '.' + 1;
+}
+
+//obtains the boxes that make up the box plot (2 boxes):
+function getBoxes(chartType) {
+  //Obtaining the 'polygon' boxes associated with the boxplot:
+  // this differs from dotplots - the boxplot appears to be drawn first... (histograms)
+  polygonBox = document.getElementsByTagName('polygon');
+
+  if (chartType == "hist") {
+    polygonId = polygonBox[0].id;
+  } else { // for dotplots
+    var polygonId = polygonBox[polygonBox.length -1].id;
+  }
+
+  var idLine = polygonId.substring(0, polygonId.lastIndexOf('.'));
+
+  for (i = 1; i <= polygonBox.length; i ++) {
+    if (polygonBox[i-1].id.indexOf(idLine) >= 0){
+      polygonBox[i-1].setAttribute('class', 'box');
+    }
+  }
+  //var boxes = document.getElementsByClassName('box');
+  //return(box);
+}
+
+//functions to create boxLabels:
+function boxLabel(textinput) {
+
+var boxLabel = document.createElementNS("http://www.w3.org/2000/svg", "text");
+  boxLabel.setAttributeNS(null, 'id', textinput);
+  boxLabel.setAttributeNS(null, 'class', 'label boxData hidden');
+  boxLabel.setAttributeNS(null, 'transform', 'translate(' + Number(x) + ',' + (Number(y) + 10) + ') scale(1, -1)');
+
+  var textNode = document.createTextNode(textinput);
+  boxLabel.appendChild(textNode);
+  var panel = document.getElementsByTagName('g')[0];
+  panel.appendChild(boxLabel);
+};
+
+function boxLabelSet(p, r, q, textinput) {
+  if (textinput == "Min" ||  textinput == "Max") {
+    line = document.getElementById(lastLine + '.' +  p);
+    // p will either be 1 or 2 -> 1 = minLine, 2 = maxLine
+    line.setAttribute('class', 'box');
+    boxPoints = line.getAttribute('points').split(" ")[r].split(",");
+  } else {
+    box = document.getElementsByClassName('box')[p];
+    // boxplot split into two boxes - lowerbox (p = 0) and upperbox (p = 1)
+    boxPoints = box.getAttribute('points').split(" ")[r].split(",");
+  }
+  x = boxPoints[0];
+  y = boxPoints[1];
+
+  if (textinput == "Median") { // move median label below the box plot
+   y = boxPoints[1] - 25;
+  }
+
+  text = textinput + ": " + boxData[q].quantiles;
+  // this is associated with the boxData imported from R.
+  boxLabel(text);
+};
+
+
+// Boxplot Interactions:
+//on hover:
+function fillBox() {
+  for (i = 0; i < box.length; i++) {
+  box[i].classList.add('fillBox');
+}
+};
+
+//hover out:
+function normalBox() {
+  for (i = 0; i < box.length; i++) {
+    box[i].classList.remove('fillBox');
+}
+};
+
+//on click:
+function showBox() {
+  for (i =0; i < boxData.length; i++) {
+    boxData[i].classList.remove('hidden');
+}
+};
+
+//hide box:
+function hideBox() {
+  for (i =0; i < boxData.length; i++) {
+    boxData[i].classList.add('hidden');
+  }
+}
+
+/* ------------------------------------------
+FUNCTIONS FOR INTERACTING WITH PLOT OBJECTS
+plotObjects: bar, hexbin, histBar, point.
+--------------------------------------------*/
+light = function(i, className) {
+  var plotObject = document.getElementById(Grob + '.' + i);
+  plotObject.classList.add(className);
+
+  var gLabel = document.getElementById('gLabel' + i);
+  gLabel.classList.remove('invisible');
+};
+
+normal = function(i, className) {
+  var plotObject = document.getElementById(Grob + '.' + i);
+  plotObject.classList.remove(className);
+
+  var gLabel = document.getElementById('gLabel' + i);
+  gLabel.classList.add('invisible');
+};
+
+/* ------------------------------------------
+FUNCTIONS FOR INTERACTING WITH LEGEND
+--------------------------------------------*/
+// hover on a legend group:
+show = function(i) {
+  var keyText = document.getElementById(text[i+3].id);
+  if (Grob == "DOTPOINTS.1") {
+    var keyText = document.getElementById(text[i+2].id);
+  }
+  var key = document.getElementById(keys[i-1].id);
+  keyText.setAttribute('fill', key.getAttribute('fill'));
+  keyText.setAttribute('class', 'show');
+  key.setAttribute('class', 'show');
+
+};
+
+//hover out:
+out = function(i) {
+  var keyText = document.getElementById(text[i+3].id);
+  if (Grob == "DOTPOINTS.1") {
+    var keyText = document.getElementById(text[i+2].id);
+  }
+  var key = document.getElementById(keys[i-1].id);
+  keyText.setAttribute('class', 'out keyText');
+  key.setAttribute('class', 'out');
+
+};
+
+/* ------------------------------------------
+FUNCTIONS FOR HIGHLIGHTING TABLE ROWS
+--------------------------------------------*/
+// highlight rows in table corresponding to selection (link to table):
+returnRowSelection = function(lp, dataRow) {
+  dataRow.style.backgroundColor = "rgba" + lp + ", 0.25)";
+  dataRow.classList.remove('hidden');
+  dataRow.classList.add('rowSelect');
+}
+
+omitRowSelection = function(dataRow) {
+  dataRow.classList.remove('rowSelect');
+  dataRow.classList.add('hidden');
+  dataRow.style.backgroundColor = "white";
+}
+
+resetRowSelection = function(dataRow) {
+  dataRow.classList.remove('hidden');
+  dataRow.classList.remove('rowSelect');
+  dataRow.style.backgroundColor = "white";
+}
+
+//for certain tabs/cells:
+returnTabSelection = function(lp, data) {
+  data.classList.add('tabSelect');
+  data.style.backgroundColor = "rgba(" + lp + ",0.5)";
+}
+
+resetTabSelection = function(data) {
+  data.classList.remove('tabSelect');
+  data.style.backgroundColor = "white";
+}
+
+/* ------------------------------------------
+FUNCTIONS FOR CREATING SELECTION DRAG BOX
+--------------------------------------------*/
+
+//Creating a  (invisible) selection box for users to drag:
+createSelectionBox = function(Grob) {
+  //putting selection rectangle in a group element:
+  var g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    g.setAttributeNS(null, 'id', 'selectionBox');
+    var panel = document.getElementById(Grob);
+    panel.appendChild(g);
+
+    //create selectionBox:
+  var selectRect = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+    selectRect.setAttributeNS(null, 'id', 'selectRect');
+    selectRect.setAttributeNS(null, 'class', 'selectRect');
+    g.appendChild(selectRect);
+
+}
+
+//Create an additional customised selection labels:
+
+createSelectionLabelGroup = function() {
+  //grouping it together!:
+  var selectionLabelGroup = document.createElementNS("http://www.w3.org/2000/svg", 'g');
+      selectionLabelGroup.setAttributeNS(null, 'class', 'gLabel');
+      selectionLabelGroup.setAttributeNS(null, 'id', 'selectionLabelGroup');
+  var panel = document.getElementsByTagName('g')[0];
+      panel.appendChild(selectionLabelGroup);
+
+  //make a rectangle for this special label:
+  var selectionLabelRect = document.createElementNS("http://www.w3.org/2000/svg", 'rect');
+      selectionLabelRect.setAttributeNS(null, 'class', 'gRect');
+      selectionLabelRect.setAttributeNS(null, 'id', 'selectionLabelRect');
+      selectionLabelGroup.appendChild(selectionLabelRect);
+      return(selectionLabelGroup);
+}
+
+drawSelectRectLabel = function(selectionLabelGroup) {
+  var sRectParam = selectionLabelGroup.getBBox();
+  selectionLabelRect.setAttribute('x', sRectParam.x-5);
+  selectionLabelRect.setAttribute('y', sRectParam.y-2);
+  selectionLabelRect.setAttribute('width', sRectParam.width+10);
+  selectionLabelRect.setAttribute('height', sRectParam.height+4);
+}
+
+selectionLabel = function(id, x, y, textinput) {
+var selectionLabel = document.createElementNS("http://www.w3.org/2000/svg", 'text');
+     selectionLabel.setAttributeNS(null, 'class', 'label');
+     selectionLabel.setAttributeNS(null, 'id', id);
+     selectionLabel.setAttributeNS(null, 'transform', 'translate(' + x +  ',' + y + ') scale(1, -1)');
+    var text = document.createTextNode(textinput);
+    selectionLabel.appendChild(text);
+
+    var selectionLabelGroup = document.getElementById('selectionLabelGroup');
+     selectionLabelGroup.appendChild(selectionLabel);
+   }
+
+
+// Mouse events:
+//MouseDown:
+MouseDown = function(evt) {
+
+  var selectedGroup = document.getElementById('selectionLabelGroup');
+  if (selectedGroup !== null) {
+      selectedGroup.remove();
+     }
+
+    zoomBox["startX"] = evt.pageX - 20; // 20 comes from the padding added to the body.
+    zoomBox["startY"] = evt.pageY - 20;
+    zoomBox["isDrawing"] = true;
+   selectRect.setAttribute('points',  zoomBox["startX"] + ',' + zoomBox["startY"]);
+};
+
+//MouseUp:
+MouseUp = function(evt) {
+  svg.style.cursor = "default";
+      zoomBox["endX"] = evt.pageX - 20;
+      zoomBox["endY"] = evt.pageY - 20;
+      zoomBox["isDrawing"] = false;
+  };
+    </script>
+
+    <script defer type = "text/javascript">
+/* JavaScript code for dot plots and scatterplots.
+/* -----------------------------------------------------
+                Table properties:
+Code to assign classes, ids to table cells and rows to
+link up to interactions on the plot.
+Creation of HTML form/select to allow user to select
+the variables to display in labels and in the table.
+-------------------------------------------------------- */
+
+var table = document.getElementById('table')
+    nrow = document.getElementById('table').rows.length, //no. of rows in table
+    ncol = document.getElementsByTagName('th').length, //no. of columns in table
+    td = document.getElementsByTagName('td'),
+    cellNo = td.length;
+
+for (i = 1; i <= cellNo; i ++) {
+  td[i-1].setAttribute('id', i);
+  td[i-1].setAttribute('class', i%ncol);
+  if (i%ncol == 0) {
+    td[i-1].setAttribute('class', ncol);
+  }
+};
+
+
+for (j = 1; j <= ncol; j++) {
+  th = document.getElementsByTagName('th');
+  th[j-1].setAttribute('class', j);
+};
+
+//no. of rows in table
+for (i = 1; i < nrow; i ++) {
+  var tr = document.getElementsByTagName('tr');
+  tr[i].setAttribute('id', 'tr' + i);
+};
+
+//create form and select options for variable selection/display.
+createVariableSelectionForm();
+
+//drive the viewTable button:
+  var viewTable = document.getElementById('viewTable');
+  t = true;
+showTable = function() {
+  if(t) {
+    viewTable.innerHTML = "Hide Table";
+    table.classList.remove('hidden');
+    t = false;
+  } else {
+    viewTable.innerHTML = "View Table";
+    table.classList.add('hidden');
+    t = true
+  }
+};
+
+/* -------------------------------------------------------
+              dotplot and scatterplot interactions
+      Code to assign points (and hide certain things),
+      create svg labels for each point, boxplot labels,
+      drive interaction (hovers, clicks, reset).
+      Data is also parsed.
+      Select option interaction.
+---------------------------------------------------------- */
+
+var svg = document.getElementsByTagName('svg')[0];
+svg.setAttribute('preserveAspectRatio', 'xMinYMin meet');
+
+//set container with no style padding:
+var svgContainer = document.getElementById('svg-container');
+svgContainer.classList.add('contained');
+
+if (boxData != undefined) {
+  // for dotplots only...
+  var Grob = "DOTPOINTS.1",
+      count = document.getElementById(Grob).childElementCount,
+      panel = document.getElementsByTagName('g')[0];
+
+  var lastLine = getMinMaxLinesId();
+  getBoxes("dotplot");
+
+  boxLabelSet(0, 1, 0,'LQ');
+  boxLabelSet(1, 2, 2, 'UQ');
+  boxLabelSet(1, 0, 1, 'Median');
+  boxLabelSet(1, 0, 3, 'Min');
+  boxLabelSet(2, 1, 4, 'Max');
+
+  //Box Plot interactions:
+  var box = document.getElementsByClassName('box');
+  var boxData = document.getElementsByClassName('boxData');
+
+  //setting interactions and colors for box plot:
+  for (i = 0; i < box.length; i++) {
+    box[i].addEventListener('mouseover', fillBox, false);
+    box[i].addEventListener('mouseout', normalBox, false);
+    box[i].addEventListener('click', showBox, false);
+  }
+
+} else {
+  var Grob = "SCATTERPOINTS.1";
+  var count = document.getElementById(Grob).childElementCount;
+  var panel = document.getElementsByTagName('g')[0];
+}
+
+//POINT LABELS:
+
+//making rectangles and g elements for each point:
+for (i = 1; i <= count; i++) {
+  gLabel(i);
+};
+
+for (i = 1; i <= count; i++) {
+  gRect(i);
+}
+
+//Create number and value labels:
+for (j = 0; j < names.length; j++) {
+
+for (i  = 1; i <= count; i++) {
+
+  var varNo = names.length + 1;
+  var point = document.getElementById(Grob + '.' + i);
+  var x = Number(point.getAttribute('x'));
+  var y = Number(point.getAttribute('y'));
+
+  text = [];
+  text[j] = names[j] + ": ";
+  label('label' + '.' + (j+1) + '.' , text[j], i, (varNo-j-1)*11);
+
+  var lab = document.getElementById('label' + '.' + (j+1) + '.' + i);
+  tLabel('tLabel', tableData[i-1][names[j]], i, lab);
+  lab.classList.add((j+1));
+
+// Attach and draw rectangles to labels according to the size of the gLabel (with all labels attached)
+  drawRectLabel(i);
+  }
+};
+
+/// INTERACTION CODE: Hovers, Clicks, Legends
+//Hovers, clicks on points to show labels and data from table:
+
+for (i = 1; i <= count; i++) {
+  (function(i){
+    var point = document.getElementById(Grob + '.' + i);
+    point.addEventListener("mouseover",function(){light(i, 'showPoint')},false);
+    point.addEventListener("mouseout", function(){normal(i, 'showPoint')}, false);
+    point.addEventListener("click", function(){info(i)}, false);
+    point.addEventListener("dblclick", function(){deselect(i)}, false);
+    }) (i)
+  };
+
+//On click:
+function info(i) {
+  for (j = 1; j <= count; j++) {
+    var point = document.getElementById(Grob + "." + j);
+    var gLabel = document.getElementById('gLabel' + j);
+
+    var l = point.getAttribute('stroke');
+    var lp = l.substring(l.lastIndexOf("("), l.lastIndexOf(")"));
+
+    var dataRow = document.getElementById('tr' + j);
+
+if (point.getAttribute('class') != "point selected") {
+    if (i == j) {
+      gLabel.classList.remove('invisible');
+
+      point.setAttribute('class', 'point selected');
+
+      returnRowSelection(lp, dataRow);
+
+    } else {
+      gLabel.classList.add('invisible');
+      point.setAttribute('class', 'point none');
+
+      omitRowSelection(dataRow);
+
+    }
+  }
+}
+  if (boxData != undefined) {
+ boxData = document.getElementsByClassName('boxData');
+    hideBox();
+}
+};
+
+//on doubleclick to deselect points
+deselect = function(i) {
+  for (j = 1; j <= count; j++) {
+    var point = document.getElementById(Grob + "." + j);
+    var gLabel = document.getElementById('gLabel' + j);
+
+    var dataRow = document.getElementById('tr' + j);
+
+    if (i == j) {
+      gLabel.classList.add('invisible');
+
+      point.setAttribute('class', 'point none');
+
+      omitRowSelection(dataRow);
+
+    }
+}
+};
+
+
+//LEGEND INTERACTION:
+
+if (colGroupNo != (0 || undefined)) { // if there is a legend, colGroupNo should be a value
+//grabbing keys and text from the legend:
+var keys = document.getElementsByTagName('use');
+var text = document.getElementsByTagName('text');
+
+//assigning mouse events:
+for (i = 1; i <= colGroupNo; i ++) { //colGroupNo -> colby levels from R (nlevels)
+  var key = document.getElementById(keys[i-1].id),
+      keyText = document.getElementById(text[i+3].id);
+    if (Grob == "DOTPOINTS.1") { // for dot plots - legend text differs
+            var keyText = document.getElementById(text[i+2].id);
+      }
+  (function(i){
+  key.addEventListener("mouseover", function(){show(i)}, false);
+  key.addEventListener("mouseout", function(){out(i)}, false);
+  key.addEventListener("click", function(){subset(i)}, false);
+
+  keyText.addEventListener("mouseover", function(){show(i)}, false);
+  keyText.addEventListener("mouseout", function(){out(i)}, false);
+  keyText.addEventListener("click", function(){subset(i)}, false);
+}) (i)
+};
+
+//on click, subsetting occurs:
+subset = function(i) {
+  for (j = 1; j <= count; j++) {
+    var point = document.getElementById(Grob + '.' + j);
+    var key = document.getElementById(keys[i-1].id);
+    var gLabel = document.getElementById('gLabel' + j);
+    var dataRow = document.getElementById('tr' + j);
+
+if (key.getAttribute('fill') == point.getAttribute('stroke')) {
+  point.setAttribute('class', 'point selected');
+
+  returnRowSelection('0,0,0', dataRow);
+
+} else {
+  point.setAttribute('class', 'point none');
+  omitRowSelection(dataRow);
+
+      }
+    }
+  }
+};
+
+/* Link to interactive table + labels - "Variables to display" select/option box:
+- Requires revision due to browser incompatibility. */
+
+selected = function() {
+sOpt = selectVar.selectedOptions;
+// this does not work on IE, and not fully supported. May need to replace this.
+s = [];
+for (i =0; i < sOpt.length; i++) {
+  s.push(sOpt[i].value);
+};
+
+//var table = document.getElementById('table');
+var svg = document.getElementsByTagName('svg')[0];
+
+for (i =1; i <= ncol; i++) {
+  //var column = table.getElementsByClassName(i);
+  var labels = svg.getElementsByClassName(i);
+
+  for(j = 1; j <= labels.length; j++) {
+    if (s.indexOf('0') >= 0) {
+      //column[j-1].style.display = "table-cell";
+      //if (j <= labels.length) {
+        labels[j-1].style.display = "inherit";
+        detachRectLabel(j);
+        gRect(j);
+        drawRectLabel(j);
+    //  }
+    } else {
+      labels[j-1].style.display = "none";
+    //column[j-1].style.display = "none";
+    /*if (j <= labels.length) {
+    addClass(labels[j-1], 'hidden');
+  }*/
+    }
+  }
+};
+
+for (i=0; i <= s.length; i++) {
+  if (s[i] != undefined) {
+  //  column = table.getElementsByClassName(s[i]);
+    labels = svg.getElementsByClassName(s[i]);
+    for (j = 1; j <= labels.length; j++) {
+    //  column[j-1].style.display = "table-cell";
+    //  if (j <= labels.length) {
+     labels[j-1].style.display = "inherit";
+     labels[j-1].visibility = "inherit";
+     //redraw rectangles according to new label size:
+     detachRectLabel(j);
+     gRect(j);
+     drawRectLabel(j);
+     //console.log(j);
+    //    }
+      }
+    }
+  }
+};
+
+/* --------------------------------------------------------------
+Code to select over a group of points via mouse drag.
+//Need to test on IE.
+----------------------------------------------------------------- */
+
+//obtaining svg region:
+var svg = document.getElementsByTagName('svg')[0];
+svg.setAttribute('draggable', 'false');
+
+//create 'invisible' selection box for users:
+  createSelectionBox(Grob);
+
+var evt = window.event;
+var zoomBox = {};
+
+//Attach mouse events:
+svg.setAttribute('onmouseup', 'MouseUp(evt)');
+svg.setAttribute('onmousemove', 'MouseDrag(evt)');
+svg.setAttribute('onmousedown', 'MouseDown(evt)');
+
+MouseDrag = function(evt) {
+    if(zoomBox["isDrawing"]) {
+        svg.style.cursor = "crosshair";
+        zoomBox["endX"] = evt.pageX - 20;
+        zoomBox["endY"] = evt.pageY - 20;
+
+        //Because the y-axis is inverted in the plot - need to invert the scale
+         tVal = document.getElementsByTagName('g')[0].getAttribute('transform').substring(13, 16);
+        var selectRect = document.getElementById('selectRect');
+
+         // for rectangles with positive height, positive width
+        if(zoomBox["startX"] < zoomBox["endX"]) {
+        var x1 = zoomBox["startX"];
+        var x2 = zoomBox["endX"];
+      } else {
+        var x1 = zoomBox["endX"];
+        var x2 = zoomBox["startX"];
+      }
+
+      // for rectangles with opposite directions ('negative' widths, heights)
+      if (zoomBox["startY"] < zoomBox["endY"]) {
+        var y1 = tVal - zoomBox["startY"] - (zoomBox["endY"]-zoomBox["startY"]);
+        var y2 = y1 + (zoomBox["endY"]-zoomBox["startY"]);
+      } else {
+        var y1 = tVal - zoomBox["endY"] - (zoomBox["startY"]-zoomBox["endY"]);
+        var y2 = y1 + (zoomBox["startY"]-zoomBox["endY"]);
+      }
+
+        selectRect.setAttribute('points', x1 + ',' + y1 + " " + x1 + ',' + y2 + ' '
+                                          + x2 + ',' + y2 + ' ' + x2 + ',' + y1);
+        //show table;
+        var viewTable = document.getElementById('viewTable');
+          viewTable.innerHTML = "Hide Table";
+          table.classList.remove('hidden');
+          t = false;
+
+        for (i =1; i <= count; i++) {
+        var point = document.getElementById(Grob + '.' + i);
+        //var gLabel = document.getElementById('gLabel' + i);
+        //var gRect = document.getElementById('gRect' + i);
+        var dataRow = document.getElementById('tr' + i);
+
+          var x = point.x.baseVal.value;
+          var y = point.y.baseVal.value;
+
+              //points that lie within the  boundary box drawn:
+          if((x1 <= x && x <= x2) && (y1 <= y && y <= y2)) {
+            point.setAttribute('class', ' point selected');
+            l = point.getAttribute('stroke');
+            lp = l.substring(l.lastIndexOf("("), l.lastIndexOf(")"));
+
+            //gLabel.classList.remove('invisible');
+            //gRect.classList.add('hidden');
+
+            returnRowSelection(lp, dataRow);
+
+           } else {
+             point.setAttribute('class', 'point none');
+             //gRect.classList.remove('hidden');
+             //gLabel.classList.add('invisible');
+
+            omitRowSelection(dataRow);
+          }
+       }
+    }
+};
+
+
+/* -------------------------------------------------
+      Reset button - attempts to return to original state
+-------------------------------------------------- */
+//Reset Button:
+  reset = function() {
+    for (i = 1; i <= count; i++) {
+    var point = document.getElementById(Grob + "." + i);
+      point.setAttribute('class', 'point');
+
+    var gLabel = document.getElementById('gLabel' + i);
+    gLabel.classList.add('invisible');
+
+    var gRect = document.getElementById('gRect' + i);
+    gRect.classList.remove('hidden');
+
+    var dataRow = document.getElementById('tr' + i);
+      resetRowSelection(dataRow);
+
+    }
+    // reset selection rectangle
+    var selectRect = document.getElementById('selectRect');
+    if (selectRect != undefined) {
+      selectRect.setAttribute('points', '0,0');
+  }
+
+/* for (i =1; i <= ncol; i++) {
+    column = table.getElementsByClassName(i);
+    for (j = 1; j <=column.length; j++) {
+    column[j-1].style.display = "table-cell";
+  }
+} */
+};
+
+// deselection/reset using plotregion double-click:
+var plotRegion = document.getElementsByTagName('rect')[1];
+plotRegion.addEventListener("dblclick", reset, false);
+    </script>
+
+  </body>
+
+</html>

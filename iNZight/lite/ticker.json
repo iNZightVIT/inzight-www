@@ -7,11 +7,11 @@
     "validTo": "2023-12-20T15:00:00+12:00"
   },
   {
-    "title": "Scheduled maintenance",
+    "title": "Ongoing connection issues",
     "type": "warning",
-    "message": "We are currently performing maintenance updates to iNZight Lite. If iNZight Lite becomes unavailable or unstable and you urgently need access, use the back-up version at <a href='https://lite-prod.up.railway.app'>lite-vuw.up.railway.app</a>. Please note that this version has lower resources and may be slower than usual.",
-    "validFrom": "2023-12-20T15:00:00+12:00",
-    "validTo": "2023-12-22T23:59:59+12:00"
+    "message": "We are aware of some connectivity issues with Lite. If you are unable to use Lite, please use the alternative link: <a href='https://lite-prod.up.railway.app'>lite-prod.up.railway.app</a>. Please note that this version has lower resources and may be less performant. ",
+    "validFrom": "2025-08-01T15:00:00+12:00",
+    "validTo": "2025-08-172T23:59:59+12:00"
   },
   {
     "title": "New Release 2025.04",
