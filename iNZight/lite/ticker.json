@@ -11,14 +11,16 @@
     "type": "warning",
     "message": "We are aware of some connectivity issues with Lite. If you are unable to use Lite, please use the alternative link: <a href='https://lite-prod.up.railway.app' style='color: white; text-decoration: underline;'>lite-prod.up.railway.app</a>. Please note that this version has lower resources and may be less performant. Please use this only if you have tried the other troubleshooting steps first.",
     "validFrom": "2025-08-01T15:00:00+12:00",
-    "validTo": "2025-09-01T23:59:59+12:00"
+    "validTo": "2025-09-01T23:59:59+12:00",
+    "target": "https://lite.docker.stat.auckland.ac.nz"
   },
   {
     "title": "Additional troubleshooting tips",
     "type": "info",
     "message": "If you are experiencing immediate disconnect, and private window/different browser doesn't work, try <strong>hard refreshing</strong> the page a few times. This is usually CTRL/CMD + F5 or CTRL/CMD + SHIFT + R. If not immediate, wait 15-20 minutes and try again. You may need to refresh 5-10 times.",
     "validFrom": "2025-08-01T15:00:00+12:00",
-    "validTo": "2025-09-01T23:59:59+12:00"
+    "validTo": "2025-09-01T23:59:59+12:00",
+    "target": "https://lite.docker.stat.auckland.ac.nz"
   },
   {
     "title": "New Release 2025.04",
