@@ -9,7 +9,7 @@
   {
     "title": "Ongoing connection issues",
     "type": "warning",
-    "message": "We are aware of some connectivity issues with Lite. If you are unable to use Lite, please use the alternative link: <a href='https://lite-prod.up.railway.app'>lite-prod.up.railway.app</a>. Please note that this version has lower resources and may be less performant. Please use this only if you have tried the other troubleshooting steps first.",
+    "message": "We are aware of some connectivity issues with Lite. If you are unable to use Lite, please use the alternative link: <a href='https://lite-prod.up.railway.app' style='color: white; text-decoration: underline;'>lite-prod.up.railway.app</a>. Please note that this version has lower resources and may be less performant. Please use this only if you have tried the other troubleshooting steps first.",
     "validFrom": "2025-08-01T15:00:00+12:00",
     "validTo": "2025-09-01T23:59:59+12:00"
   },
@@ -23,7 +23,7 @@
   {
     "title": "New Release 2025.04",
     "type": "info",
-    "message": "We have released a new version over the break, fixing a few critical bugs. See the changelog for details. If you experience connectivity issues, please follow the troubleshooting steps. If you still have trouble, use a back-up: <a href='https://lite-prod.up.railway.app'>lite-prod.up.railway.app</a> or  <a href='https://lite-staging.up.railway.app'>lite-staging.up.railway.app</a>.",
+    "message": "We have released a new version over the break, fixing a few critical bugs. See the changelog for details. If you experience connectivity issues, please follow the troubleshooting steps. If you still have trouble, use a back-up: <a href='https://lite-prod.up.railway.app' >lite-prod.up.railway.app</a> or  <a href='https://lite-staging.up.railway.app'>lite-staging.up.railway.app</a>.",
     "validFrom": "2025-04-26T00:00:00+12:00",
     "validTo": "2025-04-31T23:59:59+12:00"
   }
