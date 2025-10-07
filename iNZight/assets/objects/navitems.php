@@ -25,7 +25,7 @@
     'Support' => array(
       'default' => 'support/',
       'FAQ' => 'faq/',
-      'Email Lists' => 'email_lists/',
+      // 'Email Lists' => 'email_lists/',
       'Newsletters' => '../newsletters/index.php',
       'Version History' => 'changelog/',
       'Contact Us' => 'contact/'
