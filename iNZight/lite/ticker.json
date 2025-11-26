@@ -7,22 +7,6 @@
     "validTo": "2023-12-20T15:00:00+12:00"
   },
   {
-    "title": "Ongoing connection issues",
-    "type": "warning",
-    "message": "We are aware of some connectivity issues with Lite. If you are unable to use Lite, please use the alternative link: <a href='https://lite-prod.up.railway.app' style='color: white; text-decoration: underline;'>lite-prod.up.railway.app</a>. Please note that this version has lower resources and may be less performant. Please use this only if you have tried the other troubleshooting steps first.",
-    "validFrom": "2025-08-01T15:00:00+12:00",
-    "validTo": "2025-09-01T23:59:59+12:00",
-    "target": "https://lite.docker.stat.auckland.ac.nz"
-  },
-  {
-    "title": "Additional troubleshooting tips",
-    "type": "info",
-    "message": "If you are experiencing immediate disconnect, and private window/different browser doesn't work, try <strong>hard refreshing</strong> the page a few times. This is usually CTRL/CMD + F5 or CTRL/CMD + SHIFT + R. If not immediate, wait 15-20 minutes and try again. You may need to refresh 5-10 times.",
-    "validFrom": "2025-08-01T15:00:00+12:00",
-    "validTo": "2025-12-01T23:59:59+12:00",
-    "target": "https://lite.docker.stat.auckland.ac.nz"
-  },
-  {
     "title": "New Release 2025.04",
     "type": "info",
     "message": "We have released a new version over the break, fixing a few critical bugs. See the changelog for details. If you experience connectivity issues, please follow the troubleshooting steps. If you still have trouble, use a back-up: <a href='https://lite-prod.up.railway.app' >lite-prod.up.railway.app</a> or  <a href='https://lite-staging.up.railway.app'>lite-staging.up.railway.app</a>.",
@@ -30,11 +14,11 @@
     "validTo": "2025-04-31T23:59:59+12:00"
   },
   {
-    "title": "New infrastructure in development",
+    "title": "New infrastructure ready for testing",
     "type": "info",
-    "message": "We have been working on a new deployment architecture, with the aim of improving performance and preventing access issues some users have been experiencing. If you would like to help us test the new system, please head to <a href='https://lite.dev.docker.stat.auckland.ac.nz/'>lite.dev.docker.stat.auckland.ac.nz/</a>. Please let us know if you experience issues by contacting inzightlite_support@stat.auckland.ac.nz",
-    "validFrom": "2025-09-08T00:00:00+12:00",
-    "validTo": "2026-01-01T16:00:00+12:00",
+    "message": "The new iNZight Lite infrastructure is now available at <a href='https://lite.inzight.nz/'>lite.inzight.nz/</a>. The previous version will remain accessible while we confirm the stability of the new release. Once stability is ensured, the old URL will be redirected to the new site. No changes to course material URLs will be required.",
+    "validFrom": "2025-11-27T00:00:00+12:00",
+    "validTo": "2026-02-01T16:00:00+12:00",
     "target": "https://lite.docker.stat.auckland.ac.nz"
   }
 ]
