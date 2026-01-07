@@ -16,9 +16,9 @@
   {
     "title": "New infrastructure ready for testing",
     "type": "info",
-    "message": "The new iNZight Lite infrastructure is now available at <a href='https://lite.inzight.nz/'>lite.inzight.nz/</a>. The previous version will remain accessible while we confirm the stability of the new release. Once stability is ensured, the old URL will be redirected to the new site. No changes to course material URLs will be required.",
+    "message": "The new iNZight Lite infrastructure is now available at <a href='https://lite.inzight.nz/'>lite.inzight.nz/</a>. The old URL will continue to work, but we recommend you use the new one. You can convert old URLs here: <a href='https://inzight.nz/lite'>https://inzight.nz/lite</a>.",
     "validFrom": "2025-11-27T00:00:00+12:00",
-    "validTo": "2026-02-01T16:00:00+12:00",
+    "validTo": "2027-01-01T16:00:00+12:00",
     "target": "https://lite.docker.stat.auckland.ac.nz"
   }
 ]
