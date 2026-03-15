@@ -20,5 +20,12 @@
     "validFrom": "2025-11-27T00:00:00+12:00",
     "validTo": "2027-01-01T16:00:00+12:00",
     "target": "https://lite.docker.stat.auckland.ac.nz"
+  },
+  {
+    "title": "Investigating connection issues",
+    "type": "warning",
+    "message": "We are aware of some connectivity and performance issues and our IT team are investigating.",
+    "validFrom": "2026-03-16T00:00:00+12:00",
+    "validTo": "2026-03-16T12:00:00+12:00",
   }
 ]
