@@ -1,3 +1,9 @@
+# iNZightRegression 1.3.5
+
+- fix link to package (replace with URL, introduced by new CRAN check)
+- replace `aes_(~x)` with `aes(.data$x)` in ggplot2 methods
+- export S3 methods for `bootstrapData` (used internally)
+
 # iNZightRegression 1.3.4
 
 - fix documentation for package (adding missing alias required by CRAN, and bring pkg doc page up to date)
