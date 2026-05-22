@@ -21,11 +21,11 @@
     "validTo": "2023-07-31T23:59:59+12:00"
   },
   {
-    "title": "Ongoing server issues",
+    "title": "Investigating plotting issues",
     "type": "warning",
-    "message": "We are aware of a server issue causing some users to be disconnected. Please try hard-refreshing the page every 5 minutes. Let us know if you're consistently unable to connect. Thank you for your patience.",
-    "validFrom": "2023-10-20T00:00:00+12:00",
-    "validTo": "2023-10-31T23:59:59+12:00"
+    "message": "We are investigating an issue some users are experiencing with plotting in iNZight Lite. Users may experience minor disruption while we push a fix. If you continue to experience issues, please contact us at <a href='mailto:support@inzight.nz'>support@inzight.nz</a>.",
+    "validFrom": "2026-05-22T00:00:00+12:00",
+    "validTo": "2026-05-22T17:00:00+12:00"
   },
   {
     "title": "Back-up",
