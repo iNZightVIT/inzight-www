@@ -14,7 +14,14 @@
     "validTo": "2025-04-31T23:59:59+12:00"
   },
   {
-    "title": "New infrastructure ready for testing",
+    "title": "Investigating plotting issues",
+    "type": "warning",
+    "message": "We are investigating an issue some users are experiencing with plotting in iNZight Lite. Users may experience minor disruption while we push a fix. If you continue to experience issues, please contact us at <a href='mailto:support@inzight.nz'>support@inzight.nz</a>.",
+    "validFrom": "2026-05-22T00:00:00+12:00",
+    "validTo": "2026-05-22T17:00:00+12:00"
+  },
+  {
+    "title": "Back-up",
     "type": "info",
     "message": "The new iNZight Lite infrastructure is now available at <a href='https://lite.inzight.nz/'>lite.inzight.nz/</a>. The old URL will continue to work as a redirect to the new deployment.",
     "validFrom": "2025-11-27T00:00:00+12:00",
