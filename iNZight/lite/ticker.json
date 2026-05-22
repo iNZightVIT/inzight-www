@@ -16,7 +16,7 @@
   {
     "title": "Investigating plotting issues",
     "type": "warning",
-    "message": "We are investigating an issue some users are experiencing with plotting in iNZight Lite. Users may experience minor disruption while we push a fix. If you continue to experience issues, please contact us at <a href='mailto:support@inzight.nz'>support@inzight.nz</a>.",
+    "message": "We have pushed an update to fix some plotting issues. If you continue to experience issues, please contact us at <a href='mailto:support@inzight.nz'>support@inzight.nz</a>.",
     "validFrom": "2026-05-22T00:00:00+12:00",
     "validTo": "2026-05-22T17:00:00+12:00"
   },
